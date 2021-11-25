@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+      - master
+
+  paths:
+    include:
+      - "prototype"
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: Npm@1
+    inputs:
+      command: "install"
+      workingDir: "prototype"
+    displayName: "npm install"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "prototype"
+      ArtifactName: "prototype-drop"
+      publishLocation: "Container"
