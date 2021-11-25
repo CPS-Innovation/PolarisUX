@@ -17,8 +17,7 @@ steps:
       workingDir: "prototype"
     displayName: "npm install"
 
-  - task: PublishBuildArtifacts@1
+  - task: PublishPipelineArtifact@0
     inputs:
-      PathtoPublish: "prototype"
+      targetPath: "prototype"
       ArtifactName: "prototype-drop"
-      publishLocation: "Container"
