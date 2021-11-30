@@ -47,6 +47,8 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+
+
  .makeScrollCPS {
   overflow-x: scroll;
     height: 70vh;
@@ -94,7 +96,7 @@ width: 86%;
   width: 100%;
     background-color: #1d70b8;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     padding: 0 20px 20px 20px;
     box-sizing: border-box;
 
@@ -140,6 +142,18 @@ width: 86%;
     background-color: #fff;
 }
 
+
+.topM20 {
+  margin-top: 20px;
+}
+
+.topM25 {
+  margin-top: 25px;
+}
+
+.topP0 {
+  padding-top:0;
+}
 
 /* end of CPS only styles */
 
