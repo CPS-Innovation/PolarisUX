@@ -1,0 +1,63 @@
+{% extends "layoutJourney.html" %}
+{% block beforeContent %}
+<nav class='greedy'>
+  <ul class='links'>
+    <li id="homeNav"><a href="home">Home</a></li>
+    <li id="financeNav"><a href="volume">Volume</a></li>
+    <li id="apprenticesNav"><a href="money">Money</a></li>
+    <li id="recruitNav"><a href="equality">Equality</a></li>
+    <li id="teamNav"><a href="journey">Journey</a></li>
+<!--     <li id="orgsNav"><a href="orgsNav">Test</a></li>
+    <li id="payeNav"><a href="payeNav">Test</a></li> -->
+
+  </ul>
+  <button id="moreButton">More</button>
+  <ul class='hidden-links hidden'></ul>
+</nav>
+
+
+<style>
+
+ #teamNav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #0b0c0c;
+   
+}
+
+ #teamNav:after {
+
+    background: #005ea5;
+    content: "";
+    display: block;
+    width: 5px;
+    z-index: 1000;
+    height: 5px;
+    width: auto;
+    margin-top:10px;
+}
+
+.govuk-template {
+  background-color: #fff !important
+}
+
+body {
+/* background-color: #DADADA !important*/
+}
+
+
+
+
+
+
+
+</style>
+{% endblock %}
+{% block content %}
+
+
+
+
+<img src="/public/images/55.jpg">
+  
+{% endblock %}

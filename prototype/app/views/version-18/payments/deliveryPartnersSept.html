@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{{ govukBackLink({
+  text: "Back",
+ href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Delivery partner breakdown</h1>
+                <h2 class="govuk-heading-m">September 2021 cohort</h2>
+           
+    <table class="govuk-table ">
+                                <thead>
+                              <!--       <h3 class="govuk-heading-s" style="margin-bottom: 0px; margin-top:10px">Delivery partner breakdown</h3> -->
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header"></th>
+                                               <th scope="col" class="govuk-table__header govuk-table__cell--numeric" style="font-weight:700"></th>
+                                         
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell" scope="row">Delivery partner 1</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">50</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell" scope="row">Delivery partner 2</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">50</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                         <td class="govuk-table__cell" scope="row">Delivery partner 3</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">150</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 4</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 5</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 6</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 7</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 8</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 9</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 10</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 11</td>
+                                     <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 12</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 13</td>
+                                         <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 14</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 15</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 16</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 17</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 18</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 19</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 20</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 21</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 22</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 23</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 24</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 25</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 26</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 27</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 28</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 29</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 30</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 31</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 32</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 33</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 34</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 35</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 36</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 37</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 38</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 39</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 40</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 41</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 42</td>
+                                       <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell" scope="row">Delivery partner 43</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" scope="row">0</td>
+                                    </tr>
+                           
+                                </tbody>
+                            </table>
+
+
+
+ 
+                
+
+            </div>
+        </div>
+</main>
+</div>
+
+
+{% endblock %}
+

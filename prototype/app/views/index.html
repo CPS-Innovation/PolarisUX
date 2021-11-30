@@ -1,44 +1,51 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
-
 {% block content %}
+<!-- <script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io();
+</script> -->
+<style>
 
-  <div class="govuk-grid-row">
+.govuk-footer__copyright-logo {
+  display: none;
+}
+
+@media (min-width: 48.0625em) {
+.govuk-header__logo {
+  width: 50% !important;
+}
+}
+
+  @media (max-width: 641px) {
+.govuk-header__logotype-text {
+  font-size: 22px;
+}
+ }
+</style>
+
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        <h1 class="govuk-heading-xl">CPS </h1>
+         <h2 class="govuk-heading-m" style="margin-bottom: 30px;">Prototype versions and links</h2>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+    <div class="holdingBlock">
+        <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v1</h2>
+     <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
+        <p style="margin-top:15px; margin-left:20px"><a href="/version-2/search">- Search a case</a></p>
+        <p style="margin-top:15px; margin-left:20px"><a href="/version-2/search/searchresults">- Search results</a></p>
+        <p style="margin-top:15px; margin-left:20px"><a href="/version-2/caseFile">- Case file</a></p>
+       
     </div>
-  </div>
 
+
+
+
+    </div>
+</div>
+</details>
+</div>
+</div>
 {% endblock %}
