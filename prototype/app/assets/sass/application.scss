@@ -56,20 +56,14 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     height: 28px;
     width: 28px;
 }
-svg > circle {
+.closeButtonOnCPS > circle {
     stroke: white;
     fill: $govuk-border-colour;
 }
-svg > path {
+.closeButtonOnCPS > path {
     stroke: white;
 }
-svg:hover > circle {
-    fill: red;
-}
-svg:hover > path {
-    stroke: white;
 
-}
 
 
  .makeScrollCPS {
@@ -83,9 +77,8 @@ svg:hover > path {
  /* border: 0 !important;*/
  }
 
- .js-enabled .govuk-tabs__list-item--selected,
- .js-enabled .govuk-tabs__list-item {
-  padding-right: 40px !important;
+ .js-enabled .govuk-tabs__list-item--selected {
+  padding-right: 45px !important;
  }
 
 
