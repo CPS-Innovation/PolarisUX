@@ -116,7 +116,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             {{ govukRadios({
                             classes: "govuk-radios--small",
                             idPrefix: "caseStatus",
-                            name: "caseStudies",
+                            name: "case-status",
                             fieldset: {
                             legend: {
                             text: "",
@@ -127,6 +127,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             items: [
                             {
                             value: "all",
+                            checked: true,
                             text: "All (2)"
                             },
                  
