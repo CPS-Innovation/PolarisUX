@@ -184,6 +184,11 @@ width: 86%;
     background-color: #fff;
 }
 
+.navNotSelected {
+   font-weight: 400;
+   margin-left: 7px;
+}
+
 
 .topM20 {
   margin-top: 20px;
@@ -3535,6 +3540,7 @@ nav {
   color: #005ea5;
   font-weight: 700;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .teamEmail {

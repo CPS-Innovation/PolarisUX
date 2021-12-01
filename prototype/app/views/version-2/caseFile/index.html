@@ -24,6 +24,44 @@ href: "javascript:history.back()"
     })
 }
 </script>
+<script>
+
+    function openCaseFiles() {
+    $(listOfExhibits).addClass("rj-dont-display");
+    $(caseFilesCol).removeClass("rj-dont-display");
+     $(caseFilesNav).addClass("mainNavSelected");
+     $(exhibitNav).removeClass("mainNavSelected");
+
+    $(caseFilesNav).removeClass("navNotSelected");
+    $(exhibitNav).addClass("navNotSelected");
+
+    $(caseFilesNavH2).addClass("looks-like-a-link-underline-h2");
+    $(caseFilesNavH2).removeClass("looks-like-a-link-underline");
+
+    $(exhibitNavH2).addClass("looks-like-a-link-underline");
+      $(exhibitNavH2).removeClass("looks-like-a-link-underline-h2");
+    
+}
+    function openExhibit() {
+    $(caseFilesCol).addClass("rj-dont-display");
+    $(listOfExhibits).removeClass("rj-dont-display");
+     $(exhibitNav).addClass("mainNavSelected");
+    $(caseFilesNav).removeClass("mainNavSelected");
+
+    $(caseFilesNav).addClass("navNotSelected");
+    $(exhibitNav).removeClass("navNotSelected");
+
+     $(caseFilesNavH2).removeClass("looks-like-a-link-underline-h2");
+    $(caseFilesNavH2).addClass("looks-like-a-link-underline");
+
+    $(exhibitNavH2).removeClass("looks-like-a-link-underline");
+      $(exhibitNavH2).addClass("looks-like-a-link-underline-h2");
+    
+}
+
+
+</script>
+
 <style>
     .accordion-controls {
     margin-top: 20px;
@@ -45,10 +83,10 @@ href: "javascript:history.back()"
                 <!--       <span id="reference-hint" class="govuk-hint">
                             Enter URN
                         </span> -->
-            <div style="display:flex">
-                <input class="govuk-input govuk-!-width-one-half" style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all 45AA209820, McLove documents" /> <!-- <button type="submit" class="govuk-button caseSearchButtonCPS" style="">Search</button> --><div class="bba"><button class="search" type="submit"> </button></div>
-            </div>
-
+                <div style="display:flex">
+                    <input class="govuk-input govuk-!-width-one-half" style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all 45AA209820, McLove documents" /> <!-- <button type="submit" class="govuk-button caseSearchButtonCPS" style="">Search</button> -->
+                    <div class="bba"><button class="search" type="submit"> </button></div>
+                </div>
             </div>
             </fieldset>
         </form>
@@ -66,18 +104,18 @@ href: "javascript:history.back()"
                 <nav role="navigation" style="margin-left: 8px;">
                     <!--  <nav role="navigation" style="height: 1000px;border: 3px solid #f3f2f1; "> -->
                     <ul class="robSideNav">
-                        <li class="govuk-heading-m mainNavSelected">
-                            <a href="#">Case files</a>
+                        <li id="caseFilesNav" class="govuk-heading-m mainNavSelected">
+                            <h2  id="caseFilesNavH2" class="govuk-heading-m looks-like-a-link-underline-h2" onclick="openCaseFiles()">Case files</h2>
                         </li>
-                        <li class="govuk-heading-m" style="font-weight:400; margin-left: 8px;">
-                            <a href="#">Exhibits</a>
+                        <li id="exhibitNav" class="govuk-heading-m navNotSelected" style="">
+                            <h2 id="exhibitNavH2" class="govuk-heading-m looks-like-a-link-underline" onclick="openExhibit()" >Exhibits</h2>
                         </li>
                     </ul>
                 </nav>
             </div>
             <!--  <div class="col-lg-2" style="border-right: 4px solid #bfc1c3; min-height:1000px"> -->
             <div class="govuk-grid-column-two-thirds makeScrollCPS">
-                <div class="caseFiles" style="">
+                <div class="caseFiles" id="caseFilesCol" style="">
                     <!--   <div class="caseFiles" style="height: 1000px;border: 3px solid #f3f2f1; "> -->
                     <div class="blueBoxCPS">
                         <H2 class="govuk-heading-m" style="color:#fff; padding-top:1rem; ">Proposed Charges:</h2>
@@ -132,7 +170,7 @@ href: "javascript:history.back()"
                                 <p class="govuk-body-s">3 June 2020</p>
                             </div>
                         </div>
-                <!--         <div class="documentFlex" style="">
+                        <!--         <div class="documentFlex" style="">
                             <div class="caseFileName">
                                 <p class="govuk-body-s"><a href="">1</a></p>
                             </div>
@@ -140,7 +178,7 @@ href: "javascript:history.back()"
                                 <p class="govuk-body-s">3 Mar 2020</p>
                             </div>
                         </div> -->
-              <!--           <div class="documentFlex" style="border-bottom:0">
+                        <!--           <div class="documentFlex" style="border-bottom:0">
                             <div class="caseFileName">
                                 <p class="govuk-body-s"><a href="">This has a really really really really long and over the top filename to see how it looks when it gets really silly final final version</a></p>
                             </div>
@@ -148,37 +186,30 @@ href: "javascript:history.back()"
                                 <p class="govuk-body-s">3 Mar 2020</p>
                             </div>
                         </div> -->
-
-
-
-                      <!--   <div class="accordion"> -->
-
-
-     <!--   <div class="accordion-section">
+                        <!--   <div class="accordion"> -->
+                        <!--   <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Defendent<br />documents</h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                     <h2 class="govuk-heading-m topM25">Offence specific</h2>
-                                
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName " style="">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s"></p>
-                                        </div>
-                                    </div>
-                        
-                               <!--      <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Offence specific</h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName " style="">
+                                <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s"></p>
+                            </div>
+                        </div>
+                        <!--      <div class="documentFlex" style="">
                                         <div class="caseFileName">
                                             <p class="govuk-body-s"><a href="">MG16</a></p>
                                         </div>
@@ -188,13 +219,12 @@ href: "javascript:history.back()"
                                     </div> -->
                         <!--         </div>
                             </div> -->
-
-                           <!--  <div class="accordion-section">
+                        <!--  <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Statements </h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                    <!-- <table class="govuk-table ">
+                        <!-- <table class="govuk-table ">
                                         <thead>
                                             <tr class="govuk-table__row">
                                                 <th scope="col" class="govuk-table__header " style="font-weight:700"></th>
@@ -228,92 +258,88 @@ href: "javascript:history.back()"
                                             </tr>
                                         </tbody>
                                     </table> -->
-                                    <h2 class="govuk-heading-m topM25">Statements </h2>
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; ">Date added</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName " style="">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG11 Shelagh MCLOVE retraction</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">10 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">Shelagh McLove VPS mg11</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS">6 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt BLAYNEE 2034 1 JUNE mg11</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">1 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt JONES 1989 1 JUNE mg11</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">1 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt Lucy Doyle MG11</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">1 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt Shelagh McLove MG11</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">1 June 2020</p>
-                                        </div>
-                                    </div>
-                          <!--       </div>
+                        <h2 class="govuk-heading-m topM25">Statements </h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; ">Date added</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName " style="">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG11 Shelagh MCLOVE retraction</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">10 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">Shelagh McLove VPS mg11</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s wrapLongFilenamesCPS">6 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt BLAYNEE 2034 1 JUNE mg11</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">1 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt JONES 1989 1 JUNE mg11</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">1 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt Lucy Doyle MG11</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">1 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">stmt Shelagh McLove MG11</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">1 June 2020</p>
+                            </div>
+                        </div>
+                        <!--       </div>
                             </div> -->
-                     
-                      
-                          <!--   <div class="accordion-section">
+                        <!--   <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Defendent<br />documents</h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                     <h2 class="govuk-heading-m topM25">Defendant</h2>
-                                
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-swrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName " style="">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">PRE CONS D</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS">2 June 2020</p>
-                                        </div>
-                                    </div>
-                        
-                               <!--      <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Defendant</h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-swrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName " style="">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">PRE CONS D</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s wrapLongFilenamesCPS">2 June 2020</p>
+                            </div>
+                        </div>
+                        <!--      <div class="documentFlex" style="">
                                         <div class="caseFileName">
                                             <p class="govuk-body-s"><a href="">MG16</a></p>
                                         </div>
@@ -323,25 +349,22 @@ href: "javascript:history.back()"
                                     </div> -->
                         <!--         </div>
                             </div> -->
-                      
                         <!-- end of accordion -->
-                            
-                           <!--  <div class="accordion-section">
+                        <!--  <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Forensics </h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                     <h2 class="govuk-heading-m topM25">Forensics </h2>
-                                
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                        </div>
-                                    </div>
-                            <!--         <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Forensics </h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
+                            </div>
+                        </div>
+                        <!--         <div class="documentFlex" style="">
                                         <div class="caseFileName " style="">
                                             <p class="govuk-body-s "><a href="">t.b.c</a></p>
                                         </div>
@@ -349,36 +372,32 @@ href: "javascript:history.back()"
                                             <p class="govuk-body-s">10 June 2020</p>
                                         </div>
                                     </div> -->
-                        
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s"></p>
-                                        </div>
-                                    </div>
-                       <!--          </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s"></p>
+                            </div>
+                        </div>
+                        <!--          </div>
                             </div> -->
-                       
                         <!-- end of accordion -->
-                       
                         <!--     <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Court preperation </h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                    <h2 class="govuk-heading-m topM25">Court preperation </h2>
-                                
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                        </div>
-                                    </div>
-                                   <!--  <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Court preperation </h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
+                            </div>
+                        </div>
+                        <!--  <div class="documentFlex" style="">
                                         <div class="caseFileName " style="">
                                             <p class="govuk-body-s "><a href="">MG10 - witness availability</a></p>
                                         </div>
@@ -386,8 +405,7 @@ href: "javascript:history.back()"
                                             <p class="govuk-body-s">6 June 2020</p>
                                         </div>
                                     </div> -->
-                        
-                                 <!--    <div class="documentFlex" style="">
+                        <!--    <div class="documentFlex" style="">
                                         <div class="caseFileName">
                                             <p class="govuk-body-s"><a href="">MG19 - Compensation</a></p>
                                         </div>
@@ -395,35 +413,32 @@ href: "javascript:history.back()"
                                             <p class="govuk-body-s">6 June 2020</p>
                                         </div>
                                     </div> -->
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s"></p>
-                                        </div>
-                                    </div>
-                     <!--            </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s"></p>
+                            </div>
+                        </div>
+                        <!--            </div>
                             </div> -->
-                       
                         <!-- end of accordion -->
-                       
                         <!--     <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Unused materials </h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                     <h2 class="govuk-heading-m topM25">Unused materials </h2>
-                                
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                        </div>
-                                    </div>
-                              <!--       <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Unused materials </h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
+                            </div>
+                        </div>
+                        <!--       <div class="documentFlex" style="">
                                         <div class="caseFileName " style="">
                                             <p class="govuk-body-s "><a href="">MG06C</a></p>
                                         </div>
@@ -447,68 +462,64 @@ href: "javascript:history.back()"
                                             <p class="govuk-body-s">6 June 2020</p>
                                         </div>
                                     </div> -->
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">1 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG20_5_JUNE</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">6 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG20_10_JUNE</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">11 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS" style=" "><a href="">SDC_items_to_be_Disclosed_MCLOVE</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">5 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">UNUSED_6_DA_CHECKLIST_MCLOVE</a></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s">5 June 2020</p>
-                                        </div>
-                                    </div>
-                      <!--           </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">1 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG20_5_JUNE</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">6 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">MG20_10_JUNE</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">11 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS" style=" "><a href="">SDC_items_to_be_Disclosed_MCLOVE</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">5 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s wrapLongFilenamesCPS"><a href="">UNUSED_6_DA_CHECKLIST_MCLOVE</a></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">5 June 2020</p>
+                            </div>
+                        </div>
+                        <!--           </div>
                             </div> -->
-                     
                         <!-- end of accordion -->
-                         
-                           <!--  <div class="accordion-section">
+                        <!--  <div class="accordion-section">
                                 <div class="accordion-section-header">
                                     <h2 class="govuk-heading-m">Material to be<br /> classified </h2>
                                 </div>
                                 <div class="accordion-section-body"> -->
-                                
-                                 <h2 class="govuk-heading-m topM25">Material to be<br />classified </h2>
-                                    <div class="documentFlex topP0" style="">
-                                        <div class="caseFileName" style="">
-                                            <p class="govuk-body-s" style="font-weight:700"></p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                        </div>
-                                    </div>
-
-                             <!--        <div class="documentFlex" style="">
+                        <h2 class="govuk-heading-m topM25">Material to be<br />classified </h2>
+                        <div class="documentFlex topP0" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
+                            </div>
+                        </div>
+                        <!--        <div class="documentFlex" style="">
                                         <div class="caseFileName " style="">
                                             <p class="govuk-body-s "><a href="">MG11 Shelagh MCLOVE retraction</a></p>
                                         </div>
@@ -516,22 +527,54 @@ href: "javascript:history.back()"
                                             <p class="govuk-body-s">10 June 2020</p>
                                         </div>
                                     </div> -->
-                        
-                                    <div class="documentFlex" style="">
-                                        <div class="caseFileName">
-                                            <p class="govuk-body-s">No documents</p>
-                                        </div>
-                                        <div class="caseFileDate">
-                                            <p class="govuk-body-s"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                      <!--       </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName">
+                                <p class="govuk-body-s">No documents</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--       </div>
                         </div> -->
-                        <!-- end of all accordion -->
-                  <!--   </div> -->
-                    <!-- end of charging docs column -->
+                    <!-- end of all accordion -->
+                    <!--   </div> -->
+                    
                 </div>
+                <!-- end of charging docs column -->
+                <div id="listOfExhibits" class="listOfExhibits rj-dont-display">
+             
+
+                     <h2 class="govuk-heading-m" style="">Exhibits</h2>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName" style="">
+                                <p class="govuk-body-s" style="font-weight:700"></p>
+                            </div>
+                                <div class="caseFileType" style="">
+                                <p class="govuk-body-s" style="font-weight:700">Type</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
+                            </div>
+                        </div>
+                        <div class="documentFlex" style="">
+                            <div class="caseFileName " style="">
+                                <p class="govuk-body-s documentSelected wrapLongFilenamesCPS"><a href="">MCLOVE MG0</a></p>
+                            </div>
+                               <div class="caseFileType">
+                                <p class="govuk-body-s">pdf</p>
+                            </div>
+                            <div class="caseFileDate">
+                                <p class="govuk-body-s">2 Sept 2020</p>
+                            </div>
+                        </div>
+                    
+
+
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -543,13 +586,11 @@ href: "javascript:history.back()"
   </h2> -->
                 <ul class="govuk-tabs__list">
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                                    <svg class="closeButtonOnCPS">
-                                        <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
-                                        <path stroke="white" stroke-width="3" fill="none" d="M6.25,6.25,17.75,17.75" />
-                                        <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
-                                    </svg>
-                                  
-                             
+                        <svg class="closeButtonOnCPS">
+                            <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
+                            <path stroke="white" stroke-width="3" fill="none" d="M6.25,6.25,17.75,17.75" />
+                            <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
+                        </svg>
                         <a class="govuk-tabs__tab" href="#MCLOVE-MG3">
                             MCLOVE MG3
                         </a>
