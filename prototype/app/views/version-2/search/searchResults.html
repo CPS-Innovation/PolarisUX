@@ -50,7 +50,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full" style="margin-bottom:25px">
         <h1 class="govuk-heading-xl" style="">Find a case</h1>
-        <form method="get" action="search/searchresults">
+        <form method="get" action="#">
             <div class="govuk-form-group" style="margin-bottom: 0px;">
                 <label class="govuk-label   govuk-label--s" for="partialCost">
                     Search for a case URN
@@ -74,7 +74,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                     <div style="border-bottom: 1px solid #dee0e2;">
                         <H3 class="govuk-heading-m" style="margin: 10px 0 10px 10px;">Filter </H3>
                     </div>
-                    <div class="filter text-filter" style="margin-top:10px">
+          <!--           <div class="filter text-filter" style="margin-top:10px">
                         <div class="govuk-form-group" style="margin-bottom:15px">
                             <label class="govuk-label   govuk-label--s legend" for="partialCost">
                                 Area
@@ -106,7 +106,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             ]
                             }) }}
                         </div>
-                    </div>
+                    </div> -->
                     <div class="filter text-filter">
                         <div class="govuk-form-group" style="margin-bottom:15px">
                             <label class="govuk-label   govuk-label--s legend" for="partialCost" style="margin-bottom:15px">
@@ -127,16 +127,9 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             items: [
                             {
                             value: "all",
-                            text: "All (1)"
+                            text: "All (2)"
                             },
-                            {
-                            value: "open",
-                            text: "Open (2)"
-                            },
-                            {
-                            value: "finalised",
-                            text: "Finalised (0)"
-                            },
+                 
                             {
                             value: "charged",
                             text: "Charged (1)"
@@ -149,7 +142,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             }) }}
                         </div>
                     </div>
-                    <div class="filter text-filter">
+<!--                     <div class="filter text-filter">
                         <div class="govuk-form-group">
                             <label class="govuk-label   govuk-label--s legend" for="partialCost">
                                 Investigative agency
@@ -181,7 +174,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             ]
                             }) }}
                         </div>
-                    </div>
+                    </div> -->
                     <!--     <button type="submit" class="govuk-button" style="margin-left:10px">Update results</button> -->
                     <!--  <a class="" href="apprenticeshipsearch">Start again</a> -->
                     </form>
@@ -361,7 +354,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                     </div>
                     <div class="flex-support-meta">
                         <div class=" " style="margin-right:25px; width: 135px">
-                            <p style="margin-bottom:0">Date of offense:</p>
+                            <p style="margin-bottom:0">Court hearing:</p>
                         </div>
                         <div class="WideMobile175" style=" ">
                             <p style="margin-bottom:0">1 June 2020</p>
