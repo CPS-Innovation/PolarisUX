@@ -50,7 +50,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 .closeButtonOnCPS {
   position: absolute;
   top: 13px;
-  right: 5px;
+  right: 7px;
  
     cursor: pointer;
     height: 28px;
@@ -64,6 +64,27 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     stroke: white;
 }
 
+.wrapLongFilenamesCPS {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/*.govuk-tabs__list-item--selected  a::after{
+  position: absolute !important;
+  box-sizing:border-box;
+  top: 14px !important;
+  right: 5px !important;
+ 
+  width:22px;
+  height:22px;
+  border-width:3px;
+  border-style: solid;
+  border-color:$govuk-border-colour;
+  border-radius:100%;
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  background-color:$govuk-border-colour;
+
+}*/
 
 
  .makeScrollCPS {
