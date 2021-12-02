@@ -7,7 +7,7 @@ href: "javascript:history.back()"
 }) }}
 {% endblock %}
 {% block content %}
-<script src="/public/javascripts/accordion.js"></script>
+<!-- <script src="/public/javascripts/accordion.js"></script> -->
 <!--script>
 
 $(document).on('click', 'input[type="radio"]', function (e) {
@@ -17,6 +17,40 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 });
 
 </script-->
+
+<script>
+$(document).ready(function() {
+    
+    $('input[type=radio][name=case-status]').change(function() {
+        var status = $('input[name=case-status]:checked').val();
+        switch (true) {
+            case (status == 'all'):
+              $(caseOne).removeClass("rj-dont-display");
+              $(caseTwo).removeClass("rj-dont-display");
+              console.log(status)
+               
+                break;
+            case (status == 'charged'):
+              $(caseOne).removeClass("rj-dont-display");
+                $(caseTwo).addClass("rj-dont-display");
+            console.log(status)
+
+                break
+            case (status == 'not-yet-charged'):
+             $(caseOne).addClass("rj-dont-display");
+                $(caseTwo).removeClass("rj-dont-display");
+               console.log(status)
+                
+                break
+            default:
+                console.log('gyahhhhhhhh, bork bork bork');
+                  console.log(status)
+                break;
+        }
+    });
+});
+</script>
+
 <style>
 .govuk-footer__copyright-logo {
     display: none;
@@ -39,6 +73,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
     display: none;
 }
 </style>
+
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <!-- Here is the code to show conditional stuff in liquid-->
 <!-- {% if data.FAALoggedIn %}
@@ -47,6 +82,9 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 {% include "includes/RAAUnloggedIn.html" %}
 {% endif %} -->
 <!-- end of conditional statement -->
+
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full" style="margin-bottom:25px">
         <h1 class="govuk-heading-xl" style="">Find a case</h1>
@@ -74,7 +112,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                     <div style="border-bottom: 1px solid #dee0e2;">
                         <H3 class="govuk-heading-m" style="margin: 10px 0 10px 10px;">Filter </H3>
                     </div>
-          <!--           <div class="filter text-filter" style="margin-top:10px">
+                    <!--           <div class="filter text-filter" style="margin-top:10px">
                         <div class="govuk-form-group" style="margin-bottom:15px">
                             <label class="govuk-label   govuk-label--s legend" for="partialCost">
                                 Area
@@ -130,7 +168,6 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             checked: true,
                             text: "All (2)"
                             },
-                 
                             {
                             value: "charged",
                             text: "Charged (1)"
@@ -143,7 +180,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
                             }) }}
                         </div>
                     </div>
-<!--                     <div class="filter text-filter">
+                    <!--                     <div class="filter text-filter">
                         <div class="govuk-form-group">
                             <label class="govuk-label   govuk-label--s legend" for="partialCost">
                                 Investigative agency
@@ -311,71 +348,77 @@ $(document).on('click', 'input[type="radio"]', function (e) {
         <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">2</span> cases that match 45AA209820</p>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <div class="column details" style=" float:left">
-            <div class="twoFlexContainer">
-                <div class="twoFlexItem" style="padding-left:0">
-                    <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/1 </a>
-                        <span id="reference-hint" class="govuk-hint" style="margin-bottom:5px; margin-top:5px">
-                            McLove, Eoin </span>
-                    </h2>
-                </div>
-                <div class="twoFlexItem">
-                </div>
-            </div>
-            <!--  <p>To efficiently undertake basic administrations and clerical duties</p> -->
-            <div>
-                <div class="" style="margin-top:5px">
-                    <div class="flex-support-meta">
-                        <div class=" " style="margin-right:25px; width: 135px">
-                            <p style="margin-bottom:0">Date of offense:</p>
-                        </div>
-                        <div class="WideMobile175" style=" ">
-                            <p style="margin-bottom:0">1 June 2020</p>
-                        </div>
+            <div id="caseOne">
+                <div class="twoFlexContainer">
+                    <div class="twoFlexItem" style="padding-left:0">
+                        <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/1 </a>
+                            <span id="reference-hint" class="govuk-hint" style="margin-bottom:5px; margin-top:5px">
+                                McLove, Eoin </span>
+                        </h2>
                     </div>
-                    <div class="flex-support-meta">
-                        <div class=" " style="margin-right:74px;  width: 125px">
-                            <p style="margin-bottom:0">Charges:</p>
-                        </div>
-                        <div class="WideMobile175" style="  ">
-                            <p style="margin-bottom:0"><span style="font-weight:700">Section 39 Common assault</span> 01/06/2020 Contrary to the Criminal Justice Act 1988</p>
-                            <p style="margin-bottom:0"><span style="font-weight:700">Section 5 Drive OPL</span> 01/06/2020</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
-                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                    <div class="twoFlexContainer">
-                        <div class="twoFlexItem" style="padding-left:0">
-                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/2 </a>
-                                <span id="reference-hint" class="govuk-hint" style="margin-bottom:5px; margin-top:5px">
-                                    McLove, Eoin </span>
-                            </h2>
-                        </div>
-                        <div class="twoFlexItem">
-                        </div>
-                    </div>
-                    <div class="flex-support-meta">
-                        <div class=" " style="margin-right:25px; width: 135px">
-                            <p style="margin-bottom:0">Court hearing:</p>
-                        </div>
-                        <div class="WideMobile175" style=" ">
-                            <p style="margin-bottom:0">1 June 2020</p>
-                        </div>
-                    </div>
-                    <div class="flex-support-meta">
-                        <div class=" " style="margin-right:74px;  width: 125px">
-                            <p style="margin-bottom:0">Charges:</p>
-                        </div>
-                        <div class="WideMobile175" style="  ">
-                            <p style="margin-bottom:0"><span style="font-weight:700">Section 39 Common assault</span> 01/06/2020 Contrary to the Criminal Justice Act 1988</p>
-                            <!--     <p style="margin-bottom:0"><span style="font-weight:700">Section 5 Drive OPL</span> 01/06/2020</p> -->
-                        </div>
+                    <div class="twoFlexItem">
                     </div>
                 </div>
-                <div style="clear:both"></div>
-                <!--div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div-->
+                <div>
+                    <div class="" style="margin-top:5px">
+                        <div class="flex-support-meta">
+                            <div class=" " style="margin-right:25px; width: 135px">
+                                <p style="margin-bottom:0">Date of offense:</p>
+                            </div>
+                            <div class="WideMobile175" style=" ">
+                                <p style="margin-bottom:0">1 June 2020</p>
+                            </div>
+                        </div>
+                        <div class="flex-support-meta">
+                            <div class=" " style="margin-right:74px;  width: 125px">
+                                <p style="margin-bottom:0">Charges:</p>
+                            </div>
+                            <div class="WideMobile175" style="  ">
+                                <p style="margin-bottom:0"><span style="font-weight:700">Section 39 Common assault</span> 01/06/2020 Contrary to the Criminal Justice Act 1988</p>
+                                <p style="margin-bottom:0"><span style="font-weight:700">Section 5 Drive OPL</span> 01/06/2020</p>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
             </div>
+            <div id="caseTwo">
+                <div class="twoFlexContainer">
+                    <div class="twoFlexItem" style="padding-left:0">
+                        <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/2 </a>
+                            <span id="reference-hint" class="govuk-hint" style="margin-bottom:5px; margin-top:5px">
+                                McLove, Eoin </span>
+                        </h2>
+                    </div>
+                    <div class="twoFlexItem">
+                    </div>
+                </div>
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:25px; width: 135px">
+                        <p style="margin-bottom:0">Court hearing:</p>
+                    </div>
+                    <div class="WideMobile175" style=" ">
+                        <p style="margin-bottom:0">1 June 2020</p>
+                    </div>
+                </div>
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:74px;  width: 125px">
+                        <p style="margin-bottom:0">Charges:</p>
+                    </div>
+                    <div class="WideMobile175" style="  ">
+                        <p style="margin-bottom:0"><span style="font-weight:700">Section 39 Common assault</span> 01/06/2020 Contrary to the Criminal Justice Act 1988</p>
+                        <!--     <p style="margin-bottom:0"><span style="font-weight:700">Section 5 Drive OPL</span> 01/06/2020</p> -->
+                    </div>
+                </div>
+                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            </div>
+           
+            <div style="clear:both"></div>
         </div>
+        <!--div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div-->
     </div>
-    </main>
-    {% endblock %}
+</div>
+</div>
+</main>
+{% endblock %}
