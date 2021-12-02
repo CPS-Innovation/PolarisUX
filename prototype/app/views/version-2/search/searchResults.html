@@ -7,7 +7,7 @@ href: "javascript:history.back()"
 }) }}
 {% endblock %}
 {% block content %}
-<script src="/public/javascripts/accordion.js"></script>
+<!-- <script src="/public/javascripts/accordion.js"></script> -->
 <!--script>
 
 $(document).on('click', 'input[type="radio"]', function (e) {
@@ -20,23 +20,31 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 
 <script>
 $(document).ready(function() {
-    var status = $('input[name=case-status]:checked').val();
+    
     $('input[type=radio][name=case-status]').change(function() {
+        var status = $('input[name=case-status]:checked').val();
         switch (true) {
             case (status == 'all'):
-                
-
+              $(caseOne).removeClass("rj-dont-display");
+              $(caseTwo).removeClass("rj-dont-display");
+              console.log(status)
+               
                 break;
             case (status == 'charged'):
-                
+              $(caseOne).removeClass("rj-dont-display");
+                $(caseTwo).addClass("rj-dont-display");
+            console.log(status)
 
                 break
             case (status == 'not-yet-charged'):
+             $(caseOne).addClass("rj-dont-display");
+                $(caseTwo).removeClass("rj-dont-display");
+               console.log(status)
                 
-
                 break
             default:
                 console.log('gyahhhhhhhh, bork bork bork');
+                  console.log(status)
                 break;
         }
     });
@@ -340,7 +348,7 @@ $(document).ready(function() {
         <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">2</span> cases that match 45AA209820</p>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <div class="column details" style=" float:left">
-            <div class="45AA209820/1">
+            <div id="caseOne">
                 <div class="twoFlexContainer">
                     <div class="twoFlexItem" style="padding-left:0">
                         <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/1 </a>
@@ -375,7 +383,7 @@ $(document).ready(function() {
                 </div>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
             </div>
-            <div class="45AA209820/2">
+            <div id="caseTwo">
                 <div class="twoFlexContainer">
                     <div class="twoFlexItem" style="padding-left:0">
                         <h2 class="govuk-heading-m results-header" style="margin-bottom:5px"><a href="../casefile">45AA209820/2 </a>
