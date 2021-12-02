@@ -55,7 +55,14 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     cursor: pointer;
     height: 28px;
     width: 28px;
+  display: none;
 }
+
+.govuk-tabs__list-item--selected .closeButtonOnCPS{
+  display: block;
+  z-index:999999
+}
+
 .closeButtonOnCPS > circle {
     stroke: white;
     fill: $govuk-border-colour;
