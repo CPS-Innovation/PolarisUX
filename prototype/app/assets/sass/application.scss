@@ -62,6 +62,12 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   display: block;
   z-index:999999
 }
+.govuk-tabs__tab{
+ overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
 
 .closeButtonOnCPS > circle {
     stroke: white;

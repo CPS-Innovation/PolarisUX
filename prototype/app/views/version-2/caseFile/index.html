@@ -594,6 +594,8 @@ href: "javascript:history.back()"
 </div>
 </div>
 <script>
+    $(document).ready(function(){
+
     const $menuLinks = $(".caseFileName a");
     const $tabList = $(".govuk-tabs .govuk-tabs__list");
 
@@ -606,7 +608,7 @@ href: "javascript:history.back()"
         const label = $(this).text();
         highlightMenuLink(label, true);
         ensureTabExists(label);
-        showHideTab(label, true);
+        showTab(label, true);
     }
 
     function highlightMenuLink(label, isHighlighted) {
@@ -632,9 +634,7 @@ href: "javascript:history.back()"
                 <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
             </svg>
 
-            <a class="govuk-tabs__tab" href="">
-                ${label}
-            </a>
+            <a class="govuk-tabs__tab" href="">${label}</a>
         </li>`)
         .appendTo($tabList);
 
@@ -647,23 +647,32 @@ href: "javascript:history.back()"
         newTab.find("li").off("click");
         newTab.find("a.govuk-tabs__tab").click(function() {
             event.preventDefault();
-            showHideTab(label, true);
+            showTab(label);
         })
 
         newTab.find(".closeButtonOnCPS").click(function() {
             destroyTab(label);
             highlightMenuLink(label,false);
-            showHideTab($tabList.find("li").last().text().trim(), true);
         })
     }
 
     function destroyTab(label) {
+        const $tabs = $(`li[data-tab-id`);
+        const $thisTab = $(`li[data-tab-id='${label}']`);
+        const thisTabIndex = $tabs.index($thisTab);
+        const tabIndexToLeaveOpen = thisTabIndex 
+            ? thisTabIndex - 1 // if not first tab, go to the left
+            : 0; // otherwise if first tab, then go to the tab that is now first
         $(`li[data-tab-id='${label}']`).remove();
         $(`div[data-tab-id='${label}-content']`).remove();
+        
+        const labelOfTabToOpen = $($(`li[data-tab-id`)[tabIndexToLeaveOpen]).text().trim();
+    
+        showTab(labelOfTabToOpen);
     }
 
 
-    function showHideTab(label, isShown) {
+    function showTab(label) {
         $tabList.find("li").removeClass("govuk-tabs__list-item--selected")
         $(`li[data-tab-id='${label}']`).addClass("govuk-tabs__list-item--selected");
         
@@ -672,6 +681,6 @@ href: "javascript:history.back()"
     }
 
 
-
+})
 </script>
 {% endblock %}
