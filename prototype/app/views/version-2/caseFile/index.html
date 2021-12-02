@@ -42,8 +42,9 @@ href: "javascript:history.back()"
     
 }
     function openExhibit() {
+         $(listOfExhibits).removeClass("rj-dont-display");
     $(caseFilesCol).addClass("rj-dont-display");
-    $(listOfExhibits).removeClass("rj-dont-display");
+   
      $(exhibitNav).addClass("mainNavSelected");
     $(caseFilesNav).removeClass("mainNavSelected");
 
@@ -569,10 +570,13 @@ href: "javascript:history.back()"
         </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
-        <div class="file1">
+        <div class="file1 weirdFix1400">
+
             <div class="govuk-tabs" data-module="govuk-tabs">
+
                 <ul class="govuk-tabs__list">
                 </ul>
+                 <p>Some copy here about choosing stuff on the left menu</p>
             </div>
         </div>
     </div>

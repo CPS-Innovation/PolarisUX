@@ -47,6 +47,10 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.weirdFix1400 {
+  min-width: 900px;
+}
+
 .closeButtonOnCPS {
   position: absolute;
   top: 13px;
@@ -3267,7 +3271,7 @@ ul.hidden-links li:first-child  {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 7px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-thumb {
