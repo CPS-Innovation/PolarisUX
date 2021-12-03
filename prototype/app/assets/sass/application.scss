@@ -47,6 +47,20 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.govuk-tabs__panel {
+ border-top: 1px solid  $govuk-border-colour !important;
+}
+
+.js-enabled .govuk-tabs__list{
+  display: flex;
+  flex:  1 1 auto;
+  overflow-y: hidden;
+  overflow-x:  auto;
+  padding-top: 5px;
+  border-bottom: 0 !important;
+
+}
+
 .weirdFix1400 {
   min-width: 900px;
 }
@@ -112,7 +126,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
  
  .js-enabled .govuk-tabs__panel {
   padding: 25px 0 0 0  !important;
- /* border: 0 !important;*/
+ 
  }
 
  .js-enabled .govuk-tabs__list-item--selected {
@@ -3271,7 +3285,8 @@ ul.hidden-links li:first-child  {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 9px;
+  width: 6px;
+  height: 6px; 
 }
 
 ::-webkit-scrollbar-thumb {
