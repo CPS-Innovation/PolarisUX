@@ -680,11 +680,18 @@ $(document).ready(function() {
 
 
     function showTab(label) {
-        $tabList.find("li").removeClass("govuk-tabs__list-item--selected")
+        $tabList.find("li").removeAttr('id', 'selectedTab');
+        $tabList.find("li").removeClass("govuk-tabs__list-item--selected");
+        
+
         $(`li[data-tab-id='${label}']`).addClass("govuk-tabs__list-item--selected");
+         $(`li[data-tab-id='${label}']`).attr('id', 'selectedTab');
 
         $(".govuk-tabs__panel").addClass("govuk-tabs__panel--hidden");
         $(`div[data-tab-id='${label}-content']`).removeClass("govuk-tabs__panel--hidden");
+
+        var elmnt = document.getElementById("selectedTab");
+        elmnt.scrollIntoView();
     }
 
 
