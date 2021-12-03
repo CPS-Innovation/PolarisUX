@@ -67,9 +67,9 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 }
 
-.weirdFix1400 {
+/*.weirdFix1400 {
   min-width: 900px;
-}
+}*/
 
 .closeButtonOnCPS {
   position: absolute;
@@ -195,15 +195,29 @@ width: 86%;
     border-bottom: 1px solid $govuk-border-colour; 
 }
 
+ @media (max-width: 1300px) {
+.documentFlex {
+  display:inline-flex;   align-items: baseline;  gap: 10px;
+
+}
+}
+
 .documentFlex:first-of-type {
   padding-top: 0;
 }
 
 
-
 .caseFileName {
-  width:135px
+  width:125px
 }
+
+ @media (max-width: 1300px) {
+.caseFileName {
+  width:110px
+}
+}
+
+
 .caseFileDate {
   min-width: 95px;
 }
