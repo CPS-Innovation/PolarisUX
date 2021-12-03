@@ -47,6 +47,12 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.rumpoleText {
+  text-align: right;
+  padding-right: 0 !important;
+  width: 50%;
+}
+
 .govuk-tabs__panel {
  border-top: 1px solid  $govuk-border-colour !important;
 }
