@@ -690,8 +690,10 @@ $(document).ready(function() {
         $(".govuk-tabs__panel").addClass("govuk-tabs__panel--hidden");
         $(`div[data-tab-id='${label}-content']`).removeClass("govuk-tabs__panel--hidden");
 
-        var elmnt = document.getElementById("selectedTab");
-        elmnt.scrollIntoView();
+        const selectedTab = $("#selectedTab");
+        if (selectedTab.length) {
+            selectedTab[0].scrollIntoView();
+        }
     }
 
 
