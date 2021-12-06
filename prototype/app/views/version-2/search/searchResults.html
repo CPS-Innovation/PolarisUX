@@ -31,14 +31,14 @@ $(document).ready(function() {
                
                 break;
             case (status == 'charged'):
-              $(caseOne).removeClass("rj-dont-display");
-                $(caseTwo).addClass("rj-dont-display");
+              $(caseTwo).removeClass("rj-dont-display");
+                $(caseOne).addClass("rj-dont-display");
             console.log(status)
 
                 break
             case (status == 'not-yet-charged'):
-             $(caseOne).addClass("rj-dont-display");
-                $(caseTwo).removeClass("rj-dont-display");
+             $(caseTwo).addClass("rj-dont-display");
+                $(caseOne).removeClass("rj-dont-display");
                console.log(status)
                 
                 break
@@ -169,12 +169,12 @@ $(document).ready(function() {
                             text: "All (2)"
                             },
                             {
-                            value: "charged",
-                            text: "Charged (1)"
-                            },
-                            {
                             value: "not-yet-charged",
                             text: "Not yet charged (1)"
+                            },
+                                 {
+                            value: "charged",
+                            text: "Charged (1)"
                             }
                             ]
                             }) }}
