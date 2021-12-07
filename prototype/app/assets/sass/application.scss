@@ -126,7 +126,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
  .makeScrollCPS {
   overflow-x: scroll;
-    height: 72vh;
+    height: 60vh;
  /*   height: calc(100% - 10px);*/
 }
  
@@ -3318,8 +3318,13 @@ ul.hidden-links li:first-child  {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 6px;
+  width: 7px;
   height: 6px; 
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
