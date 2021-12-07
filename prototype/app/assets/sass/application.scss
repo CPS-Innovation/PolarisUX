@@ -126,8 +126,16 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
  .makeScrollCPS {
   overflow-x: scroll;
-    height: 60vh;
+  overflow-y: hidden;
+    height: 70vh;
  /*   height: calc(100% - 10px);*/
+}
+
+@media  (max-height: 550px) {
+   .makeScrollCPS {
+    height: 62vh;
+ /*   height: calc(100% - 10px);*/
+}
 }
  
  .js-enabled .govuk-tabs__panel {
