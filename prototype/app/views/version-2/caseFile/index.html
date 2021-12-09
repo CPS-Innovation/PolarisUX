@@ -1,5 +1,7 @@
 {% extends "layoutCPS.html" %}
+
 {% block beforeContent %}
+ {% include "includes/search-banner-modal.html" %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
 text: "Back to URN search",
@@ -11,6 +13,7 @@ href: "javascript:history.back()"
 <!-- <link href="/public/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" /> -->
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
+<!-- <script src="/public/javascripts/cookie.js"></script> -->
 <script>
     if (
     'addEventListener' in document &&
@@ -66,6 +69,11 @@ href: "javascript:history.back()"
     margin-top: 20px;
 }
 </style>
+
+
+
+
+
 <div class="govuk-grid-row" style="">
     <div class="govuk-grid-column-one-third">
         <!-- <h1 class="govuk-heading-m" style="margin-bottom:0"> Wolfeschlegelsteinhausenbergerdorff Picasso, Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y -->
@@ -646,7 +654,7 @@ $(document).ready(function() {
 
         const newContent = $(`
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" data-tab-id="${label}-content">        
-            <embed src="/public/files/${document}#toolbar=0" width="100%" height="550px">
+            <embed class="embedSize" src="/public/files/${document}#toolbar=0" >
         </div>`)
             .insertAfter($tabList);
 
