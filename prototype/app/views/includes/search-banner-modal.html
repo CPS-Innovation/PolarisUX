@@ -1,25 +1,204 @@
-
-<div class="modal">
+<div class="modal rj-dont-display" id="searchModal">
     <div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal">
         <div class="das-cookie-banner" style=>
             <div class="das-cookie-banner__wrapper govuk-width-container">
+                   <div class="modalClose" style="float:right">                  
+                        <button type="button" class="btn-close makeLink" data-bs-dismiss="alert" aria-label="Close" onClick="closeModal()"></button>
+                  </div>
                 <div class="govuk-grid-row">
                     <div class="innerPanel" style="">
-                   <!--      <h2 class="govuk-heading-m das-cookie-banner__header">Search results</h2>
+                        <!--      <h2 class="govuk-heading-m das-cookie-banner__header">Search results</h2>
                         <p class="das-cookie-banner__message">We use <a href="/help/cookies" class="govuk-link govuk-link--no-visited-state">cookies to collect information</a> about how you use this service. We use this information to make the service work as well as possible and improve this service.</p> -->
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full" style="margin-bottom:25px">
+                                <!--   <h1 class="govuk-heading-m" style="">Find a case</h1> -->
+                                <form method="get" action="#">
+                                    <div class="govuk-form-group" style="margin-bottom: 0px;">
+                                        <label class="govuk-label   govuk-label--s" for="partialCost">
+                                            Search McLove, 45AA209820
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="searchURN" name="searchURN" type="text" aria-describedby="search-result" style="border-right:0" value="assault (and do another one for drinking)" />
+                                        <div class="bba" style="margin-left:-4px"><button class="search" type="submit"> </button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div class="govuk-grid-row"> -->
+                            <div class="govuk-grid-column-one-quarter">
+                                <!-- desktop version of the filters -->
+                                <div class="notOnMobile">
+                                    <div class="filter-form filtering " style="border: 1px solid #dee0e2;">
+                                        <div id="finder-frontend" class="inner-block">
+                                            <div style="border-bottom: 1px solid #dee0e2;">
+                                                <H3 class="govuk-heading-m" style="margin: 10px 0 10px 10px;">Filter </H3>
+                                            </div>
+                                            <div class="filter text-filter">
+                                                <div class="govuk-form-group" style="margin-bottom:15px">
+                                                    <label class="govuk-label   govuk-label--s legend" for="partialCost" style="margin-bottom:15px">
+                                                        Document type
+                                                    </label>
+                                                    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                                                    {{ govukCheckboxes({
+                                                    classes: "govuk-checkboxes--small",
+                                                    idPrefix: "caseStatus",
+                                                    name: "case-status",
+                                                    fieldset: {
+                                                    legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--l"
+                                                    }
+                                                    },
+                                                    items: [
+                                                    {
+                                                    value: "all",
+                                                    text: "MG3/MG3A (1)"
+                                                    },
+                                                    {
+                                                    value: "not-yet-charged",
+                                                    text: "MG11 (1)"
+                                                    },
+                                                    {
+                                                    value: "not-yet-charged",
+                                                    text: "MG5 (0)"
+                                                    },
+                                                    {
+                                                    value: "not-yet-charged",
+                                                    text: "MG6 (0)"
+                                                    },
+                                                    {
+                                                    value: "charged",
+                                                    text: "Other (1)"
+                                                    }
+                                                    ]
+                                                    }) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-three-quarters">
+                                <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">8</span> results in <span style="font-weight:700">3</span> documents that match "assault"</p>
+                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                <div class="column details" style=" float:left">
+                                    <div id="resultsOne">
+                                        <div class="twoFlexContainer">
+                                            <div class="twoFlexItem" style="padding-left:0">
+                                                <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">MCLOVEMG3.pdf
+                                                </h2>
+                                            </div>
+                                                <div class="twoFlexItem fixRight  " style="">
+                                            <button class="govuk-button govuk-button--secondary searchShortlist" data-module="govuk-button" style="margin-bottom:0">
+                                                <span class="shortlistText notSearchShortlist">  Select document</span>
+                                                </button>
 
-
-
-                       <!--  end of inner panel -->
+                                                 
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex-support-meta">
+                                                <div class=" " style="margin-right:30px;">
+                                                    <p style="margin-bottom:0">Uploaded:</p>
+                                                </div>
+                                                <div class="WideMobile175" style=" ">
+                                                    <p style="margin-bottom:0">5 June 2020</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex-support-meta">
+                                                <div class=" " style="margin-right:49px; ">
+                                                    <p style="margin-bottom:0">Results:</p>
+                                                </div>           
+                                                <div class="WideMobile175" style="  ">
+                                            <p style="margin-bottom:10px">1 result</p>
+                                         
+                                        </div>
+                                    </div>
+                                       <div class="flex-support-meta">
+                                        <div class="govuk-inset-text cpsInsetChange">
+                                                <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                    </div>
+                                    <div id="resultsTwo">
+                                        <div class="twoFlexContainer">
+                                            <div class="twoFlexItem" style="padding-left:0">
+                                                <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">Shelagh McLove VPS mg11 
+                                                </h2>
+                                            </div>
+                                            <div class="twoFlexItem fixRight" style="">
+                                            <button class="govuk-button govuk-button--secondary searchShortlist" data-module="govuk-button" style="margin-bottom:0">
+                                                <span class="shortlistText notSearchShortlist">  Select document </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" " style="margin-right:30px;">
+                                                <p style="margin-bottom:0">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175" style=" ">
+                                                <p style="margin-bottom:0">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" " style="margin-right:49px; ">
+                                                <p style="margin-bottom:0">Results:</p>
+                                            </div>
+                                            <div class="WideMobile175" style=" ">
+                                                <p style="margin-bottom:0">6 results:</p>
+                                            </div>
+                                        </div>
+                                <!--     <div class="flex-support-meta">
+                                    <div class="WideMobile175" style="  ">
+                                        <p style="margin-bottom:10px">6 results:</p>
+                                    </div>
+                                </div> -->
+                                        <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                        </div>
+                                        <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                        </div>
+                                        <details class="govuk-details" data-module="govuk-details">
+                                            <summary class="govuk-details__summary">
+                                                <span class="govuk-details__summary-text">
+                                                    View 4 more
+                                                </span>
+                                            </summary>
+                                            <div class="">
+                                                <div class="govuk-inset-text cpsInsetChange">
+                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                                </div>
+                                                <div class="govuk-inset-text cpsInsetChange">
+                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                                </div>
+                                                <div class="govuk-inset-text cpsInsetChange">
+                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                                </div>
+                                                <div class="govuk-inset-text cpsInsetChange">
+                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
+                                                </div>
+                                            </div>
+                                        </details>
+                             
+     
+                           
+                                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                       <!--  </div> -->
                     </div>
+
                 </div>
+                <!--  end of inner panel div above -->
+
             </div>
+             <div class="modalBanner"><p id="bannerCount" style="color:#fff; margin-right:10px;text-align: center;margin-top:10px">Button count <span style="color:#fff"></span></p></div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
+</div>

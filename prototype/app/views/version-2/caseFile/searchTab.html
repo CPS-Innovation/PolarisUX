@@ -14,41 +14,6 @@ href: "javascript:history.back()"
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
 <!-- <script src="/public/javascripts/cookie.js"></script> -->
-
-<script>
-$( document ).ready(function() {
-var appCount=0
-var proCount=0
-$(".searchShortlist").click(function (e) {
-    e.preventDefault();
-    console.log("searchShortlist button clicked: " + appCount);
-    //appCount++;
-
-    if ($(".shortlistText", this).hasClass("notSearchShortlist")) {
-        console.log("isnt shortlisted");
-        appCount++;
-        console.log(appCount);
-   //     Cookies.set("appCount", appCount);
-        $(".shortlistText" , this).removeClass("notSearchShortlist").addClass("searchShortlist");
-        $(".shortlistText" , this).text("Remove this document");
-        $("#bannerCount span").text(Number(proCount) + Number(appCount));
-
-    } else {
-        console.log("is shortlisted");
-        $(".shortlistText", this).removeClass("searchShortlist").addClass("notSearchShortlist");
-        $(".shortlistText", this).text("Select document");
-        appCount--;
- //       Cookies.set("appCount", appCount);
-        // console.log(appCount);
-        $("#bannerCount span").text(Number(proCount) + Number(appCount));
-    }
-
-    //.toggleClass(".fa-star-o").toggleClass(".fa-star");
-
-    })
-});
-</script>
-
 <script>
     if (
     'addEventListener' in document &&
@@ -120,6 +85,9 @@ $(".searchShortlist").click(function (e) {
     margin-top: 20px;
 }
 </style>
+
+
+
 
 
 <div class="govuk-grid-row" style="">
@@ -643,6 +611,7 @@ $(".searchShortlist").click(function (e) {
             <div class="govuk-tabs" data-module="govuk-tabs">
 
                 <ul class="govuk-tabs__list">
+                      {% include "includes/search-banner-tab.html" %}
                 </ul>
                 <h2 class="govuk-heading-m" style="margin:60px 0 0 0; text-align:center;">View your documents </h2>
                  <p style="margin:10px 0 0 0; text-align:center;">Choose a file from the left hand sidebar to start reviewing documents</p>
