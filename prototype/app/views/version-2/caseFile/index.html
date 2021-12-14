@@ -43,6 +43,13 @@ $(".searchShortlist").click(function (e) {
         $("#bannerCount span").text(Number(proCount) + Number(appCount));
     }
 
+    if (appCount>0) {
+         $('.openSelect').prop("disabled", false); //
+
+    } else {
+         $('.openSelect').prop("disabled", true); //
+    }
+
     //.toggleClass(".fa-star-o").toggleClass(".fa-star");
 
     })
