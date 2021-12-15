@@ -1,11 +1,7 @@
 {% extends "layoutCPS.html" %}
 {% block beforeContent %}
 {% include "includes/search-banner-modal.html" %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{{ govukBackLink({
-text: "Back to URN search",
-href: "javascript:history.back()"
-}) }}
+
 {% endblock %}
 {% block content %}
 <!-- <link href="/public/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css" />
@@ -117,12 +113,13 @@ $(".searchShortlist").click(function (e) {
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="margin-bottom:20px">
+             <a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:25px">Back to URN search</a>
             <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0"> McLove, Eoin
                 <span class="govuk-caption-m">45AA209820/1</span>
             </h1>
         </div>
-        <div class=" makeScrollCPS">
-            <div class="caseFiles" id="caseFilesCol" style="">
+        <div class=" makeScrollCPS" style="">
+            <div class="caseFiles" id="caseFilesCol" style="margin-right:25px">
                 <div class="blueBoxCPS">
                     <h2 class="govuk-heading-s" style="color:#fff; padding-top:1rem; ">Proposed Charges</h2>
                     <ul class="govuk-list govuk-list--bullet govuk-body-s" style="color:#fff; margin-bottom:0">
