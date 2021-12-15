@@ -79,6 +79,13 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 /* CPS only styles*/
 
 
+.govuk-tabs {
+  margin-top: 0 !important;
+}
+
+.chargingDocs{
+  padding-left: 0px;
+}
 
 .modal {
  /* display: none;*/
@@ -438,10 +445,10 @@ width: 86%;
 
 
 .blueBoxCPS { 
-  width: 100%;
+  width: 98%;
     background-color: #1d70b8;
     color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding: 0 20px 20px 20px;
     box-sizing: border-box;
 
@@ -449,24 +456,19 @@ width: 86%;
 
  @media (max-width: 1255px) {
 .blueBoxCPS { 
-  width: 100%;
-    background-color: #1d70b8;
-    color: #fff;
-    margin-bottom: 15px;
     padding: 0 15px 15px 15px;
-    box-sizing: border-box;
 }
 }
 
-
+/*#casefileV2 .blueBoxCPS {
+  width: 98%;
+}*/
 
 .documentSelected {
   font-weight: 700;
 }
 
-.chargingDocs{
-  padding-left: 15px;
-}
+
 
 .documentFlex {
   display:inline-flex;   align-items: baseline;  gap: 15px;
