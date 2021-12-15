@@ -12,7 +12,7 @@
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full" style="margin-bottom:25px">
                                 <!--   <h1 class="govuk-heading-m" style="">Find a case</h1> -->
-                                <form method="get" action="#">
+                               <!--  <form method="get" action="#"> -->
                                     <div class="govuk-form-group" style="margin-bottom: 0px;">
                                         <label class="govuk-label   govuk-label--s" for="partialCost">
                                             Search McLove, 45AA209820
@@ -20,7 +20,7 @@
                                         <input class="govuk-input govuk-!-width-two-thirds" id="searchURN" name="searchURN" type="text" aria-describedby="search-result" style="border-right:0" value="assault" />
                                         <div class="bba" style="margin-left:-4px"><button class="search" type="submit"> </button>
                                         </div>
-                                </form>
+                             <!--    </form> -->
                             </div>
                         </div>
                         <!-- <div class="govuk-grid-row"> -->
@@ -55,20 +55,24 @@
                                                 text: "MG3/MG3A (1)"
                                                 },
                                                 {
-                                                value: "not-yet-charged",
-                                                text: "MG11 (1)"
+                                                value: "mg11",
+                                                text: "MG11 (4)"
                                                 },
                                                 {
-                                                value: "not-yet-charged",
-                                                text: "MG5 (0)"
+                                                value: "mg00",
+                                                text: "MG00 (1)"
                                                 },
                                                 {
-                                                value: "not-yet-charged",
-                                                text: "MG6 (0)"
+                                                value: "pre-cons",
+                                                text: "Pre cons (1)"
+                                                },
+                                                   {
+                                                value: "DA",
+                                                text: "DA Checklist (1)"
                                                 },
                                                 {
-                                                value: "charged",
-                                                text: "Other (1)"
+                                                value: "storm-log",
+                                                text: "Storm log (1)"
                                                 }
                                                 ]
                                                 }) }}
@@ -79,14 +83,22 @@
                             </div>
                         </div>
                         <div class="govuk-grid-column-three-quarters">
-                            <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">8</span> results in <span style="font-weight:700">3</span> documents that match "assault"</p>
+                            <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">27</span> results in <span style="font-weight:700">9</span> documents that match "assault"</p>
                             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                             <div class="column details" style=" float:left">
                                 <div id="resultsOne">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
                                             <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">MCLOVEMG3.pdf
-                                            </h2>
+                                            <span>   
+                                                <div class="flex-support-meta">
+                                       <!--      <div class=" " style="margin-right:30px;">
+                                                <p style="margin-bottom:0">Uploaded:</p>
+                                            </div> -->
+                                            <div class="WideMobile175" style=" ">
+                                                <p style="margin-bottom:0">2 June 2020</p>
+                                            </div>
+                                        </div></span></h2>
                                         </div>
                                         <div class="twoFlexItem fixRight  " style="">
                                             <button class="govuk-button govuk-button--secondary searchShortlist" data-module="govuk-button" style="margin-bottom:0">
@@ -95,35 +107,36 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="flex-support-meta">
+                                <!--         <div class="flex-support-meta">
                                             <div class=" " style="margin-right:30px;">
                                                 <p style="margin-bottom:0">Uploaded:</p>
                                             </div>
                                             <div class="WideMobile175" style=" ">
                                                 <p style="margin-bottom:0">2 June 2020</p>
                                             </div>
-                                        </div>
-                                        <div class="flex-support-meta">
+                                        </div> -->
+                <!--                         <div class="flex-support-meta">
                                             <div class=" " style="margin-right:49px; ">
                                                 <p style="margin-bottom:0">Results:</p>
                                             </div>
                                             <div class="WideMobile175" style="  ">
                                                 <p style="margin-bottom:10px">3 results</p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="govuk-inset-text cpsInsetChange">
                                             <p class="searchResultsHighlights" style="">...Proposed charges:COMMON <span class="searchFound">ASSAULT</span>, DRIVE OPL...</p>
                                         </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">..Offences: Common <span class="searchFound">Assault</span>, DRIVE OPL...</p>
-                                        </div>
+                                  
                                         <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 1 more
+                                                    View 2 more
                                                 </span>
                                             </summary>
                                             <div class="">
+                                                      <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">..Offences: Common <span class="searchFound">Assault</span>, DRIVE OPL...</p>
+                                        </div>
                                                 <div class="govuk-inset-text cpsInsetChange">
                                                     <p class="searchResultsHighlights" style=""> There appears to be enough evidence for the offence of common <span class="searchFound">assault</span> and an offence of driving whilst over the proscribed limit...</p>
                                                 </div>
@@ -136,6 +149,18 @@
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
                                             <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">MG00
+                                                <span>
+                                                                <div class="flex-support-meta">
+                                     <!--    <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div>
+
+
+                                                </span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -144,22 +169,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                        <!--             <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                  <!--                   <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">1 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -199,7 +224,14 @@
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
                                             <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">Pre_CONS_D
-                                            </h2>
+                                            <span>    <div class="flex-support-meta">
+                                    <!--     <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span></h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
                                             <button class="govuk-button govuk-button--secondary searchShortlist" data-module="govuk-button" style="margin-bottom:0">
@@ -207,22 +239,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                                <!--     <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                       <!--              <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">2 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -231,30 +263,19 @@
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...07/04/17 COMMON <span class="searchFound">ASSAULT</span> (PLEA GUILTY). BATLEY AND DEWSBURY MAGISTRATES CONVICTION OF 06/04/17....</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...ARRESTED ON 28/08/19 FOR THE FOLLOWING OFFENCE(S) 1  <span class="searchFound">ASSAULT</span> OCCASIONING ACTUAL BODILY HARM ON 28/08/19 OFFENCES AGAINST THE PERSON ACT 1861 s.47...</p>
-                                        </div>
-                                    <!-- <details class="govuk-details" data-module="govuk-details">
+                                    
+                                    <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 4 more
+                                                    View 1 more
                                                 </span>
                                             </summary>
                                             <div class="">
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
-                                                </div>
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
-                                                </div>
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
-                                                </div>
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">..victim’s views and IDAA/specialist support service views) Referred <span class="searchFound">Restraining</span> - does the victim want an RO and if so with that terms? Victim Personal Statement requested</p>
-                                                </div>
+                                                    <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...ARRESTED ON 28/08/19 FOR THE FOLLOWING OFFENCE(S) 1  <span class="searchFound">ASSAULT</span> OCCASIONING ACTUAL BODILY HARM ON 28/08/19 OFFENCES AGAINST THE PERSON ACT 1861 s.47...</p>
+                                        </div>
                                             </div>
-                                        </details> -->
+                                        </details>
                                     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                                 </div>
 
@@ -262,7 +283,14 @@
                                 <div id="resultsFour">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">Shelagh_McLove_VPS_mg11
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">Shelagh_McLove_VPS_mg11 <span>    <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -271,40 +299,21 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
-                                        <div class=" " style="margin-right:30px;">
-                                            <p style="margin-bottom:0">Uploaded:</p>
-                                        </div>
-                                        <div class="WideMobile175" style=" ">
-                                            <p style="margin-bottom:0">5 June 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex-support-meta">
-                                        <div class=" " style="margin-right:49px; ">
-                                            <p style="margin-bottom:0">Results:</p>
-                                        </div>
-                                        <div class="WideMobile175" style=" ">
-                                            <p style="margin-bottom:0">3 results</p>
-                                        </div>
-                                    </div>
-                                    <!--     <div class="flex-support-meta">
-                                    <div class="WideMobile175" style="  ">
-                                        <p style="margin-bottom:10px">6 results:</p>
-                                    </div>
-                                </div> -->
+                       
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...I am writing this Victim Personal Statement (VPS) in relation to an <span class="searchFound">assault</span> on my by my partner Eoin McLove on the 1st June 2020....</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...This was one of several <span class="searchFound">assault</span>s Eoin has subjected me to. As a result of my relation with Eoin and the abuse he has subjected me to I have lost custody of my only child....</p>
-                                        </div>
+                                     
                                     <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 1 more
+                                                    View 2 more
                                                 </span>
                                             </summary>
                                             <div class="">
+                                                   <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...This was one of several <span class="searchFound">assault</span>s Eoin has subjected me to. As a result of my relation with Eoin and the abuse he has subjected me to I have lost custody of my only child....</p>
+                                        </div>
                                                 <div class="govuk-inset-text cpsInsetChange">
                                                     <p class="searchResultsHighlights" style="">...I decided on the 4th June to attend the hospital as a result of this <span class="searchFound">assault</span>. The hospital as a result of my description decided to x-ray me...</p>
                                                 </div>
@@ -317,7 +326,14 @@
                                 <div id="resultsFive">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_BLAYNEE_2034_1_JUNE_mg11
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_BLAYNEE_2034_1_JUNE_mg11 <span>     <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -326,22 +342,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                               <!--      <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                        <!--             <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">2 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -350,10 +366,8 @@
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...I was further informed via radio that EOIN MCLOVE was also wanted for an <span class="searchFound">assault</span> on Shelagh MCLOVE and as such...</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...arrested EOIN MCLOVE for a s47 <span class="searchFound">Assault</span> Occasioning Actual Bodily harm, MCLOVE was informed that his arrest was necessary to conduct a prompt...</p>
-                                        </div>
-                               <!--      <details class="govuk-details" data-module="govuk-details">
+                                       
+                                    <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
                                                     View 1 more
@@ -361,18 +375,25 @@
                                             </summary>
                                             <div class="">
                                                 <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">...I decided on the 4th June to attend the hospital as a result of this <span class="searchFound">assault</span>. The hospital as a result of my description decided to x-ray me...</p>
-                                                </div>
+                                            <p class="searchResultsHighlights" style="">...arrested EOIN MCLOVE for a s47 <span class="searchFound">Assault</span> Occasioning Actual Bodily harm, MCLOVE was informed that his arrest was necessary to conduct a prompt...</p>
+                                        </div>
                                     
                                             </div>
-                                        </details> -->
+                                        </details>
                                     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                                 </div>
 
                                 <div id="resultsSix">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_JONES_1989_1_JUNE_mg11
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_JONES_1989_1_JUNE_mg11<span>     <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -381,22 +402,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                           <!--          <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                    <!--                 <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">2 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -405,22 +426,20 @@
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...SHELAGH MCLOVE detailed to me that she had been <span class="searchFound">assault</span>ed by her partner Eoin MCLOVE who had left the scene in her Nissan car. Ms...</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...EOIN MCLOVE had returned after 9pm and an argument had ensued which resulted in the  <span class="searchFound">assault</span>. Eoin MCLOVE was described...</p>
-                                        </div>
-                               <!--      <details class="govuk-details" data-module="govuk-details">
+                                     
+                                    <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
                                                     View 1 more
                                                 </span>
                                             </summary>
                                             <div class="">
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">...I decided on the 4th June to attend the hospital as a result of this <span class="searchFound">assault</span>. The hospital as a result of my description decided to x-ray me...</p>
-                                                </div>
+                                                  <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...EOIN MCLOVE had returned after 9pm and an argument had ensued which resulted in the  <span class="searchFound">assault</span>. Eoin MCLOVE was described...</p>
+                                        </div>
                                     
                                             </div>
-                                        </details> -->
+                                        </details>
                                     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                                 </div>
 
@@ -428,7 +447,14 @@
                                 <div id="resultsSeven">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_Shelagh_McLove_MG11
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">stmt_Shelagh_McLove_MG11<span>     <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -437,22 +463,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                            <!--         <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                          <!--           <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">9 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -461,16 +487,17 @@
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...hoped that Eoin would calm his drinking but unfortunately things got worse and that is when he first <span class="searchFound">assault</span>ed me. I was...</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...at the time. Around a month later he <span class="searchFound">assault</span>ed me again hitting me to the head and the...</p>
-                                        </div>
+                                      
                                     <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 7 more
+                                                    View 8 more
                                                 </span>
                                             </summary>
                                             <div class="">
+                                                  <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...at the time. Around a month later he <span class="searchFound">assault</span>ed me again hitting me to the head and the...</p>
+                                        </div>
                                                 <div class="govuk-inset-text cpsInsetChange">
                                                     <p class="searchResultsHighlights" style="">...excuses to stop my mum visiting. Around April 17 Eoin <span class="searchFound">assault</span>ed me again, Eoin returned home...</p>
                                                 </div>
@@ -501,7 +528,14 @@
                      <div id="resultsEight">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px; max-width:400px">UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px; max-width:400px">UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE <span>     <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -510,22 +544,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                            <!--         <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                       <!--              <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">3 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -534,16 +568,17 @@
                                     <div class="govuk-inset-text cpsInsetChange">
                                         <p class="searchResultsHighlights" style="">...Disposition Codes Common <span class="searchFound">assault</span>...</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...aCALLER HAS BEEN <span class="searchFound">ASSAULT</span>ED BY PARTNER WHO HAS LEFT THE SCENE IN HER CAR IN DRINK...</p>
-                                        </div>
+                                      
                                     <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 7 more
+                                                    View 2 more
                                                 </span>
                                             </summary>
                                             <div class="">
+                                                  <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...aCALLER HAS BEEN <span class="searchFound">ASSAULT</span>ED BY PARTNER WHO HAS LEFT THE SCENE IN HER CAR IN DRINK...</p>
+                                        </div>
                                                 <div class="govuk-inset-text cpsInsetChange">
                                                     <p class="searchResultsHighlights" style="">...THREAT: 2 - <span class="searchFound">ASSAULT</span>ED AND VERBAL THREATS...</p>
                                                 </div>
@@ -556,7 +591,14 @@
                                          <div id="resultsNine">
                                     <div class="twoFlexContainer">
                                         <div class="twoFlexItem" style="padding-left:0">
-                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">UNUSED_6_DA_CHECKLIST_MCLOVE
+                                            <h2 class="govuk-heading-m results-header" style="margin-bottom:5px">UNUSED_6_DA_CHECKLIST_MCLOVE <span>     <div class="flex-support-meta">
+                                      <!--   <div class=" " style="margin-right:30px;">
+                                            <p style="margin-bottom:0">Uploaded:</p>
+                                        </div> -->
+                                        <div class="WideMobile175" style=" ">
+                                            <p style="margin-bottom:0">5 June 2020</p>
+                                        </div>
+                                    </div></span>
                                             </h2>
                                         </div>
                                         <div class="twoFlexItem fixRight" style="">
@@ -565,22 +607,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="flex-support-meta">
+                           <!--          <div class="flex-support-meta">
                                         <div class=" " style="margin-right:30px;">
                                             <p style="margin-bottom:0">Uploaded:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">5 June 2020</p>
                                         </div>
-                                    </div>
-                                    <div class="flex-support-meta">
+                                    </div> -->
+                        <!--             <div class="flex-support-meta">
                                         <div class=" " style="margin-right:49px; ">
                                             <p style="margin-bottom:0">Results:</p>
                                         </div>
                                         <div class="WideMobile175" style=" ">
                                             <p style="margin-bottom:0">2 results</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--     <div class="flex-support-meta">
                                     <div class="WideMobile175" style="  ">
                                         <p style="margin-bottom:10px">6 results:</p>
@@ -590,22 +632,20 @@
                                         <p class="searchResultsHighlights" style="">...Several previous incidents
 D had just been released from custody due to previous <span class="searchFound">assault</span> on C....</p>
                                     </div>
-                                        <div class="govuk-inset-text cpsInsetChange">
-                                            <p class="searchResultsHighlights" style="">...no contact with that child due to social services intervention and the family court.
-C has indicated that she wishes to break from D to avoid future <span class="searchFound">assault</span>s...</p>
-                                        </div>
-                           <!--          <details class="govuk-details" data-module="govuk-details">
+                                     
+                                    <details class="govuk-details" data-module="govuk-details">
                                             <summary class="govuk-details__summary">
                                                 <span class="govuk-details__summary-text">
-                                                    View 7 more
+                                                    View 1 more
                                                 </span>
                                             </summary>
                                             <div class="">
-                                                <div class="govuk-inset-text cpsInsetChange">
-                                                    <p class="searchResultsHighlights" style="">...THREAT: 2 - <span class="searchFound">ASSAULT</span>ED AND VERBAL THREATS...</p>
-                                                </div>
+                                                  <div class="govuk-inset-text cpsInsetChange">
+                                            <p class="searchResultsHighlights" style="">...no contact with that child due to social services intervention and the family court.
+C has indicated that she wishes to break from D to avoid future <span class="searchFound">assault</span>s...</p>
+                                        </div>
                                             </div>
-                                        </details> -->
+                                        </details>
                                     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                                 </div>
 
