@@ -51,7 +51,7 @@ Accordion.prototype.setup = function() {
   accordion_controls.setAttribute('class', 'accordion-controls')
 
   var open_or_close_all_button = document.createElement('button')
-  open_or_close_all_button.textContent = 'Open all'
+  open_or_close_all_button.textContent = 'Open all folders'
   open_or_close_all_button.setAttribute('class', 'accordion-expand-all')
   open_or_close_all_button.setAttribute('aria-expanded', 'false')
 
@@ -81,7 +81,7 @@ Accordion.prototype.setOpenCloseButtonExpanded = function(expanded) {
 
   var open_or_close_all_button = this.element.querySelector('.accordion-expand-all')
 
-  var new_button_text = expanded ? "Close all" : "Open all"
+  var new_button_text = expanded ? "Close all folders" : "Open all folders"
   open_or_close_all_button.setAttribute('aria-expanded', expanded)
   open_or_close_all_button.textContent = new_button_text
 

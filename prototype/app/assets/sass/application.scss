@@ -202,7 +202,8 @@ cursor: pointer;
 .cpsInsetChange {
   margin-top: 15px;
   
- border-left: 5px solid $govuk-border-colour;
+ border-left: 2px solid $govuk-border-colour;
+/* border: 2px solid $govuk-brand-colour;*/
 }
 
 
@@ -448,7 +449,7 @@ width: 86%;
   width: 98%;
     background-color: #1d70b8;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 0 20px 20px 20px;
     box-sizing: border-box;
 
@@ -474,6 +475,13 @@ width: 86%;
   display:inline-flex;   align-items: baseline;  gap: 15px;
   padding-top: 20px;
     border-bottom: 1px solid $govuk-border-colour; 
+}
+
+.documentFlexTwo {
+  display:flex;   align-items: baseline;  gap: 15px;
+  padding-top: 20px;
+    border-bottom: 1px solid $govuk-border-colour; 
+
 }
 
 .searchFlex {
