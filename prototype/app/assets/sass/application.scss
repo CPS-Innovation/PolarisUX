@@ -214,6 +214,15 @@ cursor: pointer;
 /* border: 2px solid $govuk-brand-colour;*/
 }
 
+.innerPanel .cpsInsetChange {  
+ border: 1px solid $govuk-border-colour;
+/* border: 2px solid $govuk-brand-colour;*/
+}
+
+.innerPanel .govuk-inset-text {
+  margin-bottom: 15px;
+}
+
 
 .searchResultsHighlights {
  /* margin-bottom:10px;*/
