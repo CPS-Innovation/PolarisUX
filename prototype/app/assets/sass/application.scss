@@ -78,6 +78,10 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.innerPanel .govuk-details {
+  margin-bottom:0;
+}
+
 
 .dateWidthCPS {
   min-width: 100px;

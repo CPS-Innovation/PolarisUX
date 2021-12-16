@@ -27,10 +27,10 @@
                         <div class="govuk-grid-column-one-quarter">
                             <!-- desktop version of the filters -->
                             <div class="notOnMobile">
-                                <div class="filter-form filtering " style="border: 1px solid #dee0e2;">
+                                <div class="filter-form filtering " style="">
                                     <div id="finder-frontend" class="inner-block">
-                                        <div style="border-bottom: 1px solid #dee0e2;">
-                                            <H3 class="govuk-heading-m" style="margin: 10px 0 10px 10px;">Filter </H3>
+                                        <div style="border-bottom: 1px solid #b1b4b6;">
+                                            <H3 class="govuk-heading-m" style="margin: 0px 0 20px 10px;">Filter </H3>
                                         </div>
                                         <div class="filter text-filter">
                                             <div class="govuk-form-group" style="margin-bottom:15px">
@@ -83,7 +83,28 @@
                             </div>
                         </div>
                         <div class="govuk-grid-column-three-quarters">
+
+                          <div style="display:flex">  
                             <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">27</span> results in <span style="font-weight:700">9</span> documents that match "assault"</p>
+
+                        <div class="govuk-form-group" style="margin-left: auto; margin-bottom:0">
+                      <!--       <label class="govuk-label   govuk-label--s" for="partialCost">
+                                Sort results
+                            </label> -->
+                            <!--     <span id="reference-hint" class="govuk-hint">
+                                            Can include job title, employer or reference number
+                                        </span> -->
+                            <select class="govuk-select" id="sort" name="sort" style="margin-bottom: 0px; ">
+                                <option value="Best match" selected>Date added</option>
+                                <option value="Closing date">Results per document</option>
+                             <!--    <option value="Distance">Results A-Z</option> -->
+                               <!--  <option value="Recently added">Recently added</option> -->
+                            </select></div>
+                        </div>
+
+
+
+
                             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                             <div class="column details" style=" float:left">
                                 <div id="resultsOne">
