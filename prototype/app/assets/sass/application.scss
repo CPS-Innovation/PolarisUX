@@ -79,6 +79,10 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 /* CPS only styles*/
 
 
+.dateWidthCPS {
+  min-width: 100px;
+}
+
 .govuk-tabs {
   margin-top: 0 !important;
 }
@@ -1063,9 +1067,7 @@ gem-c-pagination__link-text {
     padding-right: 20px;
     padding-bottom: 10px;
     color: $govuk-text-colour;
-    @include govuk-media-query($from: desktop) {
-      margin: 0;
-    }
+
   }
 
   .das-cookie-banner__service-name {
