@@ -397,13 +397,27 @@ max-width:90%;
  .makeScrollCPS {
   overflow-x: scroll;
 
-    height: 70vh;
+    height: 68vh;
  /*   height: calc(100% - 10px);*/
+}
+
+@media  (max-height: 600px) {
+   .makeScrollCPS {
+    height: 65vh;
+ /*   height: calc(100% - 10px);*/
+}
 }
 
 @media  (max-height: 550px) {
    .makeScrollCPS {
     height: 62vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+@media  (max-height: 500px) {
+   .makeScrollCPS {
+    height: 58vh;
  /*   height: calc(100% - 10px);*/
 }
 }
@@ -1067,7 +1081,9 @@ gem-c-pagination__link-text {
     padding-right: 20px;
     padding-bottom: 10px;
     color: $govuk-text-colour;
-
+    @include govuk-media-query($from: desktop) {
+      margin: 0;
+    }
   }
 
   .das-cookie-banner__service-name {
