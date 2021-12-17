@@ -78,6 +78,18 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.mb5{
+  margin-bottom: 5px;
+}
+
+.govuk-tabs__tab {
+  font-size: 16px;
+}
+
+.govuk-checkboxes__label {
+  font-size: 16px;
+}
+
 .innerPanel .govuk-details {
   margin-bottom:0;
 }
@@ -210,7 +222,7 @@ cursor: pointer;
 .cpsInsetChange {
   margin-top: 15px;
   
- border-left: 2px solid $govuk-border-colour;
+ border-left: 4px solid $govuk-border-colour;
 /* border: 2px solid $govuk-brand-colour;*/
 }
 
@@ -219,10 +231,35 @@ cursor: pointer;
 /* border: 2px solid $govuk-brand-colour;*/
 }
 
-.innerPanel .govuk-inset-text {
-  margin-bottom: 15px;
+.simpleModelTwo .cpsInsetChange,
+.tabSearchCPS .cpsInsetChange  {  
+ border-left: 4px solid $govuk-border-colour;
+ margin-top: 0;
+/* margin-left: -4px;*/
+/* margin-bottom: 5px;*/
 }
 
+
+.simpleModelTwo .govuk-select,
+.tabSearchCPS .govuk-select {
+  font-size: 1rem;
+}
+
+.simpleModelTwo .govuk-details,
+.tabSearchCPS .govuk-details {
+  font-size: 1rem;
+}
+
+.simpleModelTwo  .govuk-inset-text,
+.tabSearchCPS  .govuk-inset-text{
+  margin-bottom: 15px;
+  margin-top: 5px;
+  padding: 5px 15px 5px 15px;
+}
+
+.innerPanel .govuk-inset-text,{
+  margin-bottom: 15px;
+}
 
 .searchResultsHighlights {
  /* margin-bottom:10px;*/
@@ -3640,9 +3677,26 @@ ul.hidden-links li:first-child  {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 8px;
-  height: 6px; 
+  width: 12px;
+  height: 12px; 
 }
+
+
+@media (max-width: 1400px) {
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px; 
+}
+ }
+
+@media (max-width: 1250px) {
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px; 
+}
+ }
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
