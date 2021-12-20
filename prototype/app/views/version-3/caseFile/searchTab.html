@@ -8,20 +8,20 @@
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
 <!-- <script src="/public/javascripts/cookie.js"></script> -->
-<script>
+<!-- <script>
     $( document ).ready(function() {
 var appCount=0
 var proCount=0
 $(".searchShortlist").click(function (e) {
     e.preventDefault();
     console.log("searchShortlist button clicked: " + appCount);
-    //appCount++;
+  
 
     if ($(".shortlistText", this).hasClass("notSearchShortlist")) {
         console.log("isnt shortlisted");
         appCount++;
         console.log(appCount);
-   //     Cookies.set("appCount", appCount);
+
         $(".shortlistText" , this).removeClass("notSearchShortlist").addClass("searchShortlist");
         $(".shortlistText" , this).text("Remove this document");
         $("#bannerCount span").text(Number(proCount) + Number(appCount));
@@ -31,8 +31,7 @@ $(".searchShortlist").click(function (e) {
         $(".shortlistText", this).removeClass("searchShortlist").addClass("notSearchShortlist");
         $(".shortlistText", this).text("Select document");
         appCount--;
- //       Cookies.set("appCount", appCount);
-        // console.log(appCount);
+
         $("#bannerCount span").text(Number(proCount) + Number(appCount));
     }
 
@@ -42,12 +41,9 @@ $(".searchShortlist").click(function (e) {
     } else {
          $('.openSelect').prop("disabled", true); //
     }
-
-    //.toggleClass(".fa-star-o").toggleClass(".fa-star");
-
     })
 });
-</script>
+</script> -->
 <script>
     if (
     'addEventListener' in document &&
@@ -61,54 +57,12 @@ $(".searchShortlist").click(function (e) {
     })
 }
 </script>
-<script>
-    function openModal() {
-    $(searchModal).removeClass("rj-dont-display");
-}
-
-   function closeModal() {
-    $(searchModal).addClass("rj-dont-display");
-}
-
-
-
-
-
-</script>
 <style>
     .accordion-controls {
     margin-top: 20px;
 }
 </style>
-<!-- <div class="govuk-width-container">
- 
-    <a href="javascript:history.back()" class="govuk-back-link">Back to URN search</a>
-    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main"> -->
-<!-- <div class="govuk-grid-row" id="caseFileV2">
-    <div class="govuk-grid-column-one-third">
-       
-        <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0"> McLove, Eoin
-            <span class="govuk-caption-m">45AA209820/1</span>
-        </h1>
-    </div>
-    <div class="govuk-grid-column-two-thirds" style="">
-      
-        <div class="govuk-form-group" style="margin-bottom: 0px;">
-    
-            <div style="display:flex">
-                <input class="govuk-input govuk-!-width-one-half" style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all 45AA209820, McLove documents" /> 
-                <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
-            </div>
-        </div>
-        </fieldset>
-       
-    </div>
-</div> -->
-<!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="rj-headings-borderCPS"></div>
-    </div>
-</div> -->
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="margin-bottom:20px">
@@ -130,9 +84,10 @@ $(".searchShortlist").click(function (e) {
                             </li> -->
                     </ul>
                 </div>
+                  <label class="govuk-label--s govuk-label" for="" style="">Search</label>
                 <div style="display:flex; width:98%; margin-bottom:25px">
-                    <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all case files" />
-                    <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
+                    <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
+                    <div class="bba"><button class="search" type="submit" onCLick="openSearchTab()"> </button></div>
                 </div>
                 <div class="accordion">
                     <div class="accordion-section">
@@ -141,46 +96,7 @@ $(".searchShortlist").click(function (e) {
                         </div>
                         <div class="accordion-section-body">
                             <div class="cpsDocs chargingDocs">
-                                <!--  <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName" style="">
-                                        <p class="govuk-body-s" style="font-weight:700"></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName " style="">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MCLOVEMG3.pdf">MCLOVE MG3</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">2 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG05MCLOVE.pdf">MG05 MCLOVE</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">2 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG06_10june.pdf">MG06 10 june</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">10 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG06_3June.pdf">MG06 3 June</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">3 June 2020</p>
-                                    </div>
-                                </div> -->
+                               
                                 <table class="govuk-table ">
                                     <thead>
                                         <tr class="govuk-table__row">
@@ -204,15 +120,7 @@ $(".searchShortlist").click(function (e) {
                                         <tr class="govuk-table__row">
                                             <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG06_3June.pdf">MG06 3 June</a></td>
                                             <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">03 June 2020</td>
-                                        </tr>
-                                        <!--     <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS" scope="row"><a href="">stmt Lucy Doyle MG11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS" scope="row"><a href="">stmt Shelagh McLove MG11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr> -->
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -224,63 +132,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Statements</h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--  <h2 class="govuk-heading-m topM25">Statements </h2> -->
-                            <!--                <div class="documentFlexTwo topP0" style="">
-                                <div class="caseFileName" style="">
-                                    <p class="govuk-body-s" style="font-weight:700"></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; ">Date added</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName " style="">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf">MG11 Shelagh MCLOVE retraction</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">10 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="Shelagh_McLove_VPS_mg11.pdf">Shelagh McLove VPS mg11</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS">6 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="stmt_BLAYNEE_2034_1_JUNE_mg11.pdf">stmt BLAYNEE 2034 1 JUNE mg11</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">1 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="stmt_JONES_1989_1_JUNE_mg11.pdf">stmt JONES 1989 1 JUNE mg11</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">1 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="stmt_Lucy_Doyle_MG11.pdf">stmt Lucy Doyle MG11</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">1 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="stmt_Shelagh_McLove_MG11.pdf">stmt Shelagh McLove MG11</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">1 June 2020</p>
-                                </div>
-                            </div> -->
+                            
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -324,40 +176,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Exhibits </h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--    <h2 class="govuk-heading-m" style="">Exhibited material</h2> -->
-                            <!--        <div class="documentFlexTwo" style="">
-                        <div class="caseFileName" style="">
-                            <p class="govuk-body-s" style="font-weight:700"></p>
-                        </div>
-                        <div class="caseFileType" style="">
-                            <p class="govuk-body-s" style="font-weight:700">Type</p>
-                        </div>
-                        <div class="caseFileDate">
-                            <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                        </div>
-                    </div>
-                    <div class="documentFlexTwo" style="">
-                        <div class="caseFileName " style="">
-                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG12.pdf">MCLOVE MG12</a></p>
-                        </div>
-                        <div class="caseFileType">
-                            <p class="govuk-body-s">pdf</p>
-                        </div>
-                        <div class="caseFileDate">
-                            <p class="govuk-body-s">12 June 2020</p>
-                        </div>
-                    </div>
-                    <div class="documentFlexTwo" style="">
-                        <div class="caseFileName " style="">
-                            <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG00.pdf">MCLOVE MG00</a></p>
-                        </div>
-                        <div class="caseFileType">
-                            <p class="govuk-body-s">pdf</p>
-                        </div>
-                        <div class="caseFileDate">
-                            <p class="govuk-body-s">12 June 2020</p>
-                        </div>
-                    </div> -->
+                           
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -386,23 +205,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Forensics </h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--  <h2 class="govuk-heading-m topM25">Forensics </h2> -->
-                            <!-- <div class="documentFlexTwo topP0" style="">
-                                <div class="caseFileName" style="">
-                                    <p class="govuk-body-s" style="font-weight:700"></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s"></p>
-                                </div>
-                            </div> -->
+                            
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -425,55 +228,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Unused materials </h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--  <h2 class="govuk-heading-m topM25">Unused materials </h2> -->
-                            <!--        <div class="documentFlexTwo topP0" style="">
-                                <div class="caseFileName" style="">
-                                    <p class="govuk-body-s" style="font-weight:700"></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE.pdf">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">1 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="MG20_5_JUNE.pdf" data-doc="MG20_5_JUNE.pdf">MG20_5_JUNE</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">6 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="MG20_10_JUNE.pdf" data-doc="MG20_10_JUNE.pdf">MG20_10_JUNE</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">11 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS" style=" "><a href="" data-doc="SDC_items_to_be_Disclosed_MCLOVE.pdf">SDC_items_to_be_Disclosed_MCLOVE</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">5 June 2020</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="SDC_items_to_be_Disclosed_MCLOVE.pdf">UNUSED_6_DA_CHECKLIST_MCLOVE</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s">5 June 2020</p>
-                                </div>
-                            </div> -->
+                            
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -512,22 +267,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Defendant</h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--     <div class="documentFlexTwo topP0" style="">
-                                <div class="caseFileName" style="">
-                                    <p class="govuk-body-s" style="font-weight:700"></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-swrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName " style="">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="PRE_CONS_D.pdf">PRE CONS D</a></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS">2 June 2020</p>
-                                </div>
-                            </div> -->
+                    
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -550,23 +290,7 @@ $(".searchShortlist").click(function (e) {
                             <h2 class="govuk-heading-s">Court preperation </h2>
                         </div>
                         <div class="accordion-section-body">
-                            <!--   <h2 class="govuk-heading-m topM25">Court preperation </h2> -->
-                            <!--     <div class="documentFlexTwo topP0" style="">
-                                <div class="caseFileName" style="">
-                                    <p class="govuk-body-s" style="font-weight:700"></p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                </div>
-                            </div>
-                            <div class="documentFlexTwo" style="">
-                                <div class="caseFileName">
-                                    <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                                </div>
-                                <div class="caseFileDate">
-                                    <p class="govuk-body-s"></p>
-                                </div>
-                            </div> -->
+           
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -584,95 +308,7 @@ $(".searchShortlist").click(function (e) {
                             </table>
                         </div>
                     </div>
-                    <!-- end of accordion -->
-                    <!--   <div class="accordion-section">
-                                                        <div class="accordion-section-header">
-                                                            <h2 class="govuk-heading-m">Defendent<br />documents</h2>
-                                                        </div>
-                                                        <div class="accordion-section-body"> -->
-                    <!--                                  <h2 class="govuk-heading-m topM25">Offence specific</h2>
-                        <div class="documentFlexTwo topP0" style="">
-                            <div class="caseFileName" style="">
-                                <p class="govuk-body-s" style="font-weight:700"></p>
-                            </div>
-                            <div class="caseFileDate">
-                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px; padding-top:0">Date added</p>
-                            </div>
-                        </div>
-                        <div class="documentFlexTwo" style="">
-                            <div class="caseFileName " style="">
-                                <p class="govuk-body-s wrapLongFilenamesCPS">No documents</p>
-                            </div>
-                            <div class="caseFileDate">
-                                <p class="govuk-body-s"></p>
-                            </div>
-                        </div> -->
-                    <!--         </div>
-                            </div> -->
-                    <!--  <div class="accordion-section">
-                                <div class="accordion-section-header">
-                                    <h2 class="govuk-heading-m">Statements </h2>
-                                </div>
-                                <div class="accordion-section-body"> -->
-                    <!-- <table class="govuk-table ">
-                                        <thead>
-                                            <tr class="govuk-table__row">
-                                                <th scope="col" class="govuk-table__header " style="font-weight:700"></th>
-                                                <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:700">Date added</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">MG11 Shelagh MCLOVE retraction</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row">10 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">Shelagh McLove VPS mg11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row">06 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">stmt BLAYNEE 2034 1 JUNE mg11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">stmt JONES 1989 1 JUNE mg11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">stmt Lucy Doyle MG11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr>
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s" scope="row"><a href="">stmt Shelagh McLove MG11</a></td>
-                                                <td class="govuk-table__cell govuk-body-s" scope="row" style="">01 June 2020</td>
-                                            </tr>
-                                        </tbody>
-                                    </table> -->
-                    <!--  <div class="accordion-section">
-                                <div class="accordion-section-header">
-                                    <h2 class="govuk-heading-m">Material to be<br /> classified </h2>
-                                </div>
-                                <div class="accordion-section-body"> -->
-                    <!--     <h2 class="govuk-heading-m topM25">Material to be<br />classified </h2>
-                        <div class="documentFlexTwo topP0" style="">
-                            <div class="caseFileName" style="">
-                                <p class="govuk-body-s" style="font-weight:700"></p>
-                            </div>
-                            <div class="caseFileDate">
-                                <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                            </div>
-                        </div>
-                        <div class="documentFlexTwo" style="">
-                            <div class="caseFileName">
-                                <p class="govuk-body-s">No documents</p>
-                            </div>
-                            <div class="caseFileDate">
-                                <p class="govuk-body-s"></p>
-                            </div>
-                        </div> -->
-                    <!-- </div> -->
-                    <!--       </div>
-                        </div> -->
+                    
                     <!-- end of all accordion -->
                 </div>
             </div>
@@ -682,10 +318,13 @@ $(".searchShortlist").click(function (e) {
     <div class="govuk-grid-column-three-quarters">
         <div class="file1 weirdFix1400">
             <div class="govuk-tabs" data-module="govuk-tabs">
-                 {% include "includes/cps/v3/search-banner-tab.html" %}
+                {% include "includes/cps/v3/search-banner-tab-heading.html" %}
+                 
                 <ul class="govuk-tabs__list">
+                    {% include "includes/cps/v3/search-banner-tab.html" %}
 
                 </ul>
+                 
                 <h2 class="govuk-heading-m" style="margin:220px 0 0 0; text-align:center;">View your documents </h2>
                 <p style="margin:10px 0 0 0; text-align:center;">Search or choose a file to start reviewing documents</p>
             </div>
@@ -796,6 +435,9 @@ $(document).ready(function() {
             selectedTab[0].scrollIntoView();
         }
     }
+
+
+
 
 
 })

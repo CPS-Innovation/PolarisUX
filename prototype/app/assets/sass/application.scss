@@ -189,6 +189,37 @@ margin-right: 30px;
   overflow-x: scroll;
 }
 
+@media  (min-height: 650px) {
+.searchTabScroll {
+  height: 600px;
+}
+}
+
+@media  (min-height: 750px) {
+.searchTabScroll {
+  height: 700px;
+}
+}
+
+@media  (min-height: 850px) {
+.searchTabScroll {
+  height: 800px;
+}
+}
+
+@media  (min-height: 950px) {
+.searchTabScroll {
+  height: 900px;
+}
+}
+
+@media  (min-height: 1150px) {
+.searchTabScroll {
+  height: 1100px;
+}
+}
+
+
 .searchTab {
   padding-left: 15px;
   padding-right: 15px;
@@ -327,36 +358,48 @@ max-width:90%;
   height: 550px;
 }
 
-@media  (min-height: 900px) {
+@media  (min-height: 700px) {
 .embedSize {
   height: 650px;
 }
 }
 
-@media  (min-height: 1000px) {
+@media  (min-height: 800px) {
 .embedSize {
   height: 750px;
+}
+}
+
+@media  (min-height: 900px) {
+.embedSize {
+  height: 850px;
+}
+}
+
+@media  (min-height: 1000px) {
+.embedSize {
+  height: 950px;
 }
 }
 
 @media  (min-height: 1100px) {
 .embedSize {
 
-  height: 850px;
+  height: 1000px;
 }
 }
 
 @media  (min-height: 1200px) {
 .embedSize {
 
-  height: 950px;
+  height: 1150px;
 }
 }
 
 @media  (min-height: 1300px) {
 .embedSize {
 
-  height: 1050px;
+  height: 1250px;
 }
 }
 
@@ -447,8 +490,15 @@ max-width:90%;
  .makeScrollCPS {
   overflow-x: scroll;
 
-    height: 68vh;
+    height: 75vh;
  /*   height: calc(100% - 10px);*/
+}
+
+@media  (max-height: 720px) {
+   .makeScrollCPS {
+    height: 67vh;
+ /*   height: calc(100% - 10px);*/
+}
 }
 
 @media  (max-height: 600px) {
@@ -471,6 +521,8 @@ max-width:90%;
  /*   height: calc(100% - 10px);*/
 }
 }
+
+
  
  .js-enabled .govuk-tabs__panel {
   padding: 25px 0 0 0  !important;
