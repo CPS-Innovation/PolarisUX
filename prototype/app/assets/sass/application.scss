@@ -78,6 +78,11 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+.inPageSearchMargins {
+  margin-bottom: 15px;
+  color: #fff !important;
+}
+
 .mb5{
   margin-bottom: 5px;
 }
@@ -262,6 +267,12 @@ cursor: pointer;
 /* border: 2px solid $govuk-brand-colour;*/
 }
 
+.innerPanel .govuk-section-break--m,
+.searchTabScroll .govuk-section-break--m {
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
 .simpleModelTwo .cpsInsetChange,
 .tabSearchCPS .cpsInsetChange  {  
  border-left: 4px solid $govuk-border-colour;
@@ -279,6 +290,7 @@ cursor: pointer;
 .simpleModelTwo .govuk-details,
 .tabSearchCPS .govuk-details {
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .simpleModelTwo  .govuk-inset-text,
@@ -287,6 +299,8 @@ cursor: pointer;
   margin-top: 5px;
   padding: 5px 15px 5px 15px;
 }
+
+
 
 .innerPanel .govuk-inset-text,{
   margin-bottom: 15px;
