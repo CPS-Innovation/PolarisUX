@@ -8,20 +8,20 @@
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
 <!-- <script src="/public/javascripts/cookie.js"></script> -->
-<script>
+<!-- <script>
     $( document ).ready(function() {
 var appCount=0
 var proCount=0
 $(".searchShortlist").click(function (e) {
     e.preventDefault();
     console.log("searchShortlist button clicked: " + appCount);
-    //appCount++;
+    
 
     if ($(".shortlistText", this).hasClass("notSearchShortlist")) {
         console.log("isnt shortlisted");
         appCount++;
         console.log(appCount);
-   //     Cookies.set("appCount", appCount);
+  
         $(".shortlistText" , this).removeClass("notSearchShortlist").addClass("searchShortlist");
         $(".shortlistText" , this).text("Remove this document");
         $("#bannerCount span").text(Number(proCount) + Number(appCount));
@@ -31,8 +31,6 @@ $(".searchShortlist").click(function (e) {
         $(".shortlistText", this).removeClass("searchShortlist").addClass("notSearchShortlist");
         $(".shortlistText", this).text("Select document");
         appCount--;
- //       Cookies.set("appCount", appCount);
-        // console.log(appCount);
         $("#bannerCount span").text(Number(proCount) + Number(appCount));
     }
 
@@ -42,12 +40,9 @@ $(".searchShortlist").click(function (e) {
     } else {
          $('.openSelect').prop("disabled", true); //
     }
-
-    //.toggleClass(".fa-star-o").toggleClass(".fa-star");
-
     })
 });
-</script>
+</script> -->
 <script>
     if (
     'addEventListener' in document &&
@@ -63,11 +58,15 @@ $(".searchShortlist").click(function (e) {
 </script>
 <script>
     function openModal() {
+         $(openMe).removeClass("closeModal");
+        $(openMe).addClass("showModal");
     $(searchModal).removeClass("rj-dont-display");
+    
 }
 
    function closeModal() {
     $(searchModal).addClass("rj-dont-display");
+    $(openMe).removeClass("showModal");
 }
 
 

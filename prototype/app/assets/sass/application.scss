@@ -78,6 +78,21 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 /* CPS only styles*/
 
+  .das-cookie-banner {
+margin-left: auto;
+margin-right: auto;
+margin-top: 4%;
+max-width:90%;
+/*transform: translateX(-50%) translateY(-50%);*/
+   }
+
+   .innerPanel {
+    max-width:95%; 
+    margin: 0 auto; 
+    padding: 20px 0 20px ;
+   
+   }
+
 .inPageSearchMargins {
   margin-bottom: 15px;
   color: #fff !important;
@@ -112,36 +127,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   padding-left: 0px;
 }
 
-.modal {
- /* display: none;*/
-/* opacity: 0;
- transition: all ease 1s;*/
 
-
-/*height: 100%;
-left: 0;
-top: 0;
-position: fixed;
-z-index: 999;
-width: 100%;*/
-
-}
-
-/*.modal:target {
-  opacity: 1;
-  pointer-events: auto;
-  
-}*/
-
-/*#searchModal {
-  opacity:0;
-  transition:all 150ms ease-in-out;
-}
-
-.modal-open {
-  opacity:1 !important;
-  top:50%;
-}*/
 
 .innerPanel .twoFlexItem {
   padding: 0;
@@ -310,18 +296,7 @@ margin-top: 15px;
  /* margin-bottom:10px;*/
 }
 
-  .das-cookie-banner {
-margin-left: auto;
-margin-right: auto;
-margin-top: 4%;
-max-width:90%;
-   }
 
-   .innerPanel {
-    max-width:95%; 
-    margin: 0 auto; 
-    padding: 20px 0 20px 0
-   }
 
 .survey-panel {
     background: #DEE0E2;
@@ -1151,6 +1126,7 @@ gem-c-pagination__link-text {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
 }
 
 
@@ -1164,11 +1140,29 @@ gem-c-pagination__link-text {
     z-index: 2;
     background: #fff;
     border: none;
+      backface-visibility: hidden;
+    
+      
+
       
 
     @include govuk-media-query($from: tablet) {
       padding: 20px 0;
     }
+  }
+
+  .showModal {
+     opacity: 1;
+    transition: opacity 1s ease-in-out;
+     -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  }
+
+  .closeModal {
+   opacity: 0;
+    transition: opacity 1s ease-in-out;
+     -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
   }
 
 
