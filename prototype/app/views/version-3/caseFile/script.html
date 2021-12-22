@@ -94,7 +94,7 @@
         const count =
           $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
         const content = `
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden"  data-tab-id="${tabId}-content">  
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="padding-top:0 !important" data-tab-id="${tabId}-content">  
             <!-- start of search results -->
                 <div style="display:none" class="searchedDocumentSummary">
                 <p class="govuk-body-s inPageSearchMargins" style="padding-left:20px; font-weight:700; max-width:600px">We've found ${count} matchs for "assault" in ${label} </p>
