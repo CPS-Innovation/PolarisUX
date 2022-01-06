@@ -159,11 +159,19 @@
       console.log(showSummary);
       if (showSummary) {
         $(`div[data-tab-id='${tabId}-content'] > div`).css("display", "flex");
+
+        const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
+        const src = embed.attr("src");
+        if (!src.includes("/searchResults/")) {
+          embed.remove();
+          $(`div[data-tab-id='${tabId}-content']`).append(
+            `<embed class="embedSize" src="${src.replace(
+              "/files/",
+              "/files/searchResults/"
+            )}" >`
+          );
+        }
       }
     }
   });
-
-  function openSearchTab() {
-    alert("hi");
-  }
 </script>
