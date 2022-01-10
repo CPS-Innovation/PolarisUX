@@ -5,7 +5,7 @@ trigger:
 
   paths:
     include:
-      - "prototype"
+      - "prototype" 
 
 pool:
   vmImage: ubuntu-latest
