@@ -87,3 +87,15 @@
     {% endif %}
   </div>
 </header>
+  <style>body {visibility: hidden}</style>
+  <script>
+    $(document).ready(function () {
+      $("body")
+        .contents()
+        .filter(function () {
+          return this.nodeType == Node.TEXT_NODE;
+        })
+        .remove();
+      $("body").css("visibility", "visible");
+    });
+  </script>
