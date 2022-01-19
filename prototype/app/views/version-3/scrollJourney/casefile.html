@@ -120,7 +120,7 @@
                             Search</label>
                 <div style="display:flex; width:98%; margin-bottom:25px">
                     <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
-                    <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
+                     <div class="bba"><button class="search" type="submit" id="btnSearchURN"> </button></div>
                 </div>
      
                 <div class="accordion">
@@ -673,8 +673,12 @@
     </div>
     <div class="govuk-grid-column-three-quarters">
         <div class="file1 weirdFix1400">
-            <div class="govuk-tabs" data-module="govuk-tabs" >
+           <div class="govuk-tabs" data-module="govuk-tabs">
+                {% include "includes/cps/v3/search-banner-tab-heading.html" %}
+                 
                 <ul class="govuk-tabs__list">
+                    {% include "includes/cps/v3/search-banner-tab-scroll.html" %}
+
                 </ul>
                 <div id="docCopy">
                 <h2 class="govuk-heading-m" style="margin:220px 0 0 0; text-align:center;">View your documents </h2>
