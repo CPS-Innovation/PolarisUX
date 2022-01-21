@@ -66,35 +66,7 @@
 }
 
 </style>
-<!-- <div class="govuk-width-container">
- 
-    <a href="javascript:history.back()" class="govuk-back-link">Back to URN search</a>
-    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main"> -->
-<!-- <div class="govuk-grid-row" id="caseFileV2">
-    <div class="govuk-grid-column-one-third">
-       
-        <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0"> McLove, Eoin
-            <span class="govuk-caption-m">45AA209820/1</span>
-        </h1>
-    </div>
-    <div class="govuk-grid-column-two-thirds" style="">
-      
-        <div class="govuk-form-group" style="margin-bottom: 0px;">
-    
-            <div style="display:flex">
-                <input class="govuk-input govuk-!-width-one-half" style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all 45AA209820, McLove documents" /> 
-                <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
-            </div>
-        </div>
-        </fieldset>
-       
-    </div>
-</div> -->
-<!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="rj-headings-borderCPS"></div>
-    </div>
-</div> -->
+
 <div class="govuk-grid-row" style="margin-right:-65px">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="margin-bottom:20px">
@@ -118,7 +90,7 @@
                 </div>
                   <label class="govuk-label--s govuk-label" for="" style="">
                             Search</label>
-                <div style="display:flex; width:98%; margin-bottom:25px">
+                <div style="display:flex; width:98%; margin-bottom:25px" class="searchForm">
                     <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
                      <div class="bba"><button class="search" type="submit" id="btnSearchURN"> </button></div>
                 </div>
@@ -732,6 +704,12 @@ window.addEventListener("keydown",function (e) {
     { 
         e.preventDefault();
         console.log("disable ctrl f")
+         document.getElementById("searchURN").focus();
+
+         // $('#searchURN').get(0).focus();
+        // $('.searchForm input[type="text"]').attr('autofocus', 'true');
+   
+
     }
 })
 
