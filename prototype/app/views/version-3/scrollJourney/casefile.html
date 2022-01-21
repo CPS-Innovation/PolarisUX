@@ -727,6 +727,14 @@ $("html, body").animate({ scrollTop:0 },
         });
 }
 
+window.addEventListener("keydown",function (e) {
+    if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70) || (e.keyCode=== 91 && e.keyCode === 70)) 
+    { 
+        e.preventDefault();
+        console.log("arse")
+    }
+})
+
 </script>
 {% include "./script.html" %}
 
