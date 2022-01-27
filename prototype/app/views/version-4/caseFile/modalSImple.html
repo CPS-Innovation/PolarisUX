@@ -3,11 +3,51 @@
 {% include "includes/cps/v3/search-banner-modal-simple-v2.html" %}
 {% endblock %}
 {% block content %}
-
+<!-- <link href="/public/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/public/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" /> -->
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
+<!-- <script src="/public/javascripts/cookie.js"></script> -->
+<script>
+    $( document ).ready(function() {
+var appCount=0
+var proCount=0
+$(".searchShortlist").click(function (e) {
+    e.preventDefault();
+    console.log("searchShortlist button clicked: " + appCount);
+    //appCount++;
 
+    if ($(".shortlistText", this).hasClass("notSearchShortlist")) {
+        console.log("isnt shortlisted");
+        appCount++;
+        console.log(appCount);
+   //     Cookies.set("appCount", appCount);
+        $(".shortlistText" , this).removeClass("notSearchShortlist").addClass("searchShortlist");
+        $(".shortlistText" , this).text("Remove this document");
+        $("#bannerCount span").text(Number(proCount) + Number(appCount));
 
+    } else {
+        console.log("is shortlisted");
+        $(".shortlistText", this).removeClass("searchShortlist").addClass("notSearchShortlist");
+        $(".shortlistText", this).text("Select document");
+        appCount--;
+ //       Cookies.set("appCount", appCount);
+        // console.log(appCount);
+        $("#bannerCount span").text(Number(proCount) + Number(appCount));
+    }
+
+    if (appCount>0) {
+         $('.openSelect').prop("disabled", false); //
+
+    } else {
+         $('.openSelect').prop("disabled", true); //
+    }
+
+    //.toggleClass(".fa-star-o").toggleClass(".fa-star");
+
+    })
+});
+</script>
 <script>
     if (
     'addEventListener' in document &&
@@ -25,49 +65,51 @@
     function openModal() {
     $(searchModal).removeClass("rj-dont-display");
 }
+
    function closeModal() {
     $(searchModal).addClass("rj-dont-display");
 }
 
+
+
+
+
 </script>
-
-
 <style>
     .accordion-controls {
     margin-top: 20px;
 }
-
- .govuk-main-wrapper {
-  position: relative !important;
- }
-
- .embedSize {
-    min-height: 100vh; height: 10000px 
- }
-
-#myBtn {
- display: none;
-  position: fixed; 
-  bottom: 20px; 
-  left: 20px; 
-  z-index: 9; 
-  border: none; 
-  outline: none; 
-  background-color: #1d70b8; 
-  color: white; 
-  cursor: pointer; 
-  padding: 10px; 
-  border-radius: 10px;
-  font-size: 16px; 
-}
-
-#myBtns:hover {
- /* background-color: #555;*/ /* Add a dark-grey background on hover */
-}
-
 </style>
-
-<div class="govuk-grid-row" style="margin-right:-65px">
+<!-- <div class="govuk-width-container">
+ 
+    <a href="javascript:history.back()" class="govuk-back-link">Back to URN search</a>
+    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main"> -->
+<!-- <div class="govuk-grid-row" id="caseFileV2">
+    <div class="govuk-grid-column-one-third">
+       
+        <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0"> McLove, Eoin
+            <span class="govuk-caption-m">45AA209820/1</span>
+        </h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds" style="">
+      
+        <div class="govuk-form-group" style="margin-bottom: 0px;">
+    
+            <div style="display:flex">
+                <input class="govuk-input govuk-!-width-one-half" style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all 45AA209820, McLove documents" /> 
+                <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
+            </div>
+        </div>
+        </fieldset>
+       
+    </div>
+</div> -->
+<!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="rj-headings-borderCPS"></div>
+    </div>
+</div> -->
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="margin-bottom:20px">
             <a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:25px">Back to URN search</a>
@@ -75,8 +117,8 @@
                 <span class="govuk-caption-m">45AA209820/1</span>
             </h1>
         </div>
-        <div class=" " style="">
-            <div class="caseFiles" id="caseFilesCol" style="">
+        <div class=" makeScrollCPS" style="">
+            <div class="caseFiles" id="caseFilesCol" style="margin-right:25px">
                 <div class="blueBoxCPS">
                     <h2 class="govuk-heading-s" style="color:#fff; padding-top:1rem; ">Proposed Charges</h2>
                     <ul class="govuk-list govuk-list--bullet govuk-body-s" style="color:#fff; margin-bottom:0">
@@ -88,13 +130,10 @@
                             </li> -->
                     </ul>
                 </div>
-                  <label class="govuk-label--s govuk-label" for="" style="">
-                            Search</label>
-                <div style="display:flex; width:98%; margin-bottom:25px" class="searchForm">
-                    <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
-                     <div class="bba"><button class="search" type="submit" id="btnSearchURN"> </button></div>
+                <div style="display:flex; width:98%; margin-bottom:25px">
+                    <input class="govuk-input " style="margin-left: auto; border-right:0" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search all case files" />
+                    <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
                 </div>
-     
                 <div class="accordion">
                     <div class="accordion-section">
                         <div class="accordion-section-header">
@@ -102,46 +141,7 @@
                         </div>
                         <div class="accordion-section-body">
                             <div class="cpsDocs chargingDocs">
-                                <!--  <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName" style="">
-                                        <p class="govuk-body-s" style="font-weight:700"></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s" style="font-weight:700; margin-bottom:10px">Date added</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName " style="">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MCLOVEMG3.pdf">MCLOVE MG3</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">2 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG05MCLOVE.pdf">MG05 MCLOVE</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">2 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG06_10june.pdf">MG06 10 june</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">10 June 2020</p>
-                                    </div>
-                                </div>
-                                <div class="documentFlexTwo" style="">
-                                    <div class="caseFileName">
-                                        <p class="govuk-body-s wrapLongFilenamesCPS"><a href="" data-doc="MG06_3June.pdf">MG06 3 June</a></p>
-                                    </div>
-                                    <div class="caseFileDate">
-                                        <p class="govuk-body-s">3 June 2020</p>
-                                    </div>
-                                </div> -->
+
                                 <table class="govuk-table ">
                                     <thead>
                                         <tr class="govuk-table__row">
@@ -151,7 +151,7 @@
                                     </thead>
                                     <tbody>
                                         <tr class="govuk-table__row">
-                                            <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MCLOVEMG3.pdf" data-count="3">MCLOVE MG3</a></td>
+                                            <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MCLOVEMG3.pdf">MCLOVE MG3</a></td>
                                             <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td>
                                         </tr>
                                         <tr class="govuk-table__row">
@@ -251,11 +251,11 @@
                                 </thead>
                                 <tbody>
                                            <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_BLAYNEE_2034_1_JUNE_mg11.pdf" data-count="2">stmt BLAYNEE 2034 1 JUNE mg11</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_BLAYNEE_2034_1_JUNE_mg11.pdf">stmt BLAYNEE 2034 1 JUNE mg11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">01 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_JONES_1989_1_JUNE_mg11.pdf" data-count="2">stmt JONES 1989 1 JUNE mg11</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_JONES_1989_1_JUNE_mg11.pdf">stmt JONES 1989 1 JUNE mg11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">01 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
@@ -263,11 +263,11 @@
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">01 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_Shelagh_McLove_MG11.pdf" data-count="9">stmt Shelagh McLove MG11</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="stmt_Shelagh_McLove_MG11.pdf">stmt Shelagh McLove MG11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">01 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="Shelagh_McLove_VPS_mg11.pdf" data-count="3">Shelagh McLove VPS mg11</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="Shelagh_McLove_VPS_mg11.pdf">Shelagh McLove VPS mg11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">06 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
@@ -334,7 +334,7 @@
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">12 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG00.pdf" data-count="1">MCLOVE MG00</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG00.pdf">MCLOVE MG00</a></td>
                                         <td class="govuk-table__cell govuk-body-s" scope="row">pdf</td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">12 June 2020</td>
                                     </tr>
@@ -444,7 +444,7 @@
                                 </thead>
                                 <tbody>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE.pdf" data-count="3">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE.pdf">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">01 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
@@ -460,7 +460,7 @@
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">05 June 2020</td>
                                     </tr>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="UNUSED_6_DA_CHECKLIST_MCLOVE.pdf" data-count="2">UNUSED_6 DA CHECKLIST MCLOVE</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="SDC_items_to_be_Disclosed_MCLOVE.pdf">UNUSED_6 DA CHECKLIST MCLOVE</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="">05 June 2020</td>
                                     </tr>
                                 </tbody>
@@ -498,7 +498,7 @@
                                 </thead>
                                 <tbody>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="PRE_CONS_D.pdf" data-count="2">PRE CONS D</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="PRE_CONS_D.pdf">PRE CONS D</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td>
                                     </tr>
                                 </tbody>
@@ -635,28 +635,18 @@
                     <!--       </div>
                         </div> -->
                     <!-- end of all accordion -->
-                     <button onclick="topFunction()" id="myBtn" title="Go to top">Back to top</button>
                 </div>
-               
-
             </div>
             <!-- end of charging docs column -->
         </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
         <div class="file1 weirdFix1400">
-           <div class="govuk-tabs" data-module="govuk-tabs">
-                {% include "includes/cps/v3/search-banner-tab-heading.html" %}
-                 
+            <div class="govuk-tabs" data-module="govuk-tabs">
                 <ul class="govuk-tabs__list">
-                    {% include "includes/cps/v3/search-banner-tab-scroll.html" %}
-
                 </ul>
-                <div id="docCopy">
                 <h2 class="govuk-heading-m" style="margin:220px 0 0 0; text-align:center;">View your documents </h2>
                 <p style="margin:10px 0 0 0; text-align:center;">Search or choose a file to start reviewing documents</p>
-                </div>
-
             </div>
         </div>
     </div>
@@ -669,48 +659,5 @@
 <!-- </main>
 </div> -->
 <!-- remove if you get rid of the gov width container -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-//Get the button:
-mybutton = document.getElementById("myBtn");
-docCopy = document.getElementById("docCopy");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
-    mybutton.style.display ="block";
-    docCopy.style.display ="none";
-  } else {
-    mybutton.style.display = "none";
-    docCopy.style.display ="block";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  // document.body.scrollTop = 0; // For Safari
-  // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-$("html, body").animate({ scrollTop:0 }, 
-        {
-            duration: 500,
-            easing: "easeInOutExpo"
-        });
-}
-
-window.addEventListener("keydown",function (e) {
-    if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70) || (e.keyCode=== 91 && e.keyCode === 70)) 
-    { 
-        e.preventDefault();
-        console.log("disable ctrl f")
-         document.getElementById("searchURN").focus();
-         // $('#searchURN').get(0).focus();
-        // $('.searchForm input[type="text"]').attr('autofocus', 'true');
-    }
-})
-
-</script>
 {% include "./script.html" %}
-
 {% endblock %}

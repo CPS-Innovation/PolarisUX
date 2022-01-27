@@ -1,0 +1,207 @@
+<style>
+  .searchedDocumentSummary {
+    padding-top: 15px !important;
+    background: hsl(208, 73%, 42%);
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    const SPECIAL_CASE_SEARCH_TAB_HEADING = 'Search results';
+
+    const // each document link in the left hand list
+      $menuLinks = $(".openMe a"),
+      // the root of the tabs control
+      $tabList = $(".govuk-tabs .govuk-tabs__list"),
+      // links appearing in the modal-style search results
+      $modalLinks = $("#searchModal .mb5 a"),
+      // search field
+      $inpSearchUrn = $("#inpSearchURN"),
+      // search field button
+      $btnSearchUrn = $("#btnSearchURN");
+  
+     
+
+    $menuLinks.each(function (_, link) {
+      $(link).click(function (event) {
+        event.preventDefault();
+        handleMenuLinkClick($(this).text());
+      });
+    });
+
+    $modalLinks.each(function (_, link) {
+      $(link).click(function (event) {
+        event.preventDefault();
+        handleMenuLinkClick($(this).text(), true);
+      });
+    });
+
+    $inpSearchUrn.keyup(function (e) {
+      if (e.key !== "Enter") return;
+      handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
+    });
+
+    $btnSearchUrn.click(function (e) {
+      handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
+    });
+
+    function handleMenuLinkClick(label, showSearchSummary) {
+      const tabId = encodeURI(label);
+      ensureTabExists(tabId, label);
+      highlightMenuLink(label, true);
+      console.log(showSearchSummary);
+      showTab(tabId, showSearchSummary);
+      $("#searchModal").addClass("rj-dont-display");
+    }
+
+
+  
+
+
+    
+
+    function highlightMenuLink(label, isHighlighted) {
+      const $link = $(`.openMe a:contains('${label}')`);
+
+      if (isHighlighted) {
+        $link.parent("td").addClass("documentSelected");
+      } else {
+        $link.parent("td").removeClass("documentSelected");
+      }
+    }
+
+    function ensureTabExists(tabId, label) {
+      const existingTab = $(`li[data-tab-id='${tabId}']`);
+      if (existingTab.length) return;
+
+      const newTab = $(`
+        <li class="govuk-tabs__list-item"  data-tab-id="${tabId}">
+
+            <svg class="closeButtonOnCPS">
+                <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
+                <path stroke="white" stroke-width="3" fill="none" d="M6.25,6.25,17.75,17.75" />
+                <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
+            </svg>
+
+            <a class="govuk-tabs__tab" id="tabHeadingss" href="">${label}</a>
+        </li>`).appendTo($tabList);
+
+      if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
+        const text = $("script[data-template='searchTab']").text();
+        const $searchTabContent = $(text);
+
+        $searchTabContent.attr("data-tab-id", `${tabId}-content`);
+        $searchTabContent.find(".openMe a").each(function (_, link) {
+          $(link).click(function (event) {
+            event.preventDefault();
+            handleMenuLinkClick($(this).text(), true);
+          });
+        });
+        $searchTabContent.insertAfter($tabList);
+        document.getElementById("tabHeadingss").style.fontWeight = "700";
+        document.getElementById("tabHeadingss").style.fontSize = "19px";
+
+      } else {
+       // search field button from the blue bar
+      
+
+        const document = $(`.openMe a:contains("${label}")`).attr("data-doc");
+        const count =
+          $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
+        const content = `
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="padding-top:0 !important" data-tab-id="${tabId}-content">  
+            <!-- start of search results -->
+                <div  class="searchedDocumentSummary rj-dont-display" id="searchHeaderDisplay">
+                 <p id="btnSearchURNTwo" class="govuk-body-s inPageSearchMargins" style="padding-left:20px; font-weight:700; color:#fff; text-decoration: underline; cursor: pointer; ">Back to search results </p>
+                <p class="govuk-body-s inPageSearchMargins" style="padding-left:50px; font-weight:700; padding-right:50px">${count} matchs for "assault" in ${label} </p>
+                <p class="govuk-body-s inPageSearchMargins  deactivatedPrevious" style="margin-left:auto; margin-right:10px">Previous</p>
+                <p class="govuk-body-s inPageSearchMargins" style="margin-right:10px; font-weight:700">1/${count}</p>
+                <p class="govuk-body-s inPageSearchMargins looks-like-a-link-underline" style="margin-right:20px">Next</p>
+                </div> 
+            <!-- end of search results -->
+
+             <!-- Non search heading -->
+                <div  class="docSummaryTopPage rj-dont-display" id="documentNameHeader">
+                <p class="govuk-body-s inPageSearchMargins2" style="padding-left:20px; font-weight:400; max-width:800px">${label} </p>
+                </div>
+              <!-- End of non search heading -->
+       
+            <embed class="embedSize" src="/public/files/${document}#toolbar=0&view=FitH">
+       
+        </div>`;
+
+        $(content).insertAfter($tabList);
+      }
+
+      newTab.find("li").off("click");
+      newTab.find("a.govuk-tabs__tab").click(function () {
+        event.preventDefault();
+        showTab(tabId);
+      });
+
+      newTab.find(".closeButtonOnCPS").click(function () {
+        destroyTab(tabId);
+        highlightMenuLink(tabId, false);
+      });
+    }
+
+    function destroyTab(tabId) {
+      const $tabs = $(`li[data-tab-id`);
+      const $thisTab = $(`li[data-tab-id='${tabId}']`);
+      const thisTabIndex = $tabs.index($thisTab);
+      const tabIndexToLeaveOpen = thisTabIndex
+        ? thisTabIndex - 1 // if not first tab, go to the left
+        : 0; // otherwise if first tab, then go to the tab that is now first
+      $(`li[data-tab-id='${tabId}']`).remove();
+      $(`div[data-tab-id='${tabId}-content']`).remove();
+
+      const idOfTabToOpen = $($(`li[data-tab-id`)[tabIndexToLeaveOpen]).attr(
+        "data-tab-id"
+      );
+
+      showTab(idOfTabToOpen);
+    }
+
+    function showTab(tabId, showSummary) {
+      $tabList.find("li").removeAttr("id", "selectedTab");
+      $tabList.find("li").removeClass("govuk-tabs__list-item--selected");
+
+      $(`li[data-tab-id='${tabId}']`).addClass(
+        "govuk-tabs__list-item--selected"
+      );
+      $(`li[data-tab-id='${tabId}']`).attr("id", "selectedTab");
+
+      $(".govuk-tabs__panel").addClass("govuk-tabs__panel--hidden");
+      $(`div[data-tab-id='${tabId}-content']`).removeClass(
+        "govuk-tabs__panel--hidden"
+      );
+
+      const selectedTab = $("#selectedTab");
+      if (selectedTab.length) {
+        selectedTab[0].scrollIntoView();
+      }
+      console.log(showSummary);
+      if (showSummary) {
+         $(documentNameHeader).css("display", "none");
+        $(searchHeaderDisplay).css("display", "flex");
+       
+  
+
+       const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
+        const src = embed.attr("src");
+        if (!src.includes("/searchResults/")) {
+          embed.remove();
+          $(`div[data-tab-id='${tabId}-content']`).append(
+            `<embed class="embedSize" src="${src.replace(
+              "/files/",
+              "/files/searchResults/"
+            )}" >`
+          );
+        }    
+      }   
+      else {
+           $(documentNameHeader).css("display", "flex");
+           $(searchHeaderDisplay).css("display", "none");
+         };
+    }
+  });
+</script>

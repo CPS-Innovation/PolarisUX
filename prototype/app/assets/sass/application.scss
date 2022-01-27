@@ -1,33 +1,26 @@
 /* replacement fonts */
 
-@import url("//hello.myfonts.net/count/413f20");
+/*@import url("//hello.myfonts.net/count/413f20");*/
   
-@font-face {
+/*@font-face {
   font-family: "TransportNew";
     font-style: normal;
   font-weight: 400;
   font-display: swap;
   size-adjust: 90%;
   src: url('/public/fonts/TransportNewLight/font.woff2') format('woff2'), url('/public/fonts/TransportNewLight/font.woff') format('woff');
-}
-
-/*@font-face {
-  font-family: "TransportNew";
-    font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  size-adjust: 86%;
-  src: url('/public/fonts/TransportNewMedium/font.woff2') format('woff2'), url('/public/fonts/TransportNewMedium/font.woff') format('woff');
 }*/
 
-@font-face {
+
+
+/*@font-face {
   font-family: "TransportNew";
     font-style: normal;
   font-weight: 700;
   font-display: swap;
   size-adjust: 86.5%;
   src: url('/public/fonts/TransportNewHeavy/font.woff2') format('woff2'), url('/public/fonts/TransportNewHeavy/font.woff') format('woff');
-}
+}*/
 
 /*$govuk-font-family: "TransportNew", "Arial", sans-serif; */
 
@@ -55,6 +48,16 @@
 
 /*$govuk-font-family: "Noto-Sans", "Arial", sans-serif; */
  
+/* Do not bother with this font below:*/
+ 
+ /*@font-face {
+  font-family: "TransportNew";
+    font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 86%;
+  src: url('/public/fonts/TransportNewMedium/font.woff2') format('woff2'), url('/public/fonts/TransportNewMedium/font.woff') format('woff');
+}*/
 
 
 
@@ -111,7 +114,14 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 /* CPS only styles*/
 
 
+.makeBold {
+  font-weight: 700;
+}
 
+.docSummaryTopPage {
+ padding-top: 10px !important;
+    background: #fff;
+}
 
   .das-cookie-banner {
 margin-left: auto;
@@ -131,6 +141,11 @@ max-width:90%;
 .inPageSearchMargins {
   margin-bottom: 15px;
   color: #fff !important;
+}
+
+.inPageSearchMargins2 {
+  margin-bottom: 10px;
+  color: #000 !important;
 }
 
 .mb5{
