@@ -6,7 +6,7 @@
 </style>
 <script>
   $(document).ready(function () {
-    const SPECIAL_CASE_SEARCH_TAB_HEADING = 'Search results';
+    const SPECIAL_CASE_SEARCH_TAB_HEADING = '"Assault" Search results';
 
     const // each document link in the left hand list
       $menuLinks = $(".openMe a"),
@@ -18,8 +18,6 @@
       $inpSearchUrn = $("#inpSearchURN"),
       // search field button
       $btnSearchUrn = $("#btnSearchURN");
-  
-     
 
     $menuLinks.each(function (_, link) {
       $(link).click(function (event) {
@@ -53,12 +51,6 @@
       $("#searchModal").addClass("rj-dont-display");
     }
 
-
-  
-
-
-    
-
     function highlightMenuLink(label, isHighlighted) {
       const $link = $(`.openMe a:contains('${label}')`);
 
@@ -74,7 +66,7 @@
       if (existingTab.length) return;
 
       const newTab = $(`
-        <li class="govuk-tabs__list-item tooltip"  data-tab-id="${tabId}">
+        <li class="govuk-tabs__list-item" data-tab-id="${tabId}">
 
             <svg class="closeButtonOnCPS">
                 <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
@@ -82,7 +74,7 @@
                 <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
             </svg>
 
-            <a class="govuk-tabs__tab" id="tabHeadingss" href="">${label}</a>  <span class="tooltiptext">${label}</span>
+            <a class="govuk-tabs__tab" href="">${label}</a>
         </li>`).appendTo($tabList);
 
       if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
@@ -97,33 +89,20 @@
           });
         });
         $searchTabContent.insertAfter($tabList);
-        document.getElementById("tabHeadingss").style.fontWeight = "700";
-        document.getElementById("tabHeadingss").style.fontSize = "19px";
-
       } else {
-       // search field button from the blue bar
-      
-
         const document = $(`.openMe a:contains("${label}")`).attr("data-doc");
         const count =
           $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
         const content = `
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="padding-top:0 !important" data-tab-id="${tabId}-content">  
             <!-- start of search results -->
-                <div  class="searchedDocumentSummary rj-dont-display" id="searchHeaderDisplay">
-                 <p id="btnSearchURNTwo" class="govuk-body-s inPageSearchMargins" style="padding-left:20px; font-weight:700; color:#fff; text-decoration: underline; cursor: pointer; ">Back to search results </p>
-                <p class="govuk-body-s inPageSearchMargins" style="padding-left:50px; font-weight:700; padding-right:50px">${count} matchs for "assault" in ${label} </p>
+                <div style="display:none" class="searchedDocumentSummary">
+                <p class="govuk-body-s inPageSearchMargins" style="padding-left:20px; font-weight:700; max-width:600px">We've found ${count} matchs for "assault" in ${label} </p>
                 <p class="govuk-body-s inPageSearchMargins  deactivatedPrevious" style="margin-left:auto; margin-right:10px">Previous</p>
                 <p class="govuk-body-s inPageSearchMargins" style="margin-right:10px; font-weight:700">1/${count}</p>
                 <p class="govuk-body-s inPageSearchMargins looks-like-a-link-underline" style="margin-right:20px">Next</p>
                 </div> 
             <!-- end of search results -->
-
-             <!-- Non search heading -->
-                <div  class="docSummaryTopPage rj-dont-display" id="documentNameHeader">
-                <p class="govuk-body-s inPageSearchMargins2" style="padding-left:20px; font-weight:400; max-width:800px">${label} </p>
-                </div>
-              <!-- End of non search heading -->
        
             <embed class="embedSize" src="/public/files/${document}#toolbar=0&view=FitH">
        
@@ -181,12 +160,9 @@
       }
       console.log(showSummary);
       if (showSummary) {
-         $(documentNameHeader).css("display", "none");
-        $(searchHeaderDisplay).css("display", "flex");
-       
-  
+        $(`div[data-tab-id='${tabId}-content'] > div`).css("display", "flex");
 
-       const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
+        const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
         const src = embed.attr("src");
         if (!src.includes("/searchResults/")) {
           embed.remove();
@@ -196,12 +172,8 @@
               "/files/searchResults/"
             )}" >`
           );
-        }    
-      }   
-      else {
-           $(documentNameHeader).css("display", "flex");
-           $(searchHeaderDisplay).css("display", "none");
-         };
+        }
+      }
     }
   });
 </script>

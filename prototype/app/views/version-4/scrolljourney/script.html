@@ -74,7 +74,7 @@
       if (existingTab.length) return;
 
       const newTab = $(`
-        <li class="govuk-tabs__list-item"  data-tab-id="${tabId}">
+        <li class="govuk-tabs__list-item tooltip"  data-tab-id="${tabId}">
 
             <svg class="closeButtonOnCPS">
                 <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
@@ -82,7 +82,7 @@
                 <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
             </svg>
 
-            <a class="govuk-tabs__tab" id="tabHeadingss" href="">${label}</a>
+            <a class="govuk-tabs__tab" id="tabHeadingss" href="">${label}</a>  <span class="tooltiptext">${label}</span>
         </li>`).appendTo($tabList);
 
       if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
