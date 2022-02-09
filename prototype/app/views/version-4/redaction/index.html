@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<style>
+<style>.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<script>
+var fundingStatus = JSON.parse(localStorage.getItem('nonLevy.fundingSet'));
+var welcomeWizardStatus = JSON.parse(localStorage.getItem('nonLevy.welcomeWizardStatus'));
+
+
+// $(document).ready(function() {
+
+//     var changeStuff = function() {
+//        $(welcome).addClass("rj-dont-display");
+//             $(allContentHome).removeClass("rj-dont-display");
+//             localStorage.setItem("nonLevy.welcomeWizardStatus", JSON.stringify("dontShow"));
+
+//     }
+//     changeStuff();
+// });
+
+
+
+// function loggedInHomepage() {
+//     $(welcome).addClass("rj-dont-display");
+//     $(allContentHome).removeClass("rj-dont-display");
+// }
+
+// function goToAgreements() {
+//     localStorage.setItem("nonLevy.welcomeWizardStatus", JSON.stringify("dontShow"));
+//     window.location.href = './orgs';
+
+// }
+</script>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:10px">
+        <section id="allContentHome" class="">
+            <!-- <div class="govuk-grid-row"> -->
+            <h1 class="govuk-heading-xl " style="margin-top: 0" id="company-Name">Manage a case
+            </h1>
+            <!--script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script-->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div style="max-width:90%">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-m " style="margin-top:0;"><a href="./search">Review a case file</a></h3>
+                                <p class="rj-home-spacer rj-bottom-border-mobile ">Review case files to do the thing</p>
+                            </div>
+                            <div class="govuk-grid-column-one-half rj-space-top-mobile ">
+                                <h3 class="govuk-heading-m " style="margin-top:0;  "><a href="redaction/search">Redact a case file</a></h3>
+                                <p class="rj-home-spacer  ">Do the thing </p>
+                            </div>
+                        </div>
+                        <!--              <div class="govuk-grid-row">
+
+                                         <div class="govuk-grid-column-one-half">
+                                    <h3 class="govuk-heading-m " style="margin-top:0; padding-top:35px"><a href="https://das-raa-v2.herokuapp.com/prototypes/public-beta/dashboard">Provider dashboard</a></h3>
+                                    <p class="rj-home-spacer  ">Overview of all course providers </p>
+                                </div>
+                       
+
+                                    <div class="govuk-grid-column-one-half ">
+                                   <h3 class="govuk-heading-m " style="margin-top:0; padding-top:35px"><a href="./team">Programme dashboard</a></h3>
+                                    <p >Overview of all programme participants</p>
+                                </div>
+
+                            </div> -->
+                    </div>
+                </div>
+        </section>
+</div>
+{% endblock %}
