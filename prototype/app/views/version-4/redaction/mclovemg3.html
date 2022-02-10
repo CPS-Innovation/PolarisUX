@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+ <h1 class="govuk-heading-xl" style="" id="company-Name">Review document</h1>
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-three-quarters">
+                                <div style="display:flex">
+                                    <p style="margin: 0px 0 5px 0"><span style="font-weight:700">2</span> tags in <span style="font-weight:700">MCLOVEMG3</span> </p>
+                        
+                                </div>
+                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                <div class="column details" >
+                                    <div id="redactTagOne">
+                                                <h2 class="govuk-heading-m results-header " style="">Tag 1</h2>
+                                        <div>
+                                                <p class="searchResultsHighlights " style="">WITNESSES: <span class="searchFound">LUCY DOYLE. DOYLE </span> is a friend of the victim and lives nextdoor to MCLOVE – willing to attend court – hears screams from the property.</p>
+                                        </div>
+                                        <button type="submit" class="govuk-button" style="">Redact</button>
+                                        <a  class="govuk-button clear-button" href="#" >Ignore</a>
+                                        <a  class="govuk-button clear-button" href="#" >View document</a>
+
+
+
+
+
+                                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                    </div>
+                                              <div id="redactTagTwo">
+                                                <h2 class="govuk-heading-m results-header " style="">Tag 2</h2>
+                                        <div>
+                                                <p class="searchResultsHighlights " style="">WITNESSES: <span class="searchFound">LUCY DOYLE. DOYLE </span> is a friend of the victim and lives nextdoor to MCLOVE – willing to attend court – hears screams from the property.</p>
+                                        </div>
+                                        <button type="submit" class="govuk-button" style="">Redact</button>
+                                        <a  class="govuk-button clear-button" href="#" >Ignore</a>
+                                        <a  class="govuk-button clear-button" href="#" >View document</a>
+
+
+
+
+
+                                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                    </div>
+              
+                                </div>
+                                <form method="get" action="needstobearoute">
+                                  <button type="submit" class="govuk-button" style="">Save and Return</button>
+                              </form>
+                            </div>
+                            <!--  </div> -->
+
+                        </div>
+                    </div>
+                    <!--  end of inner panel div above -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
