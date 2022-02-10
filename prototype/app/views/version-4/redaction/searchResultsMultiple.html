@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% block beforeContent %}
+ {% include "includes/cps/nav/v4/mainNav.html" %}
+  {% include "includes/cps/nav/v4/redactNav.html" %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {{ govukBackLink({
 text: "Back",

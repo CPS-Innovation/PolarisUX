@@ -123,8 +123,42 @@ router.param('employer', function (req, res, next, employer) {
   res.redirect("/version-13/EPAO/epaoOnlyCost")
  })
 
+//  ------------------  CPS NAV ----------------------
+// CPS > Nav > Home
+// bit hacky but works - needs two routes for top level and lower down the chain
+ router.get('/*/CPSHomeNav', function (req, res) {
+  res.redirect(`/${req.version}/redaction`)
+ })
+
+  router.get('/*/*/CPSHomeNav', function (req, res) {
+  res.redirect(`/${req.version}/redaction`)
+ })
 
 
+  // CPS > Nav > Review
+// bit hacky but works - needs two routes for top level and lower down the chain
+ router.get('/*/CPSreviewNav', function (req, res) {
+  res.redirect(`/${req.version}/search`)
+ })
+
+  router.get('/*/*/CPSreviewNav', function (req, res) {
+  res.redirect(`/${req.version}/search`)
+ })
+
+    // CPS > Nav > Redaction
+// bit hacky but works - needs two routes for top level and lower down the chain
+ router.get('/*/CPSRedactNav', function (req, res) {
+  res.redirect(`/${req.version}/redaction/search`)
+ })
+
+  router.get('/*/*/CPSRedactNav', function (req, res) {
+  res.redirect(`/${req.version}/redaction/search`)
+ })
+
+
+
+
+//  ------------------  DoE NAV ----------------------
 // Employer > Nav > Home
 // bit hacky but works - needs two routes for top level and lower down the chain
  router.get('/*/homeNav', function (req, res) {
@@ -4927,6 +4961,38 @@ router.get('/*/sandbox/ecfchoosy' , function (req, res) {
              // req.session.data['showEPAOConfirm'] = false;
              // req.session.data['showApprenticeBox'] = true;
              res.redirect(`/${req.version}/sandbox/ecfOne`)
+            
+  
+
+        default:
+            console.log("bork bork bork bork");
+                res.redirect(`/${req.version}/pstart/teacher/aboutTRN`)
+            break;
+        }
+})
+
+
+/////////END OF NPQ ROUTES //////////////////////////////
+/////////NPQ ROUTES //////////////////////////////
+
+router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
+  var confirmTraining = req.query.trn
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+             // req.session.data['showApprenticeBox'] = false;
+              req.session.data['MG31Redacted'] = true;
+              req.session.data['MG31NotRedacted'] = false;
+              // req.session.data['email'] = "jenny@stpaulsschool.ac.uk";
+              res.redirect(`tagRedact`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['MG31NotRedacted'] = true;
+           req.session.data['MG31Redacted'] = false;
+             // req.session.data['showEPAOConfirm'] = false;
+             // req.session.data['showApprenticeBox'] = true;
+             res.redirect(`tagRedact`)
             
   
 
