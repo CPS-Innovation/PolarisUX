@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block beforeContent %}
- {% include "includes/cps/nav/v4/mainNav.html" %}
-  {% include "includes/cps/nav/v4/homeNav.html" %}
+{% include "includes/cps/nav/v4/mainNav.html" %}
+{% include "includes/cps/nav/v4/homeNav.html" %}
 {% endblock %}
 {% block content %}
 <style>
@@ -51,16 +51,16 @@ var welcomeWizardStatus = JSON.parse(localStorage.getItem('nonLevy.welcomeWizard
 // }
 </script>
 <div class="govuk-width-container">
-    <main class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:10px">
         <section id="allContentHome" class="">
             <!-- <div class="govuk-grid-row"> -->
-                 <h1 class="govuk-heading-xl rj-headings-border" style="margin-top: 0" id="company-Name">Manage a case
-     <!--  <span class="govuk-caption-l">Account ID: XJBMNV</span> --></h1>
+            <h1 class="govuk-heading-xl rj-headings-border" style="" id="company-Name">Manage a case
+                <!--  <span class="govuk-caption-l">Account ID: XJBMNV</span> -->
+            </h1>
             <!--script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script-->
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <div style="max-width:90%">
-                <!--         <div class="govuk-grid-row">
+                    <div style="max-width:90%; margin-bottom:200px">
+                        <!--         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-one-half">
                                 <h3 class="govuk-heading-m " style="margin-top:0;"><a href="./search">Review a case file</a></h3>
                                 <p class="rj-home-spacer rj-bottom-border-mobile ">Review case files to do the thing</p>
@@ -70,22 +70,16 @@ var welcomeWizardStatus = JSON.parse(localStorage.getItem('nonLevy.welcomeWizard
                                 <p class="rj-home-spacer  ">Do the thing </p>
                             </div>
                         </div> -->
-
-
-
-
-                              <div class="govuk-grid-row">
-                                 <div class="govuk-grid-column-one-half">
-                                    <h3 class="govuk-heading-m " style="margin-top:0;"><a href="./search">Review a case</a></h3>
-                                    <p class="rj-home-spacer rj-bottom-border-mobile ">Search and review CPS case files.</p>
-                                </div>
-
-                                        <div class="govuk-grid-column-one-half rj-space-top-mobile ">
-                                    <h3 class="govuk-heading-m " style="margin-top:0;  "><a href="redaction/search">Redact a case</a></h3>
-                                    <p class="rj-home-spacer  ">Search and redact a CPS case containing tagged and suggested redactions. </p>
-                                </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-m " style="margin-top:0;"><a href="./search">Review a case</a></h3>
+                                <p class="rj-home-spacer rj-bottom-border-mobile ">Search and review CPS case files.</p>
                             </div>
-                  
+                            <div class="govuk-grid-column-one-half rj-space-top-mobile ">
+                                <h3 class="govuk-heading-m " style="margin-top:0;  "><a href="redaction/search">Redact a case</a></h3>
+                                <p class="rj-home-spacer  ">Search and redact a CPS case containing tagged and suggested redactions. </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </section>
