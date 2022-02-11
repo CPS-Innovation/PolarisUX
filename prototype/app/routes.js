@@ -138,21 +138,21 @@ router.param('employer', function (req, res, next, employer) {
   // CPS > Nav > Review
 // bit hacky but works - needs two routes for top level and lower down the chain
  router.get('/*/CPSreviewNav', function (req, res) {
-  res.redirect(`/${req.version}/search`)
+  res.redirect(`/${req.version}/scrolljourneymodal/casefile`)
  })
 
   router.get('/*/*/CPSreviewNav', function (req, res) {
-  res.redirect(`/${req.version}/search`)
+  res.redirect(`/${req.version}/scrolljourneymodal/casefile`)
  })
 
     // CPS > Nav > Redaction
 // bit hacky but works - needs two routes for top level and lower down the chain
  router.get('/*/CPSRedactNav', function (req, res) {
-  res.redirect(`/${req.version}/redaction/search`)
+  res.redirect(`/${req.version}/redaction/tagRedact`)
  })
 
   router.get('/*/*/CPSRedactNav', function (req, res) {
-  res.redirect(`/${req.version}/redaction/search`)
+  res.redirect(`/${req.version}/redaction/tagRedact`)
  })
 
 
