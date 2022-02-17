@@ -90,23 +90,29 @@
 
 $(document).ready(function() {
   var changeStuff = function() {
-  
     var MG31Redacted = {{ data['MG31Redacted'] }};
-    var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
+    console.log(MG31Redacted)
+    // var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
 
-        if (MG31Redacted == true) {
+       switch (true) {
+        case  (MG31Redacted == true):
            $(mclovemg3NotStarted).addClass("rj-dont-display");
             $(mclovemg3Completed).removeClass("rj-dont-display");
-        }  else {}
+            break;
 
- 
+        case  (MG31Redacted == false):
+           $(mclovemg3NotStarted).addClass("rj-dont-display");
+            $(mclovemg3Completed).removeClass("rj-dont-display");
+            $(VRMYK12HOO).addClass("rj-dont-display");
+            $(VRMRemove).removeClass("rj-dont-display");
+            break;
 
-        if  (MG11SheMcRedacted == true ) {
-          $(mcloveMG11NotStarted).addClass("rj-dont-display");
-          $(mclovemgmg11Completed).removeClass("rj-dont-display");
-        } else {}
-                                } 
+        default:
+             console.log("bork bork bork what");
+             break;
+         } 
 
+ } 
 changeStuff();
 });
 
@@ -181,7 +187,8 @@ changeStuff();
                         <tbody>
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmBlaynee"> stmt BLAYNEE 2034 1 JUNE mg11</a></td>
-                                <td class="govuk-table__cell  " scope="row">VRM YK12HOO</td>
+                                <td class="govuk-table__cell  " scope="row" id="VRMYK12HOO">VRM YK12HOO</td>
+                                <td class="govuk-table__cell rj-dont-display " scope="row" id="VRMRemove">Redaction removed</td>
                                 <td class="govuk-table__cell  " scope="row">
                                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg3NotStarted">NOT STARTED</strong>
                                     <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemg3Completed">COMPLETED</strong>

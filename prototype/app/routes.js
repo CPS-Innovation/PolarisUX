@@ -4987,7 +4987,7 @@ router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
            break;
 
            case  (confirmTraining == 'No'):
-           req.session.data['MG31Redacted'] = true;
+           req.session.data['MG31Redacted'] = false;
              // req.session.data['showEPAOConfirm'] = false;
              // req.session.data['showApprenticeBox'] = true;
              res.redirect(`tagRedact`)
