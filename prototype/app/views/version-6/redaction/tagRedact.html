@@ -2,7 +2,6 @@
 {% block beforeContent %}
 {% include "includes/cps/nav/v6/mainNav.html" %}
 {% include "includes/cps/nav/v6/redactNav.html" %}
-
 {% endblock %}
 {% block content %}
 <style>.govuk-footer__copyright-logo {
@@ -87,6 +86,8 @@
     // var completeTax = JSON.parse(localStorage.getItem('registration.completeTax')); //"no" means not done any of the tax stuff. 
     var MG31Redacted = {{ data['MG31Redacted'] }};
     var MG31NotRedacted = {{ data['MG31NotRedacted'] }};
+     var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
+    var MG11SheMcNotRedacted = {{ data['MG11SheMcNotRedacted'] }};
 
 console.log( MG31Redacted, MG31NotRedacted );
 
@@ -95,8 +96,14 @@ $(document).ready(function() {
        switch (true) {
 
               case  (MG31Redacted == true) || (MG31NotRedacted == true):
-              // $(mclovemg3NotStarted).addClass("rj-dont-display");
-              // $(mclovemg3Completed).removeClass("rj-dont-display");
+              $(mclovemg3NotStarted).addClass("rj-dont-display");
+              $(mclovemg3Completed).removeClass("rj-dont-display");
+             
+           break;
+
+            case  (MG11SheMcRedacted == true) || (MG11SheMcNotRedacted == true):
+              $(mclovemg11NotStarted).addClass("rj-dont-display");
+              $(mclovemg11Completed).removeClass("rj-dont-display");
              
            break;
 
@@ -162,68 +169,81 @@ changeStuff();
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full column-minimum">
             <!--     <h2 class="govuk-heading-l " style="" id="">Redaction documents</h2> -->
-         <!--    <ol class="app-task-list" style=""> -->
-                <!--            <p class="" style="margin-bottom:35px" >Use this step by step list to help you employ an apprentice:</p> -->
-                <ol class="task-list">
-                    <li class="">
-                        <h2 class="app-task-list__section"><span class="task-list-section-number">1. </span>
-                            Review redacted documents</h2>
-                        <p style="padding-left:35px; ">You can review, and approve or reject redactions made during the case review.</p>
-                     
-
-
-                             <table class="govuk-table " style="margin-left:35px">
-                                    <thead>
-                                        <tr class="govuk-table__row">
-                                            <th scope="col" class="govuk-table__header " style="">Document name</th>
-                                            <th scope="col" class="govuk-table__header " style="">Redacted information</th>
-                                             <th scope="col" class="govuk-table__header " style="text-align: right;">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="govuk-table__row">
-                                            <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmBlaynee"> stmt BLAYNEE 2034 1 JUNE mg11</a></td>
-                                            <td class="govuk-table__cell  " scope="row">VRM YK12HOO</td>
-                                            <td class="govuk-table__cell  " scope="row">  
-                                               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg3NotStarted">NOT STARTED</strong>
-                                            <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemg3Completed">COMPLETED</strong>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
+            <!--    <ol class="app-task-list" style=""> -->
+            <!--            <p class="" style="margin-bottom:35px" >Use this step by step list to help you employ an apprentice:</p> -->
+            <ol class="task-list">
+                <li class="">
+                    <h2 class="app-task-list__section"><span class="task-list-section-number">1. </span>
+                        Review redacted documents</h2>
+                    <p style="padding-left:35px; ">You can review, and approve or reject redactions made during the case review.</p>
+                    <table class="govuk-table " style="margin-left:35px">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header " style="">Document name</th>
+                                <th scope="col" class="govuk-table__header " style="">Redacted information</th>
+                                <th scope="col" class="govuk-table__header " style="text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmBlaynee"> stmt BLAYNEE 2034 1 JUNE mg11</a></td>
+                                <td class="govuk-table__cell  " scope="row">VRM YK12HOO</td>
+                                <td class="govuk-table__cell  " scope="row">
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg3NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemg3Completed">COMPLETED</strong>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
+                <li>
+                    <h2 class="app-task-list__section" style="margin-top:55px"><span class="task-list-section-number">2. </span>
+                        Review automatically identified documents
+                    </h2>
+                    <p style="padding-left:35px; ">You can review, and approve or reject redactions suggested by software.</p>
+                    <!-- <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                            <a class="app-task-list__task-name" href="./find" aria-describedby="company-information-completed">
+                                Shelagh McLove VPS mg11
+                            </a>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="vpsMG11NotStarted">NOT STARTED</strong>
+                            <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="vpsMG11Completed">COMPLETED</strong>
+                        </li>
+                        <li class="app-task-list__item">
+                            <a class="app-task-list__task-name" href="./savedApprenticeships">
+                                stmt Shelagh McLove MG11
+                            </a>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mcloveMG11NotStarted">NOT STARTED</strong>
+                            <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mcloveMG11Completed">COMPLETED</strong>
+                        </li>
+                        <li class="app-task-list__item">
+                            <a class="app-task-list__task-name" href="./savedApprenticeships">
+                                stmt Lucy Doyle MG11 </a>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="doyleMG11NotStarted">NOT STARTED</strong>
+                            <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="doyleMG11Completed">COMPLETED</strong>
+                        </li>
+                    </ul> -->
 
-                    <li>
-                        <h2 class="app-task-list__section" style="margin-top:55px"><span class="task-list-section-number" >2. </span>
-                            Review automatically identified documents
-                        </h2>
-                        <p style="padding-left:35px; ">You can review, and approve or reject redactions suggested by software.</p>
-                    
-                        <ul class="app-task-list__items">
-                            <li class="app-task-list__item">
-                                <a class="app-task-list__task-name" href="./find" aria-describedby="company-information-completed">
-                                    Shelagh McLove VPS mg11
-                                </a>
-                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="vpsMG11NotStarted">NOT STARTED</strong>
-                                <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="vpsMG11Completed">COMPLETED</strong>
-                            </li>
-                            <li class="app-task-list__item">
-                                <a class="app-task-list__task-name" href="./savedApprenticeships">
-                                    stmt Shelagh McLove MG11
-                                </a>
-                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mcloveMG11NotStarted">NOT STARTED</strong>
-                                <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mcloveMG11Completed">COMPLETED</strong>
-                            </li>
-                            <li class="app-task-list__item">
-                                <a class="app-task-list__task-name" href="./savedApprenticeships">
-                                    stmt Lucy Doyle MG11 </a>
-                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="doyleMG11NotStarted">NOT STARTED</strong>
-                                <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="doyleMG11Completed">COMPLETED</strong>
-                            </li>
-                        </ul>
-                    </li>
-
-  <!--                   <li class="">
+                    <table class="govuk-table " style="margin-left:35px">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header " style="">Document name</th>
+                                <th scope="col" class="govuk-table__header " style="">Redacted information</th>
+                                <th scope="col" class="govuk-table__header " style="text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmSheMclove"> stmt Shelagh McLove MG11</a></td>
+                                <td class="govuk-table__cell  " scope="row">0207 555 5555</td>
+                                <td class="govuk-table__cell  " scope="row">
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg11NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemgMG11Completed">COMPLETED</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <!--                   <li class="">
                         <h2 class="app-task-list__section"><span class="task-list-section-number">3. </span>
                             Confirm changes</h2>
                         <p style="padding-left:35px">Confirm redactions and save all updated files.</p>
@@ -239,15 +259,11 @@ changeStuff();
      
                         </ul>
                     </li> -->
-                </ol>
-
-
-          <form method="get" action="searchresultsMultiple">
-            <button type="submit" class="govuk-button" style="">Submit redaction report</button>
-        </form>
+            </ol>
+            <form method="get" action="searchresultsMultiple">
+                <button type="submit" class="govuk-button" style="">Submit redaction report</button>
+            </form>
         </div>
-
-   
         <!--                     <div class="govuk-grid-column-one-third">
                         <section>
                             <nav style="height:47px">

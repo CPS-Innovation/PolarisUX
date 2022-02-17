@@ -4973,7 +4973,7 @@ router.get('/*/sandbox/ecfchoosy' , function (req, res) {
 
 
 /////////END OF NPQ ROUTES //////////////////////////////
-/////////NPQ ROUTES //////////////////////////////
+/////////CPS ROUTES //////////////////////////////
 
 router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
   var confirmTraining = req.query.trn
@@ -5002,6 +5002,30 @@ router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
             break;
         }
 })
+
+router.get('/*/redaction/routeRedactTaggedSheLoveMG11' , function (req, res) {
+  var confirmTraining = req.query.trn
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['MG11SheMcRedacted'] = true;
+              req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`tagRedact`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['MG11SheMcNotRedacted'] = true;
+           req.session.data['MG11SheMcRedacted'] = false;
+            res.redirect(`tagRedact`)
+            
+        default:
+            console.log("bork bork bork bork");
+                res.redirect(`tagRedact`)
+            break;
+        }
+})
+
+
 
 
 module.exports = router
