@@ -80,20 +80,20 @@ href: "javascript:history.back()"
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <!--   <p>Choose the End Point Assessment Organisation for   {{ data['course-name'] }}</p> -->
                         <label class="govuk-label  bold-label" for="firstName">
-                            Do you want to confirm the redaction of VRM YK12HOO?
+                            Do you to keep VRM YK12HOO redacted?
                         </label>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="trn" name="trn" type="radio" value="Yes" {{ checked( "trn", "Yes") }}>
                             <label class="govuk-label govuk-radios__label" for="TRN-yes">
-                                Yes
+                                Yes, keep the redaction
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="trn" name="trn" type="radio" value="No" {{ checked( "TRN", "No") }}>
                             <label class="govuk-label govuk-radios__label" for="TRN-no">
-                                No, do not redact the VRM YK12HOO
+                                No, undo the redaction
                             </label>
                         </div>
                     </div>
