@@ -84,63 +84,63 @@
     // var firstTimeReg = JSON.parse(localStorage.getItem('registration.firstTimeReg'));
     // var completeAgreement = JSON.parse(localStorage.getItem('registration.completeAgreement')); // "no" means not done the agreement
     // var completeTax = JSON.parse(localStorage.getItem('registration.completeTax')); //"no" means not done any of the tax stuff. 
-    var MG31Redacted = {{ data['MG31Redacted'] }};
-    var MG31NotRedacted = {{ data['MG31NotRedacted'] }};
-     var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
-    var MG11SheMcNotRedacted = {{ data['MG11SheMcNotRedacted'] }};
 
-console.log( MG31Redacted, MG31NotRedacted );
+
+
 
 $(document).ready(function() {
-  var changeStuff = function() {  
+  var changeStuff = function() {
+    var MG31Redacted = {{ data['MG31Redacted'] }};
+    console.log(MG31Redacted)
+    // var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
+
        switch (true) {
-
-              case  (MG31Redacted == true) || (MG31NotRedacted == true):
-              $(mclovemg3NotStarted).addClass("rj-dont-display");
-              $(mclovemg3Completed).removeClass("rj-dont-display");
-             
-           break;
-
-            case  (MG11SheMcRedacted == true) || (MG11SheMcNotRedacted == true):
-              $(mclovemg11NotStarted).addClass("rj-dont-display");
-              $(mclovemg11Completed).removeClass("rj-dont-display");
-             
-           break;
-
-
-        // Coming from registration and agreement and tax are both done
-          // case  (firstTimeReg == 'yes') && (completeAgreement != 'no') && (completeTax != 'no'):
-          //     $(firstTimeRegMessage).removeClass("rj-dont-display");
-          //     localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
-          //  break;
-        // Coming from registration and agreement and tax are both NOT done
-           //  case  (firstTimeReg == 'yes') && ((completeAgreement == 'no') && (completeTax == 'no')):
-           //    $(firstTimeRegMessageIncomplete).removeClass("rj-dont-display")
-           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
-           // break;
-
-        // Coming from registration and agreement is not done but tax is done
-           //   case  (firstTimeReg == 'yes') && ((completeAgreement == 'no') || (completeTax == 'yes')):
-           //   console.log("agreement is not done but tax IS Done")
-           //    $(firstTimeRegMessageIncompleteAgreementOnly).removeClass("rj-dont-display")
-           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
-           // break;
-
-         // Coming from registration and agreement is done but TAX is NOT done
-           // case  (firstTimeReg == 'yes') && ((completeAgreement == 'yes') || (completeTax == 'no')):
-           //     console.log("agreement is  done but tax is NOT one")
-           //    $(firstTimeRegMessageIncompleteTaxOnly).removeClass("rj-dont-display")
-           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
-           // break;
-
-           default:
-            // localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
-            console.log("bork bork bork what");
+        case  (MG31Redacted == true):
+           $(mclovemg3NotStarted).addClass("rj-dont-display");
+            $(mclovemg3Completed).removeClass("rj-dont-display");
             break;
-        } 
-      }
+
+        case  (MG31Redacted == false):
+           $(mclovemg3NotStarted).addClass("rj-dont-display");
+            $(mclovemg3Completed).removeClass("rj-dont-display");
+            $(VRMYK12HOO).addClass("rj-dont-display");
+            $(VRMRemove).removeClass("rj-dont-display");
+            break;
+
+        default:
+             console.log("bork bork bork what");
+             break;
+         } 
+
+ } 
 changeStuff();
 });
+
+
+
+// $(document).ready(function() {
+//   var changeStuff = function() {  
+//        switch (true) {
+
+//               case  (MG31Redacted == true) || (MG31NotRedacted == true):
+//               $(mclovemg3NotStarted).addClass("rj-dont-display");
+//               $(mclovemg3Completed).removeClass("rj-dont-display");
+             
+//            break;
+
+//             case  (MG11SheMcRedacted == true) || (MG11SheMcNotRedacted == true):
+//               $(mcloveMG11NotStarted).addClass("rj-dont-display");
+//               $(mclovemgmg11Completed).removeClass("rj-dont-display");
+             
+//            break;
+
+      
+//             console.log("bork bork bork what");
+//             break;
+//         } 
+//       }
+// changeStuff();
+// });
 
 </script>
 <!--                 <div style= "" id="firstTimeRegMessage" class="success-summary rj-dont-display"> 
@@ -175,7 +175,7 @@ changeStuff();
                 <li class="">
                     <h2 class="app-task-list__section"><span class="task-list-section-number">1. </span>
                         Review redacted documents</h2>
-                    <p style="padding-left:35px; ">You can review, and approve or reject redactions made during the case review.</p>
+                    <p style="padding-left:35px; ">You can review, and keep or reject redactions made during the case review.</p>
                     <table class="govuk-table " style="margin-left:35px">
                         <thead>
                             <tr class="govuk-table__row">
@@ -187,7 +187,8 @@ changeStuff();
                         <tbody>
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmBlaynee"> stmt BLAYNEE 2034 1 JUNE mg11</a></td>
-                                <td class="govuk-table__cell  " scope="row">VRM YK12HOO</td>
+                                <td class="govuk-table__cell  " scope="row" id="VRMYK12HOO">VRM YK12HOO</td>
+                                <td class="govuk-table__cell rj-dont-display " scope="row" id="VRMRemove">Redaction removed</td>
                                 <td class="govuk-table__cell  " scope="row">
                                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg3NotStarted">NOT STARTED</strong>
                                     <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemg3Completed">COMPLETED</strong>
@@ -236,8 +237,8 @@ changeStuff();
                                 <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmSheMclove"> stmt Shelagh McLove MG11</a></td>
                                 <td class="govuk-table__cell  " scope="row">0207 555 5555</td>
                                 <td class="govuk-table__cell  " scope="row">
-                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mclovemg11NotStarted">NOT STARTED</strong>
-                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemgMG11Completed">COMPLETED</strong>
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="mcloveMG11NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemgmg11Completed">COMPLETED</strong>
                                 </td>
                             </tr>
                         </tbody>
@@ -260,7 +261,7 @@ changeStuff();
                         </ul>
                     </li> -->
             </ol>
-            <form method="get" action="searchresultsMultiple">
+            <form method="get" action="">
                 <button type="submit" class="govuk-button" style="">Submit redaction report</button>
             </form>
         </div>

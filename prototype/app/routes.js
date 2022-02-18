@@ -4981,14 +4981,12 @@ router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
           case  (confirmTraining == 'Yes'):
              // req.session.data['showApprenticeBox'] = false;
               req.session.data['MG31Redacted'] = true;
-              req.session.data['MG31NotRedacted'] = false;
+              // req.session.data['MG31NotRedacted'] = false;
               // req.session.data['email'] = "jenny@stpaulsschool.ac.uk";
               res.redirect(`tagRedact`)
-            
            break;
 
            case  (confirmTraining == 'No'):
-           req.session.data['MG31NotRedacted'] = true;
            req.session.data['MG31Redacted'] = false;
              // req.session.data['showEPAOConfirm'] = false;
              // req.session.data['showApprenticeBox'] = true;
@@ -5008,14 +5006,14 @@ router.get('/*/redaction/routeRedactTaggedSheLoveMG11' , function (req, res) {
        switch (true) {
           case  (confirmTraining == 'Yes'):
               req.session.data['MG11SheMcRedacted'] = true;
-              req.session.data['MG11SheMcNotRedacted'] = false;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
               res.redirect(`tagRedact`)
             
            break;
 
            case  (confirmTraining == 'No'):
-           req.session.data['MG11SheMcNotRedacted'] = true;
-           req.session.data['MG11SheMcRedacted'] = false;
+           // req.session.data['MG11SheMcNotRedacted'] = true;
+           req.session.data['MG11SheMcRedacted'] = true;
             res.redirect(`tagRedact`)
             
         default:
