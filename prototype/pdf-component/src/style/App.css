@@ -12,6 +12,8 @@
 body {
   margin: 0;
   font-family: "TransportNew", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
   background-color: #ffffff;
   color: #fff;

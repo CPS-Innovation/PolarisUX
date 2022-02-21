@@ -1,5 +1,7 @@
 .Tip__compact {
   font-family: "TransportNew", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
    font-size: 19px;
   cursor: pointer;
   background-color: #00703c;
