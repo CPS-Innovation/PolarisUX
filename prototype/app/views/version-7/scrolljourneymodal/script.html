@@ -6,6 +6,7 @@
 </style>
 <link href="/public/css/pdf.css" rel="stylesheet" />
 <script>
+  //window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
   $(document).ready(function () {
     const SPECIAL_CASE_SEARCH_TAB_HEADING = "Search results";
 
@@ -118,7 +119,7 @@
        
             <!-- <embed class="embedSize" src="/public/files/${document}#toolbar=0&view=FitH" /> -->
                 
-                <div id="pdf-root" data-pdf-url="/public/files/${document}" style="height: 100%; width: 100%"></div>
+                <div id="pdf-root" data-pdf-url="/public/files/${document}" style="height: 9000px"></div>
                 
         </div>`;
 
@@ -143,7 +144,7 @@
         highlightMenuLink(tabId, false);
       });
 
-      $.getScript("/public/javascripts/pdf.js");
+      $.getScript(window.location.origin + "/public/javascripts/pdf.js");
     }
 
     function destroyTab(tabId) {
