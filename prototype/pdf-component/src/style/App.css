@@ -1,8 +1,18 @@
+@import url("//hello.myfonts.net/count/413f20");
+  
+@font-face {
+  font-family: "TransportNew";
+    font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 90%;
+  src: url('../../../public/fonts/TransportNewLight/font.woff2') format('woff2'), url('../../../public/fonts/TransportNewLight/font.woff') format('woff');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "TransportNew", "Arial", sans-serif;
+
   background-color: #ffffff;
   color: #fff;
 }
@@ -20,7 +30,7 @@ body {
 }
 
 .sidebar__highlights {
-  list-style: "none";
+  list-style: none;
   padding: 0;
 }
 
