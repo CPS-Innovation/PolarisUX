@@ -1,10 +1,13 @@
 .Tip__compact {
   cursor: pointer;
-  background-color: #3d464d;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #00703c;
+  /*border: 1px solid rgba(255, 255, 255, 0.25);*/
   color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-bottom: -2px;
+  margin-top: -10px;
+ 
 }
 
 .Tip__card {
@@ -12,17 +15,31 @@
   background: #fff;
   background-clip: padding-box;
   border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(37, 40, 43, 0.2);
+  border-radius: 10px;
+ /* box-shadow: 0 2px 4px #fff;*/
 }
 
 .Tip__card textarea {
-  font-size: 16px;
-  width: 200px;
-  height: 70px;
+  font-size: 19px;
+  width: 250px;
+  height: 1200px;
 }
 
 .Tip__card input[type="submit"] {
   margin-top: 5px;
   font-size: large;
+}
+
+.Tip__compact:after{
+    content: '';
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 10px);
+  background: #00703c;
+  width: 20px;
+  height: 10px;
+  
+  
+  /* The points are: (left top: x y, right top: x y, center bottom: x y) */
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }

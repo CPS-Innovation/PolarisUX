@@ -13,6 +13,8 @@
   opacity: 1;
 }
 
+/*This is the bit that changes the background color for the redaction
+*/
 .Highlight__part {
   cursor: pointer;
   position: absolute;

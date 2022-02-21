@@ -45,7 +45,7 @@ export class Tip extends Component<Props, State> {
               onConfirm({ text: "", emoji: "" });
             }}
           >
-            Click to redact
+            Redact
           </div>
         ) : (
           <form
