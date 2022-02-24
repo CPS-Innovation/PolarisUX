@@ -33,14 +33,22 @@ const resetHash = () => {
 
 const HighlightPopup = ({
   comment,
+  onClick,
 }: {
   comment: { text: string; emoji: string };
-}) =>
-  comment.text ? (
-    <div className="Highlight__popup">
-      {comment.emoji} {comment.text}
+  onClick: () => void;
+}) => (
+  //true ? (
+  // <div className="Highlight__popup">
+  //   {comment.emoji} {comment.text}
+  // </div>
+  <div className="Tip">
+    <div className="Tip__compact Tip__compact-unredact" onClick={onClick}>
+      Unredact
     </div>
-  ) : null;
+  </div>
+);
+//) : null;
 
 //const PRIMARY_PDF_URL = "response2.pdf";
 // const SECONDARY_PDF_URL = "https://arxiv.org/pdf/1604.02480.pdf";
@@ -156,7 +164,7 @@ class App extends Component<{}, State> {
               pdfDocument={pdfDocument}
               enableAreaSelection={(event) => event.altKey}
               onScrollChange={resetHash}
-              // pdfScaleValue="page-width"
+              pdfScaleValue="page-width"
               scrollRef={(scrollTo) => {
                 this.scrollViewerTo = scrollTo;
 
@@ -212,7 +220,15 @@ class App extends Component<{}, State> {
 
                 return (
                   <Popup
-                    popupContent={<HighlightPopup {...highlight} />}
+                    popupContent={
+                      <HighlightPopup
+                        {...highlight}
+                        onClick={() => {
+                          this.removeHighlight(highlight.id);
+                          hideTip();
+                        }}
+                      />
+                    }
                     onMouseOver={(popupContent) =>
                       setTip(highlight, (highlight) => popupContent)
                     }
