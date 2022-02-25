@@ -177,7 +177,7 @@ class App extends Component<{}, State> {
                 : `There are ${highlights.length} redactions`}
             </span>
 
-            <button onClick={() => this.setRedactionComplete()}>Submit</button>
+            <button className="govuk-button saveAndFinishButton" onClick={() => this.setRedactionComplete()}>Save all redactions</button>
           </div>
         )}
         <div

@@ -114,7 +114,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }*/
 
 /* CPS only styles*/
-
+/*
 .saveAndFinishBar {
   background-color: #fff;
   width: 100%;
@@ -124,14 +124,35 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     bottom: 0px;
     right: 0px;
     border-top: 4px solid $govuk-border-colour;
+}*/
+
+
+.redaction-footer {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: 5px solid #b1b4b6; 
+  height: 4rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 999;
 }
 
-.saveAndFinishButton {
-  margin-top: 10px;
-   position: absolute;
-   right: 25px;
-  /* margin-right: 25px;*/
+
+.redaction-footer button {
+/*  height: 2rem;*/
+ /* margin: 5px;*/
+ margin: 5px 15px 0 20px;
 }
+
+
+.redaction-footer span {
+ margin: 5px 0 0 0px;
+ font-size: 19px;
+}
+
 
 .fw400 {
   font-weight: 400;
