@@ -169,7 +169,7 @@ class App extends Component<{}, State> {
         {highlights.length && !isRedactionComplete && (
           <div
             className="redaction-footer"
-            style={{ width: this.containerRef.current?.clientWidth ?? 0 - 2 }}
+            style={{ width: (this.containerRef.current?.clientWidth ?? 0) - 2 }}
           >
             <span>
               {highlights.length === 1
