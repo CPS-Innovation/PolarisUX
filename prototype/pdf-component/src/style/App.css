@@ -1,19 +1,20 @@
 @import url("//hello.myfonts.net/count/413f20");
-  
+
 @font-face {
   font-family: "TransportNew";
-    font-style: normal;
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   size-adjust: 90%;
-  src: url('../../../public/fonts/TransportNewLight/font.woff2') format('woff2'), url('../../../public/fonts/TransportNewLight/font.woff') format('woff');
+  src: url("../../../public/fonts/TransportNewLight/font.woff2") format("woff2"),
+    url("../../../public/fonts/TransportNewLight/font.woff") format("woff");
 }
 
 body {
   margin: 0;
   font-family: "TransportNew", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 
   background-color: #ffffff;
   color: #fff;
@@ -65,4 +66,22 @@ a {
 blockquote {
   padding: 0;
   margin: 0;
+}
+
+.redaction-footer {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border: 1px solid red;
+  height: 4rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 999;
+}
+
+.redaction-footer button {
+  height: 2rem;
+  margin: 5px;
 }

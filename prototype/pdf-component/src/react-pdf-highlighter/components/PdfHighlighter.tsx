@@ -621,6 +621,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
           onContextMenu={(e) => e.preventDefault()}
         >
           <div className="pdfViewer" />
+
           {this.renderTip()}
           {typeof enableAreaSelection === "function" ? (
             <MouseSelection
