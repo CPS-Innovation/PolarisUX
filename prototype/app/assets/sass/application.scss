@@ -129,7 +129,8 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 .saveAndFinishButton {
   margin-top: 10px;
    position: absolute;
-   margin-right: 25px;
+   right: 25px;
+  /* margin-right: 25px;*/
 }
 
 .fw400 {
