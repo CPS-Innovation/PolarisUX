@@ -46,7 +46,7 @@ const HighlightPopup = ({
   // </div>
   <div className="Tip">
     <div className="Tip__compact Tip__compact-unredact" onClick={onClick}>
-      Unredact
+      Remove redaction
     </div>
   </div>
 );
