@@ -127,6 +127,14 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }*/
 
 
+.removeRedactions
+ {
+margin-right: auto !important;
+
+margin-left: 15px !important;
+
+ }
+
 .redaction-footer {
   position: fixed;
   bottom: 0;
@@ -149,7 +157,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 
 
 .redaction-footer span {
- margin: 5px 0 0 0px;
+ margin: 8px 0 0 0px;
  font-size: 19px;
 }
 

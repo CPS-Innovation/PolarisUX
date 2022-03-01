@@ -171,6 +171,11 @@ class App extends Component<{}, State> {
             className="redaction-footer"
             style={{ width: (this.containerRef.current?.clientWidth ?? 0) - 2 }}
           >
+
+           <span className="removeRedactions looks-like-a-link-underline" >
+             Remove all redactions
+
+            </span>
             <span>
               {highlights.length === 1
                 ? "There is 1 redaction"
