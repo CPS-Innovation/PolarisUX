@@ -130,7 +130,6 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 .removeRedactions
  {
 margin-right: auto !important;
-
 margin-left: 15px !important;
 
  }
@@ -3881,15 +3880,15 @@ ul.hidden-links li:first-child  {
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
-  height: 10px; 
+  height: 12px; 
 }
  }
 
 @media (max-width: 1250px) {
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 8px;
-  height: 8px; 
+  width: 10px;
+  height: 12px; 
 }
  }
 

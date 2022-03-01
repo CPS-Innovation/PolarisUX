@@ -4991,8 +4991,6 @@ router.get('/*/redaction/routeRedactTaggedMG3' , function (req, res) {
              // req.session.data['showEPAOConfirm'] = false;
              // req.session.data['showApprenticeBox'] = true;
              res.redirect(`tagRedact`)
-            
-  
 
         default:
             console.log("bork bork bork bork");
@@ -5018,7 +5016,9 @@ router.get('/*/redaction/routeRedactTaggedSheLoveMG11' , function (req, res) {
             
         default:
             console.log("bork bork bork bork");
-                res.redirect(`tagRedact`)
+                     req.session.data['MG11SheMcRedacted'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`tagRedact`)
             break;
         }
 })

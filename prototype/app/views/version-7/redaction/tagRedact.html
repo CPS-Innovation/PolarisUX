@@ -84,22 +84,22 @@
     // var firstTimeReg = JSON.parse(localStorage.getItem('registration.firstTimeReg'));
     // var completeAgreement = JSON.parse(localStorage.getItem('registration.completeAgreement')); // "no" means not done the agreement
     // var completeTax = JSON.parse(localStorage.getItem('registration.completeTax')); //"no" means not done any of the tax stuff. 
-    var MG31Redacted = {{ data['MG31Redacted'] }};
-    var MG31NotRedacted = {{ data['MG31NotRedacted'] }};
+    // var MG31Redacted = {{ data['MG31Redacted'] }};
+    // var MG31NotRedacted = {{ data['MG31NotRedacted'] }};
      var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
-    var MG11SheMcNotRedacted = {{ data['MG11SheMcNotRedacted'] }};
+    // var MG11SheMcNotRedacted = {{ data['MG11SheMcNotRedacted'] }};
 
-console.log( MG31Redacted, MG31NotRedacted );
+// console.log( MG31Redacted, MG31NotRedacted );
 
 $(document).ready(function() {
   var changeStuff = function() {  
        switch (true) {
 
-              case  (MG31Redacted == true) || (MG31NotRedacted == true):
-              $(mclovemg3NotStarted).addClass("rj-dont-display");
-              $(mclovemg3Completed).removeClass("rj-dont-display");
+           //    case  (MG31Redacted == true) || (MG31NotRedacted == true):
+           //    $(mclovemg3NotStarted).addClass("rj-dont-display");
+           //    $(mclovemg3Completed).removeClass("rj-dont-display");
              
-           break;
+           // break;
 
             case  (MG11SheMcRedacted == true) || (MG11SheMcNotRedacted == true):
               $(mclovemg11NotStarted).addClass("rj-dont-display");
@@ -147,7 +147,7 @@ changeStuff();
      <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl" style="" id="company-Name">Redaction suggestions</h1>
-  
+
 
    <!--   <h1 class="govuk-heading-xl" style="" id="company-Name">ROB FOR V2 MAKE THIS MORE LIKE THE SEARCH OVERLAY - THEN WHEN THEY CLICK THEY CAN GO INTO THE DOCUMENT</h1> -->
 
@@ -205,15 +205,15 @@ changeStuff();
                                 <td class="govuk-table__cell  " scope="row">0207 555 5555</td>
                                 <td class="govuk-table__cell  " scope="row">
                                     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" style="" id="mclovemg11NotStarted">NOT STARTED</strong>
-                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="mclovemgMG11Completed">COMPLETED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="mclovemg11Completed">COMPLETED</strong>
                                 </td>
                             </tr>
                             <tr class="govuk-table__row">
-                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href="stmSheMclove"> stmt JONES 1989 1 JUNE mg11</a></td>
+                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href=""> stmt JONES 1989 1 JUNE mg11</a></td>
                                 <td class="govuk-table__cell  " scope="row">SHELAGH MCLOVE detailed to me that she had been assaulted by her partner Eoin MCLOVE who had left the scene in her Nissan car. Ms MCLOVE further told me that EOIN MCLOVE was under the influence of alcohol and as such I radioed to colleagues to look out for that car.</td>
                                 <td class="govuk-table__cell  " scope="row">
-                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" style="" id="mclovemg11NotStarted">NOT STARTED</strong>
-                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="mclovemgMG11Completed">COMPLETED</strong>
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" style="" id="jonesmg11NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="jonesMG11Completed">COMPLETED</strong>
                                 </td>
                             </tr>
                         </tbody>
