@@ -201,15 +201,15 @@
 
         const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
         const src = embed.attr("src");
-        // if (!src.includes("/searchResults/")) {
-        //   embed.remove();
-        //   $(`div[data-tab-id='${tabId}-content']`).append(
-        //     `<embed class="embedSize" src="${src.replace(
-        //       "/files/",
-        //       "/files/searchResults/"
-        //     )}" >`
-        //   );
-        // }
+        if (!src.includes("/searchResults/")) {
+          embed.remove();
+          $(`div[data-tab-id='${tabId}-content']`).append(
+            `<embed class="embedSize" src="${src.replace(
+              "/files/",
+              "/files/searchResults/"
+            )}" >`
+          );
+        }
       } else {
         $tabContent.find("#documentNameHeader").css("display", "flex");
         $tabContent.find("#searchHeaderDisplay").css("display", "none");
