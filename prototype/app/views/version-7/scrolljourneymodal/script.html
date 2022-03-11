@@ -63,6 +63,10 @@
       }
     }
 
+    function getTabHtml(src) {
+      return `<div id="pdf-root" data-pdf-url="${src}" style="height: 10500px"></div>`;
+    }
+
     function ensureTabExists(tabId, label, isSearched) {
       const existingTab = $(`li[data-tab-id='${tabId}']`);
       if (existingTab.length) return;
@@ -120,7 +124,7 @@
        
             <!-- <embed class="embedSize" src="/public/files/${document}#toolbar=0&view=FitH" /> -->
                 
-                <div id="pdf-root" data-pdf-url="/public/files/${document}" style="height: 10500px"></div>
+            ${getTabHtml(`/public/files/${document}`)}
                 
         </div>`;
 
@@ -199,17 +203,15 @@
         // $("#documentNameHeader").css("display", "none");
         // $("#searchHeaderDisplay").css("display", "flex");
 
-        const embed = $(`div[data-tab-id='${tabId}-content'] > embed`);
-        const src = embed.attr("src");
+        const pdfViewer = $(`div[data-tab-id='${tabId}-content'] > #pdf-root`);
+        const src = pdfViewer.attr("data-pdf-url");
         if (!src.includes("/searchResults/")) {
-          embed.remove();
+          pdfViewer.remove();
           $(`div[data-tab-id='${tabId}-content']`).append(
-            `<embed class="embedSize" src="${src.replace(
-              "/files/",
-              "/files/searchResults/"
-            )}" >`
+            getTabHtml(src.replace("/files/", "/files/searchResults/"))
           );
         }
+        $.getScript(window.location.origin + "/public/javascripts/pdf.js");
       } else {
         $tabContent.find("#documentNameHeader").css("display", "flex");
         $tabContent.find("#searchHeaderDisplay").css("display", "none");
