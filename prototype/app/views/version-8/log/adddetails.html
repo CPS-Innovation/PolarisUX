@@ -88,7 +88,7 @@ href: "javascript:history.back()"
               <label class="govuk-label bold-label" for="sort">
                 Document type
               </label>
-              <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+              <select class="govuk-select govuk-!-width-one-half" id="docType" name="docType">
                 <option value="MG 0">MG 0</option>
                 <option value="MG 1" >MG 1</option>
                 <option value="MG 2">MG 2</option>
@@ -108,7 +108,7 @@ href: "javascript:history.back()"
               <label class="govuk-label bold-label" for="sort">
                Missed redaction
               </label>
-              <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+              <select class="govuk-select govuk-!-width-one-half" id="redactType" name="redactType">
                 <option value="MG 0">Named individual</option>
                 <option value="MG 1" >Title</option>
                 <option value="MG 2">Occupation</option>
@@ -199,13 +199,13 @@ href: "javascript:history.back()"
                  <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Returned to investigative agency</label>
                 <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="unredacted" name="redactionType" type="radio" value="Unredacted">
+                    <input class="govuk-radios__input" id="unredacted" name="returned" type="radio" value="Unredacted">
                     <label class="govuk-label govuk-radios__label" for="mags">
                       Yes, returned to investigative agency
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="overredacted" name="redactionType" type="radio" value="Overredacted">
+                    <input class="govuk-radios__input" id="overredacted" name="returned" type="radio" value="Overredacted">
                     <label class="govuk-label govuk-radios__label" for="crown">
                       No, not returned to investigative agency
                     </label>

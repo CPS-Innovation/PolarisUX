@@ -37,15 +37,15 @@ href: "javascript:history.back()"
         <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                   <h1 class="govuk-heading-xl">Check your answers</h1>
- {{ data['FirstFirstName'] }} {{ data['FirstLastName'] }}
+
 
  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Name
+              Case URN
             </dt>
             <dd class="govuk-summary-list__value">
-              Sarah Philips
+              {{ data['CaseURN'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -53,39 +53,47 @@ href: "javascript:history.back()"
               </a>
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of birth
+             CPS area or central casework division
+
             </dt>
             <dd class="govuk-summary-list__value">
-              5 January 1978
+              <p class="govuk-body">    {{ data['sort'] }} </p>
+       
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> date of birth</span>
+                Change<span class="govuk-visually-hidden"> contact details</span>
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Address
+             CPS area or business unit
+
+
             </dt>
             <dd class="govuk-summary-list__value">
-              72 Guild Street<br>London<br>SE23 6FH
+              <p class="govuk-body"> {{ data['unit'] }}</p>
+       
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> address</span>
+                Change<span class="govuk-visually-hidden"> contact details</span>
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Contact details
+            Investigative agency
+
+
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">07700 900457</p>
-              <p class="govuk-body">sarah.phillips@example.com</p>
+              <p class="govuk-body">{{ data['investigate'] }}</p>
+       
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
