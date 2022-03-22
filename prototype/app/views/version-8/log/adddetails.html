@@ -18,7 +18,7 @@ href: "javascript:history.back()"
 }
 
 .govuk-header__logotype {
-  display: none;
+ /* display: none;*/
 }
 
 @media (min-width: 48.0625em) {
@@ -109,21 +109,21 @@ href: "javascript:history.back()"
                Missed redaction
               </label>
               <select class="govuk-select govuk-!-width-one-half" id="redactType" name="redactType">
-                <option value="MG 0">Named individual</option>
-                <option value="MG 1" >Title</option>
-                <option value="MG 2">Occupation</option>
-                <option value="MG 3">Relationship to others</option>
-                 <option value="MG 4">Address</option>
-                  <option value="MG 4A">Location</option>
-                   <option value="MG 4B">Vehicle registration</option>
-                    <option value="MG 4C">NHS number</option>
+                <option value="Named individual">Named individual</option>
+                <option value="Title" >Title</option>
+                <option value="Occupation">Occupation</option>
+                <option value="Relationship to others">Relationship to others</option>
+                 <option value="Address">Address</option>
+                  <option value="Location">Location</option>
+                   <option value="Vehicle registration">Vehicle registration</option>
+                    <option value="NHS number">NHS number</option>
                      <option value="MG 4D">Date of birth</option>
-                      <option value="MG 4E">Bank details</option>
-                     <option value="MG 4B">NI number</option>
-                    <option value="MG 4C">Phone number</option>
-                     <option value="MG 4D">Email address</option>
-                      <option value="MG 4E">Previous convictions</option>
-                       <option value="MG 4E">Others</option>
+                      <option value="Date of birth">Bank details</option>
+                     <option value="NI number">NI number</option>
+                    <option value="Phone number">Phone number</option>
+                     <option value="Email address">Email address</option>
+                      <option value="Previous convictions">Previous convictions</option>
+                       <option value="Others">Others</option>
               </select>
             </div>
 
@@ -199,13 +199,13 @@ href: "javascript:history.back()"
                  <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Returned to investigative agency</label>
                 <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="unredacted" name="returned" type="radio" value="Unredacted">
+                    <input class="govuk-radios__input" id="unredacted" name="returned" type="radio" value="Yes, returned to investigative agency">
                     <label class="govuk-label govuk-radios__label" for="mags">
                       Yes, returned to investigative agency
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="overredacted" name="returned" type="radio" value="Overredacted">
+                    <input class="govuk-radios__input" id="overredacted" name="returned" type="radio" value=" No, not returned to investigative agency">
                     <label class="govuk-label govuk-radios__label" for="crown">
                       No, not returned to investigative agency
                     </label>
