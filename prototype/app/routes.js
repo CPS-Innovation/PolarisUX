@@ -156,7 +156,21 @@ router.param('employer', function (req, res, next, employer) {
  })
 
 
+ router.get('/*/CPSLogDashboard', function (req, res) {
+  res.redirect(`/${req.version}/samelog`)
+ })
 
+  router.get('/*/*/CPSLogDashboard', function (req, res) {
+  res.redirect(`/${req.version}/samelog`)
+ })
+
+ router.get('/*/CPSLogLog', function (req, res) {
+  res.redirect(`/${req.version}/samelog/addlog`)
+ })
+
+  router.get('/*/*/CPSLogLog', function (req, res) {
+  res.redirect(`/${req.version}/samelog/addlog`)
+ })
 
 //  ------------------  DoE NAV ----------------------
 // Employer > Nav > Home
