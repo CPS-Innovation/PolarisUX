@@ -1,0 +1,457 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v8/logNav.html" %}
+{% include "includes/cps/nav/v8/logReport.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+<style>
+
+
+
+.js-enabled .govuk-option-select .options-container {
+    overflow-y: hidden;
+}
+
+@media (min-width: 769px)
+.govuk-option-select .options-container {
+    max-height: 200px;
+}
+.govuk-option-select .options-container
+
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+.caseReviewHeader {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<script src="/public/javascripts/accordion.js"></script>
+<script>
+    // uncomment this to turn on the accordions
+
+if (
+    'addEventListener' in document &&
+    document.querySelectorAll
+) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var accordions = document.querySelectorAll('.accordion')
+        for (var i = accordions.length - 1; i >= 0; i--) {
+            new Accordion(accordions[i])
+        };
+    })
+}
+</script>
+<style>
+.accordion-controls {
+    display: none;
+}
+
+.filter-form {
+    border: 1px solid lightgrey;
+    padding: 10px;
+
+}
+
+.options-container {
+    border: 0 !important;
+}
+
+.js-enabled .govuk-option-select.js-collapsible button {
+    background-color: #fff !important;
+}
+
+#finder-frontend .filter {
+    background-color: #fff !important;
+}
+
+#finder-frontend .govuk-option-select,
+#finder-frontend .filter {
+    margin-bottom: 0 !important;
+}
+
+#finder-frontend .govuk-form-group {}
+
+.bmwLogo {
+    padding-left: 0px;
+    margin-left: 400px
+}
+
+.bmwLogo img {
+    width: 85px;
+    height: auto;
+}
+
+.metroLogo {
+    padding-left: 0px;
+    margin-left: 0px
+}
+
+.metroLogo img {
+    width: 125px;
+    height: auto;
+    padding: 0;
+}
+
+.metroTitle {
+    min-width: 150px;
+    margin-right: 45px;
+}
+
+.metroWidth {
+    max-width: 150px;
+}
+
+@media (max-width: 641px) {
+    .CFSlogo svg {
+        padding-left: 0px;
+        margin-left: 25px
+    }
+
+    .bmwLogo {
+        padding-left: 0px;
+        margin-left: 125px;
+
+    }
+
+    .bmwLogo img {
+        width: 75px;
+        height: auto;
+    }
+
+    .metroLogo {
+        padding-left: 0px;
+        margin-left: 0px
+    }
+
+    .metroLogo img {
+        width: 80%;
+        height: auto;
+        padding: 0;
+    }
+
+    .metroTitle {
+        min-width: 150px;
+        margin-right: 0;
+    }
+}
+</style>
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl" style="">Redaction report</h1>
+        <!--         <p style="margin:5px 0 5px 0">We've found <span style="font-weight:700">3</span> apprenticeships in your area.</p>
+        <p><a href="">Recieve alerts for this search</a></p> -->
+    </div>
+</div>
+<form method="get" action="searchResults">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            <!-- desktop version of the filters -->
+            <div class="notOnMobile">
+                <div class="filter-form filtering ">
+                    <div id="finder-frontend" class="inner-block" style="margin-bottom:15px">
+                        <div class="filter text-filter">
+                            <h2 class="govuk-heading-m" style="margin-top:15px; margin-bottom:15px;padding-bottom: 15px;border-bottom:1px solid lightgrey">Filter</h2>
+                            <div class="govuk-form-group" style="margin-bottom:15px">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="">
+                                    Case URN
+                                </label>
+                                <!--             <span id="reference-hint" class="govuk-hint">
+                                    Enter postcode, town or city
+                                </span> -->
+                                <input class="govuk-input" style="margin-bottom: 0px" id="partialCost" name="partialCost" type="text" aria-describedby="FirstName-hint" value="" />
+                            </div>
+                        </div>
+                        <div class="govuk-option-select js-collapsible" style="background-color: #fff; margin-bottom:15px !important">
+                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="margin-bottom:-10px">
+                                    Areas
+                                </label>
+                                <div class="js-selected-counter"></div>
+                            </button>
+                            <div class="options-container" id="case_state">
+                                <div class="js-auto-height-inner">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" style="margin: 10px">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="wasteaa" name="wasteaa" type="checkbox" value="waste">
+                                                <label class="govuk-label govuk-checkboxes__label" for="wasteaa" style="font-size:19px; width:100%">
+                                                    Test area 1
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="wastebn" name="wasteaa" type="checkbox" value="waste">
+                                                <label class="govuk-label govuk-checkboxes__label" for="wastebn" style="font-size:19px; width:100%">
+                                                    Test area 2
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-option-select js-collapsible" style="background-color: #fff; margin-bottom:15px !important">
+                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="margin-bottom:-10px">
+                                    Divisions
+                                </label>
+                                <div class="js-selected-counter"></div>
+                            </button>
+                            <div class="options-container" id="case_state">
+                                <div class="js-auto-height-inner">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" style="margin: 10px">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="wastebb" name="wastec" type="checkbox" value="waste">
+                                                <label class="govuk-label govuk-checkboxes__label" for="wastebb" style="font-size:19px; width:100%">
+                                                    Test division 1
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="wasteba" name="wastec" type="checkbox" value="waste">
+                                                <label class="govuk-label govuk-checkboxes__label" for="wasteba" style="font-size:19px; width:100%">
+                                                    Test division 2
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter text-filter" style="margin-bottom: 5px !important;">
+                            <div class="govuk-form-group" style="margin-bottom:0">
+                                <label class="govuk-label   govuk-label--s" for="partialCost">
+                                    Document types
+                                </label>
+                                <select class="govuk-select" id="sort" name="sort" style="margin-bottom: 10px; width:100%; ">
+                                    <option value="MG 0">MG 0</option>
+                                    <option value="MG 1">MG 1</option>
+                                    <option value="MG 2">MG 2</option>
+                                    <option value="MG 3">MG 3</option>
+                                    <option value="MG 4">MG 4</option>
+                                    <option value="MG 4A">MG 4A</option>
+                                    <option value="MG 4B">MG 4B</option>
+                                    <option value="MG 4C">MG 4C</option>
+                                    <option value="MG 4D">MG 4D</option>
+                                    <option value="MG 4E">MG 4E</option>
+                                    <option value="MG 11 Backsheet">MG 11 Backsheet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter text-filter" style="margin-bottom: 5px !important;">
+                            <div class="govuk-form-group" style="margin-bottom:0">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost">
+                                    Investigative agencies
+                                </label>
+                                <select class="govuk-select" id="sort" name="sort" style="margin-bottom: 10px; width:100%">
+                                    <option value=""></option>
+                                    <option value="DWP">DWP</option>
+                                    <option value="NHS">NHS</option>
+                                    <option value="Counter Fraud Authority">Counter Fraud Authority</option>
+                                    <option value="Department for Health and Social Careents">Department for Health and Social Care</option>
+                                    <option value="Medicines Healthcare Regulatory Agency (MHRA)">Medicines Healthcare Regulatory Agency (MHRA)</option>
+                                    <option value="Welsh Revenue Authority">Welsh Revenue Authority</option>
+                                    <option value="Child Maintenance Group">Child Maintenance Group</option>
+                                    <option value="The Veteinary Medicines Directorate">The Veteinary Medicines Directorate</option>
+                                    <option value="Animal Health and Veterinary Laboratories Agency">Animal Health and Veterinary Laboratories Agency </option>
+                                    <option value="Forestry Commission Wales">Forestry Commission Wales</option>
+                                    <option value="Rural Payments Agency">Rural Payments Agency</option>
+                                    <option value="Horticultural Marketing Inspectorate">Horticultural Marketing Inspectorate</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter text-filter" style="margin-bottom: 5px !important;">
+                            <div class="govuk-form-group" style="margin-bottom:0">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost">
+                                    Missed redactions
+                                </label>
+                                <select class="govuk-select" id="sort" name="sort" style="margin-bottom: 10px; width:100%; ">
+                                    <option value="Named individual">Named individual</option>
+                                    <option value="Title">Title</option>
+                                    <option value="Occupation">Occupation</option>
+                                    <option value="Relationship to others">Relationship to others</option>
+                                    <option value="Address">Address</option>
+                                    <option value="Location">Location</option>
+                                    <option value="Vehicle registration">Vehicle registration</option>
+                                    <option value="NHS number">NHS number</option>
+                                    <option value="Date of birth">Date of birth</option>
+                                    <option value="Bank details">Bank details</option>
+                                    <option value="NI number">NI number</option>
+                                    <option value="Phone number">Phone number</option>
+                                    <option value="Email address">Email address</option>
+                                    <option value="Previous convictions">Previous convictions</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter text-filter">
+                            <div class="govuk-form-group" style="margin-bottom:15px">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="">
+                                    Author
+                                </label>
+                                <input class="govuk-input" style="margin-bottom: 0px" id="partialCost" name="partialCost" type="text" aria-describedby="FirstName-hint" value="" />
+                            </div>
+                        </div>
+                        <div class="filter text-filter">
+                            <div class="govuk-form-group" style="margin-bottom:15px">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="">
+                                    Logs created from
+                                </label>
+                                <input class="govuk-input" style="margin-bottom: 0px" id="partialCost" name="partialCost" type="text" aria-describedby="FirstName-hint" value="21/02/2022" />
+                            </div>
+                        </div>
+                        <div class="filter text-filter">
+                            <div class="govuk-form-group" style="margin-bottom:15px">
+                                <label class="govuk-label   govuk-label--s legend" for="partialCost" style="">
+                                    Logs created to
+                                </label>
+                                <!--             <span id="reference-hint" class="govuk-hint">
+                                    Enter postcode, town or city
+                                </span> -->
+                                <input class="govuk-input" style="margin-bottom: 0px" id="partialCost" name="partialCost" type="text" aria-describedby="FirstName-hint" value="21/03/2022" />
+                            </div>
+                        </div>
+                        <div class="govuk-option-select js-collapsible" style="background-color: #fff; margin-bottom:15px !important; padding-top:15px; padding-left:5px">
+                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+                                <label class="govuk-label   govuk-label--s legend" for="a" style="margin-bottom:-10px">
+                                    Returned to investigative agency
+                                </label>
+                                <div class="js-selected-counter"></div>
+                            </button>
+                            <div class="options-container" id="returned" style="margin-bottom: 15px;">
+                                <div class="js-auto-height-inner">
+                                    <div class="govuk-form-group" style="margin:10px">
+                                        <fieldset class="govuk-fieldset" aria-describedby="a">
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="Both">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                                        Both
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="Yes">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="No">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="govuk-option-select js-collapsible" style="background-color: #fff; margin-bottom:15px !important">
+                                <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+                                    <label class="govuk-label   govuk-label--s legend" for="a" style="margin-bottom:-10px">
+                                        Redaction type
+                                    </label>
+                                    <div class="js-selected-counter"></div>
+                                </button>
+                                <div class="options-container" id="returned">
+                                    <div class="js-auto-height-inner">
+                                        <div class="govuk-form-group" style="margin:10px">
+                                            <fieldset class="govuk-fieldset" aria-describedby="a">
+                                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-namea" name="red-type" type="radio" value="Both">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-namea">
+                                                            All
+                                                        </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-name-2a" name="red-type" type="radio" value="Yes">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-name-2a">
+                                                            Unredacted
+                                                        </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-name-3a" name="red-type" type="radio" value="No">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-name-3a">
+                                                            Overredacted
+                                                        </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-name-4a" name="red-type" type="radio" value="No">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-name-4a">
+                                                            Unknown
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group" style="margin-left:10px; margin-bottom:0">
+                                <fieldset class="govuk-fieldset">
+                                    <label class="govuk-label   govuk-label--s legend" for="a">
+                                        Included deleted redactions
+                                    </label>
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation" style="font-size:19px">
+                                                Yes
+                                            </label>
+                                        </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="govuk-button" style="margin-left:10px; margin-top:0px">Update results</button>
+                    <!--  <a class="" href="apprenticeshipsearch">Start again</a> -->
+</form>
+</div>
+</div>
+</div>
+</fieldset>
+<div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">URN</th>
+                <th scope="col" class="govuk-table__header">Redaction type</th>
+                <th scope="col" class="govuk-table__header">Document type</th>
+                <th scope="col" class="govuk-table__header">Missed redaction</th>
+                <th scope="col" class="govuk-table__header">Returned</th>
+                <th scope="col" class="govuk-table__header"></th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">12AB123456</td>
+                <td class="govuk-table__cell">Unredacted</td>
+                <td class="govuk-table__cell">MG0</td>
+                <td class="govuk-table__cell">Bank details</td>
+                <td class="govuk-table__cell">No</td>
+                <td class="govuk-table__cell"><a href="">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="clear:both"></div>
+</div>
+{% endblock %}
