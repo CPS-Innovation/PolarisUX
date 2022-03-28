@@ -1,77 +1,79 @@
 <style>
-  .searchedDocumentSummary {
-    padding-top: 15px !important;
-    background: hsl(208, 73%, 42%);
-  }
+    .searchedDocumentSummary {
+        padding-top: 15px !important;
+        background: hsl(208, 73%, 42%);
+    }
 </style>
 <link href="/public/css/pdf.css" rel="stylesheet" />
 <script>
-  //window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
-  $(document).ready(function () {
-    const SPECIAL_CASE_SEARCH_TAB_HEADING = "Search results";
+    //window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
+    $(document).ready(function () {
+        let tabCount = 0;
 
-    const // each document link in the left hand list
-      $menuLinks = $(".openMe a"),
-      // the root of the tabs control
-      $tabList = $(".govuk-tabs .govuk-tabs__list"),
-      // links appearing in the modal-style search results
-      $modalLinks = $("#searchModal .mb5 a"),
-      // search field
-      $inpSearchUrn = $("#inpSearchURN"),
-      // search field button
-      $btnSearchUrn = $("#btnSearchURN");
+        const SPECIAL_CASE_SEARCH_TAB_HEADING = "Search results";
 
-    $menuLinks.each(function (_, link) {
-      $(link).click(function (event) {
-        event.preventDefault();
-        handleMenuLinkClick($(this).text());
-      });
-    });
+        const // each document link in the left hand list
+            $menuLinks = $(".openMe a"),
+            // the root of the tabs control
+            $tabList = $(".govuk-tabs .govuk-tabs__list"),
+            // links appearing in the modal-style search results
+            $modalLinks = $("#searchModal .mb5 a"),
+            // search field
+            $inpSearchUrn = $("#inpSearchURN"),
+            // search field button
+            $btnSearchUrn = $("#btnSearchURN");
 
-    $modalLinks.each(function (_, link) {
-      $(link).click(function (event) {
-        event.preventDefault();
-        handleMenuLinkClick($(this).text(), true);
-      });
-    });
+        $menuLinks.each(function (_, link) {
+            $(link).click(function (event) {
+                event.preventDefault();
+                handleMenuLinkClick($(this).text());
+            });
+        });
 
-    $inpSearchUrn.keyup(function (e) {
-      if (e.key !== "Enter") return;
-      handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
-    });
+        $modalLinks.each(function (_, link) {
+            $(link).click(function (event) {
+                event.preventDefault();
+                handleMenuLinkClick($(this).text(), true);
+            });
+        });
 
-    $btnSearchUrn.click(function (e) {
-      handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
-    });
+        $inpSearchUrn.keyup(function (e) {
+            if (e.key !== "Enter") return;
+            handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
+        });
 
-    function handleMenuLinkClick(label, showSearchSummary) {
-      const tabId = encodeURI(label);
-      ensureTabExists(tabId, label, showSearchSummary);
-      highlightMenuLink(label, true);
-      console.log(showSearchSummary);
-      showTab(tabId, showSearchSummary);
-      $("#searchModal").addClass("rj-dont-display");
-    }
+        $btnSearchUrn.click(function (e) {
+            handleMenuLinkClick(SPECIAL_CASE_SEARCH_TAB_HEADING);
+        });
 
-    function highlightMenuLink(label, isHighlighted) {
-      const $link = $(`.openMe a:contains('${label}')`);
+        function handleMenuLinkClick(label, showSearchSummary) {
+            const tabId = encodeURI(label);
+            ensureTabExists(tabId, label, showSearchSummary);
+            highlightMenuLink(label, true);
+            console.log(showSearchSummary);
+            showTab(tabId, showSearchSummary);
+            $("#searchModal").addClass("rj-dont-display");
+        }
 
-      if (isHighlighted) {
-        $link.parent("td").addClass("documentSelected");
-      } else {
-        $link.parent("td").removeClass("documentSelected");
-      }
-    }
+        function highlightMenuLink(label, isHighlighted) {
+            const $link = $(`.openMe a:contains('${label}')`);
 
-    function getTabHtml(src) {
-      return `<div id="pdf-root" data-pdf-url="${src}" style="height: 10500px"></div>`;
-    }
+            if (isHighlighted) {
+                $link.parent("td").addClass("documentSelected");
+            } else {
+                $link.parent("td").removeClass("documentSelected");
+            }
+        }
 
-    function ensureTabExists(tabId, label, isSearched) {
-      const existingTab = $(`li[data-tab-id='${tabId}']`);
-      if (existingTab.length) return;
+        function getTabHtml(src) {
+            return `<div id="pdf-root" data-pdf-url="${src}" style="height: calc(100vh - 200px)"></div>`;
+        }
 
-      const newTab = $(`
+        function ensureTabExists(tabId, label, isSearched) {
+            const existingTab = $(`li[data-tab-id='${tabId}']`);
+            if (existingTab.length) return;
+
+            const newTab = $(`
         <li class="govuk-tabs__list-item tooltip"  data-tab-id="${tabId}">
 
             <svg class="closeButtonOnCPS">
@@ -83,27 +85,29 @@
             <a class="govuk-tabs__tab" id="tabHeadingss" href="" >${label}</a>  <span class="tooltiptext">${label}</span>
         </li>`).appendTo($tabList);
 
-      if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
-        const text = $("script[data-template='searchTab']").text();
-        const $searchTabContent = $(text);
+            if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
+                const text = $("script[data-template='searchTab']").text();
+                const $searchTabContent = $(text);
 
-        $searchTabContent.attr("data-tab-id", `${tabId}-content`);
-        $searchTabContent.find(".openMe a").each(function (_, link) {
-          $(link).click(function (event) {
-            event.preventDefault();
-            handleMenuLinkClick($(this).text(), true);
-          });
-        });
-        $searchTabContent.insertAfter($tabList);
-        // document.getElementById("tabHeadingss").style.fontWeight = "700";
-        // document.getElementById("tabHeadingss").style.fontSize = "19px";
-      } else {
-        // search field button from the blue bar
+                $searchTabContent.attr("data-tab-id", `${tabId}-content`);
+                $searchTabContent.find(".openMe a").each(function (_, link) {
+                    $(link).click(function (event) {
+                        event.preventDefault();
+                        handleMenuLinkClick($(this).text(), true);
+                    });
+                });
+                $searchTabContent.insertAfter($tabList);
+                // document.getElementById("tabHeadingss").style.fontWeight = "700";
+                // document.getElementById("tabHeadingss").style.fontSize = "19px";
+            } else {
+                // search field button from the blue bar
 
-        const document = $(`.openMe a:contains("${label}")`).attr("data-doc");
-        const count =
-          $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
-        const content = `
+                const document = $(`.openMe a:contains("${label}")`).attr(
+                    "data-doc"
+                );
+                const count =
+                    $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
+                const content = `
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="padding-top:0 !important" data-tab-id="${tabId}-content" data-is-searched="${isSearched}">  
             <!-- start of search results -->
                 <div  class="searchedDocumentSummary rj-dont-display" id="searchHeaderDisplay">
@@ -128,96 +132,118 @@
                 
         </div>`;
 
-        var $content = $(content);
+                var $content = $(content);
 
-        $content.find("#btnSearchURNTwo").click(function () {
-          event.preventDefault();
-          $("#searchModal").removeClass("rj-dont-display");
-        });
+                $content.find("#btnSearchURNTwo").click(function () {
+                    event.preventDefault();
+                    $("#searchModal").removeClass("rj-dont-display");
+                });
 
-        $content.insertAfter($tabList);
-      }
+                $content.insertAfter($tabList);
+            }
 
-      newTab.find("li").off("click");
-      newTab.find("a.govuk-tabs__tab").click(function () {
-        event.preventDefault();
-        showTab(tabId);
-      });
+            newTab.find("li").off("click");
+            newTab.find("a.govuk-tabs__tab").click(function () {
+                event.preventDefault();
+                showTab(tabId);
+            });
 
-      newTab.find(".closeButtonOnCPS").click(function () {
-        destroyTab(tabId);
-        highlightMenuLink(tabId, false);
-      });
+            newTab.find(".closeButtonOnCPS").click(function () {
+                destroyTab(tabId);
+                highlightMenuLink(tabId, false);
+            });
 
-      $.getScript(window.location.origin + "/public/javascripts/pdf.js");
-    }
-
-    function destroyTab(tabId) {
-      const $tabs = $(`li[data-tab-id`);
-      const $thisTab = $(`li[data-tab-id='${tabId}']`);
-      const thisTabIndex = $tabs.index($thisTab);
-      const tabIndexToLeaveOpen = thisTabIndex
-        ? thisTabIndex - 1 // if not first tab, go to the left
-        : 0; // otherwise if first tab, then go to the tab that is now first
-      $(`li[data-tab-id='${tabId}']`).remove();
-      $(`div[data-tab-id='${tabId}-content']`).remove();
-
-      const idOfTabToOpen = $($(`li[data-tab-id`)[tabIndexToLeaveOpen]).attr(
-        "data-tab-id"
-      );
-
-      showTab(idOfTabToOpen);
-    }
-
-    function showTab(tabId, showSummary) {
-      $tabList.find("li").removeAttr("id", "selectedTab");
-      $tabList.find("li").removeClass("govuk-tabs__list-item--selected");
-
-      $(`li[data-tab-id='${tabId}']`).addClass(
-        "govuk-tabs__list-item--selected"
-      );
-      $(`li[data-tab-id='${tabId}']`).attr("id", "selectedTab");
-
-      $(".govuk-tabs__panel").addClass("govuk-tabs__panel--hidden");
-
-      var $tabContent = $(`div[data-tab-id='${tabId}-content']`);
-      $tabContent.removeClass("govuk-tabs__panel--hidden");
-
-      const $selectedTab = $("#selectedTab");
-      if ($selectedTab.length) {
-        $selectedTab[0].scrollIntoView();
-      }
-
-      const wasPreviouslySearched =
-        $(`div[data-tab-id='${tabId}-content']`).attr("data-is-searched") ===
-        "true";
-
-      if (showSummary || wasPreviouslySearched) {
-        $(`div[data-tab-id='${tabId}-content']`).attr(
-          "data-is-searched",
-          "true"
-        );
-
-        $tabContent.find("#documentNameHeader").css("display", "none");
-        $tabContent.find("#searchHeaderDisplay").css("display", "flex");
-        // $("#documentNameHeader").css("display", "none");
-        // $("#searchHeaderDisplay").css("display", "flex");
-
-        const pdfViewer = $(`div[data-tab-id='${tabId}-content'] > #pdf-root`);
-        const src = pdfViewer.attr("data-pdf-url");
-        if (!src.includes("/searchResults/")) {
-          pdfViewer.remove();
-          $(`div[data-tab-id='${tabId}-content']`).append(
-            getTabHtml(src.replace("/files/", "/files/searchResults/"))
-          );
+            $.getScript(window.location.origin + "/public/javascripts/pdf.js");
+            tabCount += 1;
+            showHideStaticText();
         }
-        $.getScript(window.location.origin + "/public/javascripts/pdf.js");
-      } else {
-        $tabContent.find("#documentNameHeader").css("display", "flex");
-        $tabContent.find("#searchHeaderDisplay").css("display", "none");
-        // $("#documentNameHeader").css("display", "flex");
-        // $("#searchHeaderDisplay").css("display", "none");
-      }
-    }
-  });
+
+        function destroyTab(tabId) {
+            const $tabs = $(`li[data-tab-id`);
+            const $thisTab = $(`li[data-tab-id='${tabId}']`);
+            const thisTabIndex = $tabs.index($thisTab);
+            const tabIndexToLeaveOpen = thisTabIndex
+                ? thisTabIndex - 1 // if not first tab, go to the left
+                : 0; // otherwise if first tab, then go to the tab that is now first
+            $(`li[data-tab-id='${tabId}']`).remove();
+            $(`div[data-tab-id='${tabId}-content']`).remove();
+
+            const idOfTabToOpen = $(
+                $(`li[data-tab-id`)[tabIndexToLeaveOpen]
+            ).attr("data-tab-id");
+
+            showTab(idOfTabToOpen);
+
+            tabCount -= 1;
+            showHideStaticText();
+        }
+
+        function showTab(tabId, showSummary) {
+            $tabList.find("li").removeAttr("id", "selectedTab");
+            $tabList.find("li").removeClass("govuk-tabs__list-item--selected");
+
+            $(`li[data-tab-id='${tabId}']`).addClass(
+                "govuk-tabs__list-item--selected"
+            );
+            $(`li[data-tab-id='${tabId}']`).attr("id", "selectedTab");
+
+            $(".govuk-tabs__panel").addClass("govuk-tabs__panel--hidden");
+
+            var $tabContent = $(`div[data-tab-id='${tabId}-content']`);
+            $tabContent.removeClass("govuk-tabs__panel--hidden");
+
+            const $selectedTab = $("#selectedTab");
+            if ($selectedTab.length) {
+                $selectedTab[0].scrollIntoView();
+            }
+
+            const wasPreviouslySearched =
+                $(`div[data-tab-id='${tabId}-content']`).attr(
+                    "data-is-searched"
+                ) === "true";
+
+            if (showSummary || wasPreviouslySearched) {
+                $(`div[data-tab-id='${tabId}-content']`).attr(
+                    "data-is-searched",
+                    "true"
+                );
+
+                $tabContent.find("#documentNameHeader").css("display", "none");
+                $tabContent.find("#searchHeaderDisplay").css("display", "flex");
+                // $("#documentNameHeader").css("display", "none");
+                // $("#searchHeaderDisplay").css("display", "flex");
+
+                const pdfViewer = $(
+                    `div[data-tab-id='${tabId}-content'] > #pdf-root`
+                );
+                const src = pdfViewer.attr("data-pdf-url");
+                if (!src.includes("/searchResults/")) {
+                    pdfViewer.remove();
+                    $(`div[data-tab-id='${tabId}-content']`).append(
+                        getTabHtml(
+                            src.replace("/files/", "/files/searchResults/")
+                        )
+                    );
+                }
+                $.getScript(
+                    window.location.origin + "/public/javascripts/pdf.js"
+                );
+            } else {
+                $tabContent.find("#documentNameHeader").css("display", "flex");
+                $tabContent.find("#searchHeaderDisplay").css("display", "none");
+                // $("#documentNameHeader").css("display", "flex");
+                // $("#searchHeaderDisplay").css("display", "none");
+            }
+        }
+
+        function showHideStaticText() {
+            if (tabCount) {
+                console.log($("#docCopy").length, "hiding");
+                $("#docCopy").hide();
+            } else {
+                console.log($("#docCopy").length, "showing");
+                $("#docCopy").show();
+            }
+        }
+    });
 </script>
