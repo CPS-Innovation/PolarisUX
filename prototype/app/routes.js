@@ -172,6 +172,14 @@ router.param('employer', function (req, res, next, employer) {
   res.redirect(`/${req.version}/samelog/addlog`)
  })
 
+   router.get('/*/logReportCPS', function (req, res) {
+  res.redirect(`/${req.version}/samelog/CPSLogReport`)
+ })
+
+  router.get('/*/*/logReportCPS', function (req, res) {
+  res.redirect(`/${req.version}/samelog/CPSLogReport`)
+ })
+
 //  ------------------  DoE NAV ----------------------
 // Employer > Nav > Home
 // bit hacky but works - needs two routes for top level and lower down the chain

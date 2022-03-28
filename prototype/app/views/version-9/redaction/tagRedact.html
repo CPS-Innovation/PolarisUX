@@ -1,0 +1,270 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v7/mainNav.html" %}
+{% include "includes/cps/nav/v7/redactNav.html" %}
+{% endblock %}
+{% block content %}
+<style>.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<style>
+    //new task list stuff goes here
+
+.task-list-item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.task-list {
+  margin-top: 30px;
+  list-style-type: none;
+  padding-left:0;
+}
+
+@media (min-width: 641px) {
+  .task-list {
+ 
+  }
+}
+
+.find-list {
+  font-weight: 700;
+
+}
+
+.results-header a {
+  text-decoration: none;
+}
+
+
+.task-list-section-number {
+  display: table-cell;
+  padding-right: 5px;
+}
+
+@media (min-width: 641px) {
+  .task-list-section-number {
+    min-width: 35px;
+    padding-right: 0;
+  }
+}
+
+.task-list-items {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 641px) {
+  .task-list-items {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 641px) {
+  .task-list-items {
+    padding-left: 35px;
+  }
+}
+
+</style>
+<script>
+    // var firstTimeReg = JSON.parse(localStorage.getItem('registration.firstTimeReg'));
+    // var completeAgreement = JSON.parse(localStorage.getItem('registration.completeAgreement')); // "no" means not done the agreement
+    // var completeTax = JSON.parse(localStorage.getItem('registration.completeTax')); //"no" means not done any of the tax stuff. 
+    // var MG31Redacted = {{ data['MG31Redacted'] }};
+    // var MG31NotRedacted = {{ data['MG31NotRedacted'] }};
+     var MG11SheMcRedacted = {{ data['MG11SheMcRedacted'] }};
+    // var MG11SheMcNotRedacted = {{ data['MG11SheMcNotRedacted'] }};
+
+// console.log( MG31Redacted, MG31NotRedacted );
+
+$(document).ready(function() {
+  var changeStuff = function() {  
+       switch (true) {
+
+           //    case  (MG31Redacted == true) || (MG31NotRedacted == true):
+           //    $(mclovemg3NotStarted).addClass("rj-dont-display");
+           //    $(mclovemg3Completed).removeClass("rj-dont-display");
+             
+           // break;
+
+            case  (MG11SheMcRedacted == true) || (MG11SheMcNotRedacted == true):
+              $(mclovemg11NotStarted).addClass("rj-dont-display");
+              $(mclovemg11Completed).removeClass("rj-dont-display");
+             
+           break;
+
+
+        // Coming from registration and agreement and tax are both done
+          // case  (firstTimeReg == 'yes') && (completeAgreement != 'no') && (completeTax != 'no'):
+          //     $(firstTimeRegMessage).removeClass("rj-dont-display");
+          //     localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
+          //  break;
+        // Coming from registration and agreement and tax are both NOT done
+           //  case  (firstTimeReg == 'yes') && ((completeAgreement == 'no') && (completeTax == 'no')):
+           //    $(firstTimeRegMessageIncomplete).removeClass("rj-dont-display")
+           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
+           // break;
+
+        // Coming from registration and agreement is not done but tax is done
+           //   case  (firstTimeReg == 'yes') && ((completeAgreement == 'no') || (completeTax == 'yes')):
+           //   console.log("agreement is not done but tax IS Done")
+           //    $(firstTimeRegMessageIncompleteAgreementOnly).removeClass("rj-dont-display")
+           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
+           // break;
+
+         // Coming from registration and agreement is done but TAX is NOT done
+           // case  (firstTimeReg == 'yes') && ((completeAgreement == 'yes') || (completeTax == 'no')):
+           //     console.log("agreement is  done but tax is NOT one")
+           //    $(firstTimeRegMessageIncompleteTaxOnly).removeClass("rj-dont-display")
+           //  localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
+           // break;
+
+           default:
+            // localStorage.setItem("registration.firstTimeReg", JSON.stringify("no"));
+            console.log("bork bork bork what");
+            break;
+        } 
+      }
+changeStuff();
+});
+
+</script>
+<section id="allContentHome" class="">
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl" style="" id="company-Name">Redaction suggestions</h1>
+
+
+   <!--   <h1 class="govuk-heading-xl" style="" id="company-Name">ROB FOR V2 MAKE THIS MORE LIKE THE SEARCH OVERLAY - THEN WHEN THEY CLICK THEY CAN GO INTO THE DOCUMENT</h1> -->
+
+
+<!--     <h2 class="govuk-heading-l" style="" id="company-Name">McLove, Eoin
+        <span class="govuk-caption-m">45AA209820/1</span></h2> -->
+                <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key fw400" style="padding-top: 0;">
+                  
+                </dt>
+                <dd class="govuk-summary-list__value fw700" style="padding-top: 0;">
+                    
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key fw400">
+                    Case name
+                </dt>
+                <dd class="govuk-summary-list__value fw700">
+                    McLove, Eoin
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key fw400">
+                    Case URN
+                </dt>
+                <dd class="govuk-summary-list__value fw700">
+                    45AA209820/1
+                </dd>
+            </div>
+           
+        </dl>
+    </div>
+   
+ 
+        <div class="govuk-grid-column-full column-minimum">
+              <!--       <h3 class="app-task-list__section" style="margin-top:30px; margin-bottom:10px">
+                        Review automatically identified documents
+                    </h3> -->
+               <!--      <p style="">You can review, approve or reject redactions suggested by software.</p> -->
+
+
+                    <table class="govuk-table " style="">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header " style="min-width:105px">Document name</th>
+                                <th scope="col" class="govuk-table__header " style="">Suggested redaction</th>
+                                <th scope="col" class="govuk-table__header " style="text-align: right;min-width:132px">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row"> 
+                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row" ><a href="stmSheMclove"> stmt Shelagh McLove MG11</a></td>
+                                <td class="govuk-table__cell  " scope="row">0207 555 5555</td>
+                                <td class="govuk-table__cell  " scope="row">
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" style="" id="mclovemg11NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="mclovemg11Completed">COMPLETED</strong>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell  wrapLongFilenamesCPS openMe" scope="row"><a href=""> stmt JONES 1989 1 JUNE mg11</a></td>
+                                <td class="govuk-table__cell  " scope="row">1 Bracey St, London, N4 3BJ</td>
+                                <td class="govuk-table__cell  " scope="row">
+                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" style="" id="jonesmg11NotStarted">NOT STARTED</strong>
+                                    <strong class="govuk-tag app-task-list__task-completed rj-dont-display" style="" id="jonesMG11Completed">COMPLETED</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <!--                   <li class="">
+                        <h2 class="app-task-list__section"><span class="task-list-section-number">3. </span>
+                            Confirm changes</h2>
+                        <p style="padding-left:35px">Confirm redactions and save all updated files.</p>
+                        <ul class="app-task-list__items" style="">
+                            <li class="app-task-list__item " id="claimMyFunding">
+                                <a class="app-task-list__task-name" href="mclovemg3" aria-describedby="eligibility-completed">
+                                    Confirm changes
+                                </a>
+                               
+                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="finish">CANNOT START YET</strong>
+                                <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="mclovemg3Completed">COMPLETED</strong>
+                            </li>
+     
+                        </ul>
+                    </li> -->
+         <!--    </ol> -->
+       <!--      <form method="get" action="searchresultsMultiple">
+                <button type="submit" class="govuk-button" style="">Submit redaction report</button>
+            </form> -->
+        </div>
+        <!--                     <div class="govuk-grid-column-one-third">
+                        <section>
+                            <nav style="height:47px">
+                                <ul class="js-tabs" role="tablist">
+                                    <li role="tab" id="tab-tasks" aria-controls="pane-tasks"><a href="#pane-tasks" class="selected">Tasks</a></li>
+                                </ul>
+                            </nav>
+                            <div class="panes">
+                                <div class="js-tab-pane" id="pane-tasks" role="tabpanel"  style="">
+                                    <p>You do not have any tasks</p>
+                                </div>
+                                  <div class="js-tab-pane rj-dont-display " id="pane-tasks-tax" role="tabpanel"  style=";">
+                                    <h3 class="govuk-heading-s " style="margin-bottom:0"><a href="./paye">Add tax details</a></h3>
+                                    <p>You need to add your tax details to use this service</p>
+                                </div>
+                                    <div class="js-tab-pane rj-dont-display" id="pane-tasks-agreement" role="tabpanel"  style="">
+                                    <h3 class="govuk-heading-s " style="margin-bottom:0"><a href="./orgs">Sign your agreement</a></h3>
+                                    <p>You need to sign the agreement between you and the ESFA to use this service</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div> -->
+    </div>
+    </div>
+    </div>
+</section>
+</main>
+{% endblock %}
