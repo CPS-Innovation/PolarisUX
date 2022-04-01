@@ -1,3 +1,6 @@
+
+
+
 // Core dependencies
 const fs = require('fs')
 const path = require('path')
@@ -36,8 +39,12 @@ if (fs.existsSync('./app/v6/routes.js')) {
   useV6 = true
 }
 
+const auth = require('./auth')
+
 const app = express()
 const documentationApp = express()
+
+app.use(auth)
 
 if (useV6) {
   console.log('/app/v6/routes.js detected - using v6 compatibility mode')
@@ -319,5 +326,7 @@ app.use(function (err, req, res, next) {
 
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
+
+
 
 module.exports = app
