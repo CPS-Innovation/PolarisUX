@@ -39,12 +39,11 @@ if (fs.existsSync('./app/v6/routes.js')) {
   useV6 = true
 }
 
-const auth = require('./auth')
+
 
 const app = express()
 const documentationApp = express()
 
-app.use(auth)
 
 if (useV6) {
   console.log('/app/v6/routes.js detected - using v6 compatibility mode')
