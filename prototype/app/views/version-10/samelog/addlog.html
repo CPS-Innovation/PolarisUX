@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v8/logNav.html" %}
+{% include "includes/cps/nav/v8/logLogNav.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+<style>
+    .govuk-footer__copyright-logo {
+  display: none;
+}
+
+.caseReviewHeader {
+  display: none;
+}
+
+@media (min-width: 48.0625em) {
+.govuk-header__logo {
+  width: 50% !important;
+}
+}
+
+  @media (max-width: 641px) {
+.govuk-header__logotype-text {
+  font-size: 22px;
+}
+ }
+</style>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('.autocomplete-element').each(function() {
+      var selectEl = document.querySelector('#' + $(this).attr('id') )
+      accessibleAutocomplete.enhanceSelectElement({
+        autoselect: false,
+        defaultValue: '',
+        minLength: 2,
+        selectElement: selectEl,
+        placeholder: 'Start typing to search apprenticeships',
+        showAllValues: false
+      })
+    })
+  })
+</script>
+<script>
+    $(document).ready(function() {
+    $('.autocomplete-element-EPAO').each(function() {
+      var selectEl = document.querySelector('#' + $(this).attr('id') )
+      accessibleAutocomplete.enhanceSelectElement({
+        autoselect: false,
+        defaultValue: '',
+        minLength: 2,
+        selectElement: selectEl,
+        placeholder: 'Start typing to search EPAO',
+        showAllValues: false
+      })
+    })
+  })
+</script>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Create a redaction log</h1>
+        <h2 class="govuk-heading-m">Case details</h2>
+        <form method="get" action="checkanswers">
+            <div class="caseBlock" style="display:flex">
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label govuk-!-width-one-half " for="FirstFirstName">Case URN</label>
+                    <input class="govuk-input govuk-input--width-10 " id="caseURN" name="CaseURN" type="text" value="" />
+                </div>
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label " for="sort">
+                        CPS area or central casework division
+                    </label>
+                    <select class="govuk-select govuk-!-width-full " id="sort" name="sort">
+                      <option value=""></option>
+                        <option value="Test area 1">Test area 1</option>
+                        <option value="Test area 2">Test area 2</option>
+                        <option value="Test division 1">Test division 1</option>
+                        <option value="Test division 2">Test division 2</option>
+                    </select>
+                </div>
+                <!-- <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-three-quarters bold-label" for="courseName">
+                            Apprenticeship training course
+                        </label>
+                        <div class="autocomplete-wrapper">
+                         <select class="autocomplete-element" id="course-name" name="course-name">
+                            <option value="">Select one</option>
+                                {% import 'includes/apprenticeships-list.html' as apprenticeshipsData %}
+                                    {% for apprenticeship in apprenticeshipsData.apprenticeships %}
+                             <option value="{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{' (Standard)' if apprenticeship.standard === true}}">{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{" (Standard)" if apprenticeship.standard === true}}</option>
+                                     {% endfor %}
+          </select>
+        </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+ -->
+                <!--                         <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-three-quarters bold-label" for="epaoName">
+                           End Point Assessment Organisation
+                        </label>
+                        <div class="autocomplete-wrapper">
+                         <select class="autocomplete-element-EPAO" id="epao-name" name="epao-name">
+                            <option value="">Select one</option>
+                                {% import 'includes/EPAO-list.html' as apprenticeshipsData %}
+                                    {% for apprenticeship in apprenticeshipsData.apprenticeships %}
+                             <option value="{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{' (Standard)' if apprenticeship.standard === true}}">{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{" (Standard)" if apprenticeship.standard === true}}</option>
+                                     {% endfor %}
+          </select>
+        </div>
+            </div> -->
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label govuk-!-width-full " for="unit">
+                        CPS area business unit
+                    </label>
+                    <select class="govuk-select govuk-input--width-20 " id="unit" name="unit">
+                      <option value=""></option>
+                        <option value="Magistrates court">Magistrates court</option>
+                        <option value="Crown court"> Crown court</option>
+                        <option value="RASSO"> RASSO</option>
+                        <option value="CCU">CCU</option>
+                    </select>
+                </div>
+                <div class="govuk-form-group ">
+                    <label class="govuk-label govuk-!-width-one-quarter" for="sort">
+                        Investigative agency
+                    </label>
+                    <select class="govuk-select " id="investigate" name="investigate">
+                      <option value=""></option>
+                        <option value="DWP">DWP</option>
+                        <option value="NHS">NHS</option>
+                        <option value="Counter Fraud Authority">Counter Fraud Authority</option>
+                        <option value="Department for Health and Social Careents">Department for Health and Social Care</option>
+                        <option value="Medicines Healthcare Regulatory Agency (MHRA)">Medicines Healthcare Regulatory Agency (MHRA)</option>
+                        <option value="Welsh Revenue Authority">Welsh Revenue Authority</option>
+                        <option value="Child Maintenance Group">Child Maintenance Group</option>
+                        <option value="The Veteinary Medicines Directorate">The Veteinary Medicines Directorate</option>
+                        <option value="Animal Health and Veterinary Laboratories Agency">Animal Health and Veterinary Laboratories Agency </option>
+                        <option value="Forestry Commission Wales">Forestry Commission Wales</option>
+                        <option value="Rural Payments Agency">Rural Payments Agency</option>
+                        <option value="Horticultural Marketing Inspectorate">Horticultural Marketing Inspectorate</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible" />
+            <h2 class="govuk-heading-m" style="margin-top:20px">Redaction details</h2>
+            <div class="detailsBlock" style="display:flex">
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label " for="sort">
+                        Document type
+                    </label>
+                    <select class="govuk-select " id="docType" name="docType">
+                      <option value=""></option>
+                        <option value="MG 0">MG 0</option>
+                        <option value="MG 1">MG 1</option>
+                        <option value="MG 2">MG 2</option>
+                        <option value="MG 3">MG 3</option>
+                        <option value="MG 4">MG 4</option>
+                        <option value="MG 4A">MG 4A</option>
+                        <option value="MG 4B">MG 4B</option>
+                        <option value="MG 4C">MG 4C</option>
+                        <option value="MG 4D">MG 4D</option>
+                        <option value="MG 4E">MG 4E</option>
+                         <option value="MG 11 Backsheet">MG 11 Backsheet</option>
+                    </select>
+                </div>
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label " for="sort">
+                        Redaction type
+                    </label>
+                    <select class="govuk-select " id="redactType" name="redactType">
+                      <option value=""></option>
+                        <option value="Named individual">Named individual</option>
+                        <option value="Title">Title</option>
+                        <option value="Occupation">Occupation</option>
+                        <option value="Relationship to others">Relationship to others</option>
+                        <option value="Address">Address</option>
+                        <option value="Location">Location</option>
+                        <option value="Vehicle registration">Vehicle registration</option>
+                        <option value="NHS number">NHS number</option>
+                        <option value="Date of birth">Date of birth</option>
+                        <option value="Bank details">Bank details</option>
+                        <option value="NI number">NI number</option>
+                        <option value="Phone number">Phone number</option>
+                        <option value="Email address">Email address</option>
+                        <option value="Previous convictions">Previous convictions</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label " for="sort">
+                        Missed redaction<br />
+                    </label>
+                    <select class="govuk-select" id="redactionType" name="redactionType">
+                      <option value=""></option>
+                        <option value="Unredacted">Unredacted</option>
+                        <option value="Overredacted">Overredacted</option>
+                    </select>
+                </div>
+
+                   <div class="govuk-form-group" style="margin-right:10px">
+                    <label class="govuk-label " for="sort">
+                       Returned to investigative agency
+                    </label>
+                    <select class="govuk-select " id="returned" name="returned">
+                      <option value=""></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+              </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-width-one-half " for="FirstFirstName">Supporting notes</label>
+                    <!--   <div id="more-detail-hint" class="govuk-hint">
+    Do not include personal or financial information, like your National Insurance number or credit card details.
+  </div> -->
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+                </div>
+               <div><p> <a href="">Add another redaction to this case</a> </p></div>
+        
+            <button type="submit" class="govuk-button">Save and continue</button>
+            <!--  <a  class="govuk-button clear-button" href="draft-cohort" >Cancel</a> -->
+        </form>
+    </div>
+</div>
+</div>
+</main>
+</div>
+{% endblock %}

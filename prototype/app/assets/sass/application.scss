@@ -671,6 +671,57 @@ margin-top: 15px;
 }
 
 
+ .makeScrollCPSv10 {
+  overflow-x: scroll;
+
+    height: 100vh;
+ /*   height: calc(100% - 10px);*/
+}
+
+@media  (max-height: 950px) {
+   .makeScrollCPSv10 {
+    height: 85vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+
+@media  (max-height: 850px) {
+   .makeScrollCPSv10 {
+    height: 80vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+
+@media  (max-height: 720px) {
+   .makeScrollCPSv10 {
+    height: 77vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+@media  (max-height: 600px) {
+   .makeScrollCPSv10 {
+    height: 77vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+@media  (max-height: 550px) {
+   .makeScrollCPSv10 {
+    height: 72vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
+@media  (max-height: 500px) {
+   .makeScrollCPSv10 {
+    height: 68vh;
+ /*   height: calc(100% - 10px);*/
+}
+}
+
  
  .js-enabled .govuk-tabs__panel {
   padding: 25px 0 0 0  !important;
