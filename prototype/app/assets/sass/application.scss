@@ -62,9 +62,6 @@ $govuk-font-family: "TransportNew", "Arial", sans-serif;
 }*/
 
 
-
-
-
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
@@ -125,6 +122,10 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     right: 0px;
     border-top: 4px solid $govuk-border-colour;
 }*/
+
+.govuk-hint {
+  display: block;
+}
 
 
 .removeRedactions
