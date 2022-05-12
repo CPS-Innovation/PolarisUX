@@ -180,6 +180,40 @@ router.param('employer', function (req, res, next, employer) {
   res.redirect(`/${req.version}/samelog/CPSLogReport`)
  })
 
+   router.get('/*/helpDAHome', function (req, res) {
+  res.redirect(`/${req.version}/helpda`)
+ })
+
+  router.get('/*/*/helpDAHome', function (req, res) {
+  res.redirect(`/${req.version}/helpda`)
+ })
+
+
+   router.get('/*/helpDAReport', function (req, res) {
+  res.redirect(`/${req.version}/helpda/reporting`)
+ })
+
+  router.get('/*/*/helpDAReport', function (req, res) {
+  res.redirect(`/${req.version}/helpda/reporting`)
+ })
+
+     router.get('/*/helpDAInvest', function (req, res) {
+  res.redirect(`/${req.version}/helpda/investigation`)
+ })
+
+  router.get('/*/*/helpDAInvest', function (req, res) {
+  res.redirect(`/${req.version}/helpda/investigation`)
+ })
+
+       router.get('/*/helpDATrial', function (req, res) {
+  res.redirect(`/${req.version}/helpda/trial`)
+ })
+
+  router.get('/*/*/helpDATrial', function (req, res) {
+  res.redirect(`/${req.version}/helpda/trial`)
+ })
+
+
 //  ------------------  DoE NAV ----------------------
 // Employer > Nav > Home
 // bit hacky but works - needs two routes for top level and lower down the chain

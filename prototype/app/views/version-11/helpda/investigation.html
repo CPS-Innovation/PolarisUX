@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/v11/microNav.html" %}
+{% include "includes/cps/v11/microInvestigateNav.html" %}
+{% endblock %}
+{% block content %}
+<style>
+    #navigation-primary, #kill-me, .govuk-header__logo,  .govuk-header__link--service-name  {
+  display:none ;
+}
+
+.govuk-header__content {
+  height:45px;
+  border-bottom:0;
+}
+
+/*.govuk-header__container {
+   border-bottom:none;
+}*/
+
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="">
+            <h1 class="govuk-heading-xl">
+                Investigation
+            </h1>
+            <p style="margin-bottom:5px; font-weight:700"><a href="">Charging decision</a></p>
+            <p style="margin-bottom:5px"><a href="">Court hearing</a></p>
+            <p style="margin-bottom:35px"><a href="">The void</a></p>
+   
+
+            <!-- 
+      <div class="xavier" style="margin-top:25px">
+<div style="position:absolute; margin:20px 0 0 0px; width:35%; height:75px; background-color:#000"><h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">Xavier Edwards, CEO of Lloyds Bank </h2>
+        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 1982-1985</h2>
+      </div>
+          <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+      </div> -->
+            <p style="">This is where the Crown Prosecution Service review the evidence and materials submitted by the police to ascertain whether to charge the case. The Prosecuting lawyer looking at the case follows <a href="">guidance </a> set out by the <a href="">Director of Public Prosecutions </a> for England and Wales</p>
+            <p>The prosecutor is looking for the case to satisfy two key parts of this guidance known as the <a href="">Full Code Test </a> which are: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>There is enough probable evidence to secure a conviction if the case went to Court </li>
+              <li>Making a charge is in the public interest, for example the offender is likely to reoffend</li>
+            </ul>
+            <p> Charging the case will mean your case will <a href="">proceed to the next step.</a> You may at this point hear that the case is not proceeding, known as no further action.  </p>
+            <p>If either the police or CPS later decide not to proceed or substantially change the charge(s) they have previously discussed with you, you will be told the reasons why within five working days. </p>
+
+    
+
+            <div class="slides" style="height: 500px; padding:25px">
+                     <h2 class="govuk-heading-l"  style="margin-top:20px; color:white">What signifies this stage?</h2>
+            <p style="">When the police submit a case to CPS they disclose all materials pertaining to the case. This means they may have asked you for a lot of details upfront. This can feel intimidating but is crucial in getting the materials to CPS to charge. At this point: </p>
+             <ul class="govuk-list govuk-list--bullet">
+              <li>Police have take a <a href="">statement</a> </li>
+              <li>You have been asked to provide <a href="">evidence </a> to form a case, including your phone, photos of injuries</li>
+              <li>The defendant has had an <a href="">interview with the police </a> </li>
+            </ul>
+            <p>You may have further requests from the police for more information in this time. This isn’t [because they don’t believe you]. It is likely that the prosecution team at CPS have asked the police to retrieve more information to satisfy the points above. </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third" style="">
+<!--     <div class="slides" style="height:1400px; padding:25px">
+                     <h2 class="govuk-heading-l"  style="margin-top:20px; color:white">What signifies this stage?</h2>
+            <p style="">You may have been physically hurt by a person or they may have hurt you using an object</p>
+            <p>You may have suffered from a pattern of behaviour or incidents that enable a person to exert power or control over you known as such as isolating you from your friends and family, taking control of your finances or everyday activities like what you wear or who you see, or tracking your movements through the internet or mobile phone use and stopping you from leaving. </p>
+            <p> You may have suffered from an act or a pattern of acts of assaults, threats, humiliation and intimidation or other abuse that is used to harm, punish, or frighten you known as <a href="">coercive behaviour</a></p>
+            <p>You may have been <a href="">stalked</a> if you have suffered from a pattern of unwanted, fixated or obsessive behaviour which is intrusive, and causes you fear of violence or serious alarm and distress. For example, you may have been watched or spied on or the abuser may be forcing contact with you through social media. </p>
+
+            <p>Domestic abuse includes physical or sexual abuse, violent or threatening behaviour, controlling or coercive behaviour, economic abuse and psychological, emotional, or other abuse. It can be prosecuted under a range of offences and it does not matter whether the behaviour consists of a single incident or a course of conduct.</p>
+            </div> -->
+        <aside class="" style="  border-top-color: #005ea5; border-top-style: solid; border-top-width: 10px; ">
+            <h2 class="govuk-heading-m" id="company-Name" style="margin-top:20px">Help and support</h2>
+            <p style="margin-top:5px"></p>
+            <a href="#" style="font-size:19px">Refuge against Domestic Violence</a>
+            <p style="margin-top:10px">Refuge supports women,children & men experiencing domestic violence with a range of services.</p>
+            <a href="#" style="font-size:19px; margin-top:50px">Domestic Violence Assist</a>
+            <p style="margin-top:10px">Domestic Violence Assist is the UK's only registered charity specialising in arranging Non-Molestation Orders, Prohibited Steps Orders & Occupation Orders</p>
+        </aside>
+    </div>
+</div>
+{% endblock %}

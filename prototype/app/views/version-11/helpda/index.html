@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/v11/microNav.html" %}
+{% include "includes/cps/v11/microHomeNav.html" %}
+{% endblock %}
+{% block content %}
+<style>
+    #navigation-primary, #kill-me, .govuk-header__logo,  .govuk-header__link--service-name  {
+  display:none ;
+}
+
+.govuk-header__content {
+  height:45px;
+  border-bottom:0;
+}
+
+/*.govuk-header__container {
+   border-bottom:none;
+}*/
+
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="">
+            <h1 class="govuk-heading-xl">
+                Get help as a victim of Domestic Abuse
+            </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu maximus sem. Nunc sed fermentum quam, vitae efficitur nisl. Cras fermentum gravida nibh, ornare porta eros. Aliquam efficitur tristique metus, ac imperdiet orci rutrum eu. Donec vitae venenatis lacus. Duis laoreet enim ante, eu sollicitudin libero imperdiet vehicula. Suspendisse quis mauris leo.</p>
+            <!-- 
+      <div class="xavier" style="margin-top:25px">
+<div style="position:absolute; margin:20px 0 0 0px; width:35%; height:75px; background-color:#000"><h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">Xavier Edwards, CEO of Lloyds Bank </h2>
+        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 1982-1985</h2>
+      </div>
+          <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+      </div> -->
+            <p style="margin:20px 0 0 0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu maximus sem. Nunc sed fermentum quam, vitae efficitur nisl. Cras fermentum gravida nibh, ornare porta eros. Aliquam efficitur tristique metus, ac imperdiet orci rutrum eu. Donec vitae venenatis lacus. Duis laoreet enim ante, eu sollicitudin libero imperdiet vehicula. Suspendisse quis mauris leo.</p>
+            <div class="slides" style="height:250px; padding:25px">
+                <h2 class="govuk-heading-l" style="color:#fff;">Reporting domestic abuse</h2>
+                <p style="">What to do and what to expect when you report domestic abuse</p>
+                <form action="./microsite/stories">
+                    <div class="actions">
+                        <button type="submit" class="govuk-button" style="margin-bottom:15px">View</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+<!--     <div class="govuk-grid-column-one-third" style="">
+        <aside class="topBlueThing" style="  border-top-color: #005ea5; border-top-style: solid; border-top-width: 10px; ">
+            <h2 class="govuk-heading-m" id="company-Name" style="margin-top:20px">Start an apprentice</h2>
+            <p style="margin-top:5px">If you're ready to do the thing, lets do it.</p>
+            <a href="#" style="font-size:19px">Account projection table</a>
+            <p style="margin-top:5px">The download includes the details of the data in the table shown on this page</p>
+        </aside>
+    </div> -->
+</div>
+{% endblock %}

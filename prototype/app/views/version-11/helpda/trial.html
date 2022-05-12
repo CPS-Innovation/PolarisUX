@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/v11/microNav.html" %}
+{% include "includes/cps/v11/microTrialNav.html" %}
+{% endblock %}
+{% block content %}
+<style>
+    #navigation-primary, #kill-me, .govuk-header__logo,  .govuk-header__link--service-name  {
+  display:none ;
+}
+
+.govuk-header__content {
+  height:45px;
+  border-bottom:0;
+}
+
+/*.govuk-header__container {
+   border-bottom:none;
+}*/
+
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="">
+            <h1 class="govuk-heading-xl">
+                Trial and court
+            </h1>
+            <p style="margin-bottom:5px; font-weight:700"><a href="">Preparing for trial</a></p>
+            <p style="margin-bottom:35px"><a href="">Being at trial/court</a></p>
+          <!--   <p style="margin-bottom:35px"><a href="">The void</a></p> -->
+   
+
+            <!-- 
+      <div class="xavier" style="margin-top:25px">
+<div style="position:absolute; margin:20px 0 0 0px; width:35%; height:75px; background-color:#000"><h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">Xavier Edwards, CEO of Lloyds Bank </h2>
+        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 1982-1985</h2>
+      </div>
+          <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+      </div> -->
+            <p style="">If there is enough evidence to charge the abuser with a criminal offense the case will go to trial. The trial will either be in a Magistrates Court heard by a judge, or a Crown Court for a trial by jury. Depending on the <a href=""> type of trial or court</a> your case is assigned to you there will be more preparations or things to consider.</p>
+
+            <p> When you get the trial or hearing date always check the address of the Court, as it may not be the closet court to you. It’s worth looking into how <a href="">you would get to court </a>as soon as the date is confirmed as the <a href="">Witness Care Unit </a>can help you if you are likely to run into any difficulties with the travel.  </p>
+
+            <p><a href="">Witness expenses </a> also include Victim’s and are available for your travel costs, as well as childcare and renumeration if your employer does not give you the day off work. </p>
+            <div class="govuk-inset-text">
+              If you cannot make the trial date you must let the Witness Care Unit know as soon as possible. 
+            </div>
+
+    
+
+       
+            <h2 class="govuk-heading-l"  style=" ">What signifies this stage?</h2>
+            <p style="">[When a case is ready to go to trial you can hear from several organisations in a short period of time. Your <a href="">investigating officer </a>will often be the person to update you on the case progression, however you may also: </p>
+             <ul class="govuk-list govuk-list--bullet">
+              <li>Have received a letter with a fixed date or a <a href="">'warned period'</a> to attend the Court either remotely or in person.  </li>
+              <li>A representative from the  <a href="">Police Witness Care Unit </a>  (a Witness Care Officer) has been in touch with you to help you prepare to give evidence</li>
+              <li>You have been referred to the  <a href="">Citizens Advice Witness Service </a> </li>
+            </ul>
+
+            <h2 class="govuk-heading-l"  style=" ">What can you do?</h2>
+            <p>[It’s normal to feel nervous before a trial, even if you’ve been waiting a long time for the date to come through. You can raise any concerns you have with the <a href="">Police Witness Care Unit </a>or <a href="">Citizens Advice Witness Service</a>, who can support you as you prepare to give evidence. </p>
+            <p>If you are attending a hearing where you are not giving evidence you are entitled to read out or have read out <a href="">Victim Personal statement </a>which highlights the impact the crime has had on you, physically, psychologically or emotionally.  </p>
+            <p>It might be some time since you gave your initial statement to the police. You can <a href="">ask the CPS for a copy of your statement </a>to refresh your memory before you give evidence. </p>
+            <p>You can ask to <a href="">visit the court </a>in advance of the hearing or trial to familiarise yourself with the environment. This can be helpful if you’re concerned about your proximity to the defendant or their family. </p>
+            <p>Every case is different, and you should not be dissuaded from giving evidence based on any media examples of cases or courts. </p>
+  
+            <h2 class="govuk-heading-l"  style=" ">Do you need extra support?</h2>
+            <p>[When you first engaged with the police at the charging decision you may have declined or not been informed of the options you have available to you for giving evidence. <a href="">Special measures </a>can be put in place to help you give your best possible evidence in Court. </p>
+            <p>These may include: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><span style="font-weight:700">Giving evidence through a TV link</span>: The witness can sit in a room outside the courtroom and give their evidence via a live television link to the courtroom. </li>
+              <li><span style="font-weight:700">Video recorded evidence</span>: The witness' evidence is recorded and played to the court. </li>
+              <li><span style="font-weight:700">Screens around the witness box</span>: A screen is placed around the witness box to prevent the defendant from seeing the witness.</li>
+            </ul>
+            <p>If you are particularly worried or afraid, you can also ask the Investigating Police Officer or Witness Care Officer for extra help. </p>
+            <p>You also can read more about what Special Measures are available in the <a href="">Witness Charter </a> </p>
+
+     
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third" style="">
+<!--     <div class="slides" style="height:1400px; padding:25px">
+                     <h2 class="govuk-heading-l"  style="margin-top:20px; color:white">What signifies this stage?</h2>
+            <p style="">You may have been physically hurt by a person or they may have hurt you using an object</p>
+            <p>You may have suffered from a pattern of behaviour or incidents that enable a person to exert power or control over you known as such as isolating you from your friends and family, taking control of your finances or everyday activities like what you wear or who you see, or tracking your movements through the internet or mobile phone use and stopping you from leaving. </p>
+            <p> You may have suffered from an act or a pattern of acts of assaults, threats, humiliation and intimidation or other abuse that is used to harm, punish, or frighten you known as <a href="">coercive behaviour</a></p>
+            <p>You may have been <a href="">stalked</a> if you have suffered from a pattern of unwanted, fixated or obsessive behaviour which is intrusive, and causes you fear of violence or serious alarm and distress. For example, you may have been watched or spied on or the abuser may be forcing contact with you through social media. </p>
+
+            <p>Domestic abuse includes physical or sexual abuse, violent or threatening behaviour, controlling or coercive behaviour, economic abuse and psychological, emotional, or other abuse. It can be prosecuted under a range of offences and it does not matter whether the behaviour consists of a single incident or a course of conduct.</p>
+            </div> -->
+        <aside class="" style="  border-top-color: #005ea5; border-top-style: solid; border-top-width: 10px; ">
+            <h2 class="govuk-heading-m" id="company-Name" style="margin-top:20px">Help and support</h2>
+            <p style="margin-top:5px">It can be very daunting preparing for Court, and it’s very normal to need to additional support. It’s vital that you reach out if you are feeling any pressure not to continue with the trial. The CPS <a href="">has obligations </a>to support you through this process.</p>
+            <a href="#" style="font-size:19px">Refuge against Domestic Violence</a>
+            <p style="margin-top:10px">Refuge supports women,children & men experiencing domestic violence with a range of services.</p>
+            <a href="#" style="font-size:19px; margin-top:50px">Domestic Violence Assist</a>
+            <p style="margin-top:10px">Domestic Violence Assist is the UK's only registered charity specialising in arranging Non-Molestation Orders, Prohibited Steps Orders & Occupation Orders</p>
+        </aside>
+    </div>
+</div>
+{% endblock %}
