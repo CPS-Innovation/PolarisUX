@@ -1,5 +1,10 @@
 /* replacement fonts */
-
+  @font-face{font-family:'icomoon';
+    src:url("/public/fonts/icomoon.woff") format("woff");
+    font-weight:normal;
+    font-style:normal;
+    font-display:block;
+  }
 
 
 @import url("//hello.myfonts.net/count/413f20");
@@ -25,6 +30,8 @@
 }
 
 $govuk-font-family: "TransportNew", "Arial", sans-serif; 
+
+
 
 
 /* latin */
@@ -123,10 +130,91 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     border-top: 4px solid $govuk-border-colour;
 }*/
 
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-move-vertical-alt2:before {
+  content: "\e900";
+}
+.icon-arrows:before {
+  content: "\e900";
+}
+.icon-move-vertical-alt1:before {
+  content: "\e901";
+}
+.icon-arrows1:before {
+  content: "\e901";
+}
+.icon-arrows1 {
+   cursor: pointer; 
+}
+
+.icon-move-vertical:before {
+  content: "\e902";
+}
+.icon-arrows2:before {
+  content: "\e902";
+}
+.icon-arrows2 { cursor: pointer; }
+
+
 .govuk-hint {
   display: block;
 }
 
+.gu-mirror {
+  background: white;
+  color: #000;
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 35px 15px 15px 15px;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  cursor: -webkit-grab;
+    box-sizing: border-box;
+ position: fixed!important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+}
+
+
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  list-style: none;
+}
+
+.dnd__active {
+
+}
 
 .removeRedactions
  {
