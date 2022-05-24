@@ -228,10 +228,7 @@
                                         <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="Shelagh_McLove_VPS_mg11.pdf" data-count="3">Shelagh McLove VPS mg11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">06 June 2020</td>
                                     </tr>
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf">MG11 Shelagh MCLOVE retraction</a></td>
-                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">10 June 2020</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -345,14 +342,15 @@
                                 <thead>
                                     <tr class="govuk-table__row">
                                         <th scope="col" class="govuk-table__header " style=""></th>
-                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400">Date added</th>
+                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="PRE_CONS_D.pdf" data-count="2">PRE CONS D</a></td>
-                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row"></td>
                                     </tr>
+                               
                                 </tbody>
                             </table>
                         </div>
@@ -402,6 +400,31 @@
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td> -->
                                                              <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                                      <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="govuk-heading-s">Uncategorised</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                            <table class="govuk-table ">
+                                <thead>
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header " style=""></th>
+                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400">Date added</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="dnd__list">
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row" style="max-width:151px"><a href="" data-doc="PRE_CONS_D.pdf" data-count="2">PRE CONS D</a></td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 Jun 2020 <span class="icon-arrows2" style="margin-left:10px"></span></td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row" style="max-width:151px"><a href="" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf">MG11 Shelagh MCLOVE retraction</a></td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">10 Jun 2020 <span class="icon-arrows2" style="margin-left:10px"></span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -472,34 +495,22 @@
 <!-- </main>
 </div> -->
 <!-- remove if you get rid of the gov width container -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/drag-on-drop@3.3.2/dist/dragon-drop.js"></script>
 <script>
-//Get the button:
-mybutton = document.getElementById("myBtn");
-docCopy = document.getElementById("docCopy");
+/** 
+ * Note: '.dnd__list' is a <ul></ul> in my html page
+ * Note: The 'dnd' in the class name is short for DragonDrop
+ **/
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
-        mybutton.style.display = "block";
-        //docCopy.style.display = "none";
-    } else {
-        mybutton.style.display = "none";
-        //docCopy.style.display = "block";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    // document.body.scrollTop = 0; // For Safari
-    // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    $("html, body").animate({ scrollTop: 0 }, {
-        duration: 500,
-        easing: "easeInOutExpo"
-    });
-}
+const container = document.querySelector('.dnd__list');
+const options = {
+    item: 'tr',
+    handle: false,
+    nested:false,
+    activeClass: 'dnd__active',
+    inactiveClass: 'dnd__inactive'
+};
+new DragonDrop(container, options);
 
 window.addEventListener("keydown", function(e) {
     if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70) || (e.keyCode === 91 && e.keyCode === 70)) {
