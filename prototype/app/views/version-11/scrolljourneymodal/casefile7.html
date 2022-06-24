@@ -3,12 +3,9 @@
 {% include "includes/cps/nav/v7/mainNav.html" %}
 {% include "includes/cps/nav/v7/reviewNav.html" %}
 {% include "includes/cps/v6/search-banner-modal-simple-v2.html" %}
-
+{% include "includes/cps/v6/redaction-alert-modal.html" %}
 {% endblock %}
 {% block content %}
-
-
---
 
 
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
@@ -32,6 +29,13 @@
 }
    function closeModal() {
     $(searchModal).addClass("rj-dont-display");
+}
+
+    function openAlertRedaction() {
+    $(redactionModal).removeClass("rj-dont-display");
+}
+   function closeAlertRedaction() {
+    $(redactionModal).addClass("rj-dont-display");
 }
 
 </script>
@@ -78,7 +82,7 @@
 <div class="govuk-grid-row" style="margin-right:-65px; margin-top:-5px">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="">
-            <a href="searchResults" class="govuk-back-link" style="margin-bottom:25px; margin-top:0">Find a case</a>
+            <p class="govuk-back-link" onClick="openAlertRedaction()" style="margin-bottom:25px; margin-top:0">Find a case</p>
             <div class="makeScrollCPSv10">
             
             <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0px"> 45AA209820/1
