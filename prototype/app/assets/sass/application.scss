@@ -130,6 +130,36 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     border-top: 4px solid $govuk-border-colour;
 }*/
 
+
+
+.govuk-modal-dialogue__header {
+    margin-bottom: 25px;
+}
+
+.govuk-modal-dialogue__header {
+    margin-bottom: 25px;
+    padding-bottom: 3px;
+    color: #ffffff;
+    background-color: #0b0c0c;
+    text-align: right;
+}
+
+.govuk-modal-dialogue__close {
+    display: block;
+    width: auto;
+    min-width: 44px;
+    margin: 0;
+    padding: 2px 5px;
+    float: right;
+    color: #ffffff;
+    background-color: #0b0c0c;
+    box-shadow: none !important;
+    font-size: 36px;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
