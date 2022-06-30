@@ -5080,6 +5080,55 @@ router.get('/*/redaction/routeRedactTaggedSheLoveMG11' , function (req, res) {
 })
 
 
+router.get('/*/start/witnessTypeOne' , function (req, res) {
+  var confirmTraining = req.query.witnessType
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              // req.session.data['MG11SheMcRedacted'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`witnessTypeProChoose`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           // req.session.data['MG11SheMcNotRedacted'] = true;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`whoClaiming`)
+            
+        default:
+            console.log("bork bork bork bork");
+                     // req.session.data['MG11SheMcRedacted'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`whoClaiming`)
+            break;
+        }
+})
+
+router.get('/*/start/witnessTypeTwo' , function (req, res) {
+  var confirmTraining = req.query.witnessType
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              // req.session.data['MG11SheMcRedacted'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`tbc`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           // req.session.data['MG11SheMcNotRedacted'] = true;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`whoClaiming`)
+            
+        default:
+            console.log("bork bork bork bork");
+                     // req.session.data['MG11SheMcRedacted'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`whoClaiming`)
+            break;
+        }
+})
+
+
 
 
 module.exports = router
