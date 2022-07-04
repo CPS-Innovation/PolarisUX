@@ -12,35 +12,29 @@ href: "javascript:history.back()"
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form method="get" action="overnightStay">
-                <h1 class="govuk-heading-xl">Do you want to claim for loss of pay while you were at court?</h1>
+            <form method="get" action="travel">
+                <h1 class="govuk-heading-xl">Do you want to claim for an overnight stay? </h1>
                 <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
-        <!--                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <!--                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                          
                             <label class="govuk-label  bold-label" for="firstName">
-                              Are you
+                                Are you a doctor, dentist, vet, lawyer, accountant or a nurse practioner standing in for a doctor?
                             </label>
                         </legend> -->
                         <div class="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="employmentType" name="employmentType" type="radio" value="Employed">
+                                <input class="govuk-radios__input" id="overnightStay" name="overnightStay" type="radio" value="Yes">
                                 <label class="govuk-label govuk-radios__label" for="TRN-yes">
                                     Yes
                                 </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="employmentType" name="employmentType" type="radio" value="Self employed">
+                                <input class="govuk-radios__input" id="overnightStay" name="overnightStay" type="radio" value="No">
                                 <label class="govuk-label govuk-radios__label" for="TRN-no">
-                                   No
+                                    No
                                 </label>
                             </div>
-<!--                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="employmentType" name="employmentType" type="radio" value="Not working">
-                                <label class="govuk-label govuk-radios__label" for="TRN-no">
-                                   Not working
-                                </label>
-                            </div> -->
                     </fieldset>
                 </div>
                 <button type="submit" class="govuk-button">Continue </button>
