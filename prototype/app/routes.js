@@ -5128,6 +5128,154 @@ router.get('/*/start/witnessTypeTwo' , function (req, res) {
         }
 })
 
+router.get('/*/start/claimPayRoute' , function (req, res) {
+  var confirmTraining = req.query.employmentType
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['employmentTypeShow'] = true;
+              req.session.data['lossPayShow'] = false;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`overnightStay`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['employmentTypeShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`lossOfPay`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['employmentTypeShow'] = 'arse';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`overnightStay`)
+            break;
+        }
+})
+
+router.get('/*/start/lossPayRoute' , function (req, res) {
+  var confirmTraining = req.query.lossPay
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['lossPayShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`overnightStay`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['lossPayShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`overnightStay`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['lossPayShow'] = 'arse';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`overnightStay`)
+            break;
+        }
+})
+
+
+
+router.get('/*/start/overNightStayRoute' , function (req, res) {
+  var confirmTraining = req.query.overnightStay
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['overNightStayShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`travel`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['overNightStayShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`travel`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['overNightStayShow'] = 'goneWrong';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`travel`)
+            break;
+        }
+})
+
+router.get('/*/start/travelRoute' , function (req, res) {
+  var confirmTraining = req.query.travelclaim
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['travelShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`childcare`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['travelShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`childcare`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['travelShow'] = 'goneWrong';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`travel`)
+            break;
+        }
+})
+
+
+router.get('/*/start/childcareRoute' , function (req, res) {
+  var confirmTraining = req.query.childcare
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['childcareShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`petSitting`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['childcareShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`petSitting`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['childcareShow'] = 'goneWrong';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`petSitting`)
+            break;
+        }
+})
+
+router.get('/*/start/petSittingRoute' , function (req, res) {
+  var confirmTraining = req.query.petsitting
+       switch (true) {
+          case  (confirmTraining == 'Yes'):
+              req.session.data['petSittingShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`../tasklist`)
+            
+           break;
+
+           case  (confirmTraining == 'No'):
+           req.session.data['petSittingShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`../tasklist`)
+            
+        default:
+            console.log("bork bork bork bork");
+                req.session.data['petSittingShow'] = 'goneWrong';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`../tasklist`)
+            break;
+        }
+})
+
 
 
 

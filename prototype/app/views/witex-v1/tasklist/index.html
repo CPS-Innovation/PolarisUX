@@ -15,6 +15,52 @@ Task list
     padding-left: 0
 }
 </style>
+
+
+<script>
+
+ var workStatus =  {{ data['employmentTypeShow'] }};
+  var lossPay =  {{ data['lossPayShow'] }};
+ var overNightStay =  {{ data['overNightStayShow'] }};
+   var showTravel =  {{ data['travelShow'] }};
+    var showChildcare =  {{ data['childcareShow'] }};
+    var showPetSitting =  {{ data['petSittingShow'] }};
+
+$(document).ready(function () {
+
+    var changeStuff = function() {
+      if (workStatus==false) {
+           $(someoneElseJobID).addClass("rj-dont-display");
+      } else{};
+      if (lossPay==false) {
+           $(lossOfPay).addClass("rj-dont-display");
+      } else{};
+      if (overNightStay==false) {
+           $(overNightStayID).addClass("rj-dont-display");
+      } else{};
+      if (showTravel==false) {
+           $(showTravelID).addClass("rj-dont-display");
+      } else{};
+      if (showChildcare==false) {
+           $(showChildcareID).addClass("rj-dont-display");
+      } else{};
+      if (showPetSitting==false) {
+           $(showPetSittingID).addClass("rj-dont-display");
+      } else{};
+
+
+
+
+
+
+      // end
+      }
+
+changeStuff();
+   });
+
+</script>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
@@ -64,9 +110,9 @@ Task list
             </li>
             <li>
                 <h2 class="app-task-list__section" style="margin-bottom:5px">
-                    <span class="app-task-list__section-number"> </span> Food and drink
+                    <span class="app-task-list__section-number"> </span> Daily allowance
                 </h2>
-                <p>You can claim an allowance of up to £x per day for food and drink. </p>
+                <p>You can claim an allowance of up to £x per day for attending court. </p>
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -94,7 +140,39 @@ Task list
             </li> -->
                 </ul>
             </li>
-            <li>
+              <li id="showTravelID">
+                <h2 class="app-task-list__section" style="margin-bottom:5px">
+                    <span class="app-task-list__section-number" > </span> Travel
+                </h2>
+                <p>You can claim for your expenses travelling to and from court. This includes train, tube, coach, car, motorcyle, bicycle, air and ferry. Parking can be claimed for. </p>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="task/ethnicty">
+                                How did you get to court?
+                            </a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
+                    </li>
+ <!--                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="task/gender">
+                                Your gender
+                            </a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
+                    </li> -->
+ <!--                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="task/learningProblem">
+                                Learning difficulty, disability or health problem
+                            </a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
+                    </li> -->
+                </ul>
+            </li>
+            <li id="overNightStayID">
                 <h2 class="app-task-list__section" style="margin-bottom:5px">
                     <span class="app-task-list__section-number" > </span> Overnight stay
                 </h2>
@@ -134,39 +212,8 @@ Task list
                     </li> -->
                 </ul>
             </li>
-            <li>
-                <h2 class="app-task-list__section" style="margin-bottom:5px">
-                    <span class="app-task-list__section-number" > </span> Travel
-                </h2>
-                <p>You can claim for your expenses travelling to and from court. This includes train, tube, coach, car, motorcyle, bicycle, air and ferry. Parking can be claimed for. </p>
-                <ul class="app-task-list__items">
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="task/ethnicty">
-                                How did you get to court?
-                            </a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li>
- <!--                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="task/gender">
-                                Your gender
-                            </a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
- <!--                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="task/learningProblem">
-                                Learning difficulty, disability or health problem
-                            </a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
-                </ul>
-            </li>
-            <li>
+
+            <li id="lossOfPay">
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> Loss of pay
                 </h2>
@@ -206,7 +253,7 @@ Task list
                     </li>
                 </ul>
             </li>
-            <li>
+            <li id="someoneElseJobID">
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> Pay someone to do your work
                 </h2>
@@ -246,7 +293,7 @@ Task list
                     </li>
                 </ul>
             </li>
-            <li>
+            <li id="showChildcareID">
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> Childcare
                 </h2>
@@ -296,7 +343,7 @@ Task list
                     </li> -->
                 </ul>
             </li>
-             <li>
+             <li id="showPetSittingID">
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> Pet sitting
                 </h2>
@@ -366,7 +413,7 @@ Task list
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> How should we pay you?
                 </h2>
-                <p>You can claim for expenses such as covid tests, visas or items needed for an unexpected overnight stay. </p>
+                <p>We can pay into a UK bank or building society, an international bank or with a cheque </p>
                 <ul class="app-task-list__items">
              
                      <li class="app-task-list__item">
@@ -377,14 +424,14 @@ Task list
                         </span>
                         <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
                     </li>
-  <!--                   <li class="app-task-list__item">
+                    <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="task/confirmDetails">
-                                How much did you pay for pet sitting?
+                                Your payment details
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
+                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">CANNOT start yet</strong>
+                    </li>
 <!--                      <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
                             <a href="task/confirmDetails">
@@ -456,6 +503,14 @@ Task list
                         <span class="app-task-list__task-name">
                             <a href="task/confirmDetails">
                                 Check your receipts
+                            </a>
+                        </span>
+                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="task/confirmDetails">
+                                Check the amount you are claiming
                             </a>
                         </span>
                         <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
