@@ -5276,6 +5276,31 @@ router.get('/*/start/petSittingRoute' , function (req, res) {
         }
 })
 
+// travel in the tasklist route
+router.get('/*/travel/transportChoiceRoute' , function (req, res) {
+  var confirmTraining = req.query.transportChoice
+       switch (true) {
+          case  (confirmTraining == 'Train'):
+              // req.session.data['petSittingShow'] = true;
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`trainCost`)
+            
+           break;
+
+           case  (confirmTraining == 'Tube/subway/tram'):
+           // req.session.data['petSittingShow'] = false;
+           // req.session.data['MG11SheMcRedacted'] = true;
+            res.redirect(`tubeCost`)
+            
+        default:
+            console.log("bork bork bork bork");
+                // req.session.data['petSittingShow'] = 'goneWrong';
+              // req.session.data['MG11SheMcNotRedacted'] = false;
+              res.redirect(`../tasklist`)
+            break;
+        }
+})
+
 
 
 
