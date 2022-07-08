@@ -26,6 +26,10 @@ Task list
     var showChildcare =  {{ data['childcareShow'] }};
     var showPetSitting =  {{ data['petSittingShow'] }};
 
+    var showTrain =  {{ data['trainCostShow'] }};
+    var showTube =  {{ data['tubeCostShow'] }};
+      var showfoodAndDrinkDays =  {{ data['foodAndDrinkShow'] }};
+
 $(document).ready(function () {
 
     var changeStuff = function() {
@@ -48,10 +52,25 @@ $(document).ready(function () {
            $(showPetSittingID).addClass("rj-dont-display");
       } else{};
 
+// show the travel stuff when train and tube have been completed
+            if (showTrain==true) {
+           $(travelTrainAdded).removeClass("rj-dont-display");
+            $(travelNotStarted).addClass("rj-dont-display");
+           $(travelCompleted).removeClass("rj-dont-display");
+      } else{};
+            if (showTube==true) {
+           $(travelTubeAdded).removeClass("rj-dont-display");
+      } else{};
 
+// end of travel stuff
+//food and drink
 
+            if (showfoodAndDrinkDays==true) {
+           $(foodanddrinkNotStarted).addClass("rj-dont-display");
+           $(foodanddrinkCompleted).removeClass("rj-dont-display");
+      } else{};
 
-
+//end of food and drink
 
       // end
       }
@@ -116,11 +135,12 @@ changeStuff();
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="task/chooseNPQ" aria-describedby="contact-details-completed">
-                                How many days are you claiming for
+                            <a href="foodanddrink" aria-describedby="contact-details-completed">
+                                Days away from home
                             </a>
                         </span>
-                        <strong class="app-task-list__tag govuk-tag govuk-tag--grey " id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="app-task-list__tag govuk-tag govuk-tag--grey " id="foodanddrinkNotStarted" style="float:right">Not started</strong>
+                          <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="foodanddrinkCompleted" style="float:right">Completed</strong>
                     </li>
                     <!--            <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -152,24 +172,28 @@ changeStuff();
                                 How did you get to court?
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="travelNotStarted" style="float:right">Not started</strong>
+                        <strong class="govuk-tag app-task-list__task-completed rj-dont-display" id="travelCompleted" style="float:right">Completed</strong>
                     </li>
- <!--                    <li class="app-task-list__item">
+                     <li class="app-task-list__item rj-dont-display" id="travelTrainAdded">
                         <span class="app-task-list__task-name">
-                            <a href="task/gender">
-                                Your gender
+                            <a href="travel">
+                                Cost of train tickets
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
- <!--                    <li class="app-task-list__item">
+
+                        <strong class="govuk-tag app-task-list__task-completed" id="travelTrainCompleted" style="float:right">Completed</strong>
+                    </li>
+                     <li class="app-task-list__item rj-dont-display" id="travelTubeAdded">
                         <span class="app-task-list__task-name">
-                            <a href="task/learningProblem">
-                                Learning difficulty, disability or health problem
+                            <a href="travel">
+                                Cost of tube tickets
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
+                      <!--   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="travelNotStarted" style="float:right">Not started</strong> -->
+                        <strong class="govuk-tag app-task-list__task-completed " id="travelTubeCompleted" style="float:right">Completed</strong>
+                    </li>
+
                 </ul>
             </li>
             <li id="overNightStayID">

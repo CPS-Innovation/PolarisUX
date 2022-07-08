@@ -5252,19 +5252,26 @@ router.get('/*/start/childcareRoute' , function (req, res) {
         }
 })
 
+
+// NOT SURE HOW ELSE TO DO THIS, SETS UP ALL THE OTHER req.session stuff before going into task list for first time
+
 router.get('/*/start/petSittingRoute' , function (req, res) {
   var confirmTraining = req.query.petsitting
        switch (true) {
           case  (confirmTraining == 'Yes'):
               req.session.data['petSittingShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
+                      req.session.data['trainCostShow'] = false;
+                      req.session.data['tubeCostShow'] = false;
+                      req.session.data['foodAndDrinkShow'] = false;
               res.redirect(`../tasklist`)
             
            break;
 
            case  (confirmTraining == 'No'):
            req.session.data['petSittingShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
+                  req.session.data['trainCostShow'] = false;
+                  req.session.data['tubeCostShow'] = false;
+                  req.session.data['foodAndDrinkShow'] = false;
             res.redirect(`../tasklist`)
             
         default:
@@ -5296,10 +5303,25 @@ router.get('/*/travel/transportChoiceRoute' , function (req, res) {
             console.log("bork bork bork bork");
                 // req.session.data['petSittingShow'] = 'goneWrong';
               // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`../tasklist`)
+              res.redirect(`trainCost`)
             break;
         }
 })
+
+
+router.get('/*/travel/tubeCostRoute' , function (req, res) {
+
+            req.session.data['trainCostShow'] = true;
+            req.session.data['tubeCostShow'] = true;
+              res.redirect(`../tasklist`)
+})
+
+router.get('/*/foodanddrink/foodAndDrinkRoute' , function (req, res) {
+
+            req.session.data['foodAndDrinkShow'] = true;
+              res.redirect(`../tasklist`)
+})
+
 
 
 
