@@ -53,17 +53,6 @@ $(document).ready(function () {
            $(showPetSittingID).addClass("rj-dont-display");
       } else{};
 
-// show the travel stuff when train and tube have been completed
-            if (showTrain==true) {
-           $(travelTrainAdded).removeClass("rj-dont-display");
-            $(travelNotStarted).addClass("rj-dont-display");
-           $(travelCompleted).removeClass("rj-dont-display");
-      } else{};
-            if (showTube==true) {
-           $(travelTubeAdded).removeClass("rj-dont-display");
-      } else{};
-
-// end of travel stuff
 //food and drink
 
             if (showfoodAndDrinkDays==true) {
@@ -72,12 +61,35 @@ $(document).ready(function () {
       } else{};
 
 //end of food and drink
-//food and drink
+
+// show the travel stuff when train and tube have been completed
+            if (showTrain==true) {
+           $(travelTrainAdded).removeClass("rj-dont-display");
+            $(travelNotStarted).addClass("rj-dont-display");
+           $(travelCompleted).removeClass("rj-dont-display");
+           // show the relevent receipts bit
+            $(receiptCantAdd).addClass("rj-dont-display");
+         $(trainReceiptAdd).removeClass("rj-dont-display");
+       
+
+      } else{};
+            if (showTube==true) {
+           $(travelTubeAdded).removeClass("rj-dont-display");
+      } else{};
+
+// end of travel stuff
+
+//pet
     if (showPetConfirmed==true) {
            $(petTimeNotStarted).addClass("rj-dont-display");
            $(petTimeCompleted).removeClass("rj-dont-display");
             $(petCostNotStarted).addClass("rj-dont-display");
            $(petCostCompleted).removeClass("rj-dont-display");
+           // show receipts
+          $(receiptCantAdd).addClass("rj-dont-display");
+         $(petReceiptAdd).removeClass("rj-dont-display");
+
+
       } else{};
 
 // end of pet
@@ -470,42 +482,35 @@ then only paid if you were away for more than 24 hours.</p>
                 <h2 class="app-task-list__section" style="margin-bottom: 5px;">
                     <span class="app-task-list__section-number"> </span> Add your reciepts
                 </h2>
-                <p>Upload all your receipts. We will tell you which claims need receipts.  </p>
+                <p>Upload all your receipts.  </p>
                 <ul class="app-task-list__items">
 
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
+                    <li class="app-task-list__item" id="receiptCantAdd">
+                        <span class="app-task-list__task-name" >
                             <a href="task/confirmDetails">
-                                Claims that need receipts
+                                Add receipts
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Cannot start yet</strong>
                     </li>
              
-                     <li class="app-task-list__item">
+                     <li class="app-task-list__item rj-dont-display" id="trainReceiptAdd" style=" border-top: 1px solid #b1b4b6;">
                         <span class="app-task-list__task-name">
                             <a href="task/confirmDetails">
-                                Upload receipts
+                                Add train travel receipts
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="govuk-tag govuk-tag--grey" id="trainReceiptNotStarted" style="float:right">Not started</strong>
                     </li>
-  <!--                   <li class="app-task-list__item">
+                     <li class="app-task-list__item rj-dont-display" id="petReceiptAdd" style=" border-top: 1px solid #b1b4b6;">
                         <span class="app-task-list__task-name">
                             <a href="task/confirmDetails">
-                                How much did you pay for pet sitting?
+                                Add pet sitting receipts
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
-<!--                      <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="task/confirmDetails">
-                                Details of the person who did your work
-                            </a>
-                        </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
-                    </li> -->
+                        <strong class="govuk-tag govuk-tag--grey" id="petReceiptNotStarted" style="float:right">Not started</strong>
+                    </li>
+
                 </ul>
             </li>
               <li>
