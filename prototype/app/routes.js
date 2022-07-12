@@ -5263,6 +5263,7 @@ router.get('/*/start/petSittingRoute' , function (req, res) {
                       req.session.data['trainCostShow'] = false;
                       req.session.data['tubeCostShow'] = false;
                       req.session.data['foodAndDrinkShow'] = false;
+                        req.session.data['petConfirmedShow'] = false;
               res.redirect(`../tasklist`)
             
            break;
@@ -5272,6 +5273,7 @@ router.get('/*/start/petSittingRoute' , function (req, res) {
                   req.session.data['trainCostShow'] = false;
                   req.session.data['tubeCostShow'] = false;
                   req.session.data['foodAndDrinkShow'] = false;
+                   req.session.data['petConfirmedShow'] = false;
             res.redirect(`../tasklist`)
             
         default:
@@ -5319,6 +5321,12 @@ router.get('/*/travel/tubeCostRoute' , function (req, res) {
 router.get('/*/foodanddrink/foodAndDrinkRoute' , function (req, res) {
 
             req.session.data['foodAndDrinkShow'] = true;
+              res.redirect(`../tasklist`)
+})
+
+router.get('/*/pet/petCostRoute' , function (req, res) {
+
+            req.session.data['petConfirmedShow'] = true;
               res.redirect(`../tasklist`)
 })
 

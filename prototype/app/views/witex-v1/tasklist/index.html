@@ -29,6 +29,7 @@ Task list
     var showTrain =  {{ data['trainCostShow'] }};
     var showTube =  {{ data['tubeCostShow'] }};
       var showfoodAndDrinkDays =  {{ data['foodAndDrinkShow'] }};
+      var showPetConfirmed =  {{ data['petConfirmedShow'] }};
 
 $(document).ready(function () {
 
@@ -71,6 +72,15 @@ $(document).ready(function () {
       } else{};
 
 //end of food and drink
+//food and drink
+    if (showPetConfirmed==true) {
+           $(petTimeNotStarted).addClass("rj-dont-display");
+           $(petTimeCompleted).removeClass("rj-dont-display");
+            $(petCostNotStarted).addClass("rj-dont-display");
+           $(petCostCompleted).removeClass("rj-dont-display");
+      } else{};
+
+// end of pet
 
       // end
       }
@@ -397,19 +407,21 @@ then only paid if you were away for more than 24 hours.</p>
              
                      <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="task/confirmDetails">
+                            <a href="pet">
                                 How many days do you want to claim for?
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="govuk-tag govuk-tag--grey" id="petTimeNotStarted" style="float:right">Not started</strong>
+                       <strong class="govuk-tag app-task-list__task-completed  rj-dont-display" id="petTimeCompleted" style="float:right">Completed</strong>
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="task/confirmDetails">
+                            <a href="pet">
                                 How much did you pay for pet sitting?
                             </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey" id="medical-information-completed" style="float:right">Not started</strong>
+                        <strong class="govuk-tag govuk-tag--grey" id="petCostNotStarted" style="float:right">Not started</strong>
+                      <strong class="govuk-tag app-task-list__task-completed  rj-dont-display" id="petCostCompleted" style="float:right">Completed</strong>
                     </li>
 <!--                      <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
