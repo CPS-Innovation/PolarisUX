@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v8/logNav.html" %}
+{% include "includes/cps/nav/v8/logReport.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+<style>
+
+
+
+.js-enabled .govuk-option-select .options-container {
+    overflow-y: hidden;
+}
+
+@media (min-width: 769px)
+.govuk-option-select .options-container {
+    max-height: 200px;
+}
+.govuk-option-select .options-container
+
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+.caseReviewHeader {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+
+
+        <div class="govuk-grid-row"">
+                <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Report</h1>
+
+
+
+        <table class="govuk-table details-list" >
+<div style="">
+            <tr style="">
+                <th class="govuk-heading-m" style="text-align:left; border-top:none;  "></th>
+                <th style=" border-top:none; font-weight:400; text-align:right;"> <a href='edit'>Edit record</a></th>
+                <th style=" border-top:none "></th>
+            </tr>
+        </div>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">URN</td>
+                        <td class="govuk-table__cell" scope="row">12AB123456</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Area/division</td>
+                        <td class="govuk-table__cell" scope="row">Test area 1</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Unit</td>
+                        <td class="govuk-table__cell" scope="row">Magistrates court</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Investigating agency</td>
+                        <td class="govuk-table__cell" scope="row">North Yorkshire Police</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Returned to investigative agency</td>
+                        <td class="govuk-table__cell" scope="row">No</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Redaction type</td>
+                        <td class="govuk-table__cell" scope="row">Unredacted</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Document type</td>
+                        <td class="govuk-table__cell" scope="row">MG0</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Missed redaction</td>
+                        <td class="govuk-table__cell" scope="row">Bank details</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Notes</td>
+                        <td class="govuk-table__cell" scope="row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non lorem efficitur, maximus ex in, euismod urna. Nam quis ex consectetur leo consequat cursus sed ac lacus. Integer in tristique purus. Vestibulum ac dignissim sapien. Nunc et metus eleifend mauris ornare consequat. Etiam sed enim faucibus, ornare mauris non, convallis felis. Nullam in maximus risus. Vivamus quis tellus ipsum.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Author</td>
+                    <td class="govuk-table__cell" scope="row">Rob Jenkins</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Created date</td>
+                    <td class="govuk-table__cell" scope="row">21 March 2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="display:flex;  align-items: center;">
+<button class="govuk-button govuk-button--warning" data-module="govuk-button">
+  Delete record
+</button>
+ <p style="margin-left:15px"><a href=''>Edit record</a></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+{% endblock %}
