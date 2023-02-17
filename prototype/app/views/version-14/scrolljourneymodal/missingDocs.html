@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+{% block content %}
+<style>
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl" style="">Missing documents</h1>
+        <p>These documents could not be shown. Use CMS to view documents and redact any content.</p>
+
+
+        <table class="govuk-table" style="margin-bottom:60px">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Document name</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+<!--                     <th scope="col" class="govuk-table__header">Custody time limit</th>
+                    <th scope="col" class="govuk-table__header">Custody end</th>
+                    <th scope="col" class="govuk-table__header">Status</th> -->
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="max-width:320px">stmt BLAYNEE 2044 2 JUNE mg11</td>
+                     <td class="govuk-table__cell" style="">4 June 2022</td>
+                </tr>
+                 <tr class="govuk-table__row">
+                     <td class="govuk-table__cell" style="max-width:320px">very important document, FINAL 5 JUNE </td>
+                      <td class="govuk-table__cell" style="">4 June 2022</td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </div>
+</div>
+{% endblock %}

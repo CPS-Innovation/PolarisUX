@@ -87,7 +87,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-@import "node_modules/@ministryofjustice/frontend/moj/all";
 
 
 @mixin das-clearfix {
@@ -129,159 +128,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     bottom: 0px;
     right: 0px;
     border-top: 4px solid $govuk-border-colour;
-
-
 }*/
-
-.makeBannerMiddle {
-   max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media  (max-width: 1452px) {
-.makeBannerMiddle {
-   margin-left: 30px;
-
-}
-}
-
-
-
-@media  (max-width: 636px) {
-.makeBannerMiddle {
-   margin-left: 20px;
-  margin-right: 20px;
-}
-.desktopOnlyHeader {
-  display: none;
-}
-}
-
-.accordion-expand-all {
-  font-family: "GDS Transport", arial, sans-serif;
-}
-
-
-
-.moj-multi-file-upload {
-  margin-bottom: 40px;
-}
-
-.moj-multi-file-upload--enhanced .moj-multi-file-upload__button {
-  display: none;
-}
-
-.moj-multi-file-upload__dropzone {
-  outline: 3px dashed govuk-colour('black');
-  display: flex;
-  text-align: center;
-  padding: govuk-spacing(9) govuk-spacing(3);
-  transition: outline-offset .1s ease-in-out, background-color .1s linear;
-}
-
-.moj-multi-file-upload__dropzone label {
-  margin-bottom: 0;
-  display: inline-block;
-  width: auto;
-}
-
-.moj-multi-file-upload__dropzone p {
-  margin-bottom: 0;
-  margin-right: 10px;
-  padding-top: 7px;
-}
-
-.moj-multi-file-upload__dropzone [type=file] {
-  position: absolute;
-  left: -9999em;
-}
-
-.moj-multi-file-upload--dragover {
-  background: #b1b4b6;
-  outline-color: #6f777b;
-}
-
-.moj-multi-file-upload--focused {
-  background-color: $govuk-focus-colour;
-  color: $govuk-focus-text-colour;
-  box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
-  outline: none;
-}
-
-.moj-multi-file-upload__error {
-  color: govuk-colour('red');
-  font-weight: bold;
-}
-
-.moj-multi-file-upload__success {
-  color: govuk-colour('green');
-  font-weight: bold;
-}
-
-.moj-multi-file-upload__error svg {
-   fill: currentColor;
-   float: left;
-   margin-right: govuk-spacing(2);
-}
-
-.moj-multi-file-upload__success svg {
-  fill: currentColor;
-  float: left;
-  margin-right: govuk-spacing(2);
-}
-
-// skeleton screens
-.skeleton {
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(200, 20%, 80%);
-  }
-  100% {
-    background-color: hsl(200, 20%, 95%);
-  }
-}
-
-
-
-.skeleton-text {
-  width: 100%;
-  height: 0.7rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.skeleton-check {
-  width: 90%;
-  height: 0.9rem;
-  margin-bottom: 0.9rem;
-  border-radius: 0.25rem;
-}
-
-
-.skeleton-text__body {
-  width: 75%;
-}
-
-.skeleton-footer {
-  width: 30%;
-}
-
-.skeleton-header {
-  height: 2rem;
-  width: 75%;
-}
-
-.skeleton-subheader {
-  height: 1.5rem;
-  width: 75%;
-}
-
-
-//end of skeleton screens
 
 
 .govuk-modal-dialogue__header {
@@ -490,7 +337,7 @@ padding-top: 5px;
   .das-cookie-banner {
 margin-left: auto;
 margin-right: auto;
-margin-top: 70px;
+margin-top: 4%;
 max-width:90%;
 /*transform: translateX(-50%) translateY(-50%);*/
    }
@@ -498,7 +345,7 @@ max-width:90%;
    .innerPanel {
     max-width:95%; 
     margin: 0 auto; 
-    padding: 20px 45px 20px 45px ;
+    padding: 20px 0 20px ;
    
    }
 
@@ -1628,7 +1475,7 @@ gem-c-pagination__link-text {
       
 
     @include govuk-media-query($from: tablet) {
-      padding: 0px 0 20px 0 ;
+      padding: 20px 0;
     }
   }
 

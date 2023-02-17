@@ -5128,8 +5128,6 @@ router.get('/*/start/witnessTypeTwo' , function (req, res) {
         }
 })
 
-
-
 router.get('/*/start/claimPayRoute' , function (req, res) {
   var confirmTraining = req.query.employmentType
        switch (true) {
@@ -5153,7 +5151,7 @@ router.get('/*/start/claimPayRoute' , function (req, res) {
               res.redirect(`overnightStay`)
             break;
         }
-})   
+})
 
 router.get('/*/start/lossPayRoute' , function (req, res) {
   var confirmTraining = req.query.lossPay
@@ -5254,226 +5252,6 @@ router.get('/*/start/childcareRoute' , function (req, res) {
         }
 })
 
-router.get('/*/start/foodRoute2' , function (req, res) {
-  var confirmTraining = req.query.foodclaim
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['foodShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`../foodanddrink`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['foodShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`travel`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['childcareShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`travel`)
-            break;
-        }
-})
-
-router.get('/*/start/travelRoute2' , function (req, res) {
-  var confirmTraining = req.query.travelclaim
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['travelShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`../travel`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['travelShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`overnightStay`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['travelShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`overnightStay`)
-            break;
-        }
-})
-
-router.get('/*/start/overNightStayRoute2' , function (req, res) {
-  var confirmTraining = req.query.overnightStay
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['overNightStayShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`lossOfPay`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['overNightStayShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`lossOfPay`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['overNightStayShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`lossOfPay`)
-            break;
-        }
-})
-
-
-router.get('/*/start/lossPayRoute2' , function (req, res) {
-  var confirmTraining = req.query.lossPay
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['lossPayShow'] = true;
-              req.session.data['employmentTypeShow'] = false;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`childcare`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['lossPayShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`yourWork`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['lossPayShow'] = 'arse';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`childcare`)
-            break;
-        }
-})
-
-router.get('/*/start/claimPayRoute2' , function (req, res) {
-  var confirmTraining = req.query.employmentType
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['employmentTypeShow'] = true;
-              res.redirect(`childcare`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['employmentTypeShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`childcare`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['employmentTypeShow'] = 'arse';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`childcare`)
-            break;
-        }
-})
-
-router.get('/*/start/childcareRoute2' , function (req, res) {
-  var confirmTraining = req.query.childcare
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['childcareShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`petSitting`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['childcareShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`petSitting`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['childcareShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`petSitting`)
-            break;
-        }
-})
-
-router.get('/*/start/petsittingRoute2' , function (req, res) {
-  var confirmTraining = req.query.petsitting
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['petSittingShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`../pet`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['petSittingShow'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`otherExpenses`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['childcareShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`petSitting`)
-            break;
-        }
-})
-
-router.get('/*/start/otherRoute2' , function (req, res) {
-  var confirmTraining = req.query.otherexpenses
-       switch (true) {
-          case  (confirmTraining == 'Yes'):
-              req.session.data['otherShow'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`../receipts`)
-            
-           break;
-
-           case  (confirmTraining == 'No'):
-           req.session.data['other'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`../receipts`)
-            
-        default:
-            console.log("bork bork bork bork");
-                req.session.data['childcareShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`./receipts`)
-            break;
-        }
-})
-
-
-router.get('/*/payyou/paymetypeRoute2' , function (req, res) {
-  var confirmTraining = req.query.paymetype
-       switch (true) {
-          case  (confirmTraining == 'UK bank or building society'):
-             // req.session.data['Show'] = true;
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`ukbank`)
-           break;
-
-           case  (confirmTraining == 'Bank outside UK'):
-          // req.session.data['other'] = false;
-           // req.session.data['MG11SheMcRedacted'] = true;
-            res.redirect(`2`)
-
-          case  (confirmTraining == 'Cheque'):
-            res.redirect(`3`)
-            
-        default:
-            console.log("bork bork bork bork");
-             //   req.session.data['childcareShow'] = 'goneWrong';
-              // req.session.data['MG11SheMcNotRedacted'] = false;
-              res.redirect(`./receipts`)
-            break;
-        }
-})
-
 
 // NOT SURE HOW ELSE TO DO THIS, SETS UP ALL THE OTHER req.session stuff before going into task list for first time
 
@@ -5507,25 +5285,6 @@ router.get('/*/start/petSittingRoute' , function (req, res) {
         }
 })
 
-router.get('/*/start/setupTaskListRoute' , function (req, res) {
-
-            req.session.data['overNightStayShow'] = true;
-          req.session.data['lossPayShow'] = true;
-          req.session.data['employmentTypeShow'] = true;
-            req.session.data['petSittingShow'] = true;
-            req.session.data['childcareShow'] = true;
-            req.session.data['travelShow'] = true;
-  
-              req.session.data['trainCostShow'] = false;
-              req.session.data['tubeCostShow'] = false;
-              req.session.data['foodAndDrinkShow'] = false;
-              req.session.data['petConfirmedShow'] = false;
-              res.redirect(`../tasklist`)
-   
-})
-
-
-
 // travel in the tasklist route
 router.get('/*/travel/transportChoiceRoute' , function (req, res) {
   var confirmTraining = req.query.transportChoice
@@ -5550,8 +5309,6 @@ router.get('/*/travel/transportChoiceRoute' , function (req, res) {
             break;
         }
 })
-
-
 
 
 router.get('/*/travel/tubeCostRoute' , function (req, res) {
