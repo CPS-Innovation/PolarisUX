@@ -1,13 +1,13 @@
 {% extends "layoutCPS.html" %}
-{% block header %}
-{% include "includes/cps/v11/banner.html" %}
-{% endblock %}
 {% block beforeContent %}
-
-{% include "includes/cps/v6/search-banner-modal-simple-v4.html" %}
+{% include "includes/cps/nav/v7/mainNav.html" %}
+{% include "includes/cps/nav/v7/reviewNav.html" %}
+{% include "includes/cps/v6/search-banner-modal-simple-v3.html" %}
+{% include "includes/cps/v6/redaction-alert-modal.html" %}
 {% endblock %}
 {% block content %}
---
+
+
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/public/javascripts/accordion.js"></script>
 <script>
@@ -29,6 +29,13 @@
 }
    function closeModal() {
     $(searchModal).addClass("rj-dont-display");
+}
+
+    function openAlertRedaction() {
+    $(redactionModal).removeClass("rj-dont-display");
+}
+   function closeAlertRedaction() {
+    $(redactionModal).addClass("rj-dont-display");
 }
 
 </script>
@@ -75,37 +82,42 @@
 <div class="govuk-grid-row" style="margin-right:-65px; margin-top:-5px">
     <div class="govuk-grid-column-one-quarter" style="">
         <div style="">
-            <a href="searchResults" class="govuk-back-link" style="margin-bottom:25px; margin-top:0">Find a case</a>
+            <p class="govuk-back-link" onClick="openAlertRedaction()" style="margin-bottom:25px; margin-top:0">Find a case</p>
             <div class="makeScrollCPSv10">
             
-            <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0"> 45AA209820/1 
-<!--                   <table class="govuk-table" style="margin-bottom:0px; margin-top:-10px"> <tbody>
-                                        <tr class="govuk-table__row">
-                                            <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" style="border:0" scope="row"><a href="" data-doc="defendants.pdf" data-count="3">View 4 defendants and charges </a></td>
-                                        </tr>
-                                </tbody></table> -->
+            <h1 class="govuk-heading-m wrapLongFilenamesCPS" style="margin-bottom:0px"> 45AA209820/1
+       <!--          <span class="govuk-caption-m">McLove, Eoin </span>
+                <span class="govuk-caption-m" style="margin-bottom:20px">DOB: 16 Oct 1985. Age: 36</span> -->
             </h1>
-                <span class="govuk-heading-s" style="margin-bottom:0; font-weight:400; margin-top:10px">McLove, Eoin</span>
-                <span class="govuk-heading-s" style="margin-bottom:00px; font-weight:400; font-size:16px">DOB: 16 Jan 2005. Age: 18 
-                <span class="govuk-heading-s" style="margin-bottom:10px; font-weight:700; font-size:16px">Youth offender</span>
+   <!--            <label class="govuk-label--s govuk-label" for="" style="">Defendants</label>
+            <p style="margin-bottom:0">McLove, Eoin </p>
+            <p style="margin-bottom:0">Crilly, Ted </p>
+             <p style="margin-bottom:0">McGuire, Dougal </p>
+              <p style="margin-bottom:5px">Hackett, Jack </p> -->
+           <!--    <p style="margin-bottom:25px"><a href="" data-doc="defendants.pdf" data-count="1">View 4 defendants and charges </a></p> -->
+      
+                               <P style="margin-bottom:5px;margin-top: 5px; font-size:16px">Mclove, Eoin </P>
+                                  <P style="margin-bottom:5px; font-size:16px">Crilly, Ted </P>
+                                    <P style="margin-bottom:5px;font-size:16px">McGuire, Dougal </P>
+                                      <P style="font-size:16px; margin-bottom:px">Hackett, Jack </P>
+                                                             <table class="govuk-table" style="margin-bottom:20px; margin-top:-25px"> <tbody>
+                                        <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" style="border:0" scope="row"><a href="" data-doc="defendants.pdf" data-count="3" style="font-weight:400">View 4 defendants and charges </a></td>
+                                        </tr>
+
+                                </tbody></table>
+
     
         <div class=" " style="">
             <div class="caseFiles" id="caseFilesCol" style="margin-right:25px">
-                <div class="blueBoxCPS">
+<!--                 <div class="blueBoxCPS">
                     <h2 class="govuk-heading-s" style="color:#fff; padding-top:1rem; ">Proposed charges</h2>
                     <ul class="govuk-list govuk-list--bullet govuk-body-s" style="color:#fff; margin-bottom:0">
                         <li>
-                           Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988
-                           <!-- <p style="font-weight:700; color:#fff; font-size:16px; margin-top:0px">Youth at time of offence </p> -->
-
-                           <p style="font-weight:700; color:#fff; font-size:16px; margin-top:5px; margin-bottom:0px">Custody time limit: 45 days </p>
-                           <p style="font-weight:700; color:#fff; font-size:16px; margin-top:0px">Custody end: 30 May 2022 </p>
+                           Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988<p style="font-weight:700; color:#fff; font-size:16px; margin-top:5px; margin-bottom:0px">Custody time limit: 45 days </p><p style="font-weight:700; color:#fff; font-size:16px; margin-top:0px">Custody end: May 30 2022 </p>
                         </li>
-                        <!--         <li style="padding-top: 15px; margin-bottom: 0;">
-                                <span style="font-weight:700">Section 5 Drive OPL 01/06/2020</span> Contrary to Road Traffic Act
-                            </li> -->
                     </ul>
-                </div>
+                </div> -->
                 <label class="govuk-label--s govuk-label" for="" style="">
                     Search</label>
                 <div style="display:flex; width:98%; margin-bottom:25px" class="searchForm">
@@ -113,45 +125,12 @@
                     <!--  <div class="bba"><button class="search" type="submit" id="btnSearchURN"> </button></div> -->
                     <div class="bba"><button class="search" type="submit" onCLick="openModal()"> </button></div>
                 </div>
-<!--                    <label class="govuk-label--s govuk-label" for="" style="">
-                    Case files</label>
-  <p class="govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MCLOVEMG3.pdf" style="margin-bottom:-10px" data-count="3">View missing documents</a></p> -->
                 <div class="accordion">
-                     <!-- <p class="govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MCLOVEMG3.pdf" data-count="3">Missing documents</a></p> -->
                     <div class="accordion-section">
-                        <div class="accordion-section-header">
-                            <h2 class="govuk-heading-s">Missing documents </h2>
-                        </div>
-
-                        <div class="accordion-section-body">
-                                   <p class="govuk-body-s" style="margin-bottom:0">These documents could not be shown. Use CMS to view documents and redact any content.  </p>
-                            <table class="govuk-table ">
-                                <thead>
-                                        <tr class="govuk-table__row">
-                                            <th scope="col" class="govuk-table__header " style="padding-top:0"></th>
-                                            <!-- <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400">Date added</th> -->
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                        <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MISSINGDOCS.pdf" data-count="3">Documents on CMS</a></td>
-                                            <!-- <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td> -->
-                                        </tr>
-
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">Another missing document</td>
-
-                                    </tr> 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                     <div class="accordion-section">
                         <div class="accordion-section-header">
                             <h2 class="govuk-heading-s">Reviews </h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                         <tr class="govuk-table__row">
@@ -164,6 +143,7 @@
                                             <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MCLOVEMG3.pdf" data-count="3">MCLOVE MG3</a></td>
                                             <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td>
                                         </tr>
+
 <!--                                     <tr class="govuk-table__row">
                                         <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG12.pdf">MCLOVE MG12</a></td>
                                         <td class="govuk-table__cell govuk-body-s" scope="row">pdf</td>
@@ -183,7 +163,6 @@
                             <h2 class="govuk-heading-s" style="">Case overview</h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <div class="cpsDocs chargingDocs">
                                 <table class="govuk-table ">
                                     <thead>
@@ -226,7 +205,6 @@
                             <h2 class="govuk-heading-s">Statements</h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s openMe" style="margin-bottom:10px"><a href="" data-doc="MISSINGDOCS.pdf" data-count="3">Some documents for this case </a>are only available on CMS  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -255,19 +233,7 @@
                                         <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="Shelagh_McLove_VPS_mg11.pdf" data-count="3">Shelagh McLove VPS mg11</a></td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">06 June 2020</td>
                                     </tr>
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf">MG11 Shelagh MCLOVE retraction</a></td>
-                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">10 June 2020</td>
-                                    </tr>
-                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" style="border-bottom:0; padding-bottom:0" scope="row">MG11 Geoff MCLOVE </td>
-                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="border-bottom:0;padding-bottom:0">11 June 2020</td>
-                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s " scope="row" colspan=2 style="padding-top:3px"><span style=>Document only available on CMS</span></td>
-                                   
-                                       
-                                    </tr>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -277,7 +243,6 @@
                             <h2 class="govuk-heading-s">Exhibits </h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -306,7 +271,6 @@
                             <h2 class="govuk-heading-s">Forensics </h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -340,7 +304,6 @@
                             <h2 class="govuk-heading-s">Unused materials </h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -380,19 +343,19 @@
                             <h2 class="govuk-heading-s">Defendant</h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
                                         <th scope="col" class="govuk-table__header " style=""></th>
-                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400">Date added</th>
+                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="PRE_CONS_D.pdf" data-count="2">PRE CONS D</a></td>
-                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row"></td>
                                     </tr>
+                               
                                 </tbody>
                             </table>
                         </div>
@@ -403,7 +366,6 @@
                             <h2 class="govuk-heading-s">Court preparation </h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -426,7 +388,6 @@
                             <h2 class="govuk-heading-s">Communications</h2>
                         </div>
                         <div class="accordion-section-body">
-                             <p class="govuk-body-s" style="margin-bottom:10px">This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a>  </p>
                             <table class="govuk-table ">
                                 <thead>
                                     <tr class="govuk-table__row">
@@ -444,6 +405,31 @@
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row">02 June 2020</td> -->
                                                              <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
                                         <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                                      <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="govuk-heading-s">Uncategorised</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                            <table class="govuk-table ">
+                                <thead>
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header " style=""></th>
+                                        <th scope="col" class="govuk-table__header govuk-body-s" style="font-weight:400">Date added</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="dnd__list">
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row" style="max-width:151px"><a href="" data-doc="PRE_CONS_D.pdf" data-count="2">PRE CONS D</a></td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" scope="row" style="cursor:pointer" >02 Jun 2020 <span class="icon-arrows2" style="margin-left:10px"></span></td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row" style="max-width:151px"><a href="" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf">MG11 Shelagh MCLOVE retraction</a></td>
+                                        <td class="govuk-table__cell govuk-body-s dateWidthCPS" style="cursor:pointer" scope="row">10 Jun 2020 <span class="icon-arrows2" style="margin-left:12px"></span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -514,34 +500,22 @@
 <!-- </main>
 </div> -->
 <!-- remove if you get rid of the gov width container -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/drag-on-drop@3.3.2/dist/dragon-drop.js"></script>
 <script>
-//Get the button:
-mybutton = document.getElementById("myBtn");
-docCopy = document.getElementById("docCopy");
+/** 
+ * Note: '.dnd__list' is a <ul></ul> in my html page
+ * Note: The 'dnd' in the class name is short for DragonDrop
+ **/
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
-        mybutton.style.display = "block";
-        //docCopy.style.display = "none";
-    } else {
-        mybutton.style.display = "none";
-        //docCopy.style.display = "block";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    // document.body.scrollTop = 0; // For Safari
-    // document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    $("html, body").animate({ scrollTop: 0 }, {
-        duration: 500,
-        easing: "easeInOutExpo"
-    });
-}
+const container = document.querySelector('.dnd__list');
+const options = {
+    item: 'tr',
+    handle: false,
+    nested:false,
+    activeClass: 'dnd__active',
+    inactiveClass: 'dnd__inactive'
+};
+new DragonDrop(container, options);
 
 window.addEventListener("keydown", function(e) {
     if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70) || (e.keyCode === 91 && e.keyCode === 70)) {

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+{% block content %}
+<style>
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+
+li {margin-bottom:10px;font-size:19px}
+</style>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl" style="">Mclove, Eoin</h1>
+        
+        <ul id="dragon" class="dnd__list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/drag-on-drop@3.3.2/dist/dragon-drop.js"></script>
+<script>
+
+    /** 
+* Note: '.dnd__list' is a <ul></ul> in my html page
+* Note: The 'dnd' in the class name is short for DragonDrop
+**/
+
+const container = document.querySelector('.dnd__list');
+const options = {
+  item: 'li',
+  handle: false,
+  activeClass: 'dnd__active',
+  inactiveClass: 'dnd__inactive'
+};
+new DragonDrop(container, options);
+
+</script>
+
+{% endblock %}
