@@ -26,11 +26,15 @@ jobs:
           cd prototype
           npm install
 
+      - name: tar
+        run: |
+          tar -cf prototype.tar prototype
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: prototype
+          path: prototype.tar
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,6 +49,10 @@ jobs:
         with:
           name: node-app
 
+      - name: tar
+        run: |
+          tar -xf prototype.tar
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -52,4 +60,4 @@ jobs:
           app-name: 'as-web-rumpole-ux-dev'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F575B937FAF48FC8AB1E4FD171975E6 }}
-          package: .
+          package: prototype
