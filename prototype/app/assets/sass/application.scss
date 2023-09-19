@@ -88,6 +88,10 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "node_modules/@ministryofjustice/frontend/moj/all";
+@import "patterns/new-design";
+@import "patterns/new-modals";
+@import "patterns/document-viewer";
+@import "patterns/navbar";
 
 
 @mixin das-clearfix {
@@ -995,7 +999,7 @@ margin-top: 15px;
 
  
  .js-enabled .govuk-tabs__panel {
-  padding: 25px 0 0 0  !important;
+  padding: 2px 0 0 0  !important;
  
  }
 

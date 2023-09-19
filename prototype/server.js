@@ -49,6 +49,7 @@ if (useV6) {
 
 // Set up configuration variables
 var releaseVersion = packageJson.version
+// var env = utils.getNodeEnv()
 var glitchEnv = (process.env.PROJECT_REMIX_CHAIN) ? 'production' : false // glitch.com
 var env = (process.env.NODE_ENV || glitchEnv || 'development').toLowerCase()
 var useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData
