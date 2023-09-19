@@ -1,0 +1,79 @@
+<div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="redactionModalOver">
+
+    <div class="das-cookie-banner" id="openMe">
+        <div class="das-cookie-banner__wrapper">
+
+            <div class="govuk-modal-dialogue__header">
+                <button aria-label="Close modal dialogue" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeModalOver()">×</button>
+            </div>
+
+            <!-- //////////////////////////////// REDACTION LOG - START //////////////////////////////// -->
+            <div class="govuk-grid-row" id="redaction-over">
+
+                <div class="innerPanel simpleModelTwo">
+
+                    <div class="header-wrapper">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <h1 class="govuk-heading-l">{{ data['searchURN'] }}/1</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-header-wrapper">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <h2 class="govuk-heading-m">
+                                    <div class="wrapper">
+                                        <span class="icon document">Document type</span>MG 11 - <strong>Over redaction details</strong>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="redaction-wrapper">
+                        <form method="" action="">
+
+                            <!-- /////////////////////// ROW - 1 - START /////////////////////// -->
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full">
+                                    <div class="govuk-character-count" data-module="govuk-character-count-1" data-maxlength="200">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="redactionLog-notes__1">Notes</label>
+                                            <textarea class="govuk-textarea govuk-js-character-count" id="redactionLog-notes__1" name="redactionLog-notes__1" rows="4" aria-describedby="redactionLog-notes-info__1" onkeyup="countChar6(this)"></textarea>
+                                        </div>
+                                        <div id="redactionLog-notes-info__1" class="govuk-hint govuk-character-count__message">You can enter up to <span id="charNum6">200</span> characters</div>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                            <!-- /////////////////////// ROW - 1 - END /////////////////////// -->
+
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full cta-group">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="redactionLog-returned__1" name="redactionLog-returned__1" type="checkbox" value="hmrc">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="redactionLog-returned__1">Returned to investigative agency?</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>   
+                                    <button class="govuk-button" data-module="govuk-button" onClick="closeModalOver()">Save and continue</button>
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Reset</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- //////////////////////////////// REDACTION LOG - END //////////////////////////////// -->
+        </div>
+    </div>
+</div>
