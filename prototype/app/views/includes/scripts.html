@@ -4,12 +4,15 @@
     var yourNavigation = $(".navbar");
     stickyDiv = "sticky";
     yourHeader = $('.govuk-header').height();
+    sideBar = $('#left-column');
 
     $(window).scroll(function() {
       if( $(this).scrollTop() > yourHeader ) {
         yourNavigation.addClass(stickyDiv);
+        sideBar.addClass(stickyDiv);
       } else {
         yourNavigation.removeClass(stickyDiv);
+        sideBar.removeClass(stickyDiv);
       }
     });
 

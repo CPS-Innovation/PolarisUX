@@ -186,10 +186,10 @@ function email() {
             $('#documentNameHeader > p.inPageSearchMargins2:contains("VADER, 45GD0702322, 22/08/2023")').parent().append(`
                 <div class="attachments">
                     <p class="">4 attachments:</p>
-                    <a href="#" class="document">Document 1</a>,
-                    <a href="#" class="document">Document 2</a>,
-                    <a href="#" class="document">Document 3</a>,
-                    <a href="#" class="document">Document 4</a>
+                    <a href="" class="document show-case" data-doc="CM01.pdf" data-count="3">Case overview and officer comments</a>,
+                    <a href="" class="document show-case" data-doc="MG05MCLOVE.pdf">MG05 MCLOVE</a>,
+                    <a href="" class="document show-case" data-doc="MG06_3June.pdf">MG06 3 June</a>,
+                    <a href="" class="document show-case" data-doc="MG06_10june.pdf">MG06 10 june</a>
                 </div>
             `);
         }

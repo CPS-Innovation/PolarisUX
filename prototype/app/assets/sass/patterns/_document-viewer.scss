@@ -157,6 +157,17 @@ main.case-files {
     }
 }
 
+#left-column {
+    overflow-y: scroll;
+    height: 77vh;
+    position: fixed;
+    width: 20%;
+    &.sticky {
+        top: 90px;
+        height: 87vh;
+    }
+}
+
 #right-column {
     // transition: all 0.3s linear;
     // transform: translate3d(0,0,-25px);
