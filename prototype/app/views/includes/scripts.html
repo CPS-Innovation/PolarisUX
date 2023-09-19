@@ -1,0 +1,29 @@
+<script type="text/javascript">
+
+    // Scroll effect - PART 1
+    var yourNavigation = $(".navbar");
+    stickyDiv = "sticky";
+    yourHeader = $('.govuk-header').height();
+
+    $(window).scroll(function() {
+      if( $(this).scrollTop() > yourHeader ) {
+        yourNavigation.addClass(stickyDiv);
+      } else {
+        yourNavigation.removeClass(stickyDiv);
+      }
+    });
+
+    // Scroll effect - PART 2
+    var yourNavigation2 = $(".sticky-tabs");
+    stickyDiv2 = "sticky";
+    yourHeader2 = $('.govuk-header').height();
+
+    $(window).scroll(function() {
+      if( $(this).scrollTop() > yourHeader2 ) {
+        yourNavigation2.addClass(stickyDiv2);
+      } else {
+        yourNavigation2.removeClass(stickyDiv2);
+      }
+    });
+</script>
+<script src="/public/javascripts/jquery.cookie.js"></script>
