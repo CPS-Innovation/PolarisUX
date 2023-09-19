@@ -159,30 +159,31 @@ main.search {
 }
 
 // Search results page
-main.search-results {
-    padding: 11.5em 0 0 0 !important;
-    display: inline-block;
-    .search-bar-wrapper {
-        position: absolute;
-        top: 0;
-        left: -25px;
-        right: -25px;
-        padding: 1em 25px 1.5em 25px;
-        border-bottom: 1px solid $govuk-border-colour;
-        background: govuk-colour("light-grey");
-        form {
-            fieldset {
-                padding: 0;
-                border: none;
-                .govuk-form-group {
-                    margin: 0;
-                }
-                button {
-                    margin: 0;
-                }
+.search-bar-wrapper {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    padding: 1em 25px 1.5em 25px;
+    border-bottom: 1px solid $govuk-border-colour;
+    background: govuk-colour("light-grey");
+    form {
+        fieldset {
+            padding: 0;
+            border: none;
+            .govuk-form-group {
+                margin: 0;
+            }
+            button {
+                margin: 0;
             }
         }
     }
+}
+
+main.search-results {
+    padding: 2.5em 0 0 0 !important;
+    display: inline-block;
     .govuk-caption-m {
         margin: 0.75em 0 0 0;
         font-size: 0.875rem;
