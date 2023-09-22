@@ -19,6 +19,24 @@
             top: 0;
         }
     }
+    .simpleModelTwo {
+        .govuk-select {
+            float: right;
+        }
+        .details {
+            .search-item {
+                padding: 1em 0;
+                border-top: 1px solid $govuk-border-colour;
+                &:first-of-type {
+                    padding-top: 1em;
+                    border-top: 1px solid $govuk-border-colour;
+                }
+                &:last-of-type {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+    }
     #redaction-history, #redaction-over {
         .innerPanel {
             .header-wrapper {
@@ -239,7 +257,7 @@
                 }
                 .cta-group {
                     // margin-top: 1.5em;
-                    padding: 1.5em 20px 0 20px;
+                    padding: 1.5em 25px 0 25px;
                     // border-top: 1px solid $govuk-border-colour;
                     .govuk-form-group {
                         width: 100%;

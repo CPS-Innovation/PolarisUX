@@ -7,6 +7,7 @@
     {% include "./modals/redaction-log.html" %}
     {% include "./modals/redaction-history.html" %}
     {% include "./modals/redaction-over.html" %}
+    {% include "./modals/search.html" %}
 {% endblock %}
 {% block content %}
 
@@ -95,10 +96,10 @@
                         </div>
                         <div id="searchFormTest" class="searchForm" method="get">
                             <div class="search-button">Search case</div>
-                            <label class="govuk-label--s govuk-label" for="searchURNModal" style="">Search</label>
+                            <label class="govuk-label--s govuk-label" for="searchURNModal2" style="">Search</label>
                             <div class="searchForm-inner">
-                                <input class="govuk-input" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
-                                <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal()"></button></div>
+                                <input class="govuk-input" id="searchURNModal2" name="searchURNModal2" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
+                                <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
                             </div>
                         </div>
                     </div>
@@ -156,7 +157,7 @@
             <label class="govuk-label--s govuk-label" for="searchURNModal" style="">Search</label>
             <div class="searchForm-inner">
                 <input class="govuk-input" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
-                <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal()"></button></div>
+                <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
             </div>
         </div>
 

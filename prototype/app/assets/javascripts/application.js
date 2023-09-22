@@ -206,6 +206,15 @@ $(document).ready(function () {
     });
 })
 
+function searchTerm() {
+    var val = $('#searchURNModal').val();
+    if (val == '') {
+        console.log('no input');
+    } else{
+        console.log(val);
+    }
+}
+
 // =================================== Window size change =================================== //
 $(document).ready(function () {
     $(".show-case").on("click", function (e) {
