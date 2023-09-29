@@ -92,6 +92,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/new-modals";
 @import "patterns/document-viewer";
 @import "patterns/navbar";
+@import "patterns/side-panel";
 
 
 @mixin das-clearfix {

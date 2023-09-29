@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+<!-- <script src="/public/javascripts/accordion.js"></script> -->
+<!--script>
+
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#other-organisation-options').removeClass('js-hidden') ; } 
+       else {$('#other-organisation-options').addClass('js-hidden');};
+});
+
+</script-->
+<script>
+    $(document).ready(function() {
+    
+    $('input[type=radio][name=case-status]').change(function() {
+        var status = $('input[name=case-status]:checked').val();
+        switch (true) {
+            case (status == 'all'):
+              $(caseOne).removeClass("rj-dont-display");
+              $(caseTwo).removeClass("rj-dont-display");
+              console.log(status)
+               
+                break;
+            case (status == 'charged'):
+              $(caseTwo).removeClass("rj-dont-display");
+                $(caseOne).addClass("rj-dont-display");
+            console.log(status)
+
+                break
+            case (status == 'not-yet-charged'):
+             $(caseTwo).addClass("rj-dont-display");
+                $(caseOne).removeClass("rj-dont-display");
+               console.log(status)
+                
+                break
+
+                       case (status == 'finalised'):
+             $(caseTwo).addClass("rj-dont-display");
+                $(caseOne).addClass("rj-dont-display");
+               console.log(status)
+                break
+
+            default:
+                console.log('gyahhhhhhhh, bork bork bork');
+                  console.log(status)
+                break;
+        }
+    });
+});
+</script>
+<style>
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<style>
+.accordion-controls {
+    display: none;
+}
+</style>
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- Here is the code to show conditional stuff in liquid-->
+<!-- {% if data.FAALoggedIn %}
+{% include "includes/RAALoggedIn.html" %}
+{% else %}
+{% include "includes/RAAUnloggedIn.html" %}
+{% endif %} -->
+<!-- end of conditional statement -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-bottom:25px">
+        <h1 class="govuk-heading-xl" style="">Find a case</h1>
+        <form method="get" action="#">
+            <div class="govuk-form-group" style="margin-bottom: 0px;">
+                <label class="govuk-label   govuk-label--s" for="partialCost">
+                    Search for a case URN
+                </label>
+                <!--       <span id="reference-hint" class="govuk-hint">
+                            Enter URN
+                        </span> -->
+                <input class="govuk-input govuk-!-width-one-half" id="searchURN" name="searchURN" type="text" aria-describedby="FirstName-hint" value="45AA209820" /> <button type="submit" class="govuk-button" style="">Search</button>
+            </div>
+            </fieldset>
+            <!--  <button type="submit" class="govuk-button" style="">Search</button> -->
+        </form>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third" style="display:none">
+        <!-- desktop version of the filters -->
+        <div class="notOnMobile">
+            <div class="filter-form filtering " style="">
+                <div id="finder-frontend" class="inner-block">
+                    <div style="border-bottom: 1px solid #b1b4b6;">
+                        <H3 class="govuk-heading-m" style="margin: 0px 0 20px 10px;">Filter </H3>
+                    </div>
+                    <!--           <div class="filter text-filter" style="margin-top:10px">
+                        <div class="govuk-form-group" style="margin-bottom:15px">
+                            <label class="govuk-label   govuk-label--s legend" for="partialCost">
+                                Area
+                            </label>
+                            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                            {{ govukCheckboxes({
+                            classes: "govuk-checkboxes--small",
+                            idPrefix: "area",
+                            name: "area",
+                            fieldset: {
+                            legend: {
+                            text:"",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                            }
+                            },
+                            hint: {
+                            text: ""
+                            },
+                            items: [
+                            {
+                            value: "Mersey-Cheshire",
+                            text: "Mersey-Cheshire (1)"
+                            },
+                            {
+                            value: "North West",
+                            text: "North West (2)"
+                            }
+                            ]
+                            }) }}
+                        </div>
+                    </div> -->
+                    <div class="filter text-filter">
+                        <div class="govuk-form-group" style="margin-bottom:15px">
+                            <label class="govuk-label   govuk-label--s legend" for="partialCost" style="margin-bottom:15px">
+                                Case status
+                            </label>
+                            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                            {{ govukRadios({
+                            classes: "govuk-radios--small",
+                            idPrefix: "caseStatus",
+                            name: "case-status",
+                            fieldset: {
+                            legend: {
+                            text: "",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                            }
+                            },
+                            items: [
+                            {
+                            value: "all",
+                            checked: true,
+                            text: "All (2)"
+                            },
+                            {
+                            value: "not-yet-charged",
+                            text: "Not yet charged (1)"
+                            },
+                            {
+                            value: "charged",
+                            text: "Charged (1)"
+                            },
+                            {
+                            value: "finalised",
+                            text: "Finalised (0)"
+                            }
+                            ]
+                            }) }}
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p style="margin:5px 0 20px 0">We've found <span style="font-weight:700">0</span> cases that match 45AA209820 </p>
+
+        <p style="">You do not have permission to view this case file.</p>
+        
+  
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        
+
+</div>
+</main>
+{% endblock %}

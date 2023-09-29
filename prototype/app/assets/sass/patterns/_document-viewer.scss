@@ -94,7 +94,7 @@ main.case-files {
                             border-top: 3px solid $govuk-link-hover-colour;
                             border-radius: 0 0 5px 5px;
                             background-color: white;
-                            min-width: 200px;
+                            min-width: 250px;
                             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                             z-index: 1;
                             &.show {
@@ -133,6 +133,41 @@ main.case-files {
     }
 }
 
+main.case-files {
+    #docCopy {
+        text-align: center;
+    }
+    .file1 {
+        #docCopy {
+            margin-top: 15em;
+        }
+    }
+    #pdf-root {
+        .PdfHighlighter {
+            height: auto;
+            padding: 5px 0.95%;
+            border: 5px solid #b1b4b6;
+            background: white;
+            width: 96.85%;
+            margin: -1.5em 0 10em 0;
+            z-index: 1;
+            .page {
+                width: 100% !important;
+                .canvasWrapper {
+                    width: 100% !important;
+                    canvas {
+                        width: 100% !important;
+                    }
+                }
+                .textLayer {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+
 .document-holder {
     position: relative;
     .file1 {
@@ -143,30 +178,38 @@ main.case-files {
     }
 }
 
+
 .document-panel {
     position: relative;
 }
 
-#left-column, #left-column-top {
-    // transition: all 0.3s linear;
-    // transform: translate3d(0,0,-825px);
-    &.show-menu {
-        display: none;
-    //     transform: translate3d(-825px,0,0);      
-    //     transition: all 0.3s linear;
+.page-counter {
+    &.sticky {
+        top: 6em;
+    }
+    &.show {
+        display: flex;
+    }
+    position: fixed;
+    top: 13em;
+    // width: 2em;
+    padding: 15px;
+    border-radius: 6px 0 0 6px;
+    right: 0;
+    // height: 3em;
+    display: none;
+    justify-content: center;
+    vertical-align: middle;
+    z-index: 2;
+    color: rgba(white, 0.6);
+    background: $govuk-link-colour; 
+    font-weight: normal;
+    div {
+        font-weight: bold;
+        color: white;
     }
 }
 
-#left-column {
-    overflow-y: scroll;
-    height: 77vh;
-    position: fixed;
-    width: 20%;
-    &.sticky {
-        top: 90px;
-        height: 87vh;
-    }
-}
 
 #right-column {
     // transition: all 0.3s linear;
@@ -179,5 +222,18 @@ main.case-files {
         .govuk-width-container {
             margin: 0;
         }
+    }
+}
+
+#pdf-root {
+    position: relative;
+    .redaction-footer {
+        // padding-left: 5px;
+        width: 100% !important;
+        left: 0;
+        right: 0;
+        border-top: none;
+        box-shadow: 5px 10px 10px 15px rgba(0,0,0,0.4);
+        background: govuk-colour("light-grey");
     }
 }

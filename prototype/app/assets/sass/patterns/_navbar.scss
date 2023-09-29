@@ -12,7 +12,7 @@
     }
     &.sticky {
         position: fixed;
-        padding: 5px 0;
+        padding: 5px 25px;
         // padding: 0.5em 25px 0.75em 25px;
         border-bottom: 5px solid $govuk-link-colour !important;
         top: 0;
@@ -48,6 +48,8 @@
             }
         }
         .case-info {
+            border-bottom: none;
+            padding-bottom: 0;
             // width: 87%;
             // width: 333px;
         }
@@ -98,8 +100,9 @@
         padding-top: 60px;
     }
     .case-info {
-        padding: 0;
-        // width: 90%;
+        padding: 0 0 1em 0;
+        border-bottom: 3px dashed $govuk-border-colour;
+        width: 100%;
         float: left;
         .govuk-heading-m {
             margin-bottom: 0;
@@ -260,6 +263,11 @@
             border-bottom: none;
             background: darken(govuk-colour("light-grey"),7.5%);
             // box-shadow: inset 0px -5px 0px 0px govuk-colour("light-grey");
+            a {
+                &:active, &:focus {
+                    background: $govuk-link-hover-colour;
+                }
+            }
             &.arrow {
                 text-indent: -1000em;
                 transform: scale(1);

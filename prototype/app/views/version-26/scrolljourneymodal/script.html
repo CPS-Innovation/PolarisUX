@@ -66,7 +66,7 @@
         }
 
         function getTabHtml(src) {
-            return `<div id="pdf-root" data-pdf-url="${src}" style="height: calc(88vh)"></div>`;
+            return `<div id="pdf-root" data-pdf-url="${src}" style="height: calc(100vh)"></div>`;
         }
 
         function ensureTabExists(tabId, label, isSearched) {
@@ -74,16 +74,16 @@
             if (existingTab.length) return;
 
             const newTab = $(`
-        <li class="govuk-tabs__list-item tooltip"  data-tab-id="${tabId}">
+            <li class="govuk-tabs__list-item tooltip"  data-tab-id="${tabId}">
 
-            <svg class="closeButtonOnCPS">
-                <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
-                <path stroke="white" stroke-width="3" fill="none" d="M6.25,6.25,17.75,17.75" />
-                <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
-            </svg>
+                <svg class="closeButtonOnCPS">
+                    <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
+                    <path stroke="white" stroke-width="3" fill="none" d="M6.25,6.25,17.75,17.75" />
+                    <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
+                </svg>
 
-            <a class="govuk-tabs__tab" id="tabHeadingss" href="" >${label}</a>  <span class="tooltiptext">${label}</span>
-        </li>`).appendTo($tabList);
+                <a class="govuk-tabs__tab" id="tabHeadingss" href="" >${label}</a>  <span class="tooltiptext">${label}</span>
+            </li>`).appendTo($tabList);
 
             if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
                 const text = $("script[data-template='searchTab']").text();
@@ -102,11 +102,8 @@
             } else {
                 // search field button from the blue bar
 
-                const document = $(`.openMe a:contains("${label}")`).attr(
-                    "data-doc"
-                );
-                const count =
-                    $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
+                const document = $(`.openMe a:contains("${label}")`).attr("data-doc");
+                const count = $(`.openMe a:contains("${label}")`).attr("data-count") || 3;
                 const content = `
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden document-panel" data-tab-id="${tabId}-content" data-is-searched="${isSearched}">  
 
@@ -124,7 +121,7 @@
 
                         <!-- Non search heading -->
                         <div  class="docSummaryTopPage rj-dont-display" id="documentNameHeader">
-                            <p class="govuk-body-s inPageSearchMargins2">${label} </p>
+                            <p class="govuk-body-s inPageSearchMargins2">${label}</p>
                             <div class="dropdown">
                                 <button onclick="myFunction(), toggleClass()" class="dropbtn">Document actions</button>
                                 <div id="myDropdown" class="dropdown-content">

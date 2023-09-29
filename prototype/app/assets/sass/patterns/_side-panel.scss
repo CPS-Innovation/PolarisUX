@@ -1,0 +1,149 @@
+// Side panel pattern
+
+#left-column, #left-column-top {
+    // transition: all 0.3s linear;
+    // transform: translate3d(0,0,-825px);
+    &.show-menu {
+        display: none;
+    //     transform: translate3d(-825px,0,0);      
+    //     transition: all 0.3s linear;
+    }
+}
+
+#left-column {
+    overflow-y: scroll;
+    height: 77vh;
+    position: fixed;
+    width: 20%;
+    // border-top: 3px dashed $govuk-border-colour;
+    &.sticky {
+        top: 90px;
+        height: 86vh;
+    }
+    .accordion {
+        details {
+            // float: left;
+            // display: inline-block;
+            margin: 0 0 0.5em 0;
+            summary {
+                .govuk-details__summary-text {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .accordion-controls {
+            float: right;
+            padding: 0px 0 0 0;
+            display: inline-block;
+            margin: 0.25em 0 0 0;
+            button {
+                padding: 0;
+            }
+        }
+        .accordion-section {
+            .accordion-section-header {
+                &.no-documents {
+                    h2.govuk-heading-s {
+                        color: $govuk-secondary-text-colour;
+                    }
+                }
+                background: govuk-colour("light-grey");
+                padding-left: 0.5em;
+            }
+            .accordion-section-body {
+                padding: 1em 0 1em 0;
+                border-top: 1px solid $govuk-border-colour;
+                p {
+                    &.govuk-body-s {
+                        margin-bottom: 10px;
+                    }
+                }
+                table {
+                    margin: 0 0 1em 0;
+                    tbody {
+                        tr {
+                            // &:last-of-type {
+                            //     td {
+                            //         border: none;
+                            //     }
+                            // }
+                            td {
+                                a.large {
+                                    margin-bottom: 0.25em;
+                                    display: inline-block;
+                                }
+                                p {
+                                    &.date-added {
+                                        font-size: 0.875rem;
+                                        color: $govuk-secondary-text-colour;
+                                        margin: 0;
+                                    }
+                                }
+                                &.unreadDocument {
+                                    border-left: 5px solid $govuk-link-colour;
+                                    padding-left: 1em;
+                                    background: rgba($govuk-link-colour,0.075);
+                                    a.show-case {
+                                        font-weight: bold;
+                                        color: $govuk-link-colour;
+                                    }
+                                }
+                                border-left: none;
+                                padding-left: 0;
+                                a.show-case {
+                                    font-weight: normal;
+                                    color: $govuk-link-visited-colour;
+                                }
+                            }
+                        }
+                    }
+                }
+                .govuk-warning-text {
+                    margin: 0;
+                    .govuk-warning-text__text {
+                        font-size: 0.875rem;
+                        padding-left: 30px;
+                    }
+                    .govuk-warning-text__icon {
+                        margin-top: -2px;
+                        min-width: 20px;
+                        min-height: 20px;
+                        line-height: 15px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 2001px) {
+    #left-column {
+        width: 17%;
+    }
+}
+
+
+@media (min-width: 1501px) and (max-width: 2000px) {
+    #left-column {
+        width: 17%;
+    }
+}
+
+@media (min-width: 1251px) and (max-width: 1500px) {
+    #left-column {
+        width: 24%;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1250px) {
+    #left-column {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #left-column {
+        width: 25%;
+    }
+}
