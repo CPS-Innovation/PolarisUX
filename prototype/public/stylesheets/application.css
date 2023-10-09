@@ -57,12 +57,15 @@
   size-adjust: 86%;
   src: url('/public/fonts/TransportNewMedium/font.woff2') format('woff2'), url('/public/fonts/TransportNewMedium/font.woff') format('woff');
 }*/
-.app-step-nav-related__link, .app-step-nav-header__title, a, .govuk-link {
+.app-step-nav-related__link,
+.app-step-nav-header__title,
+a,
+.govuk-link {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */ /* stylelint-disable-line scss/comment-no-loud  */
@@ -70,29 +73,40 @@
   font-family: "GDS Transport";
   font-style: normal;
   font-weight: normal;
-  src: url("/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
+  src: url("/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"),
+    url("/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
   font-display: fallback;
 }
 @font-face {
   font-family: "GDS Transport";
   font-style: normal;
   font-weight: bold;
-  src: url("/govuk/assets/fonts/bold-b542beb274-v2.woff2") format("woff2"), url("/govuk/assets/fonts/bold-affa96571d-v2.woff") format("woff");
+  src: url("/govuk/assets/fonts/bold-b542beb274-v2.woff2") format("woff2"),
+    url("/govuk/assets/fonts/bold-affa96571d-v2.woff") format("woff");
   font-display: fallback;
 }
 @media print {
-  .app-step-nav-related__link, .app-step-nav-header__title, a, .govuk-link {
+  .app-step-nav-related__link,
+  .app-step-nav-header__title,
+  a,
+  .govuk-link {
     font-family: sans-serif;
   }
 }
-.app-step-nav-related__link:hover, .app-step-nav-header__title:hover, a:hover, .govuk-link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+.app-step-nav-related__link:hover,
+.app-step-nav-header__title:hover,
+a:hover,
+.govuk-link:hover {
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
-.app-step-nav-related__link:focus, .app-step-nav-header__title:focus, a:focus, .govuk-link:focus {
+.app-step-nav-related__link:focus,
+.app-step-nav-header__title:focus,
+a:focus,
+.govuk-link:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -101,63 +115,87 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.app-step-nav-related__link:link, .app-step-nav-header__title:link, a:link, .govuk-link:link {
+.app-step-nav-related__link:link,
+.app-step-nav-header__title:link,
+a:link,
+.govuk-link:link {
   color: #1d70b8;
 }
-.app-step-nav-related__link:visited, .app-step-nav-header__title:visited, a:visited, .govuk-link:visited {
+.app-step-nav-related__link:visited,
+.app-step-nav-header__title:visited,
+a:visited,
+.govuk-link:visited {
   color: #4c2c92;
 }
-.app-step-nav-related__link:hover, .app-step-nav-header__title:hover, a:hover, .govuk-link:hover {
+.app-step-nav-related__link:hover,
+.app-step-nav-header__title:hover,
+a:hover,
+.govuk-link:hover {
   color: #003078;
 }
-.app-step-nav-related__link:active, .app-step-nav-header__title:active, a:active, .govuk-link:active {
+.app-step-nav-related__link:active,
+.app-step-nav-header__title:active,
+a:active,
+.govuk-link:active {
   color: #0b0c0c;
 }
-.app-step-nav-related__link:focus, .app-step-nav-header__title:focus, a:focus, .govuk-link:focus {
+.app-step-nav-related__link:focus,
+.app-step-nav-header__title:focus,
+a:focus,
+.govuk-link:focus {
   color: #0b0c0c;
 }
 @media print {
-  [href^="/"].app-step-nav-related__link:after, [href^="/"].app-step-nav-header__title:after, a[href^="/"]:after, [href^="/"].govuk-link:after, [href^="http://"].app-step-nav-related__link:after, [href^="http://"].app-step-nav-header__title:after, a[href^="http://"]:after, [href^="http://"].govuk-link:after, [href^="https://"].app-step-nav-related__link:after, [href^="https://"].app-step-nav-header__title:after, a[href^="https://"]:after, [href^="https://"].govuk-link:after {
+  [href^="/"].app-step-nav-related__link:after, [href^="/"].app-step-nav-header__title:after, a[href^="/"]:after, [href^="/"].govuk-link:after, [href^="http://"].app-step-nav-related__link:after, [href^="http://"].app-step-nav-header__title:after, a[href^="http://"]:after, [href^="http://"].govuk-link:after, [href^="https://"].app-step-nav-related__link:after, [href^="https://"].app-step-nav-header__title:after, a[href^="https://"]:after, [href^="https://"].govuk-link:after
+  {
     content: " (" attr(href) ")";
     font-size: 90%;
     word-wrap: break-word;
   }
 }
 
-.govuk-link--muted:link, .govuk-link--muted:visited {
+.govuk-link--muted:link,
+.govuk-link--muted:visited {
   color: #505a5f;
 }
-.govuk-link--muted:hover, .govuk-link--muted:active {
+.govuk-link--muted:hover,
+.govuk-link--muted:active {
   color: #0b0c0c;
 }
 .govuk-link--muted:focus {
   color: #0b0c0c;
 }
 
-.govuk-link--text-colour:link, .govuk-link--text-colour:visited {
+.govuk-link--text-colour:link,
+.govuk-link--text-colour:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-link--text-colour:link, .govuk-link--text-colour:visited {
+  .govuk-link--text-colour:link,
+  .govuk-link--text-colour:visited {
     color: #000000;
   }
 }
 .govuk-link--text-colour:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-link--text-colour:active, .govuk-link--text-colour:focus {
+.govuk-link--text-colour:active,
+.govuk-link--text-colour:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-link--text-colour:active, .govuk-link--text-colour:focus {
+  .govuk-link--text-colour:active,
+  .govuk-link--text-colour:focus {
     color: #000000;
   }
 }
 
-.govuk-link--inverse:link, .govuk-link--inverse:visited {
+.govuk-link--inverse:link,
+.govuk-link--inverse:visited {
   color: #ffffff;
 }
-.govuk-link--inverse:hover, .govuk-link--inverse:active {
+.govuk-link--inverse:hover,
+.govuk-link--inverse:active {
   color: rgba(255, 255, 255, 0.99);
 }
 .govuk-link--inverse:focus {
@@ -529,7 +567,8 @@
   }
 }
 
-.govuk-body-lead, .govuk-body-l {
+.govuk-body-lead,
+.govuk-body-l {
   color: #0b0c0c;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -542,35 +581,42 @@
   margin-bottom: 20px;
 }
 @media print {
-  .govuk-body-lead, .govuk-body-l {
+  .govuk-body-lead,
+  .govuk-body-l {
     color: #000000;
   }
 }
 @media print {
-  .govuk-body-lead, .govuk-body-l {
+  .govuk-body-lead,
+  .govuk-body-l {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .govuk-body-lead, .govuk-body-l {
+  .govuk-body-lead,
+  .govuk-body-l {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .govuk-body-lead, .govuk-body-l {
+  .govuk-body-lead,
+  .govuk-body-l {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
 @media (min-width: 40.0625em) {
-  .govuk-body-lead, .govuk-body-l {
+  .govuk-body-lead,
+  .govuk-body-l {
     margin-bottom: 30px;
   }
 }
 
-p, .govuk-body, .govuk-body-m {
+p,
+.govuk-body,
+.govuk-body-m {
   color: #0b0c0c;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -583,30 +629,40 @@ p, .govuk-body, .govuk-body-m {
   margin-bottom: 15px;
 }
 @media print {
-  p, .govuk-body, .govuk-body-m {
+  p,
+  .govuk-body,
+  .govuk-body-m {
     color: #000000;
   }
 }
 @media print {
-  p, .govuk-body, .govuk-body-m {
+  p,
+  .govuk-body,
+  .govuk-body-m {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  p, .govuk-body, .govuk-body-m {
+  p,
+  .govuk-body,
+  .govuk-body-m {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  p, .govuk-body, .govuk-body-m {
+  p,
+  .govuk-body,
+  .govuk-body-m {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
 @media (min-width: 40.0625em) {
-  p, .govuk-body, .govuk-body-m {
+  p,
+  .govuk-body,
+  .govuk-body-m {
     margin-bottom: 20px;
   }
 }
@@ -693,29 +749,37 @@ p, .govuk-body, .govuk-body-m {
   }
 }
 
-.govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l {
+.govuk-body-l + .govuk-heading-l,
+.govuk-body-lead + .govuk-heading-l {
   padding-top: 5px;
 }
 @media (min-width: 40.0625em) {
-  .govuk-body-l + .govuk-heading-l, .govuk-body-lead + .govuk-heading-l {
+  .govuk-body-l + .govuk-heading-l,
+  .govuk-body-lead + .govuk-heading-l {
     padding-top: 10px;
   }
 }
 
-p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
+p + .govuk-heading-l,
+.govuk-body-m + .govuk-heading-l,
+.govuk-body + .govuk-heading-l,
 .govuk-body-s + .govuk-heading-l,
 .govuk-list + .govuk-heading-l {
   padding-top: 15px;
 }
 @media (min-width: 40.0625em) {
-  p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
+  p + .govuk-heading-l,
+  .govuk-body-m + .govuk-heading-l,
+  .govuk-body + .govuk-heading-l,
   .govuk-body-s + .govuk-heading-l,
   .govuk-list + .govuk-heading-l {
     padding-top: 20px;
   }
 }
 
-p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
+p + .govuk-heading-m,
+.govuk-body-m + .govuk-heading-m,
+.govuk-body + .govuk-heading-m,
 .govuk-body-s + .govuk-heading-m,
 .govuk-list + .govuk-heading-m,
 p + .govuk-heading-s,
@@ -726,7 +790,9 @@ p + .govuk-heading-s,
   padding-top: 5px;
 }
 @media (min-width: 40.0625em) {
-  p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
+  p + .govuk-heading-m,
+  .govuk-body-m + .govuk-heading-m,
+  .govuk-body + .govuk-heading-m,
   .govuk-body-s + .govuk-heading-m,
   .govuk-list + .govuk-heading-m,
   p + .govuk-heading-s,
@@ -1197,7 +1263,9 @@ p + .govuk-heading-s,
     display: inherit;
   }
 }
-.js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-content {
+.js-enabled
+  .govuk-accordion__section--expanded
+  .govuk-accordion__section-content {
   display: block;
 }
 .js-enabled .govuk-accordion__show-all {
@@ -1250,14 +1318,18 @@ p + .govuk-heading-s,
   background: #f3f2f1;
   box-shadow: 0 -2px #f3f2f1, 0 4px #f3f2f1;
 }
-.js-enabled .govuk-accordion__show-all:hover .govuk-accordion__section-toggle-text {
+.js-enabled
+  .govuk-accordion__show-all:hover
+  .govuk-accordion__section-toggle-text {
   color: #0b0c0c;
 }
 .js-enabled .govuk-accordion__show-all:hover .govuk-accordion-nav__chevron {
   color: #0b0c0c;
   background: #0b0c0c;
 }
-.js-enabled .govuk-accordion__show-all:hover .govuk-accordion-nav__chevron:after {
+.js-enabled
+  .govuk-accordion__show-all:hover
+  .govuk-accordion-nav__chevron:after {
   color: #f3f2f1;
 }
 .js-enabled .govuk-accordion__show-all:focus {
@@ -1272,7 +1344,9 @@ p + .govuk-heading-s,
 .js-enabled .govuk-accordion__show-all:focus .govuk-accordion-nav__chevron {
   background: #0b0c0c;
 }
-.js-enabled .govuk-accordion__show-all:focus .govuk-accordion-nav__chevron:after {
+.js-enabled
+  .govuk-accordion__show-all:focus
+  .govuk-accordion-nav__chevron:after {
   color: #ffdd00;
 }
 .js-enabled .govuk-accordion__section-heading {
@@ -1333,22 +1407,34 @@ p + .govuk-heading-s,
   color: #0b0c0c;
   background: #f3f2f1;
 }
-.js-enabled .govuk-accordion__section-button:hover .govuk-accordion__section-toggle-text {
+.js-enabled
+  .govuk-accordion__section-button:hover
+  .govuk-accordion__section-toggle-text {
   color: #0b0c0c;
 }
-.js-enabled .govuk-accordion__section-button:hover .govuk-accordion-nav__chevron {
+.js-enabled
+  .govuk-accordion__section-button:hover
+  .govuk-accordion-nav__chevron {
   color: #0b0c0c;
   background: #0b0c0c;
 }
-.js-enabled .govuk-accordion__section-button:hover .govuk-accordion-nav__chevron:after {
+.js-enabled
+  .govuk-accordion__section-button:hover
+  .govuk-accordion-nav__chevron:after {
   color: #f3f2f1;
 }
 .js-enabled .govuk-accordion__section-button:focus {
   outline: 0;
 }
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus {
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion__section-heading-text-focus,
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion__section-summary-focus,
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion__section-toggle-focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -1357,31 +1443,43 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion-nav__chevron {
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion-nav__chevron {
   color: #0b0c0c;
   background: #0b0c0c;
 }
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion-nav__chevron:after {
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion-nav__chevron:after {
   color: #ffdd00;
 }
 .js-enabled .govuk-accordion__section-button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
-.js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-button {
+.js-enabled
+  .govuk-accordion__section--expanded
+  .govuk-accordion__section-button {
   padding-bottom: 15px;
   border-bottom: 0;
 }
 @media (min-width: 40.0625em) {
-  .js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-button {
+  .js-enabled
+    .govuk-accordion__section--expanded
+    .govuk-accordion__section-button {
     padding-bottom: 20px;
   }
 }
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus {
+.js-enabled
+  .govuk-accordion__section-button:focus
+  .govuk-accordion__section-toggle-focus {
   padding-bottom: 3px;
 }
 @media (min-width: 48.0625em) {
-  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus {
+  .js-enabled
+    .govuk-accordion__section-button:focus
+    .govuk-accordion__section-toggle-focus {
     padding-bottom: 2px;
   }
 }
@@ -1391,15 +1489,33 @@ p + .govuk-heading-s,
   display: block;
   margin-bottom: 13px;
 }
-.js-enabled .govuk-accordion__section-toggle .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__section-toggle .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__section-toggle .govuk-accordion__section-toggle-focus,
-.js-enabled .govuk-accordion__section-heading-text .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__section-heading-text .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__section-heading-text .govuk-accordion__section-toggle-focus,
-.js-enabled .govuk-accordion__section-summary .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__section-summary .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__section-summary .govuk-accordion__section-toggle-focus {
+.js-enabled
+  .govuk-accordion__section-toggle
+  .govuk-accordion__section-heading-text-focus,
+.js-enabled
+  .govuk-accordion__section-toggle
+  .govuk-accordion__section-summary-focus,
+.js-enabled
+  .govuk-accordion__section-toggle
+  .govuk-accordion__section-toggle-focus,
+.js-enabled
+  .govuk-accordion__section-heading-text
+  .govuk-accordion__section-heading-text-focus,
+.js-enabled
+  .govuk-accordion__section-heading-text
+  .govuk-accordion__section-summary-focus,
+.js-enabled
+  .govuk-accordion__section-heading-text
+  .govuk-accordion__section-toggle-focus,
+.js-enabled
+  .govuk-accordion__section-summary
+  .govuk-accordion__section-heading-text-focus,
+.js-enabled
+  .govuk-accordion__section-summary
+  .govuk-accordion__section-summary-focus,
+.js-enabled
+  .govuk-accordion__section-summary
+  .govuk-accordion__section-toggle-focus {
   display: inline;
 }
 .js-enabled .govuk-accordion__section-toggle {
@@ -1429,17 +1545,33 @@ p + .govuk-heading-s,
 }
 @media screen and (forced-colors: active) {
   .js-enabled .govuk-accordion__show-all:hover .govuk-accordion-nav__chevron,
-  .js-enabled .govuk-accordion__section-button:hover .govuk-accordion-nav__chevron {
+  .js-enabled
+    .govuk-accordion__section-button:hover
+    .govuk-accordion-nav__chevron {
     background-color: transparent;
   }
-  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-heading-text-focus,
-  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-summary-focus,
-  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-toggle-focus,
+  .js-enabled
+    .govuk-accordion__show-all:focus
+    .govuk-accordion__section-heading-text-focus,
+  .js-enabled
+    .govuk-accordion__show-all:focus
+    .govuk-accordion__section-summary-focus,
+  .js-enabled
+    .govuk-accordion__show-all:focus
+    .govuk-accordion__section-toggle-focus,
   .js-enabled .govuk-accordion__show-all:focus .govuk-accordion-nav__chevron,
-  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-heading-text-focus,
-  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-summary-focus,
-  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus,
-  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion-nav__chevron {
+  .js-enabled
+    .govuk-accordion__section-button:focus
+    .govuk-accordion__section-heading-text-focus,
+  .js-enabled
+    .govuk-accordion__section-button:focus
+    .govuk-accordion__section-summary-focus,
+  .js-enabled
+    .govuk-accordion__section-button:focus
+    .govuk-accordion__section-toggle-focus,
+  .js-enabled
+    .govuk-accordion__section-button:focus
+    .govuk-accordion-nav__chevron {
     background: transparent;
     background-color: transparent;
   }
@@ -1449,7 +1581,9 @@ p + .govuk-heading-s,
     border-top-color: #b1b4b6;
     box-shadow: inset 0 3px 0 0 #1d70b8;
   }
-  .js-enabled .govuk-accordion__section-header:hover .govuk-accordion__section-button {
+  .js-enabled
+    .govuk-accordion__section-header:hover
+    .govuk-accordion__section-button {
     border-top-color: #b1b4b6;
   }
 }
@@ -1462,7 +1596,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: inline-block;
   position: relative;
@@ -1489,7 +1623,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-back-link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -1504,22 +1638,26 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.govuk-back-link:link, .govuk-back-link:visited {
+.govuk-back-link:link,
+.govuk-back-link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-back-link:link, .govuk-back-link:visited {
+  .govuk-back-link:link,
+  .govuk-back-link:visited {
     color: #000000;
   }
 }
 .govuk-back-link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-back-link:active, .govuk-back-link:focus {
+.govuk-back-link:active,
+.govuk-back-link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-back-link:active, .govuk-back-link:focus {
+  .govuk-back-link:active,
+  .govuk-back-link:focus {
     color: #000000;
   }
 }
@@ -1653,7 +1791,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -1662,7 +1800,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-breadcrumbs__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -1677,22 +1815,26 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.govuk-breadcrumbs__link:link, .govuk-breadcrumbs__link:visited {
+.govuk-breadcrumbs__link:link,
+.govuk-breadcrumbs__link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-breadcrumbs__link:link, .govuk-breadcrumbs__link:visited {
+  .govuk-breadcrumbs__link:link,
+  .govuk-breadcrumbs__link:visited {
     color: #000000;
   }
 }
 .govuk-breadcrumbs__link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-breadcrumbs__link:active, .govuk-breadcrumbs__link:focus {
+.govuk-breadcrumbs__link:active,
+.govuk-breadcrumbs__link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-breadcrumbs__link:active, .govuk-breadcrumbs__link:focus {
+  .govuk-breadcrumbs__link:active,
+  .govuk-breadcrumbs__link:focus {
     color: #000000;
   }
 }
@@ -1701,7 +1843,10 @@ p + .govuk-heading-s,
   .govuk-breadcrumbs--collapse-on-mobile .govuk-breadcrumbs__list-item {
     display: none;
   }
-  .govuk-breadcrumbs--collapse-on-mobile .govuk-breadcrumbs__list-item:first-child, .govuk-breadcrumbs--collapse-on-mobile .govuk-breadcrumbs__list-item:last-child {
+  .govuk-breadcrumbs--collapse-on-mobile
+    .govuk-breadcrumbs__list-item:first-child,
+  .govuk-breadcrumbs--collapse-on-mobile
+    .govuk-breadcrumbs__list-item:last-child {
     display: inline-block;
   }
   .govuk-breadcrumbs--collapse-on-mobile .govuk-breadcrumbs__list-item:before {
@@ -1769,7 +1914,10 @@ p + .govuk-heading-s,
     width: auto;
   }
 }
-.govuk-button:link, .govuk-button:visited, .govuk-button:active, .govuk-button:hover {
+.govuk-button:link,
+.govuk-button:visited,
+.govuk-button:active,
+.govuk-button:hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -1809,18 +1957,18 @@ p + .govuk-heading-s,
 }
 
 .govuk-button--disabled,
-.govuk-button[disabled=disabled],
+.govuk-button[disabled="disabled"],
 .govuk-button[disabled] {
   opacity: 0.5;
 }
 .govuk-button--disabled:hover,
-.govuk-button[disabled=disabled]:hover,
+.govuk-button[disabled="disabled"]:hover,
 .govuk-button[disabled]:hover {
   background-color: #00703c;
   cursor: default;
 }
 .govuk-button--disabled:active,
-.govuk-button[disabled=disabled]:active,
+.govuk-button[disabled="disabled"]:active,
 .govuk-button[disabled]:active {
   top: 0;
   box-shadow: 0 2px 0 #002d18;
@@ -1830,7 +1978,11 @@ p + .govuk-heading-s,
   background-color: #f3f2f1;
   box-shadow: 0 2px 0 #929191;
 }
-.govuk-button--secondary, .govuk-button--secondary:link, .govuk-button--secondary:visited, .govuk-button--secondary:active, .govuk-button--secondary:hover {
+.govuk-button--secondary,
+.govuk-button--secondary:link,
+.govuk-button--secondary:visited,
+.govuk-button--secondary:active,
+.govuk-button--secondary:hover {
   color: #0b0c0c;
 }
 .govuk-button--secondary:hover {
@@ -1844,7 +1996,11 @@ p + .govuk-heading-s,
   background-color: #d4351c;
   box-shadow: 0 2px 0 #55150b;
 }
-.govuk-button--warning, .govuk-button--warning:link, .govuk-button--warning:visited, .govuk-button--warning:active, .govuk-button--warning:hover {
+.govuk-button--warning,
+.govuk-button--warning:link,
+.govuk-button--warning:visited,
+.govuk-button--warning:active,
+.govuk-button--warning:hover {
   color: #ffffff;
 }
 .govuk-button--warning:hover {
@@ -2136,11 +2292,15 @@ p + .govuk-heading-s,
   }
 }
 
-.govuk-label:not(.govuk-label--m):not(.govuk-label--l):not(.govuk-label--xl) + .govuk-hint {
+.govuk-label:not(.govuk-label--m):not(.govuk-label--l):not(.govuk-label--xl)
+  + .govuk-hint {
   margin-bottom: 10px;
 }
 
-.govuk-fieldset__legend:not(.govuk-fieldset__legend--m):not(.govuk-fieldset__legend--l):not(.govuk-fieldset__legend--xl) + .govuk-hint {
+.govuk-fieldset__legend:not(.govuk-fieldset__legend--m):not(
+    .govuk-fieldset__legend--l
+  ):not(.govuk-fieldset__legend--xl)
+  + .govuk-hint {
   margin-bottom: 10px;
 }
 
@@ -2525,17 +2685,29 @@ p + .govuk-heading-s,
   padding-left: 20px;
   clear: both;
 }
-.govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+.govuk-checkboxes--small
+  .govuk-checkboxes__item:hover
+  .govuk-checkboxes__input:not(:disabled)
+  + .govuk-checkboxes__label:before {
   box-shadow: 0 0 0 10px #b1b4b6;
 }
-.govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
+.govuk-checkboxes--small
+  .govuk-checkboxes__item:hover
+  .govuk-checkboxes__input:focus
+  + .govuk-checkboxes__label:before {
   box-shadow: 0 0 0 3px #ffdd00, 0 0 0 10px #b1b4b6;
 }
 @media (hover: none), (pointer: coarse) {
-  .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+  .govuk-checkboxes--small
+    .govuk-checkboxes__item:hover
+    .govuk-checkboxes__input:not(:disabled)
+    + .govuk-checkboxes__label:before {
     box-shadow: initial;
   }
-  .govuk-checkboxes--small .govuk-checkboxes__item:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
+  .govuk-checkboxes--small
+    .govuk-checkboxes__item:hover
+    .govuk-checkboxes__input:focus
+    + .govuk-checkboxes__label:before {
     box-shadow: 0 0 0 3px #ffdd00;
   }
 }
@@ -2707,7 +2879,7 @@ p + .govuk-heading-s,
   -webkit-appearance: none;
 }
 
-.govuk-input[type=number] {
+.govuk-input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -2935,12 +3107,12 @@ p + .govuk-heading-s,
 
 .govuk-details__summary-text {
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 
 .govuk-details__summary:hover .govuk-details__summary-text {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -3108,7 +3280,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -3117,7 +3289,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-error-summary__list a:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -3132,7 +3304,8 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.govuk-error-summary__list a:link, .govuk-error-summary__list a:visited {
+.govuk-error-summary__list a:link,
+.govuk-error-summary__list a:visited {
   color: #d4351c;
 }
 .govuk-error-summary__list a:hover {
@@ -3243,7 +3416,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -3252,7 +3425,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-footer__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -3267,22 +3440,26 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.govuk-footer__link:link, .govuk-footer__link:visited {
+.govuk-footer__link:link,
+.govuk-footer__link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-footer__link:link, .govuk-footer__link:visited {
+  .govuk-footer__link:link,
+  .govuk-footer__link:visited {
     color: #000000;
   }
 }
 .govuk-footer__link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-footer__link:active, .govuk-footer__link:focus {
+.govuk-footer__link:active,
+.govuk-footer__link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-footer__link:active, .govuk-footer__link:focus {
+  .govuk-footer__link:active,
+  .govuk-footer__link:focus {
     color: #000000;
   }
 }
@@ -3356,7 +3533,9 @@ p + .govuk-heading-s,
   text-align: center;
   white-space: nowrap;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
   .govuk-footer__copyright-logo {
     background-image: url("/govuk/assets/images/govuk-crest-2x.png");
   }
@@ -3559,10 +3738,12 @@ p + .govuk-heading-s,
     font-family: sans-serif;
   }
 }
-.govuk-header__link:link, .govuk-header__link:visited {
+.govuk-header__link:link,
+.govuk-header__link:visited {
   color: #ffffff;
 }
-.govuk-header__link:hover, .govuk-header__link:active {
+.govuk-header__link:hover,
+.govuk-header__link:active {
   color: rgba(255, 255, 255, 0.99);
 }
 .govuk-header__link:focus {
@@ -3606,10 +3787,12 @@ p + .govuk-heading-s,
     box-shadow: 0 0 #ffdd00;
   }
 }
-.govuk-header__link--homepage:link, .govuk-header__link--homepage:visited {
+.govuk-header__link--homepage:link,
+.govuk-header__link--homepage:visited {
   text-decoration: none;
 }
-.govuk-header__link--homepage:hover, .govuk-header__link--homepage:active {
+.govuk-header__link--homepage:hover,
+.govuk-header__link--homepage:active {
   margin-bottom: -3px;
   border-bottom: 3px solid;
 }
@@ -3742,7 +3925,7 @@ p + .govuk-heading-s,
   content: "";
   margin-left: 5px;
 }
-.govuk-header__menu-button[aria-expanded=true]:after {
+.govuk-header__menu-button[aria-expanded="true"]:after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -3761,7 +3944,8 @@ p + .govuk-heading-s,
 .js-enabled .govuk-header__menu-button {
   display: block;
 }
-.govuk-header__menu-button[hidden], .js-enabled .govuk-header__menu-button[hidden] {
+.govuk-header__menu-button[hidden],
+.js-enabled .govuk-header__menu-button[hidden] {
   display: none;
 }
 
@@ -3833,7 +4017,9 @@ p + .govuk-heading-s,
   }
 }
 
-.govuk-header__navigation-item--active a:link, .govuk-header__navigation-item--active a:hover, .govuk-header__navigation-item--active a:visited {
+.govuk-header__navigation-item--active a:link,
+.govuk-header__navigation-item--active a:hover,
+.govuk-header__navigation-item--active a:visited {
   color: #1d8feb;
 }
 @media print {
@@ -3859,7 +4045,8 @@ p + .govuk-heading-s,
   .govuk-header__logotype-crown-fallback-image {
     display: none;
   }
-  .govuk-header__link:link, .govuk-header__link:visited {
+  .govuk-header__link:link,
+  .govuk-header__link:visited {
     color: #0b0c0c;
   }
   .govuk-header__link:after {
@@ -4060,7 +4247,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -4069,7 +4256,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-notification-banner__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -4104,7 +4291,8 @@ p + .govuk-heading-s,
   border-color: #00703c;
   background-color: #00703c;
 }
-.govuk-notification-banner--success .govuk-notification-banner__link:link, .govuk-notification-banner--success .govuk-notification-banner__link:visited {
+.govuk-notification-banner--success .govuk-notification-banner__link:link,
+.govuk-notification-banner--success .govuk-notification-banner__link:visited {
   color: #00703c;
 }
 .govuk-notification-banner--success .govuk-notification-banner__link:hover {
@@ -4240,10 +4428,12 @@ p + .govuk-heading-s,
 .govuk-pagination__item--current:hover {
   background-color: #1d70b8;
 }
-.govuk-pagination__item--current .govuk-pagination__link:link, .govuk-pagination__item--current .govuk-pagination__link:visited {
+.govuk-pagination__item--current .govuk-pagination__link:link,
+.govuk-pagination__item--current .govuk-pagination__link:visited {
   color: #ffffff;
 }
-.govuk-pagination__item--current .govuk-pagination__link:hover, .govuk-pagination__item--current .govuk-pagination__link:active {
+.govuk-pagination__item--current .govuk-pagination__link:hover,
+.govuk-pagination__item--current .govuk-pagination__link:active {
   color: rgba(255, 255, 255, 0.99);
 }
 .govuk-pagination__item--current .govuk-pagination__link:focus {
@@ -4272,15 +4462,17 @@ p + .govuk-heading-s,
     left: 0;
   }
 }
-.govuk-pagination__link:hover .govuk-pagination__link-title--decorated, .govuk-pagination__link:active .govuk-pagination__link-title--decorated {
+.govuk-pagination__link:hover .govuk-pagination__link-title--decorated,
+.govuk-pagination__link:active .govuk-pagination__link-title--decorated {
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 .govuk-pagination__link:hover .govuk-pagination__link-label,
-.govuk-pagination__link:hover .govuk-pagination__link-title--decorated, .govuk-pagination__link:active .govuk-pagination__link-label,
+.govuk-pagination__link:hover .govuk-pagination__link-title--decorated,
+.govuk-pagination__link:active .govuk-pagination__link-label,
 .govuk-pagination__link:active .govuk-pagination__link-title--decorated {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -4305,7 +4497,7 @@ p + .govuk-heading-s,
   font-size: 1rem;
   line-height: 1.25;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: inline-block;
   padding-left: 30px;
@@ -4377,7 +4569,9 @@ p + .govuk-heading-s,
 .govuk-pagination--block .govuk-pagination__link {
   text-align: left;
 }
-.govuk-pagination--block .govuk-pagination__link:focus .govuk-pagination__link-label {
+.govuk-pagination--block
+  .govuk-pagination__link:focus
+  .govuk-pagination__link-label {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -4745,7 +4939,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: inline-block;
   margin-bottom: 10px;
@@ -4756,7 +4950,7 @@ p + .govuk-heading-s,
   }
 }
 .govuk-tabs__tab:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -4840,12 +5034,14 @@ p + .govuk-heading-s,
   .js-enabled .govuk-tabs__tab {
     margin-bottom: 0;
   }
-  .js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited {
+  .js-enabled .govuk-tabs__tab:link,
+  .js-enabled .govuk-tabs__tab:visited {
     color: #0b0c0c;
   }
 }
 @media print and (min-width: 40.0625em) {
-  .js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited {
+  .js-enabled .govuk-tabs__tab:link,
+  .js-enabled .govuk-tabs__tab:visited {
     color: #000000;
   }
 }
@@ -4855,12 +5051,14 @@ p + .govuk-heading-s,
   }
 }
 @media (min-width: 40.0625em) {
-  .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+  .js-enabled .govuk-tabs__tab:active,
+  .js-enabled .govuk-tabs__tab:focus {
     color: #0b0c0c;
   }
 }
 @media print and (min-width: 40.0625em) {
-  .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+  .js-enabled .govuk-tabs__tab:active,
+  .js-enabled .govuk-tabs__tab:focus {
     color: #000000;
   }
 }
@@ -5125,17 +5323,29 @@ p + .govuk-heading-s,
   width: 24px;
   margin-bottom: 5px;
 }
-.govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label:before {
+.govuk-radios--small
+  .govuk-radios__item:hover
+  .govuk-radios__input:not(:disabled)
+  + .govuk-radios__label:before {
   box-shadow: 0 0 0 10px #b1b4b6;
 }
-.govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+.govuk-radios--small
+  .govuk-radios__item:hover
+  .govuk-radios__input:focus
+  + .govuk-radios__label:before {
   box-shadow: 0 0 0 4px #ffdd00, 0 0 0 10px #b1b4b6;
 }
 @media (hover: none), (pointer: coarse) {
-  .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label:before {
+  .govuk-radios--small
+    .govuk-radios__item:hover
+    .govuk-radios__input:not(:disabled)
+    + .govuk-radios__label:before {
     box-shadow: initial;
   }
-  .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label:before {
+  .govuk-radios--small
+    .govuk-radios__item:hover
+    .govuk-radios__input:focus
+    + .govuk-radios__label:before {
     box-shadow: 0 0 0 4px #ffdd00;
   }
 }
@@ -5210,7 +5420,7 @@ p + .govuk-heading-s,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   font-size: 14px;
   font-size: 0.875rem;
@@ -5218,7 +5428,8 @@ p + .govuk-heading-s,
   display: block;
   padding: 10px 15px;
 }
-.govuk-skip-link:active, .govuk-skip-link:focus {
+.govuk-skip-link:active,
+.govuk-skip-link:focus {
   position: static !important;
   width: auto !important;
   height: auto !important;
@@ -5234,22 +5445,26 @@ p + .govuk-heading-s,
     font-family: sans-serif;
   }
 }
-.govuk-skip-link:link, .govuk-skip-link:visited {
+.govuk-skip-link:link,
+.govuk-skip-link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-skip-link:link, .govuk-skip-link:visited {
+  .govuk-skip-link:link,
+  .govuk-skip-link:visited {
     color: #000000;
   }
 }
 .govuk-skip-link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-skip-link:active, .govuk-skip-link:focus {
+.govuk-skip-link:active,
+.govuk-skip-link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-skip-link:active, .govuk-skip-link:focus {
+  .govuk-skip-link:active,
+  .govuk-skip-link:focus {
     color: #000000;
   }
 }
@@ -5346,7 +5561,8 @@ p + .govuk-heading-s,
   }
 }
 
-.govuk-summary-list__row:not(.govuk-summary-list__row--no-actions) > :last-child {
+.govuk-summary-list__row:not(.govuk-summary-list__row--no-actions)
+  > :last-child {
   padding-right: 0;
 }
 
@@ -5969,7 +6185,8 @@ p + .govuk-heading-s,
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
 }
-.govuk-visually-hidden-focusable:active, .govuk-visually-hidden-focusable:focus {
+.govuk-visually-hidden-focusable:active,
+.govuk-visually-hidden-focusable:focus {
   position: static !important;
   width: auto !important;
   height: auto !important;
@@ -7469,7 +7686,29 @@ p + .govuk-heading-s,
 
 .moj-scrollable-pane {
   overflow-x: scroll;
-  background: linear-gradient(to right, white, white, rgba(255, 255, 255, 0) calc(var(0.75em) * 2)), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0)), linear-gradient(to left, white, white, rgba(255, 255, 255, 0) calc(var(0.75em) * 2)), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0)) 100%;
+  background: linear-gradient(
+      to right,
+      white,
+      white,
+      rgba(255, 255, 255, 0) calc(var(0.75em) * 2)
+    ),
+    radial-gradient(
+      farthest-side at 0 50%,
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(
+      to left,
+      white,
+      white,
+      rgba(255, 255, 255, 0) calc(var(0.75em) * 2)
+    ),
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgba(0, 0, 0, 0.2),
+        rgba(255, 255, 255, 0)
+      )
+      100%;
   background-color: white;
   background-repeat: no-repeat;
   background-attachment: local, scroll, local, scroll;
@@ -7758,7 +7997,7 @@ p + .govuk-heading-s,
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:focus:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:focus:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -7766,11 +8005,11 @@ p + .govuk-heading-s,
   background-image: url(/assets/images/icon-arrow-white-down.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:hover:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:hover:after {
   background-image: url(/assets/images/icon-arrow-white-up.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:after {
   background-image: url(/assets/images/icon-arrow-white-up.svg);
 }
 
@@ -7782,7 +8021,7 @@ p + .govuk-heading-s,
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button--secondary[aria-expanded=true]:after {
+.moj-button-menu__toggle-button--secondary[aria-expanded="true"]:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -7790,7 +8029,7 @@ p + .govuk-heading-s,
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button--secondary[aria-expanded=true]:hover:after {
+.moj-button-menu__toggle-button--secondary[aria-expanded="true"]:hover:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -7805,7 +8044,7 @@ p + .govuk-heading-s,
   margin-right: 0;
 }
 
-.moj-button-menu [role=menuitem] {
+.moj-button-menu [role="menuitem"] {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7825,31 +8064,32 @@ p + .govuk-heading-s,
   -webkit-appearance: none;
 }
 @media print {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.moj-button-menu [role=menuitem]:link, .moj-button-menu [role=menuitem]:visited {
+.moj-button-menu [role="menuitem"]:link,
+.moj-button-menu [role="menuitem"]:visited {
   text-decoration: none;
   color: #0b0c0c;
 }
-.moj-button-menu [role=menuitem]:hover {
+.moj-button-menu [role="menuitem"]:hover {
   background-color: #b1b4b6;
 }
-.moj-button-menu [role=menuitem]:focus {
+.moj-button-menu [role="menuitem"]:focus {
   outline: 3px solid #ffdd00;
   outline-offset: 0;
   position: relative;
@@ -7865,17 +8105,17 @@ p + .govuk-heading-s,
   right: 0;
 }
 
-.moj-button-menu [role=menu] {
+.moj-button-menu [role="menu"] {
   position: absolute;
   width: 200px;
   z-index: 10;
 }
 
-.moj-button-menu [aria-expanded=true] + [role=menu] {
+.moj-button-menu [aria-expanded="true"] + [role="menu"] {
   display: block;
 }
 
-.moj-button-menu [aria-expanded=false] + [role=menu] {
+.moj-button-menu [aria-expanded="false"] + [role="menu"] {
   display: none;
 }
 
@@ -8039,7 +8279,7 @@ p + .govuk-heading-s,
   display: inline-block;
   width: 100%;
 }
-.moj-filter__header [class^=govuk-heading-] {
+.moj-filter__header [class^="govuk-heading-"] {
   margin-bottom: 0;
 }
 
@@ -8102,7 +8342,7 @@ p + .govuk-heading-s,
   right: 0;
   width: 16px;
 }
-.moj-filter__legend button[aria-expanded=true]::after {
+.moj-filter__legend button[aria-expanded="true"]::after {
   background-position: 16px 16px;
 }
 .moj-filter__header-title,
@@ -8270,7 +8510,8 @@ p + .govuk-heading-s,
     line-height: 1.2;
   }
 }
-.moj-filter__tag:link, .moj-filter__tag:visited {
+.moj-filter__tag:link,
+.moj-filter__tag:visited {
   color: #0b0c0c;
 }
 .moj-filter__tag:focus {
@@ -8366,12 +8607,13 @@ p + .govuk-heading-s,
   }
 }
 
-.moj-header__link, .moj-header__link > a {
+.moj-header__link,
+.moj-header__link > a {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   border-bottom: 1px solid transparent;
   color: #ffffff;
@@ -8383,18 +8625,21 @@ p + .govuk-heading-s,
   vertical-align: middle;
 }
 @media print {
-  .moj-header__link, .moj-header__link > a {
+  .moj-header__link,
+  .moj-header__link > a {
     font-family: sans-serif;
   }
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+.moj-header__link:hover,
+.moj-header__link > a:hover {
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -8403,32 +8648,47 @@ p + .govuk-heading-s,
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.moj-header__link:link, .moj-header__link > a:link {
+.moj-header__link:link,
+.moj-header__link > a:link {
   color: #1d70b8;
 }
-.moj-header__link:visited, .moj-header__link > a:visited {
+.moj-header__link:visited,
+.moj-header__link > a:visited {
   color: #4c2c92;
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
+.moj-header__link:hover,
+.moj-header__link > a:hover {
   color: #003078;
 }
-.moj-header__link:active, .moj-header__link > a:active {
+.moj-header__link:active,
+.moj-header__link > a:active {
   color: #0b0c0c;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   color: #0b0c0c;
 }
-.moj-header__link:link, .moj-header__link:visited, .moj-header__link:hover, .moj-header__link:active, .moj-header__link > a:link, .moj-header__link > a:visited, .moj-header__link > a:hover, .moj-header__link > a:active {
+.moj-header__link:link,
+.moj-header__link:visited,
+.moj-header__link:hover,
+.moj-header__link:active,
+.moj-header__link > a:link,
+.moj-header__link > a:visited,
+.moj-header__link > a:hover,
+.moj-header__link > a:active {
   color: #ffffff;
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
+.moj-header__link:hover,
+.moj-header__link > a:hover {
   border-color: #ffffff;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   border-color: transparent;
   color: #0b0c0c;
 }
-.moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+.moj-header__link--organisation-name,
+.moj-header__link > a--organisation-name {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8439,27 +8699,32 @@ p + .govuk-heading-s,
   vertical-align: middle;
 }
 @media print {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
-.moj-header__link--organisation-name:hover, .moj-header__link > a--organisation-name:hover {
+.moj-header__link--organisation-name:hover,
+.moj-header__link > a--organisation-name:hover {
   border-color: transparent;
 }
-.moj-header__link--service-name, .moj-header__link > a--service-name {
+.moj-header__link--service-name,
+.moj-header__link > a--service-name {
   vertical-align: middle;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8469,34 +8734,40 @@ p + .govuk-heading-s,
   line-height: 1.1111111111;
 }
 @media print {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
 @media (max-width: 48.0525em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     display: block;
   }
 }
 @media (min-width: 48.0625em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     margin-left: 5px;
   }
 }
-.moj-header__link--service-name:hover, .moj-header__link > a--service-name:hover {
+.moj-header__link--service-name:hover,
+.moj-header__link > a--service-name:hover {
   border-color: transparent;
 }
 
@@ -8568,7 +8839,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -8577,7 +8848,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-header__navigation-link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -8607,7 +8878,9 @@ span.moj-header__link:hover {
 .moj-header__navigation-link:focus {
   color: #0b0c0c;
 }
-.moj-header__navigation-link:link, .moj-header__navigation-link:visited, .moj-header__navigation-link:active {
+.moj-header__navigation-link:link,
+.moj-header__navigation-link:visited,
+.moj-header__navigation-link:active {
   color: inherit;
   text-decoration: none;
 }
@@ -8618,7 +8891,7 @@ span.moj-header__link:hover {
   color: #0b0c0c;
 }
 
-.moj-header__navigation-link[aria-current=page] {
+.moj-header__navigation-link[aria-current="page"] {
   text-decoration: none;
 }
 
@@ -8851,7 +9124,8 @@ span.moj-header__link:hover {
 .moj-message-item__text--sent table {
   color: #ffffff;
 }
-.moj-message-item__text--sent table th, .moj-message-item__text--sent table td {
+.moj-message-item__text--sent table th,
+.moj-message-item__text--sent table td {
   border-bottom: 1px solid #ffffff;
 }
 
@@ -8941,7 +9215,7 @@ span.moj-header__link:hover {
   padding-top: 7px;
 }
 
-.moj-multi-file-upload__dropzone [type=file] {
+.moj-multi-file-upload__dropzone [type="file"] {
   position: absolute;
   left: -9999em;
 }
@@ -9088,7 +9362,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -9097,7 +9371,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-organisation-nav__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -9128,7 +9402,8 @@ span.moj-header__link:hover {
   color: #0b0c0c;
 }
 @media print {
-  .moj-organisation-nav__link[href^="/"]:after, .moj-organisation-nav__link[href^="http://"]:after, .moj-organisation-nav__link[href^="https://"]:after {
+  .moj-organisation-nav__link[href^="/"]:after, .moj-organisation-nav__link[href^="http://"]:after, .moj-organisation-nav__link[href^="https://"]:after
+  {
     content: " (" attr(href) ")";
     font-size: 90%;
     word-wrap: break-word;
@@ -9157,12 +9432,12 @@ span.moj-header__link:hover {
   width: 100%;
 }
 
-.moj-page-header-actions__title [class^=govuk-heading-] {
+.moj-page-header-actions__title [class^="govuk-heading-"] {
   margin-bottom: 10px;
   text-align: left;
 }
 @media (min-width: 40.0625em) {
-  .moj-page-header-actions__title [class^=govuk-heading-] {
+  .moj-page-header-actions__title [class^="govuk-heading-"] {
     margin-bottom: 0;
   }
 }
@@ -9323,7 +9598,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding: 5px;
@@ -9337,7 +9612,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-pagination__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -9367,7 +9642,8 @@ span.moj-header__link:hover {
 .moj-pagination__link:focus {
   color: #0b0c0c;
 }
-.moj-pagination__link:link, .moj-pagination__link:visited {
+.moj-pagination__link:link,
+.moj-pagination__link:visited {
   color: #1d70b8;
 }
 .moj-pagination__link:hover {
@@ -9479,7 +9755,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding-bottom: 15px;
@@ -9493,7 +9769,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-primary-navigation__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -9523,7 +9799,8 @@ span.moj-header__link:hover {
 .moj-primary-navigation__link:focus {
   color: #0b0c0c;
 }
-.moj-primary-navigation__link:link, .moj-primary-navigation__link:visited {
+.moj-primary-navigation__link:link,
+.moj-primary-navigation__link:visited {
   color: #1d70b8;
 }
 .moj-primary-navigation__link:hover {
@@ -9639,7 +9916,8 @@ span.moj-header__link:hover {
     line-height: 1.15;
   }
 }
-.moj-progress-bar__item:first-child::before, .moj-progress-bar__item:last-child::before {
+.moj-progress-bar__item:first-child::before,
+.moj-progress-bar__item:last-child::before {
   border-top: 6px solid #ffffff;
   content: "";
   position: absolute;
@@ -9654,7 +9932,7 @@ span.moj-header__link:hover {
   left: auto;
   right: 0;
 }
-.moj-progress-bar__item[aria-current=step] {
+.moj-progress-bar__item[aria-current="step"] {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9664,19 +9942,19 @@ span.moj-header__link:hover {
   line-height: 1.25;
 }
 @media print {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-size: 14pt;
     line-height: 1.15;
   }
@@ -10159,12 +10437,12 @@ span.moj-header__link:hover {
   font-size: 0.5em;
 }
 
-[aria-sort=ascending] button:before,
-[aria-sort=descending] button:before {
+[aria-sort="ascending"] button:before,
+[aria-sort="descending"] button:before {
   content: none;
 }
 
-[aria-sort=ascending] button:after {
+[aria-sort="ascending"] button:after {
   content: " ▲";
   font-size: 0.8em;
   position: absolute;
@@ -10172,7 +10450,7 @@ span.moj-header__link:hover {
   top: 2px;
 }
 
-[aria-sort=descending] button:after {
+[aria-sort="descending"] button:after {
   content: " ▼";
   font-size: 0.8em;
   position: absolute;
@@ -10247,7 +10525,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding-top: 12px;
@@ -10262,7 +10540,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-sub-navigation__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -10297,7 +10575,8 @@ span.moj-header__link:hover {
     padding-left: 0;
   }
 }
-.moj-sub-navigation__link:link, .moj-sub-navigation__link:visited {
+.moj-sub-navigation__link:link,
+.moj-sub-navigation__link:visited {
   color: #1d70b8;
 }
 .moj-sub-navigation__link:hover {
@@ -10320,12 +10599,12 @@ span.moj-header__link:hover {
   height: 5px;
 }
 
-.moj-sub-navigation__link[aria-current=page] {
+.moj-sub-navigation__link[aria-current="page"] {
   color: #0b0c0c;
   position: relative;
   text-decoration: none;
 }
-.moj-sub-navigation__link[aria-current=page]:before {
+.moj-sub-navigation__link[aria-current="page"]:before {
   background-color: #1d70b8;
   content: "";
   display: block;
@@ -10336,12 +10615,12 @@ span.moj-header__link:hover {
   width: 5px;
 }
 @media (min-width: 40.0625em) {
-  .moj-sub-navigation__link[aria-current=page]:before {
+  .moj-sub-navigation__link[aria-current="page"]:before {
     height: 5px;
     width: 100%;
   }
 }
-.moj-sub-navigation__link[aria-current=page]:focus:before {
+.moj-sub-navigation__link[aria-current="page"]:focus:before {
   background-color: #0b0c0c;
 }
 
@@ -10363,17 +10642,20 @@ span.moj-header__link:hover {
   background-color: #912b88;
   color: #ffffff;
 }
-.moj-tag--red, .moj-tag--error {
+.moj-tag--red,
+.moj-tag--error {
   border: 2px solid #d4351c;
   background-color: #d4351c;
   color: #ffffff;
 }
-.moj-tag--green, .moj-tag--success {
+.moj-tag--green,
+.moj-tag--success {
   border: 2px solid #00703c;
   background-color: #00703c;
   color: #ffffff;
 }
-.moj-tag--blue, .moj-tag--information {
+.moj-tag--blue,
+.moj-tag--information {
   border: 2px solid #1d70b8;
   background-color: #1d70b8;
   color: #ffffff;
@@ -10963,7 +11245,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   position: relative;
   z-index: 1;
@@ -10986,7 +11268,7 @@ span.moj-header__link:hover {
   }
 }
 .app-step-nav__button--controls:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -11085,7 +11367,8 @@ span.moj-header__link:hover {
 }
 
 .app-step-nav__step--active:last-child:before,
-.app-step-nav__step--active .app-step-nav__circle--number, .app-step-nav__step--active:after,
+.app-step-nav__step--active .app-step-nav__circle--number,
+.app-step-nav__step--active:after,
 .app-step-nav__step--active .app-step-nav__help:after {
   border-color: #0b0c0c;
 }
@@ -11201,7 +11484,8 @@ span.moj-header__link:hover {
 }
 
 .app-step-nav__circle-background {
-  text-shadow: 0 -0.1em 0 #ffffff, 0.1em 0 0 #ffffff, 0 0.1em 0 #ffffff, -0.1em 0 0 #ffffff;
+  text-shadow: 0 -0.1em 0 #ffffff, 0.1em 0 0 #ffffff, 0 0.1em 0 #ffffff,
+    -0.1em 0 0 #ffffff;
 }
 
 .app-step-nav__circle-step-label,
@@ -11253,9 +11537,9 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -11267,7 +11551,7 @@ span.moj-header__link:hover {
   }
 }
 .app-step-nav__header:hover .app-step-nav__toggle-link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -11462,7 +11746,9 @@ span.moj-header__link:hover {
   left: -65px;
 }
 @media (min-width: 40.0625em) {
-  .app-step-nav--large .app-step-nav__list--choice .app-step-nav__list-item--active:before {
+  .app-step-nav--large
+    .app-step-nav__list--choice
+    .app-step-nav__list-item--active:before {
     left: -80px;
   }
 }
@@ -11476,7 +11762,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -11485,7 +11771,7 @@ span.moj-header__link:hover {
   }
 }
 .app-step-nav__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -11553,22 +11839,26 @@ span.moj-header__link:hover {
     height: 3px;
   }
 }
-.app-step-nav__list-item--active .app-step-nav__link:link, .app-step-nav__list-item--active .app-step-nav__link:visited {
+.app-step-nav__list-item--active .app-step-nav__link:link,
+.app-step-nav__list-item--active .app-step-nav__link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .app-step-nav__list-item--active .app-step-nav__link:link, .app-step-nav__list-item--active .app-step-nav__link:visited {
+  .app-step-nav__list-item--active .app-step-nav__link:link,
+  .app-step-nav__list-item--active .app-step-nav__link:visited {
     color: #000000;
   }
 }
 .app-step-nav__list-item--active .app-step-nav__link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.app-step-nav__list-item--active .app-step-nav__link:active, .app-step-nav__list-item--active .app-step-nav__link:focus {
+.app-step-nav__list-item--active .app-step-nav__link:active,
+.app-step-nav__list-item--active .app-step-nav__link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .app-step-nav__list-item--active .app-step-nav__link:active, .app-step-nav__list-item--active .app-step-nav__link:focus {
+  .app-step-nav__list-item--active .app-step-nav__link:active,
+  .app-step-nav__list-item--active .app-step-nav__link:focus {
     color: #000000;
   }
 }
@@ -11902,7 +12192,29 @@ span.moj-header__link:hover {
 
 .moj-scrollable-pane {
   overflow-x: scroll;
-  background: linear-gradient(to right, white, white, rgba(255, 255, 255, 0) calc(var(0.75em) * 2)), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0)), linear-gradient(to left, white, white, rgba(255, 255, 255, 0) calc(var(0.75em) * 2)), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0)) 100%;
+  background: linear-gradient(
+      to right,
+      white,
+      white,
+      rgba(255, 255, 255, 0) calc(var(0.75em) * 2)
+    ),
+    radial-gradient(
+      farthest-side at 0 50%,
+      rgba(0, 0, 0, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(
+      to left,
+      white,
+      white,
+      rgba(255, 255, 255, 0) calc(var(0.75em) * 2)
+    ),
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgba(0, 0, 0, 0.2),
+        rgba(255, 255, 255, 0)
+      )
+      100%;
   background-color: white;
   background-repeat: no-repeat;
   background-attachment: local, scroll, local, scroll;
@@ -12191,7 +12503,7 @@ span.moj-header__link:hover {
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:focus:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:focus:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -12199,11 +12511,11 @@ span.moj-header__link:hover {
   background-image: url(/assets/images/icon-arrow-white-down.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:hover:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:hover:after {
   background-image: url(/assets/images/icon-arrow-white-up.svg);
 }
 
-.moj-button-menu__toggle-button[aria-expanded=true]:after {
+.moj-button-menu__toggle-button[aria-expanded="true"]:after {
   background-image: url(/assets/images/icon-arrow-white-up.svg);
 }
 
@@ -12215,7 +12527,7 @@ span.moj-header__link:hover {
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button--secondary[aria-expanded=true]:after {
+.moj-button-menu__toggle-button--secondary[aria-expanded="true"]:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -12223,7 +12535,7 @@ span.moj-header__link:hover {
   background-image: url(/assets/images/icon-arrow-black-down.svg);
 }
 
-.moj-button-menu__toggle-button--secondary[aria-expanded=true]:hover:after {
+.moj-button-menu__toggle-button--secondary[aria-expanded="true"]:hover:after {
   background-image: url(/assets/images/icon-arrow-black-up.svg);
 }
 
@@ -12238,7 +12550,7 @@ span.moj-header__link:hover {
   margin-right: 0;
 }
 
-.moj-button-menu [role=menuitem] {
+.moj-button-menu [role="menuitem"] {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12258,31 +12570,32 @@ span.moj-header__link:hover {
   -webkit-appearance: none;
 }
 @media print {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .moj-button-menu [role=menuitem] {
+  .moj-button-menu [role="menuitem"] {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.moj-button-menu [role=menuitem]:link, .moj-button-menu [role=menuitem]:visited {
+.moj-button-menu [role="menuitem"]:link,
+.moj-button-menu [role="menuitem"]:visited {
   text-decoration: none;
   color: #0b0c0c;
 }
-.moj-button-menu [role=menuitem]:hover {
+.moj-button-menu [role="menuitem"]:hover {
   background-color: #b1b4b6;
 }
-.moj-button-menu [role=menuitem]:focus {
+.moj-button-menu [role="menuitem"]:focus {
   outline: 3px solid #ffdd00;
   outline-offset: 0;
   position: relative;
@@ -12298,17 +12611,17 @@ span.moj-header__link:hover {
   right: 0;
 }
 
-.moj-button-menu [role=menu] {
+.moj-button-menu [role="menu"] {
   position: absolute;
   width: 200px;
   z-index: 10;
 }
 
-.moj-button-menu [aria-expanded=true] + [role=menu] {
+.moj-button-menu [aria-expanded="true"] + [role="menu"] {
   display: block;
 }
 
-.moj-button-menu [aria-expanded=false] + [role=menu] {
+.moj-button-menu [aria-expanded="false"] + [role="menu"] {
   display: none;
 }
 
@@ -12472,7 +12785,7 @@ span.moj-header__link:hover {
   display: inline-block;
   width: 100%;
 }
-.moj-filter__header [class^=govuk-heading-] {
+.moj-filter__header [class^="govuk-heading-"] {
   margin-bottom: 0;
 }
 
@@ -12535,7 +12848,7 @@ span.moj-header__link:hover {
   right: 0;
   width: 16px;
 }
-.moj-filter__legend button[aria-expanded=true]::after {
+.moj-filter__legend button[aria-expanded="true"]::after {
   background-position: 16px 16px;
 }
 .moj-filter__header-title,
@@ -12703,7 +13016,8 @@ span.moj-header__link:hover {
     line-height: 1.2;
   }
 }
-.moj-filter__tag:link, .moj-filter__tag:visited {
+.moj-filter__tag:link,
+.moj-filter__tag:visited {
   color: #0b0c0c;
 }
 .moj-filter__tag:focus {
@@ -12799,12 +13113,13 @@ span.moj-header__link:hover {
   }
 }
 
-.moj-header__link, .moj-header__link > a {
+.moj-header__link,
+.moj-header__link > a {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   border-bottom: 1px solid transparent;
   color: #ffffff;
@@ -12816,18 +13131,21 @@ span.moj-header__link:hover {
   vertical-align: middle;
 }
 @media print {
-  .moj-header__link, .moj-header__link > a {
+  .moj-header__link,
+  .moj-header__link > a {
     font-family: sans-serif;
   }
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+.moj-header__link:hover,
+.moj-header__link > a:hover {
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -12836,32 +13154,47 @@ span.moj-header__link:hover {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.moj-header__link:link, .moj-header__link > a:link {
+.moj-header__link:link,
+.moj-header__link > a:link {
   color: #1d70b8;
 }
-.moj-header__link:visited, .moj-header__link > a:visited {
+.moj-header__link:visited,
+.moj-header__link > a:visited {
   color: #4c2c92;
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
+.moj-header__link:hover,
+.moj-header__link > a:hover {
   color: #003078;
 }
-.moj-header__link:active, .moj-header__link > a:active {
+.moj-header__link:active,
+.moj-header__link > a:active {
   color: #0b0c0c;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   color: #0b0c0c;
 }
-.moj-header__link:link, .moj-header__link:visited, .moj-header__link:hover, .moj-header__link:active, .moj-header__link > a:link, .moj-header__link > a:visited, .moj-header__link > a:hover, .moj-header__link > a:active {
+.moj-header__link:link,
+.moj-header__link:visited,
+.moj-header__link:hover,
+.moj-header__link:active,
+.moj-header__link > a:link,
+.moj-header__link > a:visited,
+.moj-header__link > a:hover,
+.moj-header__link > a:active {
   color: #ffffff;
 }
-.moj-header__link:hover, .moj-header__link > a:hover {
+.moj-header__link:hover,
+.moj-header__link > a:hover {
   border-color: #ffffff;
 }
-.moj-header__link:focus, .moj-header__link > a:focus {
+.moj-header__link:focus,
+.moj-header__link > a:focus {
   border-color: transparent;
   color: #0b0c0c;
 }
-.moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+.moj-header__link--organisation-name,
+.moj-header__link > a--organisation-name {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12872,27 +13205,32 @@ span.moj-header__link:hover {
   vertical-align: middle;
 }
 @media print {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .moj-header__link--organisation-name, .moj-header__link > a--organisation-name {
+  .moj-header__link--organisation-name,
+  .moj-header__link > a--organisation-name {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
-.moj-header__link--organisation-name:hover, .moj-header__link > a--organisation-name:hover {
+.moj-header__link--organisation-name:hover,
+.moj-header__link > a--organisation-name:hover {
   border-color: transparent;
 }
-.moj-header__link--service-name, .moj-header__link > a--service-name {
+.moj-header__link--service-name,
+.moj-header__link > a--service-name {
   vertical-align: middle;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12902,34 +13240,40 @@ span.moj-header__link:hover {
   line-height: 1.1111111111;
 }
 @media print {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
 @media (max-width: 48.0525em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     display: block;
   }
 }
 @media (min-width: 48.0625em) {
-  .moj-header__link--service-name, .moj-header__link > a--service-name {
+  .moj-header__link--service-name,
+  .moj-header__link > a--service-name {
     margin-left: 5px;
   }
 }
-.moj-header__link--service-name:hover, .moj-header__link > a--service-name:hover {
+.moj-header__link--service-name:hover,
+.moj-header__link > a--service-name:hover {
   border-color: transparent;
 }
 
@@ -13001,7 +13345,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -13010,7 +13354,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-header__navigation-link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -13040,7 +13384,9 @@ span.moj-header__link:hover {
 .moj-header__navigation-link:focus {
   color: #0b0c0c;
 }
-.moj-header__navigation-link:link, .moj-header__navigation-link:visited, .moj-header__navigation-link:active {
+.moj-header__navigation-link:link,
+.moj-header__navigation-link:visited,
+.moj-header__navigation-link:active {
   color: inherit;
   text-decoration: none;
 }
@@ -13051,7 +13397,7 @@ span.moj-header__link:hover {
   color: #0b0c0c;
 }
 
-.moj-header__navigation-link[aria-current=page] {
+.moj-header__navigation-link[aria-current="page"] {
   text-decoration: none;
 }
 
@@ -13284,7 +13630,8 @@ span.moj-header__link:hover {
 .moj-message-item__text--sent table {
   color: #ffffff;
 }
-.moj-message-item__text--sent table th, .moj-message-item__text--sent table td {
+.moj-message-item__text--sent table th,
+.moj-message-item__text--sent table td {
   border-bottom: 1px solid #ffffff;
 }
 
@@ -13374,7 +13721,7 @@ span.moj-header__link:hover {
   padding-top: 7px;
 }
 
-.moj-multi-file-upload__dropzone [type=file] {
+.moj-multi-file-upload__dropzone [type="file"] {
   position: absolute;
   left: -9999em;
 }
@@ -13521,7 +13868,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
 }
 @media print {
@@ -13530,7 +13877,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-organisation-nav__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -13561,7 +13908,8 @@ span.moj-header__link:hover {
   color: #0b0c0c;
 }
 @media print {
-  .moj-organisation-nav__link[href^="/"]:after, .moj-organisation-nav__link[href^="http://"]:after, .moj-organisation-nav__link[href^="https://"]:after {
+  .moj-organisation-nav__link[href^="/"]:after, .moj-organisation-nav__link[href^="http://"]:after, .moj-organisation-nav__link[href^="https://"]:after
+  {
     content: " (" attr(href) ")";
     font-size: 90%;
     word-wrap: break-word;
@@ -13590,12 +13938,12 @@ span.moj-header__link:hover {
   width: 100%;
 }
 
-.moj-page-header-actions__title [class^=govuk-heading-] {
+.moj-page-header-actions__title [class^="govuk-heading-"] {
   margin-bottom: 10px;
   text-align: left;
 }
 @media (min-width: 40.0625em) {
-  .moj-page-header-actions__title [class^=govuk-heading-] {
+  .moj-page-header-actions__title [class^="govuk-heading-"] {
     margin-bottom: 0;
   }
 }
@@ -13756,7 +14104,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding: 5px;
@@ -13770,7 +14118,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-pagination__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -13800,7 +14148,8 @@ span.moj-header__link:hover {
 .moj-pagination__link:focus {
   color: #0b0c0c;
 }
-.moj-pagination__link:link, .moj-pagination__link:visited {
+.moj-pagination__link:link,
+.moj-pagination__link:visited {
   color: #1d70b8;
 }
 .moj-pagination__link:hover {
@@ -13912,7 +14261,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding-bottom: 15px;
@@ -13926,7 +14275,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-primary-navigation__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -13956,7 +14305,8 @@ span.moj-header__link:hover {
 .moj-primary-navigation__link:focus {
   color: #0b0c0c;
 }
-.moj-primary-navigation__link:link, .moj-primary-navigation__link:visited {
+.moj-primary-navigation__link:link,
+.moj-primary-navigation__link:visited {
   color: #1d70b8;
 }
 .moj-primary-navigation__link:hover {
@@ -14072,7 +14422,8 @@ span.moj-header__link:hover {
     line-height: 1.15;
   }
 }
-.moj-progress-bar__item:first-child::before, .moj-progress-bar__item:last-child::before {
+.moj-progress-bar__item:first-child::before,
+.moj-progress-bar__item:last-child::before {
   border-top: 6px solid #ffffff;
   content: "";
   position: absolute;
@@ -14087,7 +14438,7 @@ span.moj-header__link:hover {
   left: auto;
   right: 0;
 }
-.moj-progress-bar__item[aria-current=step] {
+.moj-progress-bar__item[aria-current="step"] {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14097,19 +14448,19 @@ span.moj-header__link:hover {
   line-height: 1.25;
 }
 @media print {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .moj-progress-bar__item[aria-current=step] {
+  .moj-progress-bar__item[aria-current="step"] {
     font-size: 14pt;
     line-height: 1.15;
   }
@@ -14592,12 +14943,12 @@ span.moj-header__link:hover {
   font-size: 0.5em;
 }
 
-[aria-sort=ascending] button:before,
-[aria-sort=descending] button:before {
+[aria-sort="ascending"] button:before,
+[aria-sort="descending"] button:before {
   content: none;
 }
 
-[aria-sort=ascending] button:after {
+[aria-sort="ascending"] button:after {
   content: " ▲";
   font-size: 0.8em;
   position: absolute;
@@ -14605,7 +14956,7 @@ span.moj-header__link:hover {
   top: 2px;
 }
 
-[aria-sort=descending] button:after {
+[aria-sort="descending"] button:after {
   content: " ▼";
   font-size: 0.8em;
   position: absolute;
@@ -14680,7 +15031,7 @@ span.moj-header__link:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   display: block;
   padding-top: 12px;
@@ -14695,7 +15046,7 @@ span.moj-header__link:hover {
   }
 }
 .moj-sub-navigation__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -14730,7 +15081,8 @@ span.moj-header__link:hover {
     padding-left: 0;
   }
 }
-.moj-sub-navigation__link:link, .moj-sub-navigation__link:visited {
+.moj-sub-navigation__link:link,
+.moj-sub-navigation__link:visited {
   color: #1d70b8;
 }
 .moj-sub-navigation__link:hover {
@@ -14753,12 +15105,12 @@ span.moj-header__link:hover {
   height: 5px;
 }
 
-.moj-sub-navigation__link[aria-current=page] {
+.moj-sub-navigation__link[aria-current="page"] {
   color: #0b0c0c;
   position: relative;
   text-decoration: none;
 }
-.moj-sub-navigation__link[aria-current=page]:before {
+.moj-sub-navigation__link[aria-current="page"]:before {
   background-color: #1d70b8;
   content: "";
   display: block;
@@ -14769,12 +15121,12 @@ span.moj-header__link:hover {
   width: 5px;
 }
 @media (min-width: 40.0625em) {
-  .moj-sub-navigation__link[aria-current=page]:before {
+  .moj-sub-navigation__link[aria-current="page"]:before {
     height: 5px;
     width: 100%;
   }
 }
-.moj-sub-navigation__link[aria-current=page]:focus:before {
+.moj-sub-navigation__link[aria-current="page"]:focus:before {
   background-color: #0b0c0c;
 }
 
@@ -14796,17 +15148,20 @@ span.moj-header__link:hover {
   background-color: #912b88;
   color: #ffffff;
 }
-.moj-tag--red, .moj-tag--error {
+.moj-tag--red,
+.moj-tag--error {
   border: 2px solid #d4351c;
   background-color: #d4351c;
   color: #ffffff;
 }
-.moj-tag--green, .moj-tag--success {
+.moj-tag--green,
+.moj-tag--success {
   border: 2px solid #00703c;
   background-color: #00703c;
   color: #ffffff;
 }
-.moj-tag--blue, .moj-tag--information {
+.moj-tag--blue,
+.moj-tag--information {
   border: 2px solid #1d70b8;
   background-color: #1d70b8;
   color: #ffffff;
@@ -15416,15 +15771,18 @@ main.search-results .result-item .contents div {
 main.search-results .result-item .contents ol.govuk-list--number {
   margin-bottom: 0;
 }
-main.search-results .result-item .contents p, main.search-results .result-item .contents span {
+main.search-results .result-item .contents p,
+main.search-results .result-item .contents span {
   display: inline-block;
   margin: 0 0 0 0;
 }
-main.search-results .result-item .contents p.title, main.search-results .result-item .contents span.title {
+main.search-results .result-item .contents p.title,
+main.search-results .result-item .contents span.title {
   width: 22.5%;
   float: left;
 }
-main.search-results .result-item .contents p.description, main.search-results .result-item .contents span.description {
+main.search-results .result-item .contents p.description,
+main.search-results .result-item .contents span.description {
   width: 77.5%;
   float: right;
 }
@@ -15442,11 +15800,15 @@ main.case-files .Tip__compact {
   margin-top: -5px;
   padding: 10px 15px;
 }
-main.case-files .Tip__compact:hover, main.case-files .Tip__compact:active, main.case-files .Tip__compact:focus {
+main.case-files .Tip__compact:hover,
+main.case-files .Tip__compact:active,
+main.case-files .Tip__compact:focus {
   transform: scaleX(1.5), scaleY(1.5);
   background-color: #004a28;
 }
-main.case-files .Tip__compact:hover:after, main.case-files .Tip__compact:active:after, main.case-files .Tip__compact:focus:after {
+main.case-files .Tip__compact:hover:after,
+main.case-files .Tip__compact:active:after,
+main.case-files .Tip__compact:focus:after {
   background-color: #004a28;
 }
 main.case-files .info {
@@ -15463,7 +15825,8 @@ main.case-files .blueBoxCPS {
   width: 100%;
   padding: 15px;
 }
-main.case-files .blueBoxCPS h2, main.case-files .blueBoxCPS p {
+main.case-files .blueBoxCPS h2,
+main.case-files .blueBoxCPS p {
   color: white;
   margin: 0;
   padding: 0;
@@ -15535,7 +15898,9 @@ main.case-files .redaction-footer button {
   text-decoration: underline;
   box-shadow: none;
 }
-.das-cookie-banner__modal .tooltip button:hover, .das-cookie-banner__modal .tooltip button:active, .das-cookie-banner__modal .tooltip button:focus {
+.das-cookie-banner__modal .tooltip button:hover,
+.das-cookie-banner__modal .tooltip button:active,
+.das-cookie-banner__modal .tooltip button:focus {
   cursor: pointer;
   background: none;
   color: #1a63a2;
@@ -15559,11 +15924,14 @@ main.case-files .redaction-footer button {
   font-weight: 700;
   line-height: 1;
 }
-.das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:hover, .das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:active, .das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:focus {
+.das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:hover,
+.das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:active,
+.das-cookie-banner__modal .tooltip button.govuk-modal-dialogue__close:focus {
   background: #1a63a2;
   cursor: pointer;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1, .das-cookie-banner__modal .tooltip .tooltiptext-2 {
+.das-cookie-banner__modal .tooltip .tooltiptext-1,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 {
   visibility: hidden;
   width: 500px;
   right: 0;
@@ -15577,10 +15945,12 @@ main.case-files .redaction-footer button {
   position: absolute;
   z-index: 1;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1.active, .das-cookie-banner__modal .tooltip .tooltiptext-2.active {
+.das-cookie-banner__modal .tooltip .tooltiptext-1.active,
+.das-cookie-banner__modal .tooltip .tooltiptext-2.active {
   visibility: visible;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1:after, .das-cookie-banner__modal .tooltip .tooltiptext-2:after {
+.das-cookie-banner__modal .tooltip .tooltiptext-1:after,
+.das-cookie-banner__modal .tooltip .tooltiptext-2:after {
   width: 0;
   height: 0;
   border-left: 15px solid transparent;
@@ -15591,20 +15961,29 @@ main.case-files .redaction-footer button {
   top: -15px;
   content: " ";
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1 p, .das-cookie-banner__modal .tooltip .tooltiptext-1 ul, .das-cookie-banner__modal .tooltip .tooltiptext-1 ul li, .das-cookie-banner__modal .tooltip .tooltiptext-2 p, .das-cookie-banner__modal .tooltip .tooltiptext-2 ul, .das-cookie-banner__modal .tooltip .tooltiptext-2 ul li {
+.das-cookie-banner__modal .tooltip .tooltiptext-1 p,
+.das-cookie-banner__modal .tooltip .tooltiptext-1 ul,
+.das-cookie-banner__modal .tooltip .tooltiptext-1 ul li,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 p,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 ul,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 ul li {
   text-align: left;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1 p, .das-cookie-banner__modal .tooltip .tooltiptext-2 p {
+.das-cookie-banner__modal .tooltip .tooltiptext-1 p,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 p {
   color: white;
   font-weight: bold;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1 ul, .das-cookie-banner__modal .tooltip .tooltiptext-2 ul {
+.das-cookie-banner__modal .tooltip .tooltiptext-1 ul,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 ul {
   margin-bottom: 0;
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1 ul li, .das-cookie-banner__modal .tooltip .tooltiptext-2 ul li {
+.das-cookie-banner__modal .tooltip .tooltiptext-1 ul li,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 ul li {
   color: rgba(255, 255, 255, 0.8);
 }
-.das-cookie-banner__modal .tooltip .tooltiptext-1 ul li:last-of-type, .das-cookie-banner__modal .tooltip .tooltiptext-2 ul li:last-of-type {
+.das-cookie-banner__modal .tooltip .tooltiptext-1 ul li:last-of-type,
+.das-cookie-banner__modal .tooltip .tooltiptext-2 ul li:last-of-type {
   margin-bottom: 0;
   color: white;
   font-weight: bold;
@@ -15687,50 +16066,86 @@ main.case-files .redaction-footer button {
   margin: 0 auto;
   padding: 0;
 }
-#openMe .govuk-grid-row .innerPanel .search-bar-wrapper, #openMe .govuk-grid-row .innerPanel .header-wrapper, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper {
+#openMe .govuk-grid-row .innerPanel .search-bar-wrapper,
+#openMe .govuk-grid-row .innerPanel .header-wrapper,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper {
   padding: 10px 20px 20px 20px;
   border-bottom: 1px solid #b1b4b6;
   background: #f3f2f1;
   margin: 0 0 1.5em 0;
 }
-#openMe .govuk-grid-row .innerPanel .search-bar-wrapper .govuk-form-group, #openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-form-group, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-form-group {
+#openMe .govuk-grid-row .innerPanel .search-bar-wrapper .govuk-form-group,
+#openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-form-group,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-form-group {
   margin: 0;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper {
+#openMe .govuk-grid-row .innerPanel .header-wrapper,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper {
   padding: 20px 10px 20px 10px;
   margin: 0;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .wrapper.hide, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .wrapper.hide {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .wrapper.hide,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .wrapper.hide {
   display: none;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select {
   display: none;
   float: left;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select.show, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select.show {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select.show,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select.show {
   display: inline-block;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select.show select, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select.show select {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select.show select,
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .sub-header-wrapper
+  .hidden-select.show
+  select {
   margin: 0;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select.show.doc-title-container select, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select.show.doc-title-container select {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .header-wrapper
+  .hidden-select.show.doc-title-container
+  select,
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .sub-header-wrapper
+  .hidden-select.show.doc-title-container
+  select {
   margin: -0.5em 0 0 0.25em;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper h3, #openMe .govuk-grid-row .innerPanel .header-wrapper p, #openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-label, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper h3, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper p, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-label {
+#openMe .govuk-grid-row .innerPanel .header-wrapper h3,
+#openMe .govuk-grid-row .innerPanel .header-wrapper p,
+#openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-label,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper h3,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper p,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-label {
   margin: 0;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper h3, #openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-label, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper h3, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-label {
+#openMe .govuk-grid-row .innerPanel .header-wrapper h3,
+#openMe .govuk-grid-row .innerPanel .header-wrapper .govuk-label,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper h3,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .govuk-label {
   font-size: 1rem;
   color: #505a5f;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper p, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper p {
+#openMe .govuk-grid-row .innerPanel .header-wrapper p,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper p {
   font-size: 1.2rem;
   margin-bottom: 0.5em;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper p.hide, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper p.hide {
+#openMe .govuk-grid-row .innerPanel .header-wrapper p.hide,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper p.hide {
   display: none;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select label, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select label {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select label,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select label {
   display: inline-block;
   font-size: 1.2rem;
   float: left;
@@ -15738,10 +16153,14 @@ main.case-files .redaction-footer button {
   margin: 0.275em 0 0 0;
   color: #0b0c0c;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select select, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select select {
+#openMe .govuk-grid-row .innerPanel .header-wrapper .hidden-select select,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper .hidden-select select {
   margin-left: 0.5em;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item-doctype {
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item-doctype {
   display: inline-block;
   text-indent: -100em;
   width: 1em;
@@ -15752,7 +16171,30 @@ main.case-files .redaction-footer button {
   position: relative;
   top: 3px;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:hover, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:focus, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:active, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:hover, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:focus, #openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:active, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:hover, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:focus, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:active, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item-doctype:hover, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item-doctype:focus, #openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item-doctype:active {
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:hover,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:focus,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item:active,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:hover,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:focus,
+#openMe .govuk-grid-row .innerPanel .header-wrapper a.edit-item-doctype:active,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:hover,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:focus,
+#openMe .govuk-grid-row .innerPanel .sub-header-wrapper a.edit-item:active,
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .sub-header-wrapper
+  a.edit-item-doctype:hover,
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .sub-header-wrapper
+  a.edit-item-doctype:focus,
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .sub-header-wrapper
+  a.edit-item-doctype:active {
   background: url("../images/edit-dark-blue.svg") no-repeat 50% 50%;
   background-size: contain;
 }
@@ -15762,10 +16204,20 @@ main.case-files .redaction-footer button {
   width: 17%;
   display: inline-block;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .document-details div:first-of-type {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .header-wrapper
+  .document-details
+  div:first-of-type {
   padding-left: 0;
 }
-#openMe .govuk-grid-row .innerPanel .header-wrapper .document-details div:last-of-type {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .header-wrapper
+  .document-details
+  div:last-of-type {
   padding-right: 0;
 }
 #openMe .govuk-grid-row .innerPanel .header-wrapper h1 {
@@ -15805,18 +16257,32 @@ main.case-files .redaction-footer button {
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper {
   padding: 0px 0px 0 0px;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-1, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-2, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-3, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-4, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-5 {
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-1,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-2,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-3,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-4,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-5 {
   border-bottom: 3px dashed #b1b4b6;
   padding: 20px 0;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-1 p, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-2 p, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-3 p, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-4 p, #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-5 p {
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-1 p,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-2 p,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-3 p,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-4 p,
+#openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-5 p {
   margin: 0;
   font-weight: bold;
 }
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper #form-row-1 {
   padding-top: 0;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-radios .govuk-radios__conditional .govuk-form-group {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .govuk-radios
+  .govuk-radios__conditional
+  .govuk-form-group {
   float: initial;
 }
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group {
@@ -15824,13 +16290,26 @@ main.case-files .redaction-footer button {
   float: left;
   margin: 0 2em 0 0;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group.radio-controls {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .govuk-form-group.radio-controls {
   margin: 0 0 1.25em 0;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group:first-of-type {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .govuk-form-group:first-of-type {
   padding: 0 0 0 10px;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group .govuk-label.no-margin {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .govuk-form-group
+  .govuk-label.no-margin {
   margin: 0;
 }
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-character-count {
@@ -15838,7 +16317,12 @@ main.case-files .redaction-footer button {
   float: left;
   margin: 0 2em 0 0;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-character-count .govuk-form-group {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .govuk-character-count
+  .govuk-form-group {
   margin: 0;
   padding-left: 0;
   width: 100%;
@@ -15846,13 +16330,27 @@ main.case-files .redaction-footer button {
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper .cta-group {
   padding: 1.5em 25px 0 25px;
 }
-#openMe .govuk-grid-row .innerPanel .redaction-wrapper .cta-group .govuk-form-group {
+#openMe
+  .govuk-grid-row
+  .innerPanel
+  .redaction-wrapper
+  .cta-group
+  .govuk-form-group {
   width: 100%;
   margin: 0 0 0.75em 0;
   padding: 0;
 }
 #openMe .govuk-grid-row .innerPanel .redaction-wrapper .cta-group button {
   margin-right: 1em;
+}
+#openMe .redaction-summary {
+  color: #000;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+}
+#openMe .redaction-summary .redaction-summary-list {
+  list-style: none;
+  padding:0;
 }
 #openMe .govuk-grid-row .innerPanel .wrapper {
   position: relative;
@@ -15892,7 +16390,8 @@ main.case-files .redaction-footer button {
   margin-bottom: 0;
   width: 100%;
 }
-#openMe .search-results p, #openMe .search-results .govuk-form-group {
+#openMe .search-results p,
+#openMe .search-results .govuk-form-group {
   display: inline-block;
 }
 #openMe .search-results p {
@@ -16005,7 +16504,9 @@ main.case-files .redaction-footer button {
   background: url("../images/delete-blue.svg") no-repeat 50% 50%;
   background-size: contain;
 }
-.delete:hover, .delete:active, .delete:focus {
+.delete:hover,
+.delete:active,
+.delete:focus {
   background: url("../images/delete-dark-blue.svg") no-repeat 50% 50%;
   background-size: contain;
 }
@@ -16027,7 +16528,8 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments {
   margin-top: 1em;
   padding: 0.5em;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments p, main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments a {
+main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments p,
+main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments a {
   margin: 0 !important;
   font-size: 1rem;
   display: inline;
@@ -16038,13 +16540,23 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments p {
 main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments a {
   color: #1d70b8 !important;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments a.document {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .attachments
+  a.document {
   padding-left: 1.25em;
   background: url("../images/attachments-grey.svg") no-repeat 0% 50%;
   background-size: contain;
   margin-left: 0.25em !important;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .attachments a.document:first-of-type {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .attachments
+  a.document:first-of-type {
   margin-left: 0.5em;
 }
 main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage p {
@@ -16061,7 +16573,8 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage a {
   color: white !important;
   font-weight: bold;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage p, main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage a {
+main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage p,
+main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage a {
   margin: 20px 0 0 10px;
   padding: 0;
   line-height: 1;
@@ -16073,7 +16586,12 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown {
   display: inline-block;
   float: right;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown .dropbtn {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  .dropbtn {
   background: url("../images/arrow-down-white.svg") #185c97 no-repeat 95% 50%;
   background-size: 1em;
   margin: 10px;
@@ -16086,15 +16604,36 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown .dropbtn 
   cursor: pointer;
   text-decoration: underline;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown .dropbtn.open {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  .dropbtn.open {
   background: url("../images/arrow-up-white.svg") #003078 no-repeat 95% 50%;
   background-size: 1em;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown .dropbtn:hover, main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown .dropbtn:focus {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  .dropbtn:hover,
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  .dropbtn:focus {
   background-color: #003078;
   cursor: pointer;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content {
   display: none;
   position: absolute;
   top: 46px;
@@ -16106,10 +16645,21 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdo
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content.show {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content.show {
   display: block;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content button {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content
+  button {
   text-align: right;
   color: #0b0c0c !important;
   padding: 10px;
@@ -16123,7 +16673,27 @@ main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdo
   width: 100%;
   font-size: 1rem;
 }
-main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content button:hover, main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content button:focus, main.case-files .file1 .govuk-tabs__panel .docSummaryTopPage .dropdown #myDropdown.dropdown-content button:active {
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content
+  button:hover,
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content
+  button:focus,
+main.case-files
+  .file1
+  .govuk-tabs__panel
+  .docSummaryTopPage
+  .dropdown
+  #myDropdown.dropdown-content
+  button:active {
   background-color: #ddd;
   cursor: pointer;
 }
@@ -16275,11 +16845,13 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   top: 50px;
   width: 237px;
 }
-#navbar #searchFormTest .searchForm-inner input, #navbar #searchFormTest .searchForm-inner .bba {
+#navbar #searchFormTest .searchForm-inner input,
+#navbar #searchFormTest .searchForm-inner .bba {
   display: none;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
-#navbar #searchFormTest .searchForm-inner input.show, #navbar #searchFormTest .searchForm-inner .bba.show {
+#navbar #searchFormTest .searchForm-inner input.show,
+#navbar #searchFormTest .searchForm-inner .bba.show {
   display: inline-block;
 }
 #navbar #searchFormTest .search-button {
@@ -16300,7 +16872,9 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   background: url("../images/search-white.svg") #1d70b8 no-repeat 50% 50%;
   background-size: 1.25em;
 }
-#navbar #searchFormTest .search-button:hover, #navbar #searchFormTest .search-button:active, #navbar #searchFormTest .search-button:focus {
+#navbar #searchFormTest .search-button:hover,
+#navbar #searchFormTest .search-button:active,
+#navbar #searchFormTest .search-button:focus {
   cursor: pointer;
 }
 #navbar.sticky + .case-info {
@@ -16349,7 +16923,9 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   border-radius: 50%;
   border: none;
 }
-.window-size:hover, .window-size:focus, .window-size:active {
+.window-size:hover,
+.window-size:focus,
+.window-size:active {
   animation: pulse 1.5s infinite;
   cursor: pointer;
   background: url("../images/arrow-left-white.svg") #003078 no-repeat 45% 50%;
@@ -16359,7 +16935,9 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   background: url("../images/arrow-right-white.svg") #1d70b8 no-repeat 55% 50%;
   background-size: 0.75em;
 }
-.window-size.close:hover, .window-size.close:focus, .window-size.close:active {
+.window-size.close:hover,
+.window-size.close:focus,
+.window-size.close:active {
   animation: pulse 1.5s infinite;
   cursor: pointer;
   background: url("../images/arrow-right-white.svg") #003078 no-repeat 55% 50%;
@@ -16380,7 +16958,15 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   z-index: 2000;
   overflow: hidden;
 }
-#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:hover, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:active, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:focus, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:hover, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:active, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:focus, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:hover, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:active, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:focus {
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:hover,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:active,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.left:focus,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:hover,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:active,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.right:focus,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:hover,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:active,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li.down:focus {
   animation: pulse 1.5s infinite;
   cursor: pointer;
 }
@@ -16396,15 +16982,21 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   background: url("../images/arrow-down-grey.svg") no-repeat 100% 50%;
   background-size: 1.25em;
 }
-#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.right, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.right, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.right {
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.right,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.right,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.right {
   background: url("../images/arrow-right-blue.svg") no-repeat 50% 40%;
   background-size: 0.85em;
 }
-#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.left, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.left, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.left {
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.left,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.left,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.left {
   background: url("../images/arrow-left-blue.svg") no-repeat 50% 40%;
   background-size: 0.85em;
 }
-#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.down, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.down, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.down {
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:hover.down,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:active.down,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky li:focus.down {
   background: url("../images/arrow-down-blue.svg") no-repeat 100% 50%;
   background-size: 1.25em;
 }
@@ -16420,7 +17012,8 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
 #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li {
   margin-bottom: 0;
 }
-#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li.arrow.left, #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li.arrow.right {
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li.arrow.left,
+#navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li.arrow.right {
   top: 2px;
 }
 #navbar2 ul.govuk-tabs__list.sticky-tabs.sticky.full-width li.arrow.down {
@@ -16442,7 +17035,8 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   border-bottom: none;
   background: #e1dfdc;
 }
-#navbar2 ul.govuk-tabs__list li a:active, #navbar2 ul.govuk-tabs__list li a:focus {
+#navbar2 ul.govuk-tabs__list li a:active,
+#navbar2 ul.govuk-tabs__list li a:focus {
   background: #003078;
 }
 #navbar2 ul.govuk-tabs__list li.arrow {
@@ -16451,11 +17045,20 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   height: 3.5em;
   display: inline-block;
 }
-#navbar2 ul.govuk-tabs__list li.arrow.left:hover, #navbar2 ul.govuk-tabs__list li.arrow.left:active, #navbar2 ul.govuk-tabs__list li.arrow.left:focus, #navbar2 ul.govuk-tabs__list li.arrow.right:hover, #navbar2 ul.govuk-tabs__list li.arrow.right:active, #navbar2 ul.govuk-tabs__list li.arrow.right:focus, #navbar2 ul.govuk-tabs__list li.arrow.down:hover, #navbar2 ul.govuk-tabs__list li.arrow.down:active, #navbar2 ul.govuk-tabs__list li.arrow.down:focus {
+#navbar2 ul.govuk-tabs__list li.arrow.left:hover,
+#navbar2 ul.govuk-tabs__list li.arrow.left:active,
+#navbar2 ul.govuk-tabs__list li.arrow.left:focus,
+#navbar2 ul.govuk-tabs__list li.arrow.right:hover,
+#navbar2 ul.govuk-tabs__list li.arrow.right:active,
+#navbar2 ul.govuk-tabs__list li.arrow.right:focus,
+#navbar2 ul.govuk-tabs__list li.arrow.down:hover,
+#navbar2 ul.govuk-tabs__list li.arrow.down:active,
+#navbar2 ul.govuk-tabs__list li.arrow.down:focus {
   animation: pulse 1.5s infinite;
   cursor: pointer;
 }
-#navbar2 ul.govuk-tabs__list li.arrow.left, #navbar2 ul.govuk-tabs__list li.arrow.right {
+#navbar2 ul.govuk-tabs__list li.arrow.left,
+#navbar2 ul.govuk-tabs__list li.arrow.right {
   position: absolute;
   margin: 0;
   top: -3px;
@@ -16480,15 +17083,21 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   right: 0;
   top: -7px;
 }
-#navbar2 ul.govuk-tabs__list li.arrow:hover.right, #navbar2 ul.govuk-tabs__list li.arrow:active.right, #navbar2 ul.govuk-tabs__list li.arrow:focus.right {
+#navbar2 ul.govuk-tabs__list li.arrow:hover.right,
+#navbar2 ul.govuk-tabs__list li.arrow:active.right,
+#navbar2 ul.govuk-tabs__list li.arrow:focus.right {
   background: url("../images/arrow-right-blue.svg") no-repeat 50% 40%;
   background-size: 0.85em;
 }
-#navbar2 ul.govuk-tabs__list li.arrow:hover.left, #navbar2 ul.govuk-tabs__list li.arrow:active.left, #navbar2 ul.govuk-tabs__list li.arrow:focus.left {
+#navbar2 ul.govuk-tabs__list li.arrow:hover.left,
+#navbar2 ul.govuk-tabs__list li.arrow:active.left,
+#navbar2 ul.govuk-tabs__list li.arrow:focus.left {
   background: url("../images/arrow-left-blue.svg") no-repeat 50% 40%;
   background-size: 0.85em;
 }
-#navbar2 ul.govuk-tabs__list li.arrow:hover.down, #navbar2 ul.govuk-tabs__list li.arrow:active.down, #navbar2 ul.govuk-tabs__list li.arrow:focus.down {
+#navbar2 ul.govuk-tabs__list li.arrow:hover.down,
+#navbar2 ul.govuk-tabs__list li.arrow:active.down,
+#navbar2 ul.govuk-tabs__list li.arrow:focus.down {
   background: url("../images/arrow-down-blue.svg") no-repeat 100% 50%;
   background-size: 1.25em;
 }
@@ -16500,7 +17109,10 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
 #navbar2 ul.govuk-tabs__list li.govuk-tabs__list-item--selected a {
   color: white;
 }
-#navbar2 ul.govuk-tabs__list li.govuk-tabs__list-item--selected svg.closeButtonOnCPS {
+#navbar2
+  ul.govuk-tabs__list
+  li.govuk-tabs__list-item--selected
+  svg.closeButtonOnCPS {
   top: 14px;
   right: 9px;
   height: 20px;
@@ -16508,14 +17120,24 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   background: url("../images/close-white.svg") no-repeat 50% 50%;
   background-size: contain;
 }
-#navbar2 ul.govuk-tabs__list li.govuk-tabs__list-item--selected svg.closeButtonOnCPS circle, #navbar2 ul.govuk-tabs__list li.govuk-tabs__list-item--selected svg.closeButtonOnCPS path {
+#navbar2
+  ul.govuk-tabs__list
+  li.govuk-tabs__list-item--selected
+  svg.closeButtonOnCPS
+  circle,
+#navbar2
+  ul.govuk-tabs__list
+  li.govuk-tabs__list-item--selected
+  svg.closeButtonOnCPS
+  path {
   display: none;
 }
 #navbar2 .govuk-tabs__panel {
   border: none !important;
 }
 
-#left-column.show-menu, #left-column-top.show-menu {
+#left-column.show-menu,
+#left-column-top.show-menu {
   display: none;
 }
 
@@ -16548,53 +17170,121 @@ main.case-files #pdf-root .PdfHighlighter .page .textLayer {
   background: #f3f2f1;
   padding-left: 0.5em;
 }
-#left-column .accordion .accordion-section .accordion-section-header.no-documents h2.govuk-heading-s {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-header.no-documents
+  h2.govuk-heading-s {
   color: #505a5f;
 }
 #left-column .accordion .accordion-section .accordion-section-body {
   padding: 1em 0 1em 0;
   border-top: 1px solid #b1b4b6;
 }
-#left-column .accordion .accordion-section .accordion-section-body p.govuk-body-s {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  p.govuk-body-s {
   margin-bottom: 10px;
 }
 #left-column .accordion .accordion-section .accordion-section-body table {
   margin: 0 0 1em 0;
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td {
   border-left: none;
   padding-left: 0;
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td a.large {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td
+  a.large {
   margin-bottom: 0.25em;
   display: inline-block;
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td p.date-added {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td
+  p.date-added {
   font-size: 0.875rem;
   color: #505a5f;
   margin: 0;
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td.unreadDocument {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td.unreadDocument {
   border-left: 5px solid #1d70b8;
   padding-left: 1em;
   background: rgba(29, 112, 184, 0.075);
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td.unreadDocument a.show-case {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td.unreadDocument
+  a.show-case {
   font-weight: bold;
   color: #1d70b8;
 }
-#left-column .accordion .accordion-section .accordion-section-body table tbody tr td a.show-case {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  table
+  tbody
+  tr
+  td
+  a.show-case {
   font-weight: normal;
   color: #4c2c92;
 }
-#left-column .accordion .accordion-section .accordion-section-body .govuk-warning-text {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  .govuk-warning-text {
   margin: 0;
 }
-#left-column .accordion .accordion-section .accordion-section-body .govuk-warning-text .govuk-warning-text__text {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  .govuk-warning-text
+  .govuk-warning-text__text {
   font-size: 0.875rem;
   padding-left: 30px;
 }
-#left-column .accordion .accordion-section .accordion-section-body .govuk-warning-text .govuk-warning-text__icon {
+#left-column
+  .accordion
+  .accordion-section
+  .accordion-section-body
+  .govuk-warning-text
+  .govuk-warning-text__icon {
   margin-top: -2px;
   min-width: 20px;
   min-height: 20px;
@@ -16709,7 +17399,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   padding-top: 7px;
 }
 
-.moj-multi-file-upload__dropzone [type=file] {
+.moj-multi-file-upload__dropzone [type="file"] {
   position: absolute;
   left: -9999em;
 }
@@ -16820,7 +17510,8 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   line-height: 1;
 }
 
-[class^=icon-], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   speak: never;
@@ -17122,7 +17813,9 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   height: 2em;
   padding: 0.25em 0.25em;
   color: #000;
-  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1.9em auto no-repeat;
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+    center/1.9em auto no-repeat;
   border: 0;
   border-radius: 0.25rem;
   opacity: 0.5;
@@ -17188,7 +17881,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }
 
 .survey-panel {
-  background: #DEE0E2;
+  background: #dee0e2;
   padding: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -17203,7 +17896,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 20px solid #DEE0E2;
+  border-bottom: 20px solid #dee0e2;
   clear: both;
 }
 
@@ -17736,7 +18429,8 @@ gem-c-pagination__link-text {
   list-style: none;
 }
 
-@media only screen and (max-width: 630px), (min-device-width: 630px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 630px),
+  (min-device-width: 630px) and (max-device-width: 1024px) {
   .toDoHome {
     margin: 25px 0 0 0;
     font-size: 22px !important;
@@ -17746,23 +18440,33 @@ gem-c-pagination__link-text {
   margin: 0 0 0 15px;
 }
 
-@media only screen and (max-width: 630px), (min-device-width: 630px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 630px),
+  (min-device-width: 630px) and (max-device-width: 1024px) {
   .mobileTweak {
     margin: 15px 0 0 0;
   }
 }
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  #transactions .govuk-table__header--numeric, .govuk-table__cell--numeric,
-  #cohort .govuk-table__header--numeric, .govuk-table__cell--numeric {
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  #transactions .govuk-table__header--numeric,
+  .govuk-table__cell--numeric,
+  #cohort .govuk-table__header--numeric,
+  .govuk-table__cell--numeric {
     text-align: left;
   }
   /* Force table to not be like tables anymore */
-  #transactions table, #cohort table,
-  #transactions thead, #cohort thead,
-  #transactions tbody, #cohort tbody,
-  #transactions th, #cohort th,
-  #transactions td, #cohort td,
-  #transactions tr, #cohort tr {
+  #transactions table,
+  #cohort table,
+  #transactions thead,
+  #cohort thead,
+  #transactions tbody,
+  #cohort tbody,
+  #transactions th,
+  #cohort th,
+  #transactions td,
+  #cohort td,
+  #transactions tr,
+  #cohort tr {
     display: block;
   }
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -17901,22 +18605,26 @@ gem-c-pagination__link-text {
 .js-enabled .govuk-tabs__tab {
   margin-bottom: 0;
 }
-.js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited {
+.js-enabled .govuk-tabs__tab:link,
+.js-enabled .govuk-tabs__tab:visited {
   color: #0b0c0c;
 }
 @media print {
-  .js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited {
+  .js-enabled .govuk-tabs__tab:link,
+  .js-enabled .govuk-tabs__tab:visited {
     color: #000000;
   }
 }
 .js-enabled .govuk-tabs__tab:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+.js-enabled .govuk-tabs__tab:active,
+.js-enabled .govuk-tabs__tab:focus {
   color: #0b0c0c;
 }
 @media print {
-  .js-enabled .govuk-tabs__tab:active, .js-enabled .govuk-tabs__tab:focus {
+  .js-enabled .govuk-tabs__tab:active,
+  .js-enabled .govuk-tabs__tab:focus {
     color: #000000;
   }
 }
@@ -18150,7 +18858,8 @@ gem-c-pagination__link-text {
   }
 }
 
-#chatAppear, #chatAppearN {
+#chatAppear,
+#chatAppearN {
   position: fixed;
   bottom: 5px;
   right: 5px;
@@ -18164,7 +18873,8 @@ gem-c-pagination__link-text {
   box-shadow: -5px 10px 18px #b1b4b6;
 }
 
-#hideBar, #hideBarN {
+#hideBar,
+#hideBarN {
   position: fixed;
   bottom: 5px;
   right: 5px;
@@ -18174,24 +18884,28 @@ gem-c-pagination__link-text {
   box-shadow: -5px 10px 18px #b1b4b6;
 }
 
-.chat-header, .chat-headerN {
+.chat-header,
+.chat-headerN {
   display: flex;
   background-color: #000;
   height: 40px;
   border: 1px solid black;
 }
 
-.chatMin, .chatMinN {
+.chatMin,
+.chatMinN {
   flex-grow: 1;
 }
 
-.chat-header p, .chat-headerN p {
+.chat-header p,
+.chat-headerN p {
   color: #fff;
   padding: 5px 15px;
   font-size: 16px;
 }
 
-.chat-operator, .chat-operatorN {
+.chat-operator,
+.chat-operatorN {
   height: 75px;
   border-bottom: 1px solid #f3f2f1;
 }
@@ -18210,11 +18924,13 @@ gem-c-pagination__link-text {
   flex-direction: column-reverse;
 }
 
-.flex-chat, .flex-chatN {
+.flex-chat,
+.flex-chatN {
   display: flex;
 }
 
-.chat-picture, .chat-pictureN {
+.chat-picture,
+.chat-pictureN {
   flex-grow: 1;
   padding-top: 15px;
 }
@@ -18225,12 +18941,14 @@ gem-c-pagination__link-text {
   border-radius: 50%;
 }
 
-.chat-copy, .chat-copyN {
+.chat-copy,
+.chat-copyN {
   padding-top: 25px;
   flex-grow: 5;
 }
 
-.chat-enter input, .chat-enterN input {
+.chat-enter input,
+.chat-enterN input {
   border-left: none;
   border-right: none;
 }
@@ -18399,7 +19117,8 @@ body {
   .flexFirstWidth {
     width: 125px;
   }
-  .task-name, .app-task-list__task-name {
+  .task-name,
+  .app-task-list__task-name {
     font-size: 16px !important;
     width: 66%;
   }
@@ -18733,20 +19452,41 @@ body {
 .app-funding-bar .app-funding-bar__values .app-funding-bar__stack:last-of-type {
   flex: auto;
 }
-.app-funding-bar .app-funding-bar__titles .app-funding-bar__stack:last-of-type .app-funding-bar__title,
-.app-funding-bar .app-funding-bar__titles .app-funding-bar__stack:last-of-type .app-funding-bar__value,
-.app-funding-bar .app-funding-bar__values .app-funding-bar__stack:last-of-type .app-funding-bar__title,
-.app-funding-bar .app-funding-bar__values .app-funding-bar__stack:last-of-type .app-funding-bar__value {
+.app-funding-bar
+  .app-funding-bar__titles
+  .app-funding-bar__stack:last-of-type
+  .app-funding-bar__title,
+.app-funding-bar
+  .app-funding-bar__titles
+  .app-funding-bar__stack:last-of-type
+  .app-funding-bar__value,
+.app-funding-bar
+  .app-funding-bar__values
+  .app-funding-bar__stack:last-of-type
+  .app-funding-bar__title,
+.app-funding-bar
+  .app-funding-bar__values
+  .app-funding-bar__stack:last-of-type
+  .app-funding-bar__value {
   align-self: flex-end;
   text-align: right;
 }
-.app-funding-bar .app-funding-bar__titles .app-funding-bar__stack:first-of-type .app-funding-bar__title {
+.app-funding-bar
+  .app-funding-bar__titles
+  .app-funding-bar__stack:first-of-type
+  .app-funding-bar__title {
   margin-right: 30px;
 }
-.app-funding-bar .app-funding-bar__titles .app-funding-bar__stack:last-of-type .app-funding-bar__title {
+.app-funding-bar
+  .app-funding-bar__titles
+  .app-funding-bar__stack:last-of-type
+  .app-funding-bar__title {
   margin-left: 30px;
 }
-.app-funding-bar .app-funding-bar__titles .app-funding-bar__stack .app-funding-bar__title {
+.app-funding-bar
+  .app-funding-bar__titles
+  .app-funding-bar__stack
+  .app-funding-bar__title {
   order: 99;
   margin-bottom: 15px;
   font-family: "GDS Transport", arial, sans-serif;
@@ -18758,19 +19498,28 @@ body {
   line-height: 1.15;
 }
 @media print {
-  .app-funding-bar .app-funding-bar__titles .app-funding-bar__stack .app-funding-bar__title {
+  .app-funding-bar
+    .app-funding-bar__titles
+    .app-funding-bar__stack
+    .app-funding-bar__title {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-funding-bar .app-funding-bar__titles .app-funding-bar__stack .app-funding-bar__title {
+  .app-funding-bar
+    .app-funding-bar__titles
+    .app-funding-bar__stack
+    .app-funding-bar__title {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.15;
   }
 }
 @media print {
-  .app-funding-bar .app-funding-bar__titles .app-funding-bar__stack .app-funding-bar__title {
+  .app-funding-bar
+    .app-funding-bar__titles
+    .app-funding-bar__stack
+    .app-funding-bar__title {
     font-size: 14pt;
     line-height: 1.15;
   }
@@ -18778,7 +19527,10 @@ body {
 .app-funding-bar .app-funding-bar__values {
   margin-bottom: 15px;
 }
-.app-funding-bar .app-funding-bar__values .app-funding-bar__stack .app-funding-bar__value {
+.app-funding-bar
+  .app-funding-bar__values
+  .app-funding-bar__stack
+  .app-funding-bar__value {
   z-index: 99;
   order: 1;
   flex: 1;
@@ -18791,28 +19543,41 @@ body {
   line-height: 1.5;
 }
 @media print {
-  .app-funding-bar .app-funding-bar__values .app-funding-bar__stack .app-funding-bar__value {
+  .app-funding-bar
+    .app-funding-bar__values
+    .app-funding-bar__stack
+    .app-funding-bar__value {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-funding-bar .app-funding-bar__values .app-funding-bar__stack .app-funding-bar__value {
+  .app-funding-bar
+    .app-funding-bar__values
+    .app-funding-bar__stack
+    .app-funding-bar__value {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.5;
   }
 }
 @media print {
-  .app-funding-bar .app-funding-bar__values .app-funding-bar__stack .app-funding-bar__value {
+  .app-funding-bar
+    .app-funding-bar__values
+    .app-funding-bar__stack
+    .app-funding-bar__value {
     font-size: 18pt;
     line-height: 1.5;
   }
 }
-.app-funding-bar .app-funding-bar__values .app-funding-bar__stack:nth-of-type(1) {
+.app-funding-bar
+  .app-funding-bar__values
+  .app-funding-bar__stack:nth-of-type(1) {
   color: white;
   background: #1d70b8;
 }
-.app-funding-bar .app-funding-bar__values .app-funding-bar__stack:nth-of-type(2) {
+.app-funding-bar
+  .app-funding-bar__values
+  .app-funding-bar__stack:nth-of-type(2) {
   background: #505a5f;
 }
 
@@ -18832,14 +19597,19 @@ body {
   flex: 1 1 0 400px;
   flex-flow: column;
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box {
   display: flex;
   align-items: stretch;
   flex-direction: column;
   flex-grow: 1;
   margin-bottom: 15px;
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18851,24 +19621,36 @@ body {
   display: block;
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-size: 36px;
     font-size: 2.25rem;
     line-height: 1.1111111111;
   }
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-size: 24pt;
     line-height: 1.05;
   }
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18882,24 +19664,36 @@ body {
   margin-bottom: 1rem;
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__description {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18910,27 +19704,41 @@ body {
   display: block;
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle {
   color: #333;
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__figure {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18941,24 +19749,36 @@ body {
   margin-bottom: 0;
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+.app-finance-mini-box__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__description {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18969,19 +19789,28 @@ body {
   display: block;
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .app-finance-mini-box__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-size: 14pt;
     line-height: 1.2;
   }
@@ -18996,10 +19825,15 @@ body {
   display: flex;
   flex-flow: column wrap;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box {
   margin-bottom: 15px;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure {
   display: flex;
   flex-grow: 1;
   font-family: "GDS Transport", arial, sans-serif;
@@ -19017,24 +19851,36 @@ body {
   position: relative;
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-size: 36px;
     font-size: 2.25rem;
     line-height: 1.1111111111;
   }
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure {
     font-size: 24pt;
     line-height: 1.05;
   }
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19045,24 +19891,36 @@ body {
   text-align: left;
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__figure.app-finance-mini-box__figure--small {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure:before {
   content: "";
   position: absolute;
   top: -1px;
@@ -19071,16 +19929,28 @@ body {
   width: 0.625rem;
   background-color: #0b0c0c;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--blue:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--blue:before {
   background-color: #1d70b8;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--light-blue:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--light-blue:before {
   background-color: #5694ca;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__figure.app-finance-mini-box__figure--red:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--red:before {
   background-color: #d4351c;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box
+  .app-finance-mini-box__description {
   display: flex;
   align-items: stretch;
   flex-direction: column;
@@ -19095,24 +19965,36 @@ body {
   display: block;
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box
+    .app-finance-mini-box__description {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__figure {
   background: #505a5f;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19123,30 +20005,48 @@ body {
   line-height: 1.1111111111;
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__figure {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__figure:before {
   background-color: #f3f2f1;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__figure.app-finance-mini-box__figure--red:before {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__figure.app-finance-mini-box__figure--red:before {
   background-color: #d4351c;
 }
-.app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+.app-finance-mini-box--v2__wrapper
+  .app-finance-mini-box__item
+  .app-finance-mini-box.app-finance-mini-box--subtle
+  .app-finance-mini-box__description {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19156,19 +20056,28 @@ body {
   line-height: 1.1428571429;
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
   }
 }
 @media print {
-  .app-finance-mini-box--v2__wrapper .app-finance-mini-box__item .app-finance-mini-box.app-finance-mini-box--subtle .app-finance-mini-box__description {
+  .app-finance-mini-box--v2__wrapper
+    .app-finance-mini-box__item
+    .app-finance-mini-box.app-finance-mini-box--subtle
+    .app-finance-mini-box__description {
     font-size: 14pt;
     line-height: 1.2;
   }
@@ -19218,7 +20127,8 @@ table.sortable th.sorttable_sorted_reverse {
   margin-bottom: 0;
 }
 
-.govuk-link--white:link, .govuk-link--white:visited {
+.govuk-link--white:link,
+.govuk-link--white:visited {
   color: #fff;
 }
 
@@ -19408,7 +20318,8 @@ table.sortable th.sorttable_sorted_reverse {
   width: 55%;
   font-weight: normal;
 }
-.details-list tr:first-child th, .details-list tr:first-child td {
+.details-list tr:first-child th,
+.details-list tr:first-child td {
   border-top: 1px solid #b1b4b6;
 }
 
@@ -19546,7 +20457,10 @@ a.block-panel {
   background-color: #005ea5;
   color: white;
 }
-.govuk-panel--blue .govuk-heading-m, .govuk-panel--blue .govuk-panel__body, .govuk-panel--blue .govuk-panel__body p, .govuk-panel--blue .govuk-list {
+.govuk-panel--blue .govuk-heading-m,
+.govuk-panel--blue .govuk-panel__body,
+.govuk-panel--blue .govuk-panel__body p,
+.govuk-panel--blue .govuk-list {
   color: white;
 }
 
@@ -19560,12 +20474,14 @@ a.block-panel {
   background-color: #dee0e2;
 }
 
-.govuk-button.btn-secondary:link, .govuk-button.btn-secondary:visited {
+.govuk-button.btn-secondary:link,
+.govuk-button.btn-secondary:visited {
   color: #0b0c0c;
   background-color: #dee0e2;
 }
 
-.govuk-button.btn-secondary:active, .govuk-button.btn-secondary:hover {
+.govuk-button.btn-secondary:active,
+.govuk-button.btn-secondary:hover {
   background-color: #d0d3d6;
 }
 
@@ -19857,7 +20773,8 @@ a.block-panel {
   display: none;
 }
 
-.c3 line, .c3 path {
+.c3 line,
+.c3 path {
   fill: none;
   stroke: #000;
 }
@@ -20114,7 +21031,9 @@ a.block-panel {
   line-height: 2.64706;
   font-weight: 400;
   text-transform: none;
-  background: #fff url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-0753eda0cd8d71b5d9b5053abf172100c03b94b49e7f24d82e0f6551302a0aca.png) no-repeat 100% -2px;
+  background: #fff
+    url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-0753eda0cd8d71b5d9b5053abf172100c03b94b49e7f24d82e0f6551302a0aca.png)
+    no-repeat 100% -2px;
   display: block;
   padding: 0 16px;
   position: relative;
@@ -20132,7 +21051,12 @@ a.block-panel {
     line-height: 1.875;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20/10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 20/10),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
   .js-tab-content .programme-progression li a,
   .js-tab-content .programme-progression li h1,
   .js-tab-content .js-heading-tab a,
@@ -20287,14 +21211,16 @@ a.block-panel {
   nav a:hover {
     background-color: rgba(255, 255, 255, 0.08);
   }
-  nav li:last-child { /* The menu button */
+  nav li:last-child {
+    /* The menu button */
     position: absolute; /* Move the menu button out of flow */
     right: 0;
     bottom: 44px; /* Move upwards, the same distance as the menu height */
     background-image: linear-gradient(to right, #fff, #fff 2em);
     padding-left: 2em;
   }
-  nav li:nth-last-child(2) { /* The close button */
+  nav li:nth-last-child(2) {
+    /* The close button */
     display: none;
   }
   nav#menu:target {
@@ -20456,7 +21382,8 @@ ul.hidden-links li:first-child {
   margin: -2px;
 }
 
-.task-name, .app-task-list__task-name {
+.task-name,
+.app-task-list__task-name {
   font-size: 19px;
   width: 66%;
 }
@@ -20629,7 +21556,9 @@ ul.hidden-links li:first-child {
   background-color: #006435;
 }
 
-.feedback-good p, .feedback-outstanding p, .feedback-well-below-average p {
+.feedback-good p,
+.feedback-outstanding p,
+.feedback-well-below-average p {
   color: #fff;
 }
 
@@ -20642,11 +21571,11 @@ ul.hidden-links li:first-child {
   background: transparent;
   border-width: 0;
   font-size: 16px;
-  color: #005EA5;
+  color: #005ea5;
   cursor: pointer;
 }
 
-.accordion .accordion-section[aria-expanded=false] .accordion-section-body {
+.accordion .accordion-section[aria-expanded="false"] .accordion-section-body {
   display: none;
 }
 
@@ -20675,7 +21604,7 @@ ul.hidden-links li:first-child {
 }
 
 .accordion.with-js .accordion-section-header h2 {
-  color: #005EA5;
+  color: #005ea5;
 }
 
 .accordion.with-js .accordion-section-header:hover {
@@ -20693,12 +21622,13 @@ ul.hidden-links li:first-child {
   /* PNG fallback for SVG */
   background-image: url("/public/images/icon-plus-minus.png");
   /* SVG sprite */
-  background: url("/public/images/icon-plus-minus.svg"), linear-gradient(transparent, transparent);
+  background: url("/public/images/icon-plus-minus.svg"),
+    linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   background-position: 0 -16px;
 }
 
-.accordion.with-js .accordion-section[aria-expanded=true] .icon {
+.accordion.with-js .accordion-section[aria-expanded="true"] .icon {
   background-position: 0 0;
 }
 
@@ -20821,7 +21751,8 @@ dt {
   margin-bottom: 1em;
 }
 
-.data-list dt, .data-list dd {
+.data-list dt,
+.data-list dd {
   float: left;
   box-sizing: border-box;
   padding-bottom: 7.5px;
@@ -20836,7 +21767,8 @@ dt {
   line-height: 1.3157894737;
 }
 
-.data-list dt, .data-list dd {
+.data-list dt,
+.data-list dd {
   float: left;
   box-sizing: border-box;
   padding-bottom: 7.5px;
@@ -21078,45 +22010,45 @@ nav {
   margin-top: 0;
 }
 
-.error-summary h1[class^=heading-],
-.info-summary h1[class^=heading-],
-.success-summary h1[class^=heading-],
-.warning-summary h1[class^=heading-] {
+.error-summary h1[class^="heading-"],
+.info-summary h1[class^="heading-"],
+.success-summary h1[class^="heading-"],
+.warning-summary h1[class^="heading-"] {
   margin: 0;
 }
 
-.error-summary h2[class^=heading-],
-.info-summary h2[class^=heading-],
-.success-summary h2[class^=heading-],
-.warning-summary h2[class^=heading-] {
+.error-summary h2[class^="heading-"],
+.info-summary h2[class^="heading-"],
+.success-summary h2[class^="heading-"],
+.warning-summary h2[class^="heading-"] {
   margin: 0;
 }
 
-.error-summary h3[class^=heading-],
-.info-summary h3[class^=heading-],
-.success-summary h3[class^=heading-],
-.warning-summary h3[class^=heading-] {
+.error-summary h3[class^="heading-"],
+.info-summary h3[class^="heading-"],
+.success-summary h3[class^="heading-"],
+.warning-summary h3[class^="heading-"] {
   margin: 0;
 }
 
-.error-summary h4[class^=heading-],
-.info-summary h4[class^=heading-],
-.success-summary h4[class^=heading-],
-.warning-summary h4[class^=heading-] {
+.error-summary h4[class^="heading-"],
+.info-summary h4[class^="heading-"],
+.success-summary h4[class^="heading-"],
+.warning-summary h4[class^="heading-"] {
   margin: 0;
 }
 
-.error-summary h5[class^=heading-],
-.info-summary h5[class^=heading-],
-.success-summary h5[class^=heading-],
-.warning-summary h5[class^=heading-] {
+.error-summary h5[class^="heading-"],
+.info-summary h5[class^="heading-"],
+.success-summary h5[class^="heading-"],
+.warning-summary h5[class^="heading-"] {
   margin: 0;
 }
 
-.error-summary h6[class^=heading-],
-.info-summary h6[class^=heading-],
-.success-summary h6[class^=heading-],
-.warning-summary h6[class^=heading-] {
+.error-summary h6[class^="heading-"],
+.info-summary h6[class^="heading-"],
+.success-summary h6[class^="heading-"],
+.warning-summary h6[class^="heading-"] {
   margin: 0;
 }
 
@@ -21322,7 +22254,8 @@ nav {
   .sfa-logo {
     padding-top: 45px;
     padding-left: 10px;
-    background: url("data:image/png;base64,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") no-repeat 10px 0;
+    background: url("data:image/png;base64,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")
+      no-repeat 10px 0;
   }
 }
 .sfa-logo {
@@ -21347,7 +22280,8 @@ nav {
   }
 }
 @media (min-width: 641px) {
-  #publication-banner .govuk-grid-column-one-third, #publication-banner .govuk-grid-column-two-thirds {
+  #publication-banner .govuk-grid-column-one-third,
+  #publication-banner .govuk-grid-column-two-thirds {
     display: table-cell;
     float: none;
   }
