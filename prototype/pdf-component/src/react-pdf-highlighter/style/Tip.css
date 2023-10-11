@@ -15,11 +15,27 @@
 
 .Tip__card {
   padding: 10px;
+  z-index:7;
   background: #fff;
   background-clip: padding-box;
   border: 1px solid #e8e8e8;
+  /* box-shadow: 0 2px 4px #fff; */
+  border-radius: 5px;
+  filter: drop-shadow(0 1px 0.15rem #000);
+}
 
-  /* box-shadow: 0 2px 4px #fff;*/
+.Tip__btn-redact{
+  border-radius: 5px;
+  margin-top: -5px;
+  padding: 5px 10px;
+  font-size: 19px;
+  background-color: #00703c;
+  color: #fff;
+  font-family: TransportNew,Arial,sans-serif;
+  &:disabled{
+      cursor: none;
+      opacity: 0.5;
+  }
 }
 
 .Tip__card textarea {

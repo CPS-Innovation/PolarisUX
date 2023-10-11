@@ -74,16 +74,6 @@ $(document).ready(function () {
 // =================================== Redaction log =================================== //
 $("#redaction-log, .hidden-select").hide();
 
-function showHideRedaction() {
-    setTimeout(function() {
-        $("#saving-panel").hide();
-        $("#redaction-log").show();
-    }, 2500);
-    setTimeout(function() {
-        $(".success-banner").slideUp();
-    }, 5000);
-}
-
 $(document).ready(function () {
     $(".delete").on("click", function (e) {
         e.preventDefault();

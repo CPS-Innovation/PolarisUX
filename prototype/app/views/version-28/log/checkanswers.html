@@ -1,0 +1,189 @@
+
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v8/logNav.html" %}
+{% include "includes/cps/nav/v8/logHomeNav.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+<style>
+.govuk-footer__copyright-logo {
+  display: none;
+}
+
+.govuk-header__logotype {
+/*  display: none;*/
+}
+
+@media (min-width: 48.0625em) {
+.govuk-header__logo {
+  width: 50% !important;
+}
+}
+
+  @media (max-width: 641px) {
+.govuk-header__logotype-text {
+  font-size: 22px;
+}
+ }
+</style>
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <h1 class="govuk-heading-xl">Check your answers</h1>
+
+<h2 class="govuk-heading-m">Case details</h2>
+ <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case URN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['CaseURN'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             CPS area or central casework division
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">    {{ data['sort'] }} </p>
+       
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             CPS area or business unit
+
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> {{ data['unit'] }}</p>
+       
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+         <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Investigative agency
+
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['investigate'] }}</p>
+       
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Redaction details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Document type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['docType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> previous application number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Missed redaction
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {{ data['redactType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> licence type</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Redaction type
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['redactionType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Supporting notes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['more-detail'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Returned to investigative agency
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['returned'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+       <form method="get" action="finish">
+            <button type="submit" class="govuk-button">Finish</button>
+            <!--   <a  class="govuk-button clear-button" href="#" >Cancel</a> -->
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

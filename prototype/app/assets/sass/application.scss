@@ -5012,3 +5012,13 @@ font-size: 19px;
     margin-right:25px;
 }
 
+.redaction-wrapper .redaction-summary {
+  color: #000;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+}
+.redaction-wrapper .redaction-summary .redaction-summary-list {
+  list-style: none;
+  padding:0;
+}
+
