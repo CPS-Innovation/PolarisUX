@@ -20,6 +20,17 @@
             };
         })
     }
+
+    function showHideRedaction() {
+        setTimeout(function () {
+        $("#saving-panel").hide()
+        $("#redaction-log").show()
+        }, 2500)
+        setTimeout(function () {
+        $(".success-banner").slideUp()
+        }, 5000)
+    }
+
     function openModal() {
         $(searchModal).removeClass("rj-dont-display");
     }
@@ -47,6 +58,7 @@
         }
         
         $(redactionModal).removeClass("rj-dont-display");
+        showHideRedaction();
     }
     function closeModal2() {
         $(redactionModal).addClass("rj-dont-display");
