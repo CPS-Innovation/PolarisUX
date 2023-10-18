@@ -7,67 +7,6 @@
   }
 
 
-/*@import url("//hello.myfonts.net/count/413f20");
-  
-@font-face {
-  font-family: "TransportNew";
-    font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  size-adjust: 90%;
-  src: url('/public/fonts/TransportNewLight/font.woff2') format('woff2'), url('/public/fonts/TransportNewLight/font.woff') format('woff');
-}
-
-
-
-@font-face {
-  font-family: "TransportNew";
-    font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  size-adjust: 86.5%;
-  src: url('/public/fonts/TransportNewHeavy/font.woff2') format('woff2'), url('/public/fonts/TransportNewHeavy/font.woff') format('woff');
-}*/
-
-/*$govuk-font-family: "TransportNew", "Arial", sans-serif; */
-
-
-
-
-/* latin */
-/*@font-face {
-  font-family: 'Noto-Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-     size-adjust: 92%;
-  src: url(https://fonts.gstatic.com/s/notosans/v21/o-0IIpQlx3QUlC5A4PNr5TRASf6M7Q.woff2) format('woff2')
-  }*/
-
-
-/* latin */
-/*@font-face {
-  font-family: 'Noto-Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-   size-adjust: 92%;
-  src: url(https://fonts.gstatic.com/s/notosans/v21/o-0NIpQlx3QUlC5A4PNjXhFVZNyBx2pqPA.woff2) format('woff2')
-}*/
-
-/*$govuk-font-family: "Noto-Sans", "Arial", sans-serif; */
- 
-/* Do not bother with this font below:*/
-
- /*@font-face {
-  font-family: "TransportNew";
-    font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  size-adjust: 86%;
-  src: url('/public/fonts/TransportNewMedium/font.woff2') format('woff2'), url('/public/fonts/TransportNewMedium/font.woff') format('woff');
-}*/
-
 
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
@@ -103,40 +42,6 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
-
-/* Sortable tables 
-table.sortable thead {
-    background-color:#eee;
-    color:#666666;
-    font-weight: bold;
-    cursor: default;
-}
-*/
-
-/* 
-table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
-}
-*/
-
-/*table.sortable th:(.sorttable_sorted):(.sorttable_sorted_reverse):(.sorttable_nosort):after { 
-    content: " \25B2\25BC"; font-size: 12px 
-}*/
-
-/* CPS only styles*/
-/*
-.saveAndFinishBar {
-  background-color: #fff;
-  width: 100%;
-  height:  60px;
-  z-index: 99;
-  position: fixed;
-    bottom: 0px;
-    right: 0px;
-    border-top: 4px solid $govuk-border-colour;
-
-
-}*/
 
 .makeBannerMiddle {
    max-width: 1400px;
@@ -1042,12 +947,13 @@ width: 86%;
 
 .blueBoxCPS { 
   width: 98%;
-    background-color: #1d70b8;
+  background-color: #1d70b8;
+  margin-bottom: 25px;
+  padding: 0 20px 5px 20px;
+  box-sizing: border-box;
+  p, ol li {
     color: #fff;
-    margin-bottom: 25px;
-    padding: 0 20px 5px 20px;
-    box-sizing: border-box;
-
+  }
 }
 
  @media (max-width: 1255px) {
@@ -5012,13 +4918,35 @@ font-size: 19px;
     margin-right:25px;
 }
 
-.redaction-wrapper .redaction-summary {
-  color: #000;
-  font-size: 1rem;
-  padding-left: 1.5rem;
-}
-.redaction-wrapper .redaction-summary .redaction-summary-list {
-  list-style: none;
-  padding:0;
-}
 
+.index-page {
+    .govuk-accordion {
+        .govuk-accordion__controls {
+            button {
+                float: right;
+                background: none;
+                border: none;
+                color: $govuk-link-colour;
+                text-decoration: underline;
+                padding: 0;
+                margin-bottom: 0.5em;
+                font-size: 1em;
+                &:hover, &:active, &:focus {
+                    cursor: pointer;
+                }
+            }
+        }
+        .govuk-accordion__section {
+            .govuk-accordion__section-header {
+                &:hover, &:active, &:focus {
+                    cursor: pointer;
+                }
+                .govuk-accordion__section-button {
+                    border-bottom: none;
+                    color: $govuk-link-colour;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

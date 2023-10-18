@@ -1,203 +1,204 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+    CPS Polaris
 {% endblock %}
 {% block content %}
-<!-- <script src="/socket.io/socket.io.js"></script>
-<script>
-var socket = io();
-</script> -->
-<style>
-.govuk-footer__copyright-logo {
-    display: none;
-}
 
-@media (min-width: 48.0625em) {
-    .govuk-header__logo {
-        width: 50% !important;
-    }
-}
+<script src="/public/javascripts/accordion.js"></script>
 
-@media (max-width: 641px) {
-    .govuk-header__logotype-text {
-        font-size: 22px;
-    }
-}
-</style>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row index-page">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">CPS </h1>
-        <h2 class="govuk-heading-m" style="margin-bottom: 30px;">Prototype versions and links</h2>
+        <h1 class="govuk-heading-xl">Prototype versions and links</h1>
+        <h2 class="govuk-heading-m"></h2>
 
-        <h3 class="govuk-heading-s">Chris test version</h3>
+        <p><strong class="govuk-tag">Current version</strong></p>
 
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s">Polaris v28</h2>
-            <p style="margin: 0;"><a href="/version-28/scrolljourneymodal">Design iteration of the redaction log version 2</a></p>
-        </div>
-
-        <!-- CHRIS NEW VERSION 1 - START -->
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s">Polaris v27</h2>
-            <p style="margin: 0;"><a href="/version-27/scrolljourneymodal">Design iteration of the redaction log</a></p>
-        </div>
-        <!-- CHRIS NEW VERSION 1 -END -->
-
-        <!-- CHRIS NEW VERSION 1 - START -->
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s">Polaris v26</h2>
-            <p style="margin: 0;"><a href="/version-26/scrolljourneymodal">New design style and redaction log</a></p>
-        </div>
-        <!-- CHRIS NEW VERSION 1 -END -->
+        {% include './version-29/_summary.html' %}
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-        <p style=""><a href="/witex/">witex</a></p>
+        <p><strong class="govuk-tag govuk-tag--green">previous versions</strong></p>
 
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Polaris v16</h2>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-16/scrolljourneymodal">- New toolbar and missing cases</a></p>
-        </div>
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">
+            Private Beta
+            <span class="govuk-caption-m">1st September 2023 - Present</span>
+        </h2>
 
-   <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Polaris v15</h2>
-        <p style="margin-top:15px; margin-left:20px"><a href="/version-14/scrolljourneymodal">- Lower fidelity cases</a></p>
-        </div>
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-private-beta">
 
-   <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v14</h2>
-        <p style="margin-top:15px; margin-left:20px"><a href="/version-14/scrolljourneymodal">- Journey</a></p>
-              <p style="margin-top:15px; margin-left:20px"><a href="/version-14/scrolljourneymodal/casefile">- Casefile - one defandant</a></p> 
-        </div>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-private-beta-heading-1"> New design iterations</span>
+                    </h2>
+                </div>
+                <div id="accordion-private-beta-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-private-beta-heading-1">
 
+                    <!-- CHRIS NEW VERSION 3 - START -->
+                    {% include './version-28/_summary.html' %}
+                    <!-- CHRIS NEW VERSION 3 - START -->
 
-   <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v13</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
+                    <!-- CHRIS NEW VERSION 2 - START -->
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-m">Polaris v27</h2>
+                        <p class="govuk-body govuk-!-margin-bottom-0">20th September - 3rd October</p>
+                        <p class="govuk-body govuk-!-margin-bottom-0"><a href="/version-27/scrolljourneymodal">Design iteration of the redaction log</a></p>
+                    </div>
+                    <!-- CHRIS NEW VERSION 2 -END -->
 
-        <p style="margin-top:15px; margin-left:20px"><a href="/version-13/scrolljourneymodal">- Journey</a></p>
-              <p style="margin-top:15px; margin-left:20px"><a href="/version-13/scrolljourneymodal/casefile">- Casefile - one defandant</a></p>
-         <p style="margin-top:15px; margin-left:20px"><a href="/version-13/scrolljourneymodal/casefile7">- Casefile - multi defandants + alerts</a></p>
-             <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile8a">- File is locked</a></p>
+                    <!-- CHRIS NEW VERSION 1 - START -->
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-m">Polaris v26</h2>
+                        <p class="govuk-body govuk-!-margin-bottom-0">1st September - 19th September</p>
+                        <p class="govuk-body govuk-!-margin-bottom-0"><a href="/version-26/scrolljourneymodal">New design style and redaction log</a></p>
+                    </div>
+                    <!-- CHRIS NEW VERSION 1 -END -->
 
- 
-        </div>
-
-
-
-    <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v12</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-        <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile10">- All 4 defendants + skeleton search loader</a></p>
-         <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile7">- All 4 defendants + names + link at bottom + alert on "find a case" link</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/searchResultsNotFound">- Search results not found (URN does not exist)</a></p>
-                 <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/searchResultsNotFound2">- Search results not found (Do not have permission)</a></p>
-                 <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile7">- Redaction alert on "Find a case" link</a></p>
-                <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile8">- Tab closed with redaction still unsaved</a></p>
-             <p style="margin-top:15px; margin-left:20px"><a href="/version-12/scrolljourneymodal/casefile9">- Search results loading</a></p>
-        </div>
-
-
-    <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v11</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile">- Lead defendant - standard version</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile2">- All 4 defendants only</a></p>
-           <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile5">- All 4 defendants + names</a></p>
-                      <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile6">- All 4 defendants + names +link at bottom</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/searchResultsNotFound">- Search results not found</a></p>
-                 <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile7">- Redaction alert on "Find a case" link</a></p>
-                <p style="margin-top:15px; margin-left:20px"><a href="/version-11/scrolljourneymodal/casefile8">- Tab closed with redaction still unsaved</a></p>
-
-
+                </div>
+            </div>
 
         </div>
 
+        <h2 class="govuk-heading-m govuk-!-margin-top-3">
+            Alpha
+            <span class="govuk-caption-m">1st June 2022 - Present</span>
+        </h2>
 
-    <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v10</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-10/scrolljourneymodal/">- Tab at top scrolling</a></p>
-        </div>
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-alpha">
 
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v9</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-9/redaction/tagRedact">- Redaction</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-9/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-9/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
-              <p style="margin-top:15px; margin-left:20px"><a href="/version-9/log/">- Redaction log v1 - very GDS</a></p>
-                  <p style="margin-top:15px; margin-left:20px"><a href="/version-9/samelog/">- Redaction log v2 - sort of GDS</a></p>
+            <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-alpha-heading-1"> Previous design iterations</span>
+                    </h2>
+                </div>
+                <div id="accordion-alpha-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-alpha-heading-1">
 
-        </div>
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Polaris v16</h2>
+                        <p><a href="/version-16/scrolljourneymodal">- New toolbar and missing cases</a></p>
+                    </div>
 
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v8</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-8/redaction/tagRedact">- Redaction</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-8/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-8/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
-        </div>
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Polaris v15</h2>
+                        <p><a href="/version-14/scrolljourneymodal">- Lower fidelity cases</a></p>
+                    </div>
 
-    <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v7</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-7/redaction/tagRedact">- Redaction</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-7/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-7/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
-        </div>
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v14</h2>
+                        <p><a href="/version-14/scrolljourneymodal">- Journey</a></p>
+                        <p><a href="/version-14/scrolljourneymodal/casefile">- Casefile - one defandant</a></p> 
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v13</h2>
+                        <p><a href="/version-13/scrolljourneymodal">- Journey</a></p>
+                        <p><a href="/version-13/scrolljourneymodal/casefile">- Casefile - one defandant</a></p>
+                        <p><a href="/version-13/scrolljourneymodal/casefile7">- Casefile - multi defandants + alerts</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/casefile8a">- File is locked</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v12</h2>
+                        <p><a href="/version-12/scrolljourneymodal/casefile10">- All 4 defendants + skeleton search loader</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/casefile7">- All 4 defendants + names + link at bottom + alert on "find a case" link</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/searchResultsNotFound">- Search results not found (URN does not exist)</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/searchResultsNotFound2">- Search results not found (Do not have permission)</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/casefile7">- Redaction alert on "Find a case" link</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/casefile8">- Tab closed with redaction still unsaved</a></p>
+                        <p><a href="/version-12/scrolljourneymodal/casefile9">- Search results loading</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v11</h2>
+                        <p><a href="/version-11/scrolljourneymodal/casefile">- Lead defendant - standard version</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/casefile2">- All 4 defendants only</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/casefile5">- All 4 defendants + names</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/casefile6">- All 4 defendants + names +link at bottom</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/searchResultsNotFound">- Search results not found</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/casefile7">- Redaction alert on "Find a case" link</a></p>
+                        <p><a href="/version-11/scrolljourneymodal/casefile8">- Tab closed with redaction still unsaved</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v10</h2>
+                        <p><a href="/version-10/scrolljourneymodal/">- Tab at top scrolling</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v9</h2>
+                        <p><a href="/version-9/redaction/tagRedact">- Redaction</a></p>
+                        <p><a href="/version-9/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-9/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                        <p><a href="/version-9/log/">- Redaction log v1 - very GDS</a></p>
+                        <p><a href="/version-9/samelog/">- Redaction log v2 - sort of GDS</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v8</h2>
+                        <p><a href="/version-8/redaction/tagRedact">- Redaction</a></p>
+                        <p><a href="/version-8/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-8/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v7</h2>
+                        <p><a href="/version-7/redaction/tagRedact">- Redaction</a></p>
+                        <p><a href="/version-7/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-7/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    </div>
         
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v6</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-6/redaction/tagRedact">- Redaction</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-6/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-6/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v6</h2>
+                        <p><a href="/version-6/redaction/tagRedact">- Redaction</a></p>
+                        <p><a href="/version-6/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-6/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v5</h2>
+                        <p><a href="/version-5/redaction/tagRedact">- Redaction</a></p>
+                        <p><a href="/version-5/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-5/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v3</h2>
+                        <p><a href="/version-4/search">- Search a case</a></p>
+                        <p><a href="/version-4/search/searchresultsMultiple">- Search results</a></p>
+                        <p><a href="/version-4/caseFile">- Case file - Search results in a modal</a></p>
+                        <p><a href="/version-4/scrolljourney/casefile">- Whole page scrolls + tab</a></p>
+                        <p><a href="/version-4/scrolljourney/">- Whole page scrolls journey + tab</a></p>
+                        <p><a href="/version-4/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
+                        <p><a href="/version-4/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v2</h2>
+                        <p><a href="/version-3/search">- Search a case</a></p>
+                        <p><a href="/version-3/search/searchresults">- Search results</a></p>
+                        <p><a href="/version-3/search/searchresultsEmpty">- Empty state Search results</a></p>
+                        <p><a href="/version-3/search/searchresultsMultiple">- Search results with multiple offences</a></p>
+                        <p><a href="/version-3/caseFile">- Case file - Search results in a modal</a></p>
+                        <p><a href="/version-3/caseFile/searchTab">- Case file - Search results in a tab</a></p>
+                        <p><a href="/version-3/scrolljourney/casefile">- Whole page scrolls</a></p>
+                        <p><a href="/version-3/scrolljourney/">- Whole page scrolls journey</a></p>
+                        <p><a href="/version-3/fonts">- Font tests</a></p>
+                    </div>
+
+                    <div class="holdingBlock">
+                        <h2 class="govuk-heading-s">Rumpole v1</h2>
+                        <p><a href="/version-2/search">- Search a case</a></p>
+                        <p><a href="/version-2/search/searchresults">- Search results</a></p>
+                        <p><a href="/version-2/caseFile">- Case file</a></p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v5</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-5/redaction/tagRedact">- Redaction</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-5/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-5/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
-        </div>
-
-
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v3</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/search">- Search a case</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/search/searchresultsMultiple">- Search results</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/caseFile">- Case file - Search results in a modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/scrolljourney/casefile">- Whole page scrolls + tab</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/scrolljourney/">- Whole page scrolls journey + tab</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/scrolljourneymodal/casefile">- Whole page scrolls + modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-4/scrolljourneymodal/">- Whole page scrolls journey + modal</a></p>
-        </div>
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v2</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/search">- Search a case</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/search/searchresults">- Search results</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/search/searchresultsEmpty">- Empty state Search results</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/search/searchresultsMultiple">- Search results with multiple offences</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/caseFile">- Case file - Search results in a modal</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-3/caseFile/searchTab">- Case file - Search results in a tab</a>
-                <p style="margin-top:15px; margin-left:20px"><a href="/version-3/scrolljourney/casefile">- Whole page scrolls</a></p>
-                <p style="margin-top:15px; margin-left:20px"><a href="/version-3/scrolljourney/">- Whole page scrolls journey</a></p>
-                <p style="margin-top:15px; margin-left:20px"><a href="/version-3/fonts">- Font tests</a></p>
-        </div>
-        <div class="holdingBlock">
-            <h2 class="govuk-heading-s" style="margin-bottom:0">Rumpole v1</h2>
-            <!--    <p style="margin-top:10px; font-weight:700">Rumpole</p> -->
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-2/search">- Search a case</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-2/search/searchresults">- Search results</a></p>
-            <p style="margin-top:15px; margin-left:20px"><a href="/version-2/caseFile">- Case file</a></p>
-        </div>
     </div>
 </div>
-</details>
-</div>
-</div>
+
 {% endblock %}

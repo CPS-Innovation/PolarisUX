@@ -34,6 +34,13 @@ header {
     }
 }
 
+.govuk-hint {
+    strong {
+        opacity: 0.25;
+        margin: 0 0.35em;
+    }
+}
+
 .icon-new {
     width: 1em;
     height: 1em;
@@ -72,6 +79,10 @@ header {
         width: 1.5em;
         height: 1.25em;
         margin-right: 0.5em;    
+    }
+    &.document {
+        background: url("../images/doc-type-black.svg") no-repeat 50% 50%;
+        background-size: contain;
     }
 }
 
@@ -179,6 +190,9 @@ main.search {
             }
         }
     }
+    .govuk-caption-m {
+        margin-top: 0.25em;
+    }
 }
 
 main.search-results {
@@ -192,6 +206,7 @@ main.search-results {
         padding:  0 0 2.5em 0;
         margin:  0 0 2.5em 0;
         border-bottom: 1px solid $govuk-border-colour;
+        display: inline-block;
         &:last-of-type {
             border-bottom: none;
         }
@@ -201,7 +216,7 @@ main.search-results {
                 margin-bottom: 0.25em;
                 a {
                     margin: 0 0 0.25em 0;
-                    display: block;
+                    display: inline-block;
                 }
                 span {
                     margin: 0;
@@ -227,6 +242,9 @@ main.search-results {
                     width: 77.5%;
                     float: right;
                 }
+            }
+            p {
+                margin-bottom: 0.25em;
             }
         }
     }
@@ -332,7 +350,7 @@ main.case-files {
         border-bottom: none;
         cursor: pointer;
         float: right;
-        margin: 0.35em 1em 0 0;
+        margin: 0.15em 0 0 0;
         &.label {
             margin: -0.15em 0 0 1.5em;
             button {
@@ -412,6 +430,7 @@ main.case-files {
                 text-align: left;
             }
             p {
+                margin-bottom: 0.5em !important;
                 color: white;
                 font-weight: bold;
             }

@@ -74,6 +74,16 @@ $(document).ready(function () {
 // =================================== Redaction log =================================== //
 $("#redaction-log, .hidden-select").hide();
 
+function showHideRedaction() {
+    setTimeout(function() {
+        $("#saving-panel").hide();
+        $("#redaction-log").show();
+    }, 2500);
+    setTimeout(function() {
+        $(".success-banner").slideUp();
+    }, 5000);
+}
+
 $(document).ready(function () {
     $(".delete").on("click", function (e) {
         e.preventDefault();
@@ -247,7 +257,7 @@ $(document).ready(function () {
         $('.window-size').show();
         var pageCount = $(this).attr("data-page");
         $('.page-counter').addClass('show');
-        $('.page-counter span').text(pageCount);
+        $('.page-counter strong').text(pageCount);
 
         $(this).parent().removeClass('unreadDocument');
 
@@ -257,14 +267,23 @@ $(document).ready(function () {
         $('#read').text(documentsRead);
         $('#unread').text(documentsUnread);
 
+        var documentTitle = $(this).text();
+        $('#document-title').text(documentTitle);
+
         // buttonHome.addEventListener("click", function() {
         //     
         //     alert(CountButtonHomeClicks);
         // });
 
-
     });
+
 })
+
+function documentTitle() {
+    var docTitle = $('#selectedTab').find('a').text();
+    $('#document-title').text(docTitle);
+    $('#document-title-2').text(docTitle);
+}
 
 function showUnread() {
     // Get the checkbox

@@ -200,13 +200,17 @@ main.case-files {
     display: none;
     justify-content: center;
     vertical-align: middle;
-    z-index: 2;
-    color: rgba(white, 0.6);
+    z-index: 3;
     background: $govuk-link-colour; 
     font-weight: normal;
-    div {
-        font-weight: bold;
-        color: white;
+    p {
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(white, 0.6);
+        span {
+            font-weight: bold;
+            color: white;
+        }
     }
 }
 
@@ -235,5 +239,49 @@ main.case-files {
         border-top: none;
         box-shadow: 5px 10px 10px 15px rgba(0,0,0,0.4);
         background: govuk-colour("light-grey");
+    }
+}
+
+.PdfHighlighter__tip-container {
+    .Tip {
+        #redact-modal {
+            display: inline-block;
+            background: white;
+            border: none;
+            box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.2);
+            &:after {
+                width: 0; 
+                height: 0; 
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 15px solid white;
+                position: absolute;
+                // width: 0.5em;
+                // height: 0.5em;
+                left: 50%;
+                margin-left: -10px;
+                bottom: -15px;
+                // background: $govuk-link-colour;
+                content: ' ';
+            }
+            .govuk-form-group {
+                margin: 0;
+                float: left;
+                display: inline-block;
+                label {
+                    // text-indent: -1000em;
+                    display: none;
+                }
+            }
+            button {
+                float: right;
+                display: inline-block;
+                margin: 0 0 0 0.25em;
+                border: none;
+                // border-radius: 0 5px 5px 0;
+                font-weight: normal;
+                min-height: 2em;
+            }
+        }
     }
 }
