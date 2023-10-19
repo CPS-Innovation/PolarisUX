@@ -43,31 +43,62 @@
         }
     }
 
+    function getRedactionTypeNames(count, name) {
+        const pluralNames = {
+            Address: "Addresses",
+            "Date of Birth": "Date of Births",
+            "Named individual": "Named individuals",
+            "Other": "Others",
+            "Occupation": "Occupations",
+            "Phone number": "Phone numbers",
+            "Vehicle registration": "Vehicle registrations",
+            "Email address": "Email addresses",
+            "Location": "Locations",
+            "Bank details": "Bank details",
+            "Previous convictions": "Previous convictions",
+            "Relationship to others": "Relationship to others",
+            "NHS number": "NHS numbers",
+            "NI number": "NI numbers",
+            "Title": "Titles"
+        }
+        if (count > 1) {
+            return pluralNames[name]
+        }
+        return name
+    }
+
     function redactionSummary() {
         const container = document.getElementById("redaction-summary-list")
         const savedRedactions = window.savedHighlights
         const groupedRedactions = savedRedactions.reduce(
             (acc, { redactionType }) => {
-                if (!acc[redactionType]) {
-                    acc[redactionType] = 1
-                    return acc
-                }
-                acc[redactionType] = acc[redactionType] + 1
+            if (!acc[redactionType]) {
+                acc[redactionType] = 1
                 return acc
-            },
-        {}
-    )
+            }
+            acc[redactionType] = acc[redactionType] + 1
+            return acc
+        },
+            {}
+        )
 
-    const sortedArray = Object.entries(groupedRedactions).sort(function (a, b) {
-        return b[1] - a[1]
-    })
-    let html = ""
-    sortedArray.forEach((item) => {
-        html += `<li><b>${item[1]}</b> - ${item[0]}</li>`
-    })
-    // Set the innerHTML of the container to the generated HTML
-    container.innerHTML = html
-}
+        // var targetNumber = $('ul#redaction-summary-list li b').text();
+        // alert(targetNumber);
+
+        const sortedArray = Object.entries(groupedRedactions).sort(function (a, b) {
+            return b[1] - a[1]
+        })
+        let html = ""
+        sortedArray.forEach((item) => {
+            html += `<li><b>${item[1]}</b> - ${getRedactionTypeNames(
+                item[1],
+                item[0]
+            )}</li>`
+        })
+
+        // Set the innerHTML of the container to the generated HTML
+        container.innerHTML = html
+    }
 </script>
 
 <div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="redactionModal">
