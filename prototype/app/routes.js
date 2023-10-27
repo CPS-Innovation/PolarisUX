@@ -13,9 +13,13 @@ router.use('/', (req, res, next) => {
      next();
 });
 
+// Old versions
+router.use('/version-16', require('./views/version-16/_routes'))
+
 ///////////////////////////////////////// New router functionality /////////////////////////////////////////
 
 // User Research and design versions
 router.use('/version-29', require('./views/version-29/_routes'))
+router.use('/version-30', require('./views/version-30/_routes'))
 
 module.exports = router

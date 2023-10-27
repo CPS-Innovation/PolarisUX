@@ -41,6 +41,21 @@ header {
     }
 }
 
+button {
+    &.non-button {
+        color: $govuk-link-colour;
+        text-decoration: underline;
+        font-size: 18px;
+        background: none;
+        padding: 0;
+        margin: 0.5em 0 0 0;
+        border: none;
+        &:hover, &:active, &:focus {
+            cursor: pointer;
+        }
+    }
+}
+
 .icon-new {
     width: 1em;
     height: 1em;
@@ -55,6 +70,11 @@ header {
     &.date-added {
         background: url("../images/calendar.svg") no-repeat 50% 50%;
         background-size: contain;
+    }
+    &.time-added {
+        background: url("../images/time.svg") no-repeat 50% 50%;
+        background-size: 0.85em;
+        margin-left: 0.5em;
     }
     &.pdf-file {
         background: url("../images/pdf-file.svg") no-repeat 50% 50%;
@@ -96,11 +116,25 @@ header {
     }
 }
 
+.govuk-header__logo {
+    padding-right: 0 !important;
+}
+
 .govuk-phase-banner {
     &.header {
         padding: 0;
         .govuk-back-link {
             margin: 10px 0;
+        }
+        &.new-V3 {
+            padding: 0 0 0.75em 0;
+            margin: -5px 0 0.75em 0;
+            a {
+                margin: 0;
+            }
+            .govuk-phase-banner__content {
+                float: right;
+            }
         }
         &.new-V2 {
            border: none;

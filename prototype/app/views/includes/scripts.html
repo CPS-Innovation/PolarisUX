@@ -151,9 +151,9 @@
                             <div class="dropdown">
                                 <button onclick="myFunction(), toggleClass()" class="dropbtn">Document actions</button>
                                 <div id="myDropdown" class="dropdown-content">
-                                    <button onclick="openModalOver()" class="">Log an Over/Under redaction</button>
+                                    <button onclick="openModalOver(), documentTitle()" class="">Log an Over/Under redaction</button>
                                     <button onclick="window.open('https://as-web-redaction-log-dev.azurewebsites.net','_blank')" class="">View redaction log history</button>
-                                    <button onclick="" class="openNewDoc">Report a problem</button>
+                                    <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a problem</button>
                                 </div>
                             </div>
                         </div>

@@ -92,12 +92,62 @@
             }
         }
     }
-    #redaction-over {
+    #redaction-over, #redaction-log {
+        .header-wrapper {
+            h1 {
+                &.govuk-heading-l {
+                    padding-bottom: 0.25em;
+                    margin-bottom: 0.5em;
+                    border-bottom: 3px dashed $govuk-border-colour;
+                }
+            }
+            .form {
+                width: 17.5%;
+                float: left;
+                display: inline-block;
+                padding: 0 2.5% 0 0;
+                &:last-of-type {
+                    padding-right: 0;
+                }
+                input {
+                    width: 100%;
+                }
+            }
+        }
         .innerPanel {
             .redaction-wrapper {
                 .govuk-character-count {
                     width: 98%;
                     margin: 0 5px 0 5px;
+                }
+                .govuk-form-group {
+                    // padding: 0;
+                    // margin: 0;
+                    &.outer-wrapper {
+                        padding: 0;
+                        margin: 0.25em 0 1em 0;
+                    }
+                    .govuk-checkboxes__label {
+                        font-size: 19px;
+                    }
+                    &.redaction-type-wrapper {
+                        // padding: 0;
+                        display: inline-block;
+                        float: none;
+                        margin: 0.5em 0 1em 0;
+                        width: 100%;
+                        padding: 0;
+                        .govuk-checkboxes__label {
+                            font-size: 16px;
+                        }
+                        .govuk-checkboxes__item {
+                            float: left;
+                            clear: none;
+                            padding-right: 2.5%;
+                            width: 18%;
+                            display: inline-block;
+                        }
+                    }
                 }
             }
         }
@@ -157,7 +207,7 @@
                 }
                 p {
                     font-size: 1.2rem;
-                    margin-bottom: 1.5em;
+                    // margin-bottom: 1.5em;
                     &.hide {
                         display: none;
                     }
@@ -327,7 +377,7 @@
                 }
                 .cta-group {
                     // margin-top: 1.5em;
-                    padding: 1.5em 25px 0 25px;
+                    padding: 1.5em 25px 1.5em 25px;
                     // border-top: 1px solid $govuk-border-colour;
                     .govuk-form-group {
                         width: 100%;
@@ -336,6 +386,12 @@
                     }
                     button {
                         margin-right: 1em;
+                        margin-bottom: 0;
+                        float: left;
+                    }
+                    p {
+                        float: left;
+                        margin: 0.25em 0 0 0;
                     }
                 }
             }
@@ -441,6 +497,9 @@
     margin-top: 50px;
     max-width: 95%;
     padding: 0;
+    &.small {
+        max-width: 65%;
+    }
 }
 
 #saving-panel {

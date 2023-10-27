@@ -283,6 +283,7 @@ function documentTitle() {
     var docTitle = $('#selectedTab').find('a').text();
     $('#document-title').text(docTitle);
     $('#document-title-2').text(docTitle);
+    $('#document-title-3').text(docTitle);
 }
 
 function showUnread() {

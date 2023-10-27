@@ -170,6 +170,10 @@
 }
 
 #navbar2 {
+    .govuk-width-container {
+        margin-right: 0;
+        
+    }
     ul.govuk-tabs__list {
         // overflow-x: scroll;
         padding: 0;
