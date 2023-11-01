@@ -38,6 +38,14 @@
         }, 15000)
     }
 
+    function topFunction() {
+        $("html, body").animate({ scrollTop: 0 }, {
+            duration: 500,
+            easing: "easeInOutExpo"
+        });
+    }
+
+
 </script>
 
 <div class="govuk-grid-row">
@@ -100,6 +108,8 @@
 
     <!-- ////////////////////////////////////////////// DOCUMENT COLUMN - START ////////////////////////////////////////////// -->
     <div class="govuk-grid-column-three-quarters document-holder" id="right-column">
+
+        <div id="document-top"></div>
 
         <div class="file1 weirdFix1400">
             <div class="govuk-tabs" data-module="govuk-tabs">

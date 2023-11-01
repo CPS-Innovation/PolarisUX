@@ -123,6 +123,9 @@
                                         }
                                     }
                                 }
+                                .error-text {
+                                    display: none;
+                                }
                                 &.unreadDocument {
                                     border-left: 5px solid $govuk-link-colour;
                                     padding-left: 1em;
@@ -130,6 +133,22 @@
                                     a.show-case {
                                         font-weight: bold;
                                         color: $govuk-link-colour;
+                                    }
+                                }
+                                &.error {
+                                    border-left: 5px solid $govuk-error-colour;
+                                    padding-left: 1em;
+                                    background: rgba($govuk-error-colour,0.075);
+                                    a.show-case {
+                                        font-weight: bold;
+                                        color: black;
+                                    }
+                                    .error-text {
+                                        display: inline-block;
+                                        font-size: 0.875rem;
+                                        font-weight: bold;
+                                        color: $govuk-error-colour;
+                                        margin: 0;
                                     }
                                 }
                                 border-left: none;

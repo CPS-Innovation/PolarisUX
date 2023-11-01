@@ -129,6 +129,38 @@ main.case-files {
                     }
                 }
             }
+            .error-message {
+                display: none;
+                background: govuk-colour("light-grey");
+                padding: 0.65em 1em 1em 1em;
+                border-left: 5px solid $govuk-error-colour;
+                position: relative;
+                z-index: 10;
+                &.show {
+                    display: block;
+                }
+                .govuk-warning-text {
+                    margin: 0;
+                    padding: 0.25em 0 0 0;
+                    strong {
+                        padding-left: 55px;
+                    }
+                    .govuk-warning-text__icon {
+                        margin-top: 2px;
+                        min-width: 42px;
+                        min-height: 42px;
+                        line-height: 35px;
+                    }
+                }
+                details {
+                    margin-bottom: 0;
+                    margin-left: 55px;
+                    font-size: 0.875rem;
+                    summary {
+                        padding-left: 20px;
+                    }
+                }
+            }
         }
     }
 }
@@ -200,7 +232,7 @@ main.case-files {
     display: none;
     justify-content: center;
     vertical-align: middle;
-    z-index: 3;
+    z-index: 13;
     background: $govuk-link-colour; 
     font-weight: normal;
     p {

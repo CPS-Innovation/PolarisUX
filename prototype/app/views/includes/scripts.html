@@ -108,7 +108,7 @@
                     <path stroke="white" stroke-width="3" fill="none" d="M6.25,17.75,17.75,6.25" />
                 </svg>
 
-                <a class="govuk-tabs__tab" id="tabHeadingss" href="" >${label}</a>  <span class="tooltiptext">${label}</span>
+                <a class="govuk-tabs__tab" id="tabHeadingss" href="" onclick="documentTarget()">${label}</a>  <span class="tooltiptext">${label}</span>
             </li>`).appendTo($tabList);
 
             if (label === SPECIAL_CASE_SEARCH_TAB_HEADING) {
@@ -158,7 +158,23 @@
                             </div>
                         </div>
                         <!-- End of non search heading -->
-                   
+
+                        <div class="error-message">
+                            <div class="govuk-warning-text">
+                                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                <strong class="govuk-warning-text__text">
+                                    <span class="govuk-warning-text__assistive">Warning</span>
+                                    There is a problem with this document
+                                </strong>
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">View details</span>
+                                    </summary>
+                                    <div class="govuk-details__text"></div>
+                                </details>
+                            </div>
+                        </div> 
+
                         <!-- <embed class="embedSize" src="/public/files/${document}#toolbar=0&view=FitH" /> -->
                             
                         ${getTabHtml(`/public/files/${document}`)}
