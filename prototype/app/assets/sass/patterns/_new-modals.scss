@@ -502,53 +502,9 @@
     }
 }
 
-#saving-panel {
-    height: 37em;
-    min-width: 100%;
-    // // display: flex;
-    // justify-items: center;
-    // vertical-align: middle;
-    div {
-        text-align: center;
-        padding-top: 15em;
-    }
-    .saving {
-        margin-left: auto;
-        margin-right: auto;
-        border: 12px solid #dee0e2;
-        border-radius: 50%;
-        border-top-color: #1d70b8;
-        width: 4em;
-        height: 4em;
-        margin-bottom: 1em;
-        animation: hods-loading-spinner-animation 2s linear infinite;
-        display: block;
-        // display: inline-block;
-        // width: 4em;
-        // height: 4em;
-        // background: url("../images/saving.gif") no-repeat 50% 50%;
-        // background-size: 15em;
-    }
-    h2 {
-        margin: 0;
-        color: $govuk-secondary-text-colour;
-    }
-}
-
-@keyframes hods-loading-spinner-animation {
-
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.success-banner {
+.success-banner, #saving-panel {
     background: $govuk-success-colour;
-    padding: 20px;
+    padding: 20px 25px;
     h2 {
         color: white;
         margin: 0;
@@ -562,6 +518,53 @@
         }
     }
 }
+
+#saving-panel {
+    background: $govuk-link-colour;
+    // height: 37em;
+    // min-width: 100%;
+    // // display: flex;
+    // justify-items: center;
+    // vertical-align: middle;
+    // div {
+    //     text-align: center;
+    //     padding-top: 15em;
+    // }
+    .saving {
+        // margin-left: auto;
+        // margin-right: auto;
+        border: 7px solid #dee0e2;
+        border-radius: 50%;
+        border-top-color: #1d70b8;
+        width: 0.875em;
+        height: 0.875em;
+        margin: -0.125em 0.5em 0 0;
+        animation: hods-loading-spinner-animation 2s linear infinite;
+        display: block;
+        float: left;
+        // display: inline-block;
+        // width: 4em;
+        // height: 4em;
+        // background: url("../images/saving.gif") no-repeat 50% 50%;
+        // background-size: 15em;
+    }
+    // h2 {
+    //     margin: 0;
+    //     color: $govuk-secondary-text-colour;
+    // }
+}
+
+@keyframes hods-loading-spinner-animation {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 .delete {
     text-indent: -1000em;

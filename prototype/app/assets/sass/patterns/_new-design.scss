@@ -70,11 +70,44 @@ button {
     &.date-added {
         background: url("../images/calendar.svg") no-repeat 50% 50%;
         background-size: contain;
+        position: relative;
     }
     &.time-added {
         background: url("../images/time.svg") no-repeat 50% 50%;
         background-size: 0.85em;
         margin-left: 0.5em;
+    }
+    &.date-added, &.time-added {
+        position: relative;
+        &:hover, &:active, &:focus {
+            .visuallyhidden {
+                background: rgba(0,0,0,0.7);
+                display: inline-block;
+                padding: 0.5em;
+                border-radius: 5px;
+                width: 74px;
+                text-align: center;
+                left: 50%;
+                top: -35px;
+                margin-left: -42px;
+                position: absolute;
+                font-family: "GDS Transport", arial, sans-serif;
+                color: white;
+                font-size: 0.875rem;
+                &:after {
+                    width: 0; 
+                    height: 0; 
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-top: 8px solid rgba(0,0,0,0.7);
+                    position: absolute;
+                    right: 50%;
+                    margin-right: -6px;
+                    bottom: -8px;
+                    content: ' ';
+                }
+            }
+        }
     }
     &.pdf-file {
         background: url("../images/pdf-file.svg") no-repeat 50% 50%;
@@ -386,7 +419,7 @@ main.case-files {
         float: right;
         margin: 0.15em 0 0 0;
         &.label {
-            margin: -0.15em 0 0 1.5em;
+            margin: -0.15em 0 0 1.5em !important;
             button {
                 margin-right: 0 !important;
             }

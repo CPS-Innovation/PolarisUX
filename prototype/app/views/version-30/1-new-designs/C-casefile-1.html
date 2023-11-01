@@ -18,16 +18,24 @@
 
 <script>
 
+    $(".success-banner").hide();
+
     function showHideRedaction() {
         setTimeout(function () {
-            $("#saving-panel").hide()
-            $("#redaction-log").show()
-            // addRedactionLogRows()
             redactionSummary()
-        }, 2500)
-        setTimeout(function () {
-            $(".success-banner").slideUp()
+            $("#saving-panel").hide();
+            $(".success-banner").show();
+            $("#redaction-log-button").removeClass('govuk-button--disabled').removeAttr('aria-disabled');
+            document.getElementById("redaction-log-button").disabled = false;
+            // $("#redaction-log").show()
+            // addRedactionLogRows()
         }, 5000)
+        setTimeout(function () {
+            $(".success-banner").slideUp();
+        }, 10000)
+        setTimeout(function () {
+            $(".success-banner").slideUp();
+        }, 15000)
     }
 
 </script>

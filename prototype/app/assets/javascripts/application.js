@@ -70,19 +70,28 @@ $(document).ready(function () {
 //     });
 
 // })
-
+ 
 // =================================== Redaction log =================================== //
-$("#redaction-log, .hidden-select").hide();
+// $("#redaction-log, .hidden-select").hide();
+$(".hidden-select").hide();
 
-function showHideRedaction() {
-    setTimeout(function() {
-        $("#saving-panel").hide();
-        $("#redaction-log").show();
-    }, 2500);
-    setTimeout(function() {
-        $(".success-banner").slideUp();
-    }, 5000);
-}
+// function showHideRedaction() {
+//     setTimeout(function() {
+//         $("#saving-panel").show();
+//         // $(".success-banner").hide();        
+//         // $("#redaction-log").show();
+//         alert('working');
+//     }, 5000);
+    // setTimeout(function() {
+    //     $("#saving-panel").hide();
+    //     $(".success-banner").addClass('test');
+    //     alert('10000');
+    // }, 10000);
+    // setTimeout(function() {
+    //     $(".success-banner").slideUp();
+    //     alert('15000');
+    // }, 15000);
+// }
 
 $(document).ready(function () {
     $(".delete").on("click", function (e) {
@@ -319,11 +328,8 @@ function showAll() {
     }
 }
 
-
-
-
-
 function pageCounter() {
+
 }
 
 $(function(){
