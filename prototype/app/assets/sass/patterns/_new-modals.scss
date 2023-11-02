@@ -152,6 +152,40 @@
             }
         }
     }
+    #view-redactions {
+        .redaction-wrapper {
+            &.redaction-list {
+                h2, h3 {
+                    margin: 0;
+                }
+                .form-row {
+                    padding: 1em 0;
+                    border-bottom: 1px solid $govuk-border-colour;
+                    .govuk-form-group {
+                        float: left;
+                        padding: 0;
+                        &:first-of-type {
+                            padding-left: 0 !important;
+                        }
+                        &.redaction-holder {
+                            // display: flex;
+                            // vertical-align: middle;
+                            // align-items: center;
+                            background: govuk-colour("light-grey");
+                            color: govuk-colour("mid-grey");
+                            font-weight: bold;
+                            width: 60%;
+                            padding: 1em;
+                            text-align: center;
+                        }
+                    }
+                    .delete {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
     #redaction-summary {
         margin-bottom: 3em;
     }

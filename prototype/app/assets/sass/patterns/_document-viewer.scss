@@ -317,3 +317,34 @@ main.case-files {
         }
     }
 }
+
+
+.redaction-footer {
+    position: fixed;
+    bottom: 0;
+    background: white;
+    border-top: 5px solid #b1b4b6; 
+    height: 4rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 999;
+    span {
+        margin: 8px 0 0 0px;
+        font-size: 19px;
+    }
+    button {
+        /*  height: 2rem;*/
+        /* margin: 5px;*/
+        margin: 7px 15px 0 20px;
+    }
+    .removeRedactions {
+        margin-right: auto !important;
+        margin-left: 15px !important;
+    }
+    .viewRedactions {
+        margin-left: 0.25em;
+    }
+}
+

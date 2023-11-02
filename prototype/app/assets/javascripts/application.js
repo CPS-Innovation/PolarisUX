@@ -243,6 +243,13 @@ function email() {
 
 }
 
+// function activateLink() {
+    // $('.redaction-footer').addClass("test");
+    // document.getElementById('data-count').addClass("test");
+    //     <a href="">Test</a>
+    // `);
+// }
+
 
 // =================================== Search button =================================== //
 $(document).ready(function () {
@@ -291,10 +298,12 @@ $(document).ready(function () {
 })
 
 function documentTitle() {
+    // $('#selectedTab').find('a').addClass('test');
     var docTitle = $('#selectedTab').find('a').text();
     $('#document-title').text(docTitle);
     $('#document-title-2').text(docTitle);
     $('#document-title-3').text(docTitle);
+    $('#document-title-4').text(docTitle);
 }
 
 function showUnread() {
