@@ -374,7 +374,7 @@ main.case-files {
         width: 100%;
         .searchForm-inner {
             position: relative;
-                    input {
+            input {
                 width: 100%;
             }
             .bba {
@@ -529,3 +529,69 @@ main.case-files {
         }
     }
 }
+
+#push-notification, #push-notification-2 {
+    display: none;
+    margin-right: 0.25em;
+//     position: fixed;
+//     right: 50px;
+//     width: auto;
+//     height: auto;
+//     color: white;
+//     background: govuk-colour("turquoise");
+//     border-radius: 5px;
+//     padding: 1em;
+//     transition: 1s;
+//     animation: push-notification-animation 2s ease 0s 1 normal forwards;
+//     a {
+//         font-weight: bold;
+//         color: white;
+//     }
+}
+
+// @keyframes push-notification-animation {
+//     0% {
+//         animation-timing-function: ease-in;
+//         opacity: 1;
+//         transform: translateX(370px);
+//     }
+
+//     24% {
+//         opacity: 1;
+//     }
+
+//     40% {
+//         animation-timing-function: ease-in;
+//         transform: translateX(65px);
+//     }
+
+//     65% {
+//         animation-timing-function: ease-in;
+//         transform: translateX(45px);
+//     }
+
+//     82% {
+//         animation-timing-function: ease-in;
+//         transform: translateX(32.5px);
+//     }
+
+//     93% {
+//         animation-timing-function: ease-in;
+//         transform: translateX(30px);
+//     }
+
+//     25%,
+//     55%,
+//     75%,
+//     87%,
+//     98% {
+//         animation-timing-function: ease-out;
+//         transform: translateX(25px);
+//     }
+
+//     100% {
+//         animation-timing-function: ease-out;
+//         opacity: 1;
+//         transform: translateX(25px);
+//     }
+// }

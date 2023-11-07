@@ -1,0 +1,668 @@
+<!-- ////////////////////////////////////////////// SEARCH FILTER COLUMN - START ////////////////////////////////////////////// -->
+<div class="govuk-grid-column-one-quarter" id="left-column">
+
+    <div class="info">
+        <span class="govuk-heading-s">DOB: 16 Jan 2005. Age: 18</span>
+        <span class="govuk-heading-s"><strong>Youth offender</strong></span>
+    </div>
+
+    <div id="searchFormTest" class="searchForm" method="get">
+        <label class="govuk-label--s govuk-label" for="searchURNModal" style="">Search</label>
+        <div class="searchForm-inner">
+            <input class="govuk-input" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
+            <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
+        </div>
+    </div>
+
+    <div class="caseFiles" id="caseFilesCol">
+    
+        <div class="blueBoxCPS">
+            <h2 class="govuk-heading-s">Proposed charges</h2>
+            <p>Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</p>
+            <h2 class="govuk-heading-s">Custody time limit</h2>
+            <p>45 days</p>
+            <h2 class="govuk-heading-s">Next hearing date</h2>
+            <p>1 June 2024</p>
+            <h2 class="govuk-heading-s">Custody end</h2>
+            <p>30 May 2022</p>
+        </div>
+
+        <div class="accordion">
+
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">Filter documents</span>
+                </summary>
+                <div class="govuk-details__text">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="filterDocuments-Unread" name="filterDocuments" type="radio" value="Unread documents" onclick="showUnread()">
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Unread">(<strong id="unread">21</strong>) Unread documents</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="filterDocuments-Read" name="filterDocuments" type="radio" value="Read documents"  onclick="showRead()">
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Read">(<strong id="read">0</strong>) Read documents</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="filterDocuments-All" name="filterDocuments" type="radio" value="All documents"  onclick="showAll()">
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-All">(<strong id="all">21</strong>) All documents</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>                    
+                </div>
+            </details>
+
+            <!-- SECTION 1 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Missing documents (1)</h2></div>
+                <div class="accordion-section-body">
+                    <p class="govuk-body-s">These documents could not be shown. Use CMS to view documents and redact any content.</p>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Missing documents</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="MISSINGDOCS.pdf" data-document="1" onclick="return pageCounter(), topFunction()" data-page="1">2 Documents on CMS</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                    <div class="govuk-warning-text">
+                                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> Another missing document</strong>
+                                    </div>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 1 - END -->
+
+            <!-- SECTION 2 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Reviews (1)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="#document-top" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Review files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="#document-top" class="show-case" data-doc="MCLOVEMG3.pdf" data-document="2" onclick="return pageCounter(), topFunction()" data-page="6">MCLOVE MG3</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>13:08
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 2 - END -->
+
+            <!-- SECTION 3 - START -->
+            <div class="accordion-section" id="hidden-section-3">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s" style="">Case overview (4)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <div class="cpsDocs chargingDocs">
+                        <table class="govuk-table">
+                            <thead>
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Case overview files</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <a href="" class="show-case" data-doc="CM01.pdf" data-document="3" onclick="return pageCounter(), topFunction()" data-page="2">Case overview and officer comments</a>
+                                        <p class="error-text">There is a problem with this document</p>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>17:36
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <strong class="govuk-tag govuk-tag--yellow">Updated</strong>
+                                        <br>
+                                        <a href="" class="show-case" data-doc="MG05MCLOVE.pdf" data-document="4" onclick="return pageCounter(), topFunction()" data-page="4">MG05 MCLOVE</a>
+                                        <p class="error-text">There is a problem with this document</p>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>16:11
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <a href="" class="show-case" data-doc="MG06_3June.pdf" data-document="5" onclick="return pageCounter(), topFunction()" data-page="3">MG06 3 June</a>
+                                        <p class="error-text">There is a problem with this document</p>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>03 June 2020
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>10:14
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <strong class="govuk-tag govuk-tag--yellow">Updated</strong>
+                                        <br>
+                                        <a href="" class="show-case" data-doc="MG06_10june.pdf" data-document="6" onclick="return pageCounter(), topFunction()" data-page="3">MG06 10 june</a>
+                                        <p class="error-text">There is a problem with this document</p>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>10 June 2020
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>08:03
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION 3 - END -->
+
+            <!-- SECTION 4 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Statements (7)</h2></div>
+                <div class="accordion-section-body">
+                    <p class="govuk-body-s openMe">
+                        <a href="" class="show-case" data-doc="MISSINGDOCS.pdf" data-count="7" onclick="return pageCounter()" data-page="1">
+                            Some documents for this case </a>are only available on CMS
+                    </p>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Statement files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="stmt_BLAYNEE_2034_1_JUNE_mg11.pdf" data-document="7" onclick="return pageCounter(), topFunction()" data-page="2">stmt BLAYNEE 2034 1 JUNE mg11</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>01 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>11:22
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            P <span class="tooltiptext"><span class="visuallyhidden">for</span> Police</span>
+                                        </strong>
+                                   </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="stmt_JONES_1989_1_JUNE_mg11.pdf" data-document="8">stmt JONES 1989 1 JUNE mg11</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>01 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>11:54
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            H <span class="tooltiptext"><span class="visuallyhidden">for</span> Prisoner</span>
+                                        </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="stmt_Lucy_Doyle_MG11.pdf" data-document="9" onclick="return pageCounter(), topFunction()" data-page="3">stmt Lucy Doyle MG11</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>01 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>12:01
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            P <span class="tooltiptext"><span class="visuallyhidden">for</span> Police</span>
+                                        </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="stmt_Shelagh_McLove_MG11_hand.pdf" data-document="10" onclick="return pageCounter(), topFunction()" data-page="5">stmt Shelagh McLove MG11</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>01 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>12:36
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            V <span class="tooltiptext"><span class="visuallyhidden">for</span> Victim</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            L <span class="tooltiptext"><span class="visuallyhidden">for</span> Vulnerable</span>
+                                        </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="Shelagh_McLove_VPS_mg11.pdf" data-document="11" onclick="return pageCounter(), topFunction()" data-page="2">Shelagh McLove VPS mg11</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>06 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>13:11
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            V <span class="tooltiptext"><span class="visuallyhidden">for</span> Victim</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            L <span class="tooltiptext"><span class="visuallyhidden">for</span> Vulnerable</span>
+                                        </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf" data-document="12" onclick="return pageCounter(), topFunction()" data-page="1">MG11 Shelagh MCLOVE retraction</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>10 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>19:18
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            V <span class="tooltiptext"><span class="visuallyhidden">for</span> Victim</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            L <span class="tooltiptext"><span class="visuallyhidden">for</span> Vulnerable</span>
+                                        </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                    MG11 Geoff MCLOVE
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>11 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>22:53
+                                    </p>
+                                    <p class="whitness-indicators">
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            V <span class="tooltiptext"><span class="visuallyhidden">for</span> Victim</span>
+                                        </strong>
+<!--                                         <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            P <span class="tooltiptext"><span class="visuallyhidden">for</span> Police</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            C <span class="tooltiptext"><span class="visuallyhidden">for</span> Child</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            F <span class="tooltiptext"><span class="visuallyhidden">for</span> Professional</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            X <span class="tooltiptext"><span class="visuallyhidden">for</span> Expert</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            L <span class="tooltiptext"><span class="visuallyhidden">for</span> Vulnerable</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            T <span class="tooltiptext"><span class="visuallyhidden">for</span> Intimidated</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            G <span class="tooltiptext"><span class="visuallyhidden">for</span> Greatest Needs</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            S <span class="tooltiptext"><span class="visuallyhidden">for</span> Special</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            H <span class="tooltiptext"><span class="visuallyhidden">for</span> Prisoner</span>
+                                        </strong>
+                                        <strong class="govuk-tag tooltip govuk-tag--grey">
+                                            I <span class="tooltiptext"><span class="visuallyhidden">for</span> Interpreter</span>
+                                        </strong>
+ -->                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s " scope="row" colspan="2">Document only available on CMS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 4 - END -->
+
+            <!-- SECTION 5 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Exhibits (2)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Exhibit files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="MG12.pdf" class="large" data-document="13" onclick="return pageCounter(), topFunction()" data-page="1">MCLOVE MG12</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>12 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>22:36
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="MG00.pdf" data-document="14" class="large" onclick="return pageCounter(), topFunction()" data-page="1">MCLOVE MG00</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>12 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>23:58
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 5 - END -->
+
+            <!-- SECTION 6 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header no-documents"><h2 class="govuk-heading-s">Forensics (0)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Forensics files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 6 - END -->
+
+            <!-- SECTION 7 - START -->
+            <div class="accordion-section" id="hidden-section-2">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (5)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Unused material files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="UNUSED_1_STORM_LOG_1881_01.6.20_EDITED_2020-11-23_MCLOVE.pdf" data-document="15" onclick="return pageCounter()" data-page="7">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>01 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>13:46
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="SDC_items_to_be_Disclosed_MCLOVE.pdf" data-document="16" onclick="return pageCounter(), topFunction()" data-page="1">SDC_items to_be Disclosed MCLOVE</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>05 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>19:12
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <strong class="govuk-tag govuk-tag--yellow">Updated</strong>
+                                    <br>
+                                    <a href="" class="show-case" data-doc="UNUSED_6_DA_CHECKLIST_MCLOVE.pdf" data-document="17" onclick="return pageCounter(), topFunction()" data-page="3">UNUSED_6 DA CHECKLIST MCLOVE</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>05 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>19:36
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a class="show-case" href="MG20_5_JUNE.pdf" data-doc="MG20_5_JUNE.pdf" data-document="18" onclick="return pageCounter(), topFunction()" data-page="1">MG20_5_JUNE</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>06 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>21:14
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a class="show-case" href="MG20_10_JUNE.pdf" data-doc="MG20_10_JUNE.pdf" data-document="19" onclick="return pageCounter(), topFunction()" data-page="1">MG20_10_JUNE</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>11 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>09:35
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 7 - END -->
+
+            <!-- SECTION 8 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Defendant (1)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Unused material files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-document="20" onclick="return pageCounter(), topFunction()" data-page="9">PRE CONS D</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>13:56
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 8 - END -->
+
+            <!-- SECTION 9 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header no-documents"><h2 class="govuk-heading-s">Court preparation (0)</h2></div>
+                <div class="accordion-section-body">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Court preparation files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 9 - END -->
+
+            <!-- SECTION 10 - START -->
+            <div class="accordion-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Communications (1)</h2></div>
+                <div class="accordion-section-body">
+<!--                         <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> This case file is <a href="" data-doc="MISSINGDOCS.pdf" data-count="3">missing documents</a></strong>
+                    </div>
+-->                    
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Communication files</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="icon-new emails"></span>Emails</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case email-document" onclick="email()" data-doc="email.pdf" data-document="21" onclick="return pageCounter(), topFunction()" data-page="1">VADER, 45GD0702322, 22/08/2023</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>18:56
+                                        <br>
+                                        <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
+                                        From: <a href="mailto:sujitha.tharmarajah@cps.gov.uk">sujitha.tharmarajah@cps.gov.uk</a>
+                                        <br>
+                                        <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span>4 attachments
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!-- SECTION 10 - END -->
+
+            <!-- SECTION 11 - START -->
+            <div class="accordion-section hide-section" id="hidden-section">
+                <div class="accordion-section-header"><h2 class="govuk-heading-s"><span class="govuk-tag">New</span> Uncategorised (2)</h2></div>
+                <div class="accordion-section-body">
+                    <table class="govuk-table">
+                        <thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Uncategorised files</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-document="18" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter(), topFunction(), newDocument()" data-page="9">PRE CONS D</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>02 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>09:35
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <a href="" class="show-case" data-document="19" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf" onclick="return pageCounter(), topFunction(), newDocument()" data-page="1">MG11 Shelagh MCLOVE retraction</a>
+                                    <p class="error-text">There is a problem with this document</p>
+                                    <br>
+                                    <p class="date-added">
+                                        <span class="icon-new date-added"><span class="visuallyhidden">Date added</span></span>10 June 2020
+                                        <span class="icon-new time-added"><span class="visuallyhidden">Time added</span></span>12:23
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- SECTION 11 - END -->
+
+           
+        </div>
+
+    </div>
+
+<!--     <div class="feedback">
+        <p class="govuk-body-s">Your <a href="#">feedback (opens in a new tab)</a> will help us to improve this service.</p>    
+    </div>
+ -->
+</div>
+<!-- ////////////////////////////////////////////// SEARCH FILTER COLUMN - END ////////////////////////////////////////////// -->

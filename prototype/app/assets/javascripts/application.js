@@ -361,6 +361,183 @@ function windowSizeChange() {
     $('#navbar2 ul.navbar.sticky-tabs').toggleClass('full-width');
 }
 
+// =================================== PIPELINE REFRESH =================================== //
+
+$(document).ready(function () {
+
+    $('#page-refresh-2').hide();
+
+    setTimeout(function () {
+        $('#push-notification').show();
+    }, 15000)
+
+    $("#page-refresh").on("click", function (e) {
+        var documentsRead = 0;
+        var documentsUnread = 21;
+
+        documentsUnread += 2;
+        $('#all').text(documentsUnread);
+        $('#unread').text(documentsUnread);
+
+        e.preventDefault();
+        $('#hidden-section').show().attr("aria-expanded", "true");
+        document.getElementById("hidden-section").scrollIntoView();
+
+        document.getElementById("date-stamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+    });
+
+    $("#page-refresh-2").on("click", function (e) {
+        e.preventDefault();
+        $('#hidden-section').attr("aria-expanded", "false");
+        $('#hidden-section-2').attr("aria-expanded", "true");
+        $('#hidden-section-3').attr("aria-expanded", "true");
+        document.getElementById("hidden-section-3").scrollIntoView();
+
+        $('#push-notification-2').hide();
+
+        document.getElementById("date-stamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+    });
+
+})
+
+function newDocument() {
+    $('#new-documents').html(function(i, val) { return +val-1 });
+    if ($('#new-documents').html() == '1') {
+        $('#plural').hide();
+    } else if ($('#new-documents').html() == '0') {
+        $('#push-notification').hide();
+        $('#hidden-section .govuk-tag').hide();
+        setTimeout(function () {
+            $('#push-notification-2').show();
+            $('#page-refresh-2').show();
+            $('#page-refresh').hide();
+        }, 15000)
+    }
+}
+
+
+// =================================== ERROR MESSAGES =================================== //
+
+$(document).ready(function () {
+
+    // Redaction log
+    $("#redactionLog-ChargeStatus").on("change", function (e) {
+        $('#redaction-log-button').attr('onClick','closeModal2(), openFeedbackModal()');
+    });
+
+    $("#redaction-log-button").on("click", function (e) {
+        if ($('#redactionLog-ChargeStatus').val()) {
+            // alert('selected');
+        } else {
+            $('#charge-error').addClass('govuk-form-group--error');
+            $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
+        }
+    });
+
+    // Over/Under Redaction 
+    $("#submit-over-redactions").hide();
+    $("#error-over-redactions").show();
+
+    // Error summary
+    $('#over-redaction-error-summary').hide();
+
+    // Error list
+    $('#over-charge-error-list, #type-error-list, #redactions-type-error-list, #over-redactions-type-error-list').hide();
+
+    $("#redactionOver-ChargeStatus").on("change", function (e) {
+        if ($(this).val() && $('input[name=redactionUnder-redaction-type]:checked') || $(this).val() && $('input[name=redactionOver-redaction-type]:checked')) {
+            $("#submit-over-redactions").show();
+            $("#error-over-redactions").hide();
+        } else {
+            $("#submit-over-redactions").hide();
+            $("#error-over-redactions").show();
+        }
+    });
+
+    $("input[name=redationType]").on("change", function (e) {
+        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionUnder-redaction-type]:checked') || $(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionOver-redaction-type]:checked')) {
+            $("#submit-over-redactions").show();
+            $("#error-over-redactions").hide();
+        }
+    });
+
+    $("input[name=redactionUnder-redaction-type]").on("change", function (e) {
+        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val()) {
+            $("#submit-over-redactions").show();
+            $("#error-over-redactions").hide();
+        }
+    });
+
+    $("input[name=redactionOver-redaction-type]").on("change", function (e) {
+        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val()) {
+            $("#submit-over-redactions").show();
+            $("#error-over-redactions").hide();
+        }
+    });
+
+    $("#error-over-redactions").on("click", function (e) {
+        $('#over-redaction-error-summary').show();
+
+        // Charge type
+        if ($('#redactionOver-ChargeStatus').val()) {
+            $('#over-charge-error').removeClass('govuk-form-group--error');
+            $('#over-charge-issued-error, #over-charge-error-list').hide();
+        } else {
+            $('#over-charge-error').addClass('govuk-form-group--error');
+            $('#over-charge-issued-error, #over-charge-error-list').show();
+        }
+
+        // // Reaction type
+        if ($('input[name=redationType]').is(':checked')) {
+            $('#over-type-issued-error').removeClass('govuk-form-group--error');
+            $('#type-issued-error, #type-error-list').hide();
+        } else {
+            $('#over-type-issued-error').addClass('govuk-form-group--error');
+            $('#type-issued-error, #type-error-list').show();
+        }
+
+        // Under-redaction - Type of redactions
+        if ($("input[id=redationType-Under]").is(':checked') && $("input[name=redactionUnder-redaction-type]").is(':checked')) { 
+            $('#conditional-redationType-Under').removeClass('govuk-form-group--error');
+            $('#redation-type-issued-error, #redactions-type-error-list').hide();
+        } else if ($("input[id=redationType-Under]").is(':checked')) { 
+            $('#conditional-redationType-Under').addClass('govuk-form-group--error');
+            $('#redation-type-issued-error, #redactions-type-error-list').show();
+        }
+
+        // Over-redaction - Type of redactions
+        if ($("input[id=redationType-Over]").is(':checked') && $("input[name=redactionOver-redaction-type]").is(':checked')) { 
+            $('#conditional-redationType-Over').removeClass('govuk-form-group--error');
+            $('#over-redation-type-issued-error, #over-redactions-type-error-list').hide();
+        } else if ($("input[id=redationType-Over]").is(':checked')) { 
+            $('#conditional-redationType-Over').addClass('govuk-form-group--error');
+            $('#over-redation-type-issued-error, #over-redactions-type-error-list').show();
+        }
+
+    });
+
+})
+
 // =================================== MY COOKIES =================================== //
 
 // function documentTarget() {
@@ -491,4 +668,16 @@ $(document).ready(function () {
 
 })
 
-
+// !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
+$(document).ready(function () {
+    document.getElementById("date-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+        months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+        days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+})
