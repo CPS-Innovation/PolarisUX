@@ -465,7 +465,7 @@ $(document).ready(function () {
     $('#over-charge-error-list, #type-error-list, #redactions-type-error-list, #over-redactions-type-error-list').hide();
 
     $("#redactionOver-ChargeStatus").on("change", function (e) {
-        if ($(this).val() && $('input[name=redactionUnder-redaction-type]:checked') || $(this).val() && $('input[name=redactionOver-redaction-type]:checked')) {
+        if ($(this).val() && $('input[name=redactionUnder-redaction-type]').is(':checked') || $(this).val() && $('input[name=redactionOver-redaction-type]').is(':checked')) {
             $("#submit-over-redactions").show();
             $("#error-over-redactions").hide();
         } else {
@@ -475,21 +475,21 @@ $(document).ready(function () {
     });
 
     $("input[name=redationType]").on("change", function (e) {
-        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionUnder-redaction-type]:checked') || $(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionOver-redaction-type]:checked')) {
+        if ($(this).is(':checked') && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionUnder-redaction-type]').is(':checked') || $(this).is(':checked') && $('#redactionOver-ChargeStatus').val() && $('input[name=redactionOver-redaction-type]').is(':checked')) {
             $("#submit-over-redactions").show();
             $("#error-over-redactions").hide();
         }
     });
 
     $("input[name=redactionUnder-redaction-type]").on("change", function (e) {
-        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val()) {
+        if ($(this).is(':checked') && $('#redactionOver-ChargeStatus').val()) {
             $("#submit-over-redactions").show();
             $("#error-over-redactions").hide();
         }
     });
 
     $("input[name=redactionOver-redaction-type]").on("change", function (e) {
-        if ($(this).prop("checked") == true && $('#redactionOver-ChargeStatus').val()) {
+        if ($(this).is(':checked') && $('#redactionOver-ChargeStatus').val()) {
             $("#submit-over-redactions").show();
             $("#error-over-redactions").hide();
         }

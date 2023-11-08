@@ -60,6 +60,56 @@
             }
         }
     }
+    #feedbackSurvey {
+        .innerPanel {
+            .redaction-wrapper {
+                .govuk-form-group {
+                    margin: 0 0 1.5em 0;
+                    width: 100%;
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    textarea {
+                        margin-bottom: 0.5em;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .govuk-inset-text {
+                    margin: 1.5em 0 0 0;
+                    h2 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    #view-redactions {
+        .innerPanel {
+            .redaction-wrapper {
+                .govuk-form-group {
+                    &:first-of-type {
+                        width: 20%;
+                    }
+                    &:last-of-type {
+                        margin: 0;
+                    }
+                    p {
+                        font-size: 1rem;
+                        margin: 0;
+                        color: $govuk-secondary-text-colour;
+                        span {
+                            color: $govuk-text-colour;
+                        }
+                    }
+                }
+            }
+        }
+    }
     #redaction-history {
         .innerPanel {
             .header-wrapper {
