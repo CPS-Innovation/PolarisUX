@@ -403,6 +403,8 @@ $(document).ready(function () {
         $('#hidden-section-3').attr("aria-expanded", "true");
         document.getElementById("hidden-section-3").scrollIntoView();
 
+        $('table tbody tr td .govuk-tag.govuk-tag--yellow').css('display','inherit');
+
         $('#push-notification-2').hide();
 
         document.getElementById("date-stamp").innerHTML = formatAMPM();
