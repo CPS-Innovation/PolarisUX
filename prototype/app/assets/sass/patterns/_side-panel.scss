@@ -134,17 +134,16 @@
                                     display: none;
                                 }
                                 .govuk-tag {
-                                    display: none;
+                                    display: inline-block;
+                                    font-size: 0.75rem;
+                                    padding: 0.25em 0.5em;
+                                    margin-bottom: 0.25em;
                                 }
                                 &.unreadDocument {
                                     border-left: 5px solid $govuk-link-colour;
                                     padding-left: 1em;
                                     background: rgba($govuk-link-colour,0.075);
                                     .govuk-tag {
-                                        display: inline-block;
-                                        font-size: 0.75rem;
-                                        padding: 0.25em 0.5em;
-                                        margin-bottom: 0.25em;
                                         &.govuk-tag--yellow {
                                             display: none;
                                         }

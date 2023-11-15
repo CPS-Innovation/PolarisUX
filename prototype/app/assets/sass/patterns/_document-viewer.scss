@@ -40,7 +40,9 @@ main.case-files {
                     }
                 }
                 p {
-                    color: rgba(255,255,255,0.7) !important;
+                    // color: rgba(255,255,255,0.7) !important;
+                    color: white !important;
+                    font-weight: bold;
                     max-width: 640px !important;
                     white-space: nowrap;
                     overflow: hidden;
