@@ -32,7 +32,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/document-viewer";
 @import "patterns/navbar";
 @import "patterns/side-panel";
-
+@import "patterns/notes";
 
 @mixin das-clearfix {
   &:after {
@@ -1471,7 +1471,7 @@ gem-c-pagination__link-text {
 
 .das-cookie-banner__modal { 
   position: fixed; /* Stay in place */
-  z-index: 9999999999999999999999999999; /* Sit on top */
+  z-index: 999999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */

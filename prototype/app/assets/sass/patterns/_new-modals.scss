@@ -10,6 +10,14 @@
     }
 }
 
+#openFeedbackModal {
+    z-index: 9999999999999999999999999999;
+    #openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group:first-of-type {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 .govuk-warning-text {
     margin-left: 10px;
     margin-bottom: 20px;
@@ -57,6 +65,15 @@
                 &:last-of-type {
                     margin-bottom: 2em;
                 }
+            }
+        }
+    }
+    #notes {
+        .govuk-character-count {
+            width: 100%;
+            margin-bottom: 1.25em;
+            button {
+                margin: 0;
             }
         }
     }

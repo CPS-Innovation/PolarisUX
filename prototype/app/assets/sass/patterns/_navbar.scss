@@ -10,6 +10,9 @@
     .govuk-grid-column-one-quarter {
         width: 100%;
     }
+    .alert {
+        display: none;
+    }
     &.sticky {
         position: fixed;
         padding: 5px 25px;
@@ -28,13 +31,80 @@
         //     margin-left: auto;
         //     margin-right: auto;
         // }
+        .alert {
+            display: inline-block;
+            float: right;
+            position: relative;
+            // position: absolute;
+            // right: 50px;
+            &.tooltip {
+                // &#header-alert-2, &#header-alert-3 {
+                //     visibility: hidden;
+                //     display: none;
+                // }
+                &:hover, &:focus, &:active {
+                    .tooltiptext {
+                        // &#header-alert-2, &#header-alert-3 {
+                        //     visibility: hidden;
+                        // }
+                        display: inline-block;
+                        visibility: visible;
+                        position: absolute;
+                        top: 3em;
+                        font-size: 0.875rem;
+                        margin-left: -153px;
+                        width: 180px;
+                        padding: 0.5em;
+                        background: rgba(0,0,0,0.7);
+                        &:after {
+                            width: 0px;
+                            height: 0px;
+                            border-left: 6px solid transparent;
+                            border-right: 6px solid transparent;
+                            border-bottom: 6px solid rgba(0,0,0,0.7);
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -6px;
+                            top: -6px;
+                            content: " ";
+                        }
+                    }
+                }
+            }
+            a {
+                &.alert-button {
+                    display: inline-block;
+                    background: green;
+                    // float: right;
+                    position: absolute;
+                    right: 2.5em;
+                    top: 0.4em;
+                    text-indent: -1000em;
+                    width: 2em;
+                    height: 2em;
+                    background: url("../images/alert-empty.svg") no-repeat 50% 50%;
+                    background-size: 1.5em;
+                    &#alert2 {
+                        display: none;
+                    }
+                    &:hover, &:focus, &:active {
+                        cursor: pointer;
+                    }
+                    &.alert {
+                        background: url("../images/alert-alert.svg") no-repeat 50% 50%;
+                        background-size: 1.5em;
+                        animation: jump-shaking 0.83s infinite;
+                    }
+                }
+            }
+        }
         .govuk-grid-column-one-quarter {
             width: 25%;
         }
         .govuk-width-container {
             margin: 0 auto;
         }
-        #searchFormTest {
+        #searchFormTest, #searchFormTest2 {
             display: inline-block;
             width: auto;
             label {
@@ -54,7 +124,7 @@
             // width: 333px;
         }
     }
-    #searchFormTest {
+    #searchFormTest, #searchFormTest2 {
         display: none;
         // width: 10%;
         float: right;
@@ -65,12 +135,23 @@
             position: absolute;
             right: 0;
             top: 50px;
-            width: 237px;
+            width: 314px;
             input, .bba {
                 display: none;
                 box-shadow: 10px 10px 10px 10px rgba(black,0.2);
                 &.show {
                     display: inline-block;
+                }
+            }
+            .bba {
+                &.v2 {
+                    button {
+                        background: black;
+                        text-indent: 0;
+                        color: white;
+                        font-weight: bold;
+                        width: auto;
+                    }
                 }
             }
         }
@@ -124,6 +205,16 @@
             }
         }
     }
+}
+
+@keyframes jump-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-4px) }
+    35% { transform: translateY(-4px) rotate(17deg) }
+    55% { transform: translateY(-4px) rotate(-17deg) }
+    65% { transform: translateY(-4px) rotate(17deg) }
+    75% { transform: translateY(-4px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
 }
 
 @media only screen and (max-width: 1400px) {

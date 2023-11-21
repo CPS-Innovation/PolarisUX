@@ -85,11 +85,11 @@ button {
                 display: inline-block;
                 padding: 0.5em;
                 border-radius: 5px;
-                width: 74px;
+                width: 35px;
                 text-align: center;
                 left: 50%;
                 top: -35px;
-                margin-left: -42px;
+                margin-left: -23px;
                 position: absolute;
                 font-family: "GDS Transport", arial, sans-serif;
                 color: white;
@@ -105,6 +105,26 @@ button {
                     margin-right: -6px;
                     bottom: -8px;
                     content: ' ';
+                }
+            }
+        }
+        &.statement {
+            &:hover, &:active, &:focus {
+                .visuallyhidden {
+                    width: 100px;
+                    margin-left: -55px;
+                }
+            }
+        }
+    }
+    &.date-added {
+        &.statement {
+            &:hover, &:active, &:focus {
+                .visuallyhidden {
+                    margin-left: -35px;
+                    &:after {
+                        right: 68%;
+                    }
                 }
             }
         }

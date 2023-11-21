@@ -255,6 +255,7 @@ function email() {
 $(document).ready(function () {
     $(".search-button").on("click", function (e) {
         $('.searchForm-inner').find('input').toggleClass('show');
+        $('.searchForm-inner').find('.bba.v2').toggleClass('show');
         $(this).toggleClass('open');
     });
 })
@@ -264,6 +265,13 @@ function searchTerm() {
     $('.searchModalResults').text(resultValue); 
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
 }
+
+function searchTerm2() {
+    var resultValue = $('#searchURNModal2').val();
+    $('.searchModalResults').text(resultValue); 
+    $('#searchURNModal-result').val(resultValue).text(resultValue); 
+}
+
 
 // =================================== Window size & Document filter change =================================== //
 $(document).ready(function () {
@@ -361,14 +369,31 @@ function windowSizeChange() {
     $('#navbar2 ul.navbar.sticky-tabs').toggleClass('full-width');
 }
 
+// =================================== FEEDBACK LOOP =================================== //
+$(document).ready(function () {
+    $('#feedbackBad-button').hide();
+    
+    $("input[name=feedbackSurvey-Satisfaction]").on("change", function (e) {
+        if ($('input[id=feedbackSurvey-Satisfaction-Dissatisfied]').is(':checked') || $('input[id=feedbackSurvey-Satisfaction-Very-dissatisfied]').is(':checked')) {
+            $('#feedbackBad-button').show();
+            $('#feedbackGood-button').hide();
+        } else {
+            $('#feedbackGood-button').removeClass('govuk-button--disabled').removeAttr('disabled');
+        }
+    })
+
+})
+
 // =================================== PIPELINE REFRESH =================================== //
 
 $(document).ready(function () {
 
-    $('#page-refresh-2').hide();
+    $('#page-refresh-2, #alert2').hide();
 
     setTimeout(function () {
         $('#push-notification').show();
+        $('#alert').addClass('alert');
+        $('#header-alert').text('You have 2 new documents');
     }, 15000)
 
     $("#page-refresh").on("click", function (e) {
@@ -380,8 +405,19 @@ $(document).ready(function () {
         $('#unread').text(documentsUnread);
 
         e.preventDefault();
-        $('#hidden-section').show().attr("aria-expanded", "true");
-        document.getElementById("hidden-section").scrollIntoView();
+        // $('#hidden-section').show().attr("aria-expanded", "true");
+        $('#hidden-documents').attr("aria-expanded", "true");
+        $('#hidden-documents').find(".hidden-section").addClass('new');
+        $('#hidden-documents').find(".hidden-section td").addClass('newDocument');
+        $('#hidden-documents').find(".accordion-section-header .statements").text('7');
+        document.getElementById("hidden-documents").scrollIntoView();
+
+        $('#hidden-documents-2').attr("aria-expanded", "true");
+        $('#hidden-documents-2').find(".hidden-section").addClass('new');
+        $('#hidden-documents-2').find(".hidden-section td").addClass('newDocument');
+        $('#hidden-documents-2').find(".hidden-section tr.holder").hide();
+        $('#hidden-documents-2').find(".accordion-section-header").removeClass('no-documents');
+        $('#hidden-documents-2').find(".accordion-section-header .defendants").text('1');
 
         document.getElementById("date-stamp").innerHTML = formatAMPM();
         function formatAMPM() {
@@ -396,7 +432,70 @@ $(document).ready(function () {
 
     });
 
+    $("#alert").on("click", function (e) {
+        var documentsRead = 0;
+        var documentsUnread = 21;
+
+        documentsUnread += 2;
+        $('#all').text(documentsUnread);
+        $('#unread').text(documentsUnread);
+
+        e.preventDefault();
+        // $('#hidden-section').show().attr("aria-expanded", "true");
+        $('#hidden-documents').attr("aria-expanded", "true");
+        $('#hidden-documents').find(".hidden-section").addClass('new');
+        $('#hidden-documents').find(".hidden-section td").addClass('newDocument');
+        $('#hidden-documents').find(".accordion-section-header .statements").text('7');
+        document.getElementById("hidden-documents").scrollIntoView();
+
+        $('#hidden-documents-2').attr("aria-expanded", "true");
+        $('#hidden-documents-2').find(".hidden-section").addClass('new');
+        $('#hidden-documents-2').find(".hidden-section td").addClass('newDocument');
+        $('#hidden-documents-2').find(".hidden-section tr.holder").hide();
+        $('#hidden-documents-2').find(".accordion-section-header").removeClass('no-documents');
+        $('#hidden-documents-2').find(".accordion-section-header .defendants").text('1');
+
+        document.getElementById("date-stamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+    });
+
+
     $("#page-refresh-2").on("click", function (e) {
+        e.preventDefault();
+        // $('#hidden-section').attr("aria-expanded", "false");
+        $('#hidden-section-2').attr("aria-expanded", "true");
+        $('#hidden-section-3').attr("aria-expanded", "true");
+        document.getElementById("hidden-section-3").scrollIntoView();
+
+        $('table tbody tr td .govuk-tag.govuk-tag--yellow').css('display','inherit');
+        $('table tbody tr td .govuk-tag.govuk-tag--orange').css('display','inherit');
+
+        $('#push-notification-2').hide();
+        $('#alert2').removeClass('alert');
+
+        document.getElementById("date-stamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+    });
+
+    $("#alert2").on("click", function (e) {
         e.preventDefault();
         $('#hidden-section').attr("aria-expanded", "false");
         $('#hidden-section-2').attr("aria-expanded", "true");
@@ -404,8 +503,10 @@ $(document).ready(function () {
         document.getElementById("hidden-section-3").scrollIntoView();
 
         $('table tbody tr td .govuk-tag.govuk-tag--yellow').css('display','inherit');
+        $('table tbody tr td .govuk-tag.govuk-tag--orange').css('display','inherit');
 
         $('#push-notification-2').hide();
+        $('#alert2').removeClass('alert');
 
         document.getElementById("date-stamp").innerHTML = formatAMPM();
         function formatAMPM() {
@@ -420,19 +521,25 @@ $(document).ready(function () {
 
     });
 
+
 })
 
 function newDocument() {
     $('#new-documents').html(function(i, val) { return +val-1 });
     if ($('#new-documents').html() == '1') {
         $('#plural').hide();
+        $('#header-alert').text('You have 1 new document');
     } else if ($('#new-documents').html() == '0') {
         $('#push-notification').hide();
-        $('#hidden-section .govuk-tag').hide();
+        $('#alert').removeClass('alert');
+        $('#header-alert').text('No document updates');
+        // $('#hidden-section .govuk-tag').hide();
         setTimeout(function () {
-            $('#push-notification-2').show();
+            $('#push-notification-2, #alert2').show();
             $('#page-refresh-2').show();
-            $('#page-refresh').hide();
+            $('#page-refresh, #alert').hide();
+            $('#alert2').addClass('alert');
+            $('#header-alert').text('You have 3 new updates');
         }, 15000)
     }
 }
@@ -440,11 +547,25 @@ function newDocument() {
 
 // =================================== ERROR MESSAGES =================================== //
 
+function errorStatus() {
+    window.location.href="#redaction-over";
+
+    e.preventDefault();
+    e.stopPropagation();     
+}
+
+function errorStatus2() {
+    window.location.href="#redaction-log";
+
+    e.preventDefault();
+    e.stopPropagation();     
+}
+
 $(document).ready(function () {
 
     // Redaction log
     $("#redactionLog-ChargeStatus").on("change", function (e) {
-        $('#redaction-log-button').attr('onClick','closeModal2(), openFeedbackModal()');
+        $('#redaction-log-button').attr('onClick','closeModal2()');
     });
 
     $("#redaction-log-button").on("click", function (e) {
@@ -539,6 +660,35 @@ $(document).ready(function () {
     });
 
 })
+
+// =================================== NOTES =================================== //
+
+$(document).ready(function () {
+    $('#note-added').hide();
+
+    $("#notes-button").on("click", function (e) {
+        $('#note-added').show();
+
+        // Time stamp
+        document.getElementById("note-timestamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+
+        // Note
+        $.cookie("notes-Details", $('#notes-Comments').val(), {path:'/'});
+        $('#note-added .hods-timeline__description').html($.cookie("notes-Details"));
+    });
+})
+
+
 
 // =================================== MY COOKIES =================================== //
 

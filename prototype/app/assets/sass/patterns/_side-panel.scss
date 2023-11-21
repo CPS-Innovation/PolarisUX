@@ -44,9 +44,9 @@
             }
         }
         .accordion-section {
-            &.hide-section {
-                display: none;
-            }
+            // &.hide-section {
+            //     display: none;
+            // }
             .accordion-section-header {
                 &.no-documents {
                     h2.govuk-heading-s {
@@ -61,17 +61,62 @@
                 padding-left: 0.5em;
             }
             .accordion-section-body {
-                padding: 1em 0 1em 0;
+                padding: 0 0 1em 0;
                 border-top: 1px solid $govuk-border-colour;
                 p {
                     &.govuk-body-s {
                         margin-bottom: 10px;
                     }
+                    &.openMe {
+                        margin: 1em 0 1em 0;
+                    }
+
+                }
+                a.open-all {
+                    margin: 0.75em 0 1em 0;
+                    display: inline-block;
+                }
+                span {
+                    &.govuk-caption-m {
+                        font-size: 0.875rem;
+                        font-style: italic;
+                    }
                 }
                 table {
+                    &#emailTable {
+                        thead {
+                            display: table-header-group;
+                        }
+                    }
                     margin: 0 0 1em 0;
+                    thead {
+                        display: none;
+                    }
                     tbody {
                         tr {
+                            &.hidden-section {
+                                display: none;
+                                &.new {
+                                    display: table-row;
+                                }
+                                td {
+                                    &.newDocument.unreadDocument {
+                                        border-left: 5px solid $govuk-success-colour;
+                                        padding: 0.5em 0.5em 0.5em 1em;
+                                        background: rgba($govuk-success-colour,0.075);
+                                        .govuk-tag.govuk-tag--green {
+                                            display: inline-block;
+                                        }
+                                        a.show-case {
+                                            font-weight: bold;
+                                            color: $govuk-success-colour;
+                                        }
+                                    }
+                                }
+                            }
+                            &:first-of-type {
+                                border-top: 1px solid $govuk-border-colour;
+                            }
                             // &:last-of-type {
                             //     td {
                             //         border: none;
@@ -138,13 +183,16 @@
                                     font-size: 0.75rem;
                                     padding: 0.25em 0.5em;
                                     margin-bottom: 0.25em;
+                                    &.govuk-tag--green {
+                                        display: none;
+                                    }
                                 }
                                 &.unreadDocument {
                                     border-left: 5px solid $govuk-link-colour;
-                                    padding-left: 1em;
+                                    padding: 0.5em 0.5em 0.5em 1em;
                                     background: rgba($govuk-link-colour,0.075);
                                     .govuk-tag {
-                                        &.govuk-tag--yellow {
+                                        &.govuk-tag--yellow, &.govuk-tag--orange {
                                             display: none;
                                         }
                                     }
@@ -174,6 +222,10 @@
                                 a.show-case {
                                     font-weight: normal;
                                     color: $govuk-link-visited-colour;
+                                    display: inline-block;
+                                    width: 100%;
+                                    float: left;
+                                    clear: both;
                                 }
                             }
                         }
