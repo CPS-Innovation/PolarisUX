@@ -10,12 +10,40 @@
     }
 }
 
+#openNotesModal {
+    background: none;
+    height: auto;
+    #openMe {
+        &.das-cookie-banner.small {
+            margin-left: 0;
+            margin-top: 0;
+            width: 27%;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .simpleModelTwo {
+            .govuk-grid-row {
+                padding: 0;
+            }
+        }
+        .govuk-grid-row .innerPanel .redaction-wrapper .govuk-grid-column-full {
+            padding: 0 20px;
+        }
+    }
+}
+
 #openFeedbackModal {
     z-index: 9999999999999999999999999999;
-    #openMe .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group:first-of-type {
-        padding: 0;
-        margin: 0;
+    #openMe {
+        .govuk-grid-row .innerPanel .redaction-wrapper .govuk-form-group:first-of-type {
+            padding: 0;
+            margin: 0;
+        }
     }
+}
+
+#openFeedbackSurveyModal {
+    z-index: 9999999999999999999999999999;
 }
 
 .govuk-warning-text {

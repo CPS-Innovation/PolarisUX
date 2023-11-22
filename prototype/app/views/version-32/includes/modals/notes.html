@@ -15,12 +15,8 @@
                     <div class="header-wrapper">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
-                                <h1 class="govuk-heading-l">
-                                    {% if data['searchURN'] %}
-                                        {{ data['searchURN'] }}/1 <span>- Notes</span>
-                                    {% else %}
-                                        45AA209820/1 <span>- Notes</span>
-                                    {% endif %}                        
+                                <h1 class="govuk-heading-s">
+                                    <span id="document-title-notes" class="document-title-5">Document title</span> - Notes</span>
                                 </h1>
                             </div>
                         </div>
@@ -47,7 +43,7 @@
                                         </div>
                                         <!-- ////// NOTES ITEM 1 - END ////// -->
 
-                                        <button id="notes-button" class="govuk-button" data-module="govuk-button" type="button" onClick="closeNotesModal()">Add note</button>
+                                        <button id="notes-button" class="govuk-button" data-module="govuk-button" type="button" onClick="">Add note</button>
                                         <button class="non-button" data-module="govuk-button" type="button" onClick="closeNotesModal()">Close</button>
                                         <hr class="dotted">
 
@@ -60,9 +56,9 @@
                                     <div class="hods-timeline">
 
                                         <div class="hods-timeline__item" id="note-added">
+                                            <strong class="govuk-tag govuk-tag--blue">Casework App</strong>
                                             <h2 class="hods-timeline__title">user_name_1983</h2>
                                             <!-- <p class="hods-timeline__by"></p> -->
-                                            <strong class="govuk-tag govuk-tag--blue">Casework App</strong>
                                             <p class="hods-timeline__date">
                                                 <time class="hods-date-time" datetime="2021-03-15T16:27:00.000Z" id="note-timestamp"></time>
                                             </p>
@@ -70,21 +66,19 @@
                                         </div>
 
                                         <div class="hods-timeline__item">
-                                            <h2 class="hods-timeline__title">user_name_1983</h2>
                                             <strong class="govuk-tag govuk-tag--grey">CMS CLASSIC</strong>
+                                            <h2 class="hods-timeline__title">user_name_1983</h2>
                                             <p class="hods-timeline__date">
                                                 <time class="hods-date-time" datetime="2023-11-20T16:27:00.000Z">20 November 2023 at 4:27pm</time>
                                             </p>
                                             <p class="hods-timeline__description">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                             </p>
                                         </div>
                                         <div class="hods-timeline__item">
+                                            <strong class="govuk-tag govuk-tag--grey">CMS CLASSIC</strong>
                                             <h2 class="hods-timeline__title">Douglas Pollock</h2>
                                             <!-- <p class="hods-timeline__by">by </p> -->
-                                            <strong class="govuk-tag govuk-tag--grey">CMS CLASSIC</strong>
                                             <p class="hods-timeline__date">
                                                 <time class="hods-date-time" datetime="2023-11-19T10:04:00.000Z">19 November 2023 at 10:04am</time>
                                             </p>
@@ -93,9 +87,9 @@
                                             </p>
                                         </div>
                                         <div class="hods-timeline__item">
+                                            <strong class="govuk-tag govuk-tag--blue">Casework App</strong>
                                             <h2 class="hods-timeline__title">Karypun</h2>
                                             <!-- <p class="hods-timeline__by">by </p> -->
-                                            <strong class="govuk-tag govuk-tag--blue">Casework App</strong>
                                             <p class="hods-timeline__date">
                                                 <time class="hods-date-time" datetime="2023-11-19T09:35:00.000Z">19 November 2023 at 9:35am</time>
                                             </p>

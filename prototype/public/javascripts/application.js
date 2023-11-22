@@ -295,6 +295,7 @@ $(document).ready(function () {
 
         var documentTitle = $(this).text();
         $('#document-title').text(documentTitle);
+        $('#document-title-notes').text(documentTitle);
 
         // buttonHome.addEventListener("click", function() {
         //     
@@ -312,6 +313,7 @@ function documentTitle() {
     $('#document-title-2').text(docTitle);
     $('#document-title-3').text(docTitle);
     $('#document-title-4').text(docTitle);
+    $('.document-title-5').text(docTitle);
 }
 
 function showUnread() {
@@ -664,6 +666,9 @@ $(document).ready(function () {
 // =================================== NOTES =================================== //
 
 $(document).ready(function () {
+
+    var notesNumber = 4;
+
     $('#note-added').hide();
 
     $("#notes-button").on("click", function (e) {
@@ -685,6 +690,16 @@ $(document).ready(function () {
         // Note
         $.cookie("notes-Details", $('#notes-Comments').val(), {path:'/'});
         $('#note-added .hods-timeline__description').html($.cookie("notes-Details"));
+
+        setTimeout(function () {
+            $('#notes-Comments').val('');
+            $('#notes-Comments-info').text('You can enter up to 500 characters');
+        }, 15)
+
+        // Counter 
+        notesNumber += 1;
+        $('.notes-trigger span').text(notesNumber);
+
     });
 })
 
