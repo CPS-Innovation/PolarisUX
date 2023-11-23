@@ -228,6 +228,10 @@
         }
         .innerPanel {
             .redaction-wrapper {
+                .govuk-inset-text {
+                    display: inline-block;
+                    margin: 1em 0 0 0;
+                }
                 .govuk-character-count {
                     width: 98%;
                     margin: 0 5px 0 5px;
