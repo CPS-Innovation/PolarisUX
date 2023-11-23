@@ -49,6 +49,22 @@
             // search field button
             $btnSearchUrn = $("#btnSearchURN");
 
+      const $openAllLinks = $(".open-all");
+      $openAllLinks.each(function (_,link) {
+          $(link).click(function (event) {
+            event.preventDefault()
+            const $anchorLinks = $(link)
+              .closest(".accordion-section-body")
+              .find(".openMe a")
+              
+              $anchorLinks.each(function (index,link ) {
+              setTimeout(()=>{
+                handleMenuLinkClick($(this).text())
+              },100 * index);
+            })
+          })
+        })
+
         $menuLinks.each(function (_, link) {
             $(link).click(function (event) {
                 event.preventDefault();
@@ -98,7 +114,6 @@
         function ensureTabExists(tabId, label, isSearched) {
             const existingTab = $(`li[data-tab-id='${tabId}']`);
             if (existingTab.length) return;
-
             const newTab = $(`
             <li class="govuk-tabs__list-item tooltip" data-tab-id="${tabId}" onclick="return documentTitle()">
 
