@@ -77,7 +77,13 @@ button {
         background-size: 0.85em;
         margin-left: 0.5em;
     }
-    &.date-added, &.time-added {
+    &.notes-added {
+        background: url("../images/notes.svg") no-repeat 50% 50%;
+        background-size: 0.85em;
+        margin-left: 0.5em;
+        margin-top: 0.15em;
+    }
+    &.date-added, &.time-added, &.notes-added {
         position: relative;
         &:hover, &:active, &:focus {
             .visuallyhidden {

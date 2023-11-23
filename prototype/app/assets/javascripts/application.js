@@ -698,6 +698,7 @@ $(document).ready(function () {
 
         // Counter 
         notesNumber += 1;
+        $('.notes-number').text(notesNumber);
         $('.notes-trigger span').text(notesNumber);
 
     });
