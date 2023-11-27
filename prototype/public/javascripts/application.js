@@ -719,6 +719,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     $('#case-action-plan-active').hide();
+    $('.Details-Key, .Details-AllKey, .Details-NonKey, .Details-Additional, .Details-Witness, .Details-Victim, .Details-Special, .Details-Convictions, .Details-ROTI, .Details-KeyExibits, .Details-Evidence, .Details-CCTV, .Details-Visually, .Details-Drugs, .Details-Forensic, .Details-Medical, .Details-Unused, .Details-Bad, .Details-Orders, .Details-POCA, .Details-Compensation, .Details-Other').hide();
 
     $("input[name=caseActionPlan-SpecificDetails]").on("change", function (e) {
         $('#caseActionPlan-Description-hint').append('\r\n \r\n - ' + $(this).val()+': \r\n');
