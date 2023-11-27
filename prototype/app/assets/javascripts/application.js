@@ -743,7 +743,119 @@ $(document).ready(function () {
             $.cookie("CAPanswer-info", true, {path:'/'});
         } else {
             $.cookie("CAPanswer-info", false, {path:'/'});
-        }        
+        }   
+
+        if ($('input[id=caseActionPlan-SpecificDetails-Key]').is(':checked')) { 
+            $.cookie("Details-Key", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Key", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-AllKey]').is(':checked')) { 
+            $.cookie("Details-AllKey", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-AllKey", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-NonKey]').is(':checked')) { 
+            $.cookie("Details-NonKey", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-NonKey", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Additional]').is(':checked')) { 
+            $.cookie("Details-Additional", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Additional", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Witness]').is(':checked')) { 
+            $.cookie("Details-Witness", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Witness", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Victim]').is(':checked')) { 
+            $.cookie("Details-Victim", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Victim", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Special]').is(':checked')) { 
+            $.cookie("Details-Special", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Special", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Convictions]').is(':checked')) { 
+            $.cookie("Details-Convictions", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Convictions", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-ROTI]').is(':checked')) { 
+            $.cookie("Details-ROTI", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-ROTI", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-KeyExibits]').is(':checked')) { 
+            $.cookie("Details-KeyExibits", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-KeyExibits", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Evidence]').is(':checked')) { 
+            $.cookie("Details-Evidence", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Evidence", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-CCTV]').is(':checked')) { 
+            $.cookie("Details-CCTV", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-CCTV", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Visually]').is(':checked')) { 
+            $.cookie("Details-Visually", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Visually", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Drugs]').is(':checked')) { 
+            $.cookie("Details-Drugs", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Drugs", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Forensic]').is(':checked')) { 
+            $.cookie("Details-Forensic", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Forensic", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Medical]').is(':checked')) { 
+            $.cookie("Details-Medical", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Medical", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Unused]').is(':checked')) { 
+            $.cookie("Details-Unused", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Unused", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Bad]').is(':checked')) { 
+            $.cookie("Details-Bad", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Bad", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Orders]').is(':checked')) { 
+            $.cookie("Details-Orders", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Orders", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-POCA]').is(':checked')) { 
+            $.cookie("Details-POCA", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-POCA", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Compensation]').is(':checked')) { 
+            $.cookie("Details-Compensation", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Compensation", false, {path:'/'});
+        }
+        if ($('input[id=caseActionPlan-SpecificDetails-Other]').is(':checked')) { 
+            $.cookie("Details-Other", true, {path:'/'}); 
+        } else {
+            $.cookie("Details-Other", false, {path:'/'});
+        }
+
         $.cookie("CAPanswer-description", $('#caseActionPlan-Description-hint').text(), {path:'/'});
         if ($('input[name=caseActionPlan-FollowUp]:checkbox:checked').length > 0) {
             $.cookie("CAPanswer-task", true, {path:'/'});
@@ -770,6 +882,117 @@ $(document).ready(function () {
             $('.CAPanswer-info').show();
         } else {
             $('.CAPanswer-info').hide();
+        }
+
+        if ($.cookie("Details-Key") == 'true') { 
+            $('.Details-Key').show(); 
+        } else {
+            $('.Details-Key').hide(); 
+        }
+        if ($.cookie("Details-AllKey") == 'true') { 
+            $('.Details-AllKey').show(); 
+        } else {
+            $('.Details-AllKey').hide(); 
+        }
+        if ($.cookie("Details-NonKey") == 'true') { 
+            $('.Details-NonKey').show(); 
+        } else {
+            $('.Details-NonKey').hide(); 
+        }
+        if ($.cookie("Details-Additional") == 'true') { 
+            $('.Details-Additional').show(); 
+        } else {
+            $('.Details-Additional').hide(); 
+        }
+        if ($.cookie("Details-Witness") == 'true') { 
+            $('.Details-Witness').show(); 
+        } else {
+            $('.Details-Witness').hide(); 
+        }
+        if ($.cookie("Details-Victim") == 'true') { 
+            $('.Details-Victim').show(); 
+        } else {
+            $('.Details-Victim').hide(); 
+        }
+        if ($.cookie("Details-Special") == 'true') { 
+            $('.Details-Special').show(); 
+        } else {
+            $('.Details-Special').hide(); 
+        }
+        if ($.cookie("Details-Convictions") == 'true') { 
+            $('.Details-Convictions').show(); 
+        } else {
+            $('.Details-Convictions').hide(); 
+        }
+        if ($.cookie("Details-ROTI") == 'true') { 
+            $('.Details-ROTI').show(); 
+        } else {
+            $('.Details-ROTI').hide(); 
+        }
+        if ($.cookie("Details-KeyExibits") == 'true') { 
+            $('.Details-KeyExibits').show(); 
+        } else {
+            $('.Details-KeyExibits').hide(); 
+        }
+        if ($.cookie("Details-Evidence") == 'true') { 
+            $('.Details-Evidence').show(); 
+        } else {
+            $('.Details-Evidence').hide(); 
+        }
+        if ($.cookie("Details-CCTV") == 'true') { 
+            $('.Details-CCTV').show(); 
+        } else {
+            $('.Details-CCTV').hide(); 
+        }
+        if ($.cookie("Details-Visually") == 'true') { 
+            $('.Details-Visually').show(); 
+        } else {
+            $('.Details-Visually').hide(); 
+        }
+        if ($.cookie("Details-Drugs") == 'true') { 
+            $('.Details-Drugs').show(); 
+        } else {
+            $('.Details-Drugs').hide(); 
+        }
+        if ($.cookie("Details-Forensic") == 'true') { 
+            $('.Details-Forensic').show(); 
+        } else {
+            $('.Details-Forensic').hide(); 
+        }
+        if ($.cookie("Details-Medical") == 'true') { 
+            $('.Details-Medical').show(); 
+        } else {
+            $('.Details-Medical').hide(); 
+        }
+        if ($.cookie("Details-Unused") == 'true') { 
+            $('.Details-Unused').show(); 
+        } else {
+            $('.Details-Unused').hide(); 
+        }
+        if ($.cookie("Details-Bad") == 'true') { 
+            $('.Details-Bad').show(); 
+        } else {
+            $('.Details-Bad').hide(); 
+        }
+        if ($.cookie("Details-Orders") == 'true') { 
+            $('.Details-Orders').show(); 
+        } else {
+            $('.Details-Orders').hide(); 
+        }
+        if ($.cookie("Details-POCA") == 'true') { 
+            $('.Details-POCA').show(); 
+        } else {
+            $('.Details-POCA').hide(); 
+        }
+        if ($.cookie("Details-Compensation") == 'true') { 
+            $('.Details-Compensation').show(); 
+        } else {
+            $('.Details-Compensation').hide(); 
+        }
+        if ($.cookie("Details-Other") == 'true') { 
+            $('.Details-Other').show(); 
+        } else {
+            $('.Details-Other').hide(); 
         }
 
         // $('.CAPanswer-info').text($.cookie("CAPanswer-info"));
