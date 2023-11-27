@@ -122,6 +122,60 @@
             padding-bottom: 0;
             // width: 87%;
             // width: 333px;
+            #case-action-plan {
+                position: absolute;
+                background: url("../images/case.svg") no-repeat 50% 50%;
+                background-size: 1.5em;
+                left: 15.25em;
+                padding: 0;
+                width: 2em;
+                height: 2em;
+                top: 0.75em;
+                box-shadow: none; 
+                &.active {
+                    &:after {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: $govuk-error-colour;
+                        position: absolute;
+                        left: 80%;
+                        margin-left: -6px;
+                        top: -2px;
+                        content: " ";                        
+                    }
+                }
+                span {
+                    display: none;
+                }  
+                &:hover, &:active, &:focus {
+                    span {
+                        display: inline-block;
+                        background: rgba(0,0,0,0.7);
+                        padding: 0.5em;
+                        border-radius: 5px;
+                        position: absolute;
+                        bottom: -2.5em;
+                        color: white;
+                        left: 50%;
+                        width: 115px;
+                        margin: 0 0 0 -65px;
+                        z-index: 1;
+                        &:before {
+                            width: 0px;
+                            height: 0px;
+                            border-left: 6px solid transparent;
+                            border-right: 6px solid transparent;
+                            border-bottom: 6px solid rgba(0, 0, 0, 0.7);
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -6px;
+                            top: -6px;
+                            content: " ";                        
+                        }
+                    }
+                }         
+            }
         }
     }
     #searchFormTest, #searchFormTest2 {
@@ -188,10 +242,37 @@
         .govuk-heading-m {
             margin-bottom: 0;
             font-size: 1.25rem;
+            width: 50%;
         }
         .govuk-heading-s {
             margin-bottom: 0;
             color: $govuk-secondary-text-colour;
+        }
+        table {
+            width: 50%;
+        }
+        #case-action-plan {
+            float: right;
+            margin: 0;
+            font-size: 0.95rem;
+            padding: 11px;
+            &.active {
+                &:after {
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    border-radius: 50%;
+                    background: $govuk-error-colour;
+                    position: absolute;
+                    left: 80%;
+                    margin-left: 15px;
+                    top: -14px;
+                    content: "1";                        
+                }
+            }
         }
     }
     table {
@@ -440,3 +521,4 @@
         border: none !important;
     }
 }
+

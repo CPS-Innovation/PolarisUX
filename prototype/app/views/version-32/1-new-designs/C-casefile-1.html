@@ -12,6 +12,9 @@
     {% include "../includes/modals/feedback.html" %}
     {% include "../includes/modals/feedback-survey.html" %}
     {% include "../includes/modals/notes.html" %}
+    {% include "../includes/modals/case-action-plan.html" %}
+    {% include "../includes/modals/case-action-plan-builder.html" %}
+    {% include "../includes/modals/confirmation.html" %}
 {% endblock %}
 {% block content %}
 
@@ -89,6 +92,9 @@
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-one-quarter">
                         <div class="case-info">
+                            <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="openCaseActionBuilderModal()">
+                                <span>Case action plan</span>
+                            </button>
                             {% if data['searchURN'] %}
                                 <h1 class="govuk-heading-m">{{ data['searchURN'] }}/1</h1>
                             {% else %}

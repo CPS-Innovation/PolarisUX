@@ -94,7 +94,7 @@
     $(document).ready(function () {
         setTimeout(function () {
             $("#openFeedbackModal").removeClass("rj-dont-display");
-        }, 90000)
+        }, 150000)
     })
 
     function closeFeedbackModal() {
@@ -114,6 +114,31 @@
     }
     function closeNotesModal() {
         $("#openNotesModal").addClass("rj-dont-display");
+    }
+
+    setTimeout(function () {
+        $("#caseActionModal").removeClass("rj-dont-display");
+    }, 9)
+
+    function openCaseActionModal() {
+        $("#caseActionModal").removeClass("rj-dont-display");
+    }
+    function closeCaseActionModal() {
+        $("#caseActionModal").addClass("rj-dont-display");
+    }
+
+    function openCaseActionBuilderModal() {
+        $("#caseActionBuilderModal").removeClass("rj-dont-display");
+    }
+    function closeCaseActionBuilderModal() {
+        $("#caseActionBuilderModal").addClass("rj-dont-display");
+    }
+
+    function openConfirmationModal() {
+        $("#confirmationModal").removeClass("rj-dont-display");
+    }
+    function closeConfirmationModal() {
+        $("#confirmationModal").addClass("rj-dont-display");
     }
 
 </script>

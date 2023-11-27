@@ -260,7 +260,7 @@
                             <!-- /////////////////////// ROW - 1 - START /////////////////////// -->
                             <div class="govuk-grid-row">
 
-                                <div class="govuk-grid-column-full">
+<!--                                 <div class="govuk-grid-column-full">
                                     <div class="govuk-warning-text">
                                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                                         <strong class="govuk-warning-text__text">
@@ -269,7 +269,7 @@
                                         </strong>
                                     </div>
                                 </div>
-
+ -->
                                 <div class="govuk-grid-column-full">
 
                                     <div id="over-type-issued-error" class="govuk-form-group outer-wrapper">
@@ -524,10 +524,29 @@
                             </div>
                             <!-- /////////////////////// ROW - 2 - END /////////////////////// -->
 
+                            <!-- /////////////////////// ROW - 3 - START /////////////////////// -->
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full">
+                                    <div class="govuk-inset-text">
+                                        <div class="govuk-form-group">
+                                            <fieldset class="govuk-fieldset" aria-describedby="redactionLog-return-hint">
+                                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="redactionLog-return" name="redactionLog-return" type="checkbox" checked value="Yes">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="redactionLog-return">Return document to the Investigative Agency?</label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /////////////////////// ROW - 3 - END /////////////////////// -->
+
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full cta-group">
                                     <button id="error-over-redactions" class="govuk-button" data-module="govuk-button" type="button" onClick="errorStatus()">Save and close</button>
-                                    <button id="submit-over-redactions" class="govuk-button" data-module="govuk-button" type="button" onClick="closeModalOver()">Save and close</button>
+                                    <button id="submit-over-redactions" class="govuk-button" data-module="govuk-button" type="button" onClick="openCaseActionModal(), closeModalOver()">Save and close</button>
                                     <button class="non-button" data-module="govuk-button" type="button" onClick="closeModalOver()">Cancel</button>
                                 </div>
                             </div>

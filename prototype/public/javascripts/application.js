@@ -661,6 +661,16 @@ $(document).ready(function () {
 
     });
 
+    $("#redactionLog-return").on("change", function (e) {
+        if ($(this).is(':checked')) {
+            $('#submit-over-redactions').attr('onClick','openCaseActionModal()');
+        } else {
+            $('#submit-over-redactions').attr('onClick','closeModalOver()');
+        }
+    });
+
+    
+
 })
 
 // =================================== NOTES =================================== //
@@ -705,6 +715,73 @@ $(document).ready(function () {
 })
 
 
+// =================================== CASE ACTION PLAN =================================== //
+$(document).ready(function () {
+
+    $('#case-action-plan-active').hide();
+
+    $("input[name=caseActionPlan-SpecificDetails]").on("change", function (e) {
+        $('#caseActionPlan-Description-hint').append('\r\n \r\n - ' + $(this).val()+': \r\n');
+    });
+
+    $("#confirmation").on("click", function (e) {
+        $('#case-action-plan').addClass('active');
+        $('#no-plan').hide();
+        $('#case-action-plan-active').show();
+        $('#caseActionBuilderModal .caseActionBuilderModal-wrapper').removeClass('x-small');
+
+        // Cookies store
+        if ($('input[id="caseActionPlan-Type-Start"]:checked')) { $.cookie("CAPanswer-type", 'Start File Build', {path:'/'}); }
+        if ($('input[id="caseActionPlan-Type-Stop"]:checked')) { $.cookie("CAPanswer-type", 'Stop File Build', {path:'/'}); }
+        if ($('input[id="caseActionPlan-Type-Modify"]:checked')) { $.cookie("CAPanswer-type", 'Modify File Build', {path:'/'}); }
+        $.cookie("CAPanswer-Day", $('#caseActionPlan-Date-Day').val(), {path:'/'});
+        $.cookie("CAPanswer-Month", $('#caseActionPlan-Date-Month').val(), {path:'/'});
+        $.cookie("CAPanswer-Year", $('#caseActionPlan-Date-Year').val(), {path:'/'});
+        // $.cookie("CAPanswer-info", $('input[name=caseActionPlan-SpecificDetails]').val(), {path:'/'});
+         if ($("input[name=caseActionPlan-SpecificDetails]:checkbox:checked").length > 0) {
+            $.cookie("CAPanswer-info", true, {path:'/'});
+        } else {
+            $.cookie("CAPanswer-info", false, {path:'/'});
+        }        
+        $.cookie("CAPanswer-description", $('#caseActionPlan-Description-hint').text(), {path:'/'});
+        if ($('input[name=caseActionPlan-FollowUp]:checkbox:checked').length > 0) {
+            $.cookie("CAPanswer-task", true, {path:'/'});
+        } else {
+            $.cookie("CAPanswer-task", false, {path:'/'});
+        }
+
+        $('.CAPanswer-type').text($.cookie("CAPanswer-type"));
+        $('.CAPanswer-date-Day').text($.cookie("CAPanswer-Day"));
+        if ($.cookie("CAPanswer-Month") == '01' || $.cookie("CAPanswer-Month") == '1') { $('.CAPanswer-date-Month').text('January'); }
+        if ($.cookie("CAPanswer-Month") == '02' || $.cookie("CAPanswer-Month") == '2') { $('.CAPanswer-date-Month').text('February'); }
+        if ($.cookie("CAPanswer-Month") == '03' || $.cookie("CAPanswer-Month") == '3') { $('.CAPanswer-date-Month').text('March'); }
+        if ($.cookie("CAPanswer-Month") == '04' || $.cookie("CAPanswer-Month") == '4') { $('.CAPanswer-date-Month').text('April'); }
+        if ($.cookie("CAPanswer-Month") == '05' || $.cookie("CAPanswer-Month") == '5') { $('.CAPanswer-date-Month').text('May'); }
+        if ($.cookie("CAPanswer-Month") == '06' || $.cookie("CAPanswer-Month") == '6') { $('.CAPanswer-date-Month').text('June'); }
+        if ($.cookie("CAPanswer-Month") == '07' || $.cookie("CAPanswer-Month") == '7') { $('.CAPanswer-date-Month').text('July'); }
+        if ($.cookie("CAPanswer-Month") == '08' || $.cookie("CAPanswer-Month") == '8') { $('.CAPanswer-date-Month').text('August'); }
+        if ($.cookie("CAPanswer-Month") == '09' || $.cookie("CAPanswer-Month") == '9') { $('.CAPanswer-date-Month').text('September'); }
+        if ($.cookie("CAPanswer-Month") == '10' || $.cookie("CAPanswer-Month") == '10') { $('.CAPanswer-date-Month').text('October'); }
+        if ($.cookie("CAPanswer-Month") == '11' || $.cookie("CAPanswer-Month") == '11') { $('.CAPanswer-date-Month').text('November'); }
+        if ($.cookie("CAPanswer-Month") == '12' || $.cookie("CAPanswer-Month") == '12') { $('.CAPanswer-date-Month').text('December'); }
+        $('.CAPanswer-date-Year').text($.cookie("CAPanswer-Year"));
+        if ($.cookie("CAPanswer-info") == 'true') {
+            $('.CAPanswer-info').show();
+        } else {
+            $('.CAPanswer-info').hide();
+        }
+
+        // $('.CAPanswer-info').text($.cookie("CAPanswer-info"));
+        $('.CAPanswer-description').text($.cookie("CAPanswer-description"));
+        if ($.cookie("CAPanswer-task") == 'true') {
+            $('.CAPanswer-task').text('Yes');
+        } else {
+            $('.CAPanswer-task').text('No');
+        }
+
+    });
+
+})
 
 // =================================== MY COOKIES =================================== //
 

@@ -49,6 +49,25 @@
             // search field button
             $btnSearchUrn = $("#btnSearchURN");
 
+
+            // =================================== OPEN ALL DOCUMENTS =================================== //
+
+            const $openAllLinks = $(".open-all");
+            $openAllLinks.each(function (_,link) {
+                $(link).click(function (event) {
+                    event.preventDefault()
+                    const $anchorLinks = $(link)
+                        .closest(".accordion-section-body")
+                        .find(".openMe a")
+
+                        $anchorLinks.each(function (index,link ) {
+                        setTimeout(()=>{
+                            handleMenuLinkClick($(this).text())
+                        },100 * index);
+                    })
+                })
+            })
+
         $menuLinks.each(function (_, link) {
             $(link).click(function (event) {
                 event.preventDefault();
@@ -297,6 +316,8 @@
             }
         }
     });
+
+
 
 </script>
 

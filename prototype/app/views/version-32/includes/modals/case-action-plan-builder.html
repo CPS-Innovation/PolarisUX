@@ -1,0 +1,135 @@
+<div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="caseActionBuilderModal">
+
+    <div class="das-cookie-banner caseActionBuilderModal-wrapper x-small" id="openMe">
+        <div class="das-cookie-banner__wrapper">
+
+            <div class="govuk-modal-dialogue__header">
+                <button aria-label="Close modal dialogue" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeCaseActionBuilderModal()">×</button>
+            </div>
+
+            <!-- //////////////////////////////// CASE ACTION PLAN BUILDER - START //////////////////////////////// -->
+            <div class="govuk-grid-row" id="case-action-plan-builder-modal">
+
+                <div class="innerPanel simpleModelTwo">
+
+                    <!-- /////////////////////// NO PLAN - START /////////////////////// -->
+                    <div id="no-plan">
+                        <div class="header-wrapper">
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full">
+                                    <h1 class="govuk-heading-l">
+                                        {% if data['searchURN'] %}
+                                            {{ data['searchURN'] }}/1
+                                        {% else %}
+                                            45AA209820/1
+                                        {% endif %}                        
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="redaction-wrapper">
+                            <form method="" action="">
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full">
+                                        <p></p>
+                                        <h1 class="govuk-heading-s">
+                                            Case Action Plan                 
+                                        </h1>
+                                        <p>You have no current Case Action Plan</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full cta-group">
+                                        <button class="non-button" data-module="govuk-button" type="button" onClick="closeCaseActionBuilderModal()">Cancel</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /////////////////////// NO PLAN - END /////////////////////// -->
+
+                    <!-- /////////////////////// CASE ACTION PLAN - START /////////////////////// -->
+                    <div id="case-action-plan-active">
+                        <div class="header-wrapper" id="">
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-full">
+                                    <h1 class="govuk-heading-l">
+                                        {% if data['searchURN'] %}
+                                            {{ data['searchURN'] }}/1 <span>- Case Action Plan</span>
+                                        {% else %}
+                                            45AA209820/1 <span>- Case Action Plan</span>
+                                        {% endif %}                        
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="redaction-wrapper">
+                            <form method="" action="">
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full">
+                                        <p></p>
+
+                                        <table class="govuk-table">
+                                            <caption class="govuk-table__caption govuk-table__caption--m">Case Action Plan details</caption>
+                                            <thead class="govuk-table__head">
+                                                <tr class="govuk-table__row">
+                                                    <th scope="col" class="govuk-table__header" width="10%">Action type</th>
+                                                    <th scope="col" class="govuk-table__header" width="15%">Required by Date</th>
+                                                    <th scope="col" class="govuk-table__header" width="15%">Specific information</th>
+                                                    <th scope="col" class="govuk-table__header" width="50%">Description to Invesgitative Agency</th>
+                                                    <th scope="col" class="govuk-table__header" width="10%">Follow up task?</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="govuk-table__body">
+                                                <tr class="govuk-table__row">
+                                                    <th scope="row" class="govuk-table__header"><span class="govuk-tag CAPanswer-type"></span></th>
+                                                    <td class="govuk-table__cell">
+                                                        <span class="CAPanswer-date-Day"></span>
+                                                        <span class="CAPanswer-date-Month"></span>
+                                                        <span class="CAPanswer-date-Year"></span>
+                                                    </td>
+                                                    <td class="govuk-table__cell">
+                                                        <span class="CAPanswer-info">
+                                                            <ul class="govuk-list govuk-list--bullet">
+                                                                <li>apples</li>
+                                                                <li>oranges</li>
+                                                                <li>pears</li>
+                                                            </ul>
+                                                        </span>
+                                                    </td>
+                                                    <td class="govuk-table__cell"><span class="CAPanswer-description"></span></td>
+                                                    <td class="govuk-table__cell"><span class="CAPanswer-task"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full cta-group">
+                                        <button id="" class="govuk-button" data-module="govuk-button" type="button" onClick="">Submit Case Action Plan</button>
+                                        <button class="non-button" data-module="govuk-button" type="button" onClick="closeCaseActionBuilderModal()">Close</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /////////////////////// CASE ACTION PLAN - END /////////////////////// -->
+
+
+                </div>
+
+            </div>
+            <!-- //////////////////////////////// CASE ACTION PLAN BUILDER - END //////////////////////////////// -->
+        </div>
+    </div>
+</div>
