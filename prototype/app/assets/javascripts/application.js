@@ -673,6 +673,23 @@ $(document).ready(function () {
 
 })
 
+// =================================== Zoom =================================== //
+function zoomIn() {
+    var pic = document.getElementById("pdf-root").getElementsByClassName( 'PdfHighlighter' )[0];
+    var width = pic.clientWidth;
+    pic.style.width = width + 100 + "px";
+    $("#pdf-root").addClass('zoom');
+    // var height = pic.clientHeight;
+    // var pic = document.getElementById("test").getElementsByClassName( 'page' )[0];
+    // pic.style.height = height + 100 + "px";
+}
+
+function zoomOut() {
+    var pic = document.getElementById("pdf-root").getElementsByClassName( 'PdfHighlighter' )[0];
+    var width = pic.clientWidth;
+    pic.style.width = width - 100 + "px";
+}
+
 // =================================== NOTES =================================== //
 
 $(document).ready(function () {

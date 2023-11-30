@@ -33455,7 +33455,7 @@
                                             return e.preventDefault();
                                         },
                                         children: [
-                                            (0, I.jsx)("div", { className: "pdfViewer" }),
+                                            (0, I.jsx)("div", { className: "pdfViewer", id: "test" }),
                                             this.renderTip(),
                                             "function" === typeof r
                                                 ? (0, I.jsx)(B, {

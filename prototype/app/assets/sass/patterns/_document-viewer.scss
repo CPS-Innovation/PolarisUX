@@ -62,6 +62,34 @@ main.case-files {
                     display: inline-block;
                     width: auto;
                 }
+                .zoom {
+                    display: inline-block;
+                    float: right;
+                    margin: 10px 0 10px 10px;
+                    border: none;
+                    border-radius: 5px;
+                    text-indent: -1000em;
+                    width: 2.75em;
+                    height: 2.75em;
+                    &.zoomIn {
+                        background: url("../images/zoom-in-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
+                        background-size: 1.5em;
+                    }
+                    &.zoomOut {
+                        background: url("../images/zoom-out-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
+                        background-size: 1.5em;
+                    }
+                    &:hover, &:active, &:focus {
+                        &.zoomIn {
+                            background: url("../images/zoom-in-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
+                            background-size: 1.5em;
+                        }
+                        &.zoomOut {
+                            background: url("../images/zoom-out-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
+                            background-size: 1.5em;
+                        }
+                    }
+                }
                 .dropdown {
                     position: relative;
                     display: inline-block;
@@ -276,6 +304,10 @@ main.case-files {
         border-top: none;
         box-shadow: 5px 10px 10px 15px rgba(0,0,0,0.4);
         background: govuk-colour("light-grey");
+    }
+    &.zoom {
+        overflow: scroll;
+        height: 73.75vh !important;
     }
 }
 
