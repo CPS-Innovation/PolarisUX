@@ -51,6 +51,27 @@ $(document).ready(function () {
     $('.accordion-controls').append(``);    
 })
 
+// =================================== Tabs =================================== //
+$(document).ready(function () {
+    $("#new-tabs .tab-link").on("click", function (e) {
+        e.preventDefault();
+        $('#new-tabs .list-item').removeClass('list-item--selected');
+        $(this).parent().addClass('list-item--selected');
+    });
+
+    $("#new-tabs .sent-plan-link").on("click", function (e) {
+        $('.panel').hide();
+        $('#sent-plan').show();
+    });
+
+    $("#new-tabs .draft-plan-link").on("click", function (e) {
+        $('.panel').hide();
+        $('#draft-plan').show();
+    });
+    
+})
+
+
 
 // =================================== Back to top =================================== //
 // $(document).ready(function () {
@@ -196,6 +217,63 @@ function closeToggleTooltip2() {
 // });
 
 
+// =================================== Search =================================== //
+function selectAll1(source) {
+    checkboxes = document.getElementsByName('search-group-1');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll2(source) {
+    checkboxes = document.getElementsByName('search-group-2');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll3(source) {
+    checkboxes = document.getElementsByName('search-group-3');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll4(source) {
+    checkboxes = document.getElementsByName('search-group-4');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll5(source) {
+    checkboxes = document.getElementsByName('search-group-5');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll6(source) {
+    checkboxes = document.getElementsByName('search-group-6');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll7(source) {
+    checkboxes = document.getElementsByName('search-group-7');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll8(source) {
+    checkboxes = document.getElementsByName('search-group-8');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll9(source) {
+    checkboxes = document.getElementsByName('search-group-9');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+
+
 // =================================== Document viewer =================================== //
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function toggleClass() {
@@ -204,8 +282,10 @@ function toggleClass() {
 
 function myFunction() {
     // $('.dropdown-content').toggle('show');
-    // document.getElementsByClassName("dropdown-content").toggle("show");
-    document.getElementById("myDropdown").classList.toggle("show");
+    // document.getElementsByClassName("dropdown-content").classList.toggle("show");
+    // $("dropdown-content").toggle("show");
+    document.getElementById("myDropdown1").classList.toggle("show");
+    document.getElementById("myDropdown2").classList.toggle("show");
 }
 
 // // Close the dropdown menu if the user clicks outside of it
@@ -273,6 +353,7 @@ function searchTerm2() {
 }
 
 
+
 // =================================== Window size & Document filter change =================================== //
 $(document).ready(function () {
 
@@ -296,12 +377,19 @@ $(document).ready(function () {
         var documentTitle = $(this).text();
         $('#document-title').text(documentTitle);
         $('#document-title-notes').text(documentTitle);
+        $('.document-title-7').text(documentTitle);
 
         // buttonHome.addEventListener("click", function() {
         //     
         //     alert(CountButtonHomeClicks);
         // });
 
+    });
+
+    $(".notes-link").on("click", function (e) {
+        var documentTitle = $(this).parent().parent().find('.show-case').text();
+        $('#document-title-notes').text(documentTitle);
+        $('#document-title-notes-New').text(documentTitle);
     });
 
 })
@@ -314,6 +402,8 @@ function documentTitle() {
     $('#document-title-3').text(docTitle);
     $('#document-title-4').text(docTitle);
     $('.document-title-5').text(docTitle);
+    $('.document-title-6').text(docTitle);
+    $('.document-title-7').text(docTitle);
 }
 
 function showUnread() {
@@ -371,6 +461,183 @@ function windowSizeChange() {
     $('#navbar2 ul.navbar.sticky-tabs').toggleClass('full-width');
 }
 
+// =================================== SEARCH =================================== //
+$(document).ready(function () {
+
+    $('input[name="searchDocumentType"]').click(function() {
+        if ($('input[name="searchDocumentType"]:checked').length > 0) {
+            $('.details .search-item').hide();
+            $('input[name="searchDocumentType"]:checked').each(function() {
+                $('div[data-group*=' + this.value + ']').fadeIn();
+            });
+        } else {
+            $('.details .search-item').fadeIn();
+        }
+    });
+
+    $('input[name="searchDocumentCategory"]').click(function() {
+        if ($('input[name="searchDocumentCategory"]:checked').length > 0) {
+            $('.details .search-item').hide();
+            $('input[name="searchDocumentCategory"]:checked').each(function() {
+                $('div[data-group*=' + this.value + ']').fadeIn();
+            });
+        } else {
+            $('.details .search-item').fadeIn();
+        }
+    }); 
+
+    var items = $('.search-item');
+    var itemsList = $('#search-results-list');
+
+    $('#sort').change( function() {
+        if($(this).val() == 1){
+           sortAsc();
+        }
+        else if($(this).val() == 2){
+            sortDesc();
+        }
+    });
+
+    function sortAsc(){
+        itemsList.empty();
+        items.sort(function(a, b){
+          return $(a).data('items')-$(b).data('items')
+        });
+        itemsList.append(items);
+    }
+    function sortDesc(){
+        itemsList.empty();
+        items.sort(function(a, b){
+          return $(b).data('items')-$(a).data('items')
+        });
+        itemsList.append(items); 
+    }  
+
+    $('.search-redaction-footer').hide();
+
+    // Drop down
+    $('#search-redaction-type-1').change(function() {
+        if ($('input[name=search-group-1]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-2').change(function() {
+        if ($('input[name=search-group-2]').is(':checked')) {
+            $('.redact-all-button-2').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-3').change(function() {
+        if ($('input[name=search-group-3]').is(':checked')) {
+            $('.redact-all-button-3').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-4').change(function() {
+        if ($('input[name=search-group-4]').is(':checked')) {
+            $('.redact-all-button-4').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-5').change(function() {
+        if ($('input[name=search-group-5]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-6').change(function() {
+        if ($('input[name=search-group-6]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-7').change(function() {
+        if ($('input[name=search-group-7]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-8').change(function() {
+        if ($('input[name=search-group-8]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('#search-redaction-type-9').change(function() {
+        if ($('input[name=search-group-9]').is(':checked')) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+
+    // Checkboxes
+    $('input[name=search-group-1]').change(function() {
+        if ($('#search-redaction-type-1').val()) {
+            $('.redact-all-button-1').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-2]').change(function() {
+        if ($('#search-redaction-type-2').val()) {
+            $('.redact-all-button-2').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-3]').change(function() {
+        if ($('#search-redaction-type-3').val()) {
+            $('.redact-all-button-3').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-4]').change(function() {
+        if ($('#search-redaction-type-4').val()) {
+            $('.redact-all-button-4').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-5]').change(function() {
+        if ($('#search-redaction-type-5').val()) {
+            $('.redact-all-button-5').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-6]').change(function() {
+        if ($('#search-redaction-type-6').val()) {
+            $('.redact-all-button-6').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-7]').change(function() {
+        if ($('#search-redaction-type-7').val()) {
+            $('.redact-all-button-7').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-8]').change(function() {
+        if ($('#search-redaction-type-8').val()) {
+            $('.redact-all-button-8').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    $('input[name=search-group-9]').change(function() {
+        if ($('#search-redaction-type-9').val()) {
+            $('.redact-all-button-9').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+            $('.search-redaction-footer').show();
+        }       
+    });
+    // $('.search-redact-button').click(function() {
+
+    // });
+    
+    
+
+})
+
+function openRedactAllModal(){
+    alert('working');
+}
+
 // =================================== FEEDBACK LOOP =================================== //
 $(document).ready(function () {
     $('#feedbackBad-button').hide();
@@ -390,12 +657,12 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-    $('#page-refresh-2, #alert2').hide();
+    $('#page-refresh-2, #alert2, #page-refresh-3, #alert3').hide();
 
     setTimeout(function () {
         $('#push-notification').show();
         $('#alert').addClass('alert');
-        $('#header-alert').text('You have 2 new documents');
+        $('#header-alert').text('2 new documents');
     }, 15000)
 
     $("#page-refresh").on("click", function (e) {
@@ -416,8 +683,8 @@ $(document).ready(function () {
 
         $('#hidden-documents-2').attr("aria-expanded", "true");
         $('#hidden-documents-2').find(".hidden-section").addClass('new');
+        $('#hidden-documents-2').find(".holder").hide();
         $('#hidden-documents-2').find(".hidden-section td").addClass('newDocument');
-        $('#hidden-documents-2').find(".hidden-section tr.holder").hide();
         $('#hidden-documents-2').find(".accordion-section-header").removeClass('no-documents');
         $('#hidden-documents-2').find(".accordion-section-header .defendants").text('1');
 
@@ -452,8 +719,8 @@ $(document).ready(function () {
 
         $('#hidden-documents-2').attr("aria-expanded", "true");
         $('#hidden-documents-2').find(".hidden-section").addClass('new');
+        $('#hidden-documents-2').find(".holder").hide();
         $('#hidden-documents-2').find(".hidden-section td").addClass('newDocument');
-        $('#hidden-documents-2').find(".hidden-section tr.holder").hide();
         $('#hidden-documents-2').find(".accordion-section-header").removeClass('no-documents');
         $('#hidden-documents-2').find(".accordion-section-header .defendants").text('1');
 
@@ -484,6 +751,8 @@ $(document).ready(function () {
         $('#push-notification-2').hide();
         $('#alert2').removeClass('alert');
 
+        // $('.updated-message').show();
+
         document.getElementById("date-stamp").innerHTML = formatAMPM();
         function formatAMPM() {
         var d = new Date(),
@@ -494,6 +763,14 @@ $(document).ready(function () {
             days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
         return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+
+        setTimeout(function () {
+            $('#push-notification-3, #page-refresh-3').show();
+            $('#page-refresh-2').hide();
+            $('#alert2').hide();
+            $('#alert3').show().addClass('alert');
+            $('#header-alert').text('1 document discarded');
+        }, 15000)        
 
     });
 
@@ -521,16 +798,36 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
 
+        setTimeout(function () {
+            $('#push-notification-3, #page-refresh-3').show();
+            $('#page-refresh-2').hide();
+            $('#alert2').hide();
+            $('#alert3').show().addClass('alert');
+            $('#header-alert').text('1 document discarded');
+        }, 15000)        
+
     });
 
+    $("#page-refresh-3").on("click", function (e) {
+        e.preventDefault();
+        $('.updated-message').hide();
+        $('.discarded-message').show();
+    });
+
+    $("#alert3").on("click", function (e) {
+        e.preventDefault();
+        $('.updated-message').hide();
+        $('.discarded-message').show();
+    });
 
 })
+
 
 function newDocument() {
     $('#new-documents').html(function(i, val) { return +val-1 });
     if ($('#new-documents').html() == '1') {
         $('#plural').hide();
-        $('#header-alert').text('You have 1 new document');
+        $('#header-alert').text('1 new document');
     } else if ($('#new-documents').html() == '0') {
         $('#push-notification').hide();
         $('#alert').removeClass('alert');
@@ -541,10 +838,11 @@ function newDocument() {
             $('#page-refresh-2').show();
             $('#page-refresh, #alert').hide();
             $('#alert2').addClass('alert');
-            $('#header-alert').text('You have 3 new updates');
+            $('#header-alert').text('3 document updates');
         }, 15000)
     }
 }
+
 
 
 // =================================== ERROR MESSAGES =================================== //
@@ -562,6 +860,14 @@ function errorStatus2() {
     e.preventDefault();
     e.stopPropagation();     
 }
+
+function errorStatus3() {
+    window.location.href="#case-action-plan-modal";
+
+    e.preventDefault();
+    e.stopPropagation();     
+}
+
 
 $(document).ready(function () {
 
@@ -588,6 +894,7 @@ $(document).ready(function () {
 
     // Error list
     $('#over-charge-error-list, #type-error-list, #redactions-type-error-list, #over-redactions-type-error-list').hide();
+    $('#over-charge-issued-error').show();
 
     $("#redactionOver-ChargeStatus").on("change", function (e) {
         if ($(this).val() && $('input[name=redactionUnder-redaction-type]').is(':checked') || $(this).val() && $('input[name=redactionOver-redaction-type]').is(':checked')) {
@@ -669,7 +976,99 @@ $(document).ready(function () {
         }
     });
 
-    
+    // Case Action Plan
+    $('#case-action-plan-button, #CAP-error-status, #CAP-date-error, #CAP-info-error').hide();
+
+    $("#error-case-action-plan").on("click", function (e) {
+
+        $('#CAP-error-status').show();
+
+        if ($('input[id=caseActionPlan-Date-Day]').val()) {
+            $('#CAP-date').removeClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').removeClass('govuk-input--error');     
+            $('#CAP-date .govuk-error-message').hide();
+        } else {
+            $('#CAP-date').addClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').addClass('govuk-input--error');  
+            $('#CAP-date .govuk-error-message').show();   
+        }
+
+        if ($('input[id=caseActionPlan-Date-Month]').val()) {
+            $('#CAP-date').removeClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').removeClass('govuk-input--error');     
+            $('#CAP-date .govuk-error-message').hide();
+        } else {
+            $('#CAP-date').addClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').addClass('govuk-input--error');  
+            $('#CAP-date .govuk-error-message').show();   
+        }
+
+        if ($('input[id=caseActionPlan-Date-Year]').val()) {
+            $('#CAP-date').removeClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').removeClass('govuk-input--error');     
+            $('#CAP-date .govuk-error-message').hide();
+        } else {
+            $('#CAP-date').addClass('govuk-form-group--error');
+            $('#CAP-date .govuk-input').addClass('govuk-input--error');  
+            $('#CAP-date .govuk-error-message').show();   
+        }
+
+        if ($('input[id=caseActionPlan-Date-Day]').val() && $('input[id=caseActionPlan-Date-Month]').val() && $('input[id=caseActionPlan-Date-Year]').val()) {
+            $('#CAP-date-error').hide();
+        } else {
+            $('#CAP-date-error').show();
+        }
+
+        if ($('input[name=caseActionPlan-SpecificDetails]').is(':checked')) {
+            $('#CAP-info').removeClass('govuk-form-group--error');
+            $('#CAP-info .govuk-error-message, #CAP-info-error').hide();     
+        } else {
+            $('#CAP-info').addClass('govuk-form-group--error');
+            $('#CAP-info .govuk-error-message, #CAP-info-error').show();     
+        }
+    });
+
+    $("input[id=caseActionPlan-Date-Day]").on("keyup", function (e) {
+        if ($(this).val() && $('input[name=caseActionPlan-SpecificDetails]').is(':checked') && $('#caseActionPlan-Date-Month').val() && $('#caseActionPlan-Date-Year').val()) {
+            $('#case-action-plan-button').show();
+            $('#error-case-action-plan').hide();
+        } else {
+            $('#case-action-plan-button').hide();
+            $('#error-case-action-plan').show();
+        }
+    });
+
+    $("input[id=caseActionPlan-Date-Month]").on("keyup", function (e) {
+        if ($(this).val() && $('input[name=caseActionPlan-SpecificDetails]').is(':checked') && $('#caseActionPlan-Date-Day').val() && $('#caseActionPlan-Date-Year').val()) {
+            $('#case-action-plan-button').show();
+            $('#error-case-action-plan').hide();
+        } else {
+            $('#case-action-plan-button').hide();
+            $('#error-case-action-plan').show();
+        }
+    });
+
+    $("input[id=caseActionPlan-Date-Year]").on("keyup", function (e) {
+        if ($(this).val() && $('input[name=caseActionPlan-SpecificDetails]').is(':checked') && $('#caseActionPlan-Date-Day').val() && $('#caseActionPlan-Date-Month').val()) {
+            $('#case-action-plan-button').show();
+            $('#error-case-action-plan').hide();
+        } else {
+            $('#case-action-plan-button').hide();
+            $('#error-case-action-plan').show();
+        }
+    });
+
+    $("input[name=caseActionPlan-SpecificDetails]").on("change", function (e) {
+        if ($(this).is(':checked') && $('#caseActionPlan-Date-Day').val() && $('#caseActionPlan-Date-Month').val() && $('#caseActionPlan-Date-Year').val()) {
+            $('#case-action-plan-button').show();
+            $('#error-case-action-plan').hide();
+        } else {
+            $('#case-action-plan-button').hide();
+            $('#error-case-action-plan').show();
+        }
+    });
+
+    $('#CAP-details-wrapper .govuk-character-count').hide();
 
 })
 
@@ -694,6 +1093,7 @@ function zoomOut() {
 
 $(document).ready(function () {
 
+    // Existing notes
     var notesNumber = 4;
 
     $('#note-added').hide();
@@ -729,428 +1129,45 @@ $(document).ready(function () {
         $('.notes-trigger span').text(notesNumber);
 
     });
-})
+
+    // New notes
+    var notesNewNumber = 0;
+
+    $('#noteNew-added').hide();
+
+    $("#notesNew-button").on("click", function (e) {
+        $('#noteNew-added').show() ;
+
+        // Time stamp
+        document.getElementById("noteNew-timestamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
 
 
-// =================================== CASE ACTION PLAN =================================== //
-$(document).ready(function () {
+        // Note
+        $.cookie("notesNew-Details", $('#notesNew-Comments').val(), {path:'/'});
+        $('#noteNew-added .hods-timeline__description').html($.cookie("notesNew-Details"));
 
-    $('#case-action-plan-active').hide();
-    $('.Details-Key, .Details-AllKey, .Details-NonKey, .Details-Additional, .Details-Witness, .Details-Victim, .Details-Special, .Details-Convictions, .Details-ROTI, .Details-KeyExibits, .Details-Evidence, .Details-CCTV, .Details-Visually, .Details-Drugs, .Details-Forensic, .Details-Medical, .Details-Unused, .Details-Bad, .Details-Orders, .Details-POCA, .Details-Compensation, .Details-Other').hide();
+        setTimeout(function () {
+            $('#notesNew-Comments').val('');
+            $('#notesNew-Comments-info').text('You can enter up to 500 characters');
+        }, 15)
 
-    $("input[name=caseActionPlan-SpecificDetails]").on("change", function (e) {
-        $('#caseActionPlan-Description-hint').append('\r\n \r\n - ' + $(this).val()+': \r\n');
-    });
-
-    $("#confirmation").on("click", function (e) {
-        $('#case-action-plan').addClass('active');
-        $('#no-plan').hide();
-        $('#case-action-plan-active').show();
-        $('#caseActionBuilderModal .caseActionBuilderModal-wrapper').removeClass('x-small');
-
-        // Cookies store
-        if ($('input[id="caseActionPlan-Type-Start"]:checked')) { $.cookie("CAPanswer-type", 'Start File Build', {path:'/'}); }
-        if ($('input[id="caseActionPlan-Type-Stop"]:checked')) { $.cookie("CAPanswer-type", 'Stop File Build', {path:'/'}); }
-        if ($('input[id="caseActionPlan-Type-Modify"]:checked')) { $.cookie("CAPanswer-type", 'Modify File Build', {path:'/'}); }
-        $.cookie("CAPanswer-Day", $('#caseActionPlan-Date-Day').val(), {path:'/'});
-        $.cookie("CAPanswer-Month", $('#caseActionPlan-Date-Month').val(), {path:'/'});
-        $.cookie("CAPanswer-Year", $('#caseActionPlan-Date-Year').val(), {path:'/'});
-        // $.cookie("CAPanswer-info", $('input[name=caseActionPlan-SpecificDetails]').val(), {path:'/'});
-         if ($("input[name=caseActionPlan-SpecificDetails]:checkbox:checked").length > 0) {
-            $.cookie("CAPanswer-info", true, {path:'/'});
-        } else {
-            $.cookie("CAPanswer-info", false, {path:'/'});
-        }   
-
-        if ($('input[id=caseActionPlan-SpecificDetails-Key]').is(':checked')) { 
-            $.cookie("Details-Key", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Key", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-AllKey]').is(':checked')) { 
-            $.cookie("Details-AllKey", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-AllKey", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-NonKey]').is(':checked')) { 
-            $.cookie("Details-NonKey", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-NonKey", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Additional]').is(':checked')) { 
-            $.cookie("Details-Additional", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Additional", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Witness]').is(':checked')) { 
-            $.cookie("Details-Witness", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Witness", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Victim]').is(':checked')) { 
-            $.cookie("Details-Victim", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Victim", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Special]').is(':checked')) { 
-            $.cookie("Details-Special", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Special", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Convictions]').is(':checked')) { 
-            $.cookie("Details-Convictions", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Convictions", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-ROTI]').is(':checked')) { 
-            $.cookie("Details-ROTI", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-ROTI", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-KeyExibits]').is(':checked')) { 
-            $.cookie("Details-KeyExibits", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-KeyExibits", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Evidence]').is(':checked')) { 
-            $.cookie("Details-Evidence", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Evidence", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-CCTV]').is(':checked')) { 
-            $.cookie("Details-CCTV", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-CCTV", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Visually]').is(':checked')) { 
-            $.cookie("Details-Visually", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Visually", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Drugs]').is(':checked')) { 
-            $.cookie("Details-Drugs", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Drugs", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Forensic]').is(':checked')) { 
-            $.cookie("Details-Forensic", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Forensic", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Medical]').is(':checked')) { 
-            $.cookie("Details-Medical", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Medical", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Unused]').is(':checked')) { 
-            $.cookie("Details-Unused", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Unused", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Bad]').is(':checked')) { 
-            $.cookie("Details-Bad", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Bad", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Orders]').is(':checked')) { 
-            $.cookie("Details-Orders", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Orders", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-POCA]').is(':checked')) { 
-            $.cookie("Details-POCA", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-POCA", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Compensation]').is(':checked')) { 
-            $.cookie("Details-Compensation", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Compensation", false, {path:'/'});
-        }
-        if ($('input[id=caseActionPlan-SpecificDetails-Other]').is(':checked')) { 
-            $.cookie("Details-Other", true, {path:'/'}); 
-        } else {
-            $.cookie("Details-Other", false, {path:'/'});
-        }
-
-        $.cookie("CAPanswer-description", $('#caseActionPlan-Description-hint').text(), {path:'/'});
-        if ($('input[name=caseActionPlan-FollowUp]:checkbox:checked').length > 0) {
-            $.cookie("CAPanswer-task", true, {path:'/'});
-        } else {
-            $.cookie("CAPanswer-task", false, {path:'/'});
-        }
-
-        $('.CAPanswer-type').text($.cookie("CAPanswer-type"));
-        $('.CAPanswer-date-Day').text($.cookie("CAPanswer-Day"));
-        if ($.cookie("CAPanswer-Month") == '01' || $.cookie("CAPanswer-Month") == '1') { $('.CAPanswer-date-Month').text('January'); }
-        if ($.cookie("CAPanswer-Month") == '02' || $.cookie("CAPanswer-Month") == '2') { $('.CAPanswer-date-Month').text('February'); }
-        if ($.cookie("CAPanswer-Month") == '03' || $.cookie("CAPanswer-Month") == '3') { $('.CAPanswer-date-Month').text('March'); }
-        if ($.cookie("CAPanswer-Month") == '04' || $.cookie("CAPanswer-Month") == '4') { $('.CAPanswer-date-Month').text('April'); }
-        if ($.cookie("CAPanswer-Month") == '05' || $.cookie("CAPanswer-Month") == '5') { $('.CAPanswer-date-Month').text('May'); }
-        if ($.cookie("CAPanswer-Month") == '06' || $.cookie("CAPanswer-Month") == '6') { $('.CAPanswer-date-Month').text('June'); }
-        if ($.cookie("CAPanswer-Month") == '07' || $.cookie("CAPanswer-Month") == '7') { $('.CAPanswer-date-Month').text('July'); }
-        if ($.cookie("CAPanswer-Month") == '08' || $.cookie("CAPanswer-Month") == '8') { $('.CAPanswer-date-Month').text('August'); }
-        if ($.cookie("CAPanswer-Month") == '09' || $.cookie("CAPanswer-Month") == '9') { $('.CAPanswer-date-Month').text('September'); }
-        if ($.cookie("CAPanswer-Month") == '10' || $.cookie("CAPanswer-Month") == '10') { $('.CAPanswer-date-Month').text('October'); }
-        if ($.cookie("CAPanswer-Month") == '11' || $.cookie("CAPanswer-Month") == '11') { $('.CAPanswer-date-Month').text('November'); }
-        if ($.cookie("CAPanswer-Month") == '12' || $.cookie("CAPanswer-Month") == '12') { $('.CAPanswer-date-Month').text('December'); }
-        $('.CAPanswer-date-Year').text($.cookie("CAPanswer-Year"));
-        if ($.cookie("CAPanswer-info") == 'true') {
-            $('.CAPanswer-info').show();
-        } else {
-            $('.CAPanswer-info').hide();
-        }
-
-        if ($.cookie("Details-Key") == 'true') { 
-            $('.Details-Key').show(); 
-        } else {
-            $('.Details-Key').hide(); 
-        }
-        if ($.cookie("Details-AllKey") == 'true') { 
-            $('.Details-AllKey').show(); 
-        } else {
-            $('.Details-AllKey').hide(); 
-        }
-        if ($.cookie("Details-NonKey") == 'true') { 
-            $('.Details-NonKey').show(); 
-        } else {
-            $('.Details-NonKey').hide(); 
-        }
-        if ($.cookie("Details-Additional") == 'true') { 
-            $('.Details-Additional').show(); 
-        } else {
-            $('.Details-Additional').hide(); 
-        }
-        if ($.cookie("Details-Witness") == 'true') { 
-            $('.Details-Witness').show(); 
-        } else {
-            $('.Details-Witness').hide(); 
-        }
-        if ($.cookie("Details-Victim") == 'true') { 
-            $('.Details-Victim').show(); 
-        } else {
-            $('.Details-Victim').hide(); 
-        }
-        if ($.cookie("Details-Special") == 'true') { 
-            $('.Details-Special').show(); 
-        } else {
-            $('.Details-Special').hide(); 
-        }
-        if ($.cookie("Details-Convictions") == 'true') { 
-            $('.Details-Convictions').show(); 
-        } else {
-            $('.Details-Convictions').hide(); 
-        }
-        if ($.cookie("Details-ROTI") == 'true') { 
-            $('.Details-ROTI').show(); 
-        } else {
-            $('.Details-ROTI').hide(); 
-        }
-        if ($.cookie("Details-KeyExibits") == 'true') { 
-            $('.Details-KeyExibits').show(); 
-        } else {
-            $('.Details-KeyExibits').hide(); 
-        }
-        if ($.cookie("Details-Evidence") == 'true') { 
-            $('.Details-Evidence').show(); 
-        } else {
-            $('.Details-Evidence').hide(); 
-        }
-        if ($.cookie("Details-CCTV") == 'true') { 
-            $('.Details-CCTV').show(); 
-        } else {
-            $('.Details-CCTV').hide(); 
-        }
-        if ($.cookie("Details-Visually") == 'true') { 
-            $('.Details-Visually').show(); 
-        } else {
-            $('.Details-Visually').hide(); 
-        }
-        if ($.cookie("Details-Drugs") == 'true') { 
-            $('.Details-Drugs').show(); 
-        } else {
-            $('.Details-Drugs').hide(); 
-        }
-        if ($.cookie("Details-Forensic") == 'true') { 
-            $('.Details-Forensic').show(); 
-        } else {
-            $('.Details-Forensic').hide(); 
-        }
-        if ($.cookie("Details-Medical") == 'true') { 
-            $('.Details-Medical').show(); 
-        } else {
-            $('.Details-Medical').hide(); 
-        }
-        if ($.cookie("Details-Unused") == 'true') { 
-            $('.Details-Unused').show(); 
-        } else {
-            $('.Details-Unused').hide(); 
-        }
-        if ($.cookie("Details-Bad") == 'true') { 
-            $('.Details-Bad').show(); 
-        } else {
-            $('.Details-Bad').hide(); 
-        }
-        if ($.cookie("Details-Orders") == 'true') { 
-            $('.Details-Orders').show(); 
-        } else {
-            $('.Details-Orders').hide(); 
-        }
-        if ($.cookie("Details-POCA") == 'true') { 
-            $('.Details-POCA').show(); 
-        } else {
-            $('.Details-POCA').hide(); 
-        }
-        if ($.cookie("Details-Compensation") == 'true') { 
-            $('.Details-Compensation').show(); 
-        } else {
-            $('.Details-Compensation').hide(); 
-        }
-        if ($.cookie("Details-Other") == 'true') { 
-            $('.Details-Other').show(); 
-        } else {
-            $('.Details-Other').hide(); 
-        }
-
-        // $('.CAPanswer-info').text($.cookie("CAPanswer-info"));
-        $('.CAPanswer-description').text($.cookie("CAPanswer-description"));
-        if ($.cookie("CAPanswer-task") == 'true') {
-            $('.CAPanswer-task').text('Yes');
-        } else {
-            $('.CAPanswer-task').text('No');
-        }
+        // Counter 
+        notesNewNumber += 1;
+        $('.notes-link').addClass('has-notes');
+        $('.new-notes-number').text(notesNewNumber);
+        // $('.new-notes-number span').text(notesNewNumber);
 
     });
 
-})
-
-// =================================== MY COOKIES =================================== //
-
-// function documentTarget() {
-//     // const documentTarget == $('#selectedTab').find('a').text();
-//     $.cookie("reportProblem-Title", $('#selectedTab').find('a').text(), {path:'/'});
-// }
-
-// A - Search term
-$(document).ready(function () {
-
-    // $(".searchModal").on("click", function (e) {
-    //     var resultValue = $('#searchURNModal').val();
-    //     $.cookie("search-data", $('#searchURNModal').val(), {path:'/'});
-    //     $('#searchURNModal-result').val(resultValue); 
-    //     $('.searchModalResults').text(resultValue); 
-    // });
-
-    // if ($.cookie("search-data")) {
-    //     $('#searchURNModal-result').val(resultValue); 
-    //     $('.searchModalResults').text(resultValue); 
-    // }
-
-    // Report a problem...
-    $(".show-case").on("click", function (e) {
-        $.cookie("reportProblem-Document", $(this).attr("data-document"), {path:'/'});
-        // var documentID = $(this).attr("data-count");
-        // alert($.cookie("reportProblem-Document"));
-    });
-
-    $(".govuk-tabs__list-item").on("click", function (e) {
-        $.cookie("reportProblem-Tab", $(this).text(), {path:'/'});
-    });
-
-    $("#reportProblem-button").on("click", function (e) {
-        $.cookie("reportProblem", true, {path:'/'});
-        $.cookie("reportProblem-Details", $('#reportProblem-text').val(), {path:'/'});
-
-
-        if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '1') {
-            $('a[data-document=1]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '2') {
-            $('a[data-document=2]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '3') {
-            $('a[data-document=3]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '4') {
-            $('a[data-document=4]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '5') {
-            $('a[data-document=5]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '6') {
-            $('a[data-document=6]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '7') {
-            $('a[data-document=7]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '8') {
-            $('a[data-document=8]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '9') {
-            $('a[data-document=9]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '10') {
-            $('a[data-document=10]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '11') {
-            $('a[data-document=11]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '12') {
-            $('a[data-document=12]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '13') {
-            $('a[data-document=13]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '14') {
-            $('a[data-document=14]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '15') {
-            $('a[data-document=15]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '16') {
-            $('a[data-document=16]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '17') {
-            $('a[data-document=17]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '18') {
-            $('a[data-document=18]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '19') {
-            $('a[data-document=19]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '20') {
-            $('a[data-document=20]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '21') {
-            $('a[data-document=21]').parent().addClass('error');
-            $('.error-message').addClass('show');
-            $('#error-details').text($.cookie("reportProblem-Details"));
-        }
-        // else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '21' || $.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Title") == 'VADER, 45GD0702322, 22/08/2023') {
-        //     $('a[data-document=21]').parent().addClass('error');
-        // }
-    });
 
 })
 

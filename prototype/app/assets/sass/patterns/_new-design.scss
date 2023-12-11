@@ -24,6 +24,11 @@ header {
         .govuk-header__container {
             margin-bottom: 0;
             border-bottom: none;
+            .govuk-header__logo {
+                .caseReviewHeaderSub {
+                    font-weight: normal;
+                }
+            }
         }
     }
     a.username {
@@ -32,6 +37,12 @@ header {
         margin-top: 0.25em;
         float: right;
     }
+}
+
+.refresh-button {
+    background: url("../images/refresh-blue.svg") no-repeat 0.15em 50%;
+    background-size: 1em;
+    padding-left: 1.5em;
 }
 
 .govuk-hint {
@@ -52,6 +63,22 @@ button {
         border: none;
         &:hover, &:active, &:focus {
             cursor: pointer;
+        }
+    }
+    &.add-button {
+        background: url("../images/add-blue.svg") no-repeat 0 50%;
+        background-size: 1.25em;
+        color: $govuk-link-colour;
+        text-decoration: underline;
+        margin: 0;
+        font-weight: bold;
+        padding: 0.5em 0 0.5em 1.65em;
+        border: none;
+        box-shadow: none;
+        &:hover, &:active, &:focus {
+            background: url("../images/add-blue.svg") no-repeat 0 50%;
+            background-size: 1.25em;
+            color: $govuk-link-colour;
         }
     }
 }
@@ -77,12 +104,12 @@ button {
         background-size: 0.85em;
         margin-left: 0.5em;
     }
-    &.notes-added {
-        background: url("../images/notes.svg") no-repeat 50% 50%;
-        background-size: 0.85em;
-        margin-left: 0.5em;
-        margin-top: 0.15em;
-    }
+    // &.notes-added {
+    //     background: url("../images/notes.svg") no-repeat 50% 50%;
+    //     background-size: 0.85em;
+    //     margin-left: 0.5em;
+    //     margin-top: 0.15em;
+    // }
     &.date-added, &.time-added, &.notes-added {
         position: relative;
         &:hover, &:active, &:focus {
@@ -271,6 +298,31 @@ main.search {
     padding: 1em 0 1.5em 0;
     border-bottom: 1px solid $govuk-border-colour;
     background: govuk-colour("light-grey");
+    &.case-file-page {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 0.75em 0;
+        .govuk-phase-banner {
+            padding: 0;
+            margin: 0;
+            border-bottom: none;
+            .govuk-grid-column-one-quarter {
+                padding-right: 4px;
+            }
+            .govuk-phase-banner__content {
+                margin-top: 0.45em;
+            }
+        }
+        #searchFormTest {
+            margin: 0;
+            width: 100%;
+            label {
+                display: none;
+            }
+        }
+    }
     form {
         fieldset {
             padding: 0;
@@ -348,7 +400,7 @@ main.search-results {
 }
 
 main.case-files {
-    padding: 1em 0 0 0 !important;
+    padding: 4.5em 0 0 0 !important;
     margin-bottom: 5em !important;
     .Tip__compact { 
         border-radius: 5px;
@@ -556,7 +608,7 @@ main.case-files {
     }
 }
 
-#push-notification, #push-notification-2 {
+#push-notification, #push-notification-2, #push-notification-3, #push-notification-4 {
     display: none;
     margin-right: 0.25em;
 //     position: fixed;

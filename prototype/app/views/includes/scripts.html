@@ -1,5 +1,6 @@
 <script src="/public/javascripts/jquery.cookie.js"></script>
 <script src="/public/javascripts/accordion.js"></script>
+<script src="/public/javascripts/cookie.js"></script>
 <link href="/public/css/pdf.css" rel="stylesheet" />
 <script type="text/javascript">
 
@@ -60,10 +61,12 @@
                         .closest(".accordion-section-body")
                         .find(".openMe a")
 
+                        $anchorLinks.parent().removeClass('unreadDocument')
+
                         $anchorLinks.each(function (index,link ) {
                         setTimeout(()=>{
                             handleMenuLinkClick($(this).text())
-                        },100 * index);
+                        },300 * index);
                     })
                 })
             })
@@ -156,11 +159,29 @@
                          
                         <!-- start of search results -->
                         <div  class="searchedDocumentSummary rj-dont-display" id="searchHeaderDisplay">
-                            <a id="btnSearchURNTwo" class="govuk-body-s inPageSearchMargins">Back to search results </a>
-                            <p class="govuk-body-s inPageSearchMargins">${count} matchs for "assault" in ${label} </p>
-                            <p class="govuk-body-s inPageSearchMargins deactivatedPrevious">Previous</p>
-                            <p class="govuk-body-s inPageSearchMargins">1/${count}</p>
-                            <p class="govuk-body-s inPageSearchMargins looks-like-a-link-underline">Next</p>
+                            <div class="title">
+                                <a id="btnSearchURNTwo" class="govuk-body-s inPageSearchMargins">Back to search results </a>
+                                <p class="govuk-body-s inPageSearchMargins">${count} matchs for "assault" in ${label} </p>
+                            </div>
+                            <div class="dropdown">
+                                <button onclick="myFunction(), toggleClass()" class="dropbtn">Document actions</button>
+                                <div id="myDropdown1" class="dropdown-content">
+                                    <button onclick="openModalOver(), documentTitle()" class="">Log an Under/Over redaction</button>
+                                    <button onclick="window.open('https://as-web-redaction-log-dev.azurewebsites.net','_blank')" class="">View redaction log history</button>
+                                    <button onclick="openNotesModal(), documentTitle()" class="notes-trigger">Add a note (<span>4</span>)</button>
+                                    <hr>
+                                    <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a technical problem</button>
+                                </div>
+                            </div>
+                            <!-- start Zoom in and out -->
+                            <button onclick="zoomIn()" class="zoom zoomIn">Zoom in to document</button>
+                            <button onclick="zoomOut()" class="zoom zoomOut">Zoom out of document</button>
+                            <!-- end Zoom in and out -->
+                            <div class="buttons">
+                                <p class="govuk-body-s inPageSearchMargins deactivatedPrevious">Previous</p>
+                                <p class="govuk-body-s inPageSearchMargins">1/${count}</p>
+                                <p class="govuk-body-s inPageSearchMargins looks-like-a-link-underline">Next</p>
+                            </div>  
                         </div> 
                         <!-- end of search results -->
 
@@ -169,12 +190,12 @@
                             <p class="govuk-body-s inPageSearchMargins2">${label}</p>
                             <div class="dropdown">
                                 <button onclick="myFunction(), toggleClass()" class="dropbtn">Document actions</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <button onclick="openModalOver(), documentTitle()" class="">Log an Over/Under redaction</button>
+                                <div id="myDropdown2" class="dropdown-content">
+                                    <button onclick="openModalOver(), documentTitle()" class="">Log an Under/Over redaction</button>
                                     <button onclick="window.open('https://as-web-redaction-log-dev.azurewebsites.net','_blank')" class="">View redaction log history</button>
                                     <button onclick="openNotesModal(), documentTitle()" class="notes-trigger">Add a note (<span>4</span>)</button>
                                     <hr>
-                                    <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a problem</button>
+                                    <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a technical problem</button>
                                 </div>
                             </div>
                             <!-- start Zoom in and out -->
@@ -197,6 +218,26 @@
                                     </summary>
                                     <div class="govuk-details__text" id="error-details"></div>
                                 </details>
+                            </div>
+                        </div> 
+
+                        <div class="updated-message">
+                            <div class="govuk-warning-text">
+                                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                <strong class="govuk-warning-text__text">
+                                    <span class="govuk-warning-text__assistive">Warning</span>
+                                    This document has been updated
+                                </strong>
+                            </div>
+                        </div> 
+
+                        <div class="discarded-message">
+                            <div class="govuk-warning-text">
+                                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                <strong class="govuk-warning-text__text">
+                                    <span class="govuk-warning-text__assistive">Warning</span>
+                                    This document has been discarded
+                                </strong>
                             </div>
                         </div> 
 

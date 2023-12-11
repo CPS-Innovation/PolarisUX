@@ -68,7 +68,7 @@
                         margin-bottom: 10px;
                     }
                     &.openMe {
-                        margin: 1em 0 1em 0;
+                        margin: 0 0 1em 0;
                     }
 
                 }
@@ -134,16 +134,49 @@
                                         margin: 0;
                                         button.notes-link {
                                             display: inline-block;
-                                            background: none;
+                                            background: url("../images/notes-black.svg") no-repeat 50% 50%;
+                                            background-size: 1.25em;
                                             border: none;
                                             padding: 0;
-                                            width: auto;
-                                            font-family: "GDS Transport", arial, sans-serif;
-                                            margin: 0;
-                                            color: $govuk-secondary-text-colour;
+                                            width: 1.25em;
+                                            height: 1.25em;
+                                            float: right;
+                                            // text-indent: -1000em;
+                                            position: relative;
+                                            // font-family: "GDS Transport", arial, sans-serif;
+                                            margin: 0 0 0 0.5em;
+                                            // color: $govuk-secondary-text-colour;
                                             box-shadow: none;
                                             text-decoration: underline;
                                             font-size: 0.875rem;
+                                            &.has-notes {
+                                                // text-indent: -1000em;
+                                                .notes-number, .new-notes-number {
+                                                    display: flex;
+                                                }
+                                            }
+                                            .notes-text {
+                                                text-indent: -1000em;
+                                                display: none;
+                                            }
+                                            .notes-number, .new-notes-number {
+                                                align-content: center;
+                                                justify-content: center;
+                                                flex-wrap: wrap;                                                
+                                                display: none;
+                                                text-indent: 0;
+                                                position: absolute;
+                                                right: -0.75em;
+                                                width: 1.35em;
+                                                height: 1.35em;
+                                                top: -0.75em;
+                                                color: white;
+                                                font-weight: bold;
+                                                background: $govuk-link-colour;
+                                                border-radius: 50%;
+                                                // margin-left: 0.5em;
+                                                // margin-top: 0.15em;
+                                            }
                                         }
                                     }
                                     &.whitness-indicators {
@@ -196,7 +229,7 @@
                                     font-size: 0.75rem;
                                     padding: 0.25em 0.5em;
                                     margin-bottom: 0.25em;
-                                    &.govuk-tag--green {
+                                    &.govuk-tag--green, &.govuk-tag--yellow, &.govuk-tag--orange {
                                         display: none;
                                     }
                                 }
