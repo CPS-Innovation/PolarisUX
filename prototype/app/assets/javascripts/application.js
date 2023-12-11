@@ -44,7 +44,13 @@ $(window).scroll(function() {
     } else if ($('#navbar2 li').length >= 4) {
         $('#navbar2').removeClass('no-list');
     }
+    if ($(this).scrollTop()>0) {
+        $('.search-bar-wrapper').hide();
+    } else {
+        $('.search-bar-wrapper').show();
+    }
 });
+
 
 // =================================== Document filter =================================== //
 $(document).ready(function () {
