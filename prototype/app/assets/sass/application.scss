@@ -4911,3 +4911,14 @@ font-size: 19px;
         }
     }
 }
+
+// NEW STRONG STYLE
+strong, span {
+  &.govuk-tag {
+    letter-spacing: 0 !important;
+    text-transform: capitalize !important;
+    &.govuk-tag--turquoise {
+      display: none !important;
+    }
+  }
+}

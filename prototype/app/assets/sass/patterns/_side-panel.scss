@@ -123,6 +123,18 @@
                             //     }
                             // }
                             td {
+                                &.current {
+                                    // background: rgba(191,227,224,0.2);
+                                    padding-right: 0.5em;
+                                    border-right: 5px solid #bfe3e0;
+                                    strong {
+                                        &.govuk-tag {
+                                            &.govuk-tag--turquoise {
+                                                display: inline-block !important;
+                                            }
+                                        }
+                                    }
+                                }
                                 a.large {
                                     margin-bottom: 0.25em;
                                     display: inline-block;
