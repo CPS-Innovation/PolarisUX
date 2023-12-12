@@ -568,86 +568,107 @@ $(document).ready(function () {
         if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '1') {
             $('a[data-document=1]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '2') {
             $('a[data-document=2]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '3') {
             $('a[data-document=3]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '4') {
             $('a[data-document=4]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '5') {
             $('a[data-document=5]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '6') {
             $('a[data-document=6]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '7') {
             $('a[data-document=7]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '8') {
             $('a[data-document=8]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '9') {
             $('a[data-document=9]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '10') {
             $('a[data-document=10]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '11') {
             $('a[data-document=11]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '12') {
             $('a[data-document=12]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '13') {
             $('a[data-document=13]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '14') {
             $('a[data-document=14]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '15') {
             $('a[data-document=15]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '16') {
             $('a[data-document=16]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '17') {
             $('a[data-document=17]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '18') {
             $('a[data-document=18]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '19') {
             $('a[data-document=19]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '20') {
             $('a[data-document=20]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         } else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '21') {
             $('a[data-document=21]').parent().addClass('error');
             $('.error-message').addClass('show');
+            $('.redaction-message').hide();
             $('#error-details').text($.cookie("reportProblem-Details"));
         }
         // else if ($.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Document") == '21' || $.cookie("reportProblem") == 'true' && $.cookie("reportProblem-Title") == 'VADER, 45GD0702322, 22/08/2023') {
