@@ -223,63 +223,6 @@ function closeToggleTooltip2() {
 // });
 
 
-// =================================== Search =================================== //
-function selectAll1(source) {
-    checkboxes = document.getElementsByName('search-group-1');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll2(source) {
-    checkboxes = document.getElementsByName('search-group-2');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll3(source) {
-    checkboxes = document.getElementsByName('search-group-3');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll4(source) {
-    checkboxes = document.getElementsByName('search-group-4');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll5(source) {
-    checkboxes = document.getElementsByName('search-group-5');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll6(source) {
-    checkboxes = document.getElementsByName('search-group-6');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll7(source) {
-    checkboxes = document.getElementsByName('search-group-7');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll8(source) {
-    checkboxes = document.getElementsByName('search-group-8');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function selectAll9(source) {
-    checkboxes = document.getElementsByName('search-group-9');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-
-
 // =================================== Document viewer =================================== //
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function toggleClass() {
@@ -414,6 +357,7 @@ function documentTitle() {
     $('.document-title-5').text(docTitle);
     $('.document-title-6').text(docTitle);
     $('.document-title-7').text(docTitle);
+    $('.document-title-8').text(docTitle);
 }
 
 function showUnread() {
@@ -472,6 +416,93 @@ function windowSizeChange() {
 }
 
 // =================================== SEARCH =================================== //
+
+function selectAll1(source) {
+    checkboxes = document.getElementsByName('search-group-1');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll2(source) {
+    checkboxes = document.getElementsByName('search-group-2');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll3(source) {
+    checkboxes = document.getElementsByName('search-group-3');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll4(source) {
+    checkboxes = document.getElementsByName('search-group-4');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll5(source) {
+    checkboxes = document.getElementsByName('search-group-5');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll6(source) {
+    checkboxes = document.getElementsByName('search-group-6');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll7(source) {
+    checkboxes = document.getElementsByName('search-group-7');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll8(source) {
+    checkboxes = document.getElementsByName('search-group-8');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll9(source) {
+    checkboxes = document.getElementsByName('search-group-9');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+
+function selectAll10(source) {
+    checkboxes = document.getElementsByName('search-group-10');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll11(source) {
+    checkboxes = document.getElementsByName('search-group-11');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll12(source) {
+    checkboxes = document.getElementsByName('search-group-12');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll13(source) {
+    checkboxes = document.getElementsByName('search-group-13');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+function selectAll14(source) {
+    checkboxes = document.getElementsByName('search-group-14');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+    }
+}
+
 $(document).ready(function () {
 
     $('input[name="searchDocumentType"]').click(function() {
@@ -636,11 +667,99 @@ $(document).ready(function () {
             // $('.search-redaction-footer').show();
         }       
     });
+
+    // Search suggestions - Checkboxes
+    $('input[name=search-group-10]').change(function() {
+        if ($('#search-redaction-type-10').val()) {
+            $('.redact-all-button-10').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+        }       
+    });
+    $('input[id=search-group-10-select-all]').change(function() {
+        $('.redact-all-button-10').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+    });
+
+    $('input[name=search-group-11]').change(function() {
+        if ($('#search-redaction-type-11').val()) {
+            $('.redact-all-button-11').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+        }       
+    });
+    $('input[id=search-group-11-select-all]').change(function() {
+        $('.redact-all-button-11').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+    });
+
+    $('input[name=search-group-12]').change(function() {
+        if ($('#search-redaction-type-12').val()) {
+            $('.redact-all-button-12').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+        }       
+    });
+    $('input[id=search-group-12-select-all]').change(function() {
+        $('.redact-all-button-12').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+    });
+
+    $('input[name=search-group-13]').change(function() {
+        if ($('#search-redaction-type-13').val()) {
+            $('.redact-all-button-13').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+        }       
+    });
+    $('input[id=search-group-13-select-all]').change(function() {
+        $('.redact-all-button-13').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+    });
+
+    $('input[name=search-group-14]').change(function() {
+        if ($('#search-redaction-type-14').val()) {
+            $('.redact-all-button-14').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+        }       
+    });
+    $('input[id=search-group-14-select-all]').change(function() {
+        $('.redact-all-button-14').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','openRedactAllModal()');
+    });
     // $('.search-redact-button').click(function() {
 
     // });   
 
 })
+
+// =================================== SEARCH SUGGESTIONS =================================== //
+$(document).ready(function () {
+    $('.eoin-mcLove, .shelagh-mcLove, .lucy-doyle, .phone-number').hide();
+})
+
+function openEoin() {
+    $('.eoin-mcLove').show();
+    $('.shelagh-mcLove, .lucy-doyle, .phone-number').hide();
+
+    $('.search-suggestion').text('Eoin McLove');
+}
+
+function openShelagh() {
+    $('.shelagh-mcLove').show();
+    $('.eoin-mcLove, .lucy-doyle, .phone-number').hide();
+
+    $('.search-suggestion').text('Shelagh McLove');
+}
+
+function openLucy() {
+    $('.lucy-doyle').show();
+    $('.eoin-mcLove, .shelagh-mcLove, .phone-number').hide();
+
+    $('.search-suggestion').text('Lucy Doyle');
+}
+
+function openAllPeople() {
+    $('.eoin-mcLove, .shelagh-mcLove, .lucy-doyle').show();
+    $('.phone-number').hide();
+
+    $('.search-suggestion').text('Eoin McLove, Shelagh McLove, Lucy Doyle');
+}
+
+function openPhone() {
+    $('.eoin-mcLove, .shelagh-mcLove, .lucy-doyle').hide();
+    $('.phone-number').show();
+
+    $('.search-suggestion').text('07734679952');
+}
+
+
 
 
 // =================================== FEEDBACK LOOP =================================== //

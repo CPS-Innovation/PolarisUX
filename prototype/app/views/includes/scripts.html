@@ -209,8 +209,12 @@
                             <h2 class="govuk-heading-s">Redaction suggestions</h2>
                             <p>The following search terms are items we suggest redacting in this document:</p>
                             <p>
-                                <strong>Named individuals:</strong> <a href="#">Eoin McLove</a>, <a href="#">Shelagh McLove</a>, <a href="#">Lucy Doyle</a> &nbsp; <span class="sep">|</span> &nbsp; 
-                                <strong>Phone number:</strong> <a href="#">07734679952</a>
+                                <strong>Named individuals:</strong> 
+                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openEoin()">Eoin McLove</a>, 
+                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openShelagh()">Shelagh McLove</a>, 
+                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openLucy()">Lucy Doyle</a>,
+                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openAllPeople()">All</a> &nbsp; <span class="sep">|</span> &nbsp; 
+                                <strong>Phone number:</strong> <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openPhone()">07734679952</a>
                             </p>
                         </div> 
 
