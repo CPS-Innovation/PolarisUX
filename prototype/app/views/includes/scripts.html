@@ -173,9 +173,9 @@
                                     <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a technical problem</button>
                                 </div>
                             </div>
-                            <!-- start Zoom in and out -->
-                            <button onclick="zoomIn()" class="zoom zoomIn">Zoom in to document</button>
-                            <button onclick="zoomOut()" class="zoom zoomOut">Zoom out of document</button>
+                            <!-- start Zoom in and out --> 
+                            <button onclick="zoomOut()" class="zoom zoomOut"><span>Zoom out of document</span></button>
+                            <button onclick="zoomIn()" class="zoom zoomIn"><span>Zoom in to document</span></button>
                             <!-- end Zoom in and out -->
                             <div class="buttons">
                                 <p class="govuk-body-s inPageSearchMargins deactivatedPrevious">Previous</p>
@@ -199,24 +199,11 @@
                                 </div>
                             </div>
                             <!-- start Zoom in and out -->
-                            <button onclick="zoomIn()" class="zoom zoomIn">Zoom in to document</button>
-                            <button onclick="zoomOut()" class="zoom zoomOut">Zoom out of document</button>
+                            <button onclick="zoomOut()" class="zoom zoomOut"><span>Zoom out of document</span></button>
+                            <button onclick="zoomIn()" class="zoom zoomIn"><span>Zoom in to document</span></button>
                             <!-- end Zoom in and out -->
                         </div>
                         <!-- End of non search heading -->
-
-                        <div class="redaction-message">
-                            <h2 class="govuk-heading-s">Redaction suggestions</h2>
-                            <p>The following search terms are items we suggest redacting in this document:</p>
-                            <p>
-                                <strong>Named individuals:</strong> 
-                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openEoin()">Eoin McLove</a>, 
-                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openShelagh()">Shelagh McLove</a>, 
-                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openLucy()">Lucy Doyle</a>,
-                                <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openAllPeople()">All</a> &nbsp; <span class="sep">|</span> &nbsp; 
-                                <strong>Phone number:</strong> <a href="#" onclick="return openSearchSuggestions(), documentTitle(), openPhone()">07734679952</a>
-                            </p>
-                        </div> 
 
                         <div class="error-message">
                             <div class="govuk-warning-text">

@@ -1138,3 +1138,16 @@
     }
 }
 
+#discardedDocument {
+    p.holder {
+        .info {
+            display: inline-block;
+            width: 4em;
+            color: $govuk-secondary-text-colour;
+        }
+        .answer {
+            font-weight: bold;
+        }
+    }
+}
+

@@ -1,0 +1,933 @@
+<div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="searchModal">
+    <div class="das-cookie-banner" id="openMe">
+        <div class="das-cookie-banner__wrapper">
+
+            <div class="govuk-modal-dialogue__header">
+                <button aria-label="Close modal dialogue" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeModal()">×</button>
+            </div>
+
+            <!-- ///////////////////////////// SEARCH MODAL - START ///////////////////////////// -->
+            <div class="govuk-grid-row">
+
+                <div class="innerPanel simpleModelTwo">
+
+                    <div class="search-bar-wrapper">
+                        <div class="govuk-form-group">
+                            {% if data['searchURN'] %}
+                                <label class="govuk-label govuk-label--s" for="searchURNModal-result">Search <span>McLove, {{ data['searchURN'] }}/1</span></label>
+                            {% else %}
+                                <label class="govuk-label govuk-label--s" for="searchURNModal-result">Search <span>McLove, 45AA209820/1</span></label>
+                            {% endif %}                        
+                            <div class="wrapper">
+                                <input class="govuk-input govuk-!-width-one-half" id="searchURNModal-result" name="searchURNModal-result" type="text" aria-describedby="search-result" value="" />
+                                <div class="bba"><button class="search" type="submit"> </button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-grid-row">
+
+                        <div class="govuk-grid-column-one-quarter">
+                            <div class="notOnMobile">
+                                <div class="filter-form filtering">
+                                    <div id="finder-frontend" class="inner-block">
+                                        <h3 class="govuk-heading-m">Filter</h3>
+                                        <div class="filter text-filter">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-label--s legend" for="">Document type</label>
+                                                {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                                                {{ govukCheckboxes({
+                                                    classes: "govuk-checkboxes--small",
+                                                    idPrefix: "searchDocumentType",
+                                                    name: "searchDocumentType",
+                                                    fieldset: {
+                                                        legend: {
+                                                            text: "",
+                                                            isPageHeading: true,
+                                                            classes: "govuk-fieldset__legend--l"
+                                                        }
+                                                    },
+                                                    items: [
+                                                        {
+                                                            value: "mg3",
+                                                            text: "MG3/MG3A (1)"
+                                                        },
+                                                        {
+                                                            value: "mg11",
+                                                            text: "MG11 (4)"
+                                                        },
+                                                        {
+                                                            value: "mg00",
+                                                            text: "MG00 (1)"
+                                                        },
+                                                        {
+                                                            value: "pre-cons",
+                                                            text: "Pre cons (1)"
+                                                        },
+                                                        {
+                                                            value: "da",
+                                                            text: "DA Checklist (1)"
+                                                        },
+                                                        {
+                                                            value: "storm-log",
+                                                            text: "Storm log (1)"
+                                                        }
+                                                    ]
+                                                }) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="filter text-filter">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label   govuk-label--s legend" for="partialCost">Category</label>
+                                                {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                                                {{ govukCheckboxes({
+                                                    classes: "govuk-checkboxes--small",
+                                                    idPrefix: "searchDocumentCategory",
+                                                    name: "searchDocumentCategory",
+                                                    fieldset: {
+                                                        legend: {
+                                                            text: "",
+                                                            isPageHeading: true,
+                                                            classes: "govuk-fieldset__legend--l"
+                                                        }
+                                                    },
+                                                    items: [
+                                                        {
+                                                            value: "case-overview",
+                                                            text: "Case overview (2)"
+                                                        },
+                                                        {
+                                                            value: "statements",
+                                                            text: "Statements (4)"
+                                                        },
+                                                        {
+                                                            value: "Eexhibits",
+                                                            text: "Exhibits (0)"
+                                                        },
+                                                        {
+                                                            value: "unused-materials",
+                                                            text: "Unused materials (2)"
+                                                        },
+                                                        {
+                                                            value: "defendant",
+                                                            text: "Defendant (1)"
+                                                        },
+                                                        {
+                                                            value: "court-preperation",
+                                                            text: "Court preperation (0)"
+                                                        },
+                                                        {
+                                                            value: "comms",
+                                                            text: "Communications (0)"
+                                                        }
+                                                    ]
+                                                }) }}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="govuk-grid-column-three-quarters">
+                            <div class="search-results">
+                                <p>
+                                    <strong>27</strong> results in <strong>9</strong> documents in this case <br />Search may not have found all instances of '<strong class="searchModalResults">assault</strong>' in this case
+                                </p>
+
+                                <div class="govuk-form-group">
+                                    <select class="govuk-select" id="sort" name="sort">
+                                        <option value="1" selected>Date added</option>
+                                        <option value="2">Results per document</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="column details" id="search-results-list">
+
+                                <!-- RESULT 1 - START -->
+                                <div id="resultsOne" class="search-item" data-items="3" data-group="mg3 case-overview">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5"><a href="">MCLOVE MG3</a></h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">2 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG3</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-1A" name="search-group-1" type="checkbox" value="1A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-1A">
+                                                        ...Proposed charges:COMMON <strong class="searchModalResults">assault</strong>, DRIVE OPL...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-1B" name="search-group-1" type="checkbox" value="1B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-1B">
+                                                        ..Offences: Common <strong class="searchModalResults">assault</strong>, DRIVE OPL...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-1C" name="search-group-1" type="checkbox" value="1C">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-1C">
+                                                        There appears to be enough evidence for the offence of common <strong class="searchModalResults">assault</strong> and an offence of driving whilst over the proscribed limit...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-1-select-all" type="checkbox" value="Select all" onClick="selectAll1(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-1-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-1">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-1" id="search-redaction-type-1">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-1" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="" data-group="mg3 case-overview">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 1 - END -->
+
+                                <!-- RESULT 2 - START -->
+                                <div id="resultsTwo" class="search-item" data-items="1" data-group="mg00 case-overview">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">MG00</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" " >
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-2A" name="search-group-2" type="checkbox" value="2A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-2A">
+                                                        ... - BWV of victims injuries following the <strong class="searchModalResults">assault</strong> described.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-2-select-all" type="checkbox" value="Select all" onClick="selectAll2(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-2-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-2">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-2" id="search-redaction-type-2">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-2" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 2 - END -->
+
+                                <!-- RESULT 3 - START -->
+                                <div id="resultsThree" class="search-item" data-items="2" data-group="pre-cons defendant">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">PRE CONS D</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">Pre cons</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-3A" name="search-group-3" type="checkbox" value="3A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-3A">
+                                                        ...07/04/17 COMMON <strong class="searchModalResults">assault</strong> (PLEA GUILTY). BATLEY AND DEWSBURY MAGISTRATES CONVICTION OF 06/04/17....
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-3B" name="search-group-3" type="checkbox" value="3B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-3B">
+                                                        ...ARRESTED ON 28/08/19 FOR THE FOLLOWING OFFENCE(S) 1 <strong class="searchModalResults">assault</strong> OCCASIONING ACTUAL BODILY HARM ON 28/08/19 OFFENCES AGAINST THE PERSON ACT 1861 s.47...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-3-select-all" type="checkbox" value="Select all" onClick="selectAll3(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-3-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-3">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-3" id="search-redaction-type-3">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-3" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 3 - END -->
+
+                                <!-- RESULT 4 - START -->
+                                <div id="resultsFour" class="search-item" data-items="3" data-group="mg11 statements">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">Shelagh McLove VPS mg11</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG11</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-4A" name="search-group-4" type="checkbox" value="4A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-4A">
+                                                        ...I am writing this Victim Personal Statement (VPS) in relation to an <strong class="searchModalResults">assault</strong> on my by my partner Eoin McLove on the 1st June 2020....
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-4B" name="search-group-4" type="checkbox" value="4B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-4B">
+                                                        ...This was one of several <strong class="searchModalResults">assault</strong>s Eoin has subjected me to. As a result of my relation with Eoin and the abuse he has subjected me to I have lost custody of my only child....
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-4C" name="search-group-4" type="checkbox" value="4C">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-4C">
+                                                        ...I decided on the 4th June to attend the hospital as a result of this <strong class="searchModalResults">assault</strong>. The hospital as a result of my description decided to x-ray me...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-4-select-all" type="checkbox" value="Select all" onClick="selectAll4(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-4-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-4">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-4" id="search-redaction-type-4">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-4" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 4 - END -->
+
+                                <!-- RESULT 5 - START -->
+                                <div id="resultsFive" class="search-item" data-items="2" data-group="mg11 statements">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">stmt BLAYNEE 2034 1 JUNE mg11</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG11</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-5A" name="search-group-5" type="checkbox" value="5A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-5A">
+                                                        ...I was further informed via radio that EOIN MCLOVE was also wanted for an <strong class="searchModalResults">assault</strong> on Shelagh MCLOVE and as such...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-5B" name="search-group-5" type="checkbox" value="5B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-5B">
+                                                        ...arrested EOIN MCLOVE for a s47 <strong class="searchModalResults">assault</strong> Occasioning Actual Bodily harm, MCLOVE was informed that his arrest was necessary to conduct a prompt...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-5-select-all" type="checkbox" value="Select all" onClick="selectAll5(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-5-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-5">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-5" id="search-redaction-type-5">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-5" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 5 - END -->
+
+                                <!-- RESULT 6 - START -->
+                                <div id="resultsSix" class="search-item" data-items="2" data-group="mg11 statements">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">stmt JONES 1989 1 JUNE mg11</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG11</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-6A" name="search-group-6" type="checkbox" value="6A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-6A">
+                                                        ...SHELAGH MCLOVE detailed to me that she had been <strong class="searchModalResults">assault</strong>ed by her partner Eoin MCLOVE who had left the scene in her Nissan car. Ms...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-6B" name="search-group-6" type="checkbox" value="6B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-6B">
+                                                        ...EOIN MCLOVE had returned after 9pm and an argument had ensued which resulted in the <strong class="searchModalResults">assault</strong>. Eoin MCLOVE was described...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-6-select-all" type="checkbox" value="Select all" onClick="selectAll6(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-6-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-6">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-6" id="search-redaction-type-6">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-6" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 6 - END -->
+
+                                <!-- RESULT 7 - START -->
+                                <div id="resultsSeven" class="search-item" data-items="9" data-group="mg11 statements">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">stmt Shelagh McLove MG11</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">MG11</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7A" name="search-group-7" type="checkbox" value="7A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7A">
+                                                        ...hoped that Eoin would calm his drinking but unfortunately things got worse and that is when he first <strong class="searchModalResults">assault</strong>ed me. I was...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7B" name="search-group-7" type="checkbox" value="7B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7B">
+                                                        ...at the time. Around a month later he <strong class="searchModalResults">assault</strong>ed me again hitting me to the head and the...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7C" name="search-group-7" type="checkbox" value="7C">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7C">
+                                                        ...excuses to stop my mum visiting. Around April 17 Eoin <strong class="searchModalResults">assault</strong>ed me again, Eoin returned home...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7D" name="search-group-7" type="checkbox" value="7D">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7D">
+                                                        ...Eoin was arrested and convicted of <strong class="searchModalResults">assault</strong>ing me. At this point social services again became involved...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7E" name="search-group-7" type="checkbox" value="7E">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7E">
+                                                        ...Eoin <strong class="searchModalResults">assault</strong>ed me again in December 17, the Police were called but I did not provide a statement. This time Social services took our ...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7F" name="search-group-7" type="checkbox" value="7F">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7F">
+                                                        ...Eoin however <strong class="searchModalResults">assault</strong>ed me with a wooden spoon at Christmas 2019 which resulted in me becoming unconscious ...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7G" name="search-group-7" type="checkbox" value="7G">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7G">
+                                                        ...As a result of this <strong class="searchModalResults">assault</strong> I have sustained a cut just to the side of my left eye and my face is starting to s...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7H" name="search-group-7" type="checkbox" value="7H">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7H">
+                                                        ...No one has the right to <strong class="searchModalResults">assault</strong> me and I want Eoin to be prosecuted. He ...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-7-select-all" type="checkbox" value="Select all" onClick="selectAll7(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-7-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-7">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-7" id="search-redaction-type-7">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-7" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 7 - END -->
+
+                                <!-- RESULT 8 - START -->
+                                <div id="resultsEight" class="search-item" data-items="3" data-group="storm-log unused-materials">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">Storm log</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-8A" name="search-group-8" type="checkbox" value="8A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-8A">
+                                                        ...Disposition Codes Common <strong class="searchModalResults">assault</strong>...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-8B" name="search-group-8" type="checkbox" value="8B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-8B">
+                                                        ...aCALLER HAS BEEN <strong class="searchModalResults">assault</strong>ED BY PARTNER WHO HAS LEFT THE SCENE IN HER CAR IN DRINK...
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-8C" name="search-group-8" type="checkbox" value="8C">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-8C">
+                                                        ...THREAT: 2 - <strong class="searchModalResults">assault</strong>ED AND VERBAL THREATS...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-8-select-all" type="checkbox" value="Select all" onClick="selectAll8(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-8-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-8">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-8" id="search-redaction-type-8">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-8" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 8 - END -->
+
+                                <!-- RESULT 9 - START -->
+                                <div id="resultsNine" class="search-item" data-items="2" data-group="da unused-materials">
+                                    <div class="twoFlexContainer">
+                                        <div class="twoFlexItem">
+                                            <h2 class="govuk-heading-m results-header mb5">
+                                                <a href="">UNUSED_6 DA CHECKLIST MCLOVE</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="support-text">
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Uploaded:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">5 June 2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-support-meta">
+                                            <div class=" ">
+                                                <p class="govuk-body-s">Type:</p>
+                                            </div>
+                                            <div class="WideMobile175">
+                                                <p class="govuk-body-s">Domestic Abuse Checklist</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-form-group search-redaction">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-inset-text cpsInsetChange">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-9A" name="search-group-9" type="checkbox" value="9A">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-9A">
+                                                        ...Several previous incidents D had just been released from custody due to previous <strong class="searchModalResults">assault</strong> on C....
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-9B" name="search-group-9" type="checkbox" value="9B">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-9B">
+                                                        ...no contact with that child due to social services intervention and the family court.
+                                                        C has indicated that she wishes to break from D to avoid future <strong class="searchModalResults">assault</strong>s...
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-redact-wrapper">
+                                        <div class="govuk-form-group search-redaction-select-all">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="search-group-9-select-all" type="checkbox" value="Select all" onClick="selectAll9(this)">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="search-group-9-select-all">Select all to redact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="search-redaction-type-9">Select Redaction Type</label>
+                                            <select class="govuk-select" name="search-redaction-type-9" id="search-redaction-type-9">
+                                                <option value=""> -- select redaction type -- </option>
+                                                <option value="Address">Address</option>
+                                                <option value="Date of Birth">Date of Birth</option>
+                                                <option value="Named individual">Named individual</option>
+                                                <option value="Occupation">Occupation</option>
+                                                <option value="Phone number">Phone number</option>
+                                                <option value="Vehicle registration">Vehicle registration</option>
+                                                <option value="Email address">Email address</option>
+                                                <option value="Location">Location</option>
+                                                <option value="Bank details">Bank details</option>
+                                                <option value="Previous convictions">Previous convictions</option>
+                                                <option value="Relationship to others">Relationship to others</option>
+                                                <option value="NHS number">NHS number</option>
+                                                <option value="NI number">NI number</option>
+                                                <option value="Title">Title</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <button id="" class="govuk-button govuk-button--disabled search-redact-button redact-all-button-9" aria-disabled="true" disabled="disabled" data-module="govuk-button" type="button" onClick="">Redact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- RESULT 9 - END -->
+
+                            </div>
+
+                            <div class="tech-issues">
+                                <p>Technical problems stopped us from searching these documents:</p>
+                                <p class="files">MG06 3 June, MG06 10 june, MG20 5 June, MG20 10 June, MG06 13 June</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ///////////////////////////// SEARCH MODAL - END ///////////////////////////// -->
+
+        </div>
+    </div>
+</div>

@@ -51,6 +51,195 @@ $(window).scroll(function() {
     }
 });
 
+// =================================== Loading page =================================== //
+
+setInterval(function() {
+    var data = parseFloat($('#documents-loaded-number').text()) + 1;
+    $('#documents-loaded-number').html(data);
+}, 1000);
+
+$(document).ready(function () {
+
+    $('.documents-loaded').hide();
+    $('#searchFormTest, #searchFormTest2').addClass('disabled');
+    $('#searchURNModal').attr('disabled','disabled');
+
+    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20').css('opacity','0.2');
+    $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
+
+    setTimeout(function() {
+        $(".loading").hide();
+        $('.documents-loaded').show();
+        $('#searchFormTest, #searchFormTest2').removeClass('disabled');
+        $('#searchURNModal').removeAttr('disabled');
+    }, 19500);
+
+    // Accordion changes
+    // 1
+    $('.accordion-section.section-1 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-1 .accordion-section-header .govuk-heading-s').html('Reviews (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-1 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-1 .accordion-section-header .govuk-heading-s').html('Reviews (1)');
+        $('.document-1').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-1 td strong.loading-tag').hide();
+    }, 1000);
+
+    // 2 - Case overview (4)
+    $('.accordion-section.section-2 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-2 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (1)');
+        $('.document-2').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-2 td strong.loading-tag').hide();
+    }, 2000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (2)');
+        $('.document-3').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-3 td strong.loading-tag').hide();
+    }, 3000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (3)');
+        $('.document-4').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-4 td strong.loading-tag').hide();
+    }, 4000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (4)');
+        $('.document-5').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-5 td strong.loading-tag').hide();
+    }, 5000);
+
+    // 3 - Statements (6)
+    $('.accordion-section.section-3 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (1)');
+        $('.document-6').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-6 td strong.loading-tag').hide();
+    }, 6000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (2)');
+        $('.document-7').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-7 td strong.loading-tag').hide();
+    }, 7000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (3)');
+        $('.document-8').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-8 td strong.loading-tag').hide();
+    }, 8000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (4)');
+        $('.document-9').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-9 td strong.loading-tag').hide();
+    }, 9000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (5)');
+        $('.document-10').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-10 td strong.loading-tag').hide();
+    }, 10000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (6)');
+        $('.document-11').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-11 td strong.loading-tag').hide();
+        $('.accordion-section table tbody tr.document-holder.document-11 td').prepend(`<strong class="govuk-tag govuk-tag--red">Failed</strong> <br>`);
+    }, 11000);
+
+    // 4 - Exhibits (2)
+    $('.accordion-section.section-4 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-4 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (1)');
+        $('.document-12').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-12 td strong.loading-tag').hide();
+    }, 12000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (2)');
+        $('.document-13').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-13 td strong.loading-tag').hide();
+    }, 13000);
+
+    // 5 - Forensics (0)
+
+    // 6 - Unused materials (5)
+    $('.accordion-section.section-6 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-6 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (1)');
+        $('.document-14').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-14 td strong.loading-tag').hide();
+    }, 14000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (2)');
+        $('.document-15').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-15 td strong.loading-tag').hide();
+    }, 15000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (3)');
+        $('.document-16').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-16 td strong.loading-tag').hide();
+    }, 16000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (4)');
+        $('.document-17').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-17 td strong.loading-tag').hide();
+    }, 17000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (5)');
+        $('.document-18').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-18 td strong.loading-tag').hide();
+    }, 18000);
+
+    // 7 - Defendant (0)
+
+    // 8 - Court preparation (0)
+
+    // 9 - Communications (1)
+    $('.accordion-section.section-9 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-9 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (1)');
+        $('.document-19').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-19 td strong.loading-tag').hide();
+    }, 19000);
+
+    // 10 - Uncategorised (1)
+    $('.accordion-section.section-10 .accordion-section-header').addClass('no-documents');
+    $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (0)');
+
+    setTimeout(function() {
+        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (1)');
+        $('.document-20').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-20 td strong.loading-tag').hide();
+    }, 20000);
+
+})
+
+
 
 // =================================== Document filter =================================== //
 $(document).ready(function () {
@@ -818,9 +1007,9 @@ $(document).ready(function () {
             minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
             hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01/','02/','03/','04/','05/','06/','07/','08/','09/','10/','11/','12/'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
 
     });
@@ -854,9 +1043,9 @@ $(document).ready(function () {
             minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
             hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01/','02/','03/','04/','05/','06/','07/','08/','09/','10/','11/','12/'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
 
     });
@@ -875,7 +1064,7 @@ $(document).ready(function () {
         $('#push-notification-2').hide();
         $('#alert2').removeClass('alert');
 
-        // $('.updated-message').show();
+        $('.updated-message').show();
 
         document.getElementById("date-stamp").innerHTML = formatAMPM();
         function formatAMPM() {
@@ -883,9 +1072,9 @@ $(document).ready(function () {
             minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
             hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01/','02/','03/','04/','05/','06/','07/','08/','09/','10/','11/','12/'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
 
         setTimeout(function () {
@@ -908,6 +1097,8 @@ $(document).ready(function () {
         $('table tbody tr td .govuk-tag.govuk-tag--yellow').css('display','inherit');
         $('table tbody tr td .govuk-tag.govuk-tag--orange').css('display','inherit');
 
+        $('.updated-message').show();
+
         $('#push-notification-2').hide();
         $('#alert2').removeClass('alert');
 
@@ -917,9 +1108,9 @@ $(document).ready(function () {
             minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
             hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01/','02/','03/','04/','05/','06/','07/','08/','09/','10/','11/','12/'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
 
         setTimeout(function () {
@@ -1306,8 +1497,8 @@ $(document).ready(function () {
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
         hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
         ampm = d.getHours() >= 12 ? 'pm' : 'am',
-        months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-        days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 })

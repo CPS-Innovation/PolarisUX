@@ -313,6 +313,32 @@ main.search {
             }
             .govuk-phase-banner__content {
                 margin-top: 0.45em;
+                width: 100%;
+                // span {
+                //     float: right;
+                // }
+                .search-PII {
+                    display: inline-block;
+                    float: right;
+                    text-align: right;
+                    #push-notification, #push-notification-2, #push-notification-3, #push-notification-4 {
+                        float: left;
+                    }
+                    #date-stamp {
+                        margin-left: 0.15em;
+                    }
+                    .govuk-phase-banner__text {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-top: 0.25em;
+                        width: auto;
+                        float: right;
+                    }
+                }
+                .feedback-survey {
+                    float: left;
+                    margin-top: 0.15em;
+                }
             }
         }
         #searchFormTest {
@@ -320,6 +346,9 @@ main.search {
             width: 100%;
             label {
                 display: none;
+            }
+            &.disabled {
+                opacity: 0.2;
             }
         }
     }

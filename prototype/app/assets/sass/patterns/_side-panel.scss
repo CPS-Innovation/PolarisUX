@@ -69,9 +69,13 @@
                     }
                     &.openMe {
                         margin: 0 0 1em 0;
+                        div {
+                            display: inline-block;
+                            width: 100%;
+                        }
                     }
-
                 }
+
                 a.open-all {
                     margin: 0.75em 0 1em 0;
                     display: inline-block;
