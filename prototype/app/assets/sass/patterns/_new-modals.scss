@@ -758,7 +758,7 @@
         display: inline-block;
         margin-bottom: 0;
         width: 100%;
-        border-bottom: 1px solid $govuk-border-colour;
+        // border-bottom: 1px solid $govuk-border-colour;
         p, .govuk-form-group {
             display: inline-block;
         }
@@ -771,12 +771,30 @@
             float: right;
             width: 25%;
         }  
+        .govuk-notification-banner {
+            display: inline-block;
+            margin-bottom: 1.25em;
+            .govuk-notification-banner__content {
+                display: table;
+                p {
+                    margin-bottom: 0;
+                    &.files {
+                        font-style: italic;
+                        color: $govuk-secondary-text-colour;
+                    }
+                }
+            }
+        }
     }
     #search-results-list, #search-suggestions-list {
         .search-item {
             padding-bottom: 0;
             border-bottom: none;
             border-top: none;
+            &:first-of-type {
+                padding-top: 0;
+                border-top: none;
+            }
             .search-redact-wrapper {
                 padding: 1em 2%;
                 margin-top: 1em;
@@ -921,7 +939,8 @@
         padding: 1em;
         border: 1px dashed $govuk-border-colour;
         background: govuk-colour("light-grey");
-        margin-bottom: 1.5em;
+        margin-bottom: 1.25em;
+        display: inline-block;
         p {
             margin-bottom: 0;
         }
@@ -1139,6 +1158,12 @@
 }
 
 #discardedDocument {
+    .govuk-warning-text {
+        color: $govuk-secondary-text-colour;
+        .document-title-7 {
+            color: $govuk-text-colour;
+        }
+    }
     p.holder {
         .info {
             display: inline-block;

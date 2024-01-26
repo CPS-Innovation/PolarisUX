@@ -155,7 +155,7 @@
                 const content = `
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden document-panel" data-tab-id="${tabId}-content" data-is-searched="${isSearched}">  
 
-                        <button onclick="windowSizeChange()" class="window-size">Increase window size</button>
+                        <button onclick="windowSizeChange(), windowSizeChangeText()" class="window-size" id="window-size"><span>View full screen</span></button>
                          
                         <!-- start of search results -->
                         <div  class="searchedDocumentSummary rj-dont-display" id="searchHeaderDisplay">
@@ -210,8 +210,9 @@
                                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                                 <strong class="govuk-warning-text__text">
                                     <span class="govuk-warning-text__assistive">Warning</span>
-                                    There is a problem with this document
+                                    There is a technical problem reported with this document
                                 </strong>
+                                <p>If this is an urgent issue please contact the Casework App team in our <a href="">Teams Channel</a></p>
                                 <details class="govuk-details" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
                                         <span class="govuk-details__summary-text">View details</span>
