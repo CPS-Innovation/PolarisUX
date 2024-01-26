@@ -62,7 +62,7 @@ main.case-files {
                     display: inline-block;
                     width: auto;
                 }
-                .zoom {
+                .zoom, .marquee {
                     display: inline-block;
                     float: right;
                     margin: 10px 0 10px 10px;
@@ -117,6 +117,18 @@ main.case-files {
                         &.zoomOut {
                             background: url("../images/zoom-out-white.svg") $govuk-link-hover-colour no-repeat 50% 50%;
                             background-size: 1.5em;
+                        }
+                    }
+                }
+                .marquee {
+                    background: url("../images/marquee-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
+                    background-size: 1.5em;
+                    &.on, &:hover, &:active, &:focus {
+                        background: url("../images/marquee-white.svg") $govuk-link-hover-colour no-repeat 50% 50%;
+                        background-size: 1.5em;
+                        span {
+                            width: 100px;
+                            margin-left: -55px;
                         }
                     }
                 }

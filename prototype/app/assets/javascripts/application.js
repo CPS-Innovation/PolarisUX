@@ -51,6 +51,22 @@ $(window).scroll(function() {
     }
 });
 
+// =================================== Drag and drop =================================== //
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
 // =================================== Loading page =================================== //
 
 setInterval(function() {
@@ -489,6 +505,8 @@ function searchTerm2() {
     $('.searchModalResults').text(resultValue); 
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
 }
+
+
 
 
 
@@ -1399,7 +1417,7 @@ $(document).ready(function () {
 
 })
 
-// =================================== Zoom =================================== //
+// =================================== Zoom and Marquee =================================== //
 function zoomIn() {
     var pic = document.getElementById("pdf-root").getElementsByClassName( 'PdfHighlighter' )[0];
     var width = pic.clientWidth;
@@ -1414,6 +1432,10 @@ function zoomOut() {
     var pic = document.getElementById("pdf-root").getElementsByClassName( 'PdfHighlighter' )[0];
     var width = pic.clientWidth;
     pic.style.width = width - 100 + "px";
+}
+
+function marqueeOn() {
+    $("#marquee").addClass('on');
 }
 
 // =================================== NOTES =================================== //
