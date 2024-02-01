@@ -127,6 +127,121 @@ html {
             background-color: govuk-colour("mid-grey") !important;
             body, main {
                 background-color: govuk-colour("mid-grey") !important;
+                #navbar.sticky {
+                    background-color: darken(govuk-colour("mid-grey"),10%) !important;
+                }
+                .search-bar-wrapper {
+                    background-color: darken(govuk-colour("mid-grey"),10%) !important;
+                    border-bottom: 1px solid black;
+                    .govuk-phase-banner__text {
+                        color: black !important;
+                    }
+                    .govuk-input {
+                        border: 2px solid white;
+                    }
+                    a {
+                        color: white !important;
+                    }
+                    .refresh-button {
+                        background: url("../images/refresh-white.svg") no-repeat 0% 50%;
+                    }
+                }
+                .das-cookie-banner__modal {
+                    background-color: rgba(0,0,0,0.6);
+                }
+                .govuk-notification-banner__content {
+                    background-color: govuk-colour("mid-grey");
+                    .files {
+                        color: white !important;
+                    }
+                }
+                a, button, .govuk-details__summary {
+                    color: white !important;
+                }
+                .govuk-heading-m, .govuk-heading-s, .govuk-fieldset__heading, .govuk-radios__label, .govuk-fieldset__legend, .govuk-checkboxes__label, .govuk-label {
+                    color: black !important;
+                }
+                #saving-panel, .success-banner {
+                    .govuk-heading-m {
+                        color: white !important;
+                    }
+                }
+                .blueBoxCPS {
+                    .govuk-heading-s {
+                        color: white !important;
+                    }
+                }
+                &.case-files .info span.govuk-heading-s {
+                    color: black;
+                }
+                .govuk-details__text {
+                    border-left: 5px solid darken(govuk-colour("mid-grey"),10%);
+                }
+                #left-column .accordion {
+                    &.with-js .accordion-section {
+                        border-top: 1px solid black;
+                    }
+                    .accordion-section {
+                        .accordion-section-header {
+                            background-color: darken(govuk-colour("mid-grey"),10%) !important;
+                            .govuk-heading-s {
+                                color: white !important;
+                            }
+                        }
+                        .accordion-section-body table tbody tr {
+                            &:first-of-type {
+                                border-top: 1px solid darken(govuk-colour("mid-grey"),10%);
+                            }
+                            .govuk-table__header, .govuk-table__cell {
+                                border-bottom: 1px solid darken(govuk-colour("mid-grey"),10%);
+                            }
+                            td p.date-added {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                &.case-files #pdf-root .PdfHighlighter {
+                    border: 5px solid darken(govuk-colour("mid-grey"),10%);
+                    background-color: govuk-colour("mid-grey");
+                    // .page .canvasWrapper {
+                    //     mix-blend-mode: difference;
+                    // }
+                }
+                #openMe.das-cookie-banner {
+                    background-color: govuk-colour("mid-grey");
+                    .search-bar-wrapper, .header-wrapper, .sub-header-wrapper {
+                        background-color: darken(govuk-colour("mid-grey"),10%);
+                        border-bottom: 1px solid black;
+                        h1 span {
+                            color: white;
+                        }
+                    }
+                    .tooltip button.open-tooltip {
+                        background: url("../images/help-white.svg") no-repeat 0% 50%;
+                    }
+                    .hods-timeline .hods-timeline__item:last-of-type:after {
+                        background-color: govuk-colour("mid-grey");
+                    }
+                    .govuk-form-group.redaction-type-wrapper .govuk-checkboxes__item.full-width, .govuk-form-group.redaction-type-wrapper .govuk-checkboxes__item.full-width {
+                        border-top: 3px dashed darken(govuk-colour("mid-grey"),10%) !important;
+                    }
+                }
+                .govuk-checkboxes__conditional {
+                    border-left: 4px solid darken(govuk-colour("mid-grey"),10%);
+                }
+                .govuk-inset-text {
+                    border-left: 10px solid darken(govuk-colour("mid-grey"),10%);
+                }
+                #pdf-root .redaction-footer {
+                    background-color: govuk-colour("mid-grey");
+                    .looks-like-a-link-underline {
+                        color: white;
+                    }
+                    .govuk-button.saveDraftButton.govuk-button--secondary {
+                        color: black !important;
+                    }
+                }
             }
         }    
         // ================== DARK ==================
@@ -157,6 +272,9 @@ html {
                         border-bottom: 1px solid black;
                         h1 {
                             color: white;
+                            &.govuk-heading-l {
+                                border-bottom: 3px dashed black !important;
+                            }
                             span {
                                 color: govuk-colour("mid-grey");
                             }
@@ -181,6 +299,14 @@ html {
                         background-color: #2b2d31;
                         border-bottom: 1px solid black;
                     }
+                    #saving-panel, .success-banner {
+                        .govuk-heading-m {
+                            color: white !important;
+                        }
+                    }
+                    .cta-group {
+                        border-top: 3px dashed black !important;
+                    }
                 }
                 .icon-new.document {
                     background: url("../images/doc-type-white.svg") no-repeat 50% 50%;
@@ -199,7 +325,7 @@ html {
                 .hods-timeline .hods-timeline__item:last-of-type:after {
                     background-color: #313338;
                 }
-                .govuk-heading-m, .govuk-heading-s, .govuk-fieldset__heading, .govuk-radios__label, .govuk-fieldset__legend, .govuk-checkboxes__label, .govuk-label {
+                .govuk-heading-m, .govuk-heading-s, .govuk-fieldset__heading, .govuk-radios__label, .govuk-fieldset__legend, .govuk-checkboxes__label, .govuk-label, .govuk-error-summary__title {
                     color: govuk-colour("mid-grey") !important;
                 }
                 .govuk-hint {
@@ -210,6 +336,9 @@ html {
                 }
                 textarea, select, input {
                     background-color: #2b2d31 !important;
+                    color: govuk-colour("mid-grey") !important;
+                }
+                .govuk-list {
                     color: govuk-colour("mid-grey") !important;
                 }
                 a {
@@ -232,6 +361,12 @@ html {
                     }
                     .page .canvasWrapper {
                         mix-blend-mode: difference;
+                        &::selection {
+                            background: #ffb7b7; /* WebKit/Blink Browsers */
+                        }
+                        &::-moz-selection {
+                            background: #ffb7b7; /* Gecko Browsers */
+                        }
                     }
                 }
                 #navbar.sticky {
@@ -313,6 +448,29 @@ html {
                     button.notes-link {
                         background: url("../images/notes-grey.svg") no-repeat 50% 50% !important;
                         background-size: 1.5em;                        
+                    }
+                }
+                .PdfHighlighter__tip-container .Tip #redact-modal {
+                    background-color: #2b2d31 !important;
+                    &:after {
+                        border-top: 15px solid #2b2d31;
+                    }
+                }
+                .MouseSelection {
+                    background: $govuk-error-colour;
+                    border: 1px dashed white;
+                    mix-blend-mode: hard-light;
+                }
+                #pdf-root .redaction-footer {
+                    background-color: #2b2d31 !important;
+                    .looks-like-a-link-underline {
+                        color: govuk-colour("light-blue") !important;
+                    }
+                    #data-count {
+                        color: white !important; 
+                    }
+                    .govuk-button.saveDraftButton.govuk-button--secondary {
+                        color: black !important;
                     }
                 }
             }
