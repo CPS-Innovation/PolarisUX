@@ -51,6 +51,75 @@ $(window).scroll(function() {
     }
 });
 
+// =================================== Header =================================== //
+
+$(document).ready(function () {
+
+    $(".username").on("click", function (e) {
+        e.preventDefault();
+        $(this).toggleClass('open');
+
+        $('.user-settings').toggle();
+    });
+
+    $('input[name=colourScheme]').on("change", function() {
+        if ($('input[id=colourScheme__White]').is(':checked')) {
+            $('.govuk-template').addClass('White');
+            $('.govuk-template').removeClass('SoftGrey Grey Dark');
+        } else if ($('input[id=colourScheme__SoftGrey]').is(':checked')) {
+            $('.govuk-template').addClass('SoftGrey');
+            $('.govuk-template').removeClass('White Grey Dark');
+        } else if ($('input[id=colourScheme__Grey]').is(':checked')) {
+            $('.govuk-template').addClass('Grey');
+            $('.govuk-template').removeClass('White SoftGrey Dark');
+        } else if ($('input[id=colourScheme__Dark]').is(':checked')) {
+            $('.govuk-template').addClass('Dark');
+            $('.govuk-template').removeClass('White SoftGrey Grey');
+        }       
+    });
+
+    $('input[name=colourOverlay]').on("change", function() {
+        if ($('input[id=colourOverlay__Pink]').is(':checked')) {
+            $('.govuk-template').prepend(`<div class="pinkOverlay"></div>`);
+            $('.greenOverlay, .blueOverlay, .yellowOverlay').remove();
+        } else if ($('input[id=colourOverlay__Green]').is(':checked')) {
+            $('.govuk-template').prepend(`<div class="greenOverlay"></div>`);
+            $('.pinkOverlay, .blueOverlay, .yellowOverlay').remove();
+        } else if ($('input[id=colourOverlay__Blue]').is(':checked')) {
+            $('.govuk-template').prepend(`<div class="blueOverlay"></div>`);
+            $('.pinkOverlay, .greenOverlay, .yellowOverlay').remove();
+        } else if ($('input[id=colourOverlay__Yellow]').is(':checked')) {
+            $('.govuk-template').prepend(`<div class="yellowOverlay"></div>`);
+            $('.pinkOverlay, .blueOverlay, .greenOverlay').remove();
+        } else if ($('input[id=colourOverlay__Remove]').is(':checked')) {
+            $('.pinkOverlay, .blueOverlay, .greenOverlay, .yellowOverlay').remove();
+        }
+
+        if ($('input[name=colourHue]').is(':checked')) {
+            $('.pinkOverlay, .greenOverlay, .blueOverlay, .yellowOverlay').addClass('changeHue');
+        }      
+    });
+
+    $('input[name=colourHue]').on("change", function() {
+        if ($(this).is(':checked')) {
+            $('.pinkOverlay, .greenOverlay, .blueOverlay, .yellowOverlay').addClass('changeHue');
+        } else {
+            $('.pinkOverlay, .greenOverlay, .blueOverlay, .yellowOverlay').removeClass('changeHue');
+        }
+    });
+
+})
+
+$(document).mouseup(function(e) {
+    var container = $(".user-settings");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+        $('.username').removeClass('open');
+    }
+});
+
 // =================================== Drag and drop =================================== //
 
 function allowDrop(ev) {
@@ -1466,6 +1535,7 @@ $(document).ready(function () {
         // Note
         $.cookie("notes-Details", $('#notes-Comments').val(), {path:'/'});
         $('#note-added .hods-timeline__description').html($.cookie("notes-Details"));
+        $('.notes-text-content').html($.cookie("notes-Details"));
 
         setTimeout(function () {
             $('#notes-Comments').val('');
@@ -1503,6 +1573,9 @@ $(document).ready(function () {
         // Note
         $.cookie("notesNew-Details", $('#notesNew-Comments').val(), {path:'/'});
         $('#noteNew-added .hods-timeline__description').html($.cookie("notesNew-Details"));
+
+        $('.notes-link').addClass('has-notes');
+        $('.notes-new-text-content').html($.cookie("notes-Details"));
 
         setTimeout(function () {
             $('#notesNew-Comments').val('');

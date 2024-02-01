@@ -33,6 +33,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/navbar";
 @import "patterns/side-panel";
 @import "patterns/notes";
+@import "patterns/header";
 
 @mixin das-clearfix {
   &:after {

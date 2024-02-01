@@ -151,16 +151,16 @@
                                         button.notes-link {
                                             display: inline-block;
                                             background: url("../images/notes-black.svg") no-repeat 50% 50%;
-                                            background-size: 1.25em;
+                                            background-size: 1.5em;
                                             border: none;
                                             padding: 0;
-                                            width: 1.25em;
-                                            height: 1.25em;
-                                            float: right;
+                                            width: 1.5em;
+                                            height: 1.5em;
+                                            // float: right;
                                             // text-indent: -1000em;
                                             position: relative;
                                             // font-family: "GDS Transport", arial, sans-serif;
-                                            margin: 0 0 0 0.5em;
+                                            margin: 0.25em 0 -0.5em 0.5em;
                                             // color: $govuk-secondary-text-colour;
                                             box-shadow: none;
                                             text-decoration: underline;
@@ -169,6 +169,38 @@
                                                 // text-indent: -1000em;
                                                 .notes-number, .new-notes-number {
                                                     display: flex;
+                                                }
+                                                &:hover, &:active, &:focus {
+                                                    .visuallyhidden {
+                                                        background: rgba(0,0,0,0.7);
+                                                        display: inline-block;
+                                                        padding: 0.5em;
+                                                        border-radius: 5px;
+                                                        width: max-content;
+                                                        max-width: 240px;
+                                                        text-align: left;
+                                                        right: -50px;
+                                                        top: 27px;
+                                                        z-index: 1;
+                                                        // margin-left: -23px;
+                                                        position: absolute;
+                                                        font-family: "GDS Transport", arial, sans-serif;
+                                                        color: white;
+                                                        font-size: 0.875rem;
+                                                        font-weight: bold;
+                                                        &:before {
+                                                            width: 0; 
+                                                            height: 0; 
+                                                            border-left: 8px solid transparent;
+                                                            border-right: 8px solid transparent;
+                                                            border-bottom: 8px solid rgba(0,0,0,0.7);
+                                                            position: absolute;
+                                                            right: 58px;
+                                                            margin-right: -6px;
+                                                            top: -8px;
+                                                            content: ' ';
+                                                        }
+                                                    }
                                                 }
                                             }
                                             .notes-text {
@@ -290,6 +322,7 @@
                                     width: 100%;
                                     float: left;
                                     clear: both;
+                                    margin-bottom: 0.25em;
                                 }
                             }
                         }

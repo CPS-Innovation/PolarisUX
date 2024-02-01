@@ -84,11 +84,11 @@ button {
 }
 
 .icon-new {
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     display: inline-block;
     background: black;
-    margin: 0 0.25em -0.15em 0;
+    margin: 0.25em 0.25em -0.5em 0;
     &.large {
         width: 1.25em;
         height: 1.5em;
@@ -101,7 +101,7 @@ button {
     }
     &.time-added {
         background: url("../images/time.svg") no-repeat 50% 50%;
-        background-size: 0.85em;
+        background-size: 1.25em;
         margin-left: 0.5em;
     }
     // &.notes-added {
@@ -169,6 +169,9 @@ button {
     &.emails {
         background: url("../images/email-file-black.svg") no-repeat 50% 50%;
         background-size: contain;
+        width: 1.25em;
+        height: 1.25em;
+        margin-bottom: -0.275em;
     }
     &.sender {
         background: url("../images/sender-grey.svg") no-repeat 50% 50%;
