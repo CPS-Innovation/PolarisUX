@@ -1,6 +1,7 @@
 <script src="/public/javascripts/jquery.cookie.js"></script>
 <script src="/public/javascripts/accordion.js"></script>
 <script src="/public/javascripts/cookie.js"></script>
+<script src="/public/javascripts/draggable-tabs.js"></script>
 <link href="/public/css/pdf.css" rel="stylesheet" />
 <script type="text/javascript">
 
@@ -122,7 +123,7 @@
             if (existingTab.length) return;
 
             const newTab = $(`
-            <li class="govuk-tabs__list-item tooltip" data-tab-id="${tabId}" onclick="return documentTitle()">
+            <li class="govuk-tabs__list-item tooltip" data-tab-id="${tabId}" onclick="return documentTitle()" draggable="true">
 
                 <svg class="closeButtonOnCPS">
                     <circle cx="12" cy="12" r="13" stroke="white" stroke-width="1" fill="white" />
