@@ -306,7 +306,7 @@ main.case-files {
 }
 
 main.case-files {
-    #docCopy {
+    #docCopy, .docCopy {
         text-align: center;
         margin-top: 0.5em;
         .govuk-notification-banner {
@@ -314,29 +314,9 @@ main.case-files {
             width: 65%;
             display: inline-block;
         }
-        .loading {
-            display: inline-block;
-            width: 100%;
-            .hods-loading-spinner__spinner {
-                border: 7px solid #dee0e2;
-                border-radius: 50%;
-                border-top-color: #1d70b8;
-                width: 4.875em;
-                height: 4.875em;
-                margin: -0.125em 0.5em 0 0;
-                animation: hods-loading-spinner-animation 2s linear infinite;
-                display: inline-block;
-                float: none;
-                clear: both;
-                margin-bottom: 1em;
-            }
-            .hods-loading-spinner__content {
-                float: left;
-                clear: both;
-                display: inline-block;
-                width: 100%;
-            }
-        } 
+        .hods-loading-spinner {
+            margin-top: 15em;
+        }
         .documents-loaded {
             text-align: center;
             h2 {
@@ -407,6 +387,35 @@ main.case-files {
     }
 }
 
+.loading {
+    display: inline-block;
+    width: 100%;
+    .hods-loading-spinner__spinner {
+        border: 7px solid #dee0e2;
+        border-radius: 50%;
+        border-top-color: #1d70b8;
+        width: 4.875em;
+        height: 4.875em;
+        margin: -0.125em 0.5em 0 0;
+        animation: hods-loading-spinner-animation 2s linear infinite;
+        display: inline-block;
+        float: none;
+        clear: both;
+        margin-bottom: 1em;
+    }
+    .hods-loading-spinner__content {
+        float: left;
+        clear: both;
+        display: inline-block;
+        width: 100%;
+        p {
+            span {
+                font-style: italic;
+                color: $govuk-secondary-text-colour;
+            }
+        }
+    }
+} 
 
 .document-holder {
     position: relative;

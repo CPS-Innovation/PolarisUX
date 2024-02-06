@@ -25,7 +25,45 @@
                         </div>
                     </div>
 
-                    <div class="govuk-grid-row">
+                    <!-- ============= LOADING PANEL - START ============= -->
+                    <div class="govuk-grid-row" id="searchLoadingPanel">
+                        <div class="govuk-grid-column-full loading">
+
+                            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                                <div class="govuk-notification-banner__header">
+                                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                                </div>
+                                <div class="govuk-notification-banner__content">
+                                    <p class="govuk-notification-banner__heading">Search will not be available until all documents have finished being indexed.</p>
+                                </div>
+                            </div>                        
+                            <div class="hods-loading-spinner">
+                                <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                                <div class="hods-loading-spinner__content">
+                                    <h1 class="govuk-heading-m">Building search index - <span id="documents-loaded-number">1</span> of 21 documents...</h1>
+                                </div>
+                            </div>  
+
+                        </div>
+                    </div>
+                    <!-- ============= LOADING PANEL - END ============= -->
+
+                    <!-- ============= ERROR PANEL - START ============= -->
+                    <div class="govuk-grid-row" id="searchErrorPanel">
+                        <div class="govuk-grid-column-two-thirds">
+                            <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+                            <p class="govuk-body">
+                                Try again later, or start a new search above.
+                            </p>
+                            <div class="govuk-inset-text">
+                                Error: Document processing pipeline returned with "Failed" status after 160 polling attempts.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============= ERROR PANEL - END ============= -->
+
+                    <!-- ============= SEARCH PANEL - START ============= -->
+                    <div class="govuk-grid-row" id="searchResultsPanel">
 
                         <div class="govuk-grid-column-one-quarter">
                             <div class="notOnMobile">
@@ -35,94 +73,76 @@
                                         <div class="filter text-filter">
                                             <div class="govuk-form-group">
                                                 <label class="govuk-label govuk-label--s legend" for="">Document type</label>
-                                                {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-                                                {{ govukCheckboxes({
-                                                    classes: "govuk-checkboxes--small",
-                                                    idPrefix: "searchDocumentType",
-                                                    name: "searchDocumentType",
-                                                    fieldset: {
-                                                        legend: {
-                                                            text: "",
-                                                            isPageHeading: true,
-                                                            classes: "govuk-fieldset__legend--l"
-                                                        }
-                                                    },
-                                                    items: [
-                                                        {
-                                                            value: "mg3",
-                                                            text: "MG3/MG3A (1)"
-                                                        },
-                                                        {
-                                                            value: "mg11",
-                                                            text: "MG11 (4)"
-                                                        },
-                                                        {
-                                                            value: "mg00",
-                                                            text: "MG00 (1)"
-                                                        },
-                                                        {
-                                                            value: "pre-cons",
-                                                            text: "Pre cons (1)"
-                                                        },
-                                                        {
-                                                            value: "da",
-                                                            text: "DA Checklist (1)"
-                                                        },
-                                                        {
-                                                            value: "storm-log",
-                                                            text: "Storm log (1)"
-                                                        }
-                                                    ]
-                                                }) }}
+                                                <div class="govuk-form-group">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType" name="searchDocumentType" type="checkbox" value="mg3">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType">MG3/MG3A (1)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType-2" name="searchDocumentType" type="checkbox" value="mg11">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType-2">MG11 (4)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType-3" name="searchDocumentType" type="checkbox" value="mg00">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType-3">MG00 (1)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType-4" name="searchDocumentType" type="checkbox" value="pre-cons">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType-4">Pre cons (1)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType-5" name="searchDocumentType" type="checkbox" value="da">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType-5">DA Checklist (1)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentType-6" name="searchDocumentType" type="checkbox" value="storm-log">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentType-6">Storm log (1)</label>
+                                                            </div>  
+                                                        </div>
+                                                    </fieldset>
+                                                </div>                                          
                                             </div>
                                         </div>
 
                                         <div class="filter text-filter">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label   govuk-label--s legend" for="partialCost">Category</label>
-                                                {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-                                                {{ govukCheckboxes({
-                                                    classes: "govuk-checkboxes--small",
-                                                    idPrefix: "searchDocumentCategory",
-                                                    name: "searchDocumentCategory",
-                                                    fieldset: {
-                                                        legend: {
-                                                            text: "",
-                                                            isPageHeading: true,
-                                                            classes: "govuk-fieldset__legend--l"
-                                                        }
-                                                    },
-                                                    items: [
-                                                        {
-                                                            value: "case-overview",
-                                                            text: "Case overview (2)"
-                                                        },
-                                                        {
-                                                            value: "statements",
-                                                            text: "Statements (4)"
-                                                        },
-                                                        {
-                                                            value: "Eexhibits",
-                                                            text: "Exhibits (0)"
-                                                        },
-                                                        {
-                                                            value: "unused-materials",
-                                                            text: "Unused materials (2)"
-                                                        },
-                                                        {
-                                                            value: "defendant",
-                                                            text: "Defendant (1)"
-                                                        },
-                                                        {
-                                                            value: "court-preperation",
-                                                            text: "Court preperation (0)"
-                                                        },
-                                                        {
-                                                            value: "comms",
-                                                            text: "Communications (0)"
-                                                        }
-                                                    ]
-                                                }) }}
+                                                <label class="govuk-label govuk-label--s legend" for="partialCost">Category</label>
+                                                <div class="govuk-form-group">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory" name="searchDocumentCategory" type="checkbox" value="case-overview">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory">Case overview (2)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-2" name="searchDocumentCategory" type="checkbox" value="statements">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-2">Statements (4)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-3" name="searchDocumentCategory" type="checkbox" value="Eexhibits">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-3">Exhibits (0)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-4" name="searchDocumentCategory" type="checkbox" value="unused-materials">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-4">Unused materials (2)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-5" name="searchDocumentCategory" type="checkbox" value="defendant">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-5">Defendant (1)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-6" name="searchDocumentCategory" type="checkbox" value="court-preperation">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-6">Court preperation (0)</label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="searchDocumentCategory-7" name="searchDocumentCategory" type="checkbox" value="comms">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="searchDocumentCategory-7">Communications (0)</label>
+                                                            </div>
+                                                        </div> 
+                                                    </fieldset>
+                                                </div>                                            
                                             </div>
                                         </div>
 
@@ -159,29 +179,13 @@
 
                                 <!-- RESULT 1 - START -->
                                 <div id="resultsOne" class="search-item" data-items="3" data-group="mg3 case-overview">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5"><a href="">MCLOVE MG3</a></h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">2 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG3</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5"><a href="">MCLOVE MG3</a></h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">2 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG3</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -243,31 +247,15 @@
 
                                 <!-- RESULT 2 - START -->
                                 <div id="resultsTwo" class="search-item" data-items="1" data-group="mg00 case-overview">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">MG00</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" " >
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG00</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">MG00</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG00</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -317,31 +305,15 @@
 
                                 <!-- RESULT 3 - START -->
                                 <div id="resultsThree" class="search-item" data-items="2" data-group="pre-cons defendant">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">PRE CONS D</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">Pre cons</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">PRE CONS D</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">Pre Cons</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -397,31 +369,15 @@
 
                                 <!-- RESULT 4 - START -->
                                 <div id="resultsFour" class="search-item" data-items="3" data-group="mg11 statements">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">Shelagh McLove VPS mg11</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG11</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">Shelagh McLove VPS mg11</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG11</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -483,31 +439,15 @@
 
                                 <!-- RESULT 5 - START -->
                                 <div id="resultsFive" class="search-item" data-items="2" data-group="mg11 statements">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">stmt BLAYNEE 2034 1 JUNE mg11</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG11</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">stmt BLAYNEE 2034 1 JUNE mg11</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG11</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -563,32 +503,16 @@
 
                                 <!-- RESULT 6 - START -->
                                 <div id="resultsSix" class="search-item" data-items="2" data-group="mg11 statements">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">stmt JONES 1989 1 JUNE mg11</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG11</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="govuk-form-group search-redaction">
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">stmt JONES 1989 1 JUNE mg11</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG11</span>
+                                    </span>
+                                   <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
                                                 <div class="govuk-checkboxes__item">
@@ -643,31 +567,15 @@
 
                                 <!-- RESULT 7 - START -->
                                 <div id="resultsSeven" class="search-item" data-items="9" data-group="mg11 statements">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">stmt Shelagh McLove MG11</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">MG11</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">stmt Shelagh McLove MG11</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">MG11</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -759,31 +667,15 @@
 
                                 <!-- RESULT 8 - START -->
                                 <div id="resultsEight" class="search-item" data-items="3" data-group="storm-log unused-materials">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">Storm log</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">UNUSED 1 - STORM LOG 1881 01.6.20 - EDITED 2020-11-23 MCLOVE</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">Storm log</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -845,31 +737,15 @@
 
                                 <!-- RESULT 9 - START -->
                                 <div id="resultsNine" class="search-item" data-items="2" data-group="da unused-materials">
-                                    <div class="twoFlexContainer">
-                                        <div class="twoFlexItem">
-                                            <h2 class="govuk-heading-m results-header mb5">
-                                                <a href="">UNUSED_6 DA CHECKLIST MCLOVE</a>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="support-text">
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Uploaded:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">5 June 2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex-support-meta">
-                                            <div class=" ">
-                                                <p class="govuk-body-s">Type:</p>
-                                            </div>
-                                            <div class="WideMobile175">
-                                                <p class="govuk-body-s">Domestic Abuse Checklist</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h2 class="govuk-heading-m results-header mb5">
+                                        <a href="">UNUSED_6 DA CHECKLIST MCLOVE</a>
+                                    </h2>
+                                    <span class="support-text">
+                                        <span class="govuk-body-s">Uploaded:</span>
+                                        <span class="govuk-body-s">5 June 2020</span>
+                                        <span class="govuk-body-s">Type:</span>
+                                        <span class="govuk-body-s">Domestic Abuse Checklist</span>
+                                    </span>
                                     <div class="govuk-form-group search-redaction">
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-inset-text cpsInsetChange">
@@ -929,10 +805,11 @@
                             <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
                                 <div class="govuk-pagination__prev">
                                     <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-                                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                                        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-                                    </svg>
-                                    <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span></a>
+                                        <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                        </svg>
+                                        <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+                                    </a>
                                 </div>
                                 <ul class="govuk-pagination__list">
                                     <li class="govuk-pagination__item govuk-pagination__item--current">
@@ -946,9 +823,12 @@
                                     </li>
                                 </ul>
                                 <div class="govuk-pagination__next">
-                                    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                                    </svg></a>
+                                    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                                        <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> 
+                                        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                             </nav>
 

@@ -21,10 +21,10 @@ $(document).ready(function () {
     //     $('#navbar2').show();
     // });
 
-     // $('.searchModal').on("click", function (e) {
-     //    var nameValue = document.getElementById("searchURNModal").value;
-     //    alert('nameValue');
-     // });
+    // $('.searchModal').on("click", function (e) {
+    //    var nameValue = document.getElementById("searchURNModal").value;
+    //    alert('nameValue');
+    // });    
 
     // Get form element
     var form=document.getElementById("searchFormTest");
@@ -141,13 +141,16 @@ function drop(ev) {
 setInterval(function() {
     var data = parseFloat($('#documents-loaded-number').text()) + 1;
     $('#documents-loaded-number').html(data);
+
+    var data2 = parseFloat($('#documents-loaded-number-2').text()) + 1;
+    $('#documents-loaded-number-2').html(data2);
 }, 1000);
 
 $(document).ready(function () {
 
-    $('.documents-loaded').hide();
-    $('#searchFormTest, #searchFormTest2').addClass('disabled');
-    $('#searchURNModal').attr('disabled','disabled');
+    $('.documents-loaded, .failed-documents').hide();
+    // $('#searchFormTest, #searchFormTest2').addClass('disabled');
+    // $('#searchURNModal').attr('disabled','disabled');
 
     $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20').css('opacity','0.2');
     $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
@@ -240,6 +243,7 @@ $(document).ready(function () {
         $('.document-11').css('opacity','1');
         $('.accordion-section table tbody tr.document-holder.document-11 td strong.loading-tag').hide();
         $('.accordion-section table tbody tr.document-holder.document-11 td').prepend(`<strong class="govuk-tag govuk-tag--red">Failed</strong> <br>`);
+        $('.failed-documents').show();
     }, 11000);
 
     // 4 - Exhibits (2)
@@ -561,22 +565,50 @@ $(document).ready(function () {
         $('.searchForm-inner').find('.bba.v2').toggleClass('show');
         $(this).toggleClass('open');
     });
+
+    $("input[id=searchURNModal]").on("keyup", function (e) {
+        if ($(this).val() == "error") {
+            $('button.search').attr('onClick','openModal(); searchTerm(); searchError();');
+        } else {
+            $('button.search').attr('onClick','openModal(); searchTerm();');
+        }
+    });
+
+    $("input[id=searchURNModal2]").on("keyup", function (e) {
+        if ($(this).val() == "error") {
+            $('button.search').attr('onClick','openModal(); searchTerm(); searchError();');
+        } else {
+            $('button.search').attr('onClick','openModal(); searchTerm();');
+        }
+    });
+
+    $('#searchErrorPanel').hide();
+
 })
 
 function searchTerm() {
     var resultValue = $('#searchURNModal').val();
     $('.searchModalResults').text(resultValue); 
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
+    $('#searchErrorPanel').hide();
+    $('#searchModal .das-cookie-banner').removeClass('small');
+    $('#searchLoadingPanel').show();
 }
 
 function searchTerm2() {
     var resultValue = $('#searchURNModal2').val();
     $('.searchModalResults').text(resultValue); 
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
+    $('#searchErrorPanel').hide();
+    $('#searchModal .das-cookie-banner').removeClass('small');
+    $('#searchLoadingPanel').show();
 }
 
-
-
+function searchError() {
+    $('#searchResultsPanel, #searchLoadingPanel').hide();
+    $('#searchErrorPanel').show();
+    $('#searchModal .das-cookie-banner').addClass('small');
+}
 
 
 // =================================== Window size & Document filter change =================================== //
@@ -1068,11 +1100,16 @@ $(document).ready(function () {
 
     $('#page-refresh-2, #alert2, #page-refresh-3, #alert3').hide();
 
+    $('.search-PII, #searchResultsPanel').hide();
+
     setTimeout(function () {
-        $('#push-notification').show();
+        $('#push-notification, .search-PII').show();
         $('#alert').addClass('alert');
+        $('.loading-PII').hide();
         $('#header-alert').text('2 new documents');
-    }, 15000)
+        $('#searchLoadingPanel').hide();
+        $('#searchResultsPanel').show();
+    }, 20000)
 
     $("#page-refresh").on("click", function (e) {
         var documentsRead = 0;

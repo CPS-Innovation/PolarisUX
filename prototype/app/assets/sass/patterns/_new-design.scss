@@ -303,7 +303,7 @@ main.search {
     background: govuk-colour("light-grey");
     &.case-file-page {
         position: fixed;
-        top: 60px;
+        top: 70px;
         left: 0;
         right: 0;
         padding: 0.75em 0;
@@ -320,7 +320,7 @@ main.search {
                 // span {
                 //     float: right;
                 // }
-                .search-PII {
+                .loading-PII, .search-PII {
                     display: inline-block;
                     float: right;
                     text-align: right;
@@ -337,6 +337,9 @@ main.search {
                         width: auto;
                         float: right;
                     }
+                }
+                .loading-PII {
+                    margin-top: 0.15em;
                 }
                 .feedback-survey {
                     float: left;

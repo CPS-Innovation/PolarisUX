@@ -59,6 +59,23 @@
     }
 }
 
+#searchLoadingPanel {
+    height: 78vh;
+    text-align: center;
+    .govuk-notification-banner {
+        width: 50%;
+        text-align: left;
+        display: inline-block;
+    }
+    .hods-loading-spinner {
+        margin: 6em 0 8em 0;
+    }
+}
+
+#searchErrorPanel {
+    height: 28vh;
+}
+
 #openFeedbackModal {
     z-index: 9999999999999999999999999999;
     #openMe {
@@ -831,15 +848,22 @@
                 text-align: right;
                 &.search-redaction {
                     display: inline-block;
-                    margin: 0;
+                    margin: 1em 0 0 0;
+                    width: 100%;
                     .govuk-checkboxes { 
                         display: inline-block;
+                        float: left;
                         .govuk-inset-text {
                             display: inline-block;
                             margin: 0;
                             padding-top: 0;
                             padding-bottom: 0;
                         }
+                    }
+                    label {
+                        display: inline-block;
+                        text-align: left;
+                        width: 100%;
                     }
                 }
                 &.search-redaction-select-all {

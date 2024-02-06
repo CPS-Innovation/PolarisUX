@@ -80,6 +80,9 @@
                     <!-- <a href="javascript:history.back()" class="govuk-back-link">Find a case</a> -->
                     <div class="govuk-phase-banner__content">
                         <a href="" onClick="return openFeedbackSurveyModal()" class="feedback-survey">Improve this service</a>
+                        <div class="loading-PII">
+                            <span id="documents-loaded-number-2">1</span> of 21 documents indexed...
+                        </div>
                         <div class="search-PII">
                             <span id="push-notification">
                                 <span class="govuk-tag govuk-tag--green"><span id="new-documents">2</span> new document<span id="plural">s</span></span>&nbsp; - 
@@ -96,7 +99,7 @@
                                 <span class="govuk-tag govuk-tag--orange">1 document update</span> - 
                             </span>
                             <span class="govuk-phase-banner__text">
-                                <span>Last updated:</span> <span id="date-stamp">####</span> - 
+                                <span>Updated:</span> <span id="date-stamp">####</span> - 
                                 <a href="" class="refresh-button" id="page-refresh">Refresh</a>
                                 <a href="" class="refresh-button" id="page-refresh-2">Refresh</a>
                                 <a href="" class="refresh-button" id="page-refresh-3" onClick="return openDiscardedModel()">Refresh</a>
@@ -191,20 +194,22 @@
 
                 <!-- ====== STICKY BAR - PART 2 - END ====== -->
 
-                <div id="docCopy">
+                <div id="docCopy" class="docCopy">
                     <div class="loading">
-                        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<!--                         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                             <div class="govuk-notification-banner__header">
                                 <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
                             </div>
                             <div class="govuk-notification-banner__content">
-                                <p class="govuk-notification-banner__heading">Search will not be available until all documents have finished loading.</p>
+                                <p class="govuk-notification-banner__heading">Search will not be available until all documents have finished being indexed.</p>
                             </div>
                         </div>                        
+ -->                        
                         <div class="hods-loading-spinner">
                             <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
                             <div class="hods-loading-spinner__content">
-                                <h1 class="govuk-heading-m">Loading - <span id="documents-loaded-number">1</span> of 21 documents...</h1>
+                                <h1 class="govuk-heading-m"><span id="documents-loaded-number">1</span> of 21 documents indexed...</h1>
+                                <p class="failed-documents">Documents not possible to index: <span>"MG11 Geoff MCLOVE" (Case overview)</span></p>
                             </div>
                         </div>                    
                     </div>
@@ -215,9 +220,9 @@
                             </div>
                             <div class="govuk-notification-banner__content">
                                 <p class="govuk-body"><strong>20</strong> documents loaded out of <strong>21</strong>, search or choose a file to start reviewing documents.</p>
-                                <p class="no-margin-bottom">The following files failed to load and are only available on CMS:</p>
+                                <p class="no-margin-bottom">It was not possible to index the following documents, please check CMS:</p>
                                 <ul class="govuk-list files">
-                                    <li>"MG11 Geoff MCLOVE"</li>
+                                    <li>"MG11 Geoff MCLOVE" <span>(Case overview)</span></li>
                                 </ul>
                             </div>
                         </div>
