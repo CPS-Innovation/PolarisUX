@@ -144,6 +144,10 @@ setInterval(function() {
 
     var data2 = parseFloat($('#documents-loaded-number-2').text()) + 1;
     $('#documents-loaded-number-2').html(data2);
+
+    var data3 = parseFloat($('#documents-loaded-number-3').text()) + 1;
+    $('#documents-loaded-number-3').html(data2);
+
 }, 1000);
 
 $(document).ready(function () {
