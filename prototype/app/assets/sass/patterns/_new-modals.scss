@@ -1138,6 +1138,26 @@
                     font-weight: bold;
                     color: $govuk-link-colour;
                     text-decoration: none;
+                    position: relative;
+                    &.active {
+                        &:after {
+                            width: 20px;
+                            height: 20px;
+                            font-size: 0.875rem;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            border-radius: 50%;
+                            background: $govuk-error-colour;
+                            position: absolute;
+                            left: 85%;
+                            margin-left: 15px;
+                            top: -14px;
+                            content: "1";                        
+                        }
+                    }
                 }
             }
         }
@@ -1158,7 +1178,7 @@
             h2 {
                 margin-top: 0 !important;
             }  
-            #CAP-date-stamp {
+            #CAP-date-stamp, #CAP-date-stamp2 {
                 font-size: 0.875rem;
             }
             .CAPanswer-info {

@@ -263,6 +263,9 @@
             margin-bottom: 0;
             color: $govuk-secondary-text-colour;
         }
+        &.multiple {
+            max-width: 55%;
+        }
         table {
             width: 100%;
         }

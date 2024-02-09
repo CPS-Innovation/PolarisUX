@@ -156,7 +156,7 @@ $(document).ready(function () {
     // $('#searchFormTest, #searchFormTest2').addClass('disabled');
     // $('#searchURNModal').attr('disabled','disabled');
 
-    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20').css('opacity','0.2');
+    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20, .document-11A').css('opacity','0.2');
     $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
 
     setTimeout(function() {
@@ -244,10 +244,12 @@ $(document).ready(function () {
 
     setTimeout(function() {
         $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (6)');
-        $('.document-11').css('opacity','1');
+        $('.document-11, .document-11A').css('opacity','1');
         $('.accordion-section table tbody tr.document-holder.document-11 td strong.loading-tag').hide();
         $('.accordion-section table tbody tr.document-holder.document-11 td').prepend(`<strong class="govuk-tag govuk-tag--red">Failed</strong> <br>`);
         $('.failed-documents').show();
+
+        $('.accordion-section table tbody tr.document-holder.document-11A td strong.loading-tag').hide();
     }, 11000);
 
     // 4 - Exhibits (2)
@@ -1107,13 +1109,18 @@ $(document).ready(function () {
     $('.search-PII, #searchResultsPanel').hide();
 
     setTimeout(function () {
-        $('#push-notification, .search-PII').show();
+        $('.search-PII').show();
         $('#alert').addClass('alert');
         $('.loading-PII').hide();
         $('#header-alert').text('2 new documents');
         $('#searchLoadingPanel').hide();
         $('#searchResultsPanel').show();
     }, 20000)
+
+    setTimeout(function () {
+        $('#push-notification').show();
+    }, 24000)
+
 
     $("#page-refresh").on("click", function (e) {
         var documentsRead = 0;
@@ -1644,6 +1651,6 @@ $(document).ready(function () {
         ampm = d.getHours() >= 12 ? 'pm' : 'am',
             months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
             days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 })

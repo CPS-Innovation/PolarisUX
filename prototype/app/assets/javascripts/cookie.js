@@ -139,6 +139,9 @@ $(document).ready(function () {
 
     $("#confirmation, #case-action-plan-button").on("click", function (e) {
         $('#case-action-plan').addClass('active');
+
+        $('.draft-plan-link').addClass('active');
+
         $('#no-plan').hide();
         $('#case-action-plan-active').show();
         $('#caseActionBuilderModal .caseActionBuilderModal-wrapper').removeClass('x-small');
@@ -419,6 +422,12 @@ $(document).ready(function () {
 
     });
 
+    $("#case-action-plan-submitted").on("click", function (e) {
+        $('.draft-plan-link').removeClass('active');
+        $('.sent-plan-link').addClass('active');
+    });
+
+
     // CAP details
 
     $("#CAP-descriptions").on("click", function (e) {
@@ -503,9 +512,9 @@ $(document).ready(function () {
             minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
             hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-            days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
     });
 
