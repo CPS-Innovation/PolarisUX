@@ -590,7 +590,16 @@ $(document).ready(function () {
 
     $('#searchErrorPanel').hide();
 
+    $('#searchLoadingPanel').show();
+    $('#searchResultsPanel').hide();
+
+    setTimeout(function() {
+        $('#searchLoadingPanel').hide();
+        $('#searchResultsPanel').show();
+    }, 20000);
+
 })
+
 
 function searchTerm() {
     var resultValue = $('#searchURNModal').val();
@@ -598,7 +607,6 @@ function searchTerm() {
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
     $('#searchErrorPanel').hide();
     $('#searchModal .das-cookie-banner').removeClass('small');
-    $('#searchLoadingPanel').show();
 }
 
 function searchTerm2() {
@@ -607,7 +615,6 @@ function searchTerm2() {
     $('#searchURNModal-result').val(resultValue).text(resultValue); 
     $('#searchErrorPanel').hide();
     $('#searchModal .das-cookie-banner').removeClass('small');
-    $('#searchLoadingPanel').show();
 }
 
 function searchError() {

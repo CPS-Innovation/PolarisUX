@@ -242,6 +242,11 @@ button {
     display: none;
 }
 
+a {
+    strong {
+        color: $govuk-border-colour;
+    }
+}
 
 .govuk-main-wrapper {
     position: relative !important;

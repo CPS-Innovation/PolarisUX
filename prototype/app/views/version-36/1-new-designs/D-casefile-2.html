@@ -127,15 +127,17 @@
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-one-quarter">
                         <div class="case-info">
-                            {% if data['searchURN'] %}
-                                <h1 class="govuk-heading-m">{{ data['searchURN'] }}/2</h1>
-                            {% else %}
-                                <h1 class="govuk-heading-m">45AA209820/2</h1>
-                            {% endif %}
+                            <h1 class="govuk-heading-m">McLove, Crilly, ...</h1>
                             <table class="govuk-table">
                                 <tbody>
                                     <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row"><a href="" data-doc="defendants.pdf" data-count="3" onclick="return pageCounter()" data-page="1">4 defendants & charges</a></td>
+                                        <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                            {% if data['searchURN'] %}
+                                                <a href="" data-doc="defendants.pdf" data-count="3" onclick="return pageCounter()" data-page="1">{{ data['searchURN'] }}/2</a>
+                                            {% else %}
+                                                <a href="" data-doc="defendants.pdf" data-count="3" onclick="return pageCounter()" data-page="1">45AA209820/2</a>
+                                            {% endif %}
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -126,16 +126,16 @@
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-one-quarter">
                         <div class="case-info">
-                            {% if data['searchURN'] %}
-                                <h1 class="govuk-heading-m">{{ data['searchURN'] }}/1</h1>
-                            {% else %}
-                                <h1 class="govuk-heading-m">45AA209820/1</h1>
-                            {% endif %}
+                            <h1 class="govuk-heading-m">McLove, Eoin</h1>
                             <table class="govuk-table">
                                 <tbody>
                                     <tr class="govuk-table__row">
                                         <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
-                                            <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9">McLove, Eoin</a>
+                                            {% if data['searchURN'] %}
+                                                <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9">{{ data['searchURN'] }}/1</a>
+                                            {% else %}
+                                                <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9">45AA209820/1</a>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                 </tbody>
