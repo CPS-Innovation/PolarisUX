@@ -281,7 +281,7 @@
             }
         }
     }
-    #redaction-history {
+    #redaction-history, #document-history {
         .innerPanel {
             .header-wrapper {
                 // margin-bottom: 1.5em;
@@ -289,6 +289,14 @@
                     border-bottom: none;
                     padding: 0;
                     margin: 0;
+                    span {
+                        &.icon-new {
+                            text-indent: -1000em;
+                            width: 1.15em;
+                            height: 1.15em;
+                            margin: 0 0.15em -0.5em 0px;
+                        }
+                    }
                 }
             }
         }

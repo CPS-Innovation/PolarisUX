@@ -156,7 +156,7 @@ $(document).ready(function () {
     // $('#searchFormTest, #searchFormTest2').addClass('disabled');
     // $('#searchURNModal').attr('disabled','disabled');
 
-    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20, .document-11A').css('opacity','0.2');
+    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20, .document-21, .document-11A').css('opacity','0.2');
     $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
 
     setTimeout(function() {
@@ -331,6 +331,13 @@ $(document).ready(function () {
         $('.document-20').css('opacity','1');
         $('.accordion-section table tbody tr.document-holder.document-20 td strong.loading-tag').hide();
     }, 20000);
+
+    setTimeout(function() {
+        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (1)');
+        $('.document-21').css('opacity','1');
+        $('.accordion-section table tbody tr.document-holder.document-21 td strong.loading-tag').hide();
+    }, 21000);
 
 })
 
@@ -554,6 +561,19 @@ function email() {
         }
     });
 
+    $(".email-document-V2").on("click", function (e) {
+        if ($('#documentNameHeader > p.inPageSearchMargins2:contains("SCOTT, 12564Y7EH, 02/09/2021")').length > 0) {
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("SCOTT, 12564Y7EH, 02/09/2021")').prepend( "<span class='icon-new email-white'>email</span>" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("SCOTT, 12564Y7EH, 02/09/2021")').parent().append(`
+                <div class="attachments error">
+                    <p class="">2 attachments:</p>
+                    <span class="openMe">Attachments only available on CMS</span>
+                </div>
+            `);
+        }
+    });
+
+
 }
 
 // function activateLink() {
@@ -679,6 +699,7 @@ function documentTitle() {
     $('.document-title-6').text(docTitle);
     $('.document-title-7').text(docTitle);
     $('.document-title-8').text(docTitle);
+    $('.document-title-9').text(docTitle);
 }
 
 function showUnread() {

@@ -10,7 +10,7 @@ main.case-files {
                 background: $govuk-link-colour;
                 color: white;
                 position: relative;
-                z-index: 15;
+                z-index: 14;
                 margin-top: -5px;
                 .attachments {
                     background: govuk-colour("light-grey");
@@ -18,6 +18,13 @@ main.case-files {
                     color: $govuk-text-colour;
                     margin-top: 1em;
                     padding: 0.5em;
+                    &.error {
+                        border-left: 5px solid $govuk-error-colour;
+                        p, .openMe {
+                            font-style: italic;
+                            color: $govuk-error-colour !important;
+                        }
+                    }
                     p, a {
                         margin: 0 !important;
                         font-size: 1rem;
@@ -166,7 +173,7 @@ main.case-files {
                             border-top: 3px solid $govuk-link-hover-colour;
                             border-radius: 0 0 5px 5px;
                             background-color: white;
-                            min-width: 250px;
+                            min-width: 300px;
                             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                             z-index: 1;
                             &.show {

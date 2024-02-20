@@ -1,4 +1,4 @@
-{% extends "layoutCPS-NEW-CASEFILE.html" %}
+{% extends "layoutCPS-NEW-CASEFILE-V2.html" %}
 {% block header %}
     {% include "../includes/banner-V2.html" %}
 {% endblock %}
@@ -21,6 +21,7 @@
     {% include "../includes/modals/discarded.html" %}
     {% include "../includes/modals/search-redaction.html" %}
     {% include "../includes/modals/search-suggestions.html" %}
+    {% include "../includes/modals/document-history.html" %}
 {% endblock %}
 {% block content %}
 
@@ -64,7 +65,30 @@
 
 </script>
 
-<div class="search-bar-wrapper case-file-page">
+<!-- ///////// STATUS BAR - START ///////// -->
+<div class="hods-status-message case-file-page">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <div class="hods-status-message__status">
+                    <!-- <h1 class="govuk-heading-s">Read only:</h1> -->
+                    <span class="hods-status-message__extra">
+                        <strong>Liam Davies</strong> and <strong>Michael Scott</strong> are also working on this case <!-- in <strong>CMS Classic</strong> -->
+                    </span>
+                    <span class="hods-status-message__extra">
+                        Last active: <strong>5 minutes ago</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+                <!-- <a class="hods-status-message__actions__link" href="#">Take over</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ///////// STATUS BAR - END ///////// -->
+
+<div class="search-bar-wrapper case-file-page with-status">
     <div class="govuk-width-container">
         <div class="govuk-phase-banner header new-V3">
             <div class="govuk-grid-row">
@@ -81,7 +105,10 @@
                     <!-- <a href="javascript:history.back()" class="govuk-back-link">Find a case</a> -->
                     <div class="govuk-phase-banner__content">
                         <a href="" onClick="return openFeedbackSurveyModal()" class="feedback-survey">Improve this service</a>
-                        <div class="loading-PII">
+                        <div class="loading-PII loading">
+                            <div class="hods-loading-spinner">
+                                <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                            </div>
                             <span id="documents-loaded-number-2">1</span> of 21 documents indexed...
                         </div>
                         <div class="search-PII">

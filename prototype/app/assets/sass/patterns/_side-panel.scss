@@ -85,6 +85,9 @@
                         font-size: 0.875rem;
                         font-style: italic;
                         color: $govuk-error-colour;
+                        &.emails {
+                            display: inline-block;
+                        }
                     }
                 }
                 table {

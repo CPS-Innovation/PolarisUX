@@ -52,6 +52,15 @@ header {
     }
 }
 
+.govuk-tag {
+    &.case-indicator {
+        margin-bottom: 1.5em;
+        font-weight: normal;
+        text-transform: inherit !important;
+        line-height: 1.25;
+    }
+}
+
 button {
     &.non-button {
         color: $govuk-link-colour;
@@ -301,7 +310,7 @@ main.search {
 }
 
 // Search results page
-.search-bar-wrapper {
+.search-bar-wrapper, .hods-status-message {
     // position: fixed;
     // top: 0;
     // left: 0;
@@ -315,6 +324,10 @@ main.search {
         left: 0;
         right: 0;
         padding: 0.75em 0;
+        &.with-status {
+            top: 92px;
+            // top: 109px;
+        }
         .govuk-phase-banner {
             padding: 0;
             margin: 0;
@@ -347,7 +360,24 @@ main.search {
                     }
                 }
                 .loading-PII {
-                    margin-top: 0.15em;
+                    margin-top: 0;
+                    // margin-top: 0.15em;
+                    &.loading {
+                        width: auto;
+                        .hods-loading-spinner {
+                            display: inline-block;
+                            margin: 0.35em 0 -0.35em 0;
+                            .hods-loading-spinner__spinner {
+                                width: 1em;
+                                height: 1em;
+                                float: left;
+                                clear: none;
+                                border: 4px solid #dee0e2;
+                                border-top-color: #1d70b8;
+                                margin: -0.325em 0.5em 0 0;
+                            }
+                        }
+                    }
                 }
                 .feedback-survey {
                     float: left;
@@ -380,6 +410,47 @@ main.search {
     }
     .govuk-caption-m {
         margin-top: 0.25em;
+    }
+}
+
+.hods-status-message {
+    background: $govuk-link-colour;
+    border-bottom: none;
+    &.case-file-page {
+        top: 50px;
+        .hods-status-message__status {
+            margin-top: 0;
+            // margin-top: 5px;
+            .govuk-heading-s {
+                margin: 0;
+                color: white;
+                width: auto;
+                margin-right: 0.5em;
+                display: inline-block;
+            }
+            span {
+                width: auto;
+                margin-right: 0.75em;
+                padding-right: 0.5em;
+                &:first-of-type {
+                    border-right: 1px solid rgba(white,0.2);
+                }
+            }
+        }
+        .hods-status-message__actions__link {
+            color: #0b0c0c;
+            background-color: #fff;
+            border: #0b0c0c 1px solid;
+            margin: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 5px 10px;
+            display: inline-block;
+            float: right;
+            box-shadow: 0 2px 0 #002d18;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
     }
 }
 
@@ -445,6 +516,14 @@ main.search-results {
 main.case-files {
     padding: 5em 0 0 0 !important;
     margin-bottom: 5em !important;
+    &.with-status {
+        // padding: 8em 0 0 0 !important;
+        padding: 7em 0 0 0 !important;
+        #left-column {
+            height: 70vh;
+            // height: 68vh;
+        }
+    }
     .Tip__compact { 
         border-radius: 5px;
         margin-top: -5px;
@@ -716,3 +795,15 @@ main.case-files {
 //         transform: translateX(25px);
 //     }
 // }
+
+table {
+    tbody {
+        tr {
+            td {
+                &.text-align-right {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
