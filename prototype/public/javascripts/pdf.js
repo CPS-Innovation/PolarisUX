@@ -33565,6 +33565,57 @@
                                         },
                                         children: "Redact",
                                     }),
+                                    (0, I.jsx)("button", {
+                                        className: "Tip__btn-ignore govuk-button--secondary",
+                                        children: "Ignore",
+                                    }),
+                                    (0, I.jsxs)("div", {
+                                        className: "govuk-form-group bulk-redactions",
+                                        children: [
+                                            (0, I.jsx)("label", { className: "govuk-label", htmlFor: "bulk-redactions", children: "This appears 21 times:" }),
+                                            (0, I.jsxs)("div", {
+                                                dataModule: "govuk-checkboxes",
+                                                className: "govuk-checkboxes govuk-checkboxes--small",
+                                                children: [
+                                                    (0, I.jsx)("div", { 
+                                                        className: "govuk-checkboxes__item",
+                                                        children: [
+                                                            (0, I.jsx)("input", { 
+                                                                className: "govuk-checkboxes__input",
+                                                                id: "bulk-redactions-next",
+                                                                name: "bulk-redactions",
+                                                                type: "checkbox",
+                                                                value: "Next",
+                                                                checked: "checked",
+                                                            }),
+                                                            (0, I.jsx)("label", { 
+                                                                className: "govuk-label govuk-checkboxes__label", 
+                                                                for: "bulk-redactions-next",
+                                                                children: "View next",
+                                                            }),
+                                                        ],
+                                                    }),
+                                                    (0, I.jsx)("div", { 
+                                                        className: "govuk-checkboxes__item",
+                                                        children: [
+                                                            (0, I.jsx)("input", { 
+                                                                className: "govuk-checkboxes__input",
+                                                                id: "bulk-redactions-all",
+                                                                name: "bulk-redactions",
+                                                                type: "checkbox",
+                                                                value: "Redac all",
+                                                            }),
+                                                            (0, I.jsx)("label", { 
+                                                                className: "govuk-label govuk-checkboxes__label", 
+                                                                for: "bulk-redactions-all",
+                                                                children: "Redact all",
+                                                            }),
+                                                        ],
+                                                    }),
+                                                ],
+                                            }),
+                                        ],
+                                    }),
                                 ],
                             });
                         }),
