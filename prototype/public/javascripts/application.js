@@ -584,6 +584,47 @@ function email() {
 // }
 
 
+// =================================== Document history =================================== //
+// $(document).ready(function () {
+//     $(".document-history-V1 ").on("click", function (e) {
+//         // if ($('ul.sticky-tabs li').data('tab-id') == 'View%20document') {
+//         //     alert('working');
+//         // }
+//         if ($('ul.sticky-tabs li a').text() == 'View document') {
+//             alert('working');
+//         }
+//     });
+// })
+
+$(document).ready(function () {
+    $('.document-history-V1-OPEN').hide();
+})
+
+function documentID() {
+    $(".document-history-V1 ").on("click", function (e) {
+        $(this).hide();
+        $('.document-history-V1-OPEN').show();
+        if ($('#documentNameHeader > p.inPageSearchMargins2:contains("View document")').length > 0) {
+            $('ul.sticky-tabs li a:contains("View document")').text( "MCLOVE MG3 - V1" );
+            $('#documentNameHeader > p.inPageSearchMargins2').addClass( "old-document" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("View document")').text( "MCLOVE MG3 - V1" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG3 - V1")').append( `<br><span>19 May 2020, 11:32</span>` );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG3 - V1")').parent().append(`
+                <div class="attachments history">
+                    <span class="openMe">Would you like to restore this version?</span>
+                    <button class="govuk-button govuk-button--white" data-module="govuk-button" type="button" onclick="openConfirmModal()" data-module="govuk-button">Restore</button>
+                </div>
+            `);
+        }
+
+
+        // if ($('ul.sticky-tabs li a').text() == 'View%20document') {
+        //     alert('working');
+        // }
+    });
+}
+
+
 // =================================== Search button =================================== //
 $(document).ready(function () {
     $(".search-button").on("click", function (e) {

@@ -28,30 +28,40 @@
 
                                 <p></p>
 
-                                <table class="govuk-table">
-                                    <thead class="govuk-table__head">
-                                        <tr class="govuk-table__row">
-                                            <th scope="col" class="govuk-table__header">Date received</th>
-                                            <th scope="col" class="govuk-table__header">Date</th>
-                                            <th scope="col" class="govuk-table__header">Author</th>
-                                            <th scope="col" class="govuk-table__header">Version</th>
-                                            <th scope="col" class="govuk-table__header"></th>
-                                        </tr>
-                                    </thead>
+                                <table class="govuk-table document-history">
                                     <tbody class="govuk-table__body">
                                         <tr class="govuk-table__row">
-                                            <th class="govuk-table__cell"></th>
-                                            <td class="govuk-table__cell">Date</td>
-                                            <td class="govuk-table__cell">Author</td>
-                                            <td class="govuk-table__cell">Version</td>
-                                            <td class="govuk-table__cell text-align-right"><a href="">View document</a></td>
-                                        </tr>
-                                        <tr class="govuk-table__row">
-                                            <th class="govuk-table__cell"><span class="document-title-9">Document title</span></th>
-                                            <td class="govuk-table__cell">Date</td>
-                                            <td class="govuk-table__cell">Author</td>
-                                            <td class="govuk-table__cell">Version</td>
-                                            <td class="govuk-table__cell text-align-right"><a href="">View document</a></td>
+                                            <th class="govuk-table__cell no-border" width="40%">
+                                                <span class="document-title-9">Document title</span>
+                                                <br>
+                                                <span class="govuk-caption-m">Charging decision log and plan</span>
+                                            </th>
+                                            <td class="govuk-table__cell no-border no-top-padding" width="60%">
+                                                <table class="govuk-table">
+                                                    <thead class="govuk-table__head">
+                                                        <tr class="govuk-table__row">
+                                                            <th scope="col" class="govuk-table__header">Versions</th>
+                                                            <th scope="col" class="govuk-table__header">Date</th>
+                                                            <th scope="col" class="govuk-table__header"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="govuk-table__body">
+                                                        <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">Version 2</strong></td>
+                                                            <td class="govuk-table__cell">02 June 2020, 13:08</td>
+                                                            <td class="govuk-table__cell"><span class="govuk-caption-m small">Document open</span></td>
+                                                        </tr>
+                                                        <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Version 1</strong></td>
+                                                            <td class="govuk-table__cell">19 May 2020, 11:32</td>
+                                                            <td class="govuk-table__cell openMe">
+                                                                <a href="#document-top" class="show-case document-history-V1" data-doc="MCLOVEMG3-V1.pdf" data-document="2" onclick="return pageCounter(), topFunction(), closeHistoryModal(), documentID()" data-page="6">View document</a>
+                                                                <span class="govuk-caption-m small document-history-V1-OPEN">Document open</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

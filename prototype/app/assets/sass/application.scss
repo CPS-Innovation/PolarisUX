@@ -383,8 +383,15 @@ max-width:90%;
 }
 
 .inPageSearchMargins2 {
-  margin-bottom: 10px;
-  color: #000 !important;
+    margin-bottom: 10px;
+    color: #000 !important;
+    &.old-document {
+        margin-top: 15px !important;
+        span {
+            color: rgba(white,0.7);
+            font-size: 0.875rem;
+        }
+    }
 }
 
 .mb5{
@@ -4922,11 +4929,11 @@ font-size: 19px;
 
 // NEW STRONG STYLE
 strong, span {
-  &.govuk-tag {
-    letter-spacing: 0 !important;
-    text-transform: capitalize !important;
-    &.govuk-tag--turquoise {
-      display: none !important;
+    &.govuk-tag {
+        letter-spacing: 0 !important;
+        text-transform: capitalize !important;
+        &.govuk-tag--turquoise {
+            display: none !important;
+        }
     }
-  }
 }

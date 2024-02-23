@@ -413,6 +413,12 @@ main.search {
     }
 }
 
+.govuk-caption-m {
+    &.small {
+        font-size: 1rem;
+    }
+}
+
 .hods-status-message {
     background: $govuk-link-colour;
     border-bottom: none;
@@ -797,6 +803,34 @@ main.case-files {
 // }
 
 table {
+    &.document-history {
+        margin-bottom: 0;
+        tbody {
+            tr {
+                td, th {
+                    &.no-border {
+                        border-bottom: none;
+                        &.no-top-padding {
+                            padding-top: 0;
+                        }
+                    }
+                    strong, span {
+                        &.govuk-tag {
+                            &.govuk-tag--turquoise {
+                                display: inline-block !important;
+                            }
+                        }
+                    }
+                    table {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    thead {
+
+    }
     tbody {
         tr {
             td {
