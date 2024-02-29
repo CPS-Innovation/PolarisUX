@@ -778,6 +778,17 @@ function showAll() {
 
 function pageCounter() {
 
+    $('#pdf-root').addClass('test');
+    // var pdfRoot = document.getElementById('pdf-root');
+
+    // if ($(pdfRoot).innerHTML == "0") {
+    //     alert('working');
+    // } else {
+    //     // $('#charge-error').addClass('govuk-form-group--error');
+    //     // $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
+    // }
+
+
 }
 
 $(function(){
@@ -1396,9 +1407,7 @@ function errorStatus3() {
     e.stopPropagation();     
 }
 
-
 $(document).ready(function () {
-
 
     // Redaction log
     $("#redactionLog-ChargeStatus").on("change", function (e) {
@@ -1412,6 +1421,7 @@ $(document).ready(function () {
             $('#charge-error').addClass('govuk-form-group--error');
             $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
         }
+        $('#pdf-root').addClass('test');
     });
 
     $('#charge-issued-error').show();
@@ -1692,7 +1702,7 @@ $(document).ready(function () {
         $('#noteNew-added .hods-timeline__description').html($.cookie("notesNew-Details"));
 
         $('.notes-link').addClass('has-notes');
-        $('.notes-new-text-content').html($.cookie("notes-Details"));
+        $('.notes-new-text-content').html($.cookie("notesNew-Details"));
 
         setTimeout(function () {
             $('#notesNew-Comments').val('');

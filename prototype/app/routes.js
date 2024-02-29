@@ -27,5 +27,6 @@ router.use('/version-33', require('./views/version-33/_routes'))
 router.use('/version-34', require('./views/version-34/_routes'))
 router.use('/version-35', require('./views/version-35/_routes'))
 router.use('/version-36', require('./views/version-36/_routes'))
+router.use('/version-37', require('./views/version-37/_routes'))
 
 module.exports = router

@@ -644,6 +644,19 @@ main.case-files {
     }
 }
 
+.Highlight, .AreaHighlight {
+    .Highlight__parts {
+        .Highlight__part {
+            background: rgba(black, 0.4);
+            border: 2px solid black;
+        }
+    }
+    .AreaHighlight__part {
+        background: rgba(black, 0.4);
+        border: 2px solid black;
+    }
+}
+
 
 
 
