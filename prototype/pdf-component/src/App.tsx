@@ -169,7 +169,7 @@ class App extends Component<{}, State> {
 
         return (
             <>
-                {highlights.length && !isRedactionComplete && (
+                {!!highlights.length && !isRedactionComplete && (
                     <div
                         className="redaction-footer"
                         style={{

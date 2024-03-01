@@ -61,6 +61,10 @@ header {
     }
 }
 
+.cps-concept-image {
+    width: 100%;
+}
+
 button {
     &.non-button {
         color: $govuk-link-colour;
@@ -310,7 +314,7 @@ main.search {
 }
 
 // Search results page
-.search-bar-wrapper, .hods-status-message {
+.search-bar-wrapper, .hods-status-message, .cps-bar-wrapper {
     // position: fixed;
     // top: 0;
     // left: 0;
@@ -411,6 +415,21 @@ main.search {
     .govuk-caption-m {
         margin-top: 0.25em;
     }
+}
+
+.cps-bar-wrapper {
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+#image-wrapper {
+    .wrapper {
+        padding: 0;
+    }
+}
+
+#cps-casework-concept {
+    margin-bottom: -5em !important;
 }
 
 .govuk-caption-m {

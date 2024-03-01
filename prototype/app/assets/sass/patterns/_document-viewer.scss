@@ -373,13 +373,27 @@ main.case-files {
     //     padding: 5px;
     // }
     #pdf-root {
+        &.documentRedacted {
+            .Highlight, .AreaHighlight {
+                .Highlight__parts {
+                    .Highlight__part {
+                        background: black;
+                        border: 2px solid black;
+                    }
+                }
+                .AreaHighlight__part {
+                    background: black;
+                    border: 2px solid black;
+                }
+            }
+        }
         .PdfHighlighter {
             height: auto;
             padding: 1.5em 2% 1.25em 2%;
             border: 5px solid #b1b4b6;
             background: white;
             width: 94.85%;
-            margin: -1.5em 0 10em 0;
+            margin: -0.3em 0 10em 0;
             z-index: 1;
 
             background: govuk-colour("light-grey");
@@ -527,7 +541,7 @@ main.case-files {
             background: white;
             border: none;
             box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.2);
-            padding: 10px 10px 0 10px;
+            padding: 0 10px 10px 10px;
             &:after {
                 width: 0; 
                 height: 0; 
@@ -542,6 +556,19 @@ main.case-files {
                 bottom: -15px;
                 // background: $govuk-link-colour;
                 content: ' ';
+            }
+            .bulk-redactions {
+                margin: 0px -10px 10px -10px;
+                padding: 7px 0 7px 0;
+                background: govuk-colour("light-grey");
+                border-radius: 6px 6px 0 0;
+                p.intro {
+                    font-size: 0.875rem;
+                    color: $govuk-secondary-text-colour;
+                    font-style: italic;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
             }
             .govuk-form-group {
                 margin: 0;
@@ -644,6 +671,9 @@ main.case-files {
     }
 }
 
+
+// PDF Redactions
+
 .Highlight, .AreaHighlight {
     .Highlight__parts {
         .Highlight__part {
@@ -657,6 +687,60 @@ main.case-files {
     }
 }
 
+#pdf-root {
+    .annotationLayer {
+        section {
+            .popupWrapper {
+                .popup {
+                    display: none;
+                }
+            }
+        }
+        .caretAnnotation { 
+            svg ellipse {
+
+            }
+        }
+        .fileAttachmentAnnotation {
+
+        }
+        .freeTextAnnotation {
+
+        }
+        .highlightAnnotation {
+            background: rgba(red,0.4);
+            border: 2px dashed red;
+        }
+        .inkAnnotation svg polyline {
+
+        }
+
+        .lineAnnotation svg line {
+
+        }
+        .polygonAnnotation svg polygon {
+
+        }
+        .polylineAnnotation svg polyline {
+
+        }
+        .squareAnnotation svg rect {
+
+        }
+        .squigglyAnnotation {
+
+        }
+        .stampAnnotation {
+            
+        }
+        .strikeoutAnnotation {
+
+        }
+        .underlineAnnotation {
+
+        }
+    }
+}
 
 
 

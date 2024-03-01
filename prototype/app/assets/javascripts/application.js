@@ -120,6 +120,36 @@ $(document).mouseup(function(e) {
     }
 });
 
+// =================================== NAVIGATION =================================== //
+$(document).ready(function () {
+
+    if ($('#image-wrapper').hasClass('A-Dashboard')) {
+        $('#global-navigation ul li').removeClass('current');
+        $('#global-navigation ul li.dashboard').addClass('current');
+    }
+
+    if ($('#image-wrapper').hasClass('C-my-tasks')) {
+        $('#global-navigation ul li').removeClass('current');
+        $('#global-navigation ul li.my-tasks').addClass('current');
+    }
+
+    if ($('#image-wrapper').hasClass('D-my-cases')) {
+        $('#global-navigation ul li').removeClass('current');
+        $('#global-navigation ul li.my-cases').addClass('current');
+    }
+
+    if ($('#cps-casework-concept').hasClass('concept')) {
+        // $('main.case-files').css('top','-5em');
+        $('#left-column').css('top','14em');
+        $('.cps-bar-wrapper').hide();
+    }
+
+    if ($('#cps-casework-concept').hasClass('concept-search')) {
+        $('main#main-content').css('top','-2em');
+    }
+
+})
+
 // =================================== Drag and drop =================================== //
 
 function allowDrop(ev) {
@@ -1383,6 +1413,20 @@ function newDocument() {
 }
 
 
+// =================================== SUGGESTED REDACTIONS =================================== //
+
+function suggestedRedactions() {
+    // alert('working');
+    $(".suggested-redactions").html('Turn <strong>OFF</strong> Suggested Redactions');
+    // var suggestedRedactions = document.getElementsByClassName("suggested-redactions");
+    // suggestedRedactions.addClass('working')
+    // if (suggestedRedactions.innerHTML === "ON") {
+    //     suggestedRedactions.innerHTML = "OFF";
+    // } else {
+    //     suggestedRedactions.innerHTML = "ON";
+    // }
+}
+
 
 // =================================== ERROR MESSAGES =================================== //
 
@@ -1421,7 +1465,7 @@ $(document).ready(function () {
             $('#charge-error').addClass('govuk-form-group--error');
             $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
         }
-        $('#pdf-root').addClass('test');
+        $('#pdf-root').addClass('documentRedacted');
     });
 
     $('#charge-issued-error').show();

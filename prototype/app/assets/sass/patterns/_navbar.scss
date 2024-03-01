@@ -1,5 +1,62 @@
 // Nav bar
 
+#global-navigation {
+    ul {
+        position: relative;
+        left: -15px;
+        width: calc(100% - 30px);
+        min-height: 50px;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        li {
+            box-sizing: border-box;
+            height: 3.125rem;
+            padding: 0 15px;
+            float: left;
+            line-height: 50px;
+            position: relative;
+            &.current {
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    display: inline-block;
+                    height: 5px;
+                    background: $govuk-link-colour;
+                    left: 0px;
+                    right: 0px;
+                    content: ' ';
+                }
+            }
+            a {
+                color: $govuk-link-colour;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.3rem;
+                &:hover, &:active, &:focus {
+                    text-decoration: underline;
+                    color: $govuk-link-hover-colour;
+                }
+            }
+        }
+    }
+    form {
+        margin-top: 0.3em;
+        .govuk-form-group {
+            position: relative;
+            label {
+                display: none;
+            }
+            button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                // float: right;
+            }
+        }
+    }
+}
+
 #left-column-top {
     padding-right: 3px;
     // padding-bottom: 1em;
