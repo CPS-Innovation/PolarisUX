@@ -255,7 +255,7 @@ main.case-files {
                     }
                 }
             }         
-            .error-message, .updated-message, .discarded-message, .redaction-message {
+            .error-message, .updated-message, .discarded-message, .redaction-message, .suggested-redactions-panel {
                 display: none;
                 background: govuk-colour("light-grey");
                 padding: 0.65em 1em 1em 1em;
@@ -320,6 +320,28 @@ main.case-files {
                     strong {
                         color: $govuk-text-colour;
                     }
+                }
+            }
+            .suggested-redactions-panel {
+                border-left: none;
+                border-bottom: 5px solid $govuk-border-colour;
+                h3 {
+                    margin-bottom: 0.15em;
+                }
+                p {
+                    margin: 0 0 0.25em 0;
+                    font-size: 0.875rem;
+                    color: $govuk-secondary-text-colour;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    span {
+                        font-weight: bold;
+                        color: $govuk-link-colour;
+                    }
+                }
+                span {
+
                 }
             }
         }

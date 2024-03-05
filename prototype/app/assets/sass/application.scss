@@ -34,6 +34,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/side-panel";
 @import "patterns/notes";
 @import "patterns/header";
+@import "patterns/case-materials";
 
 @mixin das-clearfix {
   &:after {

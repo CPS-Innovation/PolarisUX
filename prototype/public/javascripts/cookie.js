@@ -687,3 +687,47 @@ $(document).ready(function () {
 
 })
 
+// =================================== Document history =================================== //
+$(document).ready(function () {
+
+    $('.new-document-row').hide();
+
+    $("#confirm-document-change").on("click", function (e) {
+        if ($('input[id="restoreDocument-Yes"]:checked')) { $.cookie("confirm-document-change", 'Yes', {path:'/'}); }
+
+        if ($.cookie("confirm-document-change") == 'Yes') {
+            $('.attachments.history').hide();
+            $('.document-V2').removeClass('govuk-tag--turquoise').addClass('govuk-tag--grey');
+            $('.new-document-row').show();
+            $('.document-number').text('2');
+            $('.document-history-V1').show();
+            $('.document-history-V1-OPEN').hide();
+            $('ul li[data-tab-id="View%20document"] a').text('MCLOVE MG3');
+            $('.document-panel[data-tab-id="View%20document-content"] .inPageSearchMargins2').text('MCLOVE MG3').removeClass('old-document');
+
+            $('ul li[data-tab-id="MCLOVE%20MG3"] a').text('MCLOVE MG3 - V2');
+            $('.document-panel[data-tab-id="MCLOVE%20MG3-content"] .inPageSearchMargins2').addClass('old-document');
+            $('.document-panel[data-tab-id="MCLOVE%20MG3-content"] .inPageSearchMargins2').html(`
+                MCLOVE MG3 - V2
+                <br>
+                <span>02 June 2020, 13:08</span>
+            `);
+            
+        }
+
+        document.getElementById("NEW-DOC-date-stamp").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+', '+hours+':'+minutes;
+        }
+
+
+    });
+})
+
+

@@ -1414,9 +1414,14 @@ function newDocument() {
 
 
 // =================================== SUGGESTED REDACTIONS =================================== //
+$(document).ready(function () {
+    $('.suggested-redactions').hide();
+})
+
 
 function suggestedRedactions() {
     // alert('working');
+    $('.suggested-redactions-panel').show();
     $(".suggested-redactions").html('Turn <strong>OFF</strong> Suggested Redactions');
     // var suggestedRedactions = document.getElementsByClassName("suggested-redactions");
     // suggestedRedactions.addClass('working')
