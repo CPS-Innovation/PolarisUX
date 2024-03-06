@@ -322,7 +322,7 @@
             }
         }
     }
-    #redaction-over, #redaction-log {
+    #redaction-over, #redaction-log, #redaction-log-DUMMY {
         .header-wrapper {
             h1 {
                 &.govuk-heading-l {
@@ -1022,7 +1022,7 @@
     }
 }
 
-.success-banner, #saving-panel, .success-banner-confirmation {
+.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1039,7 +1039,7 @@
     }
 }
 
-#saving-panel {
+#saving-panel, #saving-panel-DUMMY {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;

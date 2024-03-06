@@ -62,6 +62,13 @@
         $(redactionModal).addClass("rj-dont-display");
     }
 
+    function openDummyRedactionLog() {
+        $('#redactionModalDummy').removeClass("rj-dont-display");
+    }
+    function closeDummyRedactionLog() {
+        $('#redactionModalDummy').addClass("rj-dont-display");
+    }
+
     function openModalHistory() {
         $(redactionModalHistory).removeClass("rj-dont-display");
     }
@@ -193,6 +200,13 @@
     }
     function closeConfirmModal() {
         $("#confirmModal").addClass("rj-dont-display");
+    }
+
+    function sumbitSuggestedRedactions() {
+        $("#confirmSuggestedRedactions").removeClass("rj-dont-display");
+    }
+    function closeSuggestedRedactions() {
+        $("#confirmSuggestedRedactions").addClass("rj-dont-display");
     }
 
 

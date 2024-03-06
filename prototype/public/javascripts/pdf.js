@@ -33457,7 +33457,7 @@
                                             return e.preventDefault();
                                         },
                                         children: [
-                                            (0, I.jsx)("div", { className: "pdfViewer" }),
+                                            (0, I.jsx)("div", { className: "pdfViewer", id: "changeDocument" }),
                                             this.renderTip(),
                                             "function" === typeof r
                                                 ? (0, I.jsx)(B, {
@@ -33579,7 +33579,7 @@
                                             r.props.onConfirm({ text: "", emoji: "" }, r.state.redactionType);
                                             activateLink()
                                         },
-                                        children: "Redact all",
+                                        children: "Redact all (21)",
                                     }),
                                 ],
                             });

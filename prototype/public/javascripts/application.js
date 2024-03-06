@@ -1420,16 +1420,91 @@ $(document).ready(function () {
 
 
 function suggestedRedactions() {
-    // alert('working');
     $('.suggested-redactions-panel').show();
     $(".suggested-redactions").html('Turn <strong>OFF</strong> Suggested Redactions');
-    // var suggestedRedactions = document.getElementsByClassName("suggested-redactions");
-    // suggestedRedactions.addClass('working')
-    // if (suggestedRedactions.innerHTML === "ON") {
-    //     suggestedRedactions.innerHTML = "OFF";
-    // } else {
-    //     suggestedRedactions.innerHTML = "ON";
-    // }
+
+    // var d = document.getElementById("pdf-root");
+    // d.setAttribute('data-pdf-url' , 'Next');
+    $('#pdf-root .canvasWrapper, #pdf-root .textLayer').hide();
+    $('#pdf-root .PdfHighlighter').addClass('documentSwap');
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-1.jpg' id='suggested-1' onClick='suggestedRedactionsStep2()' />";
+    $('#pdf-root').prepend(`
+        <div class="redaction-footer">
+            <span class="removeRedactions looks-like-a-link-underline">Remove all redactions</span>
+            <span id="data-count-SR" data-count="23">There are 23 redactions</span>
+            <span class="viewRedactions looks-like-a-link-underline"> - views redactions</span>
+            <button class="govuk-button saveDraftButton govuk-button--secondary">Save draft redactions</button>
+            <button class="govuk-button saveAndFinishButton" onClick="sumbitSuggestedRedactions()">Save and submit all redactions</button>
+        </div>
+    `);
+}
+
+function suggestedRedactionsStep2() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-2.jpg' id='suggested-2' onClick='suggestedRedactionsStep3()' />";
+    $('#redaction-summary-list-DUMMY').html(`
+        <li id="suggested-NamedIndividuals"><b>18</b> - Named individuals</li>
+        <li><b>2</b> - Email addresses</li>
+        <li><b>2</b> - Previous convictions</li>
+        <li><b>1</b> - Date of birth</li>
+    `);
+}
+
+function suggestedRedactionsStep3() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-3.jpg' id='suggested-3' onClick='suggestedRedactionsStep4()' />";
+    document.getElementById("data-count-SR").innerHTML="There are 23 redactions";
+    document.getElementById("confirm-suggested-redactions-number").innerHTML="22";
+    document.getElementById("SRNumber").innerHTML="(17)";
+    $('#redaction-summary-list-DUMMY').html(`
+        <li id="suggested-NamedIndividuals"><b>17</b> - Named individuals</li>
+        <li><b>2</b> - Email addresses</li>
+        <li><b>2</b> - Previous convictions</li>
+        <li><b>1</b> - Date of birth</li>
+    `);
+}
+
+function suggestedRedactionsStep4() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-4.jpg' id='suggested-4' />";
+    document.getElementById("data-count-SR").innerHTML="There are 21 redactions";
+    document.getElementById("confirm-suggested-redactions-number").innerHTML="21"; 
+    document.getElementById("SRNumber").innerHTML="(16)";
+    $('#redaction-summary-list-DUMMY').html(`
+        <li id="suggested-NamedIndividuals"><b>16</b> - Named individuals</li>
+        <li><b>2</b> - Email addresses</li>
+        <li><b>2</b> - Previous convictions</li>
+        <li><b>1</b> - Date of birth</li>
+    `);    
+}
+
+
+$(document).ready(function () {
+
+    $('.success-banner-DUMMY').hide();
+
+    $("input[name=suggestedRedactions]").on("change", function (e) {
+        if ($(this).val() == "Yes") {
+            $('#confirm-suggested-redactions').attr('onClick','closeSuggestedRedactions(), openDummyRedactionLog()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
+
+            setTimeout(function () {
+                $('#saving-panel-DUMMY').slideUp();
+                $('.success-banner-DUMMY').slideDown();
+                $('#redaction-log-button-DUMMY').attr('onClick','closeDummyRedactionLog(), bulkRedactions()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
+            }, 3500);
+
+            setTimeout(function () {
+                $('.success-banner-DUMMY').slideUp();
+            }, 8000);
+
+
+        } else if ($(this).val() == "No") {
+            $('#confirm-suggested-redactions').attr('onClick','closeSuggestedRedactions()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
+        }
+    });
+
+})
+
+function bulkRedactions() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-5.jpg' id='suggested-5' />";
+    $('.suggested-redactions-panel, .redaction-footer').hide();
 }
 
 
