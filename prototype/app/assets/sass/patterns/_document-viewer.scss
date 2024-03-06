@@ -395,6 +395,7 @@ main.case-files {
     //     padding: 5px;
     // }
     #pdf-root {
+        position: relative;
         &.documentRedacted {
             .Highlight, .AreaHighlight {
                 .Highlight__parts {
@@ -408,6 +409,13 @@ main.case-files {
                     border: 2px solid black;
                 }
             }
+        }
+        #marqueeTool {
+            position: absolute;
+            left: 7em;
+            right: 0;
+            top: 12.5em;
+            z-index: 10;
         }
         .PdfHighlighter {
             height: auto;

@@ -1756,6 +1756,7 @@ function zoomOut() {
 
 function marqueeOn() {
     $("#marquee").addClass('on');
+    $('#pdf-root').prepend('<img src="/public/files/MCLOVEMG3-SR-6.png" id="marqueeTool" onClick="" />')
 }
 
 // =================================== NOTES =================================== //
