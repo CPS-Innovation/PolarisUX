@@ -50,6 +50,11 @@ header {
         opacity: 0.25;
         margin: 0 0.35em;
     }
+    .hods-highlight {
+        strong {
+            opacity: 1;
+        }
+    }
 }
 
 .govuk-tag {
@@ -208,6 +213,35 @@ button {
     }
 }
 
+.visuallyhidden {
+    background: rgba(0,0,0,0.7);
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 35px;
+    text-align: center;
+    left: 50%;
+    top: -35px;
+    margin-left: -23px;
+    position: absolute;
+    font-family: "GDS Transport", arial, sans-serif;
+    color: white;
+    font-size: 0.875rem;
+    &:after {
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid rgba(0,0,0,0.7);
+        position: absolute;
+        right: 50%;
+        margin-right: -6px;
+        bottom: -8px;
+        content: ' ';
+    }
+}
+
+
 .makeBannerMiddle {
     &.footer {
         margin: 2em 0 0 0;
@@ -329,7 +363,7 @@ main.search {
         right: 0;
         padding: 0.75em 0;
         &.with-status {
-            top: 92px;
+            top: 99px;
             // top: 109px;
         }
         .govuk-phase-banner {

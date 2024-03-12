@@ -728,7 +728,7 @@ $(document).ready(function () {
         $('.page-counter').addClass('show');
         $('.page-counter strong').text(pageCount);
 
-        $(this).parent().removeClass('unreadDocument');
+        $(this).parent().parent().removeClass('unreadDocument');
 
         $(this).addClass('read');
         documentsRead += 1;
@@ -804,21 +804,6 @@ function showAll() {
         $('.accordion table tbody tr td').show();
         $('.accordion table tbody tr td.unreadDocument').show();
     }
-}
-
-function pageCounter() {
-
-    $('#pdf-root').addClass('test');
-    // var pdfRoot = document.getElementById('pdf-root');
-
-    // if ($(pdfRoot).innerHTML == "0") {
-    //     alert('working');
-    // } else {
-    //     // $('#charge-error').addClass('govuk-form-group--error');
-    //     // $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
-    // }
-
-
 }
 
 $(function(){
@@ -1844,6 +1829,121 @@ $(document).ready(function () {
 
 
 })
+
+// =================================== RENAME & MOVE =================================== //
+
+$(document).ready(function () {
+
+    // Rename
+    $(".more-options").on("click", function (e) {
+        $(this).find('.visuallyhidden').hide();
+        $(this).parent().toggleClass('show-options');
+        $(this).toggleClass('show');
+        $(this).siblings('.document-nav').toggleClass('show');
+    });
+
+    $(".rename-Document").on("click", function (e) {
+        var docNewTitle = $(this).parent().parent().children('.wrapper').find('.show-case').text();
+        $('.document-title-10').text(docNewTitle);
+        $(this).parent().parent().addClass('change-DocumentName');
+    });
+
+    $('#document-renamed').on("click", function (e) {
+        $('.more-options, .document-nav').removeClass('show');
+        $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+        $('.updated-message').show();
+        $('table tbody tr td').removeClass('show-options');
+    });
+
+    // Move
+    $('.document-groups').hide();
+
+    $(".move-Document").on("click", function (e) {
+        var docMoveTitle = $(this).parent().parent().children('.wrapper').find('.show-case').text();
+        $('.document-title-11').text(docMoveTitle);
+        $(this).parent().parent().addClass('move-Document');
+    });
+
+})
+
+function documentOptionTitle() {
+    // var docNewTitle = $(this).parent().parent().find('.show-case').text();
+    // $('.document-title-10').text(docNewTitle);
+    // alert(docNewTitle);
+}
+
+// Group 1 - Reviews
+function groupReviews() {
+    $('.groupName').text('Review documents');
+    $('.document-groups').hide();
+    $('#groupReviews').show();
+}
+
+// Group 2 - Case overview
+function groupCase() {
+    $('.groupName').text('Case overview documents');
+    $('.document-groups').hide();
+    $('#groupCase').show();
+}
+
+// Group 3 - Statements
+function groupStatements() {
+    $('.groupName').text('Statement documents');
+    $('.document-groups').hide();
+    $('#groupStatements').show();
+}
+
+// Group 4 - Exhibits
+function groupExhibits() {
+    $('.groupName').text('Exhibit documents');
+    $('.document-groups').hide();
+    $('#groupExhibits').show();
+}
+
+// Group 5 - Forensics
+function groupForensics() {
+    $('.groupName').text('Forensic documents');
+    $('.document-groups').hide();
+    $('#groupForensics').show();
+}
+
+// Group 6 - Unused materials
+function groupUnused() {
+    $('.groupName').text('Unused material documents');
+    $('.document-groups').hide();
+    $('#groupUnused').show();
+}
+
+// Group 7 - Defendant
+function groupDefendant() {
+    $('.groupName').text('Defendant documents');
+    $('.document-groups').hide();
+    $('#groupDefendant').show();
+}
+
+// Group 8 - Court preparation
+function groupCourt() {
+    $('.groupName').text('Court preparation documents');
+    $('.document-groups').hide();
+    $('#groupCourt').show();
+}
+
+// Group 9 - Communications
+function groupCommunication() {
+    $('.groupName').text('Communication documents');
+    $('.document-groups').hide();
+    $('#groupCommunication').show();
+}
+
+// Group 10 - Uncategorised
+function groupUncategorised() {
+    $('.groupName').text('Uncategorised documents');
+    $('.document-groups').hide();
+    $('#groupUncategorised').show();
+}
+
+
+
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 $(document).ready(function () {

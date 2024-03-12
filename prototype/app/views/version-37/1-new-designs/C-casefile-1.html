@@ -25,6 +25,9 @@
     {% include "../includes/modals/confirmation-Document.html" %}
     {% include "../includes/modals/confirmation-Suggested.html" %}
     {% include "../includes/modals/redaction-log-Dummy.html" %}
+    {% include "../includes/modals/rename.html" %}
+    {% include "../includes/modals/move-document.html" %}
+    {% include "../includes/modals/move-multiple-documents.html" %}
 {% endblock %}
 {% block content %}
 
@@ -88,7 +91,7 @@
                             <div class="hods-loading-spinner">
                                 <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
                             </div>
-                            <span id="documents-loaded-number-2">1</span> of 21 documents indexed...
+                            <span id="documents-loaded-number-2">1</span> of 21 documents loaded...
                         </div>
                         <div class="search-PII">
                             <span id="push-notification">
@@ -208,15 +211,15 @@
                                 <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
                             </div>
                             <div class="govuk-notification-banner__content">
-                                <p class="govuk-notification-banner__heading">Search will not be available until all documents have finished being indexed.</p>
+                                <p class="govuk-notification-banner__heading">Search will not be available until all documents have finished being loaded.</p>
                             </div>
                         </div>                        
  -->                        
                         <div class="hods-loading-spinner">
                             <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
                             <div class="hods-loading-spinner__content">
-                                <h1 class="govuk-heading-m"><span id="documents-loaded-number">1</span> of 21 documents indexed...</h1>
-                                <p class="failed-documents">Documents not possible to index: <span>"MG11 Geoff MCLOVE" (Case overview)</span></p>
+                                <h1 class="govuk-heading-m"><span id="documents-loaded-number">1</span> of 21 documents loaded...</h1>
+                                <p class="failed-documents">Documents not possible to load: <span>"MG11 Geoff MCLOVE" (Statements)</span></p>
                             </div>
                         </div>                    
                     </div>
@@ -226,10 +229,10 @@
                                 <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success - View your documents</h2>
                             </div>
                             <div class="govuk-notification-banner__content">
-                                <p class="govuk-body"><strong>20</strong> documents indexed out of <strong>21</strong>, search or choose a file to start reviewing documents.</p>
-                                <p class="no-margin-bottom">It was not possible to index the following documents, please check CMS:</p>
+                                <p class="govuk-body"><strong>20</strong> documents loaded out of <strong>21</strong>, search or choose a file to start reviewing documents.</p>
+                                <p class="no-margin-bottom">It was not possible to loaded the following documents, please check CMS:</p>
                                 <ul class="govuk-list files">
-                                    <li>"MG11 Geoff MCLOVE" <span>(Case overview)</span></li>
+                                    <li>"MG11 Geoff MCLOVE" <span>(Statements)</span></li>
                                 </ul>
                             </div>
                         </div>

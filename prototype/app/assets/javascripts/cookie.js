@@ -730,4 +730,24 @@ $(document).ready(function () {
     });
 })
 
+// =================================== Rename Document =================================== //
+
+$(document).ready(function () {
+
+
+
+    $(".show-case").on("click", function (e) {
+        // var newDocumentName = $(this).attr("data-doc");
+        // alert(newDocumentName);
+        $.cookie("newDocumentName", $(this).attr("data-doc"), {path:'/'});
+    });
+
+    $("#document-renamed").on("click", function (e) {
+        $.cookie("rename-Document", $('#rename-Document').val(), {path:'/'});
+        $('.change-DocumentName').find('.show-case').text($.cookie("rename-Document"));
+        // $('ul.sticky-tabs li.govuk-tabs__list-item--selected a').text($.cookie("rename-Document");
+        // $('ul li[data-tab-id="MCLOVE%20MG3"] a').text('MCLOVE MG3 - V2');
+    });
+    
+})
 

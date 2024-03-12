@@ -22,7 +22,7 @@
     }
 }
 
-#openNotesModal, #openNewNotesModal {
+#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal {
     background: none;
     height: auto;
     #openMe {
@@ -55,6 +55,17 @@
                     display: none;
                 }
             }
+        }
+    }
+}
+
+#openRenameModal, #openMoveModal, #openMoveMultipleModal {
+    #openMe .govuk-grid-row .innerPanel {
+        .header-wrapper {
+            margin-bottom: 1em;
+        }
+        .govuk-button {
+            margin-right: 1em;
         }
     }
 }
