@@ -165,21 +165,7 @@
                                         }
                                     }
                                     .more-options {
-                                        display: inline-block;
-                                        background: url("../images/more-black.svg") no-repeat 50% 50%;
-                                        background-size: contain;
-                                        border: none;
-                                        position: absolute;
-                                        right: 1.15em;
-                                        width: 2em;
-                                        height: 2em;
-                                        top: 50%;
-                                        padding: 0;
-                                        margin-top: -1em;
-                                        &.show {
-                                            display: inline-block;
-                                        }
-                                        &:hover, &:active, &:focus {
+                                       &:hover, &:active, &:focus {
                                             background: url("../images/more-blue.svg") no-repeat 50% 50%;
                                             background-size: contain;
                                             transform: scale(1.2);      
@@ -198,12 +184,25 @@
                                     }
                                 }
                                 .document-nav, .more-options {
-                                    display: none;
                                     &.show {
                                         display: inline-block;
                                     }
                                 }
+                                .more-options { 
+                                    display: inline-block;
+                                    background: url("../images/more-black.svg") no-repeat 50% 50%;
+                                    background-size: contain;
+                                    border: none;
+                                    position: absolute;
+                                    right: 1.15em;
+                                    width: 2em;
+                                    height: 2em;
+                                    top: 50%;
+                                    padding: 0;
+                                    margin-top: -1em;
+                                 }
                                 .document-nav {
+                                    display: none;
                                     list-style: none;
                                     text-align: left;
                                     background: white;
