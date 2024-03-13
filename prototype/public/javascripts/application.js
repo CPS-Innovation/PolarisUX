@@ -351,6 +351,12 @@ $(document).ready(function () {
         $('.accordion-section table tbody tr.document-holder.document-19 td strong.loading-tag').hide();
     }, 19000);
 
+    setTimeout(function() {
+        $('.accordion-section.section-9 .accordion-section-header').removeClass('no-documents');
+        $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (2)');
+        $('.accordion-section table tbody tr.document-holder.document-20 td strong.loading-tag').hide();
+    }, 20000);
+
     // 10 - Uncategorised (1)
     $('.accordion-section.section-10 .accordion-section-header').addClass('no-documents');
     $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (0)');
@@ -359,15 +365,15 @@ $(document).ready(function () {
         $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
         $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (1)');
         $('.document-20').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-20 td strong.loading-tag').hide();
-    }, 20000);
+        $('.accordion-section table tbody tr.document-holder.document-21 td strong.loading-tag').hide();
+    }, 21000);
 
     setTimeout(function() {
         $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
         $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (1)');
         $('.document-21').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-21 td strong.loading-tag').hide();
-    }, 21000);
+        $('.accordion-section table tbody tr.document-holder.document-22 td strong.loading-tag').hide();
+    }, 22000);
 
 })
 
@@ -1864,7 +1870,23 @@ $(document).ready(function () {
         $(this).parent().parent().addClass('move-Document');
     });
 
+    $('#document-moved').on("click", function (e) {
+        $('.more-options, .document-nav').removeClass('show');
+        // $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+        // $('.updated-message').show();
+        $('table tbody tr td').removeClass('show-options');
+    });
+    
+
 })
+
+function renameDocument() {
+    var newDocumentName = $('#rename-Document').val();
+    $('.updated-message .info-text').text('Document has been renamed ' + newDocumentName);
+    $('ul.sticky-tabs li.govuk-tabs__list-item--selected a').text(newDocumentName);
+    $('table tbody tr td.change-DocumentName a.show-case').text(newDocumentName);
+    $('#documentNameHeader .inPageSearchMargins2').text(newDocumentName);   
+}
 
 function documentOptionTitle() {
     // var docNewTitle = $(this).parent().parent().find('.show-case').text();

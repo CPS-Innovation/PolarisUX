@@ -101,12 +101,14 @@
         }
         .hods-timeline__date {
             clear: both;
+            margin-bottom: 0.5em;
             // color: $govuk-secondary-text-colour;
             // font-size: 1rem;
         }
         .hods-timeline__description {
             display: inline-block;
             width: 100%;
+            margin-top: 0;
         }
         .govuk-tag {
             float: left;

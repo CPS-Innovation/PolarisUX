@@ -39,7 +39,7 @@
                             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-Unread" name="filterDocuments" type="radio" value="Unread documents" onclick="showUnread()">
-                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Unread">(<strong id="unread">21</strong>) Unread documents</label>
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Unread">(<strong id="unread">20</strong>) Unread documents</label>
                                 </div>
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-Read" name="filterDocuments" type="radio" value="Read documents"  onclick="showRead()">
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-All" name="filterDocuments" type="radio" value="All documents"  onclick="showAll()">
-                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-All">(<strong id="all">21</strong>) All documents</label>
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-All">(<strong id="all">20</strong>) All documents</label>
                                 </div>
                             </div>
                         </fieldset>
@@ -67,7 +67,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-1">
+                            <tr class="govuk-table__row document-holder document-1" id="group1-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -112,7 +112,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr class="govuk-table__row document-holder document-2">
+                               <tr class="govuk-table__row document-holder document-2" id="group2-doc1">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -137,7 +137,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-3">
+                                <tr class="govuk-table__row document-holder document-3" id="group2-doc2">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -163,7 +163,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-4">
+                                <tr class="govuk-table__row document-holder document-4" id="group2-doc3">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -188,7 +188,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-5">
+                                <tr class="govuk-table__row document-holder document-5" id="group2-doc4">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -238,7 +238,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-6">
+                            <tr class="govuk-table__row document-holder document-6" id="group3-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -268,7 +268,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-7">
+                            <tr class="govuk-table__row document-holder document-7" id="group3-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -298,7 +298,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-8">
+                            <tr class="govuk-table__row document-holder document-8" id="group3-doc3">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -328,7 +328,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-9">
+                            <tr class="govuk-table__row document-holder document-9" id="group3-doc4">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -361,7 +361,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-10">
+                            <tr class="govuk-table__row document-holder document-10" id="group3-doc5">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -428,7 +428,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-11">
+                            <tr class="govuk-table__row document-holder document-11" id="group3-doc6">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
                                     <div class="wrpper">
                                         <div>MG11 Geoff MCLOVE</div>
@@ -506,7 +506,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-12">
+                            <tr class="govuk-table__row document-holder document-12" id="group4-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -531,7 +531,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-13">
+                            <tr class="govuk-table__row document-holder document-13" id="group4-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -595,7 +595,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-14">
+                            <tr class="govuk-table__row document-holder document-14" id="group6-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -620,7 +620,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-15">
+                            <tr class="govuk-table__row document-holder document-15" id="group6-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -644,7 +644,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-16">
+                            <tr class="govuk-table__row document-holder document-16" id="group6-doc3">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -670,7 +670,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-17">
+                            <tr class="govuk-table__row document-holder document-17" id="group6-doc4">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -695,7 +695,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-18">
+                            <tr class="govuk-table__row document-holder document-18" id="group6-doc5">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -796,7 +796,7 @@
 
             <!-- SECTION 9 - START -->
             <div class="accordion-section section-9">
-                <div class="accordion-section-header"><h2 class="govuk-heading-s">Communications (1)</h2></div>
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Communications (2)</h2></div>
                 <div class="accordion-section-body">
 <!--                         <div class="govuk-warning-text">
                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -823,7 +823,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-19">
+                            <tr class="govuk-table__row document-holder document-19" id="group9-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -853,7 +853,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-20">
+                            <tr class="govuk-table__row document-holder document-20" id="group9-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -903,7 +903,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-21">
+                            <tr class="govuk-table__row document-holder document-21" id="group10-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
                                     <a href="#document-top" class="show-case" data-doc="MISSINGDOCS.pdf" data-document="1" onclick="return topFunction()" data-page="1">2 Documents on CMS</a>

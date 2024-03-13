@@ -730,24 +730,319 @@ $(document).ready(function () {
     });
 })
 
-// =================================== Rename Document =================================== //
+// =================================== Rename & Move Documents =================================== //
 
 $(document).ready(function () {
 
+    // Rename
+    // $(".show-case").on("click", function (e) {
+    //     // var newDocumentName = $(this).attr("data-doc");
+    //     // alert(newDocumentName);
+    //     $.cookie("newDocumentName", $(this).attr("data-doc"), {path:'/'});
+    // });
+
+    // $("#document-renamed").on("click", function (e) {
+    //     $.cookie("rename-Document", $('#rename-Document').val(), {path:'/'});
+    //     $('.change-DocumentName').find('.show-case').text($.cookie("rename-Document"));
+    //     // $('ul.sticky-tabs li.govuk-tabs__list-item--selected a').text($.cookie("rename-Document");
+    //     // $('ul li[data-tab-id="MCLOVE%20MG3"] a').text('MCLOVE MG3 - V2');
+    // });
+
+    // Move
+    $('.multiple-documents').hide();
+
+    $("#multiple-documents-moved").on("click", function (e) {
+        $.cookie("move-multiple-Documents", true, {path:'/'});
+
+        $('input[id=caseActionPlan-SpecificDetails-Other]').is(':checked')
+        if ($.cookie("move-multiple-Documents") == 'true') {
+            $('.multiple-documents').show();
+            $('.single-document').hide();
+        }
+
+        // File names
+        // 1
+        if ($('input[id=move-Document-group1-doc1]').is(':checked')) { 
+            $.cookie("group1-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group1-doc1", false, {path:'/'});
+        }
+
+        if ($.cookie("group1-doc1") == 'true') { 
+            $('.group1-doc1').show(); 
+            $('#group1-doc1').hide(); 
+        } else {
+            $('.group1-doc1').hide(); 
+            $('#group1-doc1').show(); 
+        }
+
+        // 2
+        if ($('input[id=move-Document-group2-doc1]').is(':checked')) { 
+            $.cookie("group2-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group2-doc1", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group2-doc2]').is(':checked')) { 
+            $.cookie("group2-doc2", true, {path:'/'}); 
+        } else {
+            $.cookie("group2-doc2", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group2-doc3]').is(':checked')) { 
+            $.cookie("group2-doc3", true, {path:'/'}); 
+        } else {
+            $.cookie("group2-doc3", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group2-doc4]').is(':checked')) { 
+            $.cookie("group2-doc4", true, {path:'/'}); 
+        } else {
+            $.cookie("group2-doc4", false, {path:'/'});
+        }
+
+        if ($.cookie("group2-doc1") == 'true') { 
+            $('.group2-doc1').show(); 
+            $('#group2-doc1').hide(); 
+        } else {
+            $('.group2-doc1').hide(); 
+            $('#group2-doc1').show(); 
+        }
+        if ($.cookie("group2-doc2") == 'true') { 
+            $('.group2-doc2').show();
+            $('#group2-doc2').hide();  
+        } else {
+            $('.group2-doc2').hide(); 
+            $('#group2-doc2').show(); 
+        }
+        if ($.cookie("group2-doc3") == 'true') { 
+            $('.group2-doc3').show(); 
+            $('#group2-doc3').hide(); 
+        } else {
+            $('.group2-doc3').hide();
+            $('#group2-doc3').show();  
+        }
+        if ($.cookie("group2-doc4") == 'true') { 
+            $('.group2-doc4').show(); 
+            $('#group2-doc4').hide(); 
+        } else {
+            $('.group2-doc4').hide();
+            $('#group2-doc4').show();  
+        }
+
+        // 3
+        if ($('input[id=move-Document-group3-doc1]').is(':checked')) { 
+            $.cookie("group3-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc1", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group3-doc2]').is(':checked')) { 
+            $.cookie("group3-doc2", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc2", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group3-doc3]').is(':checked')) { 
+            $.cookie("group3-doc3", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc3", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group3-doc4]').is(':checked')) { 
+            $.cookie("group3-doc4", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc4", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group3-doc5]').is(':checked')) { 
+            $.cookie("group3-doc5", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc5", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group3-doc6]').is(':checked')) { 
+            $.cookie("group3-doc6", true, {path:'/'}); 
+        } else {
+            $.cookie("group3-doc6", false, {path:'/'});
+        }
+
+        if ($.cookie("group3-doc1") == 'true') { 
+            $('.group3-doc1').show();
+            $('#group3-doc1').hide();  
+        } else {
+            $('.group3-doc1').hide(); 
+            $('#group3-doc1').show(); 
+        }
+        if ($.cookie("group3-doc2") == 'true') { 
+            $('.group3-doc2').show();
+            $('#group3-doc2').hide();  
+        } else {
+            $('.group3-doc2').hide(); 
+            $('#group3-doc2').show(); 
+        }
+        if ($.cookie("group3-doc3") == 'true') { 
+            $('.group3-doc3').show(); 
+            $('#group3-doc3').hide(); 
+        } else {
+            $('.group3-doc3').hide();
+            $('#group3-doc3').show();  
+        }
+        if ($.cookie("group3-doc4") == 'true') { 
+            $('.group3-doc4').show(); 
+            $('#group3-doc4').hide(); 
+        } else {
+            $('.group3-doc4').hide();
+            $('#group3-doc4').show();  
+        }
+        if ($.cookie("group3-doc5") == 'true') { 
+            $('.group3-doc5').show();
+            $('#group3-doc5').hide();  
+        } else {
+            $('.group3-doc5').hide(); 
+            $('#group3-doc5').show(); 
+        }
+        if ($.cookie("group3-doc6") == 'true') { 
+            $('.group3-doc6').show(); 
+            $('#group3-doc6').hide(); 
+        } else {
+            $('.group3-doc6').hide();
+            $('#group3-doc6').show(); 
+        }
+
+        // 4
+        if ($('input[id=move-Document-group4-doc1]').is(':checked')) { 
+            $.cookie("group4-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group4-doc1", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group4-doc2]').is(':checked')) { 
+            $.cookie("group4-doc2", true, {path:'/'}); 
+        } else {
+            $.cookie("group4-doc2", false, {path:'/'});
+        }
+
+        if ($.cookie("group4-doc1") == 'true') { 
+            $('.group4-doc1').show(); 
+            $('#group4-doc1').hide(); 
+        } else {
+            $('.group4-doc1').hide(); 
+            $('#group4-doc1').show(); 
+        }
+        if ($.cookie("group4-doc2") == 'true') { 
+            $('.group4-doc2').show();
+            $('#group4-doc2').hide();  
+        } else {
+            $('.group4-doc2').hide();
+            $('#group4-doc2').show();  
+        }
+
+        // 5
+
+        // 6
+        if ($('input[id=move-Document-group6-doc1]').is(':checked')) { 
+            $.cookie("group6-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group6-doc1", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group6-doc2]').is(':checked')) { 
+            $.cookie("group6-doc2", true, {path:'/'}); 
+        } else {
+            $.cookie("group6-doc2", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group6-doc3]').is(':checked')) { 
+            $.cookie("group6-doc3", true, {path:'/'}); 
+        } else {
+            $.cookie("group6-doc3", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group6-doc4]').is(':checked')) { 
+            $.cookie("group6-doc4", true, {path:'/'}); 
+        } else {
+            $.cookie("group6-doc4", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group6-doc5]').is(':checked')) { 
+            $.cookie("group6-doc5", true, {path:'/'}); 
+        } else {
+            $.cookie("group6-doc5", false, {path:'/'});
+        }
+
+        if ($.cookie("group6-doc1") == 'true') { 
+            $('.group6-doc1').show(); 
+            $('#group6-doc1').hide(); 
+        } else {
+            $('.group6-doc1').hide(); 
+            $('#group6-doc1').show(); 
+        }
+        if ($.cookie("group6-doc2") == 'true') { 
+            $('.group6-doc2').show();
+            $('#group6-doc2').hide();  
+        } else {
+            $('.group6-doc2').hide(); 
+            $('#group6-doc2').show(); 
+        }
+        if ($.cookie("group6-doc3") == 'true') { 
+            $('.group6-doc3').show(); 
+            $('#group6-doc3').hide(); 
+        } else {
+            $('.group6-doc3').hide();
+            $('#group6-doc3').show();  
+        }
+        if ($.cookie("group6-doc4") == 'true') { 
+            $('.group6-doc4').show();
+            $('#group6-doc4').hide();  
+        } else {
+            $('.group6-doc4').hide();
+            $('#group6-doc4').show();  
+        }
+        if ($.cookie("group6-doc5") == 'true') { 
+            $('.group6-doc5').show();
+            $('#group6-doc5').hide();  
+        } else {
+            $('.group6-doc5').hide(); 
+            $('#group6-doc5').show(); 
+        }
+
+        // 7
+
+        // 8
+
+        // 9
+        if ($('input[id=move-Document-group9-doc1]').is(':checked')) { 
+            $.cookie("group9-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group9-doc1", false, {path:'/'});
+        }
+        if ($('input[id=move-Document-group9-doc2]').is(':checked')) { 
+            $.cookie("group9-doc2", true, {path:'/'}); 
+        } else {
+            $.cookie("group9-doc2", false, {path:'/'});
+        }
+
+        if ($.cookie("group9-doc1") == 'true') { 
+            $('.group9-doc1').show();
+            $('#group9-doc1').hide(); 
+        } else {
+            $('.group9-doc1').hide(); 
+            $('#group9-doc1').show(); 
+        }
+        if ($.cookie("group9-doc2") == 'true') { 
+            $('.group9-doc2').show(); 
+            $('#group9-doc2').hide(); 
+        } else {
+            $('.group9-doc2').hide(); 
+            $('#group9-doc2').show(); 
+        }
+
+        // 10
+        if ($('input[id=move-Document-group10-doc1]').is(':checked')) { 
+            $.cookie("group10-doc1", true, {path:'/'}); 
+        } else {
+            $.cookie("group10-doc1", false, {path:'/'});
+        }
+
+        if ($.cookie("group10-doc1") == 'true') { 
+            $('.group10-doc1').show();
+            $('#group10-doc1').hide();  
+        } else {
+            $('.group10-doc1').hide();
+            $('#group10-doc1').show();  
+        }
 
 
-    $(".show-case").on("click", function (e) {
-        // var newDocumentName = $(this).attr("data-doc");
-        // alert(newDocumentName);
-        $.cookie("newDocumentName", $(this).attr("data-doc"), {path:'/'});
     });
 
-    $("#document-renamed").on("click", function (e) {
-        $.cookie("rename-Document", $('#rename-Document').val(), {path:'/'});
-        $('.change-DocumentName').find('.show-case').text($.cookie("rename-Document"));
-        // $('ul.sticky-tabs li.govuk-tabs__list-item--selected a').text($.cookie("rename-Document");
-        // $('ul li[data-tab-id="MCLOVE%20MG3"] a').text('MCLOVE MG3 - V2');
-    });
-    
+
 })
 
