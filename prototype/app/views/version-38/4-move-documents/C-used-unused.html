@@ -1,0 +1,50 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V1.html" %}
+{% endblock %}
+{% block beforeContent %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+            <h1 class="govuk-heading-l" style="">
+                Select if the document is 'used' or 'unsused'
+            </h1>
+            <div id="changeCategory-hint" class="govuk-hint">
+                {% if data['scenario'] == 'two' %}
+                    <p class="govuk-body">You're changing 'used' or 'unsused' for <mark class="hods-highlight"><strong>Material 27</strong></mark></p>
+                {% elseif data['scenario'] == 'three' %}
+                    <p class="govuk-body">You're changing 'used' or 'unsused' for <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+                {% endif %}
+
+            </div>
+
+            {% if data['scenario'] == 'two' %}
+                <form method="get" action="E-document-name">            
+            {% elseif data['scenario'] == 'three' %}
+                <form method="get" action="D-exhibit-details">            
+            {% endif %}
+                <fieldset>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="used-unused-signle-USED" name="used-unused-signle" type="radio" value="Used">
+                            <label class="govuk-label govuk-radios__label" for="used-unused-signle-USED">Used</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="used-unused-signle-UNUSED" name="used-unused-signle" type="radio" value="Unused">
+                            <label class="govuk-label govuk-radios__label" for="used-unused-signle-UNUSED">Unused</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <p><br></p>
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -36,6 +36,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/header";
 @import "patterns/case-materials";
 
+@import "components/autocomplete";
+
 @mixin das-clearfix {
   &:after {
     content: "";

@@ -716,12 +716,12 @@ main.case-files {
 .Highlight, .AreaHighlight {
     .Highlight__parts {
         .Highlight__part {
-            background: rgba(black, 0.4);
+            background: rgba(black, 0.2);
             border: 2px solid black;
         }
     }
     .AreaHighlight__part {
-        background: rgba(black, 0.4);
+        background: rgba(black, 0.2);
         border: 2px solid black;
     }
 }
@@ -747,7 +747,7 @@ main.case-files {
 
         }
         .highlightAnnotation {
-            background: rgba(red,0.4);
+            background: rgba(red,0.2);
             border: 2px dashed red;
         }
         .inkAnnotation svg polyline {

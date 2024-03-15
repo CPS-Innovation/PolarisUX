@@ -1,0 +1,52 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V1.html" %}
+{% endblock %}
+{% block beforeContent %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+            <h1 class="govuk-heading-l" style="">
+                Enter the exhibit details which applies to your document
+            </h1>
+            <div id="changeCategory-hint" class="govuk-hint">
+                <p class="govuk-body">You're entering exhibit details for <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+            </div>
+
+            <form method="get" action="E-document-name">            
+                <fieldset>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Name">Item name</label>
+                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Name" name="documentExhibit-Name" type="text">
+                    </div>  
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Reference">Item reference</label>
+                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Reference" name="documentExhibit-Reference" type="text">
+                    </div>    
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
+                        <select class="govuk-select" id="documentExhibit-Witness" name="documentExhibit-Witness">
+                            <option value="PC Blaynee">PC Blaynee</option>
+                            <option value="PC Jones">PC Jones</option>
+                            <option value="Lucy Doyle">Lucy Doyle</option>
+                            <option value="Shelagh Mclove">Shelagh Mclove</option>
+                            <option value="Geoff McLove">Geoff McLove</option>
+                        </select>
+                    </div>                    
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Produced">Produced by</label>
+                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Produced" name="documentExhibit-Produced" type="text">
+                    </div>      
+                </fieldset>
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

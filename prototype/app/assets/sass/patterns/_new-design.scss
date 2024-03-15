@@ -79,6 +79,9 @@ button {
         padding: 0;
         margin: 0.5em 0 0 0;
         border: none;
+        &.margin-left {
+            margin-left: 1em;
+        }
         &:hover, &:active, &:focus {
             cursor: pointer;
         }
@@ -333,6 +336,9 @@ main.search {
     .wrapper {
         padding: 3em 0 1em 0;
         // max-width: 60%;
+        &.gov-pages {
+            padding-top: 1em;
+        }
         h1 {
             &.govuk-heading-xl {
                 margin-bottom: 20px;

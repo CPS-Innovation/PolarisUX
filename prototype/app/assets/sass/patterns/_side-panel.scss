@@ -69,6 +69,9 @@
                     }
                     &.openMe {
                         margin: 0 0 1em 0;
+                        &.first-of-type {
+                            margin: 1em 0 0 0;
+                        }
                         div {
                             display: inline-block;
                             width: 100%;
@@ -214,6 +217,9 @@
                                     top: 3.5em;
                                     z-index: 1;
                                     width: 10em;
+                                    input {
+                                        display: none;
+                                    }
                                     button {
                                         padding: 0.5em;
                                         display: inline-block;
@@ -331,10 +337,10 @@
                                                 display: none;
                                                 text-indent: 0;
                                                 position: absolute;
-                                                right: -0.75em;
-                                                width: 1.35em;
-                                                height: 1.35em;
-                                                top: -0.75em;
+                                                right: -0.25em;
+                                                width: 0.75em;
+                                                height: 0.75em;
+                                                top: -0.25em;
                                                 color: white;
                                                 font-weight: bold;
                                                 background: $govuk-link-colour;
