@@ -12,7 +12,9 @@ $(document).ready(function () {
 
 // Floating footer
 $(document).ready(function () {
-    addDragAndDrop();
+    addDragAndDrop("accordion-tbody-case-overview");
+    addDragAndDrop("accordion-tbody-statements");
+    addDragAndDrop("accordion-tbody-exhibits")
     if ($('main').hasClass('case-files')) {
         // $('body').addClass('float');
         $('html').addClass('case-files');
@@ -153,11 +155,10 @@ $(document).ready(function () {
 
 // =================================== Drag and drop =================================== //
 
-function addDragAndDrop(){
-    const demo1 = document.getElementById('accordion-tbody-1');
+function addDragAndDrop(rootId){
+    const root = document.getElementById(rootId);
  
-    console.log("demo222>>>>", demo1);
-    const dragonDrop = new DragonDrop(demo1, {
+    const dragonDrop = new DragonDrop(root, {
       handle: false,
       announcement: {
         grabbed: el => `${el.querySelector('span').innerText} grabbed`,
