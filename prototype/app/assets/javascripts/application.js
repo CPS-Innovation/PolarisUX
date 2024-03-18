@@ -12,6 +12,7 @@ $(document).ready(function () {
 
 // Floating footer
 $(document).ready(function () {
+    addDragAndDrop();
     if ($('main').hasClass('case-files')) {
         // $('body').addClass('float');
         $('html').addClass('case-files');
@@ -151,6 +152,25 @@ $(document).ready(function () {
 })
 
 // =================================== Drag and drop =================================== //
+
+function addDragAndDrop(){
+    const demo1 = document.getElementById('accordion-tbody-1');
+ 
+    console.log("demo222>>>>", demo1);
+    const dragonDrop = new DragonDrop(demo1, {
+      handle: false,
+      announcement: {
+        grabbed: el => `${el.querySelector('span').innerText} grabbed`,
+        dropped: el => `${el.querySelector('span').innerText} dropped`,
+        reorder: (el, items) => {
+          const pos = items.indexOf(el) + 1;
+          const text = el.querySelector('span').innerText;
+          return `The rankings have been updated, ${text} is now ranked #${pos} out of ${items.length}`;
+        },
+        cancel: 'Reranking cancelled.'
+      }
+    });
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
