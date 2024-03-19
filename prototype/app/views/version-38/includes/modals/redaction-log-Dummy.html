@@ -26,20 +26,16 @@
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
                                 <h1 class="govuk-heading-l">
-                                    {% if data['searchURN'] %}
-                                        {{ data['searchURN'] }}/1 <span>- Redaction Log</span>
-                                    {% else %}
-                                        45AA209820/1 <span>- Redaction Log</span>
-                                    {% endif %}                        
+                                    Redaction Log - <span id="">MCLOVE MG3</span>                      
                                     <div class="tooltip">
-                                        <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleTooltip1()">Redaction log Guidance</button>
+                                        <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleTooltip1()">Redaction Log guidance</button>
                                         <div class="tooltiptext-1">
                                              <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleTooltip1()">×</button>
                                             <p>Redaction Log Guidance</p>
                                             <ul class="govuk-list govuk-list--bullet">
                                                 <li>This popup allows the capture of details which will be recorded into the Redaction Log automatically</li>
-                                                <li>Once added, if an entry needs editing or deleting, this should be done in the Redaction log</li>
-                                                <li>Contact with the Investigative Agency or the CPS is not automatic - you should contact any such bodies yourself</li>
+                                                <li>Once added, if an entry needs editing or deleting, this should be done in the Redaction Log application</li>
+                                                <li>Contact with the Investigative Agency or the CPS is not automatic - you should contact any such bodies yourself to make the correction</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -74,7 +70,7 @@
 
                                 <!-- ///// FILTER TWO - START ///// -->
                                 <div class="form">
-                                    <label class="govuk-label" for="redactionLog-BusinessUnit-DUMMY">CPS Business unit:</label>
+                                    <label class="govuk-label" for="redactionLog-BusinessUnit-DUMMY">CPS Business Unit:</label>
                                     <select class="govuk-select" id="redactionLog-BusinessUnit-DUMMY" name="redactionLog-BusinessUnit-DUMMY">
                                         <option disabled>-- Please select --</option>
                                         <option value="Magistrates Court" selected>Magistrates Court</option>
@@ -236,11 +232,11 @@
 
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full">
-                                    <h2 class="govuk-heading-m">
+<!--                                     <h2 class="govuk-heading-m">
                                         <span class="icon document"></span>
                                         <strong><span class="icon-new document"></span>Redaction details for: "<span id="">MCLOVE MG3</span>"</strong>
                                     </h2>
-                                    <div id="redaction-summary" class="redaction-summary">
+ -->                                    <div id="redaction-summary" class="redaction-summary">
                                         <ul id="redaction-summary-list-DUMMY" class="redaction-summary-list govuk-list">
                                             
                                         </ul>
@@ -255,10 +251,10 @@
                                             <label class="govuk-label" for="redactionLog-notes__1">
                                                 Supporting notes <div class="govuk-hint">(optional)</div>
                                                 <div class="tooltip label">
-                                                    <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleTooltip2()">Guidance on supporting notes</button>
+                                                    <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleTooltip2()">Supporting notes guidance</button>
                                                     <div class="tooltiptext-2">
                                                         <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleTooltip2()">×</button>
-                                                        <p>Guidance on supporting notes</p>
+                                                        <p>Supporting notes guidance</p>
                                                         <ul class="govuk-list govuk-list--bullet">
                                                             <li>Detail the redaction issue identified, e.g. Statement of XX (Initials) DOB redacted</li>
                                                             <li>Avoid recording full names</li>
