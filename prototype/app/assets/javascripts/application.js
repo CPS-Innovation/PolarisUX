@@ -12,9 +12,6 @@ $(document).ready(function () {
 
 // Floating footer
 $(document).ready(function () {
-    addDragAndDrop("accordion-tbody-case-overview");
-    addDragAndDrop("accordion-tbody-statements");
-    addDragAndDrop("accordion-tbody-exhibits")
     if ($('main').hasClass('case-files')) {
         // $('body').addClass('float');
         $('html').addClass('case-files');
@@ -152,6 +149,13 @@ $(document).ready(function () {
     }
 
 })
+
+$(document).ready(function () {
+    addDragAndDrop("accordion-tbody-case-overview");
+    addDragAndDrop("accordion-tbody-statements");
+    addDragAndDrop("accordion-tbody-exhibits");
+    addDragAndDrop("tab-list")
+});
 
 // =================================== Drag and drop =================================== //
 
