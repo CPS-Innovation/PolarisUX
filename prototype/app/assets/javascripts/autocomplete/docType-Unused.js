@@ -11,7 +11,9 @@ $(function(){
           { value: "MG6D" },
           { value: "MG6E" },
           { value: "MG6" },
-          { value: "PCN3" }          
+          { value: "PCN3" },
+          { value: "Other material" },
+          { value: "Other exhibit" }
   ];
 
      // setup autocomplete function pulling from currencies[] array

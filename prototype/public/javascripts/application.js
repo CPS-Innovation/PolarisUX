@@ -180,216 +180,11 @@ setInterval(function() {
 
 }, 1000);
 
-$(document).ready(function () {
 
-    $('.documents-loaded, .failed-documents').hide();
-    // $('#searchFormTest, #searchFormTest2').addClass('disabled');
-    // $('#searchURNModal').attr('disabled','disabled');
-
-    $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20, .document-21, .document-11A, .document-22, .document-23, .document-24').css('opacity','0.2');
-    $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
-
-    setTimeout(function() {
-        $(".loading").hide();
-        $('.documents-loaded').show();
-        $('#searchFormTest, #searchFormTest2').removeClass('disabled');
-        $('#searchURNModal').removeAttr('disabled');
-    }, 19500);
-
-    // Accordion changes
-    // 1
-    $('.accordion-section.section-1 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-1 .accordion-section-header .govuk-heading-s').html('Reviews (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-1 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-1 .accordion-section-header .govuk-heading-s').html('Reviews (1)');
-        $('.document-1').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-1 td strong.loading-tag').hide();
-    }, 1000);
-
-    // 2 - Case overview (4)
-    $('.accordion-section.section-2 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-2 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (1)');
-        $('.document-2').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-2 td strong.loading-tag').hide();
-    }, 2000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (2)');
-        $('.document-3').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-3 td strong.loading-tag').hide();
-    }, 3000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (3)');
-        $('.document-4').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-4 td strong.loading-tag').hide();
-    }, 4000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-2 .accordion-section-header .govuk-heading-s').html('Case overview (4)');
-        $('.document-5').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-5 td strong.loading-tag').hide();
-    }, 5000);
-
-    // 3 - Statements (6)
-    $('.accordion-section.section-3 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (1)');
-        $('.document-6').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-6 td strong.loading-tag').hide();
-    }, 6000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (2)');
-        $('.document-7').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-7 td strong.loading-tag').hide();
-    }, 7000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (3)');
-        $('.document-8').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-8 td strong.loading-tag').hide();
-    }, 8000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (4)');
-        $('.document-9').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-9 td strong.loading-tag').hide();
-    }, 9000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (5)');
-        $('.document-10').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-10 td strong.loading-tag').hide();
-    }, 10000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-3 .accordion-section-header .govuk-heading-s').html('Statements (6)');
-        $('.document-11, .document-11A').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-11 td strong.loading-tag').hide();
-        $('.accordion-section table tbody tr.document-holder.document-11 td').prepend(`<strong class="govuk-tag govuk-tag--red">Failed</strong> <br>`);
-        $('.failed-documents').show();
-
-        $('.accordion-section table tbody tr.document-holder.document-11A td strong.loading-tag').hide();
-    }, 11000);
-
-    // 4 - Exhibits (2)
-    $('.accordion-section.section-4 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-4 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (1)');
-        $('.document-12').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-12 td strong.loading-tag').hide();
-    }, 12000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-4 .accordion-section-header .govuk-heading-s').html('Exhibits (2)');
-        $('.document-13').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-13 td strong.loading-tag').hide();
-    }, 13000);
-
-    // 5 - Forensics (0)
-
-    // 6 - Unused materials (5)
-    $('.accordion-section.section-6 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-6 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (1)');
-        $('.document-14').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-14 td strong.loading-tag').hide();
-    }, 14000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (2)');
-        $('.document-15').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-15 td strong.loading-tag').hide();
-    }, 15000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (3)');
-        $('.document-16').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-16 td strong.loading-tag').hide();
-    }, 16000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (4)');
-        $('.document-17').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-17 td strong.loading-tag').hide();
-    }, 17000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-6 .accordion-section-header .govuk-heading-s').html('Unused materials (5)');
-        $('.document-18').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-18 td strong.loading-tag').hide();
-    }, 18000);
-
-    // 7 - Defendant (0)
-
-    // 8 - Court preparation (0)
-
-    // 9 - Communications (1)
-    $('.accordion-section.section-9 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-9 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (1)');
-        $('.document-19').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-19 td strong.loading-tag').hide();
-    }, 19000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-9 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-9 .accordion-section-header .govuk-heading-s').html('Communications (2)');
-        $('.accordion-section table tbody tr.document-holder.document-20 td strong.loading-tag').hide();
-    }, 20000);
-
-    // 10 - Uncategorised (1)
-    $('.accordion-section.section-10 .accordion-section-header').addClass('no-documents');
-    $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (0)');
-
-    setTimeout(function() {
-        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (1)');
-        $('.document-21').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-21 td strong.loading-tag').hide();
-    }, 21000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (2)');
-        $('.document-22').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-22 td strong.loading-tag').hide();
-    }, 22000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (3)');
-        $('.document-23').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-23 td strong.loading-tag').hide();
-    }, 23000);
-
-    setTimeout(function() {
-        $('.accordion-section.section-10 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-10 .accordion-section-header .govuk-heading-s').html('Uncategorised (4)');
-        $('.document-24').css('opacity','1');
-        $('.accordion-section table tbody tr.document-holder.document-24 td strong.loading-tag').hide();
-    }, 24000);
-
-})
+// function resetCaseScreen() {
+//     alert('working');
+//     $('#left-column table tbody tr.govuk-table__row.document-holder').css('opacity','1');
+// }
 
 
 
@@ -1850,7 +1645,6 @@ $(document).ready(function () {
 })
 
 // =================================== RENAME & MOVE =================================== //
-
 $(document).ready(function () {
 
     // Rename
@@ -1977,7 +1771,200 @@ function groupUncategorised() {
     $('#groupUncategorised').show();
 }
 
+// =================================== SORT DOCUMENTS =================================== //
 
+$(document).ready(function () {
+
+    // Rename
+    $(".sort-documents").on("click", function (e) {
+        $(this).toggleClass('open');
+        $(this).parent().toggleClass('open');
+    });
+
+    $(".sort-Alphabetically").on("click", function (e) {
+    });
+
+    
+
+})
+
+// Section 1 - Reviews
+function sortReviewAlphabetical() {
+    $("#sortReviews tbody tr.alpha-2").insertAfter("#sortReviews tbody tr.alpha-1");
+    $("#sortReviews tbody tr.alpha-3").insertAfter("#sortReviews tbody tr.alpha-2");
+    $("#sortReviews tbody tr.alpha-4").insertAfter("#sortReviews tbody tr.alpha-3");
+    $("#sortReviews tbody tr.alpha-5").insertAfter("#sortReviews tbody tr.alpha-4");
+    $("#sortReviews tbody tr.alpha-6").insertAfter("#sortReviews tbody tr.alpha-5");
+    $("#sortReviews tbody tr.alpha-7").insertAfter("#sortReviews tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortReviewDate() {
+    $("#sortReviews tbody tr.date-2").insertAfter("#sortReviews tbody tr.date-1");
+    $("#sortReviews tbody tr.date-3").insertAfter("#sortReviews tbody tr.date-2");
+    $("#sortReviews tbody tr.date-4").insertAfter("#sortReviews tbody tr.date-3");
+    $("#sortReviews tbody tr.date-5").insertAfter("#sortReviews tbody tr.date-4");
+    $("#sortReviews tbody tr.date-6").insertAfter("#sortReviews tbody tr.date-5");
+    $("#sortReviews tbody tr.date-7").insertAfter("#sortReviews tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 2 - Case overview
+function sortCaseAlphabetical() {
+    $("#sortCases tbody tr.alpha-2").insertAfter("#sortCases tbody tr.alpha-1");
+    $("#sortCases tbody tr.alpha-3").insertAfter("#sortCases tbody tr.alpha-2");
+    $("#sortCases tbody tr.alpha-4").insertAfter("#sortCases tbody tr.alpha-3");
+    $("#sortCases tbody tr.alpha-5").insertAfter("#sortCases tbody tr.alpha-4");
+    $("#sortCases tbody tr.alpha-6").insertAfter("#sortCases tbody tr.alpha-5");
+    $("#sortCases tbody tr.alpha-7").insertAfter("#sortCases tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortCaseDate() {
+    $("#sortCases tbody tr.date-2").insertAfter("#sortCases tbody tr.date-1");
+    $("#sortCases tbody tr.date-3").insertAfter("#sortCases tbody tr.date-2");
+    $("#sortCases tbody tr.date-4").insertAfter("#sortCases tbody tr.date-3");
+    $("#sortCases tbody tr.date-5").insertAfter("#sortCases tbody tr.date-4");
+    $("#sortCases tbody tr.date-6").insertAfter("#sortCases tbody tr.date-5");
+    $("#sortCases tbody tr.date-7").insertAfter("#sortCases tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 3 - Statements
+function sortStatementsAlphabetical() {
+    $("#sortStatements tbody tr.alpha-2").insertAfter("#sortStatements tbody tr.alpha-1");
+    $("#sortStatements tbody tr.alpha-3").insertAfter("#sortStatements tbody tr.alpha-2");
+    $("#sortStatements tbody tr.alpha-4").insertAfter("#sortStatements tbody tr.alpha-3");
+    $("#sortStatements tbody tr.alpha-5").insertAfter("#sortStatements tbody tr.alpha-4");
+    $("#sortStatements tbody tr.alpha-6").insertAfter("#sortStatements tbody tr.alpha-5");
+    $("#sortStatements tbody tr.alpha-7").insertAfter("#sortStatements tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortStatementsDate() {
+    $("#sortStatements tbody tr.date-2").insertAfter("#sortStatements tbody tr.date-1");
+    $("#sortStatements tbody tr.date-3").insertAfter("#sortStatements tbody tr.date-2");
+    $("#sortStatements tbody tr.date-4").insertAfter("#sortStatements tbody tr.date-3");
+    $("#sortStatements tbody tr.date-5").insertAfter("#sortStatements tbody tr.date-4");
+    $("#sortStatements tbody tr.date-6").insertAfter("#sortStatements tbody tr.date-5");
+    $("#sortStatements tbody tr.date-7").insertAfter("#sortStatements tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 4 - Exhibits
+function sortExhibitAlphabetical() {
+    $("#sortExhibits tbody tr.alpha-2").insertAfter("#sortExhibits tbody tr.alpha-1");
+    $("#sortExhibits tbody tr.alpha-3").insertAfter("#sortExhibits tbody tr.alpha-2");
+    $("#sortExhibits tbody tr.alpha-4").insertAfter("#sortExhibits tbody tr.alpha-3");
+    $("#sortExhibits tbody tr.alpha-5").insertAfter("#sortExhibits tbody tr.alpha-4");
+    $("#sortExhibits tbody tr.alpha-6").insertAfter("#sortExhibits tbody tr.alpha-5");
+    $("#sortExhibits tbody tr.alpha-7").insertAfter("#sortExhibits tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortExhibitDate() {
+    $("#sortExhibits tbody tr.date-2").insertAfter("#sortExhibits tbody tr.date-1");
+    $("#sortExhibits tbody tr.date-3").insertAfter("#sortExhibits tbody tr.date-2");
+    $("#sortExhibits tbody tr.date-4").insertAfter("#sortExhibits tbody tr.date-3");
+    $("#sortExhibits tbody tr.date-5").insertAfter("#sortExhibits tbody tr.date-4");
+    $("#sortExhibits tbody tr.date-6").insertAfter("#sortExhibits tbody tr.date-5");
+    $("#sortExhibits tbody tr.date-7").insertAfter("#sortExhibits tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 5 - Forensics
+
+// Section 6 - Unused materials
+function sortUnusendAlphabetical() {
+    $("#sortUnused tbody tr.alpha-2").insertAfter("#sortUnused tbody tr.alpha-1");
+    $("#sortUnused tbody tr.alpha-3").insertAfter("#sortUnused tbody tr.alpha-2");
+    $("#sortUnused tbody tr.alpha-4").insertAfter("#sortUnused tbody tr.alpha-3");
+    $("#sortUnused tbody tr.alpha-5").insertAfter("#sortUnused tbody tr.alpha-4");
+    $("#sortUnused tbody tr.alpha-6").insertAfter("#sortUnused tbody tr.alpha-5");
+    $("#sortUnused tbody tr.alpha-7").insertAfter("#sortUnused tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortUnusendDate() {
+    $("#sortUnused tbody tr.date-2").insertAfter("#sortUnused tbody tr.date-1");
+    $("#sortUnused tbody tr.date-3").insertAfter("#sortUnused tbody tr.date-2");
+    $("#sortUnused tbody tr.date-4").insertAfter("#sortUnused tbody tr.date-3");
+    $("#sortUnused tbody tr.date-5").insertAfter("#sortUnused tbody tr.date-4");
+    $("#sortUnused tbody tr.date-6").insertAfter("#sortUnused tbody tr.date-5");
+    $("#sortUnused tbody tr.date-7").insertAfter("#sortUnused tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortUnusendItem() {
+    $("#sortUnused tbody tr.item-2").insertAfter("#sortUnused tbody tr.item-1");
+    $("#sortUnused tbody tr.item-3").insertAfter("#sortUnused tbody tr.item-2");
+    $("#sortUnused tbody tr.item-4").insertAfter("#sortUnused tbody tr.item-3");
+    $("#sortUnused tbody tr.item-5").insertAfter("#sortUnused tbody tr.item-4");
+    $("#sortUnused tbody tr.item-6").insertAfter("#sortUnused tbody tr.item-5");
+    $("#sortUnused tbody tr.item-7").insertAfter("#sortUnused tbody tr.item-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 7 - Defendant
+
+// Section 8 - Court preparation
+
+// Section 9 - Communications
+function sortCommunicationAlphabetical() {
+    $("#sortCommunications tbody tr.alpha-2").insertAfter("#sortCommunications tbody tr.alpha-1");
+    $("#sortCommunications tbody tr.alpha-3").insertAfter("#sortCommunications tbody tr.alpha-2");
+    $("#sortCommunications tbody tr.alpha-4").insertAfter("#sortCommunications tbody tr.alpha-3");
+    $("#sortCommunications tbody tr.alpha-5").insertAfter("#sortCommunications tbody tr.alpha-4");
+    $("#sortCommunications tbody tr.alpha-6").insertAfter("#sortCommunications tbody tr.alpha-5");
+    $("#sortCommunications tbody tr.alpha-7").insertAfter("#sortCommunications tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortCommunicationDate() {
+    $("#sortCommunications tbody tr.date-2").insertAfter("#sortCommunications tbody tr.date-1");
+    $("#sortCommunications tbody tr.date-3").insertAfter("#sortCommunications tbody tr.date-2");
+    $("#sortCommunications tbody tr.date-4").insertAfter("#sortCommunications tbody tr.date-3");
+    $("#sortCommunications tbody tr.date-5").insertAfter("#sortCommunications tbody tr.date-4");
+    $("#sortCommunications tbody tr.date-6").insertAfter("#sortCommunications tbody tr.date-5");
+    $("#sortCommunications tbody tr.date-7").insertAfter("#sortCommunications tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// Section 10 - Uncategorised
+function sortUncategorisedAlphabetical() {
+    $("#sortUncategorised tbody tr.alpha-2").insertAfter("#sortUncategorised tbody tr.alpha-1");
+    $("#sortUncategorised tbody tr.alpha-3").insertAfter("#sortUncategorised tbody tr.alpha-2");
+    $("#sortUncategorised tbody tr.alpha-4").insertAfter("#sortUncategorised tbody tr.alpha-3");
+    $("#sortUncategorised tbody tr.alpha-5").insertAfter("#sortUncategorised tbody tr.alpha-4");
+    $("#sortUncategorised tbody tr.alpha-6").insertAfter("#sortUncategorised tbody tr.alpha-5");
+    $("#sortUncategorised tbody tr.alpha-7").insertAfter("#sortUncategorised tbody tr.alpha-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+function sortUncategorisedDate() {
+    $("#sortUncategorised tbody tr.date-2").insertAfter("#sortUncategorised tbody tr.date-1");
+    $("#sortUncategorised tbody tr.date-3").insertAfter("#sortUncategorised tbody tr.date-2");
+    $("#sortUncategorised tbody tr.date-4").insertAfter("#sortUncategorised tbody tr.date-3");
+    $("#sortUncategorised tbody tr.date-5").insertAfter("#sortUncategorised tbody tr.date-4");
+    $("#sortUncategorised tbody tr.date-6").insertAfter("#sortUncategorised tbody tr.date-5");
+    $("#sortUncategorised tbody tr.date-7").insertAfter("#sortUncategorised tbody tr.date-6");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+}
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //

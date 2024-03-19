@@ -471,6 +471,62 @@
     .move-multiple-Documents {
         font-size: 0.875rem;
     }
+    .sort-documents-nav {
+        position: relative;
+        &.open {
+            .wrapper {
+                display: inline-block;
+            }
+        }
+        .sort-documents {
+            font-size: 0.975rem;
+            background: none;
+            border: none;
+            padding: 0 1.5em 0 0;
+            color: $govuk-link-colour;
+            text-decoration: underline;
+            background: url("../images/arrow-down-blue.svg") no-repeat 100% 60%;
+            background-size: 1.15em;
+            margin: 0 0 1em 0;
+            &:hover, &:active, &:focus {
+                cursor: pointer;
+            }    
+            &.open {
+                background: url("../images/arrow-up-blue.svg") no-repeat 100% 40%;
+                background-size: 1.15em;
+                .wrapper {
+                    display: inline-block;
+                }
+            }
+        }
+        .wrapper {
+            display: none;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 0px;
+            position: absolute;
+            left: 0;
+            top: 2em;
+            z-index: 1;
+            button {
+                background: white;
+                border: none;
+                padding: 0.5em;
+                display: inline-block;
+                color: $govuk-link-colour;
+                text-decoration: underline;
+                width: 100%;
+                text-align: left;
+                background: none;
+                border: none;
+                font-size: 1rem;    
+                &:hover, &:active, &:focus {
+                    background: $govuk-link-colour;
+                    color: white;
+                    cursor: pointer;
+                }    
+            }
+        }
+    }
 }
 
 @media (min-width: 2001px) {

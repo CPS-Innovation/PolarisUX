@@ -1,6 +1,7 @@
 $(function(){
      var currencies = [
           { value: "Initial Details of the Prosecution Case" },
+          { value: "Correspondence" },
           { value: "Discharge Order" },
           { value: "Consent Order - Shares" },
           { value: "Consent Order - House" },

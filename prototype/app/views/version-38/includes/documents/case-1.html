@@ -60,14 +60,25 @@
                 <div class="accordion-section-header"><h2 class="govuk-heading-s">Reviews (1)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all review documents</a>
-                    <table class="govuk-table">
+
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents" id="sort-Reviews">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortReviewAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortReviewDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
+
+                    <table class="govuk-table" id="sortReviews">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Review files</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-1" id="group1-doc1">
+                            <tr class="govuk-table__row document-holder document-1 alpha-1 date-1" id="group1-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -104,15 +115,24 @@
                 <div class="accordion-section-header"><h2 class="govuk-heading-s" style="">Case overview (4)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all case overview documents</a>
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortCaseAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortCaseDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
                     <div class="cpsDocs chargingDocs">
-                        <table class="govuk-table">
+                        <table class="govuk-table" id="sortCases">
                             <thead>
                                 <tr class="govuk-table__row">
                                     <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Case overview files</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr class="govuk-table__row document-holder document-2" id="group2-doc1">
+                               <tr class="govuk-table__row document-holder document-2 alpha-1 date-1" id="group2-doc1">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -137,7 +157,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-3" id="group2-doc2">
+                                <tr class="govuk-table__row document-holder document-3 alpha-2 date-2" id="group2-doc2">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -163,7 +183,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-4" id="group2-doc3">
+                                <tr class="govuk-table__row document-holder document-4 alpha-3 date-3" id="group2-doc3">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -188,7 +208,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="govuk-table__row document-holder document-5" id="group2-doc4">
+                                <tr class="govuk-table__row document-holder document-5 alpha-4 date-4" id="group2-doc4">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -227,18 +247,27 @@
                 <div class="accordion-section-header"><h2 class="govuk-heading-s">Statements (<span class="statements">6</span>)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all statements</a>
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortStatementsAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortStatementsDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
                     <p class="govuk-body-s openMe">
                         <a href="#document-top" class="show-case" data-doc="MISSINGDOCS.pdf" data-count="7" onclick="return documentName()" data-page="1">
                             Some documents for this case </a>are only available on CMS
                     </p>
-                    <table class="govuk-table">
+                    <table class="govuk-table" id="sortStatements">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Statement files</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-6" id="group3-doc1">
+                            <tr class="govuk-table__row document-holder document-6 alpha-3 date-1" id="group3-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -268,7 +297,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-7" id="group3-doc2">
+                            <tr class="govuk-table__row document-holder document-7 alpha-4 date-2" id="group3-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -298,7 +327,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-8" id="group3-doc3">
+                            <tr class="govuk-table__row document-holder document-8 alpha-5 date-3" id="group3-doc3">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -328,7 +357,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-9" id="group3-doc4">
+                            <tr class="govuk-table__row document-holder document-9 alpha-6 date-4" id="group3-doc4">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -361,7 +390,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-10" id="group3-doc5">
+                            <tr class="govuk-table__row document-holder document-10 alpha-7 date-5" id="group3-doc5">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -394,7 +423,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row hidden-section">
+                            <tr class="govuk-table__row hidden-section alpha-2 date-6">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -428,7 +457,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-11" id="group3-doc6">
+                            <tr class="govuk-table__row document-holder document-11 alpha-1 date-7" id="group3-doc6">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
                                     <div class="wrpper">
                                         <div>MG11 Geoff MCLOVE</div>
@@ -499,14 +528,23 @@
                 <div class="accordion-section-header"><h2 class="govuk-heading-s">Exhibits (2)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all exhibit documents</a>
-                    <table class="govuk-table">
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents" id="sort-Exhibit">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortExhibitAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortExhibitDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
+                    <table class="govuk-table" id="sortExhibits">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Exhibit files</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-12" id="group4-doc1">
+                            <tr class="govuk-table__row document-holder document-12 alpha-2 date-2" id="group4-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -531,7 +569,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-13" id="group4-doc2">
+                            <tr class="govuk-table__row document-holder document-13 alpha-1 date-1" id="group4-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -567,7 +605,7 @@
             <div class="accordion-section section-5">
                 <div class="accordion-section-header no-documents"><h2 class="govuk-heading-s">Forensics (0)</h2></div>
                 <div class="accordion-section-body">
-                    <table class="govuk-table">
+                    <table class="govuk-table" id="sortForensics">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Forensics files</span></th>
@@ -585,22 +623,37 @@
 
             <!-- SECTION 6 - START -->
             <div class="accordion-section section-6" id="hidden-section-2">
-                {% if data['scenario'] == 'two' and data['move-single-Document'] and data['docType-Scenario-2-NAME'] %}
-                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (5)</h2></div>
-                {% else %}
+
+                {% if data['docType-Scenario-2-NAME'] and data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (7)</h2></div>
+                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
                     <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (6)</h2></div>
+                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (6)</h2></div>
+                {% else %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (5)</h2></div>
                 {% endif %}
 
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all unusend material documents</a>
-                    <table class="govuk-table">
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortUnusendAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortUnusendDate()" class="sort-Date">by Date</button>
+                            <button onclick="return sortUnusendItem()" class="sort-Item-Number">by Item number</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
+                    <table class="govuk-table" id="sortUnused">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Unused material files</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-14" id="group6-doc1">
+                            <tr class="govuk-table__row document-holder document-14 alpha-4 date-1" id="group6-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -625,7 +678,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-15" id="group6-doc2">
+                            <tr class="govuk-table__row document-holder document-15 alpha-3 date-2" id="group6-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -649,7 +702,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-16" id="group6-doc3">
+                            <tr class="govuk-table__row document-holder document-16 alpha-5 date-3" id="group6-doc3">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -675,7 +728,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-17" id="group6-doc4">
+                            <tr class="govuk-table__row document-holder document-17 alpha-1 date-5" id="group6-doc4">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -700,7 +753,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-18" id="group6-doc5">
+                            <tr class="govuk-table__row document-holder document-18 alpha-2 date-6" id="group6-doc5">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -726,8 +779,8 @@
                                 </td>
                             </tr>
 
-                            {% if data['scenario'] == 'two' and data['move-single-Document'] and data['docType-Scenario-2-NAME'] %}
-                                <tr class="govuk-table__row document-holder document-23" id="group10-doc2">
+                            {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                                <tr class="govuk-table__row document-holder document-23 alpha-1 date-4" id="group10-doc2">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -757,6 +810,39 @@
                             {% else %}
 
                             {% endif %}
+
+                            {% if data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                                <tr class="govuk-table__row document-holder document-24 alpha-1 date-7" id="group10-doc2">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <div class="wrapper">
+                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
+                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MISSINGDOCS.pdf" data-document="22" onclick="return topFunction()" data-page="1">{{ data['docType-Scenario-3-NAME'] }}</a>
+                                            <br>
+                                            <p class="date-added">
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 June 2021
+                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
+                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
+                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                </button>
+                                            </p>
+                                        </div>
+                                        <button class="more-options">
+                                            <span class="visuallyhidden">More options</span>
+                                        </button>
+                                        <div class="document-nav">
+                                            <form action="../4-move-documents/A-category.html" method="get">
+                                                <input id="scenario-3" name="scenario" type="text" value="three">
+                                                <button onclick="" class="move-Document">Move document</button>
+                                            </form>
+                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                             {% else %}
+
+                            {% endif %}
+
                         </tbody>
                     </table>
                     <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
@@ -769,14 +855,14 @@
                 <div class="accordion-section-header no-documents"><h2 class="govuk-heading-s">Defendant (<span class="defendants">0</span>)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all defendant documents</a>
-                    <table class="govuk-table">
+                    <table class="govuk-table" id="sortDefendant">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Unused material files</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row hidden-section">
+                            <tr class="govuk-table__row hidden-section alpha-1 date-1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -815,7 +901,7 @@
             <div class="accordion-section section-8">
                 <div class="accordion-section-header no-documents"><h2 class="govuk-heading-s">Court preparation (0)</h2></div>
                 <div class="accordion-section-body">
-                    <table class="govuk-table">
+                    <table class="govuk-table" id="sortCourt">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Court preparation files</span></th>
@@ -834,7 +920,7 @@
             <!-- SECTION 9 - START -->
             <div class="accordion-section section-9">
 
-                {% if data['scenario'] == 'one' and data['move-single-Document'] and data['docType-Scenario-1-NAME'] %}
+                {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
                     <div class="accordion-section-header"><h2 class="govuk-heading-s">Communications (3)</h2></div>
                 {% else %}
                     <div class="accordion-section-header"><h2 class="govuk-heading-s">Communications (2)</h2></div>
@@ -842,7 +928,16 @@
 
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all communication documents</a>
-                    <table class="govuk-table">
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents" id="sort-Communication">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortCommunicationAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortCommunicationDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
+                    <table class="govuk-table" id="sortCommunications">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header">Communication files</th>
@@ -861,7 +956,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-19" id="group9-doc1">
+                            <tr class="govuk-table__row document-holder document-19 alpha-2 date-1" id="group9-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -891,7 +986,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row document-holder document-20" id="group9-doc2">
+                            <tr class="govuk-table__row document-holder document-20 alpha-1 date-1" id="group9-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -922,16 +1017,16 @@
                                 </td>
                             </tr>
 
-                            {% if data['scenario'] == 'one' and data['move-single-Document'] and data['docType-Scenario-1-NAME'] %}
-                            <tr class="govuk-table__row document-holder document-22" id="group10-doc2">
+                            {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
+                            <tr class="govuk-table__row document-holder document-22 alpha-1 date-3" id="group10-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
                                         <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MISSINGDOCS.pdf" data-document="22" onclick="return topFunction()" data-page="1">{{ data['docType-Scenario-1-NAME'] }}</a>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 January 2021
-                                            <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>20:12
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>21 January 2021
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>12:20
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
@@ -963,18 +1058,44 @@
 
             <!-- SECTION 10 - START -->
             <div class="accordion-section section-10">
-                <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (2)</h2></div>
+                {% if data['docType-Scenario-1-NAME'] and data['docType-Scenario-2-NAME'] and data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (1)</h2></div>
+                {% elseif data['docType-Scenario-1-NAME'] and data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (2)</h2></div>
+                {% elseif data['docType-Scenario-1-NAME'] and data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (2)</h2></div>
+                {% elseif data['docType-Scenario-2-NAME'] and data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (2)</h2></div>
+                {% elseif data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (3)</h2></div>
+                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (3)</h2></div>
+                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (3)</h2></div>
+                {% else %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Uncategorised (4)</h2></div>
+                {% endif %}
+
                 <div class="accordion-section-body">
                     <p class="govuk-body-s openMe first-of-type">These documents could not be shown. Use CMS to view documents and redact any content.</p>
                     <a href="#" class="open-all">Open all uncategorised documents</a>
-                    <table class="govuk-table">
+                    <!-- SORT - START -->
+                    <div class="sort-documents-nav">
+                        <button class="sort-documents" id="sort-Uncategorised">Sort documents</button>  
+                        <div class="wrapper">                      
+                            <button onclick="return sortUncategorisedAlphabetical()" class="sort-Alphabetically">by Alphabetical</button>
+                            <button onclick="return sortUncategorisedDate()" class="sort-Date">by Date</button>
+                        </div>
+                    </div>
+                    <!-- SORT - END -->
+                    <table class="govuk-table" id="sortUncategorised">
                         <thead>
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Missing documents</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="govuk-table__row document-holder document-21" id="group10-doc1">
+                            <tr class="govuk-table__row document-holder document-21 alpha-2 date-1" id="group10-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -991,10 +1112,10 @@
                                 </td>
                             </tr>
 
-                            {% if data['scenario'] == 'one' and data['move-single-Document'] and data['docType-Scenario-1-NAME'] %}
+                            {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
 
                             {% else %}
-                            <tr class="govuk-table__row document-holder document-22" id="group10-doc2">
+                            <tr class="govuk-table__row document-holder document-22 alpha-1 date-2" id="group10-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -1015,7 +1136,7 @@
                                     <div class="document-nav">
                                         <form action="../4-move-documents/A-category.html" method="get">
                                             <input id="scenario-1" name="scenario" type="text" value="one">
-                                            <button onclick="" class="move-Document">Move document</button>
+                                            <button onclick="" class="move-Document" id="start-scenario-1">Move document</button>
                                         </form>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
                                     </div>
@@ -1023,10 +1144,10 @@
                             </tr>
                             {% endif %}
 
-                            {% if data['scenario'] == 'two' and data['move-single-Document'] and data['docType-Scenario-2-NAME'] %}
+                            {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
 
                             {% else %}
-                            <tr class="govuk-table__row document-holder document-23" id="group10-doc2">
+                            <tr class="govuk-table__row document-holder document-23 alpha-4 date-3" id="group10-doc2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
@@ -1047,7 +1168,7 @@
                                     <div class="document-nav">
                                         <form action="../4-move-documents/A-category.html" method="get">
                                             <input id="scenario-2" name="scenario" type="text" value="two">
-                                            <button onclick="" class="move-Document">Move document</button>
+                                            <button onclick="" class="move-Document" id="start-scenario-2">Move document</button>
                                         </form>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
                                     </div>
@@ -1055,36 +1176,36 @@
                             </tr>
                             {% endif %}
 
-                            {% if data['scenario'] == 'three' and data['move-single-Document'] and data['docType-Scenario-3-NAME'] %}
+                            {% if data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
 
                             {% else %}
-                            <tr class="govuk-table__row document-holder document-24" id="group10-doc2">
-                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
-                                    <div class="wrapper">
-                                        <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
-                                        <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MISSINGDOCS.pdf" data-document="22" onclick="return topFunction()" data-page="1">Material 007</a>
-                                        <br>
-                                        <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 June 2021
-                                            <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
-                                            <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
-                                                <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
-                                            </button>
-                                        </p>
-                                    </div>
-                                    <button class="more-options">
-                                        <span class="visuallyhidden">More options</span>
-                                    </button>
-                                    <div class="document-nav">
-                                        <form action="../4-move-documents/A-category.html" method="get">
-                                            <input id="scenario-3" name="scenario" type="text" value="three">
-                                            <button onclick="" class="move-Document">Move document</button>
-                                        </form>
-                                        <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr class="govuk-table__row document-holder document-24 alpha-3 date-4" id="group10-doc2">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <div class="wrapper">
+                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
+                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MISSINGDOCS.pdf" data-document="22" onclick="return topFunction()" data-page="1">Material 007</a>
+                                            <br>
+                                            <p class="date-added">
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 June 2021
+                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
+                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
+                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                </button>
+                                            </p>
+                                        </div>
+                                        <button class="more-options">
+                                            <span class="visuallyhidden">More options</span>
+                                        </button>
+                                        <div class="document-nav">
+                                            <form action="../4-move-documents/A-category.html" method="get">
+                                                <input id="scenario-3" name="scenario" type="text" value="three">
+                                                <button onclick="" class="move-Document" id="start-scenario-3">Move document</button>
+                                            </form>
+                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        </div>
+                                    </td>
+                                </tr>
                             {% endif %}
 
                             <tr class="govuk-table__row">
