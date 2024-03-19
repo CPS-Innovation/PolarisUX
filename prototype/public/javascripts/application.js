@@ -154,6 +154,7 @@ $(document).ready(function () {
     addDragAndDrop("accordion-tbody-case-overview");
     addDragAndDrop("accordion-tbody-statements");
     addDragAndDrop("accordion-tbody-exhibits");
+    addDragAndDrop("accordion-tbody-unused-materials");
     addDragAndDrop("tab-list")
 });
 

@@ -289,6 +289,14 @@ $govuk-assets-path: '/govuk/assets/';
   margin: 0 !important;
   z-index: 9999 !important;
   opacity: 0.8;
+  .govuk-caption-m {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: $govuk-error-colour;
+    &.emails {
+        display: inline-block;
+    }
+  }
   &.hidden-section {
     display: none;
     &.new {
@@ -309,11 +317,13 @@ $govuk-assets-path: '/govuk/assets/';
             }
         }
     }
+    
 }
 &:first-of-type {
     border-top: 1px solid $govuk-border-colour;
 }
 td {
+    width:100%;
     position: relative;
     margin-bottom: 0;
     .wrapper {
