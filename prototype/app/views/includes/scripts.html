@@ -18,6 +18,8 @@
 <script src="/public/javascripts/autocomplete/docType-Uncategorised.js"></script>
 <!-- Auto complete - END -->
 
+<script src="https://unpkg.com/drag-on-drop@3.6.1/dist/dragon-drop.js"></script>
+
 <script type="text/javascript">
 
 
@@ -78,7 +80,7 @@
                         .closest(".accordion-section-body")
                         .find(".openMe a")
 
-                        $anchorLinks.parent().removeClass('unreadDocument')
+                        $anchorLinks.parent().parent().removeClass('unreadDocument')
 
                         $anchorLinks.each(function (index,link ) {
                         setTimeout(()=>{

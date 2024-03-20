@@ -152,6 +152,38 @@ $(document).ready(function () {
 
 // =================================== Drag and drop =================================== //
 
+$(document).ready(function () {
+    addDragAndDrop("accordion-tbody-reviews");
+    addDragAndDrop("accordion-tbody-case-overview");
+    addDragAndDrop("accordion-tbody-statements");
+    addDragAndDrop("accordion-tbody-exhibits");
+    addDragAndDrop("accordion-tbody-forensics");
+    addDragAndDrop("accordion-tbody-unused-materials");
+    addDragAndDrop("accordion-tbody-defendant");
+    addDragAndDrop("accordion-tbody-court-preparation");
+    addDragAndDrop("accordion-tbody-communication");
+    addDragAndDrop("accordion-tbody-uncategorised");
+    addDragAndDrop("tab-list")
+});
+
+function addDragAndDrop(rootId){
+    const root = document.getElementById(rootId);
+
+    const dragonDrop = new DragonDrop(root, {
+        handle: false,
+        announcement: {
+            grabbed: el => `${el.querySelector('span').innerText} grabbed`,
+            dropped: el => `${el.querySelector('span').innerText} dropped`,
+            reorder: (el, items) => {
+                const pos = items.indexOf(el) + 1;
+                const text = el.querySelector('span').innerText;
+                return `The rankings have been updated, ${text} is now ranked #${pos} out of ${items.length}`;
+            },
+            cancel: 'Reranking cancelled.'
+        }
+    });
+}
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
