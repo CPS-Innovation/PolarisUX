@@ -1807,16 +1807,26 @@ function groupUncategorised() {
 
 $(document).ready(function () {
 
-    // Rename
     $(".sort-documents").on("click", function (e) {
         $(this).toggleClass('open');
         $(this).parent().toggleClass('open');
     });
 
     $(".sort-Alphabetically").on("click", function (e) {
+        $(this).parent().parent().parent().find('.save-DocumentMove').show();
     });
 
-    
+    $(".sort-Date").on("click", function (e) {
+        $(this).parent().parent().parent().find('.save-DocumentMove').show();
+    });
+
+    $(".sort-Item-Number").on("click", function (e) {
+        $(this).parent().parent().parent().find('.save-DocumentMove').show();
+    });
+
+    $("#sumbittedReorder").on("click", function (e) {
+        $('.save-DocumentMove').hide();
+    });
 
 })
 

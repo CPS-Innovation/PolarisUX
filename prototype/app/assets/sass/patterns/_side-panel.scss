@@ -468,8 +468,12 @@
             }
         }
     }
-    .move-multiple-Documents {
+    .move-multiple-Documents, .save-DocumentMove {
         font-size: 0.875rem;
+    }
+    .save-DocumentMove {
+        margin-right: 0.75em;
+        display: none;
     }
     .sort-documents-nav {
         position: relative;

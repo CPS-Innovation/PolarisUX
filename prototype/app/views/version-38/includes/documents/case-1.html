@@ -106,7 +106,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 1 - END -->
@@ -242,7 +243,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 2 - END -->
@@ -261,10 +263,6 @@
                         </div>
                     </div>
                     <!-- SORT - END -->
-                    <p class="govuk-body-s openMe">
-                        <a href="#document-top" class="show-case" data-doc="MISSINGDOCS.pdf" data-count="7" onclick="return documentName()" data-page="1">
-                            Some documents for this case </a>are only available on CMS
-                    </p>
                     <table class="govuk-table" id="sortStatements">
                         <thead>
                             <tr class="govuk-table__row">
@@ -471,6 +469,7 @@
                             <tr class="govuk-table__row document-holder document-11 alpha-1 date-7" id="group3-doc6">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
                                     <div class="wrapper">
+                                        <strong class="govuk-tag govuk-tag--red">Failed</strong>
                                         <strong class="govuk-tag loading-tag">Loading...</strong>
                                         <div>MG11 Geoff MCLOVE</div>
                                         <br>
@@ -530,7 +529,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 3 - END -->
@@ -610,7 +610,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 4 - END -->
@@ -866,7 +867,8 @@
 
                         </tbody>
                     </table>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 6 - END -->
@@ -1028,7 +1030,7 @@
                                             <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
                                             From: <a href="mailto:sujitha.tharmarajah@cps.gov.uk">jim.halbert@cps.gov.uk</a>
                                             <br>
-                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span> <span class="govuk-caption-m emails">2 attachments only available on CMS</span>
+                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span> <span class="govuk-caption-m emails">Document only available on CMS</span>
                                         </p>
                                     </div>
                                     <button class="more-options">
@@ -1076,7 +1078,8 @@
 
                         </tbody>
                     </table>
-                    <button onclick="" class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
+                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
             <!-- SECTION 9 - END -->
@@ -1102,7 +1105,6 @@
                 {% endif %}
 
                 <div class="accordion-section-body">
-                    <p class="govuk-body-s openMe first-of-type">These documents could not be shown. Use CMS to view documents and redact any content.</p>
                     <a href="#" class="open-all">Open all uncategorised documents</a>
                     <!-- SORT - START -->
                     <div class="sort-documents-nav">
@@ -1237,16 +1239,9 @@
                                 </tr>
                             {% endif %}
 
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
-                                    <div class="govuk-warning-text">
-                                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                                        <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> Another missing document</strong>
-                                    </div>
-                                </td>
-                            </tr> 
                         </tbody>
                     </table>
+                    <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
                     <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Move documents</button>
                 </div>
             </div>
