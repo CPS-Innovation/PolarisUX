@@ -1090,6 +1090,7 @@ $(document).ready(function () {
 
     $('.loading').hide();
     $('.search-PII').show();
+    $('table tbody tr.document-holder td .wrapper strong.loading-tag').hide();
 
     if ($.cookie("first-time-load") == 'true') { 
 
@@ -1097,7 +1098,7 @@ $(document).ready(function () {
         $('.documents-loaded, .failed-documents, .search-PII').hide();
 
         $('.document-1, .document-2, .document-3, .document-4, .document-5, .document-6, .document-7, .document-8, .document-9, .document-10, .document-11, .document-12, .document-13, .document-14, .document-15, .document-16, .document-17, .document-18, .document-19, .document-20, .document-21, .document-11A, .document-22, .document-23, .document-24').css('opacity','0.2');
-        $('.accordion-section table tbody tr.document-holder td').prepend(`<strong class="govuk-tag loading-tag">Loading...</strong>`);
+        $('table tbody tr.document-holder td .wrapper strong.loading-tag').show();
 
         setTimeout(function() {
             $(".loading").hide();
