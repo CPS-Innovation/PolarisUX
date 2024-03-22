@@ -184,6 +184,14 @@ function addDragAndDrop(rootId){
     });
 }
 
+$(document).ready(function () {
+    $('input[name=submitReorder]').change(function() {
+        if ($(this).is(':checked')) {
+            $('#sumbittedReorder').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','closeReorder()');
+        }       
+    });
+})
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -2006,6 +2014,86 @@ function sortUncategorisedDate() {
     $("#sortUncategorised tbody tr.date-7").insertAfter("#sortUncategorised tbody tr.date-6");
     $('.sort-documents-nav').removeClass('open');
     $('.sort-documents-nav .wrapper').removeClass('open');
+}
+
+// =================================== REMOVE PAGES =================================== //
+
+$(document).ready(function(){
+        
+    $("#page-1").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+145;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+    
+    $("#page-2").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+1555;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+
+    $("#page-3").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+2950;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+
+    $('input[name=confirmRemovePages]').change(function() {
+        if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '7') {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument6()');
+        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '8') {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument7()');
+        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '9') {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument8()');
+        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '10') {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument9()');
+        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '11') {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument10()');
+        }
+    });
+
+});
+
+function updateDocument() {
+    $('#pdf-root .canvasWrapper, #pdf-root .textLayer').hide();
+    $('#pdf-root .PdfHighlighter').addClass('documentSwap');
+    $('.updated-message').show();
+}
+
+function updateDocument6() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/stmt_BLAYNEE_2034_1_JUNE_mg11_REMOVED.jpg' />";
+    $('table tbody tr.document-6 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+    $('.page-counter strong').text('2');
+}
+
+function updateDocument7() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/stmt_JONES_1989_1_JUNE_mg11_REMOVED.jpg' />";
+    $('table tbody tr.document-7 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+    $('.page-counter strong').text('2');
+}
+
+function updateDocument8() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/stmt_Lucy_Doyle_MG11_REMOVED.jpg' />";
+    $('table tbody tr.document-8 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+    $('.page-counter strong').text('2');
+}
+
+function updateDocument9() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/stmt_Shelagh_McLove_MG11_REMOVED.jpg' />";
+    $('table tbody tr.document-9 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+    $('.page-counter strong').text('2');
+}
+
+function updateDocument10() {
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/Shelagh_McLove_VPS_mg11_REMOVED.jpg' />";
+    $('table tbody tr.document-10 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+    $('.page-counter strong').text('1');
 }
 
 

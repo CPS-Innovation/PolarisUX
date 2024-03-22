@@ -22,7 +22,7 @@
     }
 }
 
-#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal {
+#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages {
     background: none;
     height: auto;
     #openMe {
@@ -59,7 +59,7 @@
     }
 }
 
-#openRenameModal, #openMoveModal, #openMoveMultipleModal {
+#openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages {
     #openMe .govuk-grid-row .innerPanel {
         .header-wrapper {
             margin-bottom: 1em;
