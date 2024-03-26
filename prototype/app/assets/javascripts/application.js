@@ -602,7 +602,7 @@ $(document).ready(function () {
         // });
 
         $('table tbody tr td').removeClass('current')
-        $(this).parent().addClass('current');
+        $(this).parent().parent().addClass('current');
 
     });
 

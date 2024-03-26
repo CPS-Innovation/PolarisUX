@@ -455,7 +455,7 @@
                     }
                 }
                 .govuk-error-summary {
-                    margin: 1.5em 5px 0 5px;
+                    margin: 1.5em 5px 1.5em 10px;
                     display: none;
                     ul {
                         li {
@@ -824,9 +824,12 @@
     }
     #search-results-list, #search-suggestions-list {
         .search-item {
-            padding-bottom: 0;
-            border-bottom: none;
+            padding-bottom: 1em;
+            border-bottom: 1px solid $govuk-border-colour;
             border-top: none;
+            .govuk-inset-text {
+                margin-top: 1em;
+            }
             &:first-of-type {
                 padding-top: 0;
                 border-top: none;
