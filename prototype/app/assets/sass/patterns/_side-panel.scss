@@ -263,7 +263,7 @@
                                     display: inline-block;
                                 }
                                 p {
-                                    &.date-added {
+                                    &.date-added, &.reference {
                                         font-size: 0.875rem;
                                         color: $govuk-secondary-text-colour;
                                         margin: 0;
@@ -348,6 +348,12 @@
                                                 // margin-left: 0.5em;
                                                 // margin-top: 0.15em;
                                             }
+                                        }
+                                    }
+                                    &.reference {
+                                        margin: 0.5em 0;
+                                        strong {
+                                            color: $govuk-text-colour;
                                         }
                                     }
                                     &.whitness-indicators {
