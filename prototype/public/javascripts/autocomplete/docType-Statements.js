@@ -1,11 +1,8 @@
 $(function(){
      var currencies = [
-          { value: "MG11" },
           { value: "MG11(CONT)" },
           { value: "MG11(T)" },
-          { value: "MG11T(CONT)" },
-          { value: "MG9" },
-          { value: "PE1" }
+          { value: "MG11T(CONT)" }
   ];
 
      // setup autocomplete function pulling from currencies[] array

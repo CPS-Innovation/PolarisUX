@@ -1,12 +1,8 @@
 $(function(){
      var currencies = [
-          { value: "ABE" },
           { value: "Other Material" },
-          { value: "PE3" },
-          { value: "PE4" },
           { value: "Covers" },
           { value: "Rear of Witness Statement" },
-          { value: "PE4" },
           { value: "Defence Statement" },
           { value: "Unknown" }
   ];

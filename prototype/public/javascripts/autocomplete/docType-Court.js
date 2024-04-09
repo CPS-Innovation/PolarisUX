@@ -1,12 +1,5 @@
 $(function(){
      var currencies = [
-          { value: "MG10" },
-          { value: "MG13" },
-          { value: "MG14" },
-          { value: "MG2" },
-          { value: "MG7" },
-          { value: "MG8" },
-          { value: "MG19" },
           { value: "Streamlined Disclosure Certificate" },
           { value: "BCM Form finalised" },
           { value: "Instructions to Admin" },

@@ -1,7 +1,5 @@
 $(function(){
      var currencies = [
-          { value: "MG3" },
-          { value: "MG3A" },
           { value: "MG3A (with Schedule of Charges)" },
           { value: "MG3 (with Schedule of Charges)" }
   ];

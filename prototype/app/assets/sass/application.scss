@@ -305,7 +305,7 @@ $govuk-assets-path: '/govuk/assets/';
         td {
             &.newDocument.unreadDocument {
                 border-left: 5px solid $govuk-success-colour;
-                padding: 0.5em 0.5em 0.5em 1em;
+                padding: 0.5em 0 0.5em 0.75em;
                 background: rgba($govuk-success-colour,0.075);
                 .govuk-tag.govuk-tag--green {
                     display: inline-block;
@@ -603,7 +603,7 @@ $govuk-assets-path: '/govuk/assets/';
         &.unreadDocument {
             width: 100%;
             border-left: 5px solid $govuk-link-colour;
-            padding: 0.5em 0.5em 0.5em 1em;
+            padding: 0.5em 0 0.5em 0.75em;
             background: rgba($govuk-link-colour,0.075);
             .govuk-tag {
                 &.govuk-tag--yellow, &.govuk-tag--orange {

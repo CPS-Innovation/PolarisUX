@@ -113,7 +113,7 @@
                                 td {
                                     &.newDocument.unreadDocument {
                                         border-left: 5px solid $govuk-success-colour;
-                                        padding: 0.5em 0.5em 0.5em 1em;
+                                        padding: 0.5em 0 0.5em 0.75em;
                                         background: rgba($govuk-success-colour,0.075);
                                         .govuk-tag.govuk-tag--green {
                                             display: inline-block;
@@ -147,7 +147,7 @@
                                         background-size: contain;
                                         border: none;
                                         position: absolute;
-                                        right: 1.15em;
+                                        right: 0.75em;
                                         width: 2em;
                                         height: 2em;
                                         top: 50%;
@@ -197,7 +197,7 @@
                                     background-size: contain;
                                     border: none;
                                     position: absolute;
-                                    right: 1.15em;
+                                    right: 0.75em;
                                     width: 2em;
                                     height: 2em;
                                     top: 50%;
@@ -414,7 +414,7 @@
                                 }
                                 &.unreadDocument {
                                     border-left: 5px solid $govuk-link-colour;
-                                    padding: 0.5em 0.5em 0.5em 1em;
+                                    padding: 0.5em 0 0.5em 0.75em;
                                     background: rgba($govuk-link-colour,0.075);
                                     .govuk-tag {
                                         &.govuk-tag--yellow, &.govuk-tag--orange {

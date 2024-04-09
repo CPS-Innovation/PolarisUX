@@ -2,6 +2,7 @@
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(black,0.2);
     overflow-y: scroll;
+    min-width: 445px !important;
     .autocomplete-suggestion {
         padding: 0.45em;
         color: $govuk-text-colour;
