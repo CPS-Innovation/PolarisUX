@@ -17,9 +17,9 @@
                 {% if data['scenario'] == 'one' %}
                     <p class="govuk-body">You're changing the name of <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
                 {% elseif data['scenario'] == 'two' %}
-                    <p class="govuk-body">You're changing the name of <mark class="hods-highlight"><strong>Material 27</strong></mark></p>
+                    <p class="govuk-body">You're changing the name of <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
                 {% elseif data['scenario'] == 'three' %}
-                    <p class="govuk-body">You're changing the name of <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+                    <p class="govuk-body">You're changing the name of <mark class="hods-highlight"><strong>MG11 - 2</strong></mark></p>
                 {% endif %}
 
             </div>
@@ -36,14 +36,18 @@
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Name">
                                 <div class="govuk-form-group">
                                     {% if data['scenario'] == 'one' %}
-                                        <label class="govuk-label" for="docType-Scenario-1-NAME"><span class="govuk-hint">Enter document name</span></label>
-                                        <input class="govuk-input govuk-!-width-one-half" id="docType-Scenario-1-NAME" name="docType-Scenario-1-NAME" type="text" value="Asset Rec 1">
+                                        <label class="govuk-label" for="docType-Scenario-1-NAME">Enter document name</label>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-1-NAME" name="docType-Scenario-1-NAME" type="text" value="Asset Rec 1">
                                     {% elseif data['scenario'] == 'two' %}
-                                        <label class="govuk-label" for="docType-Scenario-2-NAME"><span class="govuk-hint">Enter document name</span></label>
-                                        <input class="govuk-input govuk-!-width-one-half" id="docType-Scenario-2-NAME" name="docType-Scenario-2-NAME" type="text" value="Material 27">
+                                        <label class="govuk-label" for="docType-Scenario-2-NAME">Enter document name</label>
+                                        <span class="govuk-hint">Example naming conventions: Doc Name, witness SURNAME First Name, date of statement</span>
+                                        <span class="govuk-hint">For example, MG11 SMITH John 25/06/2024</span>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-2-NAME" name="docType-Scenario-2-NAME" type="text" value="MG11 - 1">
                                     {% elseif data['scenario'] == 'three' %}
-                                        <label class="govuk-label" for="docType-Scenario-3-NAME"><span class="govuk-hint">Enter document name</span></label>
-                                        <input class="govuk-input govuk-!-width-one-half" id="docType-Scenario-3-NAME" name="docType-Scenario-3-NAME" type="text" value="Material 007">
+                                        <label class="govuk-label" for="docType-Scenario-3-NAME">Enter document name</label>
+                                        <span class="govuk-hint">Example naming conventions: Doc Name, witness SURNAME First Name, date of statement</span>
+                                        <span class="govuk-hint">For example, MG11 SMITH John 25/06/2024</span>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-3-NAME" name="docType-Scenario-3-NAME" type="text" value="MG11 - 2">
                                     {% endif %}
                                 </div>
                             </div>                            
@@ -58,6 +62,17 @@
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
             </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG11_2-PREVIEW.png" alt="My tasks" class="MG11 - 2 - Preview">
+            {% endif %}
         </div>
     </div>
 </div>

@@ -39,6 +39,19 @@ header {
     }
 }
 
+.image-holder {
+    border: 1px solid $govuk-border-colour;
+    background: govuk-colour("light-grey");
+    padding: 1em;
+    display: inline-block;
+    width: 100%;
+    margin-top: 1em;
+    img {
+        width: 100%;
+        box-shadow: 0 0 10px 0 rgba(black, 0.2);
+    }
+}
+
 .refresh-button {
     background: url("../images/refresh-blue.svg") no-repeat 0.15em 50%;
     background-size: 1em;

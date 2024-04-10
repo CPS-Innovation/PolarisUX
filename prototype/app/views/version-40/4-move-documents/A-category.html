@@ -8,7 +8,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-half">
         <div class="wrapper gov-pages">
             <h1 class="govuk-heading-l" style="">
                 Select the category which applies to your document
@@ -17,9 +17,9 @@
                 {% if data['scenario'] == 'one' %}
                     <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
                 {% elseif data['scenario'] == 'two' %}
-                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Material 27</strong></mark></p>
+                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
                 {% elseif data['scenario'] == 'three' %}
-                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>MG11 - 2</strong></mark></p>
                 {% endif %}
 
             </div>
@@ -73,6 +73,17 @@
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
             </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG11_2-PREVIEW.png" alt="My tasks" class="MG11 - 2 - Preview">
+            {% endif %}
         </div>
     </div>
 </div>

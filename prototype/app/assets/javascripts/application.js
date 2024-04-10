@@ -38,6 +38,10 @@ $(document).ready(function () {
 
 })
 
+// $(window).click(function() {
+//     $('.more-options').removeClass('show');
+// });
+
 $(window).scroll(function() {
     if ($('#navbar2 li').length == 3) {
         $('#navbar2').addClass('no-list');

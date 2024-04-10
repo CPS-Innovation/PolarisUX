@@ -8,7 +8,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-half">
         <div class="wrapper gov-pages">
             <h1 class="govuk-heading-l" style="">
                 Select the type which applies to your document
@@ -17,9 +17,9 @@
                 {% if data['scenario'] == 'one' %}
                     <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
                 {% elseif data['scenario'] == 'two' %}
-                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Material 27</strong></mark></p>
+                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
                 {% elseif data['scenario'] == 'three' %}
-                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>MG11 - 2</strong></mark></p>
                 {% endif %}
 
             </div>
@@ -35,7 +35,7 @@
                 {% if data['move-single-Document'] == 'Reviews' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Reviews-MG3" name="docType-Radio-Reviews" type="radio" value="MG3">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-MG3">MG3</label>
@@ -69,7 +69,7 @@
                 {% elseif data['move-single-Document'] == 'Case overview' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4" name="docType-Radio-CaseOverview" type="radio" value="MG4">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4">MG4</label>
@@ -135,7 +135,7 @@
                  {% elseif data['move-single-Document'] == 'Statements' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Statements-MG9" name="docType-Radio-Statements" type="radio" value="MG9">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Statements-MG9">MG9</label>
@@ -165,7 +165,7 @@
                 {% elseif data['move-single-Document'] == 'Exhibits' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG12" name="docType-Radio-Exhibits" type="radio" value="MG12">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG12">MG12</label>
@@ -219,7 +219,7 @@
                 {% elseif data['move-single-Document'] == 'Forensics' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Forensics-MG22-SFR" name="docType-Radio-Forensics" type="radio" value="MG22 SFR">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Forensics-MG22-SFR">MG22 SFR</label>
@@ -250,7 +250,7 @@
                 {% elseif data['move-single-Document'] == 'Unused materials' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Unused-MG6C" name="docType-Radio-Unused" type="radio" value="MG6C">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6C">MG6C</label>
@@ -296,7 +296,7 @@
                 {% elseif data['move-single-Document'] == 'Defendant' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Defendant-PCN1" name="docType-Radio-Defendant" type="radio" value="PCN1">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-PCN1">PCN1</label>
@@ -343,7 +343,7 @@
                 {% elseif data['move-single-Document'] == 'Court preparation' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Court-MG10" name="docType-Radio-Court" type="radio" value="MG10">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG10">MG10</label>
@@ -389,7 +389,7 @@
                 {% elseif data['move-single-Document'] == 'Communications' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Communications-Other-Comm" name="docType-Radio-Communications" type="radio" value="Other Comm (In)">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Communications-Other-Comm">Other Comm (In)</label>
@@ -419,7 +419,7 @@
                 {% elseif data['move-single-Document'] == 'Uncategorised' %}
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="docType-Radio-Uncategorised-MG11-R" name="docType-Radio-Uncategorised" type="radio" value="MG11 (R)">
                                     <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-MG11-R">MG11 (R)</label>
@@ -455,6 +455,17 @@
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
             </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG11_2-PREVIEW.png" alt="My tasks" class="MG11 - 2 - Preview">
+            {% endif %}
         </div>
     </div>
 </div>

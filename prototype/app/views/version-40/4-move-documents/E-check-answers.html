@@ -144,9 +144,9 @@
                         {% if data['scenario'] == 'one' %}
                             Asset Rec 1
                         {% elseif data['scenario'] == 'two' %}
-                            Material 27
+                            MG11 - 1
                         {% elseif data['scenario'] == 'three' %}
-                            Material 007
+                            MG11 - 2
                         {% endif %}
                     {% endif %}
 
@@ -160,6 +160,17 @@
             <input type="hidden" name="docType-CheckAnswers" value="true">
             <button type="submit" class="govuk-button end-scenario" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
         </form>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG11_2-PREVIEW.png" alt="My tasks" class="MG11 - 2 - Preview">
+            {% endif %}
+        </div>
     </div>
 </div>
 
