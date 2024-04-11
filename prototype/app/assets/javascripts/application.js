@@ -1703,6 +1703,7 @@ $(document).ready(function () {
         var docNewTitle = $(this).parent().parent().children('.wrapper').find('.show-case').text();
         $('.document-title-10').text(docNewTitle);
         $(this).parent().parent().addClass('change-DocumentName');
+        $(this).parent().removeClass('show');
     });
 
     $('#document-renamed').on("click", function (e) {
@@ -1719,6 +1720,8 @@ $(document).ready(function () {
         var docMoveTitle = $(this).parent().parent().children('.wrapper').find('.show-case').text();
         $('.document-title-11').text(docMoveTitle);
         $(this).parent().parent().addClass('move-Document');
+        $(this).parent().parent().removeClass('show');
+        $(this).parent().removeClass('show');
     });
 
     $('#document-moved').on("click", function (e) {

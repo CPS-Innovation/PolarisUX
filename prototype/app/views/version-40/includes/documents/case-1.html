@@ -87,7 +87,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:08
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -143,7 +143,7 @@
                                             <p class="error-text">There is a problem with this document</p>
                                             <br>
                                             <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 June 2020
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>17:36
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -170,7 +170,7 @@
                                             <p class="error-text">There is a problem with this document</p>
                                             <br>
                                             <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 June 2020
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>16:11
                                                 <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -196,7 +196,7 @@
                                             <p class="error-text">There is a problem with this document</p>
                                             <br>
                                             <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 June 2020
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>10:14
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -223,7 +223,7 @@
                                             <p class="error-text">There is a problem with this document</p>
                                             <br>
                                             <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>10 June 2020
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>10 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>08:03
                                                 <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -251,7 +251,12 @@
 
             <!-- SECTION 3 - START -->
             <div class="accordion-section section-3" id="hidden-documents">
-                <div class="accordion-section-header"><h2 class="govuk-heading-s">Statements (<span class="statements">6</span>)</h2></div>
+                {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Statements (<span class="statements">7</span>)</h2></div>
+                {% else %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Statements (<span class="statements">6</span>)</h2></div>
+                {% endif %}
+
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all statements</a>
                     <!-- SORT - START -->
@@ -279,7 +284,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>11:22
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -313,7 +318,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>11:54
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -347,7 +352,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>12:01
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -381,7 +386,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>12:36
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -418,7 +423,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>06 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>06 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>13:11
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -456,7 +461,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>10 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>10 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>19:18
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -492,7 +497,7 @@
                                         <div>MG11 Geoff MCLOVE</div>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>11 June 2020
+                                            <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>11 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>22:53
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -548,6 +553,47 @@
                                     </div>
                                 </td>
                             </tr>
+
+                            {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
+                                <tr class="govuk-table__row document-holder document-23 alpha-1 date-4" id="group10-doc2">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <div class="wrapper">
+                                            <strong class="govuk-tag loading-tag">Loading...</strong>
+                                            <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
+                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
+                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_1.pdf" data-document="22" onclick="return topFunction()" data-page="1">
+                                                {% if data['docType-document-name'] == 'Yes' %}
+                                                    {{ data['docType-Scenario-2-NAME'] }}
+                                                {% elseif data['docType-document-name'] == 'No' %}
+                                                    MG11 - 1
+                                                {% endif %}
+                                            </a>
+                                            <br>
+                                            <p class="date-added">
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jan 2021
+                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:14
+                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
+                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                </button>
+                                            </p>
+                                        </div>
+                                        <button class="more-options">
+                                            <span class="visuallyhidden">More options</span>
+                                        </button>
+                                        <div class="document-nav">
+                                            <form action="../4-move-documents/A-category.html" method="get">
+                                                <input id="scenario-2" name="scenario" type="text" value="two">
+                                                <button onclick="" class="move-Document">Move document</button>
+                                            </form>
+                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+
+                            {% endif %}
+
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
@@ -557,8 +603,12 @@
             <!-- SECTION 3 - END -->
 
             <!-- SECTION 4 - START -->
-            <div class="accordion-section section-4">
-                <div class="accordion-section-header"><h2 class="govuk-heading-s">Exhibits (2)</h2></div>
+            <div class="accordion-section section-4" id="catergory-Exhibits">
+                {% if data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Exhibits (3)</h2></div>
+                {% else %}
+                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Exhibits (2)</h2></div>
+                {% endif %}
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all exhibit documents</a>
                     <!-- SORT - START -->
@@ -586,7 +636,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>22:36
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -615,7 +665,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>23:58
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -635,6 +685,50 @@
                                     </div>
                                 </td>
                             </tr>
+
+                            {% if data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
+                                <tr class="govuk-table__row document-holder document-24 alpha-1 date-7" id="group10-doc2">
+                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                        <div class="wrapper">
+                                            <strong class="govuk-tag loading-tag">Loading...</strong>
+                                            <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
+                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
+                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG12.pdf" data-document="22" onclick="return topFunction()" data-page="1">
+                                                {% if data['docType-document-name'] == 'Yes' %}
+                                                    {{ data['docType-Scenario-3-NAME'] }}
+                                                {% elseif data['docType-document-name'] == 'No' %}
+                                                    MG11 - 2
+                                                {% endif %}
+                                            </a>
+                                            <br>
+                                            <p class="date-added">
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 Jun 2021
+                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
+                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
+                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                </button>
+                                            </p>
+                                            <p class="reference">
+                                                Ref: <strong>{{ data['documentExhibit-Reference'] }}</strong>
+                                            </p>
+                                        </div>
+                                        <button class="more-options">
+                                            <span class="visuallyhidden">More options</span>
+                                        </button>
+                                        <div class="document-nav">
+                                            <form action="../4-move-documents/A-category.html" method="get">
+                                                <input id="scenario-3" name="scenario" type="text" value="three">
+                                                <button onclick="" class="move-Document">Move document</button>
+                                            </form>
+                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+
+                            {% endif %}
+
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
@@ -665,17 +759,7 @@
 
             <!-- SECTION 6 - START -->
             <div class="accordion-section section-6" id="hidden-section-2">
-
-                {% if data['docType-Scenario-2-NAME'] and data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
-                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (7)</h2></div>
-                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
-                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (6)</h2></div>
-                {% elseif data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
-                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (6)</h2></div>
-                {% else %}
-                    <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (5)</h2></div>
-                {% endif %}
-
+                <div class="accordion-section-header"><h2 class="govuk-heading-s">Unused materials (5)</h2></div>
                 <div class="accordion-section-body">
                     <a href="#" class="open-all">Open all unusend material documents</a>
                     <!-- SORT - START -->
@@ -704,7 +788,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>01 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:46
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -729,7 +813,7 @@
                                         <a href="#document-top" class="show-case" data-doc="SDC_items_to_be_Disclosed_MCLOVE.pdf" data-document="16" onclick="return topFunction()" data-page="1">SDC_items to_be Disclosed MCLOVE</a>
                                         <p class="error-text">There is a problem with this document</p>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>19:12
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -756,7 +840,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>19:36
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -782,7 +866,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>06 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>06 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:14
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -808,7 +892,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>11 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>11 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>09:35
                                             <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -825,87 +909,6 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
-                                <tr class="govuk-table__row document-holder document-23 alpha-1 date-4" id="group10-doc2">
-                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
-                                        <div class="wrapper">
-                                            <strong class="govuk-tag loading-tag">Loading...</strong>
-                                            <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
-                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
-                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_1.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                                {% if data['docType-document-name'] == 'Yes' %}
-                                                    {{ data['docType-Scenario-2-NAME'] }}
-                                                {% elseif data['docType-document-name'] == 'No' %}
-                                                    MG11 - 1
-                                                {% endif %}
-                                            </a>
-                                            <br>
-                                            <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 January 2021
-                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:14
-                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
-                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <button class="more-options">
-                                            <span class="visuallyhidden">More options</span>
-                                        </button>
-                                        <div class="document-nav">
-                                            <form action="../4-move-documents/A-category.html" method="get">
-                                                <input id="scenario-2" name="scenario" type="text" value="two">
-                                                <button onclick="" class="move-Document">Move document</button>
-                                            </form>
-                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% else %}
-
-                            {% endif %}
-
-                            {% if data['docType-Scenario-3-NAME'] and data['docType-CheckAnswers'] %}
-                                <tr class="govuk-table__row document-holder document-24 alpha-1 date-7" id="group10-doc2">
-                                    <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
-                                        <div class="wrapper">
-                                            <strong class="govuk-tag loading-tag">Loading...</strong>
-                                            <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
-                                            <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
-                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_2.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                                {% if data['docType-document-name'] == 'Yes' %}
-                                                    {{ data['docType-Scenario-3-NAME'] }}
-                                                {% elseif data['docType-document-name'] == 'No' %}
-                                                    MG11 - 2
-                                                {% endif %}
-                                            </a>
-                                            <br>
-                                            <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 June 2021
-                                                <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
-                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
-                                                    <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
-                                                </button>
-                                            </p>
-                                        </div>
-                                        <button class="more-options">
-                                            <span class="visuallyhidden">More options</span>
-                                        </button>
-                                        <div class="document-nav">
-                                            <form action="../4-move-documents/A-category.html" method="get">
-                                                <input id="scenario-3" name="scenario" type="text" value="three">
-                                                <button onclick="" class="move-Document">Move document</button>
-                                            </form>
-                                            <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                             {% else %}
-
-                            {% endif %}
-
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
@@ -936,7 +939,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:56
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -1030,7 +1033,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 June 2020
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>18:56
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
@@ -1061,7 +1064,7 @@
                                         <p class="error-text">There is a problem with this document</p>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 January 2021
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 Jan 2021
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>20:12
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -1100,7 +1103,7 @@
                                         </a>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>21 January 2021
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>21 Jan 2021
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>12:20
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -1199,7 +1202,7 @@
                                         <a href="" class="show-case email-document-V2" onclick="email()" data-doc="defendants.pdf" data-document="22" onclick="return topFunction()" data-page="1">Asset Rec 1</a>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 January 2021
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>03 Jan 2021
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>20:12
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -1232,7 +1235,7 @@
                                         <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_1.pdf" data-document="22" onclick="return topFunction()" data-page="1">MG11 - 1</a>
                                         <br>
                                         <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 January 2021
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jan 2021
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:14
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
@@ -1262,10 +1265,10 @@
                                         <div class="wrapper">
                                             <strong class="govuk-tag loading-tag">Loading...</strong>
                                             <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
-                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_2.pdf" data-document="22" onclick="return topFunction()" data-page="1">MG11 - 2</a>
+                                            <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG12.pdf" data-document="22" onclick="return topFunction()" data-page="1">Exhibit - 1</a>
                                             <br>
                                             <p class="date-added">
-                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 June 2021
+                                                <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 Jun 2021
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>

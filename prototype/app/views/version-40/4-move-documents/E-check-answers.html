@@ -146,7 +146,7 @@
                         {% elseif data['scenario'] == 'two' %}
                             MG11 - 1
                         {% elseif data['scenario'] == 'three' %}
-                            MG11 - 2
+                            Exhibit - 1
                         {% endif %}
                     {% endif %}
 
@@ -159,9 +159,9 @@
         {% if data['scenario'] == 'one' %}
             <form action="../1-new-designs/C-casefile-1#catergory-Communications" method="post" novalidate>
         {% elseif data['scenario'] == 'two' %}
-            <form action="../1-new-designs/C-casefile-1#hidden-section-2" method="post" novalidate>
+            <form action="../1-new-designs/C-casefile-1#hidden-documents" method="post" novalidate>
         {% elseif data['scenario'] == 'three' %}
-            <form action="../1-new-designs/C-casefile-1#hidden-section-2" method="post" novalidate>
+            <form action="../1-new-designs/C-casefile-1#catergory-Exhibits" method="post" novalidate>
         {% endif %}
             <input type="hidden" name="docType-CheckAnswers" value="true">
             <button type="submit" class="govuk-button end-scenario" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
@@ -170,11 +170,11 @@
     <div class="govuk-grid-column-one-half">
         <div class="image-holder">
             {% if data['scenario'] == 'one' %}
-                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="MG11 - 1 - Preview" class="">
             {% elseif data['scenario'] == 'two' %}
-                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="My tasks" class="MG11 - 1 - Preview">
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="MG11 - 1 - Preview" class="">
             {% elseif data['scenario'] == 'three' %}
-                <img src="../../../public/files/MG11_2-PREVIEW.png" alt="My tasks" class="MG11 - 2 - Preview">
+                <img src="../../../public/files/MG12_1-PREVIEW.png" alt="Exhibit - 1 - Preview" class="">
             {% endif %}
         </div>
     </div>

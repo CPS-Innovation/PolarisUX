@@ -1082,8 +1082,13 @@ $(document).ready(function () {
         $('.section-10').attr("aria-expanded","true");
     }
 
-    if ($.cookie("start-scenario-2") == 'true' && $.cookie("end-scenario") == 'true' || $.cookie("start-scenario-3") == 'true' && $.cookie("end-scenario") == 'true') {
-        $('.section-6').attr("aria-expanded","true");
+    if ($.cookie("start-scenario-2") == 'true' && $.cookie("end-scenario") == 'true') {
+        $('.section-3').attr("aria-expanded","true");
+        $('.section-10').attr("aria-expanded","true");
+    }
+
+    if ($.cookie("start-scenario-3") == 'true' && $.cookie("end-scenario") == 'true') {
+        $('.section-4').attr("aria-expanded","true");
         $('.section-10').attr("aria-expanded","true");
     }
 
