@@ -14,7 +14,7 @@
         <h2 class="govuk-heading-m">Document details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Document category</dt>
+                <dt class="govuk-summary-list__key">Category</dt>
                 <dd class="govuk-summary-list__value">{{ data['move-single-Document'] }}</dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document category</span></a>
@@ -130,7 +130,7 @@
 
             {% endif %}
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Document name</dt>
+                <dt class="govuk-summary-list__key">Name</dt>
                 <dd class="govuk-summary-list__value">
                     {% if data['docType-document-name'] == 'Yes' %}
                         {% if data['scenario'] == 'one' %}
@@ -156,7 +156,13 @@
                 </dd>
             </div>
         </dl>
-        <form action="../1-new-designs/C-casefile-1" method="post" novalidate>
+        {% if data['scenario'] == 'one' %}
+            <form action="../1-new-designs/C-casefile-1#catergory-Communications" method="post" novalidate>
+        {% elseif data['scenario'] == 'two' %}
+            <form action="../1-new-designs/C-casefile-1#hidden-section-2" method="post" novalidate>
+        {% elseif data['scenario'] == 'three' %}
+            <form action="../1-new-designs/C-casefile-1#hidden-section-2" method="post" novalidate>
+        {% endif %}
             <input type="hidden" name="docType-CheckAnswers" value="true">
             <button type="submit" class="govuk-button end-scenario" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
         </form>
