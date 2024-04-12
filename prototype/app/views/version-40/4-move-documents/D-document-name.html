@@ -36,16 +36,16 @@
                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Name">
                                 <div class="govuk-form-group">
                                     {% if data['scenario'] == 'one' %}
-                                        <label class="govuk-label" for="docType-Scenario-1-NAME">Enter document name</label>
+                                        <label class="govuk-label" for="docType-Scenario-1-NAME">Enter new document name</label>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-1-NAME" name="docType-Scenario-1-NAME" type="text" value="Asset Rec 1">
                                     {% elseif data['scenario'] == 'two' %}
-                                        <label class="govuk-label" for="docType-Scenario-2-NAME">Enter document name</label>
-                                        <span class="govuk-hint">Example naming conventions: Doc Name, witness SURNAME First Name, date of statement</span>
+                                        <label class="govuk-label" for="docType-Scenario-2-NAME">Enter new document name</label>
+                                        <span class="govuk-hint">Example: Doc Name, witness SURNAME First Name, date of statement</span>
                                         <span class="govuk-hint">For example, MG11 SMITH John 25/06/2024</span>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-2-NAME" name="docType-Scenario-2-NAME" type="text" value="MG11 - 1">
                                     {% elseif data['scenario'] == 'three' %}
-                                        <label class="govuk-label" for="docType-Scenario-3-NAME">Enter document name</label>
-                                        <span class="govuk-hint">Example naming conventions: Doc Name</span>
+                                        <label class="govuk-label" for="docType-Scenario-3-NAME">Enter new document name</label>
+                                        <span class="govuk-hint">Example: Doc Name</span>
                                         <span class="govuk-hint">For example, MG12</span>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-3-NAME" name="docType-Scenario-3-NAME" type="text" value="Exhibit - 1">
                                     {% endif %}
