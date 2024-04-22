@@ -3,7 +3,8 @@
 html {
     scroll-behavior: smooth;
     &.govuk-template {
-        background: govuk-colour("light-grey") !important;
+        background: white !important;
+        // background: govuk-colour("light-grey") !important;
         &.case-files {
             background: white !important;
         }

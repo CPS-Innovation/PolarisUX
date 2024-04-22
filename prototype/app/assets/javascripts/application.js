@@ -1265,7 +1265,7 @@ $(document).ready(function () {
 
 function suggestedRedactions() {
     $('.suggested-redactions-panel').show();
-    $(".suggested-redactions").html('Turn <strong>OFF</strong> Suggested Redactions');
+    $(".suggested-redactions").html('Turn <strong>OFF</strong> Potential redactions');
 
     // var d = document.getElementById("pdf-root");
     // d.setAttribute('data-pdf-url' , 'Next');
