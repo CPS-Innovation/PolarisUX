@@ -1275,7 +1275,7 @@ function suggestedRedactions() {
     $('#pdf-root').prepend(`
         <div class="redaction-footer">
             <span class="removeRedactions looks-like-a-link-underline">Remove all redactions</span>
-            <span id="data-count-SR" data-count="23">There are 23 redactions</span>
+            <span id="data-count-SR" data-count="30">There are 30 redactions</span>
             <span class="viewRedactions looks-like-a-link-underline"> - views redactions</span>
             <button class="govuk-button saveDraftButton govuk-button--secondary">Save draft redactions</button>
             <button class="govuk-button saveAndFinishButton" onClick="sumbitSuggestedRedactions()">Save and submit all redactions</button>
@@ -1286,7 +1286,7 @@ function suggestedRedactions() {
 function suggestedRedactionsStep2() {
     document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-2.jpg' id='suggested-2' onClick='suggestedRedactionsStep3()' />";
     $('#redaction-summary-list-DUMMY').html(`
-        <li id="suggested-NamedIndividuals"><b>18</b> - Named individuals</li>
+        <li id="suggested-NamedIndividuals"><b>25</b> - Named individuals</li>
         <li><b>2</b> - Email addresses</li>
         <li><b>2</b> - Previous convictions</li>
         <li><b>1</b> - Date of birth</li>
@@ -1295,11 +1295,11 @@ function suggestedRedactionsStep2() {
 
 function suggestedRedactionsStep3() {
     document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-3.jpg' id='suggested-3' onClick='suggestedRedactionsStep4()' />";
-    document.getElementById("data-count-SR").innerHTML="There are 23 redactions";
-    document.getElementById("confirm-suggested-redactions-number").innerHTML="22";
-    document.getElementById("SRNumber").innerHTML="(17)";
+    document.getElementById("data-count-SR").innerHTML="There are 30 redactions";
+    document.getElementById("confirm-suggested-redactions-number").innerHTML="30";
+    document.getElementById("SRNumber").innerHTML="(18)";
     $('#redaction-summary-list-DUMMY').html(`
-        <li id="suggested-NamedIndividuals"><b>17</b> - Named individuals</li>
+        <li id="suggested-NamedIndividuals"><b>25</b> - Named individuals</li>
         <li><b>2</b> - Email addresses</li>
         <li><b>2</b> - Previous convictions</li>
         <li><b>1</b> - Date of birth</li>
@@ -1308,11 +1308,11 @@ function suggestedRedactionsStep3() {
 
 function suggestedRedactionsStep4() {
     document.getElementById("changeDocument").innerHTML="<img src='/public/files/MCLOVEMG3-SR-4.jpg' id='suggested-4' />";
-    document.getElementById("data-count-SR").innerHTML="There are 21 redactions";
-    document.getElementById("confirm-suggested-redactions-number").innerHTML="21"; 
+    document.getElementById("data-count-SR").innerHTML="There are 28 redactions";
+    document.getElementById("confirm-suggested-redactions-number").innerHTML="28"; 
     document.getElementById("SRNumber").innerHTML="(16)";
     $('#redaction-summary-list-DUMMY').html(`
-        <li id="suggested-NamedIndividuals"><b>16</b> - Named individuals</li>
+        <li id="suggested-NamedIndividuals"><b>23</b> - Named individuals</li>
         <li><b>2</b> - Email addresses</li>
         <li><b>2</b> - Previous convictions</li>
         <li><b>1</b> - Date of birth</li>

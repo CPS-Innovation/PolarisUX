@@ -1015,9 +1015,54 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
+                            <tr class="govuk-table__row document-holder document-22 alpha-1 date-3" id="group10-doc2">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
+                                    <div class="wrapper">
+                                        <strong class="govuk-tag loading-tag">Loading...</strong>
+                                        <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
+                                        <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
+                                        <a href="" class="show-case email-document-V2" onclick="email()" data-doc="defendants.pdf" data-document="22" onclick="return topFunction()" data-page="1">
+                                            {% if data['docType-document-name'] == 'Yes' %}
+                                                {{ data['docType-Scenario-1-NAME'] }}
+                                            {% elseif data['docType-document-name'] == 'No' %}
+                                                Asset Rec 1
+                                            {% endif %}
+                                        </a>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>21 Jan 2021
+                                            <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>12:20
+                                            <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
+                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                            </button>
+                                        </p>
+                                    </div>
+                                    <button class="more-options">
+                                        <span class="visuallyhidden">More options</span>
+                                    </button>
+                                    <div class="document-nav">
+                                        <form action="../4-move-documents/A-category.html" method="get">
+                                            <input id="scenario-1" name="scenario" type="text" value="one">
+                                            <button onclick="" class="move-Document">Move document</button>
+                                        </form>
+                                        <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% else %}
+
+                            {% endif %}
+                            
+                            {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
+
+                            {% else %}
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
                             </tr>
+                            {% endif %}
                         </tbody>
                     </table>
                     <table class="govuk-table" id="emailTable">
@@ -1089,47 +1134,6 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            {% if data['docType-Scenario-1-NAME'] and data['docType-CheckAnswers'] %}
-                            <tr class="govuk-table__row document-holder document-22 alpha-1 date-3" id="group10-doc2">
-                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
-                                    <div class="wrapper">
-                                        <strong class="govuk-tag loading-tag">Loading...</strong>
-                                        <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
-                                        <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
-                                        <a href="" class="show-case email-document-V2" onclick="email()" data-doc="defendants.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                            {% if data['docType-document-name'] == 'Yes' %}
-                                                {{ data['docType-Scenario-1-NAME'] }}
-                                            {% elseif data['docType-document-name'] == 'No' %}
-                                                Asset Rec 1
-                                            {% endif %}
-                                        </a>
-                                        <br>
-                                        <p class="date-added">
-                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>21 Jan 2021
-                                            <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>12:20
-                                            <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
-                                                <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
-                                            </button>
-                                        </p>
-                                    </div>
-                                    <button class="more-options">
-                                        <span class="visuallyhidden">More options</span>
-                                    </button>
-                                    <div class="document-nav">
-                                        <form action="../4-move-documents/A-category.html" method="get">
-                                            <input id="scenario-1" name="scenario" type="text" value="one">
-                                            <button onclick="" class="move-Document">Move document</button>
-                                        </form>
-                                        <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            {% else %}
-
-                            {% endif %}
-
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
