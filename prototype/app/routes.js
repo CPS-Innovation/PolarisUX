@@ -29,7 +29,8 @@ router.use('/version-35', require('./views/version-35/_routes'))
 router.use('/version-36', require('./views/version-36/_routes'))
 router.use('/version-37', require('./views/version-37/_routes'))
 router.use('/version-38', require('./views/version-38/_routes'))
-router.use('/version-38', require('./views/version-39/_routes'))
-router.use('/version-38', require('./views/version-40/_routes'))
+router.use('/version-39', require('./views/version-39/_routes'))
+router.use('/version-40', require('./views/version-40/_routes'))
+router.use('/version-41', require('./views/version-41/_routes'))
 
 module.exports = router

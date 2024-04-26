@@ -1,0 +1,91 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V1.html" %}
+{% endblock %}
+{% block beforeContent %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="wrapper gov-pages">
+            <h1 class="govuk-heading-l" style="">
+                Select the category for your document
+            </h1>
+            <div id="changeCategory-hint" class="govuk-hint">
+                {% if data['scenario'] == 'one' %}
+                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
+                {% elseif data['scenario'] == 'two' %}
+                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
+                {% elseif data['scenario'] == 'three' %}
+                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Exhibit - 1</strong></mark></p>
+                {% endif %}
+
+            </div>
+            <form method="get" action="B-doc-type">            
+                <fieldset>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-REVIEWS" name="move-single-Document" type="radio" value="Reviews">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-REVIEWS">Reviews</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-CASE" name="move-single-Document" type="radio" value="Case overview">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-CASE">Case overview</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-STATEMENTS" name="move-single-Document" type="radio" value="Statements">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-STATEMENTS">Statements</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-EXHIBITS" name="move-single-Document" type="radio" value="Exhibits">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-EXHIBITS">Exhibits</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-FORENSICS" name="move-single-Document" type="radio" value="Forensics">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-FORENSICS">Forensics</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-UNUSED" name="move-single-Document" type="radio" value="Unused materials">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-UNUSED">Unused materials</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-DEFENDANT" name="move-single-Document" type="radio" value="Defendant">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-DEFENDANT">Defendant</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-COURT" name="move-single-Document" type="radio" value="Court preparation">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-COURT">Court preparation</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-COMMS" name="move-single-Document" type="radio" value="Communications">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-COMMS">Communications</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="move-single-Document-UNCAT" name="move-single-Document" type="radio" value="Uncategorised">
+                            <label class="govuk-label govuk-radios__label" for="move-single-Document-UNCAT">Uncategorised</label>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <p><br></p>
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="MG11 - 1 - Preview" class="">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="MG11 - 1 - Preview" class="">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG12_1-PREVIEW.png" alt="Exhibit - 1 - Preview" class="">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

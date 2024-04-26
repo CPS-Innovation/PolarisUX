@@ -144,13 +144,17 @@ $(document).ready(function () {
 
     if ($('#cps-casework-concept').hasClass('concept')) {
         // $('main.case-files').css('top','-5em');
-        $('#left-column').css('top','14em');
+        // $('#left-column').css('top','14em');
         $('.cps-bar-wrapper').hide();
+        $('.blueBoxCPS').hide();
     }
 
-    if ($('#cps-casework-concept').hasClass('concept-search')) {
-        $('main#main-content').css('top','-2em');
-    }
+    // if ($('#cps-casework-concept').hasClass('concept-search')) {
+    //     // $('main#main-content').css('top','-2em');
+    //     $('main.case-files').css('padding-top','0 !important');
+    // }
+
+
 
 })
 
