@@ -352,6 +352,9 @@ main.case-files {
     #docCopy, .docCopy {
         text-align: center;
         margin-top: 0.5em;
+        &.old-verison {
+            margin-top: 15em;
+        }
         .govuk-notification-banner {
             text-align: left;
             width: 65%;

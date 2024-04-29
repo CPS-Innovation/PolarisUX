@@ -46,6 +46,19 @@ html.govuk-template {
     border-top: 5px solid $govuk-link-colour;
     padding: 0.5em 1em;
     border-radius: 5px 0 5px 5px;
+    hr {
+        margin: 0.5em 0 0.25em 0;
+        display: inline-block;
+        padding: 0;
+        border: none;
+        border-top: 1px dashed $govuk-border-colour;
+        width: 100%;
+        height: 0;
+        background: none;
+        &.bigger-margin {
+            margin: 1em 0 0.5em 0;
+        }
+    }
     .govuk-form-group {
         margin-bottom: 0;
         margin-top: 1em;
@@ -71,16 +84,6 @@ html.govuk-template {
                         box-shadow: 0 0 0 6px #b1b4b6;
                     } 
                 }
-                hr {
-                    margin: 0.5em 0 0.25em 0;
-                    display: inline-block;
-                    padding: 0;
-                    border: none;
-                    border-top: 1px dashed $govuk-border-colour;
-                    width: 100%;
-                    height: 0;
-                    background: none;
-                }        
                 .govuk-radios__label, .govuk-checkboxes__label {
                     padding-top: 6px;
                     padding-bottom: 5px;

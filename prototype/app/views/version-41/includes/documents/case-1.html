@@ -39,7 +39,7 @@
                             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-Unread" name="filterDocuments" type="radio" value="Unread documents" onclick="showUnread()">
-                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Unread">(<strong id="unread">20</strong>) Unread documents</label>
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-Unread">(<strong id="unread">24</strong>) Unread documents</label>
                                 </div>
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-Read" name="filterDocuments" type="radio" value="Read documents"  onclick="showRead()">
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="filterDocuments-All" name="filterDocuments" type="radio" value="All documents"  onclick="showAll()">
-                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-All">(<strong id="all">20</strong>) All documents</label>
+                                    <label class="govuk-label govuk-radios__label" for="filterDocuments-All">(<strong id="all">24</strong>) All documents</label>
                                 </div>
                             </div>
                         </fieldset>
@@ -160,6 +160,8 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                <!-- DOCUMENT NOTIFICATION - 3 - START -->
                                 <tr class="govuk-table__row document-holder document-3 alpha-2 date-2" id="group2-doc2">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
@@ -187,6 +189,8 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <!-- DOCUMENT NOTIFICATION - 3 - START -->
+
                                 <tr class="govuk-table__row document-holder document-4 alpha-3 date-3" id="group2-doc3">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
@@ -213,6 +217,8 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                <!-- DOCUMENT NOTIFICATION - 4 - START -->
                                 <tr class="govuk-table__row document-holder document-5 alpha-4 date-4" id="group2-doc4">
                                     <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                         <div class="wrapper">
@@ -240,6 +246,8 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <!-- DOCUMENT NOTIFICATION - 4 - END --> 
+                                                               
                             </tbody>
                         </table>
                     </div>
@@ -451,10 +459,11 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row hidden-section alpha-2 date-6">
+
+                            <!-- DOCUMENT NOTIFICATION - 5 - START -->
+                            <tr class="govuk-table__row hidden-section alpha-2 date-6" id="new-document-2">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
-                                        <strong class="govuk-tag loading-tag">Loading...</strong>
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
                                         <strong class="govuk-tag govuk-tag--green">New</strong>
                                         <a href="#document-top" class="show-case" data-doc="MG11_Shelagh_MCLOVE_retraction.pdf" data-document="12" onclick="return topFunction(), newDocument()" data-page="1">MG11 Shelagh MCLOVE retraction</a>
@@ -489,6 +498,9 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!-- DOCUMENT NOTIFICATION - 5 - END -->
+
+                            <!-- DOCUMENT NOTIFICATION - 1 - START -->
                             <tr class="govuk-table__row document-holder document-11 alpha-1 date-7" id="group3-doc6">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
                                     <div class="wrapper">
@@ -511,37 +523,7 @@
                                             <strong class="govuk-tag tooltip govuk-tag--grey">
                                                 V <span class="tooltiptext"><span class="visuallyhidden">for</span> Victim</span>
                                             </strong>
-    <!--                                         <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                P <span class="tooltiptext"><span class="visuallyhidden">for</span> Police</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                C <span class="tooltiptext"><span class="visuallyhidden">for</span> Child</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                F <span class="tooltiptext"><span class="visuallyhidden">for</span> Professional</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                X <span class="tooltiptext"><span class="visuallyhidden">for</span> Expert</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                L <span class="tooltiptext"><span class="visuallyhidden">for</span> Vulnerable</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                T <span class="tooltiptext"><span class="visuallyhidden">for</span> Intimidated</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                G <span class="tooltiptext"><span class="visuallyhidden">for</span> Greatest Needs</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                S <span class="tooltiptext"><span class="visuallyhidden">for</span> Special</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                H <span class="tooltiptext"><span class="visuallyhidden">for</span> Prisoner</span>
-                                            </strong>
-                                            <strong class="govuk-tag tooltip govuk-tag--grey">
-                                                I <span class="tooltiptext"><span class="visuallyhidden">for</span> Interpreter</span>
-                                            </strong>
-     -->                                    </p>
+                                        </p>
                                         <span class="govuk-caption-m">Only available on CMS</span>
                                     </div>
                                     <button class="more-options">
@@ -553,6 +535,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!-- DOCUMENT NOTIFICATION - 1 - END -->
 
                             {% if data['docType-Scenario-2-NAME'] and data['docType-CheckAnswers'] %}
                                 <tr class="govuk-table__row document-holder document-23 alpha-1 date-4" id="group10-doc2">
@@ -833,6 +816,8 @@
                                     </div>
                                 </td>
                             </tr>
+
+                            <!-- DOCUMENT NOTIFICATION - 6 - START -->
                             <tr class="govuk-table__row document-holder document-16 alpha-5 date-3" id="group6-doc3">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
@@ -860,6 +845,8 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!-- DOCUMENT NOTIFICATION - 6 - END -->
+
                             <tr class="govuk-table__row document-holder document-17 alpha-1 date-5" id="group6-doc4">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
@@ -932,10 +919,10 @@
                             </tr>
                         </thead>
                         <tbody id="accordion-tbody-defendant">
-                            <tr class="govuk-table__row hidden-section alpha-1 date-1">
+                            <!-- DOCUMENT NOTIFICATION - 2 - START -->
+                            <tr class="govuk-table__row hidden-section alpha-1 date-1" id="new-document-1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
-                                        <strong class="govuk-tag loading-tag">Loading...</strong>
                                         <strong class="govuk-tag govuk-tag--turquoise">Active Document</strong>
                                         <strong class="govuk-tag govuk-tag--green">New</strong>
                                         <a href="#document-top" class="show-case" data-doc="PRE_CONS_D.pdf" data-document="20" onclick="return topFunction(), newDocument()" data-page="9">PRE CONS D</a>
@@ -959,6 +946,8 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!-- DOCUMENT NOTIFICATION - 2 - END -->
+
                             <tr class="govuk-table__row holder">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
                             </tr>

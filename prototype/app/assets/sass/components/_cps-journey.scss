@@ -8,6 +8,18 @@
     margin-bottom: 0 !important;
 }
 
+.govuk-width-container {
+     &.over-ride {
+          margin: 0 !important;
+     }
+}
+
+main {
+     &.over-ride {
+          padding: 0 !important;
+     }
+}
+
 
 #dashboard {
      float: none;
