@@ -501,7 +501,7 @@ main.search {
                         p {
                             a {
                                 font-weight: normal;
-                                color: $govuk-link-visited-colour; 
+                                color: $govuk-link-visited-colour;
                             }
                         }
                         &:before {
@@ -532,6 +532,11 @@ main.search {
                             margin-top: 0.25em;
                             font-weight: bold;
                             color: $govuk-link-colour;
+                            &.disabled {
+                                color: $govuk-secondary-text-colour;
+                                font-weight: normal;
+                                text-decoration: none;
+                            }
                         }
                         span {
                             color: $govuk-secondary-text-colour;
