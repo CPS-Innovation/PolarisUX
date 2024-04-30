@@ -298,6 +298,7 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+        $('#discardedModal').removeClass('rj-dont-display');
     }, 35000);
 
     $(".date-stamp-DOC6").on("click", function (e) {
