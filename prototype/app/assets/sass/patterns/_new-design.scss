@@ -190,9 +190,9 @@ button {
         &.statement {
             &:hover, &:active, &:focus {
                 .visuallyhidden {
-                    margin-left: -35px;
+                    margin-left: -20px;
                     &:after {
-                        right: 68%;
+                        right: 81%;
                     }
                 }
             }
@@ -492,6 +492,9 @@ main.search {
                     }
                     &.show {
                         display: inline-block;
+                    }
+                    &.one {
+                        border-radius: 0 0 5px 5px;
                     }
                     &.read {
                         // border-left: none;

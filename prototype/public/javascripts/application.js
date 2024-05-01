@@ -134,7 +134,9 @@ $(document).ready(function () {
                 months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }       
+        } 
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 5000);
 
     $(".date-stamp-DOC1").on("click", function (e) {
@@ -163,6 +165,8 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 15000);
 
     $(".date-stamp-DOC2").on("click", function (e) {
@@ -192,6 +196,8 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 20000);
 
     $(".date-stamp-DOC3").on("click", function (e) {
@@ -236,6 +242,8 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 20000);
 
     $(".date-stamp-DOC4").on("click", function (e) {
@@ -271,6 +279,8 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 30000);
 
     $(".date-stamp-DOC5").on("click", function (e) {
@@ -280,6 +290,8 @@ $(document).ready(function () {
         $("#left-column").scrollTop($("[id=new-document-2]").position().top);
     });
 
+    $('#group6-doc3 td .govuk-tag--red, #group6-doc3 td .hidden').hide();        
+
     // Notifications - Document 6 - DISCARDED
     setTimeout(function() {
         $('.notifications-panel').addClass('scroll');
@@ -287,7 +299,9 @@ $(document).ready(function () {
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.six").addClass('show');    
         $('.accordion-section.section-6 .accordion-section-header .unused-materials').html('4');
-        $('#group6-doc3').hide();        
+        $('#group6-doc3 td').removeClass('openMe unreadDocument'); 
+        $('#group6-doc3 td .govuk-tag--red, #group6-doc3 td .hidden').show();        
+        $('#group6-doc3 td a.show-case').hide();        
         document.getElementById("date-stamp-DOC6").innerHTML = formatAMPM();
         function formatAMPM() {
         var d = new Date(),
@@ -299,6 +313,8 @@ $(document).ready(function () {
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         }
         // $('#discardedModal').removeClass('rj-dont-display');
+        var data = parseFloat($('.notifications-number').text()) + 1;
+        $('.notifications-number').html(data);
     }, 35000);
 
     $(".date-stamp-DOC6").on("click", function (e) {
