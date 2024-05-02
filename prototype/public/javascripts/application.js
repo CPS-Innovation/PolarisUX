@@ -53,6 +53,14 @@ $(window).scroll(function() {
     } else {
         $('.search-bar-wrapper').show();
     }
+
+    if ($(this).scrollTop()>130) {
+        $('.updated-message').addClass('sticky');
+    } else {
+        $('.updated-message').removeClass('sticky');
+    }
+
+
 });
 
 // =================================== Header =================================== //

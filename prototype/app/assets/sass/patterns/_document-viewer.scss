@@ -304,6 +304,11 @@ main.case-files {
             }
             .updated-message {
                 border-left: 5px solid govuk-colour("orange");
+                &.sticky {
+                    position: fixed;
+                    top: 60px;
+                    width: 68.675%;
+                }
             }
             .redaction-message {
                 border-left: none;
