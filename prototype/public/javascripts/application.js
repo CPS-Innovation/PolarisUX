@@ -54,7 +54,7 @@ $(window).scroll(function() {
         $('.search-bar-wrapper').show();
     }
 
-    if ($(this).scrollTop()>130) {
+    if ($(this).scrollTop()>135) {
         $('.updated-message').addClass('sticky');
     } else {
         $('.updated-message').removeClass('sticky');
@@ -120,235 +120,6 @@ $(document).ready(function () {
             $('.pinkOverlay, .greenOverlay, .blueOverlay, .yellowOverlay').removeClass('changeHue');
         }
     });
-
-    // Notifications - Control
-    $(".notifications").on("click", function (e) {
-        e.preventDefault();
-        $(this).toggleClass('open');
-        $('.notifications-panel').toggle();
-    });
-
-    // Notifications - Document 1 - ERROR
-    setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.one").addClass('show'); 
-        document.getElementById("date-stamp-DOC1").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        } 
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 5000);
-
-    $(".date-stamp-DOC1").on("click", function (e) {
-        $('.accordion-section.section-3').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
-    });
-
-    // Notifications - Document 2 - NEW
-    setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.two").addClass('show');    
-        $('table tbody#accordion-tbody-defendant tr.hidden-section').show().addClass('new');
-        $('table tbody#accordion-tbody-defendant tr.hidden-section td').addClass('newDocument');
-        $('table tbody#accordion-tbody-defendant tr.hidden-section .govuk-tag--green').show();
-        $('table tbody#accordion-tbody-defendant tr.holder').hide();
-        $('.accordion-section.section-7 .accordion-section-header').removeClass('no-documents');
-        $('.accordion-section.section-7 .accordion-section-header .defendants').html('1');
-        document.getElementById("date-stamp-DOC2").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 15000);
-
-    $(".date-stamp-DOC2").on("click", function (e) {
-        e.preventDefault();
-        $('.accordion-section.section-7').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
-        $('.govuk-tag.govuk-tag--turquoise').hide();
-        $('table tbody#accordion-tbody-defendant tr.hidden-section .govuk-tag.govuk-tag--turquoise').show();
-        $('table tbody tr td').removeClass('current');
-        $('table tbody#accordion-tbody-defendant tr.hidden-section td').addClass('current');
-        $("#left-column").scrollTop($("[id=hidden-documents-2]").position().top);
-    });
-
-    // Notifications - Document 3 - UPDATE
-    setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.three").addClass('show');    
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc2 .govuk-tag--orange').show();
-        document.getElementById("date-stamp-DOC3").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 20000);
-
-    $(".date-stamp-DOC3").on("click", function (e) {
-        e.preventDefault();
-        $('.accordion-section.section-2').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
-        $('.govuk-tag.govuk-tag--turquoise').hide();
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc2 .govuk-tag.govuk-tag--turquoise').show();
-        $('table tbody tr td').removeClass('current');
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc2 td').addClass('current');
-        $("#left-column").scrollTop($("[id=group2-doc2]").position().top);
-        $('.updated-message').show();
-    });
-
-    // function updateDocument() {
-    //     $('.govuk-tabs__panel').prepend(`
-    //         <div class="updated-message">
-    //             <div class="govuk-warning-text">
-    //                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    //                 <strong class="govuk-warning-text__text">
-    //                     <span class="govuk-warning-text__assistive">Warning</span>
-    //                     <span class="info-text">This document has been updated</span>
-    //                 </strong>
-    //             </div>
-    //         </div> 
-    //     `);
-    // }
-
-    // Notifications - Document 4 - UPDATE
-    setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.four").addClass('show');    
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc4 .govuk-tag--orange').show();
-        document.getElementById("date-stamp-DOC4").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 20000);
-
-    $(".date-stamp-DOC4").on("click", function (e) {
-        e.preventDefault();
-        $('.accordion-section.section-2').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
-        $('.govuk-tag.govuk-tag--turquoise').hide();
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc4 .govuk-tag.govuk-tag--turquoise').show();
-        $('table tbody tr td').removeClass('current');
-        $('table tbody#accordion-tbody-case-overview tr#group2-doc4 td').addClass('current');
-        $("#left-column").scrollTop($("[id=group2-doc4]").position().top);
-        $('.updated-message').show();
-    });
-
-
-    // Notifications - Document 5 - NEW
-    setTimeout(function() {
-        $('.notifications-panel').addClass('scroll');
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.five").addClass('show');    
-        $('table tbody#accordion-tbody-statements tr.hidden-section').show().addClass('new');
-        $('table tbody#accordion-tbody-statements tr.hidden-section td').addClass('newDocument');
-        $('table tbody#accordion-tbody-statements tr.hidden-section .govuk-tag--green').show();
-        $('.accordion-section.section-3 .accordion-section-header .statements').html('7');
-        document.getElementById("date-stamp-DOC5").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 30000);
-
-    $(".date-stamp-DOC5").on("click", function (e) {
-        e.preventDefault();
-        $('.accordion-section.section-3').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
-        $("#left-column").scrollTop($("[id=new-document-2]").position().top);
-    });
-
-    $('#group6-doc3 td .govuk-tag--red, #group6-doc3 td .hidden').hide();        
-
-    // Notifications - Document 6 - DISCARDED
-    setTimeout(function() {
-        $('.notifications-panel').addClass('scroll');
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-panel").addClass('alerts-working');
-        $(".notifications-panel .case-alert.six").addClass('show');    
-        $('.accordion-section.section-6 .accordion-section-header .unused-materials').html('4');
-        $('#group6-doc3 td').removeClass('openMe unreadDocument'); 
-        $('#group6-doc3 td .govuk-tag--red, #group6-doc3 td .hidden').show();        
-        $('#group6-doc3 td a.show-case').hide();        
-        document.getElementById("date-stamp-DOC6").innerHTML = formatAMPM();
-        function formatAMPM() {
-        var d = new Date(),
-            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-            ampm = d.getHours() >= 12 ? 'pm' : 'am',
-                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-        }
-        // $('#discardedModal').removeClass('rj-dont-display');
-        var data = parseFloat($('.notifications-number').text()) + 1;
-        $('.notifications-number').html(data);
-    }, 35000);
-
-    $(".date-stamp-DOC6").on("click", function (e) {
-        e.preventDefault();
-        $(this).parent().parent().addClass('read');
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  
 
 })
 
@@ -2365,6 +2136,17 @@ function updateDocument10() {
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 $(document).ready(function () {
     document.getElementById("date-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    document.getElementById("date-stamp-2").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
