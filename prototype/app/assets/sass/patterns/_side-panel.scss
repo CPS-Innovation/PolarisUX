@@ -246,13 +246,24 @@
 
                                 //     }
                                 // }
+                                strong {
+                                    &.govuk-tag {
+                                        &.current {
+                                            display: none !important;
+                                        }
+                                    }
+                                }
                                 &.current {
                                     // background: rgba(191,227,224,0.2);
                                     padding-right: 0.5em;
-                                    border-right: 5px solid #bfe3e0;
+                                    // border-right: 5px solid #bfe3e0;
+                                    border-right: 5px solid $govuk-link-colour;
                                     strong {
                                         &.govuk-tag {
                                             &.govuk-tag--turquoise {
+                                                display: inline-block !important;
+                                            }
+                                            &.current {
                                                 display: inline-block !important;
                                             }
                                         }

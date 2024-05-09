@@ -1224,7 +1224,7 @@
     }
 }
 
-#discardedDocument {
+#discardedDocument, #warningModalModal {
     .govuk-warning-text {
         color: $govuk-secondary-text-colour;
         .document-title-7 {
@@ -1234,7 +1234,7 @@
     p.holder {
         .info {
             display: inline-block;
-            width: 4em;
+            min-width: 4em;
             color: $govuk-secondary-text-colour;
         }
         .answer {

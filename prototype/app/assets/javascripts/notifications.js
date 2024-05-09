@@ -53,6 +53,10 @@ $(document).ready(function () {
     $(".date-stamp-DOC1").on("click", function (e) {
         $('.accordion-section.section-3').attr("aria-expanded", "true");
         $(this).parent().parent().addClass('read');
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
     // Notifications - Document 2 - NEW
@@ -107,6 +111,10 @@ $(document).ready(function () {
         $('table tbody tr td').removeClass('current');
         $('table tbody#accordion-tbody-defendant tr.hidden-section td').addClass('current');
         $("#left-column").scrollTop($("[id=hidden-documents-2]").position().top);
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
     // Notifications - Document 3 - UPDATE
@@ -158,6 +166,11 @@ $(document).ready(function () {
         $('table tbody#accordion-tbody-case-overview tr#group2-doc2 td').addClass('current');
         $("#left-column").scrollTop($("[id=group2-doc2]").position().top);
         $('.updated-message').show();
+
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
     // Notifications - Document 4 - UPDATE
@@ -208,6 +221,11 @@ $(document).ready(function () {
         $('table tbody#accordion-tbody-case-overview tr#group2-doc4 td').addClass('current');
         $("#left-column").scrollTop($("[id=group2-doc4]").position().top);
         $('.updated-message').show();
+
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
 
@@ -259,6 +277,11 @@ $(document).ready(function () {
         $('.accordion-section.section-3').attr("aria-expanded", "true");
         $(this).parent().parent().addClass('read');
         $("#left-column").scrollTop($("[id=new-document-2]").position().top);
+
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
     $('#group6-doc3 td .govuk-tag--red, #group6-doc3 td .hidden').hide();        
@@ -307,6 +330,11 @@ $(document).ready(function () {
     $(".date-stamp-DOC6").on("click", function (e) {
         e.preventDefault();
         $(this).parent().parent().addClass('read');
+
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
     });
 
 })

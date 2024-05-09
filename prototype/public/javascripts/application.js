@@ -643,6 +643,7 @@ $(document).ready(function () {
         var documentTitle = $(this).parent().parent().find('.show-case').text();
         $('#document-title-notes').text(documentTitle);
         $('#document-title-notes-New').text(documentTitle);
+        $('.document-title-10').text(documentTitle);
     });
 
 })
