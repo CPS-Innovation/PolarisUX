@@ -100,7 +100,7 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         } 
-    }, 15000);
+    }, 30000);
 
     $(".date-stamp-DOC2").on("click", function (e) {
         e.preventDefault();
@@ -154,7 +154,7 @@ $(document).ready(function () {
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         } 
 
-    }, 20000);
+    }, 70000);
 
     $(".date-stamp-DOC3").on("click", function (e) {
         e.preventDefault();
@@ -209,7 +209,7 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         } 
-    }, 20000);
+    }, 70000);
 
     $(".date-stamp-DOC4").on("click", function (e) {
         e.preventDefault();
@@ -270,7 +270,7 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         } 
-    }, 30000);
+    }, 150000);
 
     $(".date-stamp-DOC5").on("click", function (e) {
         e.preventDefault();
@@ -325,7 +325,7 @@ $(document).ready(function () {
                 days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
             return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
         } 
-    }, 35000);
+    }, 200000);
 
     $(".date-stamp-DOC6").on("click", function (e) {
         e.preventDefault();
