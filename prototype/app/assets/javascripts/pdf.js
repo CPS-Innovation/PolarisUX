@@ -33529,7 +33529,7 @@
                                     (0, I.jsxs)("div", {
                                         className: "bulk-redactions",
                                         children: [
-                                            (0, I.jsx)("p", { className: "intro", children: "This appears 21 times in the document" }),
+                                            (0, I.jsx)("p", { className: "intro", children: "This appears " + "21" + " times in the document" }),
                                         ],
                                     }),
                                     (0, I.jsxs)("div", {

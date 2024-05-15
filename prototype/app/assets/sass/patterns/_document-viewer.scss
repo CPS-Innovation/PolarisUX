@@ -608,11 +608,13 @@ main.case-files {
             .bulk-redactions {
                 margin: 0px -10px 10px -10px;
                 padding: 7px 0 7px 0;
-                background: govuk-colour("light-grey");
+                background: $govuk-link-colour;
+                // background: govuk-colour("light-grey");
                 border-radius: 6px 6px 0 0;
                 p.intro {
                     font-size: 0.875rem;
-                    color: $govuk-secondary-text-colour;
+                    color: white;
+                    // color: $govuk-secondary-text-colour;
                     font-style: italic;
                     margin-bottom: 0;
                     text-align: center;

@@ -140,6 +140,15 @@ $(document).mouseup(function(e) {
         $('.notifications').removeClass('open');
     }
 
+    var containerV3 = $(".sort-documents-nav");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV3.is(e.target) && containerV3.has(e.target).length === 0) {
+        $('.sort-documents-nav').removeClass('open');
+        $('.sort-documents').removeClass('open');
+    }
+
+
 });
 
 // =================================== NAVIGATION =================================== //
