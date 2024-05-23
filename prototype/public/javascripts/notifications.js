@@ -13,10 +13,74 @@ $(document).ready(function () {
         $('.notifications-panel-STICKY').toggle();
     });
 
+    $(".clear-notification").on("click", function (e) {
+        e.preventDefault();
+        // $(this).parent().parent().hide();
+        var data1 = parseFloat($('.notifications-number').text()) - 1;
+        var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+        $('.notifications-number').html(data1);
+        $('.notifications-number-STICKY').html(data2);
+        if (data1 == '0') {
+            $('.clear-all').hide();
+            $('.alert-button, .notifications-number').removeClass('alert');
+            $('.notifications-panel').removeClass('alerts-working');
+        } else if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
+        if (data2 == '0') {
+            $('.clear-all').hide();
+            $('.alert-button').removeClass('alert');
+            $('.notifications-panel-STICKY').removeClass('alerts-working');
+        } else if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
+
+        // 1 
+        if ($(this).parents('.one').length) {
+            $('.case-alert.one').hide();
+        } 
+        // 2 
+        if ($(this).parents('.two').length) {
+            $('.case-alert.two').hide();
+        }            
+        // 3 
+        if ($(this).parents('.three').length) {
+            $('.case-alert.three').hide();
+        } 
+        // 4 
+        if ($(this).parents('.four').length) {
+            $('.case-alert.four').hide();
+        }  
+        // 5 
+        if ($(this).parents('.five').length) {
+            $('.case-alert.five').hide();
+        } 
+        // 6 
+        if ($(this).parents('.six').length) {
+            $('.case-alert.six').hide();
+        }            
+
+    });
+
+    $(".clear-all-notifications").on("click", function (e) {
+        $('.notifications-number').html('0');
+        $('.notifications-number-STICKY').html('0');
+        $('.clear-all').hide();
+        $('.alert-button, .notifications-number').removeClass('alert');
+        $('.notifications-panel').removeClass('alerts-working');
+        $('.notifications-panel-STICKY').removeClass('alerts-working');
+    });
+
+    $('.clear-all').hide();
+
     // Notifications - Document 1 - ERROR
     setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.one").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -25,6 +89,18 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+        $('.clear-all').show();
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC1").innerHTML = formatAMPM();
@@ -52,7 +128,7 @@ $(document).ready(function () {
 
     $(".date-stamp-DOC1").on("click", function (e) {
         $('.accordion-section.section-3').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
         var data1 = parseFloat($('.notifications-number').text()) - 1;
         var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
         $('.notifications-number').html(data1);
@@ -61,8 +137,8 @@ $(document).ready(function () {
 
     // Notifications - Document 2 - NEW
     setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.two").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -77,6 +153,17 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC2").innerHTML = formatAMPM();
@@ -105,7 +192,7 @@ $(document).ready(function () {
     $(".date-stamp-DOC2").on("click", function (e) {
         e.preventDefault();
         $('.accordion-section.section-7').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
         $('.govuk-tag.govuk-tag--turquoise').hide();
         $('table tbody#accordion-tbody-defendant tr.hidden-section .govuk-tag.govuk-tag--turquoise').show();
         $('table tbody tr td').removeClass('current');
@@ -119,8 +206,8 @@ $(document).ready(function () {
 
     // Notifications - Document 3 - UPDATE
     setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.three").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -130,6 +217,17 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC3").innerHTML = formatAMPM();
@@ -159,7 +257,7 @@ $(document).ready(function () {
     $(".date-stamp-DOC3").on("click", function (e) {
         e.preventDefault();
         $('.accordion-section.section-2').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
         $('.govuk-tag.govuk-tag--turquoise').hide();
         $('table tbody#accordion-tbody-case-overview tr#group2-doc2 .govuk-tag.govuk-tag--turquoise').show();
         $('table tbody tr td').removeClass('current');
@@ -175,8 +273,8 @@ $(document).ready(function () {
 
     // Notifications - Document 4 - UPDATE
     setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.four").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -186,6 +284,17 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC4").innerHTML = formatAMPM();
@@ -214,7 +323,7 @@ $(document).ready(function () {
     $(".date-stamp-DOC4").on("click", function (e) {
         e.preventDefault();
         $('.accordion-section.section-2').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
         $('.govuk-tag.govuk-tag--turquoise').hide();
         $('table tbody#accordion-tbody-case-overview tr#group2-doc4 .govuk-tag.govuk-tag--turquoise').show();
         $('table tbody tr td').removeClass('current');
@@ -233,8 +342,8 @@ $(document).ready(function () {
     setTimeout(function() {
         $('.notifications-panel').addClass('scroll');
         $('.notifications-panel-STICKY').addClass('scroll');
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.five").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -247,6 +356,17 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC5").innerHTML = formatAMPM();
@@ -275,7 +395,7 @@ $(document).ready(function () {
     $(".date-stamp-DOC5").on("click", function (e) {
         e.preventDefault();
         $('.accordion-section.section-3').attr("aria-expanded", "true");
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
         $("#left-column").scrollTop($("[id=new-document-2]").position().top);
 
         var data1 = parseFloat($('.notifications-number').text()) - 1;
@@ -288,8 +408,8 @@ $(document).ready(function () {
 
     // Notifications - Document 6 - DISCARDED
     setTimeout(function() {
-        $(".notifications .alert-button").addClass('alert');
-        $(".notifications-STICKY .alert-button").addClass('alert');
+        $(".notifications .alert-button, .notifications .notifications-number").addClass('alert');
+        $(".notifications-STICKY .alert-button, .notifications-STICKY .notifications-number").addClass('alert');
         $(".notifications-panel").addClass('alerts-working');
         $(".notifications-panel .case-alert.six").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
@@ -302,6 +422,17 @@ $(document).ready(function () {
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
+
+        if (data1 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        } 
+        if (data2 >= '1') {
+            $('.clear-all').show();
+            $('.alert-button, .notifications-number').addClass('alert');
+            $('.notifications-panel').addClass('alerts-working');
+        }
 
         // Time 1
         document.getElementById("date-stamp-DOC6").innerHTML = formatAMPM();
@@ -329,7 +460,7 @@ $(document).ready(function () {
 
     $(".date-stamp-DOC6").on("click", function (e) {
         e.preventDefault();
-        $(this).parent().parent().addClass('read');
+        $(this).parent().parent().parent().addClass('read');
 
         var data1 = parseFloat($('.notifications-number').text()) - 1;
         var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
@@ -338,3 +469,4 @@ $(document).ready(function () {
     });
 
 })
+

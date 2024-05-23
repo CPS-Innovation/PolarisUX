@@ -148,6 +148,14 @@ $(document).mouseup(function(e) {
         $('.sort-documents').removeClass('open');
     }
 
+    var containerV4 = $(".tasks-panel");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV4.is(e.target) && containerV4.has(e.target).length === 0) {
+        containerV4.hide();
+        $('.tasks').removeClass('open');
+    }
+
 
 });
 
@@ -167,6 +175,16 @@ $(document).ready(function () {
     if ($('#image-wrapper').hasClass('D-my-cases')) {
         $('#global-navigation ul li').removeClass('current');
         $('#global-navigation ul li.my-cases').addClass('current');
+    }
+
+    if ($('#image-wrapper').hasClass('I-CMS-Classic')) {
+        $('#global-navigation ul li').removeClass('current');
+        $('#global-navigation ul li.cms-classic').addClass('current');
+    }
+
+    if ($('#image-wrapper').hasClass('J-CMS-Modern')) {
+        $('#global-navigation ul li').removeClass('current');
+        $('#global-navigation ul li.cms-modern').addClass('current');
     }
 
     if ($('#cps-casework-concept').hasClass('concept')) {
@@ -1636,6 +1654,20 @@ function zoomOut() {
     var width = pic.clientWidth;
     pic.style.width = width - 100 + "px";
 }
+
+
+// var z = document.getElementById('zoomPercentage-V1');
+function zoom() {
+    // var value = z.value;
+    // var text = z.options[z.selectedIndex].text;
+    // alert(value, text);
+    var zoomPercentage = $('#zoomPercentage-V1').find(':selected').val();
+    if (zoomPercentage == "75") {
+        // alert('working');
+    }
+}
+// z.onchange = onChange;
+// onChange();
 
 function marqueeOn() {
     $("#marquee").addClass('on');

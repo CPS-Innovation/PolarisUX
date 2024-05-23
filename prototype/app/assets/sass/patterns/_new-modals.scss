@@ -10,6 +10,19 @@
     }
 }
 
+#email-document-modal {
+    form {
+        margin-top: 1.5em;
+        padding: 0 0.65em;
+        .cta-group {
+            .non-button {
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
+
 #redactAllModal {
     z-index: 9999999;
 }

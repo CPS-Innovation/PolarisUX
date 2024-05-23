@@ -17,6 +17,7 @@
 <script src="/public/javascripts/autocomplete/docType-Communications.js"></script>
 <script src="/public/javascripts/autocomplete/docType-Uncategorised.js"></script>
 <script src="/public/javascripts/notifications.js"></script>
+<script src="/public/javascripts/tasks-and-email.js"></script>
 <!-- Auto complete - END -->
 
 <script src="https://unpkg.com/drag-on-drop@3.6.1/dist/dragon-drop.js"></script>
@@ -192,11 +193,33 @@
                                     <!-- <button onclick="" class="">Remove document pages</button>-->
                                     <button onclick="openHistoryModal(), documentTitle()" class="notes-trigger">View previous document version(s) (<strong><span class="document-number">1</span></strong>)</button>
                                     <button onclick="openRemovePagesModal(), documentTitle()" class="">Remove document pages</button>
+                                    <button onclick="openEmailModal(), documentTitle()" class="">Email document</button>
                                     <!-- <button onclick="openNotesModal(), documentTitle()" class="notes-trigger">Add a note (<span>4</span>)</button> -->
                                     <hr>
                                     <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a technical problem</button>
                                 </div>
                             </div>
+
+                            <!-- start Zoom - Select -->
+                            <div class="govuk-form-group" id="zoom-wrapper">
+                                <label class="govuk-label govuk-visually-hidden" for="zoomPercentage-V2">Zoom</label>
+                                <select class="govuk-select" id="zoomPercentage-V2" name="zoomPercentage-V2" onclick="zoom()">
+                                    <option value="800">800%</option>
+                                    <option value="400">400%</option>
+                                    <option value="300">300%</option>
+                                    <option value="200">200%</option>
+                                    <option value="175">175%</option>
+                                    <option value="150">100%</option>
+                                    <option value="125">125%</option>
+                                    <option value="100" selected>100%</option>
+                                    <option value="75">75%</option>
+                                    <option value="50">50%</option>
+                                    <option value="25">25%</option>
+                                    <option value="10">10%</option>
+                                </select>
+                            </div>                                    
+                            <!-- end Zoom - Select -->
+
                             <!-- start Zoom in and out --> 
                             <button onclick="zoomOut()" class="zoom zoomOut"><span>Zoom out of document</span></button>
                             <button onclick="zoomIn()" class="zoom zoomIn"><span>Zoom in to document</span></button>
@@ -205,6 +228,7 @@
                             <!-- start Select Tool --> 
                             <button onclick="marqueeOn()" class="marquee" id="marquee"><span>Redact area tool</span></button>
                             <!-- end Select Tool --> 
+
 
                             <div class="buttons">
                                 <p class="govuk-body-s inPageSearchMargins deactivatedPrevious">Previous</p>
@@ -226,11 +250,33 @@
                                     <!-- <button onclick="" class="">Remove document pages</button>-->
                                     <button onclick="openHistoryModal(), documentTitle()" class="notes-trigger">View previous document version(s) (<strong><span class="document-number">1</span></strong>)</button>
                                     <button onclick="openRemovePagesModal(), documentTitle()" class="">Remove document pages</button>
+                                    <button onclick="openEmailModal(), documentTitle()" class="">Email document</button>
                                     <!-- <button onclick="openNotesModal(), documentTitle()" class="notes-trigger">Add a note (<span>4</span>)</button> -->
                                     <hr>
                                     <button onclick="openModalProblem(), documentTitle()" class="openNewDoc">Report a technical problem</button>
                                 </div>
                             </div>
+
+                            <!-- start Zoom - Select -->
+                            <div class="govuk-form-group" id="zoom-wrapper">
+                                <label class="govuk-label govuk-visually-hidden" for="zoomPercentage-V1">Zoom</label>
+                                <select class="govuk-select" id="zoomPercentage-V1" name="zoomPercentage-V1" onclick="zoom()">
+                                    <option value="800">800%</option>
+                                    <option value="400">400%</option>
+                                    <option value="300">300%</option>
+                                    <option value="200">200%</option>
+                                    <option value="175">175%</option>
+                                    <option value="150">100%</option>
+                                    <option value="125">125%</option>
+                                    <option value="100" selected>100%</option>
+                                    <option value="75">75%</option>
+                                    <option value="50">50%</option>
+                                    <option value="25">25%</option>
+                                    <option value="10">10%</option>
+                                </select>
+                            </div>                                    
+                            <!-- end Zoom - Select -->
+
                             <!-- start Zoom in and out -->
                             <button onclick="zoomOut()" class="zoom zoomOut"><span>Zoom out of document</span></button>
                             <button onclick="zoomIn()" class="zoom zoomIn"><span>Zoom in to document</span></button>
@@ -283,6 +329,20 @@
                             <h3 class="govuk-heading-s">Potential redactions</h3>
                             <p>The following terms are items that could potentially be redacted in this document:</p>
                             <p><span id="SRNumber">(25)</span> Named individuals, <span>(2)</span> Email addresses, <span>(2)</span> Previous convictions, <span>(1)</span> Date of birth</p>
+                        </div> 
+
+                        <div class="email-message">
+                            <h3 class="govuk-heading-s">Document emailed</h3>
+                            <p>This document has been emailed to: <a href="" id="emailRecipients-Content">Name</a>, <span id="email-date-stamp">date</span></p>
+                            <details class="govuk-details" data-module="govuk-details">
+                                <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">View details</span>
+                                </summary>
+                                <div class="govuk-details__text" id="">
+                                    <p>Title: <strong id="emailTitle-Content">Title text</strong></p>
+                                    <p>Text: <strong id="emailText-Content">Text text</strong></p>
+                                </div>
+                            </details>
                         </div> 
 
 

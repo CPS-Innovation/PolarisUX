@@ -83,6 +83,17 @@ main.case-files {
                     display: inline-block;
                     width: auto;
                 }
+                #zoom-wrapper {
+                    display: inline-block;
+                    margin: 10px 0px 10px 10px;
+                    float: right;
+                    #zoomPercentage-V1, #zoomPercentage-V2 {
+                        min-width: auto;
+                        font-size: 1rem;
+                        max-height: 1rem;
+                        max-height: 2.45em;
+                    }
+                }
                 .zoom, .marquee {
                     display: inline-block;
                     float: right;
@@ -91,8 +102,8 @@ main.case-files {
                     border-radius: 5px;
                     position: relative;
                     // text-indent: -1000em;
-                    width: 2.75em;
-                    height: 2.75em;
+                    width: 2.9em;
+                    height: 2.9em;
                     span {
                         display: none;
                     }
@@ -255,7 +266,7 @@ main.case-files {
                     }
                 }
             }         
-            .error-message, .updated-message, .discarded-message, .redaction-message, .suggested-redactions-panel {
+            .error-message, .updated-message, .discarded-message, .redaction-message, .suggested-redactions-panel, .email-message {
                 display: none;
                 background: govuk-colour("light-grey");
                 padding: 0.65em 1em 1em 1em;
@@ -327,7 +338,7 @@ main.case-files {
                     }
                 }
             }
-            .suggested-redactions-panel {
+            .suggested-redactions-panel, .email-message {
                 border-left: none;
                 border-bottom: 5px solid $govuk-border-colour;
                 h3 {
@@ -347,6 +358,24 @@ main.case-files {
                 }
                 span {
 
+                }
+            }
+            .email-message { 
+                // display: block !important;
+                p {
+                    span {
+                        font-weight: normal;
+                        color: $govuk-secondary-text-colour;
+                    }
+                }
+                .govuk-details {
+                    margin-left: 0;
+                    p {
+                        strong {
+                            color: $govuk-text-colour;
+                            font-weight: normal;
+                        }
+                    }
                 }
             }
         }
