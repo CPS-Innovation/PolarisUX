@@ -1,0 +1,229 @@
+
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% include "includes/cps/nav/v8/logNav.html" %}
+{% include "includes/cps/nav/v8/logHomeNav.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+<style>
+.govuk-footer__copyright-logo {
+  display: none;
+}
+
+.govuk-header__logotype {
+ /* display: none;*/
+}
+
+@media (min-width: 48.0625em) {
+.govuk-header__logo {
+  width: 50% !important;
+}
+}
+
+  @media (max-width: 641px) {
+.govuk-header__logotype-text {
+  font-size: 22px;
+}
+ }
+</style>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.autocomplete-element').each(function() {
+      var selectEl = document.querySelector('#' + $(this).attr('id') )
+      accessibleAutocomplete.enhanceSelectElement({
+        autoselect: false,
+        defaultValue: '',
+        minLength: 2,
+        selectElement: selectEl,
+        placeholder: 'Start typing to search apprenticeships',
+        showAllValues: false
+      })
+    })
+  })
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.autocomplete-element-EPAO').each(function() {
+      var selectEl = document.querySelector('#' + $(this).attr('id') )
+      accessibleAutocomplete.enhanceSelectElement({
+        autoselect: false,
+        defaultValue: '',
+        minLength: 2,
+        selectElement: selectEl,
+        placeholder: 'Start typing to search EPAO',
+        showAllValues: false
+      })
+    })
+  })
+</script>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Redaction details</h1>
+
+        <form method="get" action="checkanswers">
+          <!--   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" /> -->
+<!--             <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Case URN</label>
+
+                <input class="govuk-input govuk-!-width-one-quarter " id="caseURN" name="CaseURN" type="text" value=""/>
+            </div> -->
+
+         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+         <div class="govuk-form-group ">
+              <label class="govuk-label bold-label" for="sort">
+                Document type
+              </label>
+              <select class="govuk-select govuk-!-width-one-half" id="docType" name="docType">
+                <option value="MG 0">MG 0</option>
+                <option value="MG 1" >MG 1</option>
+                <option value="MG 2">MG 2</option>
+                <option value="MG 3">MG 3</option>
+                 <option value="MG 4">MG 4</option>
+                  <option value="MG 4A">MG 4A</option>
+                   <option value="MG 4B">MG 4B</option>
+                    <option value="MG 4C">MG 4C</option>
+                     <option value="MG 4D">MG 4D</option>
+                      <option value="MG 4E">MG 4E</option>
+              </select>
+            </div>
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+         <div class="govuk-form-group ">
+              <label class="govuk-label bold-label" for="sort">
+               Missed redaction
+              </label>
+              <select class="govuk-select govuk-!-width-one-half" id="redactType" name="redactType">
+                <option value="Named individual">Named individual</option>
+                <option value="Title" >Title</option>
+                <option value="Occupation">Occupation</option>
+                <option value="Relationship to others">Relationship to others</option>
+                 <option value="Address">Address</option>
+                  <option value="Location">Location</option>
+                   <option value="Vehicle registration">Vehicle registration</option>
+                    <option value="NHS number">NHS number</option>
+                     <option value="MG 4D">Date of birth</option>
+                      <option value="Date of birth">Bank details</option>
+                     <option value="NI number">NI number</option>
+                    <option value="Phone number">Phone number</option>
+                     <option value="Email address">Email address</option>
+                      <option value="Previous convictions">Previous convictions</option>
+                       <option value="Others">Others</option>
+              </select>
+            </div>
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+       
+
+            <!-- <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-three-quarters bold-label" for="courseName">
+                            Apprenticeship training course
+                        </label>
+                        <div class="autocomplete-wrapper">
+                         <select class="autocomplete-element" id="course-name" name="course-name">
+                            <option value="">Select one</option>
+                                {% import 'includes/apprenticeships-list.html' as apprenticeshipsData %}
+                                    {% for apprenticeship in apprenticeshipsData.apprenticeships %}
+                             <option value="{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{' (Standard)' if apprenticeship.standard === true}}">{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{" (Standard)" if apprenticeship.standard === true}}</option>
+                                     {% endfor %}
+          </select>
+        </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+ -->
+<!--                         <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-three-quarters bold-label" for="epaoName">
+                           End Point Assessment Organisation
+                        </label>
+                        <div class="autocomplete-wrapper">
+                         <select class="autocomplete-element-EPAO" id="epao-name" name="epao-name">
+                            <option value="">Select one</option>
+                                {% import 'includes/EPAO-list.html' as apprenticeshipsData %}
+                                    {% for apprenticeship in apprenticeshipsData.apprenticeships %}
+                             <option value="{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{' (Standard)' if apprenticeship.standard === true}}">{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{" (Standard)" if apprenticeship.standard === true}}</option>
+                                     {% endfor %}
+          </select>
+        </div>
+            </div> -->
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                 <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Redaction type</label>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="unredacted" name="redactionType" type="radio" value="Unredacted">
+                    <label class="govuk-label govuk-radios__label" for="mags">
+                      Unredacted
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="overredacted" name="redactionType" type="radio" value="Overredacted">
+                    <label class="govuk-label govuk-radios__label" for="crown">
+                      Overredacted
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+            </div>
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Supporting notes</label>
+<!--   <div id="more-detail-hint" class="govuk-hint">
+    Do not include personal or financial information, like your National Insurance number or credit card details.
+  </div> -->
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                 <label class="govuk-label govuk-!-width-one-half bold-label" for="FirstFirstName">Returned to investigative agency</label>
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="unredacted" name="returned" type="radio" value="Yes, returned to investigative agency">
+                    <label class="govuk-label govuk-radios__label" for="mags">
+                      Yes, returned to investigative agency
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="overredacted" name="returned" type="radio" value=" No, not returned to investigative agency">
+                    <label class="govuk-label govuk-radios__label" for="crown">
+                      No, not returned to investigative agency
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+            <button type="submit" class="govuk-button">Continue</button>
+     
+            <a  class="govuk-button clear-button" href="draft-cohort" >Add another redaction</a>
+
+        </form>
+    </div>
+</div>
+</div>
+</main>
+</div>
+
+{% endblock %}

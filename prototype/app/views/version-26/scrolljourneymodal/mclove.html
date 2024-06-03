@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+{% block content %}
+<style>
+.govuk-footer__copyright-logo {
+    display: none;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__logo {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 641px) {
+    .govuk-header__logotype-text {
+        font-size: 22px;
+    }
+}
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl" style="">Mclove, Eoin</h1>
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Date of birth</td>
+                    <td class="govuk-table__cell">16 October 1985</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Age</td>
+                    <td class="govuk-table__cell">36</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Charges</td>
+                    <td class="govuk-table__cell">Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="min-width:200px">Custody time limit</td>
+                    <td class="govuk-table__cell">45 days</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Custody end</td>
+                    <td class="govuk-table__cell">May 30 2022</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Crilly, Ted</caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Date of birth</td>
+                    <td class="govuk-table__cell">12 September 1980</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Age</td>
+                    <td class="govuk-table__cell">41</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Charges</td>
+                    <td class="govuk-table__cell">Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="min-width:200px">Custody time limit</td>
+                    <td class="govuk-table__cell">45 days</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Custody end</td>
+                    <td class="govuk-table__cell">May 30 2022</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">McGuire, Dougal</caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Date of birth</td>
+                    <td class="govuk-table__cell">12 May 1992</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Age</td>
+                    <td class="govuk-table__cell">30</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Charges</td>
+                    <td class="govuk-table__cell">Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="min-width:200px">Custody time limit</td>
+                    <td class="govuk-table__cell">45 days</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Custody end</td>
+                    <td class="govuk-table__cell">May 30 2022</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Hackett, Jack</caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Date of birth</td>
+                    <td class="govuk-table__cell">02 Jan 2001</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Age</td>
+                    <td class="govuk-table__cell">21</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Charges</td>
+                    <td class="govuk-table__cell">Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="min-width:200px">Custody time limit</td>
+                    <td class="govuk-table__cell">45 days</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Custody end</td>
+                    <td class="govuk-table__cell">May 30 2022</td>
+                </tr>
+            </tbody>
+        </table> -->
+    </div>
+</div>
+{% endblock %}

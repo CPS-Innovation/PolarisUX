@@ -16,14 +16,17 @@ import { Spinner } from "./Spinner";
 
 import "./style/App.css";
 
-const testHighlights: Record<string, Array<IHighlight>> = {};
+interface RedactionHighLight extends IHighlight {
+    redactionType: string;
+  }
 
 interface State {
     url: string;
-    highlights: Array<IHighlight>;
+    highlights: Array<RedactionHighLight>;
     isRedactionComplete: boolean;
 }
 
+const testHighlights: Record<string, Array<RedactionHighLight>> = {}
 const getNextId = () => String(Math.random()).slice(2);
 
 const parseIdFromHash = () =>
@@ -122,13 +125,13 @@ class App extends Component<{}, State> {
         return highlights.find((highlight) => highlight.id === id);
     }
 
-    addHighlight(highlight: NewHighlight) {
+    addHighlight(highlight: NewHighlight & { redactionType: string }) {
         const { highlights } = this.state;
 
         console.log("Saving highlight", highlight);
 
         this.setState({
-            highlights: [{ ...highlight, id: getNextId() }, ...highlights],
+            highlights: [...highlights, { ...highlight, id: getNextId() }],
         });
     }
 
@@ -166,7 +169,7 @@ class App extends Component<{}, State> {
 
         return (
             <>
-                {highlights.length && !isRedactionComplete && (
+                {!!highlights.length && !isRedactionComplete && (
                     <div
                         className="redaction-footer"
                         style={{
@@ -178,7 +181,7 @@ class App extends Component<{}, State> {
                         <span className="removeRedactions looks-like-a-link-underline">
                             Remove all redactions
                         </span>
-                        <span>
+                        <span id="data-count" data-count={highlights.length}>
                             {highlights.length === 1
                                 ? "There is 1 redaction"
                                 : `There are ${highlights.length} redactions`}
@@ -186,7 +189,11 @@ class App extends Component<{}, State> {
 
                         <button
                             className="govuk-button saveAndFinishButton"
-                            onClick={() => this.setRedactionComplete()}
+                            onClick={() => {
+                                (window as any).openModal2();
+                                (window as any).savedHighlights = this.state.highlights;
+                                this.setRedactionComplete()
+                            }}
                         >
                             Save all redactions
                         </button>
@@ -225,11 +232,12 @@ class App extends Component<{}, State> {
                                 ) => (
                                     <Tip
                                         onOpen={transformSelection}
-                                        onConfirm={(comment) => {
+                                        onConfirm={(comment,redactionType) => {
                                             this.addHighlight({
                                                 content,
                                                 position,
                                                 comment,
+                                                redactionType,
                                             });
 
                                             hideTipAndSelection();

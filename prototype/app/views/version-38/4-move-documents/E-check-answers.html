@@ -1,0 +1,107 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V1.html" %}
+{% endblock %}
+{% block beforeContent %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-l">Check your answers before saving your document</h1>
+        <h2 class="govuk-heading-m">Document details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document category</dt>
+                <dd class="govuk-summary-list__value">{{ data['move-single-Document'] }}</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document category</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document type</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['move-single-Document'] == 'Reviews' %}
+                        {{ data['docType-Reviews'] }}
+                    {% elseif data['move-single-Document'] == 'Case overview' %}
+                        {{ data['docType-CaseOverview'] }}
+                    {% elseif data['move-single-Document'] == 'Statements' %}
+                        {{ data['docType-Statements'] }}
+                    {% elseif data['move-single-Document'] == 'Exhibits' %}
+                        {{ data['docType-Exhibits'] }}
+                    {% elseif data['move-single-Document'] == 'Forensics' %}
+                        {{ data['docType-Forensics'] }}
+                    {% elseif data['move-single-Document'] == 'Unused materials' %}
+                        {{ data['docType-Unused'] }}
+                    {% elseif data['move-single-Document'] == 'Defendant' %}
+                        {{ data['docType-Defendant'] }}
+                    {% elseif data['move-single-Document'] == 'Court preparation' %}
+                        {{ data['docType-Court'] }}
+                    {% elseif data['move-single-Document'] == 'Communications' %}
+                        {{ data['docType-Communications'] }}
+                    {% elseif data['move-single-Document'] == 'Uncategorised' %}
+                        {{ data['docType-Uncategorised'] }}
+                    {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> document type</span></a>
+                </dd>
+            </div>
+            {% if data['scenario'] == 'three' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit item name</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Name'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> exhibit item name</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit item reference</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Reference'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> exhibit item reference</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit existing producer or witness</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Witness'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> exhibit existing producer or witness</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit produced by</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Produced'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> exhibit produced by</span></a>
+                    </dd>
+                </div>
+            {% else %}
+
+            {% endif %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Document name</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['scenario'] == 'one' %}
+                        {{ data['docType-Scenario-1-NAME'] }}
+                    {% elseif data['scenario'] == 'two' %}
+                        {{ data['docType-Scenario-2-NAME'] }}
+                    {% elseif data['scenario'] == 'three' %}
+                        {{ data['docType-Scenario-3-NAME'] }}
+                    {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">  document name</span></a>
+                </dd>
+            </div>
+        </dl>
+        <form action="../1-new-designs/C-casefile-1" method="post" novalidate>
+            <input type="hidden" name="docType-CheckAnswers" value="true">
+            <button type="submit" class="govuk-button end-scenario" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

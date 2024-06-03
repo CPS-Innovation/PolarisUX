@@ -1,0 +1,86 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V1.html" %}
+{% endblock %}
+{% block beforeContent %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+            <h1 class="govuk-heading-l" style="">
+                Select the document type which applies to your document
+            </h1>
+            <div id="changeCategory-hint" class="govuk-hint">
+                {% if data['scenario'] == 'one' %}
+                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
+                {% elseif data['scenario'] == 'two' %}
+                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Material 27</strong></mark></p>
+                {% elseif data['scenario'] == 'three' %}
+                    <p class="govuk-body">You're changing the document type for <mark class="hods-highlight"><strong>Material 007</strong></mark></p>
+                {% endif %}
+
+            </div>
+
+            {% if data['scenario'] == 'one' %}
+                <form method="get" action="D-document-name">  
+            {% elseif data['scenario'] == 'two' %}
+                <form method="get" action="D-document-name">  
+            {% elseif data['scenario'] == 'three' %}
+                <form method="get" action="C-exhibit-details">  
+            {% endif %}
+
+                <div id="event-name-hint" class="govuk-hint">Search for document type</div>          
+
+                {% if data['move-single-Document'] == 'Reviews' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Reviews" name="docType-Reviews" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Case overview' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-CaseOverview" name="docType-CaseOverview" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Statements' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Statements" name="docType-Statements" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Exhibits' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Exhibits" name="docType-Exhibits" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Forensics' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Forensics" name="docType-Forensics" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Unused materials' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Unused" name="docType-Unused" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Defendant' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Defendant" name="docType-Defendant" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Court preparation' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Court" name="docType-Court" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Communications' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Communications" name="docType-Communications" type="text">
+                    </div>                
+                {% elseif data['move-single-Document'] == 'Uncategorised' %}
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-!-width-one-half" id="docType-Uncategorised" name="docType-Uncategorised" type="text">
+                    </div>                
+                {% endif %}
+
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
