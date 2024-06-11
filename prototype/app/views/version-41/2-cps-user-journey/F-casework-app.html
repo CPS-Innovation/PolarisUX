@@ -1,6 +1,6 @@
 {% extends "layoutCPS-NEW-CASEFILE.html" %}
 {% block header %}
-    {% include "../includes/banner-V3.html" %}
+    {% include "../includes/banner-V5.html" %}
 {% endblock %}
 {% block beforeContent %}
     {% include "../includes/modals/redaction-log.html" %}
@@ -63,9 +63,19 @@
         });
     }
 
+    $( document ).ready(function() {
+        $('#global-navigation').show();
+        $('#secondary-navigation').show();
+        $('.my-cases').addClass('current');
+        $('.sub-case').addClass('current');
+
+    });
+
+
 </script>
 
-<div class="search-bar-wrapper case-file-page">
+
+<!-- <div class="search-bar-wrapper case-file-page">
     <div class="govuk-width-container">
         <div class="govuk-phase-banner header new-V3">
             <div class="govuk-grid-row">
@@ -79,7 +89,7 @@
                     </div>
                 </div>
                 <div class="govuk-grid-column-three-quarters">
-                    <!-- <a href="javascript:history.back()" class="govuk-back-link">Find a case</a> -->
+                   
                     <div class="govuk-phase-banner__content">
                         <a href="" onClick="return openFeedbackSurveyModal()" class="feedback-survey">Improve this service</a>
                         <div class="loading-PII loading">
@@ -115,7 +125,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- <div class="govuk-grid-row" id=""> -->
 <div class="govuk-grid-row concept" id="cps-casework-concept">
@@ -147,11 +157,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cap-wrapper">
+<!--                         <div class="cap-wrapper">
                             <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="location.href = 'H-review-case';">
                                 <span>Review case</span>
                             </button>
-                        </div>
+                        </div> -->
                         <div class="alert tooltip">
                             <a href="#" class="alert-button" id="alert">Document updates</a>
                             <a href="#" class="alert-button tooltip" id="alert2">Document updates</a>

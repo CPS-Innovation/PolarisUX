@@ -1,11 +1,24 @@
 {% extends "layoutCPS-NEW-INDEX.html" %}
 {% block header %}
-    {% include "../includes/banner-V3.html" %}
+    {% include "../includes/banner-V5.html" %}
 {% endblock %}
 {% block beforeContent %}
 
 {% endblock %}
 {% block content %}
+<script>
+    $( document ).ready(function() {
+        $('#global-navigation').show();
+        $('#secondary-navigation').show();
+        $('.my-cases').addClass('current');
+          $('.my-cases').addClass('current');
+  $('.my-tasks').removeClass('current');
+
+        $('.sub-review').addClass('current');
+
+    });
+
+</script>
 
 <div id="image-wrapper" class="C-my-tasks">
     <div class="govuk-grid-row">

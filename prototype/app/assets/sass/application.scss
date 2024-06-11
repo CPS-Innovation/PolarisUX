@@ -4061,13 +4061,17 @@ nav.greedy {
   box-shadow: 0 2px 0px #bfc1c3;
 }*/
 
+.greedy {
+background-color:#f3f2f1;
+}
+
 nav.greedy {
     position: relative;
     align-items: center;
     //max-height:57px;
  //   padding: 10px 0 0px 0;
  //   box-shadow: 0 2px 0px #bfc1c3;
- border-bottom: 1px solid #6f777b;
+// border-bottom: 1px solid #6f777b;
 }
 
 /* Doesn't look like this is targeting anything
@@ -4089,8 +4093,8 @@ nav.greedy button {
   padding: 0.25rem 0.75rem 0rem 1rem;
   outline: 0;
   border: 0;
-  font-size: 19px;
- // font-weight: bold;
+  font-size: 1.3rem !important;
+  font-weight: bold;
   background: #dee0e2;
   color: #404040;
   cursor: pointer;
