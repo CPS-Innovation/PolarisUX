@@ -1657,15 +1657,60 @@ function zoomOut() {
 
 
 // var z = document.getElementById('zoomPercentage-V1');
-function zoom() {
-    // var value = z.value;
-    // var text = z.options[z.selectedIndex].text;
-    // alert(value, text);
-    var zoomPercentage = $('#zoomPercentage-V1').find(':selected').val();
-    if (zoomPercentage == "75") {
-        // alert('working');
+
+// function zoom(e) {
+//     var value = e.target.value;
+//     // var text = e.options[e.selectedIndex].text;
+//     alert(value);
+//     // var zoomPercentage = $('#zoomPercentage-V1').find(':selected').val();
+//     // if (zoomPercentage == "75") {
+//     //     // alert('working');
+//     // }
+// }
+
+
+function zoom1(e) {
+    var value = e.target.value;
+    var pic = document.getElementById("pdf-root").getElementsByClassName( 'PdfHighlighter' )[0];
+    var width = pic.clientWidth;
+    if (value == '800') {
+        pic.style.width = width;
+        pic.style.width = width + 800 + "px";
+    } else if (value == '400') {
+        pic.style.width = width;
+        pic.style.width = width + 400 + "px";
+    } else if (value == '300') {
+        pic.style.width = width;
+        pic.style.width = width + 300 + "px";
+    } else if (value == '200') {
+        pic.style.width = width;
+        pic.style.width = width + 200 + "px";
+    } else if (value == '175') {
+        pic.style.width = width;
+        pic.style.width = width + 175 + "px";
+    } else if (value == '150') {
+        pic.style.width = width;
+        pic.style.width = width + 150 + "px";
+    } else if (value == '125') {
+        pic.style.width = width;
+        pic.style.width = width + 125 + "px";
+    } else if (value == '100') {
+        pic.style.width = width;
+    } else if (value == '75') {
+        pic.style.width = width;
+        pic.style.width = width - 150 + "px";
+    } else if (value == '50') {
+        pic.style.width = width;
+        pic.style.width = width - 200 + "px";
+    } else if (value == '25') {
+        pic.style.width = width;
+        pic.style.width = width - 350 + "px";
+    } else if (value == '10') {
+        pic.style.width = width;
+        pic.style.width = width - 500 + "px";
     }
 }
+
 // z.onchange = onChange;
 // onChange();
 
