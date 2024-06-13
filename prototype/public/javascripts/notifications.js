@@ -11,6 +11,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).toggleClass('open');
         $('.notifications-panel-STICKY').toggle();
+        $('.tooltiptext').hide();
     });
 
     $(".clear-notification").on("click", function (e) {
@@ -22,11 +23,11 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
         if (data1 == '0') {
             $('.clear-all').hide();
-            $('.alert-button, .notifications-number').removeClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').removeClass('alert');
             $('.notifications-panel').removeClass('alerts-working');
         } else if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
         if (data2 == '0') {
@@ -35,7 +36,7 @@ $(document).ready(function () {
             $('.notifications-panel-STICKY').removeClass('alerts-working');
         } else if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -70,7 +71,7 @@ $(document).ready(function () {
         $('.notifications-number').html('0');
         $('.notifications-number-STICKY').html('0');
         $('.clear-all').hide();
-        $('.alert-button, .notifications-number').removeClass('alert');
+        $('.alert-button, .notifications-number, .notifications-number-STICKY').removeClass('alert');
         $('.notifications-panel').removeClass('alerts-working');
         $('.notifications-panel-STICKY').removeClass('alerts-working');
     });
@@ -93,12 +94,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -156,12 +157,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -220,12 +221,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -287,12 +288,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -359,12 +360,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 
@@ -425,12 +426,12 @@ $(document).ready(function () {
 
         if (data1 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
             $('.clear-all').show();
-            $('.alert-button, .notifications-number').addClass('alert');
+            $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
 

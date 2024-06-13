@@ -153,15 +153,18 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cap-wrapper">
+
+<!--                         <div class="cap-wrapper">
                             <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="openCaseActionBuilderModal()">
                                 <span>Case action plan</span>
                             </button>
                         </div>
+ -->                        
+                        <div class="tasks-alert">
+                            {% include "../includes/tasks-sticky.html" %}
+                        </div>  
                         <div class="alert tooltip">
-                            <a href="#" class="alert-button" id="alert">Document updates</a>
-                            <a href="#" class="alert-button tooltip" id="alert2">Document updates</a>
-                            <span class="tooltiptext" id="header-alert">No document updates</span>
+                            {% include "../includes/notifications-sticky.html" %}
                         </div>
                         <div id="searchFormTest2" class="searchForm" method="get">
                             <div class="search-button">Search case</div>
