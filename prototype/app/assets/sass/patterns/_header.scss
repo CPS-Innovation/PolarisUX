@@ -34,13 +34,18 @@ html.govuk-template {
     }
 }
 
-.notifications-panel-wrapper, .notifications-panel-wrapper-STICKY, .tasks-panel-wrapper {
+.notifications-panel-wrapper, .notifications-panel-wrapper-STICKY, .tasks-panel-wrapper, .tasks-panel-wrapper-STICKY {
     position: relative;
     display: inline-block;
     float: right;
 }
 
-.notifications, .notifications-STICKY, .tasks {
+.tasks-panel-wrapper-STICKY {
+    position: absolute;
+    right: 5.2em;
+}
+
+.notifications, .notifications-STICKY, .tasks, .tasks-STICKY {
     float: right;
     padding: 0.5em 0.5em 0 0.5em;
     &.open {
@@ -107,7 +112,7 @@ html.govuk-template {
             background-size: 1.5em;
         }
     }
-    .notifications-number, .tasks-number {
+    .notifications-number, .tasks-number, .notifications-number-STICKY, .tasks-number-STICKY {
         position: absolute;
         left: 2.5em;
         border-radius: 50%;
@@ -129,28 +134,102 @@ html.govuk-template {
     }
 }
 
+.tasks-STICKY { 
+    padding: 0;
+    width: 2.3em;
+    top: 0.25em;
+    &:hover, &:active, &:focus {
+        .tooltiptext {
+            display: inline-block;
+            top: 3.1em;
+            width: 5em;
+            left: 0;
+            &:after {
+                bottom: inherit;
+                top: -8px;
+                border-top: none;
+                border-bottom: 8px solid rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+    .tasks-button {
+        top: 0.25em;
+    }
+    .tasks-number-STICKY {
+        left: 1.875em !important;
+        bottom: -0.65em !important;
+        right: inherit !important;
+        &.alert {
+            left: 0.25em !important;
+            bottom: 0.85em !important;
+        }
+    }
+}
+
 .notifications-panel-wrapper-STICKY {
     position: absolute;
     display: inline-block;
     float: right;
-    right: 2.25em;
-    top: 0.75em;
+    right: 2.5em;
+    top: 0.1em;
+    .alert-button .alert {
+        top: 0.15em;
+        .alert-button {
+            top: 0.25em;
+        }
+        .notifications-number, .notifications-number-STICKY {
+            top: -2.75em;
+            left: 0.1em;
+        }
+    }
+}
+
+.tasks-alert {
+    display: inline-block;
+    float: right;
+    position: relative;
 }
 
 .notifications-STICKY {
     padding: 0;
+    top: 0.25em;
+    .alert-button {
+        top: 0.15em;
+        margin: 0 0.15em 0 0;
+    }
     &.open {
         padding: 1.25em 0.1em 1em 0.25em;
-        top: -1.25em;
+        top: -0.05em;
         position: relative;
+        .notifications-number-STICKY {
+            top: -2.65em;
+        }
+        .alert-button {
+            top: -0.85em;
+        }
     }
     .text {
         text-indent: -1000em;
         display: inline-block;
     }
+    .notifications-number-STICKY {
+        bottom: -0.5em;
+        left: 1.75em;
+        &.alert {
+            bottom: 1em;
+            left: 0.35em;
+        }
+    }
+    .tooltiptext {
+        width: 120px !important;
+        margin-left: -68px !important;
+        &:after {
+            border-top: none;
+        }
+    }
 }
 
-.notifications-panel, .notifications-panel-STICKY, .tasks-panel {
+.notifications-panel, .notifications-panel-STICKY, .tasks-panel, .tasks-panel-STICKY {
     display: none;
     position: absolute;
     background: white;
@@ -312,7 +391,13 @@ html.govuk-template {
     }
 }
 
-.tasks-panel {
+.tasks-panel-STICKY { 
+    right: inherit;
+    top: 50px;
+    left: 0;
+}
+
+.tasks-panel, .tasks-panel-STICKY {
     .task-alert {
         display: flex;
         .wrapper {
@@ -327,7 +412,7 @@ html.govuk-template {
 .notifications-panel-STICKY {
     left: 0;
     right: inherit;
-    top: 2.4em;
+    top: 3em;
 }
 
 

@@ -9,6 +9,14 @@ $(document).ready(function () {
         $('.tasks-panel').toggle();
     });
 
+    $(".tasks-STICKY").on("click", function (e) {
+        e.preventDefault();
+        $(this).toggleClass('open');
+        $('.tasks-panel-STICKY').toggle();
+        $('.tooltiptext').hide();
+    });
+
+
     $(".task-item-1").on("click", function (e) {
         e.preventDefault();
         $('.accordion-section.section-10').attr("aria-expanded", "true");
@@ -61,6 +69,28 @@ $(document).ready(function () {
     }
 
     document.getElementById("task-date-stamp-2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    document.getElementById("task-date-stamp-3").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    document.getElementById("task-date-stamp-4").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),

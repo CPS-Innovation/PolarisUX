@@ -129,11 +129,16 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cap-wrapper">
+
+<!--                         <div class="cap-wrapper">
                             <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="openCaseActionBuilderModal()">
                                 <span>Case action plan</span>
                             </button>
                         </div>
+ -->                      
+                        <div class="tasks-alert">
+                            {% include "../includes/tasks-sticky.html" %}
+                        </div>  
                         <div class="alert tooltip">
                             {% include "../includes/notifications-sticky.html" %}
                         </div>

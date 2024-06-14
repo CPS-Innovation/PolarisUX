@@ -148,13 +148,46 @@ $(document).mouseup(function(e) {
         $('.sort-documents').removeClass('open');
     }
 
-    var containerV4 = $(".tasks-panel");
+    var containerV4 = $(".notifications-panel");
 
     // if the target of the click isn't the container nor a descendant of the container
     if (!containerV4.is(e.target) && containerV4.has(e.target).length === 0) {
         containerV4.hide();
+        $('.notifications').removeClass('open');
+    }
+
+    var containerV5 = $(".notifications-panel-STICKY");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV5.is(e.target) && containerV5.has(e.target).length === 0) {
+        containerV5.hide();
+        $('.notifications-STICKY').removeClass('open');
+    }
+
+    var containerV6 = $(".tasks-panel");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV6.is(e.target) && containerV6.has(e.target).length === 0) {
+        containerV6.hide();
         $('.tasks').removeClass('open');
     }
+
+    var containerV7 = $(".tasks-panel-STICKY");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV7.is(e.target) && containerV7.has(e.target).length === 0) {
+        containerV7.hide();
+        $('.tasks-STICKY').removeClass('open');
+    }
+
+    var containerV8 = $("#searchFormTest2 .searchForm-inner");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV8.is(e.target) && containerV8.has(e.target).length === 0) {
+        containerV8.hide();
+        $('#searchFormTest2 .search-button').removeClass('open');
+    }
+
 
 
 });
@@ -573,9 +606,11 @@ function documentID() {
 // =================================== Search button =================================== //
 $(document).ready(function () {
     $(".search-button").on("click", function (e) {
-        $('.searchForm-inner').find('input').toggleClass('show');
-        $('.searchForm-inner').find('.bba.v2').toggleClass('show');
+        e.preventDefault();
+        $('#searchFormTest2 .searchForm-inner').find('input').toggleClass('show');
+        $('#searchFormTest2 .searchForm-inner').find('.bba.v2').toggleClass('show');
         $(this).toggleClass('open');
+        $('#searchFormTest2 .searchForm-inner').toggle();
     });
 
     $("input[id=searchURNModal]").on("keyup", function (e) {

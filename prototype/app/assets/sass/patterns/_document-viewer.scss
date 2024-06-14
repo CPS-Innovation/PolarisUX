@@ -594,11 +594,11 @@ main.case-files {
     position: relative;
     .redaction-footer {
         // padding-left: 5px;
-        width: 100% !important;
-        left: 0;
+        // width: 100% !important;
+        left: 28.25%;
         right: 0;
         border-top: none;
-        box-shadow: 5px 10px 10px 15px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
         background: white;
         // background: govuk-colour("light-grey");
         .govuk-button--secondary {
