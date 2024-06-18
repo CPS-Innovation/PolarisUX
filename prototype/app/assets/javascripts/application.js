@@ -9,6 +9,12 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for the presence of a unique ID
+    var uniqueElement = document.getElementById('RJpage');
+
+      if (!uniqueElement) {
+
 
 // Floating footer
 $(document).ready(function () {
@@ -2280,3 +2286,8 @@ $(document).ready(function () {
     }
 
 })
+
+} else {
+        console.log('This is the page with the unique ID. Additional scripts from application.js will not run.');
+    }
+});

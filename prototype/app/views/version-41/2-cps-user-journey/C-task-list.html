@@ -1,0 +1,543 @@
+{% extends "layoutCPS-NEW-CASEFILE.html" %}
+{% block header %}
+{% include "../includes/banner-V6.html" %}
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<!-- <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" /> -->
+<!-- remove if you get rid of the gov width container -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/govuk-frontend/3.11.0/govuk-frontend.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/govuk-frontend/3.11.0/govuk-frontend.min.js"></script>
+
+
+<style>
+    .taskCountBar {margin-left:100px
+}
+
+.taskOverViewContent {
+    display:flex;margin-left:auto; width:80%
+}
+
+.taskOverViewContentPanel {
+    display:flex;margin-left:auto; 
+}
+
+.taskCountItems {
+    border: 2px solid black; display:flex;   align-items: center;
+  justify-content: center;
+  height:50px;
+  margin-right:15px;
+}
+
+.taskcCountItemNumber {
+    font-size:16px; font-weight:700; margin-left:auto; margin-bottom:0
+}
+
+
+.fa-triangle-exclamation {
+    color:#d4351c; 
+}
+
+ .fa-chevron-down, .fa-triangle-exclamation {
+    font-size:19px
+}
+
+.fa-comment, .fa-star, .fa-circle-exclamation {
+    font-size:19px
+}
+
+             
+.govuk-tag--red {
+
+    background: #f4cdc6;
+}
+
+.panelTagRed {
+    min-width:200px;
+}
+
+.govuk-tag {
+      font-size:16px !important;
+}
+
+/*pulls the content next to the checkboxes closer on the main panel*/
+.govuk-checkboxes__item {
+        margin-right:-30px;
+    }
+
+.expandable-panel {
+    display: none;
+}
+
+
+.cpsAdminMenuWrapper {
+ max-width:1400px;
+    }
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.MT-15 {
+    margin-top:-10px;
+}
+
+
+.filterBar{
+    position:relative;
+display:flex; 
+background-color:#f3f2f1; 
+width:100%; 
+height:75px;
+margin-bottom:25px
+}
+
+.filterSetBox:after {
+             content: '';
+            position: absolute;
+            right: 0;
+            top: 20%; /* (100% - 75%) / 2 to center the line vertically */
+            width: 1px; /* Adjust width of the line */
+            height: 60%; /* 75% of the height of the parent box */
+            background-color: #505a5f   ; /* Adjust color as needed */
+}
+
+.addRightLine {position:relative}
+.addRightLine:after {
+             content: '';
+            position: absolute;
+            right: 0;
+            top: 20%; /* (100% - 75%) / 2 to center the line vertically */
+            width: 1px; /* Adjust width of the line */
+            height: 60%; /* 75% of the height of the parent box */
+            background-color: #505a5f   ; /* Adjust color as needed */
+}
+
+    .makeBannerMiddle {
+    display: none;
+}
+
+.caseReviewHeader {
+    display: none
+}
+
+.govuk-tabs__panel {
+ padding-left:0 !important;
+ padding-right:0 !important;
+ border:0 !important;
+}
+
+.govuk-table__cell, .govuk-table__header {
+    font-size: 16px;
+}
+
+.bold {font-weight: 700}
+
+
+</style>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Initialize GOV.UK tabs component
+    var $tabs = document.querySelector('[data-module="govuk-tabs"]');
+    if ($tabs) {
+        new window.GOVUKFrontend.Tabs($tabs).init();
+    }
+
+    var buttons = document.querySelectorAll('.toggle-panel');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var panel = this.closest('tr').nextElementSibling;
+            if (panel.style.display === 'none' || panel.style.display === '') {
+                panel.style.display = 'table-row';
+            } else {
+                panel.style.display = 'none';
+            }
+
+// Force the browser to reflow layout to correctly handle scrollbars
+            panel.offsetHeight; // Trigger reflow
+        });
+    });
+});
+
+
+
+    
+
+
+    $(document).ready(function() {
+    $('#global-navigation').show();
+      $('.my-tasks').addClass('current');
+
+});
+
+
+</script>
+<div id="RJpage">
+    <div class="govuk-grid-row">
+        <div style="margin-top:15px; display:flex; align-items: center">
+            <div class="govuk-grid-column-one-third" style="" id="">
+                <h1 class="govuk-heading-m" style="margin-bottom:0">Hubert Blaine Wolfeschlegelsteinhausenbergerdorff
+                </h1>
+            </div>
+            <div class="govuk-grid-column-two-thirds-quarters" style="display:flex;  align-items: center; width:80%
+" id="">
+                <div class="taskCountBar" style="">
+                    <p style="font-size:16px;margin-bottom:0">Task count</p>
+                </div>
+                <div class="taskOverViewContent" style="">
+                    <div class="govuk-grid-column-one-quarter taskCountItems" style="">
+                        <i class="fa-solid fa-triangle-exclamation" style=""></i>
+                        <p class="" style="font-size:16px; margin-left:15px; margin-bottom:0">Escalated</p>
+                        <p class="taskcCountItemNumber "> 22</p>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter taskCountItems" style="">
+                        <i class="fa-solid fa-circle-exclamation" style="color:#ffdd00"></i>
+                        <p class="" style="font-size:16px; margin-left:15px; margin-bottom:0">Overdue</p>
+                        <p class="taskcCountItemNumber "> 2</p>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter taskCountItems" style="">
+                        <i class="fa-solid fa-circle-exclamation" style="color:#1d70b8; "></i>
+                        <p class="" style="font-size:16px; margin-left:15px; margin-bottom:0">Due</p>
+                        <p class="taskcCountItemNumber "> 3</p>
+                    </div>
+                    <div class="govuk-grid-column-one-quarter taskCountItems" style="">
+                        <!-- <i class="fa-solid fa-triangle-exclamation" style=""></i> -->
+                        <p class="" style="font-size:16px;  margin-bottom:0">Due soon</p>
+                        <p class="taskcCountItemNumber "> 14</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-tabs" data-module="govuk-tabs" style="margin-top:25px !important">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#past-day">
+                            Tasks (X)
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Directions (X)
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-month">
+                            Saved (X)
+                        </a>
+                    </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="past-day">
+                    <div>
+                        <div class="govuk-grid-column-one-quarter" style="padding-left:0" id="">
+                            <div class="govuk-form-group mb15 ">
+                                <input class="govuk-input" id="event-name" name="eventName" type="text" placeholder="Search Defendant or URN">
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Area</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Unit</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Court</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="govuk-grid-column-one-quarter" style="padding-left: 0;" id="">
+                            <div class="govuk-form-group mb15">
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Task</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <!--  <label class="govuk-label" for="sort">
+                        Sort by
+                      </label> -->
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Hearing date</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <!--  <label class="govuk-label" for="sort">
+                        Sort by
+                      </label> -->
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>Owner</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter" id="">
+                            <div class="govuk-form-group mb15">
+                                <!--  <label class="govuk-label" for="sort">
+                        Sort by
+                      </label> -->
+                                <select class="govuk-select govuk-!-width-full" id="sort" name="sort">
+                                    <option value="published" selected>CTL type</option>
+                                    <option value="updated">1</option>
+                                    <option value="views">2</option>
+                                    <option value="comments">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-full" style="padding-left:0; padding-right:0;">
+                        <div class="filterBar" style="">
+                            <div class="filterSetBox" style="display:flex;  align-items: center; padding-right:20px; position:relative ">
+                                <i class="fa-solid fa-chevron-down" style="margin-left:30px; color:black"></i>
+                                <p style="font-weight:700;margin-left:5px; margin-top:20px">Filter sets</p>
+                            </div>
+                            <div class="filterButtons" style="display:flex;   align-items: center; margin-left:auto">
+                                <button type="submit" disabled class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:0;">
+                                    Save filter
+                                </button>
+                                <button type="submit" disabled class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:0; margin-left:15px">
+                                    Clear filter
+                                </button>
+                                <button type="submit" disabled class="govuk-button" data-module="govuk-button" style="margin-bottom:0; margin-left:15px; margin-right:15px">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-full" style="padding-left:0; padding-right:0; display:flex; align-items: center;">
+                        <p> Showing x of x tasks</p>
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-left: auto; ">
+                            Set alert
+                        </button>
+                    </div>
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">
+                                    <!-- <div class="govuk-form-group"> -->
+                                    <!-- <fieldset class="govuk-fieldset"> -->
+                                    <div class="govuk-checkboxes govuk-checkboxes--small MT-15" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- </fieldset> -->
+                                    <!-- </div> -->
+                                </th>
+                                <th scope="col" class="govuk-table__header">URN</th>
+                                <th scope="col" class="govuk-table__header">Defendant</th>
+                                <th scope="col" class="govuk-table__header">CTL</th>
+                                <th scope="col" class="govuk-table__header">Hearing</th>
+                                <th scope="col" class="govuk-table__header">Task</th>
+                                <th scope="col" class="govuk-table__header">Type</th>
+                                <th scope="col" class="govuk-table__header">Location</th>
+                                <th scope="col" class="govuk-table__header">Due date</th>
+                                <th scope="col" class="govuk-table__header"></th>
+                                <th scope="col" class="govuk-table__header"></th>
+                                <th scope="col" class="govuk-table__header"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <!-- <div class="govuk-form-group"> -->
+                                    <!-- <fieldset class="govuk-fieldset"> -->
+                                    <div class="govuk-checkboxes govuk-checkboxes--small MT-15" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- </fieldset> -->
+                                    <!-- </div> -->
+                                </td>
+                                <td class="govuk-table__cell">45AA209820/1</td>
+                                <td class="govuk-table__cell bold">Doe, J. McGregor,C</td>
+                                <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--grey" style="">Expired</strong></td>
+                                <td class="govuk-table__cell bold">22/05/24</td>
+                                <td class="govuk-table__cell">Retrieve core details</td>
+                                <td class="govuk-table__cell">First hearing</td>
+                                <td class="govuk-table__cell">Hull MC / ELE</td>
+                                <td class="govuk-table__cell bold addRightLine">21/05/24 <i class="fa-solid fa-triangle-exclamation"></i></td>
+                                <td class="govuk-table__cell  " style=""><i class="fa-regular fa-comment" style=" margin-left:20px"></i></td>
+                                <td class="govuk-table__cell bold addRightLine"><i class="fa-regular fa-star" style=""></i></td>
+                                <td class="govuk-table__cell toggle-panel bold"><i class="fa-solid fa-chevron-down" style="margin-left:20px"></i></td>
+                            </tr>
+                            <tr class="expandable-panel">
+                                <td colspan="11">
+                                    <div>
+                                        This is an expandable panel for Row 1.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <!-- <div class="govuk-form-group"> -->
+                                    <!-- <fieldset class="govuk-fieldset"> -->
+                                    <div class="govuk-checkboxes govuk-checkboxes--small MT-15" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- </fieldset> -->
+                                    <!-- </div> -->
+                                </td>
+                                <td class="govuk-table__cell">45AA209820/1</td>
+                                <td class="govuk-table__cell bold">McLove, Eoin</td>
+                                <td class="govuk-table__cell "> <strong class="govuk-tag govuk-tag--red" style="">2 Active</strong></td>
+                                <td class="govuk-table__cell bold">01/06/24</td>
+                                <td class="govuk-table__cell">28 Day PCD Review</td>
+                                <td class="govuk-table__cell">First hearing</td>
+                                <td class="govuk-table__cell">Hull MC / ELE</td>
+                                <td class="govuk-table__cell bold addRightLine">14/05/24 <i class="fa-solid fa-triangle-exclamation" style=""></i></td>
+                                <td class="govuk-table__cell  "><i class="fa-regular fa-comment" style=" margin-left:20px"></i></td>
+                                <td class="govuk-table__cell bold addRightLine"><i class="fa-regular fa-star" style=""></i></td>
+                                <td class="govuk-table__cell toggle-panel bold"><i class="fa-solid fa-chevron-down" style="margin-left:20px"></i></td>
+                            </tr>
+                            <!-- dropdown panel include goes here -->
+                            {% include "../includes/panels/panel2.html" %}
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    <!-- <div class="govuk-form-group"> -->
+                                    <!-- <fieldset class="govuk-fieldset"> -->
+                                    <div class="govuk-checkboxes govuk-checkboxes--small MT-15" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- </fieldset> -->
+                                    <!-- </div> -->
+                                </td>
+                                <td class="govuk-table__cell">45AA209820/1</td>
+                                <td class="govuk-table__cell bold">Doe, J. McGregor,C</td>
+                                <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--grey" style="">Expired</strong></td>
+                                <td class="govuk-table__cell bold">22/05/24</td>
+                                <td class="govuk-table__cell">Retrieve core details</td>
+                                <td class="govuk-table__cell">First hearing</td>
+                                <td class="govuk-table__cell">Hull MC / ELE</td>
+                                <td class="govuk-table__cell bold addRightLine">21/05/24 <i class="fa-solid fa-triangle-exclamation" style=""></i></td>
+                                <td class="govuk-table__cell  "><i class="fa-regular fa-comment" style="margin-left:20px"></i></td>
+                                <td class="govuk-table__cell bold addRightLine"><i class="fa-regular fa-star" style=""></i></td>
+                                <td class="govuk-table__cell toggle-panel bold"><i class="fa-solid fa-chevron-down" style="margin-left:20px"></i></td>
+                            </tr>
+                            <tr class="expandable-panel">
+                                <td colspan="11">
+                                    <div>
+                                        This is an expandable panel for Row 3.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+                    <!-- <h2 class="govuk-heading-l">Past week</h2> -->
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Case manager</th>
+                                <th scope="col" class="govuk-table__header">Cases opened</th>
+                                <th scope="col" class="govuk-table__header">Cases closed</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">David Francis</td>
+                                <td class="govuk-table__cell">24</td>
+                                <td class="govuk-table__cell">18</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Paul Farmer</td>
+                                <td class="govuk-table__cell">16</td>
+                                <td class="govuk-table__cell">20</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Rita Patel</td>
+                                <td class="govuk-table__cell">24</td>
+                                <td class="govuk-table__cell">27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+                    <!-- <h2 class="govuk-heading-l">Past month</h2> -->
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Case manager</th>
+                                <th scope="col" class="govuk-table__header">Cases opened</th>
+                                <th scope="col" class="govuk-table__header">Cases closed</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">David Francis</td>
+                                <td class="govuk-table__cell">98</td>
+                                <td class="govuk-table__cell">95</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Paul Farmer</td>
+                                <td class="govuk-table__cell">122</td>
+                                <td class="govuk-table__cell">131</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Rita Patel</td>
+                                <td class="govuk-table__cell">126</td>
+                                <td class="govuk-table__cell">142</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
