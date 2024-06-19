@@ -35,7 +35,7 @@
     }
 }
 
-#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages {
+#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages {
     background: none;
     height: auto;
     #openMe {
@@ -72,13 +72,55 @@
     }
 }
 
-#openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages {
+#openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages {
     #openMe .govuk-grid-row .innerPanel {
         .header-wrapper {
             margin-bottom: 1em;
         }
         .govuk-button {
             margin-right: 1em;
+        }
+    }
+    .rotate-wrapper {
+        position: relative;
+        margin-bottom: 1em;
+        text-align: center;
+        padding: 0 0 3.5em 0;
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 14em;
+            img {
+                display: inline-block;
+                width: 40%;
+                border: 2px solid $govuk-border-colour;
+                border-radius: 5px;
+                padding: 0.5em;
+                margin-bottom: 0;
+                transition: all 1s linear;
+                &.right {
+                    transform: rotate(90deg);
+                }
+                &.left {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        .button-wrapper {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            bottom: 0;
+            button {
+                float: none;
+                margin-bottom: 0.5em;
+                &.rotate-IMG-right {
+                    margin-right: 0 !important;
+                }
+            }
         }
     }
 }

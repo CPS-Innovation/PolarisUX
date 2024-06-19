@@ -78,7 +78,13 @@
     .alert {
         display: none;
     }
+    &.test {
+        display: none;
+    }
     &.sticky {
+        &.test {
+            display: inline-block;
+        }
         position: fixed;
         padding: 5px 25px;
         // padding: 0.5em 25px 0.75em 25px;
