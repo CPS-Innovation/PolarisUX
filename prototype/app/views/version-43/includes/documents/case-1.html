@@ -1,22 +1,20 @@
 <!-- ////////////////////////////////////////////// SEARCH FILTER COLUMN - START ////////////////////////////////////////////// -->
-<div class="govuk-grid-column-one-quarter" id="left-column">
+<div class="govuk-grid-column-one-quarter new-column" id="left-column">
 
-    <div class="info">
-        <span class="govuk-heading-s">DOB: 16 Jan 2005. Age: 18</span>
-        <span class="govuk-heading-s"><strong>Youth offender</strong></span>
-    </div>
-
-<!--     <div id="searchFormTest" class="searchForm" method="get">
-        <label class="govuk-label--s govuk-label" for="searchURNModal" style="">Search case</label>
-        <div class="searchForm-inner">
-            <input class="govuk-input" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="" />
-            <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
-        </div>
-    </div>
- -->
     <div class="caseFiles" id="caseFilesCol">
     
         <div class="blueBoxCPS">
+            <h2 class="govuk-heading-s">Case number:</h2>
+            <p style="margin-bottom: 0.5em;">
+                {% if data['searchURN'] %}
+                    <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">{{ data['searchURN'] }}/1</a>
+                {% else %}
+                    <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">45AA209820/1</a>
+                {% endif %}
+            </p>
+            <h2 class="govuk-heading-s">DOB:</h2>
+            <p style="margin-bottom: 0.5em;">16 Jan 2005. Age: 18</p>
+            <p><strong class="govuk-tag" style="background: white; color: #1d70b8;">Youth offender</strong></p>
             <h2 class="govuk-heading-s">Proposed charges</h2>
             <p>Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</p>
             <h2 class="govuk-heading-s">Custody time limit</h2>
@@ -24,7 +22,7 @@
             <h2 class="govuk-heading-s">Next hearing date</h2>
             <p>1 June 2024</p>
             <h2 class="govuk-heading-s">Custody end</h2>
-            <p>30 May 2022</p>
+            <p>30 May 2022</p>  
         </div>
 
         <div class="accordion">

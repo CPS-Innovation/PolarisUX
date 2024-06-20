@@ -1,7 +1,11 @@
 <div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="taskComplete">
 
-    <div class="das-cookie-banner x-small" id="openMe">
+    <div class="das-cookie-banner small-medium" id="openMe">
         <div class="das-cookie-banner__wrapper">
+
+            <div class="govuk-modal-dialogue__header">
+                <button aria-label="Close modal dialogue" class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeMarkTaskAsComplete()">×</button>
+            </div>
 
             <!-- //////////////////////////////// REDACTION LOG - START //////////////////////////////// -->
             <div class="govuk-grid-row" id="task">
@@ -11,9 +15,7 @@
                     <div class="header-wrapper">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
-                                <h1 class="govuk-heading-m">
-                                    Completed task            
-                                </h1>
+                                <h1 class="govuk-heading-m">Complete task</h1>
                             </div>
                         </div>
                     </div>
@@ -23,37 +25,49 @@
 
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full">
-                                    <p></p>
+                                    <h2 class="govuk-heading-m">Check new communications: Asset Rec 1</h2>
                                 </div>
 
                                 <div class="govuk-grid-column-full">
 
-                                    <!-- ////// FORM ITEM 1 - START ////// -->
-                                    <fieldset class="govuk-fieldset">
+                                    <table class="govuk-table" id="completed-task">
+                                        <tbody class="govuk-table__body">
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">Reminder date</td>
+                                                <td class="govuk-table__cell"><strong>27/11/2023</strong></td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">Due date</td>
+                                                <td class="govuk-table__cell"><strong>04/12/2023</strong></td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">Escalated date</td>
+                                                <td class="govuk-table__cell"><strong>11/12/2023</strong></td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">Assigned to</td>
+                                                <td class="govuk-table__cell"><strong>Admin pool</strong></td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">Completed by</td>
+                                                <td class="govuk-table__cell"><strong>Kirsty Priest</strong></td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    <label class="govuk-label" for="confirm-task">Comments</label>
+                                                </td>
+                                                <td class="govuk-table__cell"><textarea class="govuk-textarea" id="confirm-task" name="confirmTask" rows="5"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
-                                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                            <legend class="govuk-fieldset__legend">
-                                                Confirm you have completed the task: 
-                                                <br><strong>"Check new communications: Asset Rec 1"</strong>
-                                            </legend>
-                                            <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="taskComplete-Yes" name="taskComplete" type="radio" value="Yes">
-                                                <label class="govuk-label govuk-radios__label" for="taskComplete-Yes">Yes</label>
-                                            </div>
-                                            <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="taskComplete-No" name="taskComplete" type="radio" value="No">
-                                                <label class="govuk-label govuk-radios__label" for="taskComplete-No">No</label>
-                                            </div>                                        
-                                        </div>
-                                    </fieldset>
-                                    <!-- ////// FORM ITEM 1 - END ////// -->
                                 </div>
 
                             </div>
 
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full cta-group">
-                                    <button id="confirm-task-complete"  disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled"  data-module="govuk-button" type="button">Continue</button>
+                                    <button id="confirm-task-complete" class="govuk-button"  data-module="govuk-button" type="button" onclick="closeMarkTaskAsComplete()">Complete task</button>
                                     <button class="non-button" data-module="govuk-button" type="button" onclick="closeMarkTaskAsComplete()">Cancel</button>
                                 </div>
                             </div>

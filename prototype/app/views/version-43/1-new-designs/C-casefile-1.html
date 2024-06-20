@@ -1,6 +1,6 @@
 {% extends "layoutCPS-NEW-CASEFILE.html" %}
 {% block header %}
-    {% include "../includes/banner-V2.html" %}
+    {% include "../includes/banner-V5.html" %}
 {% endblock %}
 {% block beforeContent %}
     {% include "../includes/modals/redaction-log.html" %}
@@ -77,40 +77,16 @@
 
 </script>
 
-<div class="search-bar-wrapper case-file-page">
-    <div class="govuk-width-container">
-        <div class="govuk-phase-banner header new-V3">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-quarter">
-                    <div id="searchFormTest" class="searchForm" method="get">
-                        <label class="govuk-label--s govuk-label" for="searchURNModal" style="">Search case</label>
-                        <div class="searchForm-inner">
-                            <input class="govuk-input" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search case..." />
-                            <div class="bba"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-grid-column-three-quarters">
-
-                    {% include "../includes/notifications.html" %}
-                    {% include "../includes/tasks.html" %}
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="govuk-grid-row">
 
     <!-- ////////////////////////////////////////////// STICKY BAR - PART 1 - START ////////////////////////////////////////////// -->
-    <div class="govuk-grid-column-one-quarter" id="left-column-top">
+    <div class="govuk-grid-column-one-quarter new-column-design" id="left-column-top">
 
-        <div class="govuk-phase-banner header new-V2">
+        <div class="govuk-phase-banner header new-V2 new-column-design">
 
         </div>
 
-        <div id="navbar" class="navbar">
+        <div id="navbar" class="navbar new-column-design">
             <div class="govuk-width-container">
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-one-quarter">
@@ -131,12 +107,6 @@
                             </table>
                         </div>
 
-<!--                         <div class="cap-wrapper">
-                            <button id="case-action-plan" class="govuk-button" data-module="govuk-button" type="button" onClick="openCaseActionBuilderModal()">
-                                <span>Case action plan</span>
-                            </button>
-                        </div>
- -->                      
                         <div class="tasks-alert">
                             {% include "../includes/tasks-sticky.html" %}
                         </div>  
@@ -198,6 +168,13 @@
 </div>
 
 <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="padding-right: 0;">
+        <div class="searchForm-inner">
+            <input class="govuk-input" style="width: 98%;" id="searchURNModal" name="searchURNModal" type="text" aria-describedby="FirstName-hint" value="" placeholder="Search materials..." />
+            <div class="bba" style="margin-left: -45px;"><button class="search searchModal modalButton" type="submit" id="openSearch" onClick="openModal(); searchTerm();"></button></div>
+        </div>
+    </div>
+
     {% include "../includes/documents/case-1.html" %}
 </div>
 

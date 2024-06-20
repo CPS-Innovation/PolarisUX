@@ -1089,6 +1089,17 @@
     &.x-small {
         max-width: 35%;
     }
+    &.small-medium {
+        width: 45%;
+    }
+    #completed-task {
+        margin-bottom: 0;
+        tr:last-of-type {
+            td {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
 .success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation {

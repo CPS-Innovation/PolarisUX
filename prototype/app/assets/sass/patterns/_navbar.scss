@@ -78,11 +78,11 @@
     .alert {
         display: none;
     }
-    &.test {
+    &.test, &.new-column-design {
         display: none;
     }
     &.sticky {
-        &.test {
+        &.test, &.new-column-design {
             display: inline-block;
         }
         position: fixed;
