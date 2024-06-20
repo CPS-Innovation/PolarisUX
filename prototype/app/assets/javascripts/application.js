@@ -2058,6 +2058,7 @@ function sortStatementsAlphabetical() {
     $("#sortStatements tbody tr.alpha-7").insertAfter("#sortStatements tbody tr.alpha-6");
     $('.sort-documents-nav').removeClass('open');
     $('.sort-documents-nav .wrapper').removeClass('open');
+    $("#sortStatements tbody tr.witness-header").removeClass('show');
 }
 
 function sortStatementsDate() {
@@ -2069,6 +2070,25 @@ function sortStatementsDate() {
     $("#sortStatements tbody tr.date-7").insertAfter("#sortStatements tbody tr.date-6");
     $('.sort-documents-nav').removeClass('open');
     $('.sort-documents-nav .wrapper').removeClass('open');
+    $("#sortStatements tbody tr.witness-header").removeClass('show');
+}
+
+function sortWitness() {
+    $("#sortStatements tbody tr.witness-2").insertAfter("#sortStatements tbody tr.witness-1");
+    $("#sortStatements tbody tr.witness-3").insertAfter("#sortStatements tbody tr.witness-2");
+    $("#sortStatements tbody tr.witness-4").insertAfter("#sortStatements tbody tr.witness-3");
+    $("#sortStatements tbody tr.witness-5").insertAfter("#sortStatements tbody tr.witness-4");
+    $("#sortStatements tbody tr.witness-6").insertAfter("#sortStatements tbody tr.witness-5");
+    $("#sortStatements tbody tr.witness-7").insertAfter("#sortStatements tbody tr.witness-6");
+    $("#sortStatements tbody tr.witness-8").insertAfter("#sortStatements tbody tr.witness-7");
+    $("#sortStatements tbody tr.witness-9").insertAfter("#sortStatements tbody tr.witness-8");
+    $("#sortStatements tbody tr.witness-10").insertAfter("#sortStatements tbody tr.witness-9");
+    $("#sortStatements tbody tr.witness-11").insertAfter("#sortStatements tbody tr.witness-10");
+    $("#sortStatements tbody tr.witness-12").insertAfter("#sortStatements tbody tr.witness-11");
+    $("#sortStatements tbody tr.witness-13").insertAfter("#sortStatements tbody tr.witness-12");
+    $('.sort-documents-nav').removeClass('open');
+    $('.sort-documents-nav .wrapper').removeClass('open');
+    $("#sortStatements tbody tr.witness-header").addClass('show');
 }
 
 // Section 4 - Exhibits
@@ -2259,6 +2279,43 @@ function updateDocument10() {
     $('table tbody tr.document-10 td').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
     $('.page-counter strong').text('1');
 }
+
+
+// =================================== ROTATE PAGES =================================== //
+$(document).ready(function(){
+    $(".rotate-IMG-left").click(function(e){
+        e.preventDefault();
+        var angle = ($(this).parent().parent().find('img').data('angle'));
+        if (!angle) {
+            angle = -90;
+        } else {
+            angle = angle-90;
+        }
+        $(this).parent().parent().find('img').css({'transform': 'rotate(' + angle + 'deg)'});
+        $(this).parent().parent().find('img').data('angle', angle);
+    });
+    $(".rotate-IMG-right").click(function(e){
+        // alert($(this).parent().parent().find('img').data('angle'));
+        e.preventDefault();
+        var angle = ($(this).parent().parent().find('img').data('angle'));
+        if (!angle) {
+            angle = 90;
+        } else {
+            angle = angle+90;
+        }
+        // alert(angle);
+        $(this).parent().parent().find('img').css({'transform': 'rotate(' + angle + 'deg)'});
+        $(this).parent().parent().find('img').data('angle', angle);
+    });
+});
+
+// =================================== INDEX PAGES =================================== //
+$(document).ready(function() {
+    if (window.location.href.indexOf("new-task") > -1) {
+        $('#new-task').attr('aria-expanded','true');
+        $('#group10-doc2 td').addClass('current').removeClass('unreadDocument');
+    }
+});
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
