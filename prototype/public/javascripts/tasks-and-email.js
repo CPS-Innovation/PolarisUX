@@ -29,28 +29,20 @@ $(document).ready(function () {
 
     $('.task-alert.one.completed, .no-tasks').hide();
 
-    $("input[name=taskComplete]").on("change", function (e) {
-        if ($(this).val() == "Yes") {
-            $('#confirm-task-complete').attr('onClick','return closeMarkTaskAsComplete()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
-        } else if ($(this).val() == "No") {
-            $('#confirm-task-complete').attr('onClick','closeMarkTaskAsComplete()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
-        }
-    });
+    // $("input[name=taskComplete]").on("change", function (e) {
+    //     if ($(this).val() == "Yes") {
+    //         $('#confirm-task-complete').attr('onClick','return closeMarkTaskAsComplete()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
+    //     } else if ($(this).val() == "No") {
+    //         $('#confirm-task-complete').attr('onClick','closeMarkTaskAsComplete()').removeClass('govuk-button--disabled').removeAttr('disabled', 'aria-disabled');
+    //     }
+    // });
 
     $("#confirm-task-complete").on("click", function (e) {
-        if ($('input[id=taskComplete-Yes]').is(':checked')) {
-            $('.tasks-panel-wrapper .tasks-button, .tasks-panel-wrapper .tasks-number').removeClass('alert');
-            $('.tasks-panel-wrapper .tasks-number').html('0');
+        $('.tasks-panel-wrapper .tasks-button, .tasks-panel-wrapper .tasks-number').removeClass('alert');
+        $('.tasks-panel-wrapper .tasks-number').html('0');
 
-            $('.tasks-panel-wrapper .task-alert.one').hide();
-            $('.tasks-panel-wrapper .task-alert.one.completed, .tasks-panel-wrapper .no-tasks').show();
-        } else if ($('input[id=taskComplete-No]').is(':checked')) {
-            $('.tasks-panel-wrapper .tasks-button, .tasks-panel-wrapper .tasks-number').addClass('alert');
-            $('.tasks-panel-wrapper .tasks-number').html('1');
-
-            $('.tasks-panel-wrapper .task-alert.one').show();
-            $('.tasks-panel-wrapper .task-alert.one.completed, .tasks-panel-wrapper .no-tasks').hide();
-        }
+        $('.tasks-panel-wrapper .task-alert.one').hide();
+        $('.tasks-panel-wrapper .task-alert.one.completed, .tasks-panel-wrapper .no-tasks').show();
     });
 
 })

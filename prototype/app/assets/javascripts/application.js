@@ -9,11 +9,10 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Check for the presence of a unique ID
-    var uniqueElement = document.getElementById('RJpage');
-
-      if (!uniqueElement) {
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Check for the presence of a unique ID
+//     var uniqueElement = document.getElementById('RJpage');
+//     if (!uniqueElement) {
 
 
 // Floating footer
@@ -1900,9 +1899,8 @@ function renameDocument() {
 }
 
 function documentOptionTitle() {
-    // var docNewTitle = $(this).parent().parent().find('.show-case').text();
-    // $('.document-title-10').text(docNewTitle);
-    // alert(docNewTitle);
+    var docNewTitle = $(this).parent().parent().find('.show-case').text();
+    $('.document-title-10').text(docNewTitle);
 }
 
 // Group 1 - Reviews
@@ -2344,7 +2342,7 @@ $(document).ready(function () {
 
 })
 
-} else {
-        console.log('This is the page with the unique ID. Additional scripts from application.js will not run.');
-    }
-});
+// } else {
+//         console.log('This is the page with the unique ID. Additional scripts from application.js will not run.');
+//     }
+// });
