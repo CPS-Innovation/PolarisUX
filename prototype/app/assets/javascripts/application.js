@@ -2202,45 +2202,87 @@ function sortUncategorisedDate() {
 
 $(document).ready(function(){
         
-    $("#page-1").on("click" ,function(){
+    $("#page-1, #page-1-new").on("click" ,function(){
         var scrolled=0;
-        scrolled=scrolled+145;
+        scrolled=scrolled+200;
         $("html").animate({
             scrollTop: scrolled
         });
     });
     
-    $("#page-2").on("click" ,function(){
+    $("#page-2, #page-2-new").on("click" ,function(){
         var scrolled=0;
-        scrolled=scrolled+1555;
+        scrolled=scrolled+1675;
         $("html").animate({
             scrollTop: scrolled
         });
     });
 
-    $("#page-3").on("click" ,function(){
+    $("#page-3, #page-3-new").on("click" ,function(){
         var scrolled=0;
-        scrolled=scrolled+2950;
+        scrolled=scrolled+3155;
         $("html").animate({
             scrollTop: scrolled
         });
+    });
+
+    $("#page-4, #page-4-new").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+4635;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+
+    $("#page-5, #page-5-new").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+6115;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+
+    $("#page-6, #page-6-new").on("click" ,function(){
+        var scrolled=0;
+        scrolled=scrolled+7590;
+        $("html").animate({
+            scrollTop: scrolled
+        });
+    });
+
+    $('.delete-page').click(function() {
+        var documentNumber = $(this).parent().parent().parent().find('h2').text();
+        $('.page-number').text(documentNumber);
+        $(this).parent().parent().parent().addClass('remove');
     });
 
     $('input[name=confirmRemovePages]').change(function() {
-        if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '7') {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument6()');
-        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '8') {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument7()');
-        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '9') {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument8()');
-        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '10') {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument9()');
-        } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '11') {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument10()');
+        if ($('#confirmRemovePages-Yes').is(':checked')) {
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), removePageNumber()');
+        } else {
+            $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
         }
-    });
+    });    
+
+    // $('input[name=confirmRemovePages]').change(function() {
+    //     if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '7') {
+    //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument6()');
+    //     } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '8') {
+    //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument7()');
+    //     } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '9') {
+    //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument8()');
+    //     } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '10') {
+    //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument9()');
+    //     } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '11') {
+    //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument10()');
+    //     }
+    // });
 
 });
+
+function removePageNumber() {
+    $('div.remove').remove();
+}
 
 function updateDocument() {
     $('#pdf-root .canvasWrapper, #pdf-root .textLayer').hide();

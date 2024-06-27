@@ -125,6 +125,27 @@
     }
 }
 
+#openRotatePages {
+    .rotate-wrapper {
+        .button-wrapper {
+            button {
+                margin-right: 0.775em !important;
+                &.rotate-IMG-right {
+                    margin-right: 0.775em !important;
+                }
+                &.delete-page {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+#confirmRemovePages {
+    z-index: 10000000000;
+}
+
+
 #searchLoadingPanel {
     height: 78vh;
     text-align: center;
@@ -1312,6 +1333,17 @@
 #confirmModal {
     .govuk-warning-text {
         margin-bottom: 0;
+    }
+}
+
+#removePages {
+    h2, a {
+        float: left;
+        display: inline-block;
+    }
+    a {
+        font-size: 1rem;
+        margin: 0.125em 0 0 0.25em;
     }
 }
 
