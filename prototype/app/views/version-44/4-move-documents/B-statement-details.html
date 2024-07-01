@@ -64,7 +64,7 @@
                                     {% endif %}
                                     <label class="govuk-label govuk-radios__label" for="documentStatement-Witness-5">Geoff McLove</label>
                                 </div>
-                                <div class="govuk-radios__divider">or</div>
+<!--                                 <div class="govuk-radios__divider">or</div>
                                 <div class="govuk-radios__item">
                                     {% if data['documentStatement-Witness'] == 'Other' and data['answers-complete'] == 'true' %}
                                         <input class="govuk-radios__input" id="documentStatement-Witness-Other" name="documentStatement-Witness" type="radio" value="Other" data-aria-controls="conditional-Statements" checked>
@@ -83,7 +83,7 @@
                                         {% endif %}
                                     </div>
                                 </div>                            
-                            </div>
+ -->                            </div>
                         </fieldset>
                     </div>
 
@@ -116,9 +116,9 @@
                                     <div class="govuk-form-group">
                                         <label class="govuk-label govuk-date-input__label" for="documentStatement-year">Year</label>
                                         {% if data['documentStatement-year'] and data['answers-complete'] == 'true' %}
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="documentStatement-year" name="documentStatement-year" type="text" inputmode="numeric" value="{{ data['documentStatement-year'] }}">
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="documentStatement-year" name="documentStatement-year" type="text" inputmode="numeric" value="{{ data['documentStatement-year'] }}">
                                         {% else %}
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="documentStatement-year" name="documentStatement-year" type="text" inputmode="numeric">
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="documentStatement-year" name="documentStatement-year" type="text" inputmode="numeric">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                         {% if data['documentStatement-Number'] and data['answers-complete'] == 'true' %}
                             <input class="govuk-input govuk-input--width-5" id="documentStatement-Number" name="documentStatement-Number" type="text" value="{{ data['documentStatement-Number'] }}">
                         {% else %}
-                            <input class="govuk-input govuk-input--width-5" id="documentStatement-Number" name="documentStatement-Number" type="text">
+                            <input class="govuk-input govuk-input--width-5" id="documentStatement-Number" name="documentStatement-Number" type="text" value="7">
                         {% endif %}
                     </div> 
 

@@ -48,8 +48,8 @@
                                         {% endif %}
                                     {% elseif data['scenario'] == 'two' %}
                                         <label class="govuk-label" for="docType-Scenario-2-NAME">Enter new document name</label>
-                                        <span class="govuk-hint">Example: Doc Name, witness SURNAME First Name, date of statement</span>
-                                        <span class="govuk-hint">For example, MG11 SMITH John 25/06/2024</span>
+                                        <span class="govuk-hint">Example: Doc Name witness SURNAME First Name date of statement</span>
+                                        <span class="govuk-hint">MG11 SMITH John 25/06/2024</span>
                                         {% if data['docType-Scenario-2-NAME'] %}
                                             <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-2-NAME" name="docType-Scenario-2-NAME" type="text" value="{{ data['docType-Scenario-2-NAME'] }}">
                                         {% else %}
@@ -58,7 +58,7 @@
                                     {% elseif data['scenario'] == 'three' %}
                                         <label class="govuk-label" for="docType-Scenario-3-NAME">Enter new document name</label>
                                         <span class="govuk-hint">Example: Doc Name</span>
-                                        <span class="govuk-hint">For example, MG12</span>
+                                        <span class="govuk-hint">MG12</span>
                                         {% if data['docType-Scenario-3-NAME'] %}
                                             <input class="govuk-input govuk-!-width-two-thirds" id="docType-Scenario-3-NAME" name="docType-Scenario-3-NAME" type="text" value="{{ data['docType-Scenario-3-NAME'] }}">
                                         {% else %}

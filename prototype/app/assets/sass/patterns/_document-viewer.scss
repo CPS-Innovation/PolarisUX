@@ -314,7 +314,18 @@ main.case-files {
                 }
             }
             .updated-message {
-                border-left: 5px solid govuk-colour("orange");
+                border:  5px solid $govuk-success-colour;
+                // border-left: 5px solid govuk-colour("orange");
+                padding: 0;
+                h3 {
+                    background: $govuk-success-colour;
+                    color: white;
+                    margin: 0;
+                    padding: 0.25em 0.5em 0.5em 0.5em;
+                }
+                div {
+                    padding: 1em;
+                }
                 &.sticky {
                     position: fixed;
                     top: 60px;

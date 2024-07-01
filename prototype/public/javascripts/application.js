@@ -193,6 +193,14 @@ $(document).mouseup(function(e) {
         $('#searchFormTest2 .search-button').removeClass('open');
     }
 
+    var containerV9 = $(".more-options");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV9.is(e.target) && containerV9.has(e.target).length === 0) {
+        $(containerV9).removeClass('show');
+        $('.document-nav').removeClass('show');
+    }
+
 
 
 });
@@ -1892,7 +1900,8 @@ $(document).ready(function () {
 
 function renameDocument() {
     var newDocumentName = $('#rename-Document').val();
-    $('.updated-message .info-text').text('Document has been renamed ' + newDocumentName);
+    $('.updated-message p strong').text(newDocumentName);
+    // $('.updated-message .info-text').text('Document has been renamed ' + newDocumentName);
     $('ul.sticky-tabs li.govuk-tabs__list-item--selected a').text(newDocumentName);
     $('table tbody tr td.change-DocumentName a.show-case').text(newDocumentName);
     $('#documentNameHeader .inPageSearchMargins2').text(newDocumentName);   
