@@ -172,6 +172,19 @@
                     <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> document name</span></a>
                 </dd>
             </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Status</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['move-single-Document'] == 'Unused materials' %}
+                        Unused
+                    {% else %}
+                        {{ data['docType-document-status'] }}
+                    {% endif %} 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="E-evidential">Change<span class="govuk-visually-hidden"> status</span></a>
+                </dd>
+            </div>
         </dl>
         {% if data['scenario'] == 'one' %}
             <form action="../1-new-designs/C-casefile-1#catergory-Communications" method="post" novalidate>

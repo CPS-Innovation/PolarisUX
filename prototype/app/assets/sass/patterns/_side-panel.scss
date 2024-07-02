@@ -121,7 +121,7 @@
                     }
                     tbody {
                         tr {
-                            &.witness-header {
+                            &.witness-header, &.unused-materials-header {
                                 display: none;
                                 &.show {
                                     display: table-row;
@@ -131,6 +131,9 @@
                                     border-bottom: 1px solid $govuk-border-colour;
                                     padding: 1em 0 0.5em 0;
                                 }
+                            }
+                            &.unused-materials-header {
+                                display: table-row;
                             }
                             &.hidden-section {
                                 display: none;
@@ -160,6 +163,9 @@
                             //         border: none;
                             //     }
                             // }
+                            &.markedAsUnused {
+                                display: none;
+                            }
                             td {
                                 position: relative;
                                 .wrapper {
@@ -243,7 +249,7 @@
                                     right: 0.75em;
                                     top: 3.5em;
                                     z-index: 1;
-                                    width: 10em;
+                                    width: 11em;
                                     input {
                                         display: none;
                                     }

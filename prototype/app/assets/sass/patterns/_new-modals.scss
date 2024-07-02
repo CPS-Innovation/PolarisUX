@@ -91,7 +91,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            min-height: 14em;
+            min-height: 11em;
             img {
                 display: inline-block;
                 width: 40%;
@@ -126,15 +126,71 @@
 }
 
 #openRotatePages {
-    .rotate-wrapper {
-        .button-wrapper {
+    .edit-document {
+        position: relative;
+        .cta-footer {
+            position: sticky;
+            background: white;
+            padding: 1.25em;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
             button {
-                margin-right: 0.775em !important;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .rotate-wrapper {
+        padding-bottom: 0.5em;
+        .image-wrapper {
+            margin-left: -3.5em;
+        }
+        .button-wrapper {
+            top: 3.9em;
+            left: inherit;
+            bottom: inherit;
+            button {
+                // margin-right: 0.775em !important;
+                color: $govuk-link-colour;
+                text-decoration: underline;
+                background: none;
+                border: none;
+                font-size: 1rem;
+                display: inline-block;
+                float: left;
+                clear: both;
+                margin-top: 0.5em;
+                margin-right: 0 !important;
+                &.rotate-IMG-left {
+                    span {
+                        background: url("../images/rotate-left-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                        background-size: 1em;
+                    }
+                }
                 &.rotate-IMG-right {
-                    margin-right: 0.775em !important;
+                    margin-right: 0 !important;
+                    span {
+                        background: url("../images/rotate-right-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                        background-size: 1em;
+                    }
                 }
                 &.delete-page {
                     margin-right: 0 !important;
+                    span {
+                        background: url("../images/trash-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                        background-size: 1em;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    background: govuk-colour("light-grey");
+                    border-radius: 3px;
+                    width: 2em;
+                    height: 2em;
+                    float: left;
+                    margin: -0.5em 0.5em 0 0;
+                    border: 1px solid $govuk-border-colour;
                 }
             }
         }
@@ -1342,6 +1398,7 @@
         display: inline-block;
     }
     a {
+        float: right;
         font-size: 1rem;
         margin: 0.125em 0 0 0.25em;
     }
