@@ -108,19 +108,47 @@
                 }
             }
         }
-        .button-wrapper {
-            position: absolute;
-            left: 0;
-            right: 0;
-            text-align: center;
-            bottom: 0;
-            button {
-                float: none;
-                margin-bottom: 0.5em;
-                &.rotate-IMG-right {
-                    margin-right: 0 !important;
-                }
+    }
+    .button-wrapper, .button-wrapper-multiple {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: 0;
+        button {
+            float: none;
+            margin-bottom: 0.5em;
+            &.rotate-IMG-right {
+                margin-right: 0 !important;
             }
+        }
+    }
+    .button-wrapper-multiple {
+        display: none;
+        position: fixed;
+        padding: 0.25em 0.5em 0em 0.5em;
+        border-radius: 5px;
+        border: 1px solid $govuk-border-colour;
+        background: white;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        p {
+            text-align: left;
+            margin: 0 0 0.25em;
+        }
+        button {
+            padding: 0 !important;
+        }
+    }
+}
+
+.remove-and-rotate {
+    position: relative;
+    .button-wrapper-multiple {
+        right: inherit !important;
+        top: 5em !important;
+        left: 14.5em !important;
+        &.sticky {
+            top: 1em !important;
         }
     }
 }
@@ -146,52 +174,52 @@
         .image-wrapper {
             margin-left: -3.5em;
         }
-        .button-wrapper {
-            top: 3.9em;
-            left: inherit;
-            bottom: inherit;
-            button {
-                // margin-right: 0.775em !important;
-                color: $govuk-link-colour;
-                text-decoration: underline;
-                background: none;
-                border: none;
-                font-size: 1rem;
-                display: inline-block;
-                float: left;
-                clear: both;
-                margin-top: 0.5em;
-                margin-right: 0 !important;
-                &.rotate-IMG-left {
-                    span {
-                        background: url("../images/rotate-left-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
-                        background-size: 1em;
-                    }
-                }
-                &.rotate-IMG-right {
-                    margin-right: 0 !important;
-                    span {
-                        background: url("../images/rotate-right-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
-                        background-size: 1em;
-                    }
-                }
-                &.delete-page {
-                    margin-right: 0 !important;
-                    span {
-                        background: url("../images/trash-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
-                        background-size: 1em;
-                    }
-                }
+    }
+    .button-wrapper, .button-wrapper-multiple {
+        top: 3.9em;
+        left: inherit;
+        bottom: inherit;
+        button {
+            // margin-right: 0.775em !important;
+            color: $govuk-link-colour;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+            float: left;
+            clear: both;
+            margin-top: 0.5em;
+            margin-right: 0 !important;
+            &.rotate-IMG-left {
                 span {
-                    display: inline-block;
-                    background: govuk-colour("light-grey");
-                    border-radius: 3px;
-                    width: 2em;
-                    height: 2em;
-                    float: left;
-                    margin: -0.5em 0.5em 0 0;
-                    border: 1px solid $govuk-border-colour;
+                    background: url("../images/rotate-left-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                    background-size: 1em;
                 }
+            }
+            &.rotate-IMG-right {
+                margin-right: 0 !important;
+                span {
+                    background: url("../images/rotate-right-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                    background-size: 1em;
+                }
+            }
+            &.delete-page {
+                margin-right: 0 !important;
+                span {
+                    background: url("../images/trash-grey.svg") no-repeat 50% 50% govuk-colour("light-grey");
+                    background-size: 1em;
+                }
+            }
+            span {
+                display: inline-block;
+                background: govuk-colour("light-grey");
+                border-radius: 3px;
+                width: 2em;
+                height: 2em;
+                float: left;
+                margin: -0.5em 0.5em 0 0;
+                border: 1px solid $govuk-border-colour;
             }
         }
     }

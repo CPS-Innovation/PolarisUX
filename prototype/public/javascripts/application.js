@@ -2330,8 +2330,9 @@ function updateDocument10() {
 }
 
 
-// =================================== ROTATE PAGES =================================== //
+// =================================== ROTATE & REMOVE PAGES =================================== //
 $(document).ready(function(){
+
     $(".rotate-IMG-left").click(function(e){
         e.preventDefault();
         var angle = ($(this).parent().parent().find('img').data('angle'));
@@ -2343,6 +2344,7 @@ $(document).ready(function(){
         $(this).parent().parent().find('img').css({'transform': 'rotate(' + angle + 'deg)'});
         $(this).parent().parent().find('img').data('angle', angle);
     });
+
     $(".rotate-IMG-right").click(function(e){
         // alert($(this).parent().parent().find('img').data('angle'));
         e.preventDefault();
@@ -2356,6 +2358,27 @@ $(document).ready(function(){
         $(this).parent().parent().find('img').css({'transform': 'rotate(' + angle + 'deg)'});
         $(this).parent().parent().find('img').data('angle', angle);
     });
+
+    var $checkboxes = $('input[name="editDocument"]');
+        
+    $checkboxes.change(function(){
+        var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
+        // var checkedCheckboxes = $('.number-selected')    
+        $('.number-selected').text(countCheckedCheckboxes);
+        if (countCheckedCheckboxes >= 2 ) {
+            $('.rotate-wrapper .button-wrapper').hide();
+            $('.button-wrapper-multiple').show();
+        } else {
+            $('.rotate-wrapper .button-wrapper').show();
+            $('.button-wrapper-multiple').hide();
+        }
+        
+    });
+
+    $("#openRotatePages #openMe.das-cookie-banner.small").on( "scroll", function() {
+        $('.button-wrapper-multiple').addClass('sticky');
+    });
+
 });
 
 // =================================== INDEX PAGES =================================== //
@@ -2365,6 +2388,7 @@ $(document).ready(function() {
         $('#group10-doc2 td').addClass('current').removeClass('unreadDocument');
     }
 });
+
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //

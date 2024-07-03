@@ -30,7 +30,14 @@
                                 <div class="govuk-form-group">
                                     <fieldset class="govuk-fieldset">
 
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small remove-and-rotate" data-module="govuk-checkboxes">
+
+                                            <div class="button-wrapper-multiple">
+                                                <p><span class="number-selected">1</span> selected</p>
+                                                <button class="rotate-IMG-left"><span></span> Rotate left</button>
+                                                <button class="rotate-IMG-right"><span></span> Rotate right</button>
+                                                <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                            </div>
 
                                             <!-- PAGE - 1 - START -->
                                             <div class="govuk-checkboxes__item">
