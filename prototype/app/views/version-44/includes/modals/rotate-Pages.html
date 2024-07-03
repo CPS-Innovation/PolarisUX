@@ -16,7 +16,7 @@
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
                                 <h1 class="govuk-heading-s">
-                                    Edit document - <span id="document-title-notes" class="document-title-5">Document title</span>
+                                    Edit document - <span class="document-title-5">Document title</span>
                                 </h1>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                                                 <p><span class="number-selected">1</span> selected</p>
                                                 <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                 <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                             </div>
 
                                             <!-- PAGE - 1 - START -->
@@ -50,7 +50,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,7 +67,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +84,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,7 +101,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,7 +135,7 @@
                                                     <div class="button-wrapper">
                                                         <button class="rotate-IMG-left"><span></span> Rotate left</button>
                                                         <button class="rotate-IMG-right"><span></span> Rotate right</button>
-                                                        <button class="delete-page" onclick="return openConfirmRemovePages(), removePageNumber()"><span></span> Delete</button>
+                                                        <button class="delete-page" onclick="return removePageNumber()"><span></span> Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -151,7 +151,7 @@
                         </div>
 
                         <div class="cta-footer">
-                            <button id="removePages-button" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeRotatePagesModal()">Confirm</button>
+                            <button id="removePages-button" class="govuk-button" data-module="govuk-button" type="button" onClick="return openConfirmRemovePages()">Confirm</button>
                             <button class="non-button" data-module="govuk-button" type="button" onClick="closeRotatePagesModal()">Cancel</button>
                         </div>
 

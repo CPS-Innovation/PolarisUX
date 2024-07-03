@@ -2267,7 +2267,7 @@ $(document).ready(function(){
 
     $('input[name=confirmRemovePages]').change(function() {
         if ($('#confirmRemovePages-Yes').is(':checked')) {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), removePageNumber()');
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), closeRotatePagesModal()');
         } else {
             $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
         }
