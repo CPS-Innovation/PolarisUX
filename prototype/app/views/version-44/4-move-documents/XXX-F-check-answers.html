@@ -14,17 +14,79 @@
         <h2 class="govuk-heading-m">Document details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Type</dt>
-                <dd class="govuk-summary-list__value">{{ data['documentType'] }}</dd>
+                <dt class="govuk-summary-list__key">Category</dt>
+                <dd class="govuk-summary-list__value">{{ data['move-single-Document'] }}</dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document type</span></a>
+                    <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document category</span></a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Status</dt>
-                <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
+                <dt class="govuk-summary-list__key">Type</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['move-single-Document'] == 'Reviews' %}
+                        {% if data['docType-Radio-Reviews'] == 'Other' %}
+                            {{ data['docType-Reviews'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Reviews'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Case overview' %}
+                        {% if data['docType-Radio-CaseOverview'] == 'Other' %}
+                            {{ data['docType-CaseOverview'] }}
+                        {% else %}
+                            {{ data['docType-Radio-CaseOverview'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Statements' %}
+                        {% if data['docType-Radio-Statements'] == 'Other' %}
+                            {{ data['docType-Statements'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Statements'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Exhibits' %}
+                        {% if data['docType-Radio-Exhibits'] == 'Other' %}
+                            {{ data['docType-Exhibits'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Exhibits'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Forensics' %}
+                        {% if data['docType-Radio-Forensics'] == 'Other' %}
+                            {{ data['docType-Forensics'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Forensics'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Unused materials' %}
+                        {% if data['docType-Radio-Unused'] == 'Other' %}
+                            {{ data['docType-Unused'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Unused'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Defendant' %}
+                        {% if data['docType-Radio-Defendant'] == 'Other' %}
+                            {{ data['docType-Defendant'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Defendant'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Court preparation' %}
+                        {% if data['docType-Radio-Court'] == 'Other' %}
+                            {{ data['docType-Court'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Court'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Communications' %}
+                        {% if data['docType-Radio-Communications'] == 'Other' %}
+                            {{ data['docType-Communications'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Communications'] }}
+                        {% endif %}
+                    {% elseif data['move-single-Document'] == 'Uncategorised' %}
+                        {% if data['docType-Radio-Uncategorised'] == 'Other' %}
+                            {{ data['docType-Uncategorised'] }}
+                        {% else %}
+                            {{ data['docType-Radio-Uncategorised'] }}
+                        {% endif %}
+                    {% endif %}
+                </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="E-evidential">Change<span class="govuk-visually-hidden"> status</span></a>
+                    <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document type</span></a>
                 </dd>
             </div>
             {% if data['scenario'] == 'two' %}
@@ -50,14 +112,14 @@
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> statement date</span></a>
                     </dd>
                 </div>
-<!--                 <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Statement number</dt>
                     <dd class="govuk-summary-list__value">{{ data['documentStatement-Number'] }} </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> statement number</span></a>
                     </dd>
                 </div>
- -->            {% else %}
+            {% else %}
 
             {% endif %}
             {% if data['scenario'] == 'three' %}
@@ -108,6 +170,19 @@
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> document name</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Status</dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['move-single-Document'] == 'Unused materials' %}
+                        Unused
+                    {% else %}
+                        {{ data['docType-document-status'] }}
+                    {% endif %} 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="E-evidential">Change<span class="govuk-visually-hidden"> status</span></a>
                 </dd>
             </div>
         </dl>

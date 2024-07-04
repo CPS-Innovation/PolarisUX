@@ -11,15 +11,15 @@
     <div class="govuk-grid-column-one-half">
         <div class="wrapper gov-pages">
             <h1 class="govuk-heading-l" style="">
-                Select the category for your document
+                Enter the classification details</label>
             </h1>
             <div id="changeCategory-hint" class="govuk-hint">
                 {% if data['scenario'] == 'one' %}
-                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
+                    <p class="govuk-body">You're changing the classification for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></p>
                 {% elseif data['scenario'] == 'two' %}
-                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
+                    <p class="govuk-body">You're changing the classification for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
                 {% elseif data['scenario'] == 'three' %}
-                    <p class="govuk-body">You're changing the category for <mark class="hods-highlight"><strong>Exhibit - 1</strong></mark></p>
+                    <p class="govuk-body">You're changing the classification for <mark class="hods-highlight"><strong>Exhibit - 1</strong></mark></p>
                 {% endif %}
 
             </div>
@@ -32,826 +32,105 @@
                 <form method="get" action="C-exhibit-details">  
             {% endif %}
 
-                <fieldset>
-                    <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="documentType">Select document type</label>
+                    <select class="govuk-select" id="documentType" name="documentType" aria-describedby="location-hint">
+                        <option disabled selected>Choose document type</option>
+                        <option value="ABE">ABE</option>
+                        <option value="Asset recovery">Asset recovery</option>
+                        <option value="Asset recovery 3rd Party">Asset recovery 3rd Party</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Correspondence">Correspondence</option>
+                        <option value="Counsel Case Acknowledgement">Counsel Case Acknowledgement</option>
+                        <option value="DCF">DCF</option>
+                        <option value="DREP">DREP</option>
+                        <option value="Defence Statement">Defence Statement</option>
+                        <option value="MG00">MG00</option>
+                        <option value="MG1">MG1</option>
+                        <option value="MG2">MG2</option>
+                        <option value="MG3">MG3</option>
+                        <option value="MG3A">MG3A</option>
+                        <option value="MG4">MG4</option>
+                        <option value="MG4A">MG4A</option>
+                        <option value="MG4B">MG4B</option>
+                        <option value="MG4C">MG4C</option>
+                        <option value="MG4D">MG4D</option>
+                        <option value="MG4E">MG4E</option>
+                        <option value="MG4(post)">MG4(post)</option>
+                        <option value="MG4F">MG4F</option>
+                        <option value="MG5">MG5</option>
+                        <option value="MG5(SP)">MG5(SP)</option>
+                        <option value="MG6">MG6</option>
+                        <option value="MG6A">MG6A</option>
+                        <option value="MGB">MG6B</option>
+                        <option value="MG6C">MG6C</option>
+                        <option value="MG6D">MG6D</option>
+                        <option value="MG6E">MG6E</option>
+                        <option value="MG7">MG7</option>
+                        <option value="MG8">MG8</option>
+                        <option value="MG9">MG9</option>
+                        <option value="MG10">MG10</option>
+                        <option value="MG11">MG11</option>
+                        <option value="MG11(R)">MG11(R)</option>
+                        <option value="MG12">MG12</option>
+                        <option value="MG13">MG13</option>
+                        <option value="MG14">MG14</option>
+                        <option value="MG15(SDN)">MG15(SDN)</option>
+                        <option value="MG15(ROTI)">MG15(ROTI)</option>
+                        <option value="MG15(ROVI)">MG15(ROVI)</option>
+                        <option value="MG15(CONI)">MG15(CONI)</option>
+                        <option value="MG16">MG16</option>
+                        <option value="MG16(DBCI)">MG16(DBCI)</option>
+                        <option value="MG16(DOI)">MG16(DOI)</option>
+                        <option value="MG17">MG17</option>
+                        <option value="MG18">MG18</option>
+                        <option value="MG19">MG19</option>
+                        <option value="MG20">MG20</option>
+                        <option value="MG21">MG21</option>
+                        <option value="MG21A">MG21A</option>
+                        <option value="MG22 SFR">MG22 SFR</option>
+                        <option value="MGDD">MGDD</option>
+                        <option value="MG/FSSA">MG/FSSA</option>
+                        <option value="MG/FSSB">MG/FSSB</option>
+                        <option value="Other Communication">Other Communication</option>
+                        <option value="Other Exhibit">Other Exhibit</option>
+                        <option value="Other Material">Other Material</option>
+                        <option value="PCN1">PCN1</option>
+                        <option value="PCN2">PCN2</option>
+                        <option value="PCN3">PCN3</option>
+                        <option value="PE1">PE1</option>
+                        <option value="PE2">PE2</option>
+                        <option value="PE3">PE3</option>
+                        <option value="PE4">PE4</option>
+                        <option value="SDC">SDC</option>
+                        <option value="Service of ABE">Service of ABE</option>
+                    </select>
+                </div>
 
-                        <!-- ITEM - 1 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Reviews' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-REVIEWS" name="move-single-Document" type="radio" value="Reviews" data-aria-controls="conditional-Reviews" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-REVIEWS" name="move-single-Document" type="radio" value="Reviews" data-aria-controls="conditional-Reviews">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-REVIEWS">Reviews</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Reviews">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Reviews'] == 'MG3' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-MG3" name="docType-Radio-Reviews" type="radio" value="MG3" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-MG3" name="docType-Radio-Reviews" type="radio" value="MG3">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-MG3">MG3</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Reviews'] == 'MG3A' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-MG3A" name="docType-Radio-Reviews" type="radio" value="MG3A" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-MG3A" name="docType-Radio-Reviews" type="radio" value="MG3A">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-MG3A">MG3A</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Reviews'] == 'PET' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-PET" name="docType-Radio-Reviews" type="radio" value="PET" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-PET" name="docType-Radio-Reviews" type="radio" value="PET">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-PET">PET</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Reviews'] == 'BCM' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-BCM" name="docType-Radio-Reviews" type="radio" value="BCM">
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-BCM" name="docType-Radio-Reviews" type="radio" value="BCM" checked>
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-BCM">BCM</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Reviews'] == 'BCM' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-Other" name="docType-Radio-Reviews" type="radio" value="Other" data-aria-controls="conditional-Reviews-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Reviews-Other" name="docType-Radio-Reviews" type="radio" value="Other" data-aria-controls="conditional-Reviews-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Reviews-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Reviews-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Reviews"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Reviews'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-two-thirds" id="docType-Reviews" name="docType-Reviews" type="text" value="{{ data['docType-Reviews'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-two-thirds" id="docType-Reviews" name="docType-Reviews" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend">What is the document status?</legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                {% if data['docType-document-status'] == 'Used' and data['answers-complete'] == 'true' %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used" checked>
+                                {% else %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used">
+                                {% endif %}
+                                <label class="govuk-label govuk-radios__label" for="docType-document-status-Evidential">Used</label>
                             </div>
-                        </div>                            
-                        <!-- ITEM - 1 - END -->
-
-                        <!-- ITEM - 2 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Case overview' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-CASE" name="move-single-Document" type="radio" value="Case overview" data-aria-controls="conditional-CaseOverview" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-CASE" name="move-single-Document" type="radio" value="Case overview" data-aria-controls="conditional-CaseOverview">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-CASE">Case overview</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-CaseOverview">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4" name="docType-Radio-CaseOverview" type="radio" value="MG4" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4" name="docType-Radio-CaseOverview" type="radio" value="MG4">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4">MG4</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG5' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG5" name="docType-Radio-CaseOverview" type="radio" value="MG5" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG5" name="docType-Radio-CaseOverview" type="radio" value="MG5">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG5">MG5</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4A' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4A" name="docType-Radio-CaseOverview" type="radio" value="MG4A" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4A" name="docType-Radio-CaseOverview" type="radio" value="MG4A">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4A">MG4A</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4D' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4D" name="docType-Radio-CaseOverview" type="radio" value="MG4D" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4D" name="docType-Radio-CaseOverview" type="radio" value="MG4D">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4D">MG4D</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4 (POST)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4-POST" name="docType-Radio-CaseOverview" type="radio" value="MG4 (POST)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4-POST" name="docType-Radio-CaseOverview" type="radio" value="MG4 (POST)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4-POST">MG4 (POST)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4E' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4E" name="docType-Radio-CaseOverview" type="radio" value="MG4E" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4E" name="docType-Radio-CaseOverview" type="radio" value="MG4E">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4E">MG4E</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG18' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG18" name="docType-Radio-CaseOverview" type="radio" value="MG18" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG18" name="docType-Radio-CaseOverview" type="radio" value="MG18">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG18">MG18</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG5 (SP)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG5-SP" name="docType-Radio-CaseOverview" type="radio" value="MG5 (SP)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG5-SP" name="docType-Radio-CaseOverview" type="radio" value="MG5 (SP)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG5-SP">MG5 (SP)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4C' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4C" name="docType-Radio-CaseOverview" type="radio" value="MG4C" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4C" name="docType-Radio-CaseOverview" type="radio" value="MG4C">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4C">MG4C</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4F' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4F" name="docType-Radio-CaseOverview" type="radio" value="MG4F" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4F" name="docType-Radio-CaseOverview" type="radio" value="MG4F">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4F">MG4F</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG4B' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4B" name="docType-Radio-CaseOverview" type="radio" value="MG4B" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG4B" name="docType-Radio-CaseOverview" type="radio" value="MG4B">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG4B">MG4B</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'MG17' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG17" name="docType-Radio-CaseOverview" type="radio" value="MG17" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-MG17" name="docType-Radio-CaseOverview" type="radio" value="MG17">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-MG17">MG17</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-CaseOverview'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-Other" name="docType-Radio-CaseOverview" type="radio" value="Other" data-aria-controls="conditional-CaseOverview-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-CaseOverview-Other" name="docType-Radio-CaseOverview" type="radio" value="Other" data-aria-controls="conditional-CaseOverview-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-CaseOverview-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-CaseOverview-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-CaseOverview"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Reviews'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-CaseOverview" name="docType-CaseOverview" type="text" value="{{ data['docType-CaseOverview'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-CaseOverview" name="docType-CaseOverview" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
+                            <div class="govuk-radios__item">
+                                {% if data['docType-document-status'] == 'Unused' and data['answers-complete'] == 'true' %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused" checked>
+                                {% else %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused">
+                                {% endif %}
+                                <label class="govuk-label govuk-radios__label" for="docType-document-status-Unused">Unused</label>
                             </div>
                         </div>
-                        <!-- ITEM - 2 - END -->
+                    </fieldset>
+                </div>
 
-                        <!-- ITEM - 3 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Statements' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-STATEMENTS" name="move-single-Document" type="radio" value="Statements" data-aria-controls="conditional-Statements" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-STATEMENTS" name="move-single-Document" type="radio" value="Statements" data-aria-controls="conditional-Statements">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-STATEMENTS">Statements</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Statements">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Statements'] == 'MG9' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-MG9" name="docType-Radio-Statements" type="radio" value="MG9" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-MG9" name="docType-Radio-Statements" type="radio" value="MG9">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Statements-MG9">MG9</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Statements'] == 'MG11' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-MG11" name="docType-Radio-Statements" type="radio" value="MG11" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-MG11" name="docType-Radio-Statements" type="radio" value="MG11">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Statements-MG11">MG11</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Statements'] == 'PE1' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-PE1" name="docType-Radio-Statements" type="radio" value="PE1" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-PE1" name="docType-Radio-Statements" type="radio" value="PE1">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Statements-PE1">PE1</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Statements'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-Other" name="docType-Radio-Statements" type="radio" value="Other" data-aria-controls="conditional-Statements-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Statements-Other" name="docType-Radio-Statements" type="radio" value="Other" data-aria-controls="conditional-Statements-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Statements-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Statements-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Statements"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Reviews'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Statements" name="docType-Statements" type="text" value="{{ data['docType-Statements'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Statements" name="docType-Statements" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>    
-                        </div>                     
-                        <!-- ITEM - 3 - END -->
-
-                        <!-- ITEM - 4 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Exhibits' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-EXHIBITS" name="move-single-Document" type="radio" value="Exhibits" data-aria-controls="conditional-Exhibits" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-EXHIBITS" name="move-single-Document" type="radio" value="Exhibits" data-aria-controls="conditional-Exhibits">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-EXHIBITS">Exhibits</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Exhibits">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG12' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG12" name="docType-Radio-Exhibits" type="radio" value="MG12" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG12" name="docType-Radio-Exhibits" type="radio" value="MG12">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG12">MG12</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG15 (ROTI)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-ROTI" name="docType-Radio-Exhibits" type="radio" value="MG15 (ROTI)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-ROTI" name="docType-Radio-Exhibits" type="radio" value="MG15 (ROTI)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG15-ROTI">MG15 (ROTI)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG/FFS A' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG-FFS-A" name="docType-Radio-Exhibits" type="radio" value="MG/FFS A" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG-FFS-A" name="docType-Radio-Exhibits" type="radio" value="MG/FFS A">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG-FFS-A">MG/FFS A</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG/FFS B' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG-FFS-B" name="docType-Radio-Exhibits" type="radio" value="MG/FFS B" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG-FFS-B" name="docType-Radio-Exhibits" type="radio" value="MG/FFS B">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG-FFS-B">MG/FFS B</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'Other Exhibit' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-Other-Exhibit" name="docType-Radio-Exhibits" type="radio" value="Other Exhibit" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-Other-Exhibit" name="docType-Radio-Exhibits" type="radio" value="Other Exhibit">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-Other-Exhibit">Other Exhibit</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG15 (SDN)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-SDN" name="docType-Radio-Exhibits" type="radio" value="MG15 (SDN)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-SDN" name="docType-Radio-Exhibits" type="radio" value="MG15 (SDN)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG15-SDN">MG15 (SDN)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG15 (ROVI)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-ROVI" name="docType-Radio-Exhibits" type="radio" value="MG15 (ROVI)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-ROVI" name="docType-Radio-Exhibits" type="radio" value="MG15 (ROVI)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG15-ROVI">MG15 (ROVI)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MGDD' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MGDD" name="docType-Radio-Exhibits" type="radio" value="MGDD" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MGDD" name="docType-Radio-Exhibits" type="radio" value="MGDD">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MGDD">MGDD</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'MG15 CNOI' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-CNOI" name="docType-Radio-Exhibits" type="radio" value="MG15 CNOI" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-MG15-CNOI" name="docType-Radio-Exhibits" type="radio" value="MG15 CNOI">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-MG15-CNOI">MG15 CNOI</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Exhibits'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-Other" name="docType-Radio-Exhibits" type="radio" value="Other" data-aria-controls="conditional-Exhibits-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Exhibits-Other" name="docType-Radio-Exhibits" type="radio" value="Other" data-aria-controls="conditional-Exhibits-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Exhibits-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Exhibits-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Exhibits"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Exhibits'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Exhibits" name="docType-Exhibits" type="text" value="{{ data['docType-Exhibits'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Exhibits" name="docType-Exhibits" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 4 - END -->
-
-                        <!-- ITEM - 5 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Forensics' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-FORENSICS" name="move-single-Document" type="radio" value="Forensics" data-aria-controls="conditional-Forensics" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-FORENSICS" name="move-single-Document" type="radio" value="Forensics" data-aria-controls="conditional-Forensics">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-FORENSICS">Forensics</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Forensics">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Forensics'] == 'MG22 SFR' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG22-SFR" name="docType-Radio-Forensics" type="radio" value="MG22 SFR" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG22-SFR" name="docType-Radio-Forensics" type="radio" value="MG22 SFR">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Forensics-MG22-SFR">MG22 SFR</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Forensics'] == 'MG21' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG21" name="docType-Radio-Forensics" type="radio" value="MG21" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG21" name="docType-Radio-Forensics" type="radio" value="MG21">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Forensics-MG21">MG21</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Forensics'] == 'MG21A' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG21A" name="docType-Radio-Forensics" type="radio" value="MG21A" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Forensics-MG21A" name="docType-Radio-Forensics" type="radio" value="MG21A">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Forensics-MG21A">MG21A</label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 5 - END -->
-
-                        <!-- ITEM - 6 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Unused materials' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-UNUSED" name="move-single-Document" type="radio" value="Unused materials" data-aria-controls="conditional-Unused" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-UNUSED" name="move-single-Document" type="radio" value="Unused materials" data-aria-controls="conditional-Unused">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-UNUSED">Unused materials</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Unused">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG6C' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6C" name="docType-Radio-Unused" type="radio" value="MG6C" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6C" name="docType-Radio-Unused" type="radio" value="MG6C">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6C">MG6C</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG6D' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6D" name="docType-Radio-Unused" type="radio" value="MG6D" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6D" name="docType-Radio-Unused" type="radio" value="MG6D">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6D">MG6D</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG6E' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6E" name="docType-Radio-Unused" type="radio" value="MG6E" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6E" name="docType-Radio-Unused" type="radio" value="MG6E">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6E">MG6E</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG6B' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6B" name="docType-Radio-Unused" type="radio" value="MG6B" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6B" name="docType-Radio-Unused" type="radio" value="MG6B">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6B">MG6B</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG6A' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6A" name="docType-Radio-Unused" type="radio" value="MG6A" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG6A" name="docType-Radio-Unused" type="radio" value="MG6A">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG6A">MG6A</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'MG1' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG1" name="docType-Radio-Unused" type="radio" value="MG1" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-MG1" name="docType-Radio-Unused" type="radio" value="MG1">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-MG1">MG1</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'PCN3' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-PCN3" name="docType-Radio-Unused" type="radio" value="PCN3" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-PCN3" name="docType-Radio-Unused" type="radio" value="PCN3">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-PCN3">PCN3</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Unused'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-Other" name="docType-Radio-Unused" type="radio" value="Other" data-aria-controls="conditional-Unused-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Unused-Other" name="docType-Radio-Unused" type="radio" value="Other" data-aria-controls="conditional-Unused-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Unused-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Unused-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Unused"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Unused'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Unused" name="docType-Unused" type="text" value="{{ data['docType-Unused'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Unused" name="docType-Unused" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 6 - END -->
-
-                        <!-- ITEM - 7 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Defendant' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-DEFENDANT" name="move-single-Document" type="radio" value="Defendant" data-aria-controls="conditional-Defendant" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-DEFENDANT" name="move-single-Document" type="radio" value="Defendant" data-aria-controls="conditional-Defendant">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-DEFENDANT">Defendant</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Defendant">
-                            <div class="govuk-form-group govuk-radios--small">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'PCN1' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PCN1" name="docType-Radio-Defendant" type="radio" value="PCN1" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PCN1" name="docType-Radio-Defendant" type="radio" value="PCN1">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-PCN1">PCN1</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'PCN2' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PCN2" name="docType-Radio-Defendant" type="radio" value="PCN2" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PCN2" name="docType-Radio-Defendant" type="radio" value="PCN2">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-PCN2">PCN2</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'MG16' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16" name="docType-Radio-Defendant" type="radio" value="MG16" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16" name="docType-Radio-Defendant" type="radio" value="MG16">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-MG16">MG16</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'DREP' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-DREP" name="docType-Radio-Defendant" type="radio" value="DREP" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-DREP" name="docType-Radio-Defendant" type="radio" value="DREP">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-DREP">DREP</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'MG16 (DDOI)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16-DDOI" name="docType-Radio-Defendant" type="radio" value="MG16 (DDOI)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16-DDOI" name="docType-Radio-Defendant" type="radio" value="MG16 (DDOI)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-MG16-DDOI">MG16 (DDOI)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'MG16 (DBCI)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16-DBCI" name="docType-Radio-Defendant" type="radio" value="MG16 (DBCI)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-MG16-DBCI" name="docType-Radio-Defendant" type="radio" value="MG16 (DBCI)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-MG16-DBCI">MG16 (DBCI)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Defendant'] == 'PE2' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PE2" name="docType-Radio-Defendant" type="radio" value="PE2" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Defendant-PE2" name="docType-Radio-Defendant" type="radio" value="PE2">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Defendant-PE2">PE2</label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 7 - END -->
-
-                        <!-- ITEM - 8 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Court preparation' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-COURT" name="move-single-Document" type="radio" value="Court preparation"  data-aria-controls="conditional-Court" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-COURT" name="move-single-Document" type="radio" value="Court preparation"  data-aria-controls="conditional-Court">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-COURT">Court preparation</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Court">
-                            <div class="govuk-form-group govuk-radios--small">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG10' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG10" name="docType-Radio-Court" type="radio" value="MG10" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG10" name="docType-Radio-Court" type="radio" value="MG10">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG10">MG10</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG8' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG8" name="docType-Radio-Court" type="radio" value="MG8" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG8" name="docType-Radio-Court" type="radio" value="MG8">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG8">MG8</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG19' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG19" name="docType-Radio-Court" type="radio" value="MG19" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG19" name="docType-Radio-Court" type="radio" value="MG19">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG19">MG19</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG7' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG7" name="docType-Radio-Court" type="radio" value="MG7" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG7" name="docType-Radio-Court" type="radio" value="MG7">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG7">MG7</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG2' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG2" name="docType-Radio-Court" type="radio" value="MG2" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG2" name="docType-Radio-Court" type="radio" value="MG2">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG2">MG2</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG13' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG13" name="docType-Radio-Court" type="radio" value="MG13" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG13" name="docType-Radio-Court" type="radio" value="MG13">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG13">MG13</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'MG14' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG14" name="docType-Radio-Court" type="radio" value="MG14" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-MG14" name="docType-Radio-Court" type="radio" value="MG14">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-MG14">MG14</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Court'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-Other" name="docType-Radio-Court" type="radio" value="Other" data-aria-controls="conditional-Court-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Court-Other" name="docType-Radio-Court" type="radio" value="Other" data-aria-controls="conditional-Court-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Court-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Court-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Court"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Court'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Court" name="docType-Court" type="text" value="{{ data['docType-Court'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Court" name="docType-Court" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 8 - END -->
-
-                        <!-- ITEM - 9 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Communications' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-COMMS" name="move-single-Document" type="radio" value="Communications" data-aria-controls="conditional-Communications" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-COMMS" name="move-single-Document" type="radio" value="Communications" data-aria-controls="conditional-Communications">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-COMMS">Communications</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Communications">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Communications'] == 'Other Comm (In)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-Other-Comm" name="docType-Radio-Communications" type="radio" value="Other Comm (In)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-Other-Comm" name="docType-Radio-Communications" type="radio" value="Other Comm (In)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Communications-Other-Comm">Other Comm (In)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Communications'] == 'MG6' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-MG6" name="docType-Radio-Communications" type="radio" value="MG6" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-MG6" name="docType-Radio-Communications" type="radio" value="MG6">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Communications-MG6">MG6</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Communications'] == 'MG20' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-MG20" name="docType-Radio-Communications" type="radio" value="MG20" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-MG20" name="docType-Radio-Communications" type="radio" value="MG20">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Communications-MG20">MG20</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Communications'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-Other" name="docType-Radio-Communications" type="radio" value="Other" data-aria-controls="conditional-Communications-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Communications-Other" name="docType-Radio-Communications" type="radio" value="Other" data-aria-controls="conditional-Communications-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Communications-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Communications-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Communications"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Communications'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Communications" name="docType-Communications" type="text" value="{{ data['docType-Communications'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Communications" name="docType-Communications" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 9 - END -->
-
-                        <!-- ITEM - 10 - START -->
-                        <div class="govuk-radios__item">
-                            {% if data['move-single-Document'] == 'Uncategorised' and data['answers-complete'] == 'true' %}
-                                <input class="govuk-radios__input" id="move-single-Document-UNCAT" name="move-single-Document" type="radio" value="Uncategorised" data-aria-controls="conditional-Uncategorised" checked>
-                            {% else %}
-                                <input class="govuk-radios__input" id="move-single-Document-UNCAT" name="move-single-Document" type="radio" value="Uncategorised" data-aria-controls="conditional-Uncategorised">
-                            {% endif %}
-                            <label class="govuk-label govuk-radios__label" for="move-single-Document-UNCAT">Uncategorised</label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Uncategorised">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Uncategorised'] == 'MG11 (R)' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-MG11-R" name="docType-Radio-Uncategorised" type="radio" value="MG11 (R)" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-MG11-R" name="docType-Radio-Uncategorised" type="radio" value="MG11 (R)">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-MG11-R">MG11 (R)</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Uncategorised'] == 'ABE' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-ABE" name="docType-Radio-Uncategorised" type="radio" value="ABE" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-ABE" name="docType-Radio-Uncategorised" type="radio" value="ABE">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-ABE">ABE</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Uncategorised'] == 'PE3' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-PE3" name="docType-Radio-Uncategorised" type="radio" value="PE3" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-PE3" name="docType-Radio-Uncategorised" type="radio" value="PE3">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-PE3">PE3</label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Uncategorised'] == 'PE4' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-PE4" name="docType-Radio-Uncategorised" type="radio" value="PE4" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-PE4" name="docType-Radio-Uncategorised" type="radio" value="PE4">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-PE4">PE4</label>
-                                        </div>
-<!--                                         <div class="govuk-radios__divider">or</div>
-                                        <div class="govuk-radios__item">
-                                            {% if data['docType-Radio-Uncategorised'] == 'Other' and data['answers-complete'] == 'true' %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-Other" name="docType-Radio-Uncategorised" type="radio" value="Other" data-aria-controls="conditional-Uncategorised-OTHER" checked>
-                                            {% else %}
-                                                <input class="govuk-radios__input" id="docType-Radio-Uncategorised-Other" name="docType-Radio-Uncategorised" type="radio" value="Other" data-aria-controls="conditional-Uncategorised-OTHER">
-                                            {% endif %}
-                                            <label class="govuk-label govuk-radios__label" for="docType-Radio-Uncategorised-Other">Other type</label>
-                                        </div>
-                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Uncategorised-OTHER">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label" for="docType-Uncategorised"><span class="govuk-hint">Search for document type</span></label>
-                                                {% if data['docType-Uncategorised'] and data['answers-complete'] == 'true' %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Uncategorised" name="docType-Uncategorised" type="text" value="{{ data['docType-Uncategorised'] }}">
-                                                {% else %}
-                                                    <input class="govuk-input govuk-!-width-one-half" id="docType-Uncategorised" name="docType-Uncategorised" type="text">
-                                                {% endif %}
-                                            </div>
-                                        </div>                            
- -->                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                        <!-- ITEM - 10 - END -->
-
-                    </div>
-                </fieldset>
-                <p><br></p>
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
             </form>
