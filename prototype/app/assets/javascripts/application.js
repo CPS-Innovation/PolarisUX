@@ -2260,9 +2260,10 @@ $(document).ready(function(){
     });
 
     $('.delete-page').click(function() {
-        var documentNumber = $(this).parent().parent().parent().find('h2').text();
+        var documentNumber = $(this).parent().parent().parent().find('label span').text();
         $('.page-number').text(documentNumber);
         $(this).parent().parent().parent().addClass('remove');
+        $("#confirmRemovePage").removeClass("rj-dont-display");
     });
 
     $('input[name=confirmRemovePages]').change(function() {

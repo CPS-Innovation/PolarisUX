@@ -149,6 +149,7 @@
         left: 14.5em !important;
         &.sticky {
             top: 1em !important;
+            z-index: 1;
         }
     }
 }
@@ -931,6 +932,9 @@
                 }
                 span {
                     color: $govuk-link-colour;
+                    &.page-number {
+                        color: $govuk-text-colour;
+                    }
                 }
             }
             .filter-form {
