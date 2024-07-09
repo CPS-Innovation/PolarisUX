@@ -201,8 +201,6 @@ $(document).mouseup(function(e) {
         $('.document-nav').removeClass('show');
     }
 
-
-
 });
 
 // =================================== NAVIGATION =================================== //

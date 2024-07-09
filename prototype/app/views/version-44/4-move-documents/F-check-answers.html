@@ -20,14 +20,74 @@
                     <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document type</span></a>
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Status</dt>
-                <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="E-evidential">Change<span class="govuk-visually-hidden"> status</span></a>
-                </dd>
-            </div>
+
+            {% if data['scenario'] == 'one' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Name</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['docType-document-name'] == 'Yes' %}
+                            {% if data['scenario'] == 'one' %}
+                                {{ data['docType-Scenario-1-NAME'] }}
+                            {% elseif data['scenario'] == 'two' %}
+                                {{ data['docType-Scenario-2-NAME'] }}
+                            {% elseif data['scenario'] == 'three' %}
+                                {{ data['docType-Scenario-3-NAME'] }}
+                            {% endif %}
+                        {% else %}
+                            {% if data['scenario'] == 'one' %}
+                                Asset Rec 1
+                            {% elseif data['scenario'] == 'two' %}
+                                MG11 - 1
+                            {% elseif data['scenario'] == 'three' %}
+                                Exhibit - 1
+                            {% endif %}
+                        {% endif %}
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> document name</span></a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Status</dt>
+                    <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                    </dd>
+                </div>
+            {% else %}
+
+            {% endif %}
+
             {% if data['scenario'] == 'two' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Name</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['documentStatement-Witness'] == 'PC Blaynee' %}
+                            stmt PC BLAYNEE #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                        {% elseif data['documentStatement-Witness'] == 'PC Jones' %}
+                            stmt PC JONES #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                        {% elseif data['documentStatement-Witness'] == 'Lucy Doyle' %}
+                            stmt DOYLE Lucy #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                        {% elseif data['documentStatement-Witness'] == 'Shelagh Mclove' %}
+                            stmt MCLOVE Shelagh #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                        {% elseif data['documentStatement-Witness'] == 'Geoff Mclove' %}
+                            stmt MCLOVE Geoff #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> document name</span></a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Status</dt>
+                    <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> status</span></a>
+                    </dd>
+                </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Statement existing producer or witness</dt>
                     <dd class="govuk-summary-list__value">
@@ -50,22 +110,43 @@
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> statement date</span></a>
                     </dd>
                 </div>
-<!--                 <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Statement number</dt>
-                    <dd class="govuk-summary-list__value">{{ data['documentStatement-Number'] }} </dd>
+                    <dd class="govuk-summary-list__value">{{ data['documentStatement-Number'] }}</dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> statement number</span></a>
                     </dd>
                 </div>
- -->            {% else %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Status</dt>
+                    <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                    </dd>
+                </div>
+            {% else %}
 
             {% endif %}
             {% if data['scenario'] == 'three' %}
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exhibit item reference</dt>
+                    <dt class="govuk-summary-list__key">Exhibit item name</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Name'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit item name</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit item name</dt>
                     <dd class="govuk-summary-list__value">{{ data['documentExhibit-Reference'] }}</dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit item reference</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exhibit subject</dt>
+                    <dd class="govuk-summary-list__value">{{ data['documentExhibit-Subject'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit subject</span></a>
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -81,35 +162,17 @@
                         <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit existing producer or witness</span></a>
                     </dd>
                 </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Status</dt>
+                    <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                    </dd>
+                </div>
             {% else %}
 
             {% endif %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Name</dt>
-                <dd class="govuk-summary-list__value">
-                    {% if data['docType-document-name'] == 'Yes' %}
-                        {% if data['scenario'] == 'one' %}
-                            {{ data['docType-Scenario-1-NAME'] }}
-                        {% elseif data['scenario'] == 'two' %}
-                            {{ data['docType-Scenario-2-NAME'] }}
-                        {% elseif data['scenario'] == 'three' %}
-                            {{ data['docType-Scenario-3-NAME'] }}
-                        {% endif %}
-                    {% else %}
-                        {% if data['scenario'] == 'one' %}
-                            Asset Rec 1
-                        {% elseif data['scenario'] == 'two' %}
-                            MG11 - 1
-                        {% elseif data['scenario'] == 'three' %}
-                            Exhibit - 1
-                        {% endif %}
-                    {% endif %}
 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> document name</span></a>
-                </dd>
-            </div>
         </dl>
         {% if data['scenario'] == 'one' %}
             <form action="../1-new-designs/C-casefile-1#catergory-Communications" method="post" novalidate>

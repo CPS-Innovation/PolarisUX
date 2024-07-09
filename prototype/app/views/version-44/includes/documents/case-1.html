@@ -93,20 +93,22 @@
                                             </button>
                                         </p>
                                     </div>
-                                    <button class="more-options">
+
+<!--                                     <button class="more-options">
                                         <span class="visuallyhidden">More options</span>
                                     </button>
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
-                                        <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
+ -->                                    
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 1 - END -->
@@ -255,7 +257,7 @@
                         </table>
                     </div>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 2 - END -->
@@ -321,6 +323,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -359,6 +362,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -397,6 +401,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -438,6 +443,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -476,6 +482,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -516,6 +523,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -558,6 +566,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                        <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -572,10 +581,16 @@
                                             <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
                                             <strong class="govuk-tag current">Active Document</strong>
                                             <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG11_1.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                                {% if data['docType-document-name'] == 'Yes' %}
-                                                    {{ data['docType-Scenario-2-NAME'] }}
-                                                {% else %}
-                                                    MG11 - 1
+                                                {% if data['documentStatement-Witness'] == 'PC Blaynee' %}
+                                                    stmt PC BLAYNEE #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                                                {% elseif data['documentStatement-Witness'] == 'PC Jones' %}
+                                                    stmt PC JONES #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                                                {% elseif data['documentStatement-Witness'] == 'Lucy Doyle' %}
+                                                    stmt DOYLE Lucy #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                                                {% elseif data['documentStatement-Witness'] == 'Shelagh Mclove' %}
+                                                    stmt MCLOVE Shelagh #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
+                                                {% elseif data['documentStatement-Witness'] == 'Geoff Mclove' %}
+                                                    stmt MCLOVE Geoff #{{ data['documentStatement-Number'] }} {{ data['documentType'] }}
                                                 {% endif %}
                                             </a>
                                             <br>
@@ -602,6 +617,7 @@
                                                 <button onclick="" class="move-Document">Reclassify document</button>
                                             </form>
                                             <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
+                                            <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button>
                                             <button onclick="" class="unused-Document">Mark as Unused</button>
                                         </div>
                                     </td>
@@ -613,7 +629,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 3 - END -->
@@ -669,6 +685,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -699,6 +716,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
+                                        <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button>
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -712,11 +730,12 @@
                                             <strong class="govuk-tag govuk-tag--orange" style="display:inline-block;">Updated</strong>
                                             <strong class="govuk-tag current">Active Document</strong>
                                             <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG12.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                                {% if data['docType-document-name'] == 'Yes' %}
+                                                {{ data['documentExhibit-Subject'] }}
+                                                <!-- {% if data['docType-document-name'] == 'Yes' %}
                                                     {{ data['docType-Scenario-3-NAME'] }}
                                                 {% else %}
                                                     Exhibit - 1
-                                                {% endif %}
+                                                {% endif %} -->
                                             </a>
                                             <br>
                                             <p class="date-added">
@@ -742,7 +761,8 @@
                                                 <button onclick="" class="move-Document">Reclassify document</button>
                                             </form>
                                             <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                            <button onclick="" class="unused-Document">Mark as Unused</button>
+                                            <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button>
+                                            <button onclick="" class="unused-Document">Mark as Unused</button>  
                                         </div>
                                     </td>
                                 </tr>
@@ -753,7 +773,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 4 - END -->
@@ -914,7 +934,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        <button onclick="" class="evidential-Document">Mark as Evidential</button>
+                                        <button onclick="" class="evidential-Document">Mark as Used</button>
                                     </div>
                                 </td>
                             </tr>
@@ -941,7 +961,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        <button onclick="" class="evidential-Document">Mark as Evidential</button>
+                                        <button onclick="" class="evidential-Document">Mark as Used</button>
                                     </div>
                                 </td>
                             </tr>
@@ -953,7 +973,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 6 - END -->
@@ -1133,7 +1153,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        <button onclick="" class="unused-Document">Mark as Evidential</button>
+                                        <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
                             </tr>
@@ -1160,7 +1180,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        <button onclick="" class="unused-Document">Mark as Evidential</button>
+                                        <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
                             </tr>
@@ -1242,7 +1262,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 9 - END -->
@@ -1415,7 +1435,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button>
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
                 </div>
             </div>
             <!-- SECTION 10 - END -->

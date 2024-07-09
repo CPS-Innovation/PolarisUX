@@ -17,13 +17,13 @@
                 <p class="govuk-body">You're entering exhibit details for <mark class="hods-highlight"><strong>Exhibit - 1</strong></mark></p>
             </div>
 
-            <form method="get" action="D-document-name">            
+            <form method="get" action="F-check-answers">            
                 <fieldset>
-<!--                     <div class="govuk-form-group">
+                    <div class="govuk-form-group">
                         <label class="govuk-label" for="documentExhibit-Name">Item name</label>
                         <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Name" name="documentExhibit-Name" type="text">
                     </div> 
- -->                     
+                    
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="documentExhibit-Reference">Exhibit reference</label>
                         {% if data['documentExhibit-Reference'] %}
@@ -31,7 +31,12 @@
                         {% else %}
                             <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Reference" name="documentExhibit-Reference" type="text">
                         {% endif %}
-                    </div>  
+                    </div> 
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Subject">Subject</label>
+                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Subject" name="documentExhibit-Subject" type="text">
+                    </div> 
 
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
@@ -77,7 +82,7 @@
                                     {% endif %}
                                     <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-5">Geoff McLove</label>
                                 </div>
-<!--                                 <div class="govuk-radios__divider">or</div>
+                                <div class="govuk-radios__divider">or</div>
                                 <div class="govuk-radios__item">
                                     {% if data['documentExhibit-Witness'] == 'Other' and data['answers-complete'] == 'true' %}
                                         <input class="govuk-radios__input" id="documentExhibit-Witness-Other" name="documentExhibit-Witness" type="radio" value="Other" data-aria-controls="conditional-Statements" checked>
@@ -96,7 +101,7 @@
                                         {% endif %}
                                     </div>
                                 </div>                            
- -->                            </div>
+                            </div>
                         </fieldset>
                     </div>
 <!--                     <div class="govuk-form-group">
@@ -114,6 +119,31 @@
                         <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Produced" name="documentExhibit-Produced" type="text">
                     </div>  
  -->                        
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend">What is the document status?</legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    {% if data['docType-document-status'] == 'Used' and data['answers-complete'] == 'true' %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used" checked>
+                                    {% else %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used">
+                                    {% endif %}
+                                    <label class="govuk-label govuk-radios__label" for="docType-document-status-Evidential">Used</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    {% if data['docType-document-status'] == 'Unused' and data['answers-complete'] == 'true' %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused" checked>
+                                    {% else %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused">
+                                    {% endif %}
+                                    <label class="govuk-label govuk-radios__label" for="docType-document-status-Unused">Unused</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
                 </fieldset>
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>

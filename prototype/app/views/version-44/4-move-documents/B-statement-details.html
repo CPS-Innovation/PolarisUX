@@ -17,7 +17,7 @@
                 <p class="govuk-body">You're entering statement details for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></p>
             </div>
 
-            <form method="get" action="D-document-name">            
+            <form method="get" action="F-check-answers">            
                 <fieldset>
 
                     <div class="govuk-form-group">
@@ -126,7 +126,7 @@
                         </fieldset>
                     </div>
 
-<!--                     <div class="govuk-form-group">
+                    <div class="govuk-form-group">
                         <label class="govuk-label" for="documentStatement-Number">Statement number</label>
                         <div id="documentStatement-Number-hint" class="govuk-hint">Already in use #6, #5, #4, #3, #2 and #1</div>
                         {% if data['documentStatement-Number'] and data['answers-complete'] == 'true' %}
@@ -135,7 +135,31 @@
                             <input class="govuk-input govuk-input--width-5" id="documentStatement-Number" name="documentStatement-Number" type="text" value="7">
                         {% endif %}
                     </div> 
- -->
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend">What is the document status?</legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    {% if data['docType-document-status'] == 'Used' and data['answers-complete'] == 'true' %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used" checked>
+                                    {% else %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used">
+                                    {% endif %}
+                                    <label class="govuk-label govuk-radios__label" for="docType-document-status-Evidential">Used</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    {% if data['docType-document-status'] == 'Unused' and data['answers-complete'] == 'true' %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused" checked>
+                                    {% else %}
+                                        <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused">
+                                    {% endif %}
+                                    <label class="govuk-label govuk-radios__label" for="docType-document-status-Unused">Unused</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
                 </fieldset>
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>

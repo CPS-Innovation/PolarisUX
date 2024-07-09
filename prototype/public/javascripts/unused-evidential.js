@@ -27,17 +27,17 @@ $(document).ready(function () {
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc2') { 
-            $('#group2-doc1-B').show(); 
+            $('#group2-doc2-B').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) -1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc3') { 
-            $('#group2-doc1-B').show(); 
+            $('#group2-doc3-B').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) -1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc4') { 
-            $('#group2-doc1-B').show(); 
+            $('#group2-doc4-B').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) -1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
@@ -182,17 +182,17 @@ $(document).ready(function () {
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc2-B') { 
-            $('#group2-doc1').show(); 
+            $('#group2-doc2').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) +1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc3-B') { 
-            $('#group2-doc1').show(); 
+            $('#group2-doc3').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) +1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
         if (documentID == 'group2-doc4-B') { 
-            $('#group2-doc1').show(); 
+            $('#group2-doc4').show(); 
             var caseOverviewNumber = parseFloat($('.case-overview-number').text()) +1;
             $('.case-overview-number').html(caseOverviewNumber);
         }
