@@ -1871,17 +1871,18 @@ $(document).ready(function () {
     $('#document-renamed').on("click", function (e) {
         $('.more-options, .document-nav').removeClass('show');
         $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--green" style="display: inherit;">Renamed</strong>`);
-        $('.updated-message').show();
+        // $('.updated-message').show();
         $('table tbody tr td').removeClass('show-options');
 
         $('.header-wrapper.rename-header').hide();
         $('.saving-panel-rename').show();
+        $('.rename-close').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         $('#document-renamed').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         setTimeout(function() {
             $('.saving-panel-rename, .initial-action').hide();
             $('.success-banner-rename, .secondary-action').show();
-
+            $('.rename-close').attr('onClick','closeRenameModal()').removeAttr('aria-disabled').removeAttr('disabled');
         }, 1500);
     });
 
