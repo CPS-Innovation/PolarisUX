@@ -12,7 +12,21 @@
 
                 <div class="innerPanel simpleModelTwo">
 
-                    <div class="header-wrapper">
+                    <div class="saving-panel-rename">
+                        <h2 class="govuk-heading-s">
+                            <span class="saving"></span>
+                            Saving renamed document to CMS...
+                        </h2>
+                    </div>
+
+                    <div class="success-banner-rename">
+                        <h2 class="govuk-heading-s">
+                            <span class="success"></span>
+                            Document renamed succesfully saved to CMS
+                        </h2>
+                    </div>
+
+                    <div class="header-wrapper rename-header">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
                                 <h1 class="govuk-heading-s">
@@ -39,8 +53,14 @@
                                     <input class="govuk-input" id="rename-Document" name="rename-Document" type="text" aria-describedby="rename-Document-hint">
                                 </div>
 
-                                <button id="document-renamed" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeRenameModal(), renameDocument()">Confirm</button>
-                                <button class="non-button" data-module="govuk-button" type="button" onClick="closeRenameModal()">Cancel</button>
+                                <div class="initial-action">
+                                    <button id="document-renamed" class="govuk-button" data-module="govuk-button" type="button" onClick="return renameDocument()">Confirm</button>
+                                    <button class="non-button" data-module="govuk-button" type="button" onClick="closeRenameModal()">Cancel</button>
+                                </div>
+
+                                <div class="secondary-action">
+                                    <button id="" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeRenameModal()">Close</button>
+                                </div>
 
                             </div>
 

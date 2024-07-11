@@ -69,6 +69,16 @@
                 }
             }
         }
+        #rename {
+            .saving-panel-rename, .success-banner-rename {
+                padding: 20px 20px;
+                display: none;
+                margin-bottom: 1em;
+            }
+            .secondary-action {
+                display: none;
+            }
+        }
     }
 }
 
@@ -1211,7 +1221,7 @@
     }
 }
 
-.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation {
+.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1228,7 +1238,7 @@
     }
 }
 
-#saving-panel, #saving-panel-DUMMY {
+#saving-panel, #saving-panel-DUMMY, .saving-panel-rename {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;

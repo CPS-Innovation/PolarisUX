@@ -1870,10 +1870,22 @@ $(document).ready(function () {
 
     $('#document-renamed').on("click", function (e) {
         $('.more-options, .document-nav').removeClass('show');
-        $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
+        $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--green" style="display: inherit;">Renamed</strong>`);
         $('.updated-message').show();
         $('table tbody tr td').removeClass('show-options');
+
+        $('.header-wrapper.rename-header').hide();
+        $('.saving-panel-rename').show();
+        $('#document-renamed').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        setTimeout(function() {
+            $('.saving-panel-rename, .initial-action').hide();
+            $('.success-banner-rename, .secondary-action').show();
+
+        }, 1500);
     });
+
+
 
     // Move
     $('.document-groups').hide();

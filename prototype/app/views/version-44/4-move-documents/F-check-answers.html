@@ -80,14 +80,6 @@
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> document name</span></a>
                     </dd>
                 </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Status</dt>
-                    <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> status</span></a>
-                    </dd>
-                </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Statement existing producer or witness</dt>
                     <dd class="govuk-summary-list__value">
@@ -121,7 +113,7 @@
                     <dt class="govuk-summary-list__key">Status</dt>
                     <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                        <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> status</span></a>
                     </dd>
                 </div>
             {% else %}
@@ -129,28 +121,30 @@
             {% endif %}
             {% if data['scenario'] == 'three' %}
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exhibit item name</dt>
+                    <dt class="govuk-summary-list__key">Item name</dt>
                     <dd class="govuk-summary-list__value">{{ data['documentExhibit-Name'] }}</dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit item name</span></a>
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exhibit item name</dt>
+                    <dt class="govuk-summary-list__key">Reference</dt>
                     <dd class="govuk-summary-list__value">{{ data['documentExhibit-Reference'] }}</dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit item reference</span></a>
                     </dd>
                 </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exhibit subject</dt>
+
+<!--                 <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Subject</dt>
                     <dd class="govuk-summary-list__value">{{ data['documentExhibit-Subject'] }}</dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> exhibit subject</span></a>
                     </dd>
                 </div>
+ -->                
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exhibit existing producer or witness</dt>
+                    <dt class="govuk-summary-list__key">Existing producer or witness</dt>
                     <dd class="govuk-summary-list__value">
                         {% if data['documentExhibit-Witness'] == 'Other' %}
                             {{ data['documentExhibit-Witness-Other-Name'] }}
@@ -166,7 +160,7 @@
                     <dt class="govuk-summary-list__key">Status</dt>
                     <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                        <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> status</span></a>
                     </dd>
                 </div>
             {% else %}
