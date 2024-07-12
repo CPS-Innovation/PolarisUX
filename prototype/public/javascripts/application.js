@@ -1855,6 +1855,7 @@ $(document).ready(function () {
 
     // Rename
     $(".more-options").on("click", function (e) {
+        $('.more-options, .document-nav').removeClass('show');
         $(this).find('.visuallyhidden').hide();
         $(this).parent().toggleClass('show-options');
         $(this).toggleClass('show');
@@ -2279,13 +2280,27 @@ $(document).ready(function(){
 
     $('input[name=confirmRemovePages]').change(function() {
         if ($('#confirmRemovePages-Yes').is(':checked')) {
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), closeRotatePagesModal()');
+            // $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), closeRotatePagesModal()');
+            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
         } else {
             $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
+            // $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
         }
-    });    
+    }); 
 
-    // $('input[name=confirmRemovePages]').change(function() {
+    $('#confirm-Remove-Pages').click(function() {
+        $('.saving-panel-remove-rotate').show();
+        $('.header-wrapper.remove-rotate-header').hide();
+        $(this).removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        setTimeout(function() {
+            $('.confirm-Remove-Pages-Message').hide();
+            $('.saving-panel-remove-rotate, .initial-action').hide();
+            $('.success-banner-remove-rotate, .secondary-action').show();
+        }, 1500);
+    });
+
+         // $('input[name=confirmRemovePages]').change(function() {
     //     if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '7') {
     //         $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), updateDocument(), updateDocument6()');
     //     } else if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '8') {

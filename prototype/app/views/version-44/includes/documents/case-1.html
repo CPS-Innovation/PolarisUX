@@ -25,6 +25,8 @@
             <p>30 May 2022</p>  
         </div>
 
+        <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button>
+
         <div class="accordion">
 
             <details class="govuk-details" data-module="govuk-details">
@@ -108,7 +110,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 1 - END -->
@@ -257,7 +259,7 @@
                         </table>
                     </div>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 2 - END -->
@@ -616,7 +618,7 @@
                                                 <input id="answers-complete" name="answers-complete" type="text" value="false">
                                                 <button onclick="" class="move-Document">Reclassify document</button>
                                             </form>
-                                            <button onclick="location.href='../4-move-documents/A-category';" class="move-Document">Reclassify document</button>
+                                            <!-- <button onclick="location.href='../4-move-documents/A-category';" class="move-Document">Reclassify document</button> -->
                                             <!-- <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button> -->
                                             <!-- <button onclick="location.href='../4-move-documents/B-statement-details';" class="update-Document">Update statement</button> -->
                                             <button onclick="" class="unused-Document">Mark as Unused</button>
@@ -630,7 +632,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 3 - END -->
@@ -686,7 +688,7 @@
                                     <div class="document-nav">
                                         <button onclick="" class="move-Document">Reclassify document</button>
                                         <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
-                                        <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button>
+                                        <!-- <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button> -->
                                         <button onclick="" class="unused-Document">Mark as Unused</button>
                                     </div>
                                 </td>
@@ -731,7 +733,7 @@
                                             <strong class="govuk-tag govuk-tag--green" style="display:inline-block;">Reclassified</strong>
                                             <strong class="govuk-tag current">Active Document</strong>
                                             <a href="" class="show-case email-document-V2" onclick="email()" data-doc="MG12.pdf" data-document="22" onclick="return topFunction()" data-page="1">
-                                                {{ data['documentExhibit-Item'] }}
+                                                {{ data['documentExhibit-Name'] }}
                                                 <!-- {% if data['docType-document-name'] == 'Yes' %}
                                                     {{ data['docType-Scenario-3-NAME'] }}
                                                 {% else %}
@@ -761,7 +763,7 @@
                                                 <input id="answers-complete" name="answers-complete" type="text" value="false">
                                                 <button onclick="" class="move-Document">Reclassify document</button>
                                             </form>
-                                            <button onclick="location.href='../4-move-documents/A-category';" class="move-Document">Reclassify document</button>
+                                            <!-- <button onclick="location.href='../4-move-documents/A-category';" class="move-Document">Reclassify document</button> -->
                                             <button onclick="return openRenameModal(), documentOptionTitle()" class="rename-Document">Rename document</button>
                                             <!-- <button onclick="location.href='../4-move-documents/C-exhibit-details';" class="update-Document">Update exhibit</button> -->
                                             <button onclick="" class="unused-Document">Mark as Unused</button>      
@@ -775,7 +777,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 4 - END -->
@@ -975,7 +977,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 6 - END -->
@@ -1265,7 +1267,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 9 - END -->
@@ -1438,7 +1440,7 @@
                         </tbody>
                     </table>
                     <button class="save-DocumentMove govuk-button" onClick="return confirmReorder()" data-module="govuk-button" type="button">Save order to CMS</button>
-                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify all documents</button> -->
+                    <!-- <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button">Reclassify multiple documents</button> -->
                 </div>
             </div>
             <!-- SECTION 10 - END -->

@@ -35,7 +35,7 @@
     }
 }
 
-#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages {
+#openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages, #confirmRemovePages {
     background: none;
     height: auto;
     #openMe {
@@ -69,14 +69,22 @@
                 }
             }
         }
-        #rename {
-            .saving-panel-rename, .success-banner-rename {
+        #rename, #confirmRemove {
+            .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate {
                 padding: 20px 20px;
                 display: none;
                 margin-bottom: 1em;
             }
             .secondary-action {
                 display: none;
+            }
+        }
+        #confirmRemove {
+            .saving-panel-remove-rotate, .success-banner-remove-rotate {
+                margin-bottom: 0;
+            }
+            .redaction-wrapper {
+                padding-bottom: 1.5em;
             }
         }
     }
@@ -1221,7 +1229,7 @@
     }
 }
 
-.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename {
+.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1238,7 +1246,7 @@
     }
 }
 
-#saving-panel, #saving-panel-DUMMY, .saving-panel-rename {
+#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;

@@ -4,14 +4,28 @@
         <div class="das-cookie-banner__wrapper">
 
             <!-- //////////////////////////////// REDACTION LOG - START //////////////////////////////// -->
-            <div class="govuk-grid-row" id="coconfirmRemove">
+            <div class="govuk-grid-row" id="confirmRemove">
 
                 <div class="innerPanel simpleModelTwo">
 
-                    <div class="header-wrapper">
+                    <div class="saving-panel-remove-rotate">
+                        <h2 class="govuk-heading-s">
+                            <span class="saving"></span>
+                            Saving updated document to CMS...
+                        </h2>
+                    </div>
+
+                    <div class="success-banner-remove-rotate">
+                        <h2 class="govuk-heading-s">
+                            <span class="success"></span>
+                            Document updated succesfully saved to CMS
+                        </h2>
+                    </div>
+
+                    <div class="header-wrapper remove-rotate-header">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
-                                <h1 class="govuk-heading-m">Edit document - <span class="document-title-5">Document title</span></h1>
+                                <h1 class="govuk-heading-m">Remove and rotate document pages - <span class="document-title-5">Document title</span></h1>
                             </div>
                         </div>
                     </div>
@@ -27,9 +41,9 @@
                                 <div class="govuk-grid-column-full">
 
                                     <!-- ////// FORM ITEM 1 - START ////// -->
-                                    <fieldset class="govuk-fieldset">
+                                    <fieldset class="govuk-fieldset confirm-Remove-Pages-Message">
 
-                                        <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                                        <div class="govuk-warning-text govuk-!-margin-bottom-0">
                                             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                                             <strong class="govuk-warning-text__text">
                                                 <span class="govuk-warning-text__assistive">Warning</span>
@@ -37,7 +51,7 @@
                                             </strong>
                                         </div>
 
-                                        <div class="govuk-form-group">
+                                        <div class="govuk-form-group  govuk-!-margin-bottom-2">
                                             <fieldset class="govuk-fieldset">
                                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                                     <div class="govuk-checkboxes__item">
@@ -55,8 +69,15 @@
 
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full cta-group">
-                                    <button id="confirm-Remove-Pages" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled"  data-module="govuk-button" type="button">Continue</button>
-                                    <button class="non-button" data-module="govuk-button" type="button" onclick="return closeConfirmRemovePages()">Cancel</button>
+                                    <div class="initial-action">
+                                        <button id="confirm-Remove-Pages" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled"  data-module="govuk-button" type="button">Accept and save</button>
+                                        <button class="non-button" data-module="govuk-button" type="button" onclick="return closeConfirmRemovePages()">Cancel</button>
+                                    </div>
+
+                                    <div class="secondary-action">
+                                        <button id="" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeConfirmRemovePages(), closeRotatePagesModal()">Close</button>
+                                    </div>
+
                                 </div>
                             </div>
 
