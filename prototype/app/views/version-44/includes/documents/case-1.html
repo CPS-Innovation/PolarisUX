@@ -655,13 +655,23 @@
                         </div>
                     </div>
                     <!-- SORT - END -->
-                    <table class="govuk-table" id="sortExhibits">
-                        <thead>
-                            <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header"><span class="visuallyhidden">Exhibit files</span></th>
+
+                    <table class="govuk-table" id="sortForensics">
+                        <tbody id="accordion-tbody-forensics">
+                            <tr class="exhibits-header">
+                                <th>Schedules</th>
                             </tr>
-                        </thead>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">No documents</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="govuk-table" id="sortExhibits">
                         <tbody id="accordion-tbody-exhibits">
+                            <tr class="exhibits-header">
+                                <th>Items</th>
+                            </tr>
                             <tr class="govuk-table__row document-holder document-12 alpha-2 date-2" id="group4-doc1">
                                 <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">

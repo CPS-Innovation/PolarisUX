@@ -121,7 +121,7 @@
                     }
                     tbody {
                         tr {
-                            &.witness-header, &.unused-materials-header {
+                            &.witness-header, &.unused-materials-header, &.exhibits-header {
                                 display: none;
                                 &.show {
                                     display: table-row;
@@ -130,6 +130,13 @@
                                     text-align: left;
                                     border-bottom: 1px solid $govuk-border-colour;
                                     padding: 1em 0 0.5em 0;
+                                }
+                            }
+                            &.exhibits-header {
+                                display: table-row;
+                                border-top: none !important;
+                                th {
+                                    padding-top: 0.25em;
                                 }
                             }
                             &.unused-materials-header {
