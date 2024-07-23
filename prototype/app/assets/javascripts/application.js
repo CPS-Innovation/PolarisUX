@@ -1772,10 +1772,20 @@ $(document).ready(function () {
     // Existing notes
     var notesNumber = 4;
 
-    $('#note-added').hide();
+    $('#note-added, #note-loading').hide();
 
     $("#notes-button").on("click", function (e) {
-        $('#note-added').show();
+
+        $('.saving-panel-notes').show();
+        $('.header-wrapper').hide();
+        $('#note-loading').show();
+
+        setTimeout(function () {
+            $('#note-loading').hide();
+            $('.saving-panel-notes').hide();
+            $('.success-banner-notes').show();
+            $('#note-added').show();
+        }, 2000)
 
         // Time stamp
         document.getElementById("note-timestamp").innerHTML = formatAMPM();
@@ -1786,7 +1796,7 @@ $(document).ready(function () {
             ampm = d.getHours() >= 12 ? 'pm' : 'am',
             months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
             days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+            return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
         }
 
 
@@ -1813,7 +1823,17 @@ $(document).ready(function () {
     $('#noteNew-added').hide();
 
     $("#notesNew-button").on("click", function (e) {
-        $('#noteNew-added').show() ;
+
+        $('.saving-panel-notes').show();
+        $('.header-wrapper').hide();
+        $('#noteNew-loading').show();
+
+        setTimeout(function () {
+            $('#noteNew-loading').hide();
+            $('.saving-panel-notes').hide();
+            $('.success-banner-notes').show();
+            $('#noteNew-added').show();
+        }, 2000)
 
         // Time stamp
         document.getElementById("noteNew-timestamp").innerHTML = formatAMPM();

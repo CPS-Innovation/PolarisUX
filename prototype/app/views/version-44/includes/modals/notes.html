@@ -12,6 +12,20 @@
 
                 <div class="innerPanel simpleModelTwo">
 
+                    <div class="saving-panel-notes">
+                        <h2 class="govuk-heading-s">
+                            <span class="saving"></span>
+                            Saving note to CMS...
+                        </h2>
+                    </div>
+
+                    <div class="success-banner-notes">
+                        <h2 class="govuk-heading-s">
+                            <span class="success"></span>
+                            Document note succesfully <br>saved to CMS
+                        </h2>
+                    </div>
+
                     <div class="header-wrapper">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
@@ -43,7 +57,7 @@
                                         </div>
                                         <!-- ////// NOTES ITEM 1 - END ////// -->
 
-                                        <button id="notes-button" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeNotesModal()">Save and close</button>
+                                        <button id="notes-button" class="govuk-button" data-module="govuk-button" type="button" onClick="">Accept and save</button>
                                         <button class="non-button" data-module="govuk-button" type="button" onClick="closeNotesModal()">Cancel</button>
                                         <hr class="dotted">
 
@@ -55,6 +69,10 @@
                                     <!-- ////// NOTES TIMELINE - START ////// -->
                                     <div class="hods-timeline">
 
+                                        <div class="hods-timeline__item" id="note-loading">
+                                            <span class="saving"></span>
+                                        </div>
+                                        
                                         <div class="hods-timeline__item" id="note-added">
                                             <!-- <strong class="govuk-tag govuk-tag--blue">Casework App</strong> -->
                                             <h2 class="hods-timeline__title">user_name_1983</h2>

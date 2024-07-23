@@ -80,6 +80,9 @@
             margin-top: 0.55em;
             z-index: 1;
         }
+        &#note-loading, &#noteNew-loading {
+            margin-bottom: 3em;
+        }
         .hods-timeline__title {
             color: $govuk-text-colour;
             margin: 0 !important;
