@@ -1887,6 +1887,11 @@ $(document).ready(function () {
         $('.document-title-10').text(docNewTitle);
         $(this).parent().parent().addClass('change-DocumentName');
         $(this).parent().removeClass('show');
+        if ($(this).hasClass('renameExhibit')) {
+            $('.exhibit-hint-text').show();
+        } else {
+            $('.exhibit-hint-text').hide();
+        }
     });
 
     $('#document-renamed').on("click", function (e) {

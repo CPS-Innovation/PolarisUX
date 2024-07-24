@@ -85,6 +85,13 @@ header {
     width: 100%;
 }
 
+
+.govuk-hint {
+    &.exhibit-hint-text {
+        display: none;
+    }
+}
+
 button {
     &.non-button {
         color: $govuk-link-colour;
