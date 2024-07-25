@@ -1930,8 +1930,7 @@ $(document).ready(function () {
         // $('.change-DocumentName .wrapper').prepend(`<strong class="govuk-tag govuk-tag--orange" style="display: inherit;">Updated</strong>`);
         // $('.updated-message').show();
         $('table tbody tr td').removeClass('show-options');
-    });
-    
+    });    
 
 })
 
@@ -2018,6 +2017,16 @@ function groupUncategorised() {
     $('.document-groups').hide();
     $('#groupUncategorised').show();
 }
+
+function other1(e) {
+    var value = e.target.value;
+    if (value == 'Other') {
+        $('#conditional-Exhibits').show();
+    } else {
+        $('#conditional-Exhibits').hide();
+    }
+}
+
 
 // =================================== SORT DOCUMENTS =================================== //
 

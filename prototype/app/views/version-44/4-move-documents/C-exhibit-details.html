@@ -38,7 +38,88 @@
                         <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Subject" name="documentExhibit-Subject" type="text">
                     </div> 
  -->
+
                     <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
+                        <select class="govuk-select" id="documentExhibit-Witness" name="documentExhibit-Witness" aria-describedby="documentExhibit-Witness" onclick="" onchange="other1(event)">
+                            {% if data['documentExhibit-Witness'] == 'PC Blaynee' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee" selected>PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other">Other producer or witness</option>
+                            {% elseif data['documentExhibit-Witness'] == 'PC Jones' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones" selected>PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other">Other producer or witness</option>
+                            {% elseif data['documentExhibit-Witness'] == 'Lucy Doyle' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle" selected>Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other">Other producer or witness</option>
+                            {% elseif data['documentExhibit-Witness'] == 'Shelagh Mclove' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove" selected>Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other">Other producer or witness</option>
+                            {% elseif data['documentExhibit-Witness'] == 'Geoff McLove' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove" selected>Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other">Other producer or witness</option>
+                            {% elseif data['documentExhibit-Witness'] == 'Other' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other" selected>Other producer or witness</option>
+                            {% else %}
+                                <option disabled selected>Select existing producer or witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                                <option disabled>Or</option>
+                                <option value="Other" data-aria-controls="conditional-Exhibits">Other producer or witness</option>
+                            {% endif %}
+                        </select>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Exhibits">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="documentExhibit-Witness-Other-Name"><span class="govuk-hint">Enter name</span></label>
+                                {% if data['documentExhibit-Witness-Other-Name'] and data['answers-complete'] == 'true' %}
+                                    <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Witness-Other-Name" name="documentExhibit-Witness-Other-Name" type="text" value="{{ data['documentExhibit-Witness-Other-Name'] }}">
+                                {% else %}
+                                    <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Witness-Other-Name" name="documentExhibit-Witness-Other-Name" type="text">
+                                {% endif %}
+                            </div>
+                        </div>                            
+                    </div>
+
+<!--                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                             <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
                                 <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
@@ -104,6 +185,7 @@
                             </div>
                         </fieldset>
                     </div>
+ -->
 <!--                     <div class="govuk-form-group">
                         <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
                         <select class="govuk-select" id="documentExhibit-Witness" name="documentExhibit-Witness">

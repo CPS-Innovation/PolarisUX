@@ -21,57 +21,58 @@
                 <fieldset>
 
                     <div class="govuk-form-group">
+                        <label class="govuk-label" for="documentStatement-Witness">Select witness</label>
+
+                        <select class="govuk-select" id="documentStatement-Witness" name="documentStatement-Witness" aria-describedby="documentStatement-Witness">
+                            {% if data['documentStatement-Witness'] == 'PC Blaynee' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select a witness</option>
+                                <option value="PC Blaynee" selected>PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                            {% elseif data['documentStatement-Witness'] == 'PC Jones' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select a witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones" selected>PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                            {% elseif data['documentStatement-Witness'] == 'Lucy Doyle' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select a witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle" selected>Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                            {% elseif data['documentStatement-Witness'] == 'Shelagh Mclove' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select a witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove" selected>Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                            {% elseif data['documentStatement-Witness'] == 'Geoff McLove' and data['answers-complete'] == 'true' %}
+                                <option disabled>Select a witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove" selected>Geoff McLove</option>
+                            {% else %}
+                                <option disabled selected>Select a witness</option>
+                                <option value="PC Blaynee">PC Blaynee</option>
+                                <option value="PC Jones">PC Jones</option>
+                                <option value="Lucy Doyle">Lucy Doyle</option>
+                                <option value="Shelagh Mclove">Shelagh Mclove</option>
+                                <option value="Geoff McLove">Geoff McLove</option>
+                            {% endif %}
+                        </select>
+
+<!--           
                         <fieldset class="govuk-fieldset">
                             <div class="govuk-radios" data-module="govuk-radios">
-                                <label class="govuk-label" for="documentStatement-Witness">Select witness</label>
-
-                                <select class="govuk-select" id="documentStatement-Witness" name="documentStatement-Witness" aria-describedby="documentStatement-Witness">
-                                    {% if data['documentStatement-Witness'] == 'PC Blaynee' and data['answers-complete'] == 'true' %}
-                                        <option disabled>Choose a witness</option>
-                                        <option value="PC Blaynee" selected>PC Blaynee</option>
-                                        <option value="PC Jones">PC Jones</option>
-                                        <option value="Lucy Doyle">Lucy Doyle</option>
-                                        <option value="Shelagh Mclove">Shelagh Mclove</option>
-                                        <option value="Geoff McLove">Geoff McLove</option>
-                                    {% elseif data['documentStatement-Witness'] == 'PC Jones' and data['answers-complete'] == 'true' %}
-                                        <option disabled>Choose a witness</option>
-                                        <option value="PC Blaynee">PC Blaynee</option>
-                                        <option value="PC Jones" selected>PC Jones</option>
-                                        <option value="Lucy Doyle">Lucy Doyle</option>
-                                        <option value="Shelagh Mclove">Shelagh Mclove</option>
-                                        <option value="Geoff McLove">Geoff McLove</option>
-                                    {% elseif data['documentStatement-Witness'] == 'Lucy Doyle' and data['answers-complete'] == 'true' %}
-                                        <option disabled>Choose a witness</option>
-                                        <option value="PC Blaynee">PC Blaynee</option>
-                                        <option value="PC Jones">PC Jones</option>
-                                        <option value="Lucy Doyle" selected>Lucy Doyle</option>
-                                        <option value="Shelagh Mclove">Shelagh Mclove</option>
-                                        <option value="Geoff McLove">Geoff McLove</option>
-                                    {% elseif data['documentStatement-Witness'] == 'Shelagh Mclove' and data['answers-complete'] == 'true' %}
-                                        <option disabled>Choose a witness</option>
-                                        <option value="PC Blaynee">PC Blaynee</option>
-                                        <option value="PC Jones">PC Jones</option>
-                                        <option value="Lucy Doyle">Lucy Doyle</option>
-                                        <option value="Shelagh Mclove" selected>Shelagh Mclove</option>
-                                        <option value="Geoff McLove">Geoff McLove</option>
-                                    {% elseif data['documentStatement-Witness'] == 'Geoff McLove' and data['answers-complete'] == 'true' %}
-                                        <option disabled>Choose a witness</option>
-                                        <option value="PC Blaynee">PC Blaynee</option>
-                                        <option value="PC Jones">PC Jones</option>
-                                        <option value="Lucy Doyle">Lucy Doyle</option>
-                                        <option value="Shelagh Mclove">Shelagh Mclove</option>
-                                        <option value="Geoff McLove" selected>Geoff McLove</option>
-                                    {% else %}
-                                        <option disabled selected>Choose a witness</option>
-                                        <option value="PC Blaynee">PC Blaynee</option>
-                                        <option value="PC Jones">PC Jones</option>
-                                        <option value="Lucy Doyle">Lucy Doyle</option>
-                                        <option value="Shelagh Mclove">Shelagh Mclove</option>
-                                        <option value="Geoff McLove">Geoff McLove</option>
-                                    {% endif %}
-                                </select>
-
-<!--                                <div class="govuk-radios__item">
+                                <div class="govuk-radios__item">
                                     {% if data['documentStatement-Witness'] == 'PC Blaynee' and data['answers-complete'] == 'true' %}
                                         <input class="govuk-radios__input" id="documentStatement-Witness-1" name="documentStatement-Witness" type="radio" value="PC Blaynee" checked>
                                     {% else %}
@@ -130,8 +131,8 @@
                                         {% endif %}
                                     </div>
                                 </div>                            
- -->                            </div>
-                        </fieldset>
+                            </div>
+                        </fieldset> -->
                     </div>
 
                     <div class="govuk-form-group">

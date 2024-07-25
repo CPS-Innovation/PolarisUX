@@ -65,7 +65,7 @@
             {% endif %}
 
             {% if data['scenario'] == 'two' %}
-                <div class="govuk-summary-list__row">
+<!--                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Name</dt>
                     <dd class="govuk-summary-list__value">
                         {% if data['documentStatement-Witness'] == 'PC Blaynee' %}
@@ -84,7 +84,7 @@
                         <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> document name</span></a>
                     </dd>
                 </div>
-                <div class="govuk-summary-list__row">
+ -->                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Witness</dt>
                     <dd class="govuk-summary-list__value">
                         {% if data['documentStatement'] == 'Other' %}
@@ -121,7 +121,7 @@
                         <dt class="govuk-summary-list__key">Status</dt>
                         <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                            <a class="govuk-link" href="B-statement-details">Change<span class="govuk-visually-hidden"> status</span></a>
                         </dd>
                     </div>
                 {% endif %}
@@ -174,7 +174,7 @@
                         <dt class="govuk-summary-list__key">Status</dt>
                         <dd class="govuk-summary-list__value">{{ data['docType-document-status'] }}</dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="D-document-name">Change<span class="govuk-visually-hidden"> status</span></a>
+                            <a class="govuk-link" href="C-exhibit-details">Change<span class="govuk-visually-hidden"> status</span></a>
                         </dd>
                     </div>
                 {% endif %}
