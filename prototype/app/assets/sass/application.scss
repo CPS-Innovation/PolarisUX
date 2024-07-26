@@ -52,6 +52,10 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: 0 !important;
 }
 
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
 .makeBannerMiddle {
    max-width: 1400px;
   margin-left: auto;
@@ -745,12 +749,15 @@ max-width:90%;
 .inPageSearchMargins2 {
     margin-bottom: 10px;
     color: #000 !important;
-    &.old-document {
+    &.old-document, &.redacted {
         margin-top: 15px !important;
         span {
             color: rgba(white,0.7);
             font-size: 0.875rem;
         }
+    }
+    &.redacted {
+        
     }
 }
 

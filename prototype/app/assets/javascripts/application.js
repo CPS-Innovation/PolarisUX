@@ -682,14 +682,13 @@ $(document).ready(function () {
     var documentsRead = 0;
     var documentsUnread = 24;
 
-
     $(".show-case").on("click", function (e) {
         $('.window-size').show();
         var pageCount = $(this).attr("data-page");
         $('.page-counter').addClass('show');
         $('.page-counter strong').text(pageCount);
 
-        $(this).parent().parent().removeClass('unreadDocument');
+        $(this).parent().parent().parent().removeClass('unreadDocument');
 
         $(this).addClass('read');
         documentsRead += 1;
@@ -708,7 +707,7 @@ $(document).ready(function () {
         // });
 
         $('table tbody tr td').removeClass('current')
-        $(this).parent().parent().addClass('current');
+        $(this).parent().parent().parent().addClass('current');
 
     });
 
@@ -1493,6 +1492,38 @@ $(document).ready(function () {
             $('#charge-issued-error, #redaction-error-summary, #charge-error-list').show();
         }
         $('#pdf-root').addClass('documentRedacted');
+
+        $('table tbody tr td.current .redacted-indicator').prepend(`
+            <strong class="govuk-tag tooltip govuk-tag--blue">
+                R <span class="tooltiptext">Redacted, <strong id="redacted-time">###</strong></span>
+            </strong>
+        `);
+
+        $('.inPageSearchMargins2').addClass('redacted');
+        $('.inPageSearchMargins2').append( `<br><span>Redacted, <strong id="redacted-time2">###</strong></span>` );
+
+        document.getElementById("redacted-time").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
+        document.getElementById("redacted-time2").innerHTML = formatAMPM();
+        function formatAMPM() {
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        }
+
     });
 
     $('#charge-issued-error').show();
@@ -2449,6 +2480,31 @@ $(document).ready(function() {
         $('#group10-doc2 td').addClass('current').removeClass('unreadDocument');
     }
 });
+
+// =================================== REDACTED DOCUMENT =================================== //
+function redactedDocumentV1() {
+
+    $(".redacted-document-V1").on("click", function (e) {
+        $('.inPageSearchMargins2').addClass('redacted');
+        if ($('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').length > 0) {
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').append( "<br><span>Redacted, Thu 04 Jun 2023 2:15pm</span>" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').parent().addClass('redacted');
+        }
+    });
+
+}
+
+function redactedDocumentV2() {
+
+    $(".redacted-document-V2").on("click", function (e) {
+        $('.inPageSearchMargins2').addClass('redacted');
+        if ($('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').length > 0) {
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').append( "<br><span>Redacted, Thu 04 Jun 2023 2:15pm</span>" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').parent().addClass('redacted');
+        }
+    });
+
+}
 
 
 
