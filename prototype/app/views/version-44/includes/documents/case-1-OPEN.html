@@ -11,30 +11,35 @@
     </div>
  -->
     <div class="caseFiles" id="caseFilesCol">
-    
-        <div class="blueBoxCPS">
-            <h2 class="govuk-heading-s">Case number:</h2>
-            <p style="margin-bottom: 0.5em;">
-                {% if data['searchURN'] %}
-                    <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">{{ data['searchURN'] }}/1</a>
-                {% else %}
-                    <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">45AA209820/1</a>
-                {% endif %}
-            </p>
-            <h2 class="govuk-heading-s">DOB:</h2>
-            <p style="margin-bottom: 0.5em;">16 Jan 2005. Age: 18</p>
-            <p><strong class="govuk-tag" style="background: white; color: #1d70b8;">Youth offender</strong></p>
-            <h2 class="govuk-heading-s">Proposed charges</h2>
-            <p>Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</p>
-            <h2 class="govuk-heading-s">Custody time limit</h2>
-            <p>45 days</p>
-            <h2 class="govuk-heading-s">Next hearing date</h2>
-            <p>1 June 2024</p>
-            <h2 class="govuk-heading-s">Custody end</h2>
-            <p>30 May 2022</p>  
-        </div>
 
-        <button class="move-multiple-Documents govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="location.href='https://www.figma.com/proto/Oemk95xWfmYbNzgi6grtdO/CM?page-id=595%3A6946&node-id=729-4169&viewport=-1533%2C504%2C0.3&t=y6f4KoKfmwqMAjwQ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=729%3A4169';">Reclassify multiple documents</button>
+        <details class="govuk-details case-overview-panel">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Case overview</span>
+            </summary>
+            <div class="blueBoxCPS">
+                <h2 class="govuk-heading-s">Case number:</h2>
+                <p style="margin-bottom: 0.5em;">
+                    {% if data['searchURN'] %}
+                        <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">{{ data['searchURN'] }}/1</a>
+                    {% else %}
+                        <a href="" class="show-case" data-doc="PRE_CONS_D.pdf" data-count="2" onclick="return pageCounter()" data-page="9" style="color: white !important;">45AA209820/1</a>
+                    {% endif %}
+                </p>
+                <h2 class="govuk-heading-s">DOB:</h2>
+                <p style="margin-bottom: 0.5em;">16 Jan 2005. Age: 18</p>
+                <p><strong class="govuk-tag" style="background: white; color: #1d70b8;">Youth offender</strong></p>
+                <h2 class="govuk-heading-s">Proposed charges</h2>
+                <p>Section 39 Common assault 01/06/2020. Contrary to the Criminal Justice Act 1988</p>
+                <h2 class="govuk-heading-s">Custody time limit</h2>
+                <p>45 days</p>
+                <h2 class="govuk-heading-s">Next hearing date</h2>
+                <p>1 June 2024</p>
+                <h2 class="govuk-heading-s">Custody end</h2>
+                <p>30 May 2022</p>  
+            </div>
+        </details>
+
+        <button class="move-multiple-Documents govuk-button" data-module="govuk-button" type="button" onclick="location.href='https://www.figma.com/proto/Oemk95xWfmYbNzgi6grtdO/CM?page-id=595%3A6946&node-id=729-4169&viewport=-1533%2C504%2C0.3&t=y6f4KoKfmwqMAjwQ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=729%3A4169';">Bulk UM Classification</button>
 
         <div class="accordion">
 

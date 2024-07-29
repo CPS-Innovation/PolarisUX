@@ -39,6 +39,20 @@
         top: 90px;
         height: 87vh;
     }
+    details {
+        &.case-overview-panel {
+            margin-bottom: 0.5em; 
+            summary {
+                span {
+                    font-size: 1rem;
+                }
+            }
+            .govuk-details__text {
+                padding-left: 0;
+                border-left: none;
+            }
+        }
+    }
     .accordion {
         details {
             // float: left;
@@ -561,6 +575,9 @@
     }
     .move-multiple-Documents, .save-DocumentMove {
         font-size: 0.875rem;
+    }
+    .move-multiple-Documents {
+        margin-bottom: 1.35em;
     }
     .save-DocumentMove {
         margin-right: 0.75em;
