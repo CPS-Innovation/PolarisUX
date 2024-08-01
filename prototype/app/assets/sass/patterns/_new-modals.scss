@@ -35,6 +35,10 @@
     }
 }
 
+#redaction-error-summary {
+    margin-bottom: 0 !important;
+}
+
 #openNotesModal, #openNewNotesModal, #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages, #confirmRemovePages {
     background: none;
     height: auto;
