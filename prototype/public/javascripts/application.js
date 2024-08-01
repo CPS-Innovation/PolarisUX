@@ -1495,12 +1495,12 @@ $(document).ready(function () {
 
         $('table tbody tr td.current .redacted-indicator').prepend(`
             <strong class="govuk-tag tooltip govuk-tag--blue">
-                R <span class="tooltiptext">Redacted, <strong id="redacted-time">###</strong></span>
+                R <span class="tooltiptext">Redacted, <strong id="redacted-time">###</strong>, by "user_name_1983"</span>
             </strong>
         `);
 
         $('.inPageSearchMargins2').addClass('redacted');
-        $('.inPageSearchMargins2').append( `<br><span>Redacted, <strong id="redacted-time2">###</strong></span>` );
+        $('.inPageSearchMargins2').append( `<br><span>Redacted, <strong id="redacted-time2">###</strong>, by "user_name_1983"</span>` );
 
         document.getElementById("redacted-time").innerHTML = formatAMPM();
         function formatAMPM() {
@@ -2487,7 +2487,7 @@ function redactedDocumentV1() {
     $(".redacted-document-V1").on("click", function (e) {
         $('.inPageSearchMargins2').addClass('redacted');
         if ($('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').length > 0) {
-            $('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').append( "<br><span>Redacted, Thu 04 Jun 2023 2:15pm</span>" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').append( '<br><span>Redacted, Thu 04 Jun 2023 2:15pm, by "user_name_1983"</span>' );
             $('#documentNameHeader > p.inPageSearchMargins2:contains("stmt JONES 1989 1 JUNE mg11")').parent().addClass('redacted');
         }
     });
@@ -2499,7 +2499,7 @@ function redactedDocumentV2() {
     $(".redacted-document-V2").on("click", function (e) {
         $('.inPageSearchMargins2').addClass('redacted');
         if ($('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').length > 0) {
-            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').append( "<br><span>Redacted, Thu 04 Jun 2023 2:15pm</span>" );
+            $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').append( '<br><span>Redacted, Thu 04 Jun 2023 2:18pm, by "Joe_Bloggs_1999"</span>' );
             $('#documentNameHeader > p.inPageSearchMargins2:contains("MCLOVE MG12")').parent().addClass('redacted');
         }
     });
