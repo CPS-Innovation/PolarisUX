@@ -514,7 +514,8 @@ function myFunction() {
     // document.getElementsByClassName("dropdown-content").classList.toggle("show");
     // $("dropdown-content").toggle("show");
     document.getElementById("myDropdown1").classList.toggle("show");
-    document.getElementById("myDropdown2").classList.toggle("show");
+    // document.getElementById("myDropdown2").classList.toggle("show");
+    $(".myDropdown2").toggleClass("show");
 }
 
 // // Close the dropdown menu if the user clicks outside of it
@@ -530,6 +531,13 @@ window.onclick = function(event) {
         }
     }
 }
+
+function documentTarget() {
+    $(".myDropdown2").removeClass("show");
+    $(".dropbtn").removeClass("open");
+
+}
+
 
 // =================================== Emails viewer =================================== //
 
@@ -1916,6 +1924,7 @@ $(document).ready(function () {
     $(".rename-Document").on("click", function (e) {
         var docNewTitle = $(this).parent().parent().children('.wrapper').find('.show-case').text();
         $('.document-title-10').text(docNewTitle);
+        $('#rename-Document').val(docNewTitle);
         $(this).parent().parent().addClass('change-DocumentName');
         $(this).parent().removeClass('show');
         if ($(this).hasClass('renameExhibit')) {
@@ -2338,22 +2347,45 @@ $(document).ready(function(){
 
     $('.delete-page').click(function() {
         var documentNumber = $(this).parent().parent().parent().find('label span').text();
-        $('.page-number').text(documentNumber);
+        $('.page-number-to-remove').text(documentNumber);
         $(this).parent().parent().parent().addClass('remove');
         $("#confirmRemovePage").removeClass("rj-dont-display");
     });
 
+    $('.cancel-delete').click(function() {
+        var documentNumber = $("#confirmRemovePage").find('.page-number-to-remove').text();
+        if (documentNumber == 'Page 1') {
+            $('#editDocument-Page-1').parent().parent().removeClass('remove');
+        } else if (documentNumber == 'Page 2') {
+            $('#editDocument-Page-2').parent().parent().removeClass('remove');
+        } else if (documentNumber == 'Page 3') {
+            $('#editDocument-Page-3').parent().parent().removeClass('remove');
+        } else if (documentNumber == 'Page 4') {
+            $('#editDocument-Page-4').parent().parent().removeClass('remove');
+        } else if (documentNumber == 'Page 5') {
+            $('#editDocument-Page-5').parent().parent().removeClass('remove');
+        }
+        // $('.page-number-to-remove').text(documentNumber);
+        // $(this).parent().parent().parent().addClass('remove');
+        // $("#confirmRemovePage").removeClass("rj-dont-display");
+    });
+
+
+    // $('.delete-multiple-pages').click(function() {
+    // });
+
+
     $('input[name=confirmRemovePages]').change(function() {
         if ($('#confirmRemovePages-Yes').is(':checked')) {
             // $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), closeRotatePagesModal()');
-            $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+            $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
         } else {
-            $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
+            $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
             // $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
         }
     }); 
 
-    $('#confirm-Remove-Pages').click(function() {
+    $('#confirm-Remove-Rotate-Pages').click(function() {
         $('.saving-panel-remove-rotate').show();
         $('.header-wrapper.remove-rotate-header').hide();
         $(this).removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
@@ -2379,7 +2411,50 @@ $(document).ready(function(){
     //     }
     // });
 
+    $('.multiple-remove').hide();
+    $('.page-1, .page-2, .page-3, .page-4, .page-5').hide();
+
 });
+
+// var $pageCheckboxes = $('input[name="editDocument"]');
+
+function countPages() {
+    // var countPagesCheckboxes = $('input[name="editDocument"]:checked').length;
+    // alert(countPagesCheckboxes);
+    $('.single-remove').hide();
+    $('.multiple-remove').show();
+    if ($('input[id="editDocument-Page-1"]').is(':checked')) {
+        $('.page-1').show();
+        $('input[id="editDocument-Page-1"]').parent().parent().addClass('remove');
+    } else {
+        $('.page-1').hide();
+    }
+    if ($('input[id="editDocument-Page-2"]').is(':checked')) {
+        $('.page-2').show();
+        $('input[id="editDocument-Page-2"]').parent().parent().addClass('remove');
+    } else {
+        $('.page-2').hide();
+    }
+    if ($('input[id="editDocument-Page-3"]').is(':checked')) {
+        $('.page-3').show();
+        $('input[id="editDocument-Page-3"]').parent().parent().addClass('remove');
+    } else {
+        $('.page-3').hide();
+    }
+    if ($('input[id="editDocument-Page-4"]').is(':checked')) {
+        $('.page-4').show();
+        $('input[id="editDocument-Page-4"]').parent().parent().addClass('remove');
+    } else {
+        $('.page-4').hide();
+    }
+    if ($('input[id="editDocument-Page-5"]').is(':checked')) {
+        $('.page-5').show();
+        $('input[id="editDocument-Page-5"]').parent().parent().addClass('remove');
+    } else {
+        $('.page-5').hide();
+    }
+
+}
 
 function removePageNumber() {
     $('div.remove').remove();
@@ -2388,7 +2463,7 @@ function removePageNumber() {
 function updateDocument() {
     $('#pdf-root .canvasWrapper, #pdf-root .textLayer').hide();
     $('#pdf-root .PdfHighlighter').addClass('documentSwap');
-    $('.updated-message').show();
+    // $('.updated-message').show();
 }
 
 function updateDocument6() {
