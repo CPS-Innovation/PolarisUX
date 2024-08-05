@@ -3,6 +3,10 @@
     <div class="das-cookie-banner x-small" id="openMe">
         <div class="das-cookie-banner__wrapper">
 
+            <div class="govuk-modal-dialogue__header">
+                <button aria-label="Close modal dialogue" class="govuk-button govuk-modal-dialogue__close close-rotate-remove" data-module="govuk-button" type="button" onClick="return closeConfirmRemovePages(), closeRotatePagesModal()">×</button>
+            </div>
+
             <!-- //////////////////////////////// REMOVE PAGES - START //////////////////////////////// -->
             <div class="govuk-grid-row" id="confirmRemove">
 
@@ -30,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div class="redaction-wrapper">
+                    <div class="redaction-wrapper remove-rotate-wrapper">
                         <form method="" action="">
 
                             <div class="govuk-grid-row">
@@ -74,10 +78,10 @@
                                         <button class="non-button" data-module="govuk-button" type="button" onclick="return closeConfirmRemovePages()">Cancel</button>
                                     </div>
 
-                                    <div class="secondary-action">
+<!--                                     <div class="secondary-action">
                                         <button id="" class="govuk-button" data-module="govuk-button" type="button" onClick="return closeConfirmRemovePages(), closeRotatePagesModal()">Close</button>
                                     </div>
-
+ -->
                                 </div>
                             </div>
 

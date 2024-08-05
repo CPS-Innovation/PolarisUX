@@ -1952,8 +1952,6 @@ $(document).ready(function () {
         }, 1500);
     });
 
-
-
     // Move
     $('.document-groups').hide();
 
@@ -2385,17 +2383,28 @@ $(document).ready(function(){
         }
     }); 
 
+    $('.close-rotate-remove').hide();
+
     $('#confirm-Remove-Rotate-Pages').click(function() {
         $('.saving-panel-remove-rotate').show();
         $('.header-wrapper.remove-rotate-header').hide();
         $(this).removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         setTimeout(function() {
-            $('.confirm-Remove-Pages-Message').hide();
+            $('.confirm-Remove-Pages-Message, .remove-rotate-wrapper').hide();
+            $('.close-rotate-remove').show();
             $('.saving-panel-remove-rotate, .initial-action').hide();
             $('.success-banner-remove-rotate, .secondary-action').show();
         }, 1500);
+
+        $('#group1-doc1 td .wrapper').prepend(`<strong class="govuk-tag govuk-tag--green" style="display:inline-block !important;">Updated</strong>`);
     });
+
+    $('#confirm-Remove-Pages').click(function() {
+        $('.button-wrapper-multiple').hide();
+        $('.button-wrapper').show();
+    });
+    
 
          // $('input[name=confirmRemovePages]').change(function() {
     //     if ($(this).is(':checked') && $.cookie("reportProblem-Document") == '7') {
