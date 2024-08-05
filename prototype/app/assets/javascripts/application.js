@@ -2581,6 +2581,12 @@ function redactedDocumentV2() {
 
 }
 
+// =================================== TRIAGE =================================== //
+$(document).ready(function () {
+    $('.success-banner-triage, .close-triage, .triage-wrapper').hide();
+
+})
+
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //

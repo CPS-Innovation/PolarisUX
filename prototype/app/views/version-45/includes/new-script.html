@@ -288,5 +288,18 @@
         $("#confirmRemovePage").addClass("rj-dont-display");
     }
 
+    // Triage process
+    function launchTriage() {
+        $("#triageModal").removeClass("rj-dont-display");
+        setTimeout(function() {
+            $('.saving-panel-triage').hide();
+            $('.success-banner-triage, .triage-wrapper, .close-triage').show();
+        }, 2000);
+    }
+    function closeTriage() {
+        $("#triageModal").addClass("rj-dont-display");
+    }
+    
+
 
 </script>

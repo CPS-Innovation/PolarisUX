@@ -74,7 +74,7 @@
             }
         }
         #rename, #confirmRemove, #notes, #notesNew {
-            .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes {
+            .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes, .saving-panel-triage, .success-banner-triage {
                 padding: 20px 20px;
                 display: none;
                 margin-bottom: 1em;
@@ -1250,7 +1250,7 @@
     }
 }
 
-.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes {
+.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes, .saving-panel-triage, .success-banner-triage {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1267,7 +1267,7 @@
     }
 }
 
-#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes {
+#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes, .saving-panel-triage {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;
@@ -1282,6 +1282,13 @@
     //     margin: 0;
     //     color: $govuk-secondary-text-colour;
     // }
+}
+
+.saving-panel-triage {
+    p {
+        margin-bottom: 0;
+        color: rgba(255,255,255, 0.7);
+    }
 }
 
 .saving {
