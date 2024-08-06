@@ -2596,6 +2596,19 @@ $(document).ready(function () {
 
 })
 
+// =================================== MOVE DOCUMENTS =================================== //
+$(document).ready(function() {
+    if (window.location.href.indexOf("catergory-Communications") > -1) {
+        $('#catergory-Communications').attr('aria-expanded','true');
+    }
+    if (window.location.href.indexOf("hidden-documents") > -1) {
+        $('#hidden-documents').attr('aria-expanded','true');
+    }
+    if (window.location.href.indexOf("catergory-Exhibits") > -1) {
+        $('#catergory-Exhibits').attr('aria-expanded','true');
+    }
+});
+
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
