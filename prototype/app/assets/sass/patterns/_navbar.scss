@@ -12,7 +12,8 @@
         li {
             box-sizing: border-box;
             height: 3.125rem;
-            padding: 0 15px;
+            padding: 0;
+            margin-right: 30px;
             float: left;
             line-height: 50px;
             position: relative;
@@ -52,6 +53,23 @@
                 right: 0;
                 top: 0;
                 // float: right;
+            }
+        }
+    }
+}
+
+#secondary-navigation {
+    ul {
+        li {
+            padding: 0 !important;
+            margin-right: 30px;
+            &.selected {
+                a {
+                    color: black;
+                }
+            }
+            &:first-of-type {
+                padding-left: 15px !important;
             }
         }
     }
