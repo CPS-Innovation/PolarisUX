@@ -176,145 +176,146 @@
 });
 </script>
 
-
-<header class="govuk-header {{ params.classes if params.classes }}" role="banner" data-module="govuk-header" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-    <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
-        <div style="display:flex">
-            <div class="govuk-header__logo">
-                <a href="../2-cps-user-journey/A-dashboard" class="govuk-header__link govuk-header__link--homepage">
-                    <span class="govuk-header__logotype">
-                        <span class="govuk-header__logotype-text caseReviewHeader">CPS</span>
-                        <span class="govuk-header__logotype-text caseReviewHeaderSub">Casey McCase Face</span>
-                    </span>
-                </a>
-            </div>
-            <div class="govuk-header__logo right">
-                <a href="" class="username">user_name_1983</a>
-                <div class="user-settings">
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h1 class="govuk-fieldset__heading">Colour scheme</h1>
-                            </legend>
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourScheme__White" name="colourScheme" type="radio" value="White" checked>
-                                    <label class="govuk-label govuk-radios__label" for="colourScheme__White">White</label>
+<div class="header-wrapper-height">
+    <header class="govuk-header {{ params.classes if params.classes }}" role="banner" data-module="govuk-header" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+        <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+            <div style="display:flex">
+                <div class="govuk-header__logo">
+                    <a href="../2-cps-user-journey/A-dashboard" class="govuk-header__link govuk-header__link--homepage">
+                        <span class="govuk-header__logotype">
+                            <span class="govuk-header__logotype-text caseReviewHeader">CPS</span>
+                            <span class="govuk-header__logotype-text caseReviewHeaderSub">Casey McCase Face</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="govuk-header__logo right">
+                    <a href="" class="username">user_name_1983</a>
+                    <div class="user-settings">
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h1 class="govuk-fieldset__heading">Colour scheme</h1>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourScheme__White" name="colourScheme" type="radio" value="White" checked>
+                                        <label class="govuk-label govuk-radios__label" for="colourScheme__White">White</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourScheme__SoftGrey" name="colourScheme" type="radio" value="Soft grey">
+                                        <label class="govuk-label govuk-radios__label" for="colourScheme__SoftGrey">Soft grey</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourScheme__Grey" name="colourScheme" type="radio" value="Grey">
+                                        <label class="govuk-label govuk-radios__label" for="colourScheme__Grey">Grey</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourScheme__Dark" name="colourScheme" type="radio" value="Dark">
+                                        <label class="govuk-label govuk-radios__label" for="colourScheme__Dark">Dark</label>
+                                    </div>
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourScheme__SoftGrey" name="colourScheme" type="radio" value="Soft grey">
-                                    <label class="govuk-label govuk-radios__label" for="colourScheme__SoftGrey">Soft grey</label>
+                            </fieldset>
+                        </div>
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h1 class="govuk-fieldset__heading">Colour overlay</h1>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourOverlay__Pink" name="colourOverlay" type="radio" value="Pink">
+                                        <label class="govuk-label govuk-radios__label" for="colourOverlay__Pink" checked>Pink</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourOverlay__Green" name="colourOverlay" type="radio" value="Green">
+                                        <label class="govuk-label govuk-radios__label" for="colourOverlay__Green">Green</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourOverlay__Blue" name="colourOverlay" type="radio" value="Blue">
+                                        <label class="govuk-label govuk-radios__label" for="colourOverlay__Blue">Blue</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourOverlay__Yellow" name="colourOverlay" type="radio" value="Yellow">
+                                        <label class="govuk-label govuk-radios__label" for="colourOverlay__Yellow">Yellow</label>
+                                    </div>
+                                    <hr>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="colourOverlay__Remove" name="colourOverlay" type="radio" value="Remove" checked>
+                                        <label class="govuk-label govuk-radios__label" for="colourOverlay__Remove">No colour overlay</label>
+                                    </div>
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourScheme__Grey" name="colourScheme" type="radio" value="Grey">
-                                    <label class="govuk-label govuk-radios__label" for="colourScheme__Grey">Grey</label>
+                            </fieldset>
+                        </div>
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h1 class="govuk-fieldset__heading">Colour hue</h1>
+                                </legend>
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="colourHue" name="colourHue" type="checkbox" value="Change colour hue">
+                                        <label class="govuk-label govuk-checkboxes__label" for="colourHue">Change colour hue</label>
+                                    </div>
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourScheme__Dark" name="colourScheme" type="radio" value="Dark">
-                                    <label class="govuk-label govuk-radios__label" for="colourScheme__Dark">Dark</label>
-                                </div>
-                            </div>
-                        </fieldset>
+                            </fieldset>
+                        </div>
+                        <div class="govuk-form-group">
+                            <button type="button" class="govuk-button govuk-!-margin-bottom-3" onclick="location.href='../../prototype-admin/clear-data';">Clear data</button>
+                        </div>                
                     </div>
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h1 class="govuk-fieldset__heading">Colour overlay</h1>
-                            </legend>
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourOverlay__Pink" name="colourOverlay" type="radio" value="Pink">
-                                    <label class="govuk-label govuk-radios__label" for="colourOverlay__Pink" checked>Pink</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourOverlay__Green" name="colourOverlay" type="radio" value="Green">
-                                    <label class="govuk-label govuk-radios__label" for="colourOverlay__Green">Green</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourOverlay__Blue" name="colourOverlay" type="radio" value="Blue">
-                                    <label class="govuk-label govuk-radios__label" for="colourOverlay__Blue">Blue</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourOverlay__Yellow" name="colourOverlay" type="radio" value="Yellow">
-                                    <label class="govuk-label govuk-radios__label" for="colourOverlay__Yellow">Yellow</label>
-                                </div>
-                                <hr>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="colourOverlay__Remove" name="colourOverlay" type="radio" value="Remove" checked>
-                                    <label class="govuk-label govuk-radios__label" for="colourOverlay__Remove">No colour overlay</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h1 class="govuk-fieldset__heading">Colour hue</h1>
-                            </legend>
-                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="colourHue" name="colourHue" type="checkbox" value="Change colour hue">
-                                    <label class="govuk-label govuk-checkboxes__label" for="colourHue">Change colour hue</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="govuk-form-group">
-                        <button type="button" class="govuk-button govuk-!-margin-bottom-3" onclick="location.href='../../prototype-admin/clear-data';">Clear data</button>
-                    </div>                
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<nav class="cps-bar-wrapper" id="global-navigation" style="margin-bottom:0">
-    <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
+    <nav class="cps-bar-wrapper" id="global-navigation" style="margin-bottom:0">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
 
-                <ul style="display:flex; width:99%" class="">
+                    <ul style="display:flex; width:99%" class="">
 
-                    <li class="dashboard"><a href="A-dashboard">Home</a></li>
-                    <li class="my-tasks selected"><a href="https://www.figma.com/proto/zNeiezQ0KQCAlE5HQM7RuG/Work-Management-App-%E2%80%93-Beta-5th-June?node-id=211-61999&viewport=753%2C1538%2C0.14&t=y00WRFqyQXAsYrFH-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=212%3A70779&show-proto-sidebar=1">Tasks</a></li>
-                    <li class="my-cases"><a href="#">Cases</a></li>
-                    <li class="menu-item dropdown" style=" margin-left:auto; float: right; margin-right: 0px;"><a href="" target="_blank" class="classicNav dropdown-toggle">CMS Classic</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="I-CMS-Classic">Task list</a></li>
-                            <li><a href="I-CMS-Classic">Cases</a></li>
-                            <li><a href="I-CMS-Classic">Case review</a></li>
-                            <li><a href="I-CMS-Classic">Case materials</a></li>
-                            <li><a href="I-CMS-Classic">Triage</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-<nav class="cps-bar-wrapper" id="secondary-navigation" style="background:#fff; z-index:9; margin-bottom: 2em;">
-    <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-                <div class="case-info" id="test-nav">
-                    <h1 class="govuk-heading-s" style="margin:0; padding: 0.55em 0.5em; background: #f3f2f1;">
-                        <span style="position: relative; z-index:2;">McLove, Eoin</span>
-                    </h1>
-                </div>
-                <ul style="display:flex; margin:10px 0; width:30%; float:left; padding:0 0 0 1em; list-style: none;">
-                    <li class="sub-overview"><a href="#">Overview</a></li>
-                    <li class="sub-case selected"><a href="./C-casefile-1">Materials</a></li>
-                    <li class="sub-review"><a href="#">Review</a></li>
-                    <li><a href="#" onclick="launchTriage()">Triage</a></li>
-                </ul>
-                <div style="margin-top: 0.25em;">
-                    {% include "../includes/notifications.html" %}
-                    {% include "../includes/tasks.html" %}
+                        <li class="dashboard"><a href="A-dashboard">Home</a></li>
+                        <li class="my-tasks selected"><a href="https://www.figma.com/proto/zNeiezQ0KQCAlE5HQM7RuG/Work-Management-App-%E2%80%93-Beta-5th-June?node-id=211-61999&viewport=753%2C1538%2C0.14&t=y00WRFqyQXAsYrFH-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=212%3A70779&show-proto-sidebar=1">Tasks</a></li>
+                        <li class="my-cases"><a href="#">Cases</a></li>
+                        <li class="menu-item dropdown" style=" margin-left:auto; float: right; margin-right: 0px;"><a href="" target="_blank" class="classicNav dropdown-toggle">CMS Classic</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="I-CMS-Classic">Task list</a></li>
+                                <li><a href="I-CMS-Classic">Cases</a></li>
+                                <li><a href="I-CMS-Classic">Case review</a></li>
+                                <li><a href="I-CMS-Classic">Case materials</a></li>
+                                <li><a href="I-CMS-Classic">Triage</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    <nav class="cps-bar-wrapper" id="secondary-navigation" style="background:#fff; z-index:9; margin-bottom: 2em;">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="case-info" id="test-nav">
+                        <h1 class="govuk-heading-s" style="margin:0; padding: 0.55em 0.5em; background: #f3f2f1;">
+                            <span style="position: relative; z-index:2;">McLove, Eoin</span>
+                        </h1>
+                    </div>
+                    <ul style="display:flex; margin:10px 0; width:30%; float:left; padding:0 0 0 1em; list-style: none;">
+                        <li class="sub-overview"><a href="#">Overview</a></li>
+                        <li class="sub-case selected"><a href="./C-casefile-1">Materials</a></li>
+                        <li class="sub-review"><a href="#">Review</a></li>
+                        <li><a href="#" onclick="launchTriage()">Triage</a></li>
+                    </ul>
+                    <div style="margin-top: 0.25em;">
+                        {% include "../includes/notifications.html" %}
+                        {% include "../includes/tasks.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
 
 <style>body {visibility: hidden}</style>
 <script>

@@ -65,8 +65,24 @@ $(window).scroll(function() {
         $('.updated-message').removeClass('sticky');
     }
 
+    // if ($(this).scrollTop()>135) {
+    //     // alert('working');
+    //     $('#navbar').addClass('sticky');
+    // } else {
+    //     $('#navbar').removeClass('sticky');
+    // }
 
 });
+
+// $(function(){
+//     $(window).scroll(function(){
+//         if ($('#navbar').hasClass('sticky')) {
+//             $('.page-counter').addClass('sticky');
+//         } else {
+//             $('.page-counter').removeClass('sticky');
+//         }
+//     });
+// });
 
 // =================================== Header =================================== //
 
@@ -775,15 +791,6 @@ function showAll() {
     }
 }
 
-$(function(){
-    $(window).scroll(function(){
-        if ($('#navbar').hasClass('sticky')) {
-            $('.page-counter').addClass('sticky');
-        } else {
-            $('.page-counter').removeClass('sticky');
-        }
-    });
-});
 
 function windowSizeChange() {
     $('.window-size').toggleClass('close');

@@ -29,17 +29,24 @@
     // Scroll effect - PART 1
     var yourNavigation = $(".navbar");
     stickyDiv = "sticky";
-    yourHeader = $('.govuk-header').height();
+    yourHeader = $('.header-wrapper-height').height();
     sideBar = $('#left-column');
 
     $(window).scroll(function() {
         if ($(this).scrollTop() > yourHeader) {
             yourNavigation.addClass(stickyDiv);
             sideBar.addClass(stickyDiv);
+            $('.searchForm-inner.left-column-top').addClass(stickyDiv);
         } else {
             yourNavigation.removeClass(stickyDiv);
             sideBar.removeClass(stickyDiv);
+            $('.searchForm-inner.left-column-top').removeClass(stickyDiv);
         }
+        // if ($(this).scrollTop()) {
+        //     sideBar.addClass(stickyDiv);
+        // } else {
+        //     sideBar.removeClass(stickyDiv);
+        // }
     });
 
     // Scroll effect - PART 2
