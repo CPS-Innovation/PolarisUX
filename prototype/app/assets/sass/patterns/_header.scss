@@ -34,10 +34,73 @@ html.govuk-template {
     }
 }
 
-.notifications-panel-wrapper, .notifications-panel-wrapper-STICKY, .tasks-panel-wrapper, .tasks-panel-wrapper-STICKY {
+.notifications-panel-wrapper, .notifications-panel-wrapper-STICKY, .tasks-panel-wrapper, .tasks-panel-wrapper-STICKY, .cms-classic-wrapper {
     position: relative;
     display: inline-block;
     float: right;
+    a {
+        font-size: 1.3rem;
+    }
+}
+
+#secondary-navigation, #navbar {
+    .notifications-panel-wrapper, .notifications-panel-wrapper-STICKY, .tasks-panel-wrapper, .tasks-panel-wrapper-STICKY, .cms-classic-wrapper {
+        a {
+            font-size: 1.3rem;
+            padding-top: 9px;
+            padding-left: 3px;
+            padding-right: 3px;
+            text-decoration: none;
+            &.notifications, &.tasks {
+                padding-top: 0.275em;
+            }
+            span {
+                margin-right: 0.25em;
+                background-size: cover;
+                top: 0em;
+                width: 1.25em;
+                height: 1.25em;
+                margin-right: 0.5em;
+                &.tasks-number, &.notifications-number {
+                    top: 2.15em;
+                }
+            }
+        }
+        .notifications, .tasks {
+            padding: 0.5em 0.5em 0.5em 0.5em;
+        }
+        .notifications-panel, .tasks-panel {
+            top: 2.65em;
+        }
+        .notifications-panel-STICKY .tasks-panel-STICKY {
+            top: 3.15em;
+        }
+        .case-alert, .task-alert {
+            a {
+                font-size: 1rem;
+                margin-top: 0;
+                padding-top: 0;
+                text-decoration: underline;
+            }
+        }
+    }
+    .cms-classic-wrapper {
+        margin: 0.35em 2em 0 0;
+        ul {
+            margin: 0;
+            li {
+                a {
+                    font-size: 1.3rem;
+                    // text-decoration: underline;
+                    &:after {
+                        left: inherit;
+                        right: -25px;
+                        top: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .tasks-panel-wrapper-STICKY {
@@ -136,7 +199,8 @@ html.govuk-template {
 
 .tasks-STICKY { 
     padding: 0;
-    width: 2.3em;
+    width: 1.5em;
+    height: 2.15em;
     top: 0.25em;
     &:hover, &:active, &:focus {
         .tooltiptext {
@@ -160,8 +224,10 @@ html.govuk-template {
         bottom: -0.65em !important;
         right: inherit !important;
         &.alert {
-            left: 0.25em !important;
+            left: 1.95em !important;
+            top: 2.25em !important;
             bottom: 0.85em !important;
+            position: absolute !important;
         }
     }
 }

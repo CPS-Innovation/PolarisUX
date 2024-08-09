@@ -73,6 +73,24 @@
             &:first-of-type {
                 padding-left: 15px !important;
             }
+            ul.dropdown-menu {
+                top: 140%;
+                right: -24px;
+                li {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    a {
+                        display: inline-block;
+                        width: 92%;
+                        font-size: 1.3rem;
+                        padding: 2% 4%;
+                        &:hover, &:active, &:focus {
+                            background: $govuk-link-colour;
+                            color: white;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -129,6 +147,10 @@
             margin-right: 0.15em;
             // position: absolute;
             // right: 50px;
+            &.notifications-number-STICKY {
+                top: -0.75em;
+            }
+
             &.tooltip {
                 // &#header-alert-2, &#header-alert-3 {
                 //     visibility: hidden;
