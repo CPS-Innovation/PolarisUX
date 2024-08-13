@@ -81,6 +81,9 @@ html.govuk-template {
                 margin-top: 0;
                 padding-top: 0;
                 text-decoration: underline;
+                &.govuk-button {
+                    padding-top: 6px;
+                }
             }
         }
     }
