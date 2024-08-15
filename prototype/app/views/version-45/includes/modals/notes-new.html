@@ -57,6 +57,120 @@
                                         </div>
                                         <!-- ////// NOTES ITEM 1 - END ////// -->
 
+
+                                        <details class="govuk-details">
+                                            <summary class="govuk-details__summary">
+                                                <span class="govuk-details__summary-text">Add document tags</span>
+                                            </summary>
+                                            <div class="govuk-details__text">
+
+                                                <!-- ////// NOTES ITEM 2 - START ////// -->
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label" for="notesNew-Evidential">Evidential status</label>
+                                                    <select class="govuk-select" id="notesNew-Evidential" name="notesNew-Evidential">
+                                                        <option disabled selected>Choose Evidential status</option>
+                                                        <option value="EVIDENCE">EVIDENCE</option>
+                                                        <option value="UNUSED - Disclose">UNUSED - Disclose</option>
+                                                        <option value="UNUSED - Not Disclose" >UNUSED - Not Disclose</option>
+                                                        <option value="UNUSED - Clearly Not Disclose">UNUSED - Clearly Not Disclose</option>
+                                                    </select>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 2 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 3 - START ////// -->
+                                                <div class="govuk-form-group conditonal-evidence">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="notesNew-Evidence-Live" name="notesNew-Evidence" type="radio" value="Live">
+                                                                <label class="govuk-label govuk-radios__label" for="notesNew-Evidence-Live">Live</label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="notesNew-Evidence-S9" name="notesNew-Evidence" type="radio" value="S9">
+                                                                <label class="govuk-label govuk-radios__label" for="notesNew-Evidence-S9">S9</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 3 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 4 - START ////// -->
+                                                <div class="govuk-form-group">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="notesNew-GDPR" name="notesNew-GDPR" type="checkbox" value="Not GDPR Safe">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="notesNew-GDPR">Not GDPR Safe</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 4 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 5 - START ////// -->
+                                                <div class="govuk-form-group">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="notesNew-Links" name="notesNew-Links" type="checkbox" value="Links don't work">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="notesNew-Links">Links don't work</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 5 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 6 - START ////// -->
+                                                <div class="govuk-form-group last-checkbox">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="notesNew-Sensitive" name="notesNew-Sensitive" type="checkbox" value="Sensitive Material">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="notesNew-Sensitive">Sensitive Material</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 6 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 7 - START ////// -->
+                                                <div class="govuk-form-group conditonal-MG11">
+                                                    <label class="govuk-label" for="notesNew-MG11">MG11 status</label>
+                                                    <select class="govuk-select" id="notesNew-MG11" name="notesNew-MG11">
+                                                        <option disabled selected>Choose MG11 status</option>
+                                                        <option value="Arrest">Arrest conditonal visibility, IF doc is a statement</option>
+                                                        <option value="Victim">Victim can pick only 1 of these options</option>
+                                                        <option value="VPS">VPS</option>
+                                                        <option value="Civilian">Civilian Witness</option>
+                                                        <option value="Expert">Expert Witness</option>
+                                                    </select>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 7 - END ////// -->
+
+                                                <!-- ////// NOTES ITEM 8 - START ////// -->
+                                                <div class="govuk-form-group conditonal-Exhibit">
+                                                    <label class="govuk-label" for="notesNew-Exhibit">Exhibit status</label>
+                                                    <select class="govuk-select" id="notesNew-Exhibit" name="notesNew-Exhibit">
+                                                        <option disabled selected>Choose Exhibit status</option>
+                                                        <option value="Audio">Audio Recording ROTI conditonal visibility, if doc is an exhibit</option>
+                                                        <option value="MG15">MG15 ROTI can pick only 1 of these options</option>
+                                                        <option value="Bodyworn">Bodyworn Video</option>
+                                                        <option value="Phone">Phone Download</option>
+                                                        <option value="Presentation">Presentation</option>
+                                                        <option value="Maps">Maps</option>
+                                                        <option value="CCTV">CCTV</option>
+                                                        <option value="Cell">Cell Site Analysis</option>
+                                                        <option value="999">999 Calls</option>
+                                                        <option value="Photo - Injuries">Photo - Injuries</option>
+                                                        <option value="Photo - Scene">Photo - Scene</option>
+                                                        <option value="Photo - Exhibits">Photo - Exhibits</option>
+                                                    </select>
+                                                </div>
+                                                <!-- ////// NOTES ITEM 8 - END ////// -->
+
+                                            </div>
+                                        </details>
+
                                         <button id="notesNew-button" class="govuk-button" data-module="govuk-button" type="button" onClick="openWarningModal()">Accept and save</button>
                                         <button class="non-button" data-module="govuk-button" type="button" onClick="closeNewNotesModal()">Cancel</button>
 
@@ -82,6 +196,7 @@
                                                 <time class="hods-date-time" datetime="2021-03-15" id="noteNew-timestamp"></time>
                                             </p>
                                             <p class="hods-timeline__description"></p>
+                                            <div class="tags-wrapper"></div>
                                         </div>
                                     </div>
                                     <!-- ////// NOTES TIMELINE - END ////// -->
@@ -89,7 +204,7 @@
                                 </div>
 
 
-                            </div>
+                            </div>  
 
                         </form>
                     </div>

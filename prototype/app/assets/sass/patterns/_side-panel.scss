@@ -21,6 +21,10 @@
         margin-bottom: 0.01em;
     }
 }
+
+.notes-text-content {
+    font-weight: normal !important;
+}
  
 #left-column {
     overflow-y: scroll;
@@ -375,7 +379,7 @@
                                                         font-family: "GDS Transport", arial, sans-serif;
                                                         color: white;
                                                         font-size: 0.875rem;
-                                                        font-weight: bold;
+                                                        // font-weight: bold;
                                                         &:after {
                                                             display: none;
                                                         }
@@ -410,7 +414,7 @@
                                                 height: 0.75em;
                                                 top: -0.25em;
                                                 color: white;
-                                                font-weight: bold;
+                                                // font-weight: bold;
                                                 background: $govuk-link-colour;
                                                 border-radius: 50%;
                                                 // margin-left: 0.5em;

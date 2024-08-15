@@ -100,7 +100,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:08
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
                                     </div>
@@ -161,7 +164,10 @@
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>17:36
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                         </div>
@@ -191,7 +197,7 @@
                                             <p class="date-added">
                                                 <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>02 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>16:11
-                                                <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                                <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                     <span class="visuallyhidden notes-new-text-content"></span>
                                                 </button>
@@ -224,7 +230,10 @@
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>10:14
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                         </div>
@@ -254,7 +263,7 @@
                                             <p class="date-added">
                                                 <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>10 Jun 2020
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>08:03
-                                                <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                                <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                     <span class="visuallyhidden notes-new-text-content"></span>
                                                 </button>
@@ -324,7 +333,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>11:22
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -354,7 +363,7 @@
                             </tr>
 
                             <tr class="govuk-table__row document-holder document-7 alpha-4 date-2 witness-4" id="group3-doc2">
-                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag loading-tag">Loading...</strong>
                                         <strong class="govuk-tag current">Active Document</strong>
@@ -369,7 +378,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>11:54
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -412,9 +421,12 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>12:01
-                                            <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                            <button class="notes-link govuk-button has-notes statement-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
 <!--                                         <p class="reference">
@@ -453,7 +465,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>12:36
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -494,7 +506,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>06 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>13:11
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -537,7 +549,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>10 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>19:18
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -582,7 +594,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added statement"><span class="visuallyhidden">Statement Date</span></span>11 Jun 2020
                                             <span class="icon-new time-added statement"><span class="visuallyhidden">Statement Time</span></span>22:53
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button statement-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -636,9 +648,12 @@
                                             <p class="date-added">
                                                 <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jan 2021
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:14
-                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                <button class="notes-link govuk-button has-notes statement-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
 <!--                                             <p class="reference">
@@ -710,7 +725,7 @@
                                 <th>Items</th>
                             </tr>
                             <tr class="govuk-table__row document-holder document-12 alpha-2 date-2" id="group4-doc1">
-                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe" scope="row">
+                                <td class="govuk-table__cell govuk-body-s wrapLongFilenamesCPS openMe unreadDocument" scope="row">
                                     <div class="wrapper">
                                         <strong class="govuk-tag loading-tag">Loading...</strong>
                                         <strong class="govuk-tag current">Active Document</strong>
@@ -725,9 +740,12 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>22:36
-                                            <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                            <button class="notes-link govuk-button has-notes exhibit-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
                                         <p class="reference">
@@ -758,7 +776,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>12 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>23:58
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button exhibit-notes" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -800,9 +818,12 @@
                                             <p class="date-added">
                                                 <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>25 Jun 2021
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
-                                                <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
+                                                <button class="notes-link govuk-button has-notes exhibit-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                             <p class="reference">
@@ -898,7 +919,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>01 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:46
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -926,7 +947,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>19:12
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
                                     </div>
@@ -956,7 +980,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>05 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>19:36
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -990,7 +1014,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>06 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:14
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -1019,7 +1043,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>11 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>09:35
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -1077,7 +1101,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:56
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
                                     </div>
@@ -1172,7 +1199,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>12:20
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                         </p>
                                     </div>
@@ -1218,7 +1248,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>06 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:14
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -1247,7 +1277,7 @@
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span>11 Jun 2020
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>09:35
-                                            <button class="notes-link govuk-button" data-module="govuk-button" type="button" onClick="openNewNotesModal()">
+                                            <button class="notes-link new-notes-link govuk-button" data-module="govuk-button" type="button" onClick="return openNewNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
                                                 <span class="visuallyhidden notes-new-text-content"></span>
                                             </button>
@@ -1289,7 +1319,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>18:56
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                             <br>
                                             <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
@@ -1323,7 +1356,10 @@
                                             <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>20:12
                                             <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                 <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                <span class="visuallyhidden notes-text-content">
+                                                    <strong>Notes:</strong><br>
+                                                    <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                </span>
                                             </button>
                                             <br>
                                             <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
@@ -1426,7 +1462,10 @@
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>20:12
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                         </div>
@@ -1464,7 +1503,10 @@
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>13:14
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                         </div>
@@ -1502,7 +1544,10 @@
                                                 <span class="icon-new time-added"><span class="visuallyhidden">Time</span></span>21:59
                                                 <button class="notes-link govuk-button has-notes" data-module="govuk-button" type="button" onClick="openNotesModal()">
                                                     <span class="notes-text">Notes:</span> <span class="new-notes-number"></span>
-                                                    <span class="visuallyhidden notes-text-content">redacted, reviewed, do not serve</span>
+                                                    <span class="visuallyhidden notes-text-content">
+                                                        <strong>Notes:</strong><br>
+                                                        <span class="notes-content">Redacted, reviewed, do not serve</span>
+                                                    </span>
                                                 </button>
                                             </p>
                                         </div>
