@@ -55,11 +55,19 @@ $(document).ready(function () {
           $(this).parent().parent().parent().addClass('new-note-added');
      });
 
+     $(".closeNewNotesModal").on("click", function (e) {
+          $('table tbody tr td').removeClass('new-note-added');
+     });
+
      var notesNewNumber = 0;
 
      $('#noteNew-added').hide();
 
      $("#notesNew-button").on("click", function (e) {
+
+          $('.notes-wrapper, .hods-timeline').removeClass('errors');
+          $('#notesNew-Comments').removeClass('govuk-input--error');
+          $('#notes-error').hide();
 
           $('.saving-panel-notes').show();
           $('.header-wrapper').hide();
@@ -84,13 +92,13 @@ $(document).ready(function () {
                return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
           }
 
-
           // Note
-          $.cookie("notesNew-Details", $('#notesNew-Comments').val(), {path:'/'});
-          $('#noteNew-added .hods-timeline__description').html($.cookie("notesNew-Details"));
+          var newNotesContent = $('#notesNew-Comments').val();
+          // $.cookie("notesNew-Details", $('#notesNew-Comments').val(), {path:'/'});
+          $('#noteNew-added .hods-timeline__description').html(newNotesContent);
 
           $('.new-note-added .notes-link').addClass('has-notes');
-          $('.new-note-added .notes-new-text-content').html('<strong>Notes:</strong><br>' + $.cookie("notesNew-Details"));
+          $('.new-note-added .notes-new-text-content').html('<strong>Notes:</strong><br><span class="newNotesContent">' + newNotesContent + '</span>');
 
           setTimeout(function () {
                $('#notesNew-Comments').val('');
@@ -103,18 +111,26 @@ $(document).ready(function () {
           // $('.new-notes-number').text(notesNewNumber);
 
           // Tags
+          var notesNew = $('#notesNew-Comments').val();
+          if (notesNew.length > 0) {   
+               $('.hods-timeline__description').show();
+          } else {
+               $('.hods-timeline__description').hide();
+          }
+
           var notesNewEvidential = $('#notesNew-Evidential').val();
           $('.tags-wrapper .notesNew-Evidential').hide();
 
-          if ($('#notesNew-Evidential').val() == 'EVIDENCE' || $('#notesNew-Evidential').val() == 'UNUSED - Disclose' || $('#notesNew-Evidential').val() == 'UNUSED - Not Disclose' || $('#notesNew-Evidential').val() == 'UNUSED - Clearly Not Disclose') {
+          if ($('#notesNew-Evidential').val() == 'EVIDENCE - Live' || $('#notesNew-Evidential').val() == 'EVIDENCE - S9' || $('#notesNew-Evidential').val() == 'UNUSED - Disclose' || $('#notesNew-Evidential').val() == 'UNUSED - Not Disclose' || $('#notesNew-Evidential').val() == 'UNUSED - Clearly Not Disclose') {
                // alert(notesNewEvidential);
                $('.tags-wrapper').append('<strong class="govuk-tag notesNew-Evidential"></strong>');
                $('strong.notesNew-Evidential').html(notesNewEvidential);
                $('.tags-wrapper .notesNew-Evidential').show();
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag  notesNew-Evidential">' + notesNewEvidential + '</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag  notesNew-Evidential">' + notesNewEvidential + '</strong>');
           } else {
                $('.tags-wrapper .notesNew-Evidential').hide();
           }
+
 
           var notesNewEvidentialType = $('input[name=notesNew-Evidence]:checked').val();
           if ($('input[name=notesNew-Evidence]').is(':checked')) {
@@ -124,41 +140,41 @@ $(document).ready(function () {
           
           if ($('input[id=notesNew-GDPR]').is(':checked')) {
                $('.tags-wrapper').append('<strong class="govuk-tag">Not GDPR Safe</strong>');
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag">Not GDPR Safe</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag">Not GDPR Safe</strong>');
           }
 
           if ($('input[id=notesNew-Links]').is(':checked')) {
                $('.tags-wrapper').append('<strong class="govuk-tag">Links don\'t work</strong>');
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag">Links don\'t work</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag">Links don\'t work</strong>');
           }
 
           if ($('input[id=notesNew-Sensitive]').is(':checked')) {
                $('.tags-wrapper').append('<strong class="govuk-tag">Sensitive Material</strong>');
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag">Sensitive Material</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag">Sensitive Material</strong>');
           }
 
           var notesNewStatement = $('#notesNew-MG11').val();
           if ($('#notesNew-MG11').val() == 'Arrest' || $('#notesNew-MG11').val() == 'Victim' || $('#notesNew-MG11').val() == 'VPS' || $('#notesNew-MG11').val() == 'Civilian' || $('#notesNew-MG11').val() == 'Expert') {
                $('.tags-wrapper').append('<strong class="govuk-tag">' + notesNewStatement + '</strong>');
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag">' + notesNewStatement + '</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag">' + notesNewStatement + '</strong>');
           }
 
           var notesNewExhibit = $('#notesNew-Exhibit').val();
           if ($('#notesNew-Exhibit').val() == 'Audio' || $('#notesNew-Exhibit').val() == 'MG15' || $('#notesNew-Exhibit').val() == 'Bodyworn' || $('#notesNew-Exhibit').val() == 'Phone' || $('#notesNew-Exhibit').val() == 'Presentation' || $('#notesNew-Exhibit').val() == 'Maps' || $('#notesNew-Exhibit').val() == 'CCTV' || $('#notesNew-Exhibit').val() == 'Cell' || $('#notesNew-Exhibit').val() == '999' || $('#notesNew-Exhibit').val() == 'Photo - Injuries' || $('#notesNew-Exhibit').val() == 'Photo - Scene' || $('#notesNew-Exhibit').val() == 'Photo - Exhibits') {
                $('.tags-wrapper').append('<strong class="govuk-tag">' + notesNewExhibit + '</strong>');
-               $('.new-note-added .notes-new-text-content').append('<br><strong class="govuk-tag">' + notesNewExhibit + '</strong>');
+               $('.new-note-added .notes-new-text-content').append('<strong class="govuk-tag">' + notesNewExhibit + '</strong>');
           }
 
     });
 
     // Conditional elements
-    $("#notesNew-Evidential").on("change", function (e) {
-          if ($(this).val() == 'EVIDENCE') {
-               $('.conditonal-evidence').show();
-          } else {
-               $('.conditonal-evidence').hide();
-          }
-    });
+    // $("#notesNew-Evidential").on("change", function (e) {
+    //       if ($(this).val() == 'EVIDENCE') {
+    //            $('.conditonal-evidence').show();
+    //       } else {
+    //            $('.conditonal-evidence').hide();
+    //       }
+    // });
 
      // Exhibit notes
      $(".exhibit-notes").on("click", function (e) {
@@ -170,6 +186,32 @@ $(document).ready(function () {
      $(".statement-notes").on("click", function (e) {
           $('.conditonal-Exhibit').hide();
           $('.conditonal-MG11').show();
+     });
+
+
+     // Errors
+     $('.cta-buttons').hide();
+     $('#notes-error').hide();
+
+     $("#notesNew-Comments").on("keyup", function (e) {
+          $('.cta-buttons').show();
+          $('.error-buttons').hide();
+     });
+
+     $('#notesNew-Evidential, #notesNew-GDPR, #notesNew-Links, #notesNew-Sensitive, #notesNew-MG11, #notesNew-Exhibit').on("change", function (e) {
+          $('.cta-buttons').show();
+          $('.error-buttons').hide();
+     });
+
+     $('#notesNew-errors').on("click", function (e) {
+          $('.notes-wrapper, .hods-timeline').addClass('errors');
+          if ($('#notesNew-Comments').val() <= 0) {
+               // $('#notesNew-Comments').addClass('govuk-input--error');
+               $('#notes-error').show();
+               $('.newNote-Details').attr('open', 'open');
+          } else {
+               $('#notes-error').hide();
+          }
      });
 
 })
