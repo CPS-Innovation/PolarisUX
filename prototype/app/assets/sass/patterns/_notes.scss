@@ -1,6 +1,6 @@
 // Notes pattern
-#notesNew {
-    .success-banner-notes {
+#notesNew, #notes {
+    .success-banner-notes, .saving-panel-notes {
         margin-bottom: 0 !important;
     }
 }
@@ -49,10 +49,15 @@
         &:before, &:after {
             background-color: $govuk-error-colour;
         }
+        .hods-timeline__item {
+            &:before, &:after {
+                background-color: $govuk-error-colour;
+            }
+        }
     }
 }
 
-#notes-error {
+#notes-error, #newnotes-error {
     margin: 1.25em 0 0 0;
     h2 {
         margin: 0 0 0.25em 0 !important;
@@ -64,7 +69,7 @@
     }
 }
 
-#notesNew {
+#notesNew, #notes {
     .govuk-details {
         display: inline-block;
         margin-bottom: 1.25em;
@@ -111,7 +116,7 @@
     }
 }
 
-.notes-new-text-content {
+.notes-text-content, .notes-new-text-content {
     strong {
         margin: 0 0 0 0;
         display: inline-block;
@@ -158,6 +163,7 @@
         padding-bottom: 10px;
         padding-left: 22px;
         position: relative;
+        display: inline-block;
         &:last-of-type {
             padding-bottom: 0;
             display: inline-block;
@@ -221,7 +227,7 @@
             float: left;
             margin-bottom: 0.25em;
         }
-        .tags-wrapper {
+        .existing-tags-wrapper, .tags-wrapper {
             display: inline-block;
             width: 100%;
             float: left;

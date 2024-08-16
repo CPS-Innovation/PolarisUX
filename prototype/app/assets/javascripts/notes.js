@@ -5,6 +5,14 @@ $(document).ready(function () {
     // Existing notes
     var notesNumber = 4;
 
+     $(".has-notes").on("click", function (e) {
+          $(this).parent().parent().parent().addClass('existing-note-added');
+     });
+
+     $(".closeNotesModal").on("click", function (e) {
+          $('table tbody tr td').removeClass('new-note-added');
+     });
+
     $('#note-added, #note-loading').hide();
 
     $("#notes-button").on("click", function (e) {
@@ -15,8 +23,8 @@ $(document).ready(function () {
 
         setTimeout(function () {
             $('#note-loading').hide();
-            $('.saving-panel-notes').hide();
-            $('.success-banner-notes').show();
+            $('#notes .saving-panel-notes').hide();
+            $('#notes .success-banner-notes').show();
             $('#note-added').show();
         }, 2000)
 
@@ -48,7 +56,93 @@ $(document).ready(function () {
         // $('.notes-number').text(notesNumber);
         // $('.notes-trigger span').text(notesNumber);
 
-    });
+          // Tags
+          var notes = $('#notes-Comments').val();
+          if (notes.length > 0) {   
+               $('.hods-timeline__description').show();
+          } else {
+               $('.hods-timeline__description').hide();
+          }
+
+          var notesEvidential = $('#notes-Evidential').val();
+          $('.existing-tags-wrapper .notes-Evidential').hide();
+
+          if ($('#notes-Evidential').val() == 'EVIDENCE - Live' || $('#notes-Evidential').val() == 'EVIDENCE - S9' || $('#notes-Evidential').val() == 'UNUSED - Disclose' || $('#notes-Evidential').val() == 'UNUSED - Not Disclose' || $('#notes-Evidential').val() == 'UNUSED - Clearly Not Disclose') {
+               // alert(notes);
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag notes-Evidential"></strong>');
+               $('strong.notes-Evidential').html(notesEvidential);
+               $('.existing-tags-wrapper .notes-Evidential').show();
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag  notes-Evidential">' + notesEvidential + '</strong>');
+          } else {
+               $('.existing-tags-wrapper .notes-Evidential').hide();
+          }
+
+          var notesEvidentialType = $('input[name=notes-Evidence]:checked').val();
+          if ($('input[name=notes-Evidence]').is(':checked')) {
+               $('.notes-Evidential').append(' - ' + notesEvidentialType);
+               // $('.existing-note-added .notes-text-content .notes-Evidential').append(' - ' + notesEvidentialType);
+          }
+          
+          if ($('input[id=notes-GDPR]').is(':checked')) {
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag">Not GDPR Safe</strong>');
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag">Not GDPR Safe</strong>');
+          }
+
+          if ($('input[id=notes-Links]').is(':checked')) {
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag">Links don\'t work</strong>');
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag">Links don\'t work</strong>');
+          }
+
+          if ($('input[id=notes-Sensitive]').is(':checked')) {
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag">Sensitive Material</strong>');
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag">Sensitive Material</strong>');
+          }
+
+          var notesStatement = $('#notes-MG11').val();
+          if ($('#notes-MG11').val() == 'Arrest' || $('#notes-MG11').val() == 'Victim' || $('#notes-MG11').val() == 'VPS' || $('#notes-MG11').val() == 'Civilian' || $('#notes-MG11').val() == 'Expert') {
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag">' + notesStatement + '</strong>');
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag">' + notesStatement + '</strong>');
+          }
+
+          var notesExhibit = $('#notes-Exhibit').val();
+          if ($('#notes-Exhibit').val() == 'Audio' || $('#notes-Exhibit').val() == 'MG15' || $('#notes-Exhibit').val() == 'Bodyworn' || $('#notes-Exhibit').val() == 'Phone' || $('#notes-Exhibit').val() == 'Presentation' || $('#notes-Exhibit').val() == 'Maps' || $('#notes-Exhibit').val() == 'CCTV' || $('#notes-Exhibit').val() == 'Cell' || $('#notes-Exhibit').val() == '999' || $('#notes-Exhibit').val() == 'Photo - Injuries' || $('#notes-Exhibit').val() == 'Photo - Scene' || $('#notes-Exhibit').val() == 'Photo - Exhibits') {
+               $('.existing-tags-wrapper').append('<strong class="govuk-tag">' + notesExhibit + '</strong>');
+               $('.existing-note-added .notes-text-content').append('<strong class="govuk-tag">' + notesExhibit + '</strong>');
+          }
+
+     });
+
+     // Note Errors
+     $('.cta-buttons').hide();
+     $('#notes-error').hide();
+
+     $("#notes-Comments").on("keyup", function (e) {
+          $('.cta-buttons').show();
+          $('.error-buttons').hide();
+     });
+
+     $('#notes-Evidential, #notes-GDPR, #notes-Links, #notes-Sensitive, #notes-MG11, #notes-Exhibit').on("change", function (e) {
+          $('.cta-buttons').show();
+          $('.error-buttons').hide();
+     });
+
+     $('#notes-errors').on("click", function (e) {
+          $('.notes-wrapper, .hods-timeline').addClass('errors');
+          if ($('#notes-Comments').val() <= 0) {
+               // $('#notes-Comments').addClass('govuk-input--error');
+               $('#notes-error').show();
+               $('.newNote-Details').attr('open', 'open');
+          } else {
+               $('#notes-error').hide();
+          }
+     });
+
+})
+
+
+// =================================== NEW NOTES =================================== //
+
+$(document).ready(function () {
 
      // New notes
      $(".new-notes-link").on("click", function (e) {
@@ -67,7 +161,7 @@ $(document).ready(function () {
 
           $('.notes-wrapper, .hods-timeline').removeClass('errors');
           $('#notesNew-Comments').removeClass('govuk-input--error');
-          $('#notes-error').hide();
+          $('#newnotes-error').hide();
 
           $('.saving-panel-notes').show();
           $('.header-wrapper').hide();
@@ -75,8 +169,8 @@ $(document).ready(function () {
 
           setTimeout(function () {
                $('#noteNew-loading').hide();
-               $('.saving-panel-notes').hide();
-               $('.success-banner-notes').show();
+               $('#notesNew .saving-panel-notes').hide();
+               $('#notesNew .success-banner-notes').show();
                $('#noteNew-added').show();
           }, 2000)
 
@@ -188,10 +282,9 @@ $(document).ready(function () {
           $('.conditonal-MG11').show();
      });
 
-
-     // Errors
+     // New not Errors
      $('.cta-buttons').hide();
-     $('#notes-error').hide();
+     $('#newnotes-error').hide();
 
      $("#notesNew-Comments").on("keyup", function (e) {
           $('.cta-buttons').show();
@@ -207,10 +300,10 @@ $(document).ready(function () {
           $('.notes-wrapper, .hods-timeline').addClass('errors');
           if ($('#notesNew-Comments').val() <= 0) {
                // $('#notesNew-Comments').addClass('govuk-input--error');
-               $('#notes-error').show();
+               $('#newnotes-error').show();
                $('.newNote-Details').attr('open', 'open');
           } else {
-               $('#notes-error').hide();
+               $('#newnotes-error').hide();
           }
      });
 
