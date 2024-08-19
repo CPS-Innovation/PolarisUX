@@ -14,9 +14,20 @@
         <h1 class="govuk-heading-l">Check your answers</h1>
         <h2 class="govuk-heading-m">Document details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Type</dt>
-                <dd class="govuk-summary-list__value">{{ data['documentType'] }}</dd>
+                <dd class="govuk-summary-list__value">
+                    {% if data['documentType'] == 'Statements' %}
+                        Statement - {{ data['documentType-ONE-Statements'] }}
+                    {% elseif data['documentType'] == 'Exhibit' %}
+                        Exhibit - {{ data['documentType-TWO-Exhibits'] }}
+                    {% elseif data['documentType'] == 'Communications' %}
+                        Communications - {{ data['documentType-THREE-Communications'] }}
+                    {% elseif data['documentType'] == 'Other' %}
+                        Other - {{ data['documentType-FOUR-Type'] }}
+                    {% endif %}
+                </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="A-category">Change<span class="govuk-visually-hidden"> document type</span></a>
                 </dd>
