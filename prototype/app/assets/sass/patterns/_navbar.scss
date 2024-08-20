@@ -69,6 +69,28 @@
                 a {
                     color: black;
                 }
+                &.dropdown {
+                    padding-right: 25px !important;
+                    &:after {
+                        left: inherit;
+                        right: 0px;
+                        top: 10px;
+                        content: "";
+                        width: 0px;
+                        height: 0px;
+                        border-left: 8px solid transparent;
+                        border-right: 8px solid transparent;
+                        border-top: 8px solid $govuk-link-colour;
+                        position: absolute;
+                        // left: 135px;
+                        // top: 21px;
+                    }
+                    &.active {
+                        &:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
             }
             &:first-of-type {
                 padding-left: 15px !important;
@@ -76,6 +98,18 @@
             ul.dropdown-menu {
                 top: 140%;
                 right: -24px;
+                &.third-level {
+                    right: inherit;
+                    left: 0;
+                    top: 32px;
+                    // background: white;
+                    a {
+                        color: $govuk-link-colour;
+                        &.disabled {
+                            color: $govuk-border-colour;
+                        }
+                    }
+                }
                 li {
                     padding: 0 !important;
                     margin: 0 !important;

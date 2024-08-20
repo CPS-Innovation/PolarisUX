@@ -217,6 +217,14 @@ $(document).mouseup(function(e) {
         $('.document-nav').removeClass('show');
     }
 
+    var containerV10 = $(".third-level");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV10.is(e.target) && containerV10.has(e.target).length === 0) {
+        $(containerV10).hide();
+        $('.dropdown').removeClass('active');
+    }
+
 });
 
 // =================================== NAVIGATION =================================== //
@@ -267,6 +275,17 @@ $(document).ready(function () {
     //     // $('main#main-content').css('top','-2em');
     //     $('main.case-files').css('padding-top','0 !important');
     // }
+
+    $('#secondary-navigation .dropdown').click(function() {
+        $(this).toggleClass('active');
+        $('.third-level').show();
+    });
+
+    $('.third-level-trigger').click(function(e) {
+        e.preventDefault();
+    });
+
+    
 
 })
 
