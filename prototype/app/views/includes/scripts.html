@@ -239,6 +239,15 @@
                             <button onclick="marqueeOn()" class="marquee" id="marquee"><span>Redact area tool</span></button>
                             <!-- end Select Tool --> 
 
+                            <!-- start Search Tool --> 
+                            <div class="search-document-wrapper">
+                                <button onclick="return searchDocument()" class="search-document" id="search-document"><span>Search document</span></button>
+                                <div class="searchForm-inner-wrapper">
+                                    <input class="govuk-input" id="searchDocument" name="searchDocument" type="text" value="" placeholder="Search document...">
+                                    <div class="bba"><button class="search-document-button" type="submit" id="openSearchDocument" onclick="return searchDocumentResult()">Search</button></div>
+                                </div>                            
+                            </div>
+                            <!-- end Search Tool --> 
 
                             <div class="buttons">
                                 <p class="govuk-body-s inPageSearchMargins deactivatedPrevious">Previous</p>
@@ -296,6 +305,17 @@
                             <!-- start Select Tool --> 
                             <button onclick="marqueeOn()" class="marquee" id="marquee"><span>Redact area tool</span></button>
                             <!-- end Select Tool --> 
+
+                            <!-- start Search Tool --> 
+                            <div class="search-document-wrapper">
+                                <button onclick="return searchDocument()" class="search-document" id="search-document"><span>Search document</span></button>
+                                <div class="searchForm-inner-wrapper">
+                                    <input class="govuk-input" id="searchDocument" name="searchDocument" type="text" value="" placeholder="Search document...">
+                                    <div class="bba"><button class="search-document-button" type="submit" id="openSearchDocument" onclick="return searchDocumentResult()">Search</button></div>
+                                </div>                            
+                            </div>
+                            <!-- end Search Tool --> 
+
                         </div>
                         <!-- End of non search heading -->
 

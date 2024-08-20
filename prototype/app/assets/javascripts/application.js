@@ -225,6 +225,15 @@ $(document).mouseup(function(e) {
         $('.dropdown').removeClass('active');
     }
 
+    var containerV11 = $(".searchForm-inner-wrapper");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!containerV10.is(e.target) && containerV10.has(e.target).length === 0) {
+        $(containerV10).hide();
+        $('#search-document').removeClass('active');
+    }
+
+
 });
 
 // =================================== NAVIGATION =================================== //
@@ -364,6 +373,19 @@ setInterval(function() {
 //     alert('working');
 //     $('#left-column table tbody tr.govuk-table__row.document-holder').css('opacity','1');
 // }
+
+// =================================== Search Document =================================== //
+function searchDocument() {
+    $('.search-document').addClass('active');
+    $('.searchForm-inner-wrapper').show();
+}
+
+function searchDocumentResult() {
+    $('#searchHeaderDisplay').css('display','inline-block');
+    $('#documentNameHeader').hide();
+    $('.search-document').removeClass('active');
+    $('.searchForm-inner-wrapper').hide();
+}
 
 
 
@@ -685,13 +707,13 @@ $(document).ready(function () {
 
     $('#searchErrorPanel').hide();
 
-    $('#searchLoadingPanel').show();
-    $('#searchResultsPanel').hide();
+    $('#searchLoadingPanel').hide();
+    // $('#searchResultsPanel').hide();
 
-    setTimeout(function() {
-        $('#searchLoadingPanel').hide();
-        $('#searchResultsPanel').show();
-    }, 20000);
+    // setTimeout(function() {
+    //     $('#searchLoadingPanel').hide();
+    //     $('#searchResultsPanel').show();
+    // }, 20000);
 
 })
 
@@ -1196,15 +1218,16 @@ $(document).ready(function () {
 
     $('#page-refresh-2, #alert2, #page-refresh-3, #alert3').hide();
 
-    $('.search-PII, #searchResultsPanel').hide();
+    // $('.search-PII, #searchResultsPanel').hide();
+    $('.search-PII').hide();
 
     setTimeout(function () {
         $('.search-PII').show();
         $('#alert').addClass('alert');
         $('.loading-PII').hide();
         $('#header-alert').text('2 new documents');
-        $('#searchLoadingPanel').hide();
-        $('#searchResultsPanel').show();
+        // $('#searchLoadingPanel').hide();
+        // $('#searchResultsPanel').show();
     }, 20000)
 
     setTimeout(function () {

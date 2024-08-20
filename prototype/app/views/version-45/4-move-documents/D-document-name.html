@@ -77,8 +77,10 @@
                 </div>
 
                 {% if data['scenario'] == 'one' %}
-                    {% if data['documentType'] == 'Asset recovery' or data['documentType'] == 'Asset recovery 3rd Party' or data['documentType'] == 'Complaint' or data['documentType'] == 'Correspondence' or data['documentType'] == 'Counsel Case Acknowledgement' or data['documentType'] == 'Defence Statement' or data['documentType'] == 'MG6C' or data['documentType'] == 'MG6D' or data['documentType'] == 'MG6E' or data['documentType'] == 'Other Communication' or data['documentType'] == 'PCN3' or data['documentType'] == 'SDC' or data['documentType'] == 'Service of ABE' %}
+                    {% if data['documentType-FOUR-Type'] == 'Asset recovery' or data['documentType-FOUR-Type'] == 'Asset recovery 3rd Party' or data['documentType-FOUR-Type'] == 'Complaint' or data['documentType-FOUR-Type'] == 'Correspondence' or data['documentType-FOUR-Type'] == 'Counsel Case Acknowledgement' or data['documentType-FOUR-Type'] == 'Defence Statement' or data['documentType-FOUR-Type'] == 'MG6C' or data['documentType-FOUR-Type'] == 'MG6D' or data['documentType-FOUR-Type'] == 'MG6E' or data['documentType-FOUR-Type'] == 'Other Communication' or data['documentType-FOUR-Type'] == 'PCN3' or data['documentType-FOUR-Type'] == 'SDC' or data['documentType-FOUR-Type'] == 'Service of ABE' %}
 
+                    {% elseif data['documentType'] == 'Communications' %}
+                    
                     {% else %}
                         <div class="govuk-form-group">
                             <fieldset class="govuk-fieldset">

@@ -94,7 +94,43 @@ main.case-files {
                         max-height: 2.45em;
                     }
                 }
-                .zoom, .marquee {
+                .search-document-wrapper {
+                    display: inline-block;
+                    float: right;
+                    position: relative;
+                    .searchForm-inner-wrapper {
+                        border-top: 3px solid $govuk-link-hover-colour;
+                        display: none;
+                        position: absolute;
+                        top: 3em;
+                        right: 0;
+                        width: 20em;
+                        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+                        .bba {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            input {
+                                margin-bottom: 0;
+                            }
+                            .search-document-button {
+                                background: black;
+                                border-radius: 0;
+                                color: white;
+                                font-size: 0.875rem;
+                                font-weight: bold;
+                                margin: 0;
+                                width: auto;
+                                height: 2.75em;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+                .zoom, .marquee, .search-document {
                     display: inline-block;
                     float: right;
                     margin: 10px 0 10px 10px;
@@ -106,6 +142,18 @@ main.case-files {
                     height: 2.9em;
                     span {
                         display: none;
+                    }
+                    &.active {
+                        background-color: $govuk-link-hover-colour;
+                        border-radius: 5px 5px 0 0;
+                        &:hover, &:active, &:focus {
+                            span {
+                                display: none;
+                            }
+                        }
+                        span {
+                            display: none;
+                        }
                     }
                     &.zoomIn {
                         background: url("../images/zoom-in-white.svg") darken($govuk-link-colour,7.5%) no-repeat 50% 50%;
@@ -161,6 +209,18 @@ main.case-files {
                         span {
                             width: 100px;
                             margin-left: -55px;
+                        }
+                    }
+                }
+                .search-document {
+                    background: url("../images/search-button.png") darken($govuk-link-colour,7.5%) no-repeat 100% 50%;
+                    background-size: cover;
+                    &.on, &:hover, &:active, &:focus {
+                        background: url("../images/search-button.png") $govuk-link-hover-colour no-repeat 100% 50%;
+                        background-size: cover;
+                        span {
+                            width: 110px;
+                            margin-left: -60px;
                         }
                     }
                 }

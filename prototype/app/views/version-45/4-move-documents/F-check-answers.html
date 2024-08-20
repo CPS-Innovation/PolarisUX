@@ -23,7 +23,7 @@
                     {% elseif data['documentType'] == 'Exhibit' %}
                         Exhibit - {{ data['documentType-TWO-Exhibits'] }}
                     {% elseif data['documentType'] == 'Communications' %}
-                        Communications - {{ data['documentType-THREE-Communications'] }}
+                        {{ data['documentType-THREE-Communications'] }}
                     {% elseif data['documentType'] == 'Other' %}
                         Other - {{ data['documentType-FOUR-Type'] }}
                     {% endif %}
