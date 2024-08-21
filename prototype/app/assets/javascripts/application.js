@@ -397,11 +397,11 @@ function searchDocumentResult() {
     $('#pdf-root .canvasWrapper, #pdf-root .textLayer').hide();
     $('#pdf-root .PdfHighlighter').addClass('documentSwap');
     document.getElementById("changeDocument").innerHTML="<img src='/public/files/searchResults/MCLOVEMG3-SEARCH-1.jpg' id='search-1' onClick='searchDocumentResultStep2()' />";
-}
+} 
 
 function searchDocumentResultStep2() {
     document.getElementById("changeDocument").innerHTML="<img src='/public/files/searchResults/MCLOVEMG3-SEARCH-2.jpg' id='search-2' onClick='suggestedRedactionsStep3()' />";
-}
+} 
 
 // =================================== Document filter =================================== //
 $(document).ready(function () {
