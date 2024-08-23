@@ -609,6 +609,13 @@ function documentTarget() {
 
 }
 
+function NewTab() {
+    window.open("https://www.figma.com/proto/5ZMJ5RMTX8zNoawzlH0OFW/CPS-CaseReview-master?node-id=2003-83323&source=email_invite&starting-point-node-id=2003%3A83323&t=N9LEJOZd4wCvUiBw-1", "_blank");
+}
+
+function NewTab2() {
+    window.open("https://www.figma.com/proto/Oemk95xWfmYbNzgi6grtdO/CM?page-id=595%3A6946&node-id=729-4169&viewport=-1533%2C504%2C0.3&t=y6f4KoKfmwqMAjwQ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=729%3A4169", "_blank");
+}
 
 // =================================== Emails viewer =================================== //
 

@@ -239,6 +239,13 @@ button {
         background: url("../images/doc-type-black.svg") no-repeat 50% 50%;
         background-size: contain;
     }
+    &.new-window {
+        background: url("../images/new-window-grey.svg") no-repeat 50% 50%;
+        background-size: contain;
+        width: 0.85em;
+        height: 0.85em;
+        margin: 0 0 -0.1em 0.15em;
+    }
 }
 
 .visuallyhidden {

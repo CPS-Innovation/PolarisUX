@@ -742,8 +742,12 @@ max-width:90%;
    }
 
 .inPageSearchMargins {
-  margin-bottom: 15px;
-  color: #fff !important;
+    margin-bottom: 15px;
+    color: #fff !important;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .inPageSearchMargins2 {
