@@ -50,7 +50,7 @@
             height: 100vh;
             overflow-y: scroll;
         }
-        .header-wrapper {
+        .header-wrapper, .header-wrapper-NEW {
             .govuk-grid-column-full {
                 padding: 0 40px 0 10px;
             }
@@ -74,7 +74,7 @@
             }
         }
         #rename, #confirmRemove, #notes, #notesNew {
-            .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes, .saving-panel-triage, .success-banner-triage {
+            .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .success-banner-notes, .success-banner-notes-NEW, .saving-panel-triage, .success-banner-triage {
                 padding: 20px 20px;
                 display: none;
                 margin-bottom: 1em;
@@ -103,7 +103,7 @@
 
 #openRenameModal, #openMoveModal, #openMoveMultipleModal, #openRemovePages, #openRotatePages {
     #openMe .govuk-grid-row .innerPanel {
-        .header-wrapper {
+        .header-wrapper, .header-wrapper-NEW {
             margin-bottom: 1em;
         }
         .govuk-button {
@@ -396,7 +396,7 @@
     }
     #case-action-plan-modal, #case-action-plan-modal2 { 
         .innerPanel {
-            .header-wrapper {
+            .header-wrapper, .header-wrapper-NEW {
                 margin-bottom: 1.5em;
             }
             .redaction-wrapper {
@@ -494,7 +494,7 @@
     }
     #redaction-history, #document-history {
         .innerPanel {
-            .header-wrapper {
+            .header-wrapper, .header-wrapper-NEW {
                 // margin-bottom: 1.5em;
                 h1 {
                     border-bottom: none;
@@ -534,7 +534,7 @@
         }
     }
     #redaction-over, #redaction-log, #redaction-log-DUMMY {
-        .header-wrapper {
+        .header-wrapper, .header-wrapper-NEW {
             h1 {
                 &.govuk-heading-l {
                     padding-bottom: 0.25em;
@@ -714,7 +714,7 @@
             max-width: 100%;
             margin: 0 auto;
             padding: 0;
-            .search-bar-wrapper, .header-wrapper, .sub-header-wrapper {
+            .search-bar-wrapper, .header-wrapper, .header-wrapper-NEW, .sub-header-wrapper {
                 padding: 10px 20px 20px 20px;
                 border-bottom: 1px solid $govuk-border-colour;
                 background: govuk-colour("light-grey");
@@ -723,7 +723,7 @@
                     margin: 0;
                 }
             }
-            .header-wrapper, .sub-header-wrapper {
+            .header-wrapper, .header-wrapper-NEW, .sub-header-wrapper {
                 padding: 20px 10px 20px 10px;
                 margin: 0;
                 .wrapper {
@@ -799,7 +799,7 @@
                     }
                 }
             }
-            .header-wrapper {
+            .header-wrapper, .header-wrapper-NEW {
                 .govuk-details__text {
                     // display: inline-block;
                     padding-left: 0;
@@ -1250,7 +1250,7 @@
     }
 }
 
-.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .success-banner-notes, .saving-panel-triage, .success-banner-triage {
+.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .success-banner-notes, .success-banner-notes-NEW, .saving-panel-triage, .success-banner-triage {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1267,7 +1267,7 @@
     }
 }
 
-#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes, .saving-panel-triage {
+#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .saving-panel-triage {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;

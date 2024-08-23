@@ -665,7 +665,7 @@ html {
                 }
                 #openMe.das-cookie-banner {
                     background-color: govuk-colour("mid-grey");
-                    .search-bar-wrapper, .header-wrapper, .sub-header-wrapper {
+                    .search-bar-wrapper, .header-wrapper, .header-wrapper-NEW .sub-header-wrapper {
                         background-color: darken(govuk-colour("mid-grey"),10%);
                         border-bottom: 1px solid black;
                         h1 span {
@@ -725,7 +725,7 @@ html {
                 }
                 #openMe.das-cookie-banner {
                     background-color: #313338;
-                    .header-wrapper {
+                    .header-wrapper, .header-wrapper-NEW {
                         background-color: #2b2d31 !important;
                         border-bottom: 1px solid black;
                         h1 {

@@ -22,7 +22,11 @@
                 <fieldset>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="documentExhibit-Name">Item name</label>
-                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Name" name="documentExhibit-Name" type="text">
+                        {% if data['documentExhibit-Name'] %}
+                            <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Name" name="documentExhibit-Name" type="text" value="{{ data['documentExhibit-Name'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Name" name="documentExhibit-Name" type="text" value="Exhibit - 1">
+                        {% endif %}
                     </div> 
                     
                     <div class="govuk-form-group">

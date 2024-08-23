@@ -400,7 +400,7 @@ function searchDocumentResult() {
 } 
 
 function searchDocumentResultStep2() {
-    document.getElementById("changeDocument").innerHTML="<img src='/public/files/searchResults/MCLOVEMG3-SEARCH-2.jpg' id='search-2' onClick='suggestedRedactionsStep3()' />";
+    document.getElementById("changeDocument").innerHTML="<img src='/public/files/searchResults/MCLOVEMG3-SEARCH-2.jpg' id='search-2' />";
 } 
 
 // =================================== Document filter =================================== //

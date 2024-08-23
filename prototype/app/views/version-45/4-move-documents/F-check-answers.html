@@ -22,8 +22,8 @@
                         Statement - {{ data['documentType-ONE-Statements'] }}
                     {% elseif data['documentType'] == 'Exhibit' %}
                         Exhibit - {{ data['documentType-TWO-Exhibits'] }}
-                    {% elseif data['documentType'] == 'Communications' %}
-                        {{ data['documentType-THREE-Communications'] }}
+                    {% elseif data['documentType'] == 'Other Communication' %}
+                        Other Communication
                     {% elseif data['documentType'] == 'Other' %}
                         Other - {{ data['documentType-FOUR-Type'] }}
                     {% endif %}
@@ -63,6 +63,8 @@
 
                 {% if data['documentType'] == 'Asset recovery' or data['documentType'] == 'Asset recovery 3rd Party' or data['documentType'] == 'Complaint' or data['documentType'] == 'Correspondence' or data['documentType'] == 'Counsel Case Acknowledgement' or data['documentType'] == 'Defence Statement' or data['documentType'] == 'MG6C' or data['documentType'] == 'MG6D' or data['documentType'] == 'MG6E' or data['documentType'] == 'Other Communication' or data['documentType'] == 'PCN3' or data['documentType'] == 'SDC' or data['documentType'] == 'Service of ABE' %}
 
+                {% elseif data['documentType'] == 'Other Communication' %}
+                    
                 {% else %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Status</dt>
@@ -128,6 +130,8 @@
 
                 {% if data['documentType'] == 'Asset recovery' or data['documentType'] == 'Asset recovery 3rd Party' or data['documentType'] == 'Complaint' or data['documentType'] == 'Correspondence' or data['documentType'] == 'Counsel Case Acknowledgement' or data['documentType'] == 'Defence Statement' or data['documentType'] == 'MG6C' or data['documentType'] == 'MG6D' or data['documentType'] == 'MG6E' or data['documentType'] == 'Other Communication' or data['documentType'] == 'PCN3' or data['documentType'] == 'SDC' or data['documentType'] == 'Service of ABE' %}
 
+                {% elseif data['documentType'] == 'Other Communication' %}
+                    
                 {% else %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Status</dt>
@@ -180,7 +184,9 @@
                 </div>
 
                 {% if data['documentType'] == 'Asset recovery' or data['documentType'] == 'Asset recovery 3rd Party' or data['documentType'] == 'Complaint' or data['documentType'] == 'Correspondence' or data['documentType'] == 'Counsel Case Acknowledgement' or data['documentType'] == 'Defence Statement' or data['documentType'] == 'MG6C' or data['documentType'] == 'MG6D' or data['documentType'] == 'MG6E' or data['documentType'] == 'Other Communication' or data['documentType'] == 'PCN3' or data['documentType'] == 'SDC' or data['documentType'] == 'Service of ABE' %}
-
+                
+                {% elseif data['documentType'] == 'Other Communication' %}
+                    
                 {% else %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">Status</dt>

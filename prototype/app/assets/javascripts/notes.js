@@ -153,24 +153,29 @@ $(document).ready(function () {
           $('table tbody tr td').removeClass('new-note-added');
      });
 
+     $('.notes-completed').hide();
+
      var notesNewNumber = 0;
 
      $('#noteNew-added').hide();
 
      $("#notesNew-button").on("click", function (e) {
 
+          $('.notes-completed').show();
+          $('.closeNewNotesModal').hide();
+
           $('.notes-wrapper, .hods-timeline').removeClass('errors');
           $('#notesNew-Comments').removeClass('govuk-input--error');
           $('#newnotes-error').hide();
 
-          $('.saving-panel-notes').show();
-          $('.header-wrapper').hide();
+          $('.saving-panel-notes-NEW').show();
+          $('.header-wrapper-NEW').hide();
           $('#noteNew-loading').show();
 
           setTimeout(function () {
                $('#noteNew-loading').hide();
-               $('#notesNew .saving-panel-notes').hide();
-               $('#notesNew .success-banner-notes').show();
+               $('#notesNew .saving-panel-notes-NEW').hide();
+               $('#notesNew .success-banner-notes-NEW').show();
                $('#noteNew-added').show();
           }, 2000)
 
