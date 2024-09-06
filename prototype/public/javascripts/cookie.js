@@ -1056,7 +1056,7 @@ $(document).ready(function () {
     });
 
     // Cancel load
-    $('#cancelPageLoad').on("click", function() {
+    $('.cancelPageLoad').on("click", function() {
         $.cookie("first-time-load", false, {path:'/'});
     });
 

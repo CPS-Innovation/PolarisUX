@@ -2560,7 +2560,7 @@ $(document).ready(function () {
 
 })
 
-// =================================== MOVE DOCUMENTS =================================== //
+// =================================== RECLASSIFICATION JOURNEY =================================== //
 $(document).ready(function() {
     if (window.location.href.indexOf("catergory-Communications") > -1) {
         $('#catergory-Communications').attr('aria-expanded','true');
@@ -2571,6 +2571,41 @@ $(document).ready(function() {
     if (window.location.href.indexOf("catergory-Exhibits") > -1) {
         $('#catergory-Exhibits').attr('aria-expanded','true');
     }
+
+    $('#saving-to-cms').hide();
+
+    $('#cancelPageLoad').click (function (e) {
+        $('#saving-to-cms').show();
+    });    
+
+    // if (document.getElementById("cancelPageLoad")) {
+    //     setTimeout("submitForm()", 5000); // set timout 
+    // }
+
+    // $('#cancelPageLoad-V1').click (function (e) {
+    //     e.preventDefault(); //will stop the link href to call the blog page
+    //     $('#saving-to-cms').show();
+    //     setTimeout(function () {
+    //         window.location.href = "../1-new-designs/C-casefile-1#catergory-Communications"; //will redirect to your blog page (an ex: blog.html)
+    //     }, 4000); //will call the function after 2 secs.
+    // });    
+
+    // $('#cancelPageLoad-V2').click (function (e) {
+    //     e.preventDefault(); //will stop the link href to call the blog page
+    //     $('#saving-to-cms').show();
+    //     setTimeout(function () {
+    //         window.location.href = "../1-new-designs/C-casefile-1#hidden-documents"; //will redirect to your blog page (an ex: blog.html)
+    //     }, 4000); //will call the function after 2 secs.
+    // });    
+
+    // $('#cancelPageLoad-V3').click (function (e) {
+    //     e.preventDefault(); //will stop the link href to call the blog page
+    //     $('#saving-to-cms').show();
+    //     setTimeout(function () {
+    //         window.location.href = "../1-new-designs/C-casefile-1#catergory-Exhibits"; //will redirect to your blog page (an ex: blog.html)
+    //     }, 4000); //will call the function after 2 secs.
+    // });    
+
 });
 
 

@@ -11,6 +11,18 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
         <a href="javascript:history.back()" class="govuk-back-link no-margin-top">Back</a>
+
+        <!-- NOTIFICATION BANNER - START -->
+        <div id="saving-to-cms" class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading"><span class="saving"></span>Saving to CMS, please wait.</p>
+            </div>
+        </div>
+        <!-- NOTIFICATION BANNER - END -->
+
         <h1 class="govuk-heading-l">Check your answers</h1>
         <h2 class="govuk-heading-m">Document details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -202,16 +214,35 @@
             {% endif %}
 
         </dl>
-        {% if data['scenario'] == 'one' %}
-            <form action="../1-new-designs/C-casefile-1#catergory-Communications" method="post" novalidate>
+
+<!--         {% if data['scenario'] == 'one' %}
+            <form method="post" novalidate>
+                <input type="hidden" name="docType-CheckAnswers" value="true">
+                <button type="submit" class="govuk-button end-scenario cancelPageLoad" data-module="govuk-button" id="cancelPageLoad-V1">Accept and save</button>
+            </form>
         {% elseif data['scenario'] == 'two' %}
-            <form action="../1-new-designs/C-casefile-1#hidden-documents" method="post" novalidate>
+            <form method="post" novalidate>
+                <input type="hidden" name="docType-CheckAnswers" value="true">
+                <button type="submit" class="govuk-button end-scenario cancelPageLoad" data-module="govuk-button" id="cancelPageLoad-V2">Accept and save</button>
+            </form>
         {% elseif data['scenario'] == 'three' %}
-            <form action="../1-new-designs/C-casefile-1#catergory-Exhibits" method="post" novalidate>
+            <form method="post" novalidate>
+                <input type="hidden" name="docType-CheckAnswers" value="true">
+                <button type="submit" class="govuk-button end-scenario cancelPageLoad" data-module="govuk-button" id="cancelPageLoad-V3">Accept and save</button>
+            </form>
+        {% endif %} $('#saving-to-cms').show();
+ -->
+        {% if data['scenario'] == 'one' %}
+            <form id="delayedForm" action="../1-new-designs/C-casefile-1#catergory-Communications"  onsubmit="document.getElementById('cancelPageLoad').setAttribute('disabled', 'disabled'); window.setTimeout(function () { document.getElementById('delayedForm').submit(); }, 4000); return false" method="post" novalidate>
+        {% elseif data['scenario'] == 'two' %}
+            <form id="delayedForm" action="../1-new-designs/C-casefile-1#hidden-documents"  onsubmit="document.getElementById('cancelPageLoad').setAttribute('disabled', 'disabled'); window.setTimeout(function () { document.getElementById('delayedForm').submit(); }, 4000); return false" method="post" novalidate>
+        {% elseif data['scenario'] == 'three' %}
+            <form id="delayedForm" action="../1-new-designs/C-casefile-1#catergory-Exhibits"  onsubmit="document.getElementById('cancelPageLoad').setAttribute('disabled', 'disabled'); window.setTimeout(function () { document.getElementById('delayedForm').submit(); }, 4000); return false" method="post" novalidate>
         {% endif %}
-            <input type="hidden" name="docType-CheckAnswers" value="true">
-            <button type="submit" class="govuk-button end-scenario" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
+                <input type="hidden" name="docType-CheckAnswers" value="true">
+                <button type="submit" class="govuk-button end-scenario cancelPageLoad" data-module="govuk-button" id="cancelPageLoad">Accept and save</button>
         </form>
+
     </div>
     <div class="govuk-grid-column-one-half">
         <div class="image-holder">
