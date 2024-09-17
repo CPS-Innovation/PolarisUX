@@ -1,6 +1,6 @@
 // New modal pattern
 
-#redactionModalOver, #redactionModal {
+#redactionModalOver, #redactionModal, #redactionModalREMOVE {
     // #openMe {
     //     max-width: 50%;
     // }
@@ -316,6 +316,10 @@
     .tooltip {
         margin-right: 1em;
     }
+}
+
+#redactionModalREMOVE {
+    z-index: 9999999999999999999999999999;
 }
 
 #openMe {
@@ -1235,7 +1239,7 @@
         max-width: 65%;
     }
     &.x-small {
-        max-width: 35%;
+        max-width: 40%;
     }
     &.small-medium {
         width: 45%;
@@ -1250,7 +1254,7 @@
     }
 }
 
-.success-banner, .success-banner-DUMMY, #saving-panel, #saving-panel-DUMMY, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .success-banner-notes, .success-banner-notes-NEW, .saving-panel-triage, .success-banner-triage {
+.success-banner, .success-banner-DUMMY, .success-banner-REMOVE, #saving-panel, #saving-panel-DUMMY, #saving-panel-REMOVE, .success-banner-confirmation, .saving-panel-rename, .success-banner-rename, .saving-panel-remove-rotate, .success-banner-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .success-banner-notes, .success-banner-notes-NEW, .saving-panel-triage, .success-banner-triage {
     background: $govuk-success-colour;
     padding: 20px 25px;
     h2 {
@@ -1267,7 +1271,7 @@
     }
 }
 
-#saving-panel, #saving-panel-DUMMY, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .saving-panel-triage {
+#saving-panel, #saving-panel-DUMMY, #saving-panel-REMOVE, .saving-panel-rename, .saving-panel-remove-rotate, .saving-panel-notes, .saving-panel-notes-NEW, .saving-panel-triage {
     background: $govuk-link-colour;
     // height: 37em;
     // min-width: 100%;

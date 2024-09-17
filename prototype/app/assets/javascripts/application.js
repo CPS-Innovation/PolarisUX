@@ -471,7 +471,12 @@ $(".hidden-select").hide();
     // }, 15000);
 // }
 
+function disableRotateRemove() {
+    $('.remove-rotate-pages-modal').attr('onClick','openWarningModalRedaction()');
+}
+
 $(document).ready(function () {
+
     $(".delete").on("click", function (e) {
         e.preventDefault();
         $(this).closest('.govuk-grid-row').remove();
@@ -488,7 +493,85 @@ $(document).ready(function () {
         $(this).parent().addClass('hide');
         $(this).parent().parent().find('.hidden-select').addClass('show');
     });
+
+    $('.mg-11-group').hide();
+    $('.non-mg-11-group').show();
+
+    $(".mg-11-doc").on("click", function (e) {
+        document.getElementById("confirm-Remove-Rotate-Pages").onclick = working;
+        $('.mg-11-group').show();
+        $('.non-mg-11-group').hide();
+    });
+
+    $('.mg11-removed').hide();
+    $('.pages-removed').hide();
+
+    $("input[name='confirmRemovePages-NON-RL']").on("change", function (e) {
+        if ($(this).val() == 'Yes') {
+            $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+        } else {
+            $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+        }  
+    });
+
+    $("input[name=confirmRemovePages-RL]").on("change", function (e) {
+        if ($('input[id=confirmRemovePages-RL-Yes]').is(':checked') && $('input[name=confirmBacksheetPage-RL]').is(':checked')) {
+            $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+        } else {
+            $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+        }
+    })
+
+    $("input[name=confirmBacksheetPage-RL]").on("change", function (e) {
+        if ($('input[id=confirmRemovePages-RL-Yes]').is(':checked') && $('input[name=confirmBacksheetPage-RL]').is(':checked')) {
+            $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+        } else {
+            $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+        }
+    })
+
+    // $("input[name='']").on("change", function (e) {
+    //     alert($(this).val() + $("input[name='confirmBacksheetPage-RL']").val());
+    //     if ($(this).val() == 'Yes' && $("input[name='confirmBacksheetPage-RL']") == 'Yes') {
+    //         $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+    //     } else if ($(this).val() == 'Yes' && $("input[name='confirmBacksheetPage-RL']") == 'No') {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     } else if ($(this).val() == 'No' && $("input[name='confirmBacksheetPage-RL']") == 'Yes') {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     } else {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     }  
+    // });
+
+    // $("input[name='confirmBacksheetPage-RL']").on("change", function (e) {
+    //     alert($(this).val() + $("input[name='confirmRemovePages-RL']").val());
+    //     if ($(this).val() == 'Yes' && $("input[name='confirmRemovePages-RL']") == 'Yes') {
+    //         $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+    //     } else if ($(this).val() == 'Yes' && $("input[name='confirmRemovePages-RL']") == 'No') {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     } else if ($(this).val() == 'No' && $("input[name='confirmRemovePages-RL']") == 'Yes') {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     } else {
+    //         $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').attr('disabled','disabled');
+    //     }  
+    // });
+
+    $("#confirm-Remove-Rotate-Pages").on("click", function (e) {
+        // if ($('input[id="confirmBacksheetPage"]:checked').length > 0) {
+        if ($('input[id=confirmBacksheetPage-RL-Yes]').is(':checked')) {
+            $('.mg11-removed').show();
+            $('.pages-removed').hide();
+        } else {
+            $('.mg11-removed').hide();
+            $('.pages-removed').show();
+        }
+    });
+
 })
+
+function working() {
+    $('#redactionModalREMOVE').removeClass('rj-dont-display');
+};
 
 function countChar1(val) {
     var len = val.value.length;
@@ -1575,6 +1658,8 @@ $(document).ready(function () {
             </strong>
         `);
 
+        $('.remove-rotate-pages-modal').attr('onClick','return openRotatePagesModal(), documentTitle()');
+
         $('.inPageSearchMargins2').addClass('redacted');
         $('.inPageSearchMargins2').append( `<br><span>Redacted, <strong id="redacted-time2">###</strong>, by "user_name_1983"</span>` );
 
@@ -2336,6 +2421,22 @@ $(document).ready(function(){
     // $('.delete-multiple-pages').click(function() {
     // });
 
+    // $('input[name=confirmRemovePages-RL]').change(function() {
+    //     if ($('input[name="confirmRemovePages-RL"]:checked').length > 0) {
+    //         $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+    //     }
+    // }); 
+
+
+    $('input[name=confirmRemovePages]').change(function() {
+        if ($('#confirmRemovePages-Yes').is(':checked')) {
+            // $('#confirm-Remove-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled').attr('onClick','return closeConfirmRemovePages(), closeRotatePagesModal()');
+            $('#confirm-Remove-Rotate-Pages').removeClass('govuk-button--disabled').attr('aria-disabled','false').removeAttr('disabled');
+        } else {
+            $('#confirm-Remove-Rotate-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
+            // $('#confirm-Remove-Pages').addClass('govuk-button--disabled').attr('aria-disabled','true').removeAttr('onClick');
+        }
+    }); 
 
     $('input[name=confirmRemovePages]').change(function() {
         if ($('#confirmRemovePages-Yes').is(':checked')) {
@@ -2362,6 +2463,19 @@ $(document).ready(function(){
         }, 1500);
 
         $('#group1-doc1 td .wrapper').prepend(`<strong class="govuk-tag govuk-tag--green" style="display:inline-block !important;">Updated</strong>`);
+
+        $('#saving-panel-REMOVE').show();
+        $('.success-banner-REMOVE').hide();
+
+        setTimeout(function() {
+            $('#saving-panel-REMOVE').hide();
+            $('.success-banner-REMOVE').show();
+            $('#redaction-log-button-REMOVE').removeAttr('disabled').removeAttr('aria-disabled').removeClass('govuk-button--disabled').attr('onClick','return closeLogREMOVE(), closeConfirmRemovePages(), closeRotatePagesModal()');
+        }, 3000);
+
+        setTimeout(function() {
+            $('.success-banner-REMOVE').slideUp();
+        }, 6000);
     });
 
     $('#confirm-Remove-Pages').click(function() {

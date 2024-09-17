@@ -37,33 +37,78 @@
                     <div class="redaction-wrapper remove-rotate-wrapper">
                         <form method="" action="">
 
-                            <div class="govuk-grid-row">
-                                <div class="govuk-grid-column-full">
-                                    <p></p>
-                                </div>
-
+                            <div class="govuk-grid-row govuk-!-margin-top-3">
                                 <div class="govuk-grid-column-full">
 
                                     <!-- ////// FORM ITEM 1 - START ////// -->
                                     <fieldset class="govuk-fieldset confirm-Remove-Pages-Message">
 
-                                        <div class="govuk-warning-text govuk-!-margin-bottom-0">
-                                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                                            <strong class="govuk-warning-text__text">
-                                                <span class="govuk-warning-text__assistive">Warning</span>
-                                                The document will be saved and resubmitted to CMS if you continue
-                                            </strong>
-                                        </div>
-
-                                        <div class="govuk-form-group  govuk-!-margin-bottom-2">
+                                        <div class="govuk-form-group  govuk-!-margin-bottom-2" style="padding: 0;">
                                             <fieldset class="govuk-fieldset">
-                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                                                <div class="govuk-form-group non-mg-11-group" style="padding: 0; margin-bottom: 0.5em;">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <legend class="govuk-fieldset__legend">You have manually checked the page(s) you want to edit?</legend>
+                                                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmRemovePages-NON-RL-Yes" name="confirmRemovePages-NON-RL" type="radio" value="Yes">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmRemovePages-NON-RL-Yes">Yes</label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmRemovePages-NON-RL-No" name="confirmRemovePages-NON-RL" type="radio" value="No">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmRemovePages-NON-RL-No">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="govuk-form-group mg-11-group" style="padding: 0; margin-bottom: 0.5em;">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <legend class="govuk-fieldset__legend">You have manually checked the page(s) you want to edit?</legend>
+                                                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmRemovePages-RL-Yes" name="confirmRemovePages-RL" type="radio" value="Yes">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmRemovePages-RL-Yes">Yes</label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmRemovePages-RL-No" name="confirmRemovePages-RL" type="radio" value="No">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmRemovePages-RL-No">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+<!--                                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                                     <div class="govuk-checkboxes__item">
                                                         <input class="govuk-checkboxes__input" id="confirmRemovePages-Yes" name="confirmRemovePages" type="checkbox" value="Yes">
                                                         <label class="govuk-label govuk-checkboxes__label" for="confirmRemovePages-Yes">I have manually checked the page(s) I want to edit</label>
                                                     </div>
                                                 </div>
-                                            </fieldset>
+ -->
+                                                <div class="govuk-form-group mg-11-group">
+                                                    <fieldset class="govuk-fieldset">
+                                                        <legend class="govuk-fieldset__legend">Have you removed the MG11 back sheet?</legend>
+                                                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmBacksheetPage-RL-Yes" name="confirmBacksheetPage-RL" type="radio" value="Yes">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmBacksheetPage-RL-Yes">Yes</label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="confirmBacksheetPage-RL-No" name="confirmBacksheetPage-RL" type="radio" value="No">
+                                                                <label class="govuk-label govuk-radios__label" for="confirmBacksheetPage-RL-No">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+
+<!--                                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="confirmBacksheetPage-Yes" name="confirmBacksheetPage" type="checkbox" value="Yes">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="confirmBacksheetPage-Yes">Have you removed the MG11 back sheet?</label>
+                                                    </div>
+                                                </div>
+ -->                                            </fieldset>
                                         </div>
                                     </fieldset>
                                     <!-- ////// FORM ITEM 1 - END ////// -->
@@ -72,6 +117,15 @@
                             </div>
 
                             <div class="govuk-grid-row">
+
+                                <div class="govuk-warning-text govuk-!-margin-bottom-3" style="margin-left: 1.25em;">
+                                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                    <strong class="govuk-warning-text__text">
+                                        <span class="govuk-warning-text__assistive">Warning</span>
+                                        The document will be saved and resubmitted to CMS if you continue
+                                    </strong>
+                                </div>
+
                                 <div class="govuk-grid-column-full cta-group">
                                     <div class="initial-action">
                                         <button id="confirm-Remove-Rotate-Pages" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled"  data-module="govuk-button" type="button">Accept and save</button>

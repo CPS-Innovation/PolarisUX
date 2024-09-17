@@ -33569,6 +33569,7 @@
                                         disabled: !r.state.redactionType,
                                         onClick: function () {
                                             r.props.onConfirm({ text: "", emoji: "" }, r.state.redactionType);
+                                            disableRotateRemove()
                                         },
                                         children: "Redact",
                                     }),
@@ -33578,6 +33579,7 @@
                                         onClick: function () {
                                             r.props.onConfirm({ text: "", emoji: "" }, r.state.redactionType);
                                             activateLink()
+                                            disableRotateRemove()
                                         },
                                         children: "Redact all (21)",
                                     }),

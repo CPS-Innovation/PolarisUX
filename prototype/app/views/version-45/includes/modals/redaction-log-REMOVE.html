@@ -1,107 +1,4 @@
-<script>
-    function addRedactionLogRows() {
-        const redactions = window.savedHighlights
-        const container = document.getElementById("redaction-summary-list")
-        // Create a string to hold the HTML
-        let html = ""
-        // Loop through the array and generate HTML for each item
-    for (let i = 0; i < redactions.length; i++) {
-        const redactionType = redactions[i].redactionType
-        // Add the HTML for the item to the string
-        html += `<div class="govuk-grid-row" id=form-row-${i + 1}>
-                    <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group"><p>Redaction ${i + 1}</p></div>
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="redactionLog-missed__${ + 1}">Missed redaction?</label>
-                            <select class="govuk-select" id="redactionLog-missed__${i + 1}" name="redactionLog-missed__${i + 1}">
-                                <option value="Date of Birth">Date of Birth</option>
-                                <option value="Address">Address</option>
-                                <option value="Named individual">Named individual</option>
-                                <option value="Other">Other</option>
-                                <option value="Occupation">Occupation</option>
-                                <option value="Phone number">Phone number</option>
-                                <option value="Vehicle registration">Vehicle registration</option>
-                                <option value="Email address">Email address</option>
-                                <option value="Location">Location</option>
-                                <option value="Bank details">Bank details</option>
-                                <option value="Previous convictions">Previous convictions</option>
-                                <option value="Relationship to others">Relationship to others</option>
-                                <option value="NHS number">NHS number</option>
-                                <option value="NI number">NI number</option>
-                                <option value="Title">Title</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>`
-        }
-        // Set the innerHTML of the container to the generated HTML
-        container.innerHTML = html
-        // set the selected value for each select
-        for (let i = 0; i < redactions.length; i++) {
-            document.getElementById(`redactionLog-missed__${i + 1}`).value =
-            redactions[i].redactionType
-        }
-    }
-
-    function getRedactionTypeNames(count, name) {
-        const pluralNames = {
-            Address: "Addresses",
-            "Date of Birth": "Date of Births",
-            "Named individual": "Named individuals",
-            "Other": "Others",
-            "Occupation": "Occupations",
-            "Phone number": "Phone numbers",
-            "Vehicle registration": "Vehicle registrations",
-            "Email address": "Email addresses",
-            "Location": "Locations",
-            "Bank details": "Bank details",
-            "Previous convictions": "Previous convictions",
-            "Relationship to others": "Relationship to others",
-            "NHS number": "NHS numbers",
-            "NI number": "NI numbers",
-            "Title": "Titles"
-        }
-        if (count > 1) {
-            return pluralNames[name]
-        }
-        return name
-    }
-
-    function redactionSummary() {
-        const container = document.getElementById("redaction-summary-list")
-        const savedRedactions = window.savedHighlights
-        const groupedRedactions = savedRedactions.reduce(
-            (acc, { redactionType }) => {
-            if (!acc[redactionType]) {
-                acc[redactionType] = 1
-                return acc
-            }
-            acc[redactionType] = acc[redactionType] + 1
-            return acc
-        },
-            {}
-        )
-
-        // var targetNumber = $('ul#redaction-summary-list li b').text();
-        // alert(targetNumber);
-
-        const sortedArray = Object.entries(groupedRedactions).sort(function (a, b) {
-            return b[1] - a[1]
-        })
-        let html = ""
-        sortedArray.forEach((item) => {
-            html += `<li><b>${item[1]}</b> - ${getRedactionTypeNames(
-                item[1],
-                item[0]
-            )}</li>`
-        })
-
-        // Set the innerHTML of the container to the generated HTML
-        container.innerHTML = html
-    }
-</script>
-
-<div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="redactionModal">
+<div aria-label="cookie banner" class="das-cookie-banner__wrap das-cookie-banner__modal rj-dont-display" id="redactionModalREMOVE">
 
     <div class="das-cookie-banner" id="openMe">
         <div class="das-cookie-banner__wrapper">
@@ -111,14 +8,14 @@
 
                 <div class="innerPanel simpleModelTwo">
 
-                    <div id="saving-panel">
+                    <div id="saving-panel-REMOVE">
                         <h2 class="govuk-heading-m">
                             <span class="saving"></span>
                             Saving redacted documents to CMS...
                         </h2>
                     </div>
 
-                    <div class="success-banner">
+                    <div class="success-banner-REMOVE">
                         <h2 class="govuk-heading-m">
                             <span class="success"></span>
                             Redacted documents succesfully saved to CMS
@@ -129,7 +26,7 @@
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
                                 <h1 class="govuk-heading-l">
-                                    Redaction Log - <span id="document-title">Document title</span>                      
+                                    Redaction Log - <span class="document-title-5">Document title</span>             
                                     <div class="tooltip">
                                         <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleTooltip1()">Redaction Log guidance</button>
                                         <div class="tooltiptext-1">
@@ -146,8 +43,8 @@
 
                                 <!-- ///// FILTER ONE - START ///// -->
                                 <div class="form">
-                                    <label class="govuk-label" for="redactionLog-Area">CPS Area or Central Casework Division:</label>
-                                    <select class="govuk-select" id="redactionLog-Area" name="redactionLog-Area">
+                                    <label class="govuk-label" for="redactionLog-Area-REMOVE">CPS Area or Central Casework Division:</label>
+                                    <select class="govuk-select" id="redactionLog-Area-REMOVE" name="redactionLog-Area-REMOVE">
                                         <option disabled>-- Please select --</option>
                                         <option value="CPS Direct" selected>CPS Direct</option>
                                         <option value="Cymru - Wales">Cymru - Wales</option>
@@ -173,8 +70,8 @@
 
                                 <!-- ///// FILTER TWO - START ///// -->
                                 <div class="form">
-                                    <label class="govuk-label" for="redactionLog-BusinessUnit">CPS Business Unit:</label>
-                                    <select class="govuk-select" id="redactionLog-BusinessUnit" name="redactionLog-BusinessUnit">
+                                    <label class="govuk-label" for="redactionLog-BusinessUnit-REMOVE">CPS Business Unit:</label>
+                                    <select class="govuk-select" id="redactionLog-BusinessUnit-REMOVE" name="redactionLog-BusinessUnit-REMOVE">
                                         <option disabled>-- Please select --</option>
                                         <option value="Magistrates Court" selected>Magistrates Court</option>
                                         <option value="Crown Court">Crown Court</option>
@@ -186,8 +83,8 @@
 
                                 <!-- ///// FILTER THREE - START ///// -->
                                 <div class="form">
-                                    <label class="govuk-label" for="redactionLog-InvestigativeAgency">Investigative Agency:</label>
-                                    <select class="govuk-select" id="redactionLog-InvestigativeAgency" name="redactionLog-InvestigativeAgency">
+                                    <label class="govuk-label" for="redactionLog-InvestigativeAgency-REMOVE">Investigative Agency:</label>
+                                    <select class="govuk-select" id="redactionLog-InvestigativeAgency-REMOVE" name="redactionLog-InvestigativeAgency-REMOVE">
                                         <option disabled>-- Please select --</option>
                                         <option value="Surrey Police" selected>Surrey Police</option>
                                         <option value="DWP">DWP</option>
@@ -272,14 +169,11 @@
                                 <!-- ///// FILTER THREE - END ///// -->
 
                                 <!-- ///// FILTER FOUR - START ///// -->
-                                <div class="form govuk-form-group--error" id="charge-error">
-                                    <label class="govuk-label" for="redactionLog-ChargeStatus">Charge status:</label>
-                                    <p id="charge-issued-error" class="govuk-error-message">
-                                        <span class="govuk-visually-hidden">Error:</span> Select a charge status
-                                    </p>
-                                    <select class="govuk-select" id="redactionLog-ChargeStatus" name="redactionLog-ChargeStatus">
-                                        <option disabled selected>-- Please select --</option>
-                                        <option value="Pre-charge">Pre-charge</option>
+                                <div class="form" id="">
+                                    <label class="govuk-label" for="redactionLog-ChargeStatus-REMOVE">Charge status:</label>
+                                    <select class="govuk-select" id="redactionLog-ChargeStatus-REMOVE" name="redactionLog-ChargeStatus-REMOVE">
+                                        <option disabled>-- Please select --</option>
+                                        <option value="Pre-charge" selected>Pre-charge</option>
                                         <option value="Post-charge">Post-charge</option>
                                     </select>
                                 </div>
@@ -287,8 +181,8 @@
 
                                 <!-- ///// FILTER FIVE - START ///// -->
                                 <div class="form">
-                                    <label class="govuk-label" for="redactionLog-DocType">Document type:</label>
-                                    <select class="govuk-select" id="redactionLog-DocType" name="redactionLog-DocType">
+                                    <label class="govuk-label" for="redactionLog-DocType-REMOVE">Document type:</label>
+                                    <select class="govuk-select" id="redactionLog-DocType-REMOVE" name="redactionLog-DocType-REMOVE">
                                         <option disabled>-- Please select --</option>
                                         <option value="Other">Other</option>
                                         <option value="Exhibits">Exhibits</option>
@@ -336,33 +230,16 @@
                     <div class="redaction-wrapper">
                         <form method="" action="">
 
-                            <!-- /////// ERROR MESSAGE SECTION - START /////// -->
-                            <div class="govuk-grid-row">
-                                <div class="govuk-grid-column-one-half">
-
-                                    <div id="redaction-error-summary" class="govuk-error-summary" data-module="govuk-error-summary">
-                                        <div role="alert">
-                                            <h2 class="govuk-error-summary__title">There is a problem</h2>
-                                            <div class="govuk-error-summary__body">
-                                                <ul class="govuk-list govuk-error-summary__list">
-                                                    <li id="charge-error-list"><a href="#">Select a Charge status</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /////// ERROR MESSAGE SECTION - END /////// -->
-
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full">
                                     <h2 class="govuk-heading-m">
                                         <span class="icon document"></span>
-                                        <strong><span class="icon-new document"></span>Redaction details for: "<span id="document-title">Document title</span>"</strong>
+                                        <strong><span class="icon-new document"></span>Redaction details for: "<span class="document-title-5">Document title</span>"</strong>
                                     </h2>
                                     <div id="redaction-summary" class="redaction-summary govuk-!-margin-top-6">
                                         <ul id="redaction-summary-list" class="redaction-summary-list govuk-list">
-                                            
+                                            <li class="mg11-removed">1 - <strong>MG11 Back sheet removed</strong></li>
+                                            <li class="pages-removed"><span class="pages-removed-number">1</span> - <strong>Pages removed</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -388,7 +265,7 @@
                                                     </div>
                                                 </div>
                                             </label>
-                                            <textarea class="govuk-textarea govuk-js-character-count" id="redactionLog-notes__1" name="redactionLog-notes__1" rows="4" aria-describedby="redactionLog-notes-info__1" onkeyup="countChar1(this)"></textarea>
+                                            <textarea class="govuk-textarea govuk-js-character-count" id="redactionLog-notes__1-REMOVE" name="redactionLog-notes__1-REMOVE" rows="4" aria-describedby="redactionLog-notes-info__1-REMOVE" onkeyup="countChar1(this)"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -396,7 +273,7 @@
 
                             <div class="govuk-grid-row">
                                 <div class="govuk-grid-column-full cta-group">
-                                    <button id="redaction-log-button" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button" type="button">Save and close</button>
+                                    <button id="redaction-log-button-REMOVE" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button" type="button">Save and close</button>
                                 </div>
                             </div>
 
