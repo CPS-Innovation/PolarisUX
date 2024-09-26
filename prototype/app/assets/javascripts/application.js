@@ -228,8 +228,8 @@ $(document).mouseup(function(e) {
     var containerV11 = $(".searchForm-inner-wrapper");
 
     // if the target of the click isn't the container nor a descendant of the container
-    if (!containerV10.is(e.target) && containerV10.has(e.target).length === 0) {
-        $(containerV10).hide();
+    if (!containerV11.is(e.target) && containerV10.has(e.target).length === 0) {
+        $(containerV11).hide();
         $('#search-document').removeClass('active');
     }
 
@@ -866,7 +866,7 @@ $(document).ready(function () {
         $('#unread').text(documentsUnread);
 
         var documentTitle = $(this).text();
-        $('#document-title').text(documentTitle);
+        $('.document-title').text(documentTitle);
         $('#document-title-notes').text(documentTitle);
         $('.document-title-7').text(documentTitle);
 
@@ -892,7 +892,7 @@ $(document).ready(function () {
 function documentTitle() {
     // $('#selectedTab').find('a').addClass('test');
     var docTitle = $('#selectedTab').find('a').text();
-    $('#document-title').text(docTitle);
+    $('.document-title').text(docTitle);
     $('#document-title-2').text(docTitle);
     $('#document-title-3').text(docTitle);
     $('#document-title-4').text(docTitle);
@@ -1640,7 +1640,7 @@ $(document).ready(function () {
 
     // Redaction log
     $("#redactionLog-ChargeStatus").on("change", function (e) {
-        $('#redaction-log-button').attr('onClick','closeModal2()');
+        $('#redaction-log-button').attr('onClick','return closeModal2(), deletePageDocument()');
     });
 
     $("#redaction-log-button").on("click", function (e) {
@@ -1993,7 +1993,7 @@ $(document).ready(function () {
         $('.saving-panel-rename').show();
         $('.rename-close').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         $('#document-renamed').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
-        $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        $('.cancel-rename').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         setTimeout(function() {
             $('.saving-panel-rename, .initial-action').hide();
             $('.success-banner-rename, .secondary-action').show();
@@ -2454,7 +2454,7 @@ $(document).ready(function(){
         $('.saving-panel-remove-rotate').show();
         $('.header-wrapper.remove-rotate-header').hide();
         $(this).removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
-        $('.non-button').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
+        $('.cancel-rotate').removeAttr('onClick').attr('aria-disabled', 'true').attr('disabled','true');
         setTimeout(function() {
             $('.confirm-Remove-Pages-Message, .remove-rotate-wrapper').hide();
             $('.close-rotate-remove').show();
