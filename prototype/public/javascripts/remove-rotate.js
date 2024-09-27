@@ -28,7 +28,7 @@ function pageActions() {
         // var pageNumber = $(parent).closest('.page').attr('data-page-number');
         // alert(pageNumber);
 
-    }, 500);
+    }, 2000);
 }
 
 function closeDiv(spn) {
