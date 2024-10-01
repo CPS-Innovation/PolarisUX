@@ -326,6 +326,11 @@ html.govuk-template {
             }
         }
     }
+    .text-holder {
+        color: $govuk-secondary-text-colour;
+        font-style: italic;
+        padding-left: 0.75em;         
+    }
     .clear-all {
         position: sticky;
         bottom: 0;

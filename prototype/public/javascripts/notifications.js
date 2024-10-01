@@ -19,23 +19,26 @@ $(document).ready(function () {
         // $(this).parent().parent().hide();
         var data1 = parseFloat($('.notifications-number').text()) - 1;
         var data2 = parseFloat($('.notifications-number-STICKY').text()) - 1;
+
+        $('.text-holder').show();
+
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
         if (data1 == '0') {
-            $('.clear-all').hide();
+            // $('.clear-all').hide();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').removeClass('alert');
             $('.notifications-panel').removeClass('alerts-working');
         } else if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
         if (data2 == '0') {
-            $('.clear-all').hide();
+            // $('.clear-all').hide();
             $('.alert-button').removeClass('alert');
             $('.notifications-panel-STICKY').removeClass('alerts-working');
         } else if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -67,14 +70,14 @@ $(document).ready(function () {
 
     });
 
-    $(".clear-all-notifications").on("click", function (e) {
-        $('.notifications-number').html('0');
-        $('.notifications-number-STICKY').html('0');
-        $('.clear-all').hide();
-        $('.alert-button, .notifications-number, .notifications-number-STICKY').removeClass('alert');
-        $('.notifications-panel').removeClass('alerts-working');
-        $('.notifications-panel-STICKY').removeClass('alerts-working');
-    });
+    // $(".clear-all-notifications").on("click", function (e) {
+    //     $('.notifications-number').html('0');
+    //     $('.notifications-number-STICKY').html('0');
+    //     $('.clear-all').hide();
+    //     $('.alert-button, .notifications-number, .notifications-number-STICKY').removeClass('alert');
+    //     $('.notifications-panel').removeClass('alerts-working');
+    //     $('.notifications-panel-STICKY').removeClass('alerts-working');
+    // });
 
     $('.clear-all').hide();
 
@@ -86,19 +89,22 @@ $(document).ready(function () {
         $(".notifications-panel .case-alert.one").addClass('show'); 
         $(".notifications-panel-STICKY").addClass('alerts-working');
         $(".notifications-panel-STICKY .case-alert.one").addClass('show'); 
+
+        $('.text-holder').hide();
+
         var data1 = parseFloat($('.notifications-number').text()) + 1;
         var data2 = parseFloat($('.notifications-number-STICKY').text()) + 1;
         $('.notifications-number').html(data1);
         $('.notifications-number-STICKY').html(data2);
-        $('.clear-all').show();
+        // $('.clear-all').show();
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -156,12 +162,12 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -220,12 +226,12 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -287,12 +293,12 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -359,12 +365,12 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
@@ -425,12 +431,12 @@ $(document).ready(function () {
         $('.notifications-number-STICKY').html(data2);
 
         if (data1 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         } 
         if (data2 >= '1') {
-            $('.clear-all').show();
+            // $('.clear-all').show();
             $('.alert-button, .notifications-number, .notifications-number-STICKY').addClass('alert');
             $('.notifications-panel').addClass('alerts-working');
         }
