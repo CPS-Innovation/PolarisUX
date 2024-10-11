@@ -17,31 +17,16 @@
             <form method="get" action="4C-create-case" id="newCase_Form-B">  
 
                 <div class="govuk-form-group">
-                    <h3 class="govuk-heading-s">Egress</h3>
+                    <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo govuk-!-margin-bottom-2">
+                    <!-- <h3 class="govuk-heading-s">Egress</h3> -->
                     <p>Below is where the case materials will be place and shared within Egress, you can copy and paste the link and share with the approriate users.</p>
                     <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
                     <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
                 </div>
 
                 <div class="govuk-form-group">
-                    <h3 class="govuk-heading-s">Shared drive</h3>
-                    <p>Below is where the case materials will be place and shared within the Shared Drive, you can copy and paste the link and share with the approriate users.</p>
-                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
-                    <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
-                </div>
-
-                <div class="govuk-form-group">
-                    <h3 class="govuk-heading-s">Outlook emails</h3>
-                    <p>Below is where the case materials will be place and shared within Outlool, you can copy and paste the link and share with the approriate users.</p>
-                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
-                    <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
-                </div>
-
-                <p> </p>
-
-                <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Set access rights for this case?</legend>
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Would you like to configure access rights for egress now?</legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="newCase_Access--Now" name="newCase_Access" type="radio" value="Now" checked>
@@ -54,6 +39,26 @@
                         </div>
                     </fieldset>
                 </div>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <div class="govuk-form-group">
+                    <h3 class="govuk-heading-m">Shared drive</h3>
+                    <p>Below is where the case materials will be place and shared within the Shared Drive, you can copy and paste the link and share with the approriate users.</p>
+                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+                    <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                <div class="govuk-form-group">
+                    <h3 class="govuk-heading-m"><img src="../../../public/images/outlook-logo.png" alt="Outlook" class="outlook-logo">Outlook emails</h3>
+                    <p>Below is where the case materials will be place and shared within Outlool, you can copy and paste the link and share with the approriate users.</p>
+                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
+                    <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
+                </div>
+
+                <p><br></p>
 
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>

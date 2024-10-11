@@ -1,6 +1,6 @@
 {% include "../off-system/modalConfirmation-RemoveUser.html" %}
 
-<h2 class="govuk-heading-l">Contacts</h2>
+<h2 class="govuk-heading-l">Permissions</h2>
 <span class="govuk-caption-m">Last updated <span id="contacts-timestamp"></span></span>
 
 <p> </p>
@@ -8,9 +8,15 @@
 <div class="section-wrapper">
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s">Case contacts</h3>
+            <h3 class="govuk-heading-s image-header"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"></h3>
             <a href="4C-create-case">Edit</a>
         </div>
+
+        <div class="permissions">
+            <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+            <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
+        </div>
+
         <div class="section-content">
 
             <table class="govuk-table contacts-table">
@@ -83,12 +89,12 @@
 {% if data['caseAccess'] == 'true' %}
     <div class="cta-wrapper contacts-added">
         <p>Add additional contacts to this case</p>
-        <button type="submit" class="govuk-button" style="">Add a contact</button>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='4C-create-case';">Add a contact</button>
     </div>
 {% else %}
     <div class="cta-wrapper contacts-added">
         <p>There has been <strong>no additional Contacts</strong> added to this case</p>
-        <button type="submit" class="govuk-button" style="">Add a contact</button>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='4C-create-case';">Add a contact</button>
     </div>
 {% endif %}
 

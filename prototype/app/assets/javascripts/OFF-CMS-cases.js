@@ -239,6 +239,17 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 
+    // Comms updated
+    document.getElementById("comms-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
 })
 
@@ -299,6 +310,11 @@ $(document).ready(function () {
     $("#new-tabs .tab-10-content").on("click", function (e) {
         $('.panel').hide();
         $('#tab-10-content').show();
+    });
+
+    $("#new-tabs .tab-11-content").on("click", function (e) {
+        $('.panel').hide();
+        $('#tab-11-content').show();
     });
 
 })
@@ -374,6 +390,9 @@ function closeConfirmRemoveUser() {
 function confirmRemoveUsers() {
     $('#confirmRemoveUser').addClass('rj-dont-display');
     $('table.contacts-table tbody tr.removeContact-Row').hide();
+    var userNumbers = parseInt($('.tab-8-content .contacts-number').text());
+    $('.tab-8-content .contacts-number').text(userNumbers-1);
+
 }
 
 

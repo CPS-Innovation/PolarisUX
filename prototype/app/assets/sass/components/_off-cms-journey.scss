@@ -153,7 +153,7 @@ html {
                               cursor: pointer;
                          }
                          &.tab-8-content {
-                              padding-left: 1.75em;
+                              padding-left: 1.5em;
                          }
                          .contacts-number {
                               position: absolute;
@@ -165,7 +165,7 @@ html {
                               font-size: 1rem;
                               height: 1.5em;
                               font-weight: bold;
-                              margin: 0.05em 0.5em 0 0;
+                              margin: 0.05em 0.35em 0 0;
                               text-decoration: none;
                               justify-content: center;
                               align-items: center;                         
@@ -195,6 +195,9 @@ html {
                     margin: 1em 1.25em;
                     display: inline-block;
                     width: auto;
+                    &.image-header {
+                         line-height: 0;
+                    }
                }
                a {
                     float: right;
@@ -299,8 +302,22 @@ html {
      }
      section {
           border: 1px solid $govuk-border-colour;
+          .permissions {
+               width: 95%;
+               padding: 1em 1.75% 0 1.75%;
+               display: inline-block;
+               input {
+                    width: 60% !important;
+                    float: left;
+                    font-size: 1rem;
+                    margin-bottom: 0;
+               }
+               .copy-button {
+                    float: left;
+               }
+          }
           .section-content {
-               padding: 1.5em;
+               padding: 1em 1.5em 1.5em 1.5em;
                h3 {
                     float: left;
                }
@@ -319,7 +336,7 @@ html {
                     }
                }
                table {
-                    &.contacts-table {
+                    &.contacts-table, &.settings-table {
                          margin-bottom: 0;
                     }
                     tbody {
@@ -357,6 +374,12 @@ html {
           width: auto;
           margin-bottom: 0;
      }
+}
+
+.outlook-viewer {
+     display: inline-block;
+     width: 96.5%;
+     margin: 0 1.75% 1.5em 1.75%; 
 }
 
 .url-text {
@@ -429,6 +452,21 @@ a {
                }
           }
      }
+}
+
+.egress-logo {
+     width: 8em;
+     &.small {
+          width: 6em;
+          mix-blend-mode: darken;
+     }
+}
+
+.outlook-logo {
+     display: inline-block;
+     width: 1.5em;
+     height: auto;
+     margin: 0 0.5em -0.325em 0;
 }
 
 .icon-new {
