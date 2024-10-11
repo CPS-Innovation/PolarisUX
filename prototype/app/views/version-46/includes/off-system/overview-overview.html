@@ -1,0 +1,92 @@
+<h2 class="govuk-heading-l">Overview</h2>
+<span class="govuk-caption-m">Last updated <span id="my-cases-timestamp"></span></span>
+
+<p></p>
+
+<div class="section-wrapper section-row">
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case materials</h3>
+        </div>
+        <div class="section-content">
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Egress</h3>
+                <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
+                <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+            </div>
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Shared drive</h3>
+                <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+                <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+            </div>
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Outlook emails</h3>
+                <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
+                <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case settings</h3>
+            <a href="6-case-settings">Edit</a>
+        </div>
+        <div class="section-content">
+
+            <table class="govuk-table">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Case complexity</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Complexity'] == 'Low' %}
+                                <strong class="govuk-tag govuk-tag--green">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'Medium' %}
+                                <strong class="govuk-tag govuk-tag--blue">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'High' %}
+                                <strong class="govuk-tag govuk-tag--yellow">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'Exceptional' %}
+                                <strong class="govuk-tag govuk-tag--red">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">International case?</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_International'] %}
+                                {{ data['caseSettings_International'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Case sensitivity</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Sensitivity'] %}
+                                {{ data['caseSettings_Sensitivity'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Summary of investigation</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Summary'] %}
+                                {{ data['caseSettings_Summary'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+</div>

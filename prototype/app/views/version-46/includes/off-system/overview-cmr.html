@@ -1,0 +1,82 @@
+<h2 class="govuk-heading-l">Case Management Record</h2>
+<span class="govuk-caption-m">Last updated <span id="settings-timestamp"></span></span>
+<p> </p>
+
+<div class="section-wrapper">
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Activity</h3>
+            <div class="govuk-form-group search">
+                <label class="govuk-label search-label" for="searchCMS_URN">Search Off System cases</label>
+                <div class="search-wrapper-CMR">
+                    <input class="govuk-input govuk-!-width-full" id="searchCMS_URN" name="searchCMS_URN" type="text" placeholder="Search..." value="" />
+                    <button type="submit" class="govuk-button" style="">Search</button>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">Sort by</label>
+                <select class="govuk-select" id="sort" name="sort">
+                    <option value="Most recent" selected>Most recent</option>
+                    <option value="Oldest">Oldest</option>
+                    <option value="EAs only">EAs only</option>
+                    <option value="Witnesses">Witnesses</option>
+                    <option value="Suspects">Suspects</option>
+                    <option value="Charges">Charges</option>
+                </select>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="hods-timeline">
+
+                {% if data['caseAccess'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Case access added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description">
+                            {% if data['newCase_Access-Email'] %}{{ data['newCase_Access-Email'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email2'] %}{{ data['newCase_Access-Email2'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email3'] %}{{ data['newCase_Access-Email3'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email4'] %}{{ data['newCase_Access-Email4'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email5'] %}{{ data['newCase_Access-Email5'] }} added, {% else %} {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['caseSettings'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Case settings added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description">
+                            {% if data['caseSettings_Complexity'] %}Case complexity added, {% else %} {% endif %}
+                            {% if data['caseSettings_International'] %}International settings added, {% else %} {% endif %}
+                            {% if data['caseSettings_Sensitivity'] %}Case sensitivity added, {% else %} {% endif %}
+                            {% if data['caseSettings_Summary'] %}Case summary added{% else %} {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                <div class="hods-timeline__item">
+                    <h2 class="hods-timeline__title">Case created</h2>
+                    <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                    <p class="hods-timeline__date"><span id="case-created-stamp">####</span></p>
+                    <p class="hods-timeline__description">
+                        {% if data['newCase_Access'] == 'Now' %}
+                            Case materials links created, Case access given to
+                        {% else %}
+                            Case materials links created, no case access given at this time.
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>

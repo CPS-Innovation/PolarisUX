@@ -1,0 +1,114 @@
+{% extends "layoutCPS-OFF.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+    <div class="search-bar-wrapper-OFF">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="get" action="3-search-results">
+                        <fieldset>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--xl" for="searchOFF_URN">Search Off System cases</label>
+                                <span span class="govuk-caption-m">You can use the case's <strong>Unique Reference Number (URN)</strong> or the <strong>Operation name</strong></span>
+                                <div class="search-wrapper">
+                                    <input class="govuk-input govuk-!-width-full" id="searchOFF_URN" name="searchOFF_URN" type="text" placeholder="Search Off System cases" value="" />
+                                    <button type="submit" class="govuk-button" style="">Search</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="govuk-grid-column-one-third create-case">
+                    <div class="create-case-wrapper">
+                        <h2 class="govuk-heading-l govuk-!-margin-bottom-0" style="">Create a case</h2>
+                        <p class="govuk-caption-m">Create a new case in Off system cases</p>
+                        <form method="get" action="4A-create-case">
+                            <button type="submit" class="govuk-button" style="">Get started <span class="icon"></span></button>         
+                        </form>      
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row" id="homepage-journey">
+    <div class="govuk-grid-column-full">
+        <div class="wrapper main-cotent">
+
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0" style="">My cases</h2>
+            <p class="govuk-caption-m">Last updated <span id="my-cases-timestamp"></span></p>
+
+            {% if data['createCaseStarted'] == 'true' %}
+                <p>Showing (8) of 17</p>
+            {% else %}
+                <p>Showing (8) of 16</p>
+            {% endif %}
+
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Operation name</th>
+                        <th scope="col" class="govuk-table__header">URN</th>
+                        <th scope="col" class="govuk-table__header">Type</th>
+                        <th scope="col" class="govuk-table__header">Location</th>
+                        <th scope="col" class="govuk-table__header">Case</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                    {% if data['createCaseStarted'] == 'true' %}
+                        <!-- CASE NEW - START --> 
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><a href="5-case-overview">{{ data['newCase_OperationName'] }}</a></th>
+                            <td class="govuk-table__cell">
+                                {{ data['newCase_URN-A'] }}{{ data['newCase_URN-B'] }}{{ data['newCase_URN-C'] }}/{{ data['newCase_URN-D'] }}
+                            </td>
+                            <td class="govuk-table__cell">£109.80 per week</td>
+                            <td class="govuk-table__cell">£109.80 per week</td>
+                            <td class="govuk-table__cell">£109.80 per week</td>
+                        </tr>
+                        <!-- CASE NEW - END --> 
+                    {% else %}
+
+                    {% endif %}
+
+                    <!-- CASE 1 - START --> 
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                    </tr>
+                    <!-- CASE 1 - END --> 
+
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <td class="govuk-table__cell">£109.80 per week</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

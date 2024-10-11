@@ -1,0 +1,113 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V3.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+        <p> </p>
+        <span class="govuk-caption-xl govuk-!-margin-bottom-0">{{ data['newCase_URN-A'] }}{{ data['newCase_URN-B'] }}{{ data['newCase_URN-C'] }}/{{ data['newCase_URN-D'] }}</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{{ data['newCase_OperationName'] }}</h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs off-cms-overview" id="new-tabs">
+
+            <!-- /////////////// TABS - START /////////////// -->
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content">EA/Reviews</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content">Suspects</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content">Witnesses</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content">Charges</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content">Materials</a></li>
+                <li class="govuk-tabs__list-item">
+                    <a class="tab-link tab-8-content">
+                        {% if data['newCase_Access-Email5'] %}
+                            <span class="contacts-number">6</span>Contacts
+                        {% elseif data['newCase_Access-Email4'] %}
+                            <span class="contacts-number">5</span>Contacts
+                        {% elseif data['newCase_Access-Email3'] %}
+                            <span class="contacts-number">4</span>Contacts
+                        {% elseif data['newCase_Access-Email2'] %}
+                            <span class="contacts-number">3</span>Contacts
+                        {% elseif data['newCase_Access-Email'] %}
+                            <span class="contacts-number">2</span>Contacts
+                        {% else %}
+                            <span class="contacts-number">1</span>Contacts
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">CMR</a></li>
+            </ul>   
+            <!-- /////////////// TABS - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
+            <div class="panel" id="tab-1-content">
+                {% include "../includes/off-system/overview-overview.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
+            <div class="panel" id="tab-2-content" style="display: none;">
+                {% include "../includes/off-system/overview-ea.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 2 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 3 - START /////////////// -->
+            <div class="panel" id="tab-3-content" style="display: none;">
+                {% include "../includes/off-system/overview-suspects.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 3 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 4 - START /////////////// -->
+            <div class="panel" id="tab-4-content" style="display: none;">
+                {% include "../includes/off-system/overview-witnesses.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 4 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 5 - START /////////////// -->
+            <div class="panel" id="tab-5-content" style="display: none;">
+                {% include "../includes/off-system/overview-victims.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 5 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 6 - START /////////////// -->
+            <div class="panel" id="tab-6-content" style="display: none;">
+                {% include "../includes/off-system/overview-charges.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 6 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 7 - START /////////////// -->
+            <div class="panel" id="tab-7-content" style="display: none;">
+                {% include "../includes/off-system/overview-materials.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 7 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 8 - START /////////////// -->
+            <div class="panel" id="tab-8-content" style="display: none;">
+                {% include "../includes/off-system/overview-contacts.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 8 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 9 - START /////////////// -->
+            <div class="panel" id="tab-9-content" style="display: none;">
+                {% include "../includes/off-system/overview-cmr.html" %}
+2            </div>
+            <!-- /////////////// TAB CONTENT 9 - END /////////////// -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

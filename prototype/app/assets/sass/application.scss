@@ -38,6 +38,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 @import "components/autocomplete";
 @import "components/cps-journey";
+@import "components/off-cms-journey";
 
 
 @mixin das-clearfix {
@@ -5140,3 +5141,20 @@ strong, span {
     margin-bottom: 1.5em;
 }
 
+// NEW TAG COLOURS
+
+.govuk-tag {
+    font-weight: normal !important;
+    &.govuk-tag--red {
+        color: #2a0b06 !important;
+        background-color: #f4cdc6 !important;
+    }
+    &.govuk-tag--green {
+        color: #005a30 !important;
+        background-color: #cce2d8 !important;
+    }
+    &.govuk-tag--orange {
+        color: #6e3619 !important;
+        background-color: #fcd6c3 !important;
+    }
+}

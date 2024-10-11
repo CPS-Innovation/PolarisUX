@@ -1,0 +1,94 @@
+{% include "../off-system/modalConfirmation-RemoveUser.html" %}
+
+<h2 class="govuk-heading-l">Contacts</h2>
+<span class="govuk-caption-m">Last updated <span id="contacts-timestamp"></span></span>
+
+<p> </p>
+
+<div class="section-wrapper">
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case contacts</h3>
+            <a href="4C-create-case">Edit</a>
+        </div>
+        <div class="section-content">
+
+            <table class="govuk-table contacts-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Users</th>
+                        <th scope="col" class="govuk-table__header">Role</th>
+                        <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['offCMS_Username'] }}</th>
+                        <td class="govuk-table__cell"><strong class="govuk-tag">Administrator</strong></td>
+                        <td class="govuk-table__cell"></td>
+                    </tr>
+                    {% if data['newCase_Access-Email'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag">{{ data['newCase_Access-Permissions'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email2'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email2'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag">{{ data['newCase_Access-Permissions2'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email3'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email3'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag">{{ data['newCase_Access-Permissions3'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email4'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email4'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag">{{ data['newCase_Access-Permissions4'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email5'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email5'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag">{{ data['newCase_Access-Permissions5'] }}</strong></td>
+                            <td class="govuk-table__cell  govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+</div>
+
+
+{% if data['caseAccess'] == 'true' %}
+    <div class="cta-wrapper contacts-added">
+        <p>Add additional contacts to this case</p>
+        <button type="submit" class="govuk-button" style="">Add a contact</button>
+    </div>
+{% else %}
+    <div class="cta-wrapper contacts-added">
+        <p>There has been <strong>no additional Contacts</strong> added to this case</p>
+        <button type="submit" class="govuk-button" style="">Add a contact</button>
+    </div>
+{% endif %}
+
