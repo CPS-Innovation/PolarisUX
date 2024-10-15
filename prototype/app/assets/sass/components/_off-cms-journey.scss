@@ -152,10 +152,10 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-8-content {
+                         &.tab-2-content, &.tab-8-content {
                               padding-left: 1.5em;
                          }
-                         .contacts-number {
+                         .number {
                               position: absolute;
                               display: flex;
                               background: red;
@@ -487,6 +487,185 @@ a {
                span {
                     color: $govuk-text-colour !important;
                     font-weight: bold;
+               }
+          }
+     }
+}
+
+
+// ==================================== EA Process ==================================== //
+.ea-title-wrapper {
+     h1 {
+          display: inline-block;
+          float: left;
+     }
+     p {
+          display: inline-block;
+          float: right;
+          margin: 1.15em 0 0 0;
+     }
+     hr {
+          display: inline-block;
+          width: 100%;
+     }
+}
+
+.ea-content-panel {
+     display: none;
+     width: 100%;
+     &.show-panel {
+          display: inline-block;
+     }
+     .ea-panel-cta {
+          display: inline-block;
+          form {
+               float: left;
+               display: inline-block;
+          }
+          .govuk-button {
+               float: left;
+               &.govuk-button--secondary {
+                    margin-left: 1em;
+               }
+          } 
+     }
+     .eaHumanRights-Panel {
+          display: none;
+     }
+}
+
+.monitoringCodes {
+     display: none;
+     .global-codes, .local-codes {
+          display: none;
+     }
+}
+
+
+.editor-container {
+     border: 2px solid black;
+     border-radius: 5px;
+     overflow: hidden;
+     .toolbar {
+          background-color: #f3f2f1;
+          border-bottom: 1px solid #f3f2f1;
+          padding: 5px;
+          display: flex;
+          gap: 5px; 
+          button {
+               background-color: #f1f1f1;
+               border: 0px solid #ccc;
+               border-radius: 3px;
+               padding: 10px 15px;
+               cursor: pointer;
+               font-size:19px;
+               &:hover, &:active, &:focus {
+                    background-color: #e0e0e0;
+               }
+          }
+     }
+     .editor {
+          padding: 10px;
+          min-height: 800px;
+          border: none;
+          outline: none;
+          color: black;
+          font-size: 1.2rem;
+     }
+}
+
+
+nav.tube-map-ea {
+     margin-top: 1em;
+     ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+               margin: 0.5em 0.5em 1.5em 0.5em;
+               position: relative;
+               padding-left: 1.5em;
+               &:before {
+                    display: inline-block;
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 3em;
+                    background: $govuk-link-colour;
+                    left: 0;
+                    z-index: 1;
+               }
+               &.selected {
+                    &.completed {
+                         svg {
+                              display: inline-block;
+                              width: 1em;
+                              height: 1em;
+                              position: absolute;
+                              left: -0.35em;
+                              top: 0.25em;
+                              z-index: 11;
+                              path {
+                                   stroke: white;
+                              }
+                         }
+                    }
+                    a {
+                         font-weight: bold;
+                         &:after {
+                              background: $govuk-link-colour;
+                         }
+                    }
+               }
+               &.completed {
+                    svg {
+                         color: black;
+                         display: inline-block;
+                         width: 1em;
+                         height: 1em;
+                         position: absolute;
+                         left: -0.35em;
+                         top: 0.25em;
+                         z-index: 11;
+                         path {
+                              stroke: black;
+                         }
+                    }
+               }
+               &:first-of-type {
+                    margin-top: 0;
+               }
+               &:last-of-type {
+                    &:before {
+                         display: none;
+                    }
+               }
+               svg {
+                    display: none;
+               }
+               a {
+                    font-size: 1.2rem;
+                    position: relative;
+                    text-decoration: none;
+                    color: black;
+                    &:hover, &:active, &:focus {
+                         text-decoration: underline;
+                         color: $govuk-link-colour;
+                         cursor: pointer;
+                    }
+                    &:after {
+                         display: inline-block;
+                         content: '';
+                         border-radius: 50%;
+                         background: white;
+                         border: 2px solid $govuk-link-colour;
+                         position: absolute;
+                         width: 1em;
+                         height: 1em;
+                         left: -1.8em;
+                         top: 0;
+                         z-index: 10;
+                    }
                }
           }
      }

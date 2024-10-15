@@ -444,3 +444,210 @@ function copyOutlookLink() {
     $('#copyOutlookLink').text('Path copied');
     $('#copyEgressLink, #copyDriveLink').text('Copy text');
 }
+
+
+// ========================= EA Report ========================= //
+$(document).ready(function () {
+    $("#eaCaseSummary-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaCaseSummary').addClass('completed'); });
+    $("#eaEvidentialAanalysis-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaEvidentialAanalysis').addClass('completed');});
+    $("#eaPublicInterestAssesment-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaPublicInterestAssesment').addClass('completed');});
+    $("#eaWitnessVictim-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaWitnessVictim').addClass('completed');});
+    $("#eaTrialStrategy-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaTrialStrategy').addClass('completed');});
+    $("#eaAllocation-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaAllocation').addClass('completed');});
+    $("#eaDisclosureActions-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaDisclosureActions').addClass('completed');});
+    $("#eaHumanRights-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaHumanRights').addClass('completed');});
+    $("#eaCaseAdvocate-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaCaseAdvocate').addClass('completed');});
+
+    $("input[name=eaHumanRightsRadio]").on("change", function (e) { 
+        if ($('input[id=eaHumanRightsRadio-Yes]').is(':checked')) {
+            $('.eaHumanRights-Panel').show();
+        } else if ($('input[id=eaHumanRightsRadio-No]').is(':checked')) {
+            $('.eaHumanRights-Panel').hide();
+        }      
+    });
+
+    
+
+})
+
+// 1
+function eaCaseSummary() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaCaseSummary').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaCaseSummary').addClass('show-panel');
+}
+
+// 2
+function eaEvidentialAanalysis() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaEvidentialAanalysis').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaEvidentialAanalysis').addClass('show-panel');
+}
+
+// 3
+function eaPublicInterestAssesment() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaPublicInterestAssesment').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaPublicInterestAssesment').addClass('show-panel');
+}
+
+// 4
+function eaWitnessVictim() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaWitnessVictim').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaWitnessVictim').addClass('show-panel');
+}
+
+// 5
+function eaTrialStrategy() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaTrialStrategy').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaTrialStrategy').addClass('show-panel');
+}
+
+// 6
+function eaAllocation() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaAllocation').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaAllocation').addClass('show-panel');
+}
+
+// 7
+function eaDisclosureActions() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaDisclosureActions').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaDisclosureActions').addClass('show-panel');
+}
+
+// 8 
+function eaHumanRights() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaHumanRights').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaHumanRights').addClass('show-panel');
+}
+
+// 9 
+function eaCaseAdvocate() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaCaseAdvocate').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaCaseAdvocate').addClass('show-panel');
+}
+
+// 10 
+function eaCaseMonitoring() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaCaseMonitoring').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaCaseMonitoring').addClass('show-panel');
+}
+
+
+// 11
+function eaPreview() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaPreview').addClass('selected');
+
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaPreview').addClass('show-panel');
+
+    var eaCaseSummary = $('#eaCaseSummary-Editor').html();
+    if (eaCaseSummary.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Case summary</strong><br>` + eaCaseSummary + `<br><br>`); }
+
+    var eaEvidentialAanalysis = $('#eaEvidentialAanalysis-Editor').html();
+    if (eaEvidentialAanalysis.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Evidential analysis</strong><br>` + eaEvidentialAanalysis + `<br><br>`); }
+
+    var eaPublicInterestAssesment = $('#eaPublicInterestAssesment-Editor').html();
+    if (eaPublicInterestAssesment.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Public interest assessment</strong><br>` + eaPublicInterestAssesment + `<br><br>`); }
+
+    var eaWitnessVictim = $('#eaWitnessVictim-Editor').html();
+    if (eaWitnessVictim.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Witness and victim strategy</strong><br>` + eaWitnessVictim + `<br><br>`); }
+    
+    var eaTrialStrategy = $('#eaTrialStrategy-Editor').html();
+    if (eaTrialStrategy.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Trial Strategy</strong><br>` + eaTrialStrategy + `<br><br>`); }
+
+    var eaAllocation = $('#eaAllocation-Editor').html();
+    if (eaAllocation.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Allocation</strong><br>` + eaAllocation + `<br><br>`); }
+    
+    var eaDisclosureActions = $('#eaDisclosureActions-Editor').html();
+    if (eaDisclosureActions.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Disclosure</strong><br>` + eaDisclosureActions + `<br><br>`); }
+    
+    var eaHumanRights = $('#eaHumanRights-Editor').html();
+    if (eaHumanRights.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Human rights factors</strong><br>` + eaHumanRights + `<br><br>`); }
+
+    var eaCaseAdvocate = $('#eaCaseAdvocate-Editor').html();
+    if (eaCaseAdvocate.length >= 1 ) { $('#eaCaseSummary-Preview').append(`<strong>Advocate and op.delivery instructions</strong><br>` + eaCaseAdvocate + `<br><br>`); }
+
+    // Monitoring codes
+    if ($('input[name="eaCaseMonitoring_Checkboxes"]:checked').length >= 2 || $('input[name="eaCaseMonitoring_Checkboxes-V2"]:checked').length >= 1) {
+        $('.monitoringCodes').show();
+    } else {
+        $('.monitoringCodes').hide();
+    }
+
+    if ($('input[name="eaCaseMonitoring_Checkboxes"]:checked').length >= 2) {
+        $('.monitoringCodes .global-codes').show();
+    } else if ($('input[name="eaCaseMonitoring_Checkboxes"]:checked').length == 1) {
+        $('.monitoringCodes .global-codes').hide();
+    }      
+
+    if ($('input[name="eaCaseMonitoring_Checkboxes-V2"]:checked').length >= 1) {
+        $('.monitoringCodes .local-codes').show();
+    } else if ($('input[name="eaCaseMonitoring_Checkboxes-V2"]:checked').length == 0) {
+        $('.monitoringCodes .local-codes').hide();
+    }   
+
+    // Global codes
+    if ($('input[id=eaCaseMonitoring_Checkboxes-1]').is(':checked')) { $('.monitoringCodes .global-codes').append('Asset recovery' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-2]').is(':checked')) { $('.monitoringCodes .global-codes').append('Child abuse' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-3]').is(':checked')) { $('.monitoringCodes .global-codes').append('Crime against an older person' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-4]').is(':checked')) { $('.monitoringCodes .global-codes').append('Disability hate crime' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-5]').is(':checked')) { $('.monitoringCodes .global-codes').append('Domestic abuse' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-6]').is(':checked')) { $('.monitoringCodes .global-codes').append('DA specialist court' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-7]').is(':checked')) { $('.monitoringCodes .global-codes').append('Extraordinary event' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-8]').is(':checked')) { $('.monitoringCodes .global-codes').append('Fatality' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-9]').is(':checked')) { $('.monitoringCodes .global-codes').append('Forced marriage' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-10]').is(':checked')) { $('.monitoringCodes .global-codes').append('GAP' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-11]').is(':checked')) { $('.monitoringCodes .global-codes').append('Homophobic' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-12]').is(':checked')) { $('.monitoringCodes .global-codes').append('Honour crime' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-13]').is(':checked')) { $('.monitoringCodes .global-codes').append('Human trafficking' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-14]').is(':checked')) { $('.monitoringCodes .global-codes').append('Identified victim' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-15]').is(':checked')) { $('.monitoringCodes .global-codes').append('Joint enterprise' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-16]').is(':checked')) { $('.monitoringCodes .global-codes').append('Media interest' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-17]').is(':checked')) { $('.monitoringCodes .global-codes').append('Mental health' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-18]').is(':checked')) { $('.monitoringCodes .global-codes').append('Nationality bar' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-19]').is(':checked')) { $('.monitoringCodes .global-codes').append('NGAP' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-20]').is(':checked')) { $('.monitoringCodes .global-codes').append('Op Venetic' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-21]').is(':checked')) { $('.monitoringCodes .global-codes').append('Police complaints' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-22]').is(':checked')) { $('.monitoringCodes .global-codes').append('Pre-charge decision' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-23]').is(':checked')) { $('.monitoringCodes .global-codes').append('Prohibited weapons' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-24]').is(':checked')) { $('.monitoringCodes .global-codes').append('PTWI referral' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-25]').is(':checked')) { $('.monitoringCodes .global-codes').append('Racist crime' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-26]').is(':checked')) { $('.monitoringCodes .global-codes').append('Racist/religious incident' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-27]').is(':checked')) { $('.monitoringCodes .global-codes').append('Rape' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-28]').is(':checked')) { $('.monitoringCodes .global-codes').append('Religious crime' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-29]').is(':checked')) { $('.monitoringCodes .global-codes').append('Substantial charge alteration' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-30]').is(':checked')) { $('.monitoringCodes .global-codes').append('Transphobic' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-31]').is(':checked')) { $('.monitoringCodes .global-codes').append('Vulnerable/intimidated victim' + '<br>'); }
+
+    // Local codes
+    if ($('input[id=eaCaseMonitoring_Checkboxes-A]').is(':checked')) { $('.monitoringCodes .local-codes').append('Drug confiscation' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-B]').is(':checked')) { $('.monitoringCodes .local-codes').append('Football hooliganism' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-C]').is(':checked')) { $('.monitoringCodes .local-codes').append('Hoax bomb phone calls' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-D]').is(':checked')) { $('.monitoringCodes .local-codes').append('Infanticide' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-E]').is(':checked')) { $('.monitoringCodes .local-codes').append('Medicinal cannabis' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-F]').is(':checked')) { $('.monitoringCodes .local-codes').append('Murder' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-G]').is(':checked')) { $('.monitoringCodes .local-codes').append('RTA fatality' + '<br>'); }
+    if ($('input[id=eaCaseMonitoring_Checkboxes-H]').is(':checked')) { $('.monitoringCodes .local-codes').append('Victim focus' + '<br>'); }
+
+
+}
+
