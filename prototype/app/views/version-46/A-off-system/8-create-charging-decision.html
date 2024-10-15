@@ -563,7 +563,7 @@ $(document).ready(function() {
                 </fieldset>
             </div>
             <div class="ea-panel-cta">
-                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="">Continue</button>
+                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return eaCaseMonitoring();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
                     <input id="completeAndExit-9" name="completeAndExit" type="text" value="true" style="display: none;">
                     <button type="submit"  data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="">Complete and exit</button>
@@ -775,7 +775,7 @@ $(document).ready(function() {
                 </fieldset>
             </div>
             <div class="ea-panel-cta">
-                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="">Continue</button>
+                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return eaPreview();" id="eaCaseMonitoring-Continue">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
                     <input id="completeAndExit-10" name="completeAndExit" type="text" value="true" style="display: none;">
                     <button type="submit"  data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="">Complete and exit</button>
@@ -783,6 +783,69 @@ $(document).ready(function() {
             </div>
         </div>
         <!-- //////////////////////////////// 10A - Advocate and op.delivery instructions - END //////////////////////////////// -->
+
+        <!-- //////////////////////////////// 10B - Victim-suspect relationship - START //////////////////////////////// -->
+        <div class="ea-content-panel" id="eaCaseRelationship">
+            <h2 class="govuk-heading-l govuk-!-margin-top-2">What was the relationship between Eoin McLove and victim at the time of the offence?</h2>
+            <p>This information is required because a domestic abuse monitoring code has been selected. </p>   
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"><h1 class="govuk-fieldset__heading">Relationship type</h1></legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-1" name="eaCaseRelationship-Type" type="radio" value="Partner">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-1">Partner</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-2" name="eaCaseRelationship-Type" type="radio" value="Ex partner">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-2">Ex partner</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-3" name="eaCaseRelationship-Type" type="radio" value="Family member">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-3">Family member</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-4" name="eaCaseRelationship-Type" type="radio" value="Extended family member">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-4">Extended family member</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-5" name="eaCaseRelationship-Type" type="radio" value="Spouse or civil partner">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-5">Spouse or civil partner</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Type-6" name="eaCaseRelationship-Type" type="radio" value="Former spouse or civil partner">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Type-6">Former spouse or civil partner</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group" id="eaCaseRelationship-Sex">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h1 class="govuk-fieldset__heading">Was the relationship same sex?</h1></legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Sex-A" name="eaCaseRelationship-Sex" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Sex-A">No</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eaCaseRelationship-Sex-B" name="eaCaseRelationship-Sex" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="eaCaseRelationship-Sex-B">Yes</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="ea-panel-cta">
+                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return eaPreview();">Continue</button>
+                <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="completeAndExit-9" name="completeAndExit" type="text" value="true" style="display: none;">
+                    <button type="submit"  data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="">Complete and exit</button>
+                </form>
+            </div>
+        </div>
+        <!-- //////////////////////////////// 10B - Victim-suspect relationship - END //////////////////////////////// -->
 
         <!-- //////////////////////////////// 11 - PREVIEW - START //////////////////////////////// -->
         <div class="ea-content-panel" id="eaPreview">
@@ -827,7 +890,7 @@ $(document).ready(function() {
                         <!-- SECTION 2 - START -->
                         <tr class="govuk-table__row" id="domesticAbuse">
                             <th scope="row" class="govuk-table__header">Victim-suspect relationship</th>
-                            <td class="govuk-table__cell"><p class="relationship"></p></td>
+                            <td class="govuk-table__cell"><span class="relationship"></span></td>
                             <td class="govuk-table__cell"><a onclick="">Edit</a></td>
                         </tr>
                         <!-- SECTION 2 - END -->
@@ -835,7 +898,7 @@ $(document).ready(function() {
                         <!-- SECTION 3 - START -->
                         <tr class="govuk-table__row" id="domesticAbuse-Relationship">
                             <th scope="row" class="govuk-table__header">Same sex relationship</th>
-                            <td class="govuk-table__cell"><p class="sexRelationship"></p></td>
+                            <td class="govuk-table__cell"><span class="sexRelationship"></span></td>
                             <td class="govuk-table__cell"><a onclick="">Edit</a></td>
                         </tr>
                         <!-- SECTION 3 - END -->

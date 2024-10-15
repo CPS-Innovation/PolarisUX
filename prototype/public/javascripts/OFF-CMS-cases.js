@@ -449,14 +449,14 @@ function copyOutlookLink() {
 // ========================= EA Report ========================= //
 $(document).ready(function () {
     $("#eaCaseSummary-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaCaseSummary').addClass('completed'); });
-    $("#eaEvidentialAanalysis-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaEvidentialAanalysis').addClass('completed');});
-    $("#eaPublicInterestAssesment-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaPublicInterestAssesment').addClass('completed');});
-    $("#eaWitnessVictim-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaWitnessVictim').addClass('completed');});
-    $("#eaTrialStrategy-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaTrialStrategy').addClass('completed');});
-    $("#eaAllocation-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaAllocation').addClass('completed');});
-    $("#eaDisclosureActions-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaDisclosureActions').addClass('completed');});
-    $("#eaHumanRights-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaHumanRights').addClass('completed');});
-    $("#eaCaseAdvocate-Editor").on("keyup", function (e) {$('nav.tube-map-ea ul li.eaCaseAdvocate').addClass('completed');});
+    $("#eaEvidentialAanalysis-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaEvidentialAanalysis').addClass('completed'); });
+    $("#eaPublicInterestAssesment-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaPublicInterestAssesment').addClass('completed'); });
+    $("#eaWitnessVictim-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaWitnessVictim').addClass('completed'); });
+    $("#eaTrialStrategy-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaTrialStrategy').addClass('completed'); });
+    $("#eaAllocation-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaAllocation').addClass('completed'); });
+    $("#eaDisclosureActions-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaDisclosureActions').addClass('completed'); });
+    $("#eaHumanRights-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaHumanRights').addClass('completed'); });
+    $("#eaCaseAdvocate-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaCaseAdvocate').addClass('completed'); });
 
     $("input[name=eaHumanRightsRadio]").on("change", function (e) { 
         if ($('input[id=eaHumanRightsRadio-Yes]').is(':checked')) {
@@ -466,7 +466,36 @@ $(document).ready(function () {
         }      
     });
 
-    
+    $("input[name=eaCaseMonitoring_Checkboxes]").on("change", function (e) { 
+        $('nav.tube-map-ea ul li.eaCaseMonitoring').addClass('completed');
+        if ($('input[id=eaCaseMonitoring_Checkboxes-5]').is(':checked')) {
+            $('.eaCaseRelationship').show();
+            $('#eaCaseMonitoring-Continue').attr('onClick','return eaCaseRelationship();');
+        } else {
+            $('.eaCaseRelationship').hide();
+            $('#eaCaseMonitoring-Continue').attr('onClick','return eaPreview();');        
+        }      
+    });
+
+    $("input[name=eaCaseMonitoring_Checkboxes-V2]").on("change", function (e) { 
+        $('nav.tube-map-ea ul li.eaCaseMonitoring').addClass('completed');
+    });
+
+    $("input[name=eaCaseRelationship-Type]").on("change", function (e) { 
+        $('nav.tube-map-ea ul li.eaCaseRelationship').addClass('completed');
+        $('#eaCaseRelationship-Sex').show();
+        $('#domesticAbuse').show();
+
+        var relationshipType = $("input[name=eaCaseRelationship-Type]:checked").val();
+        $('.relationship').append(relationshipType);
+    });
+
+    $("input[name=eaCaseRelationship-Sex]").on("change", function (e) { 
+        $('#domesticAbuse-Relationship').show();
+
+        var relationshipSex = $("input[name=eaCaseRelationship-Sex]:checked").val();
+        $('.sexRelationship').append(relationshipSex);
+    });
 
 })
 
@@ -542,7 +571,7 @@ function eaCaseAdvocate() {
     $('#eaCaseAdvocate').addClass('show-panel');
 }
 
-// 10 
+// 10A 
 function eaCaseMonitoring() {
     $('nav.tube-map-ea ul li').removeClass('selected');
     $('nav.tube-map-ea ul li.eaCaseMonitoring').addClass('selected');
@@ -550,6 +579,13 @@ function eaCaseMonitoring() {
     $('#eaCaseMonitoring').addClass('show-panel');
 }
 
+// 10B 
+function eaCaseRelationship() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.eaCaseRelationship').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#eaCaseRelationship').addClass('show-panel');
+}
 
 // 11
 function eaPreview() {
