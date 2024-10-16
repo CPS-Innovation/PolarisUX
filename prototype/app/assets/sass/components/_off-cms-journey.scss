@@ -578,6 +578,24 @@ a {
      display: none;
 }
 
+nav.moj-sub-navigation {
+     &.secondaryTabs {
+          ul.moj-sub-navigation__list {
+               li.moj-sub-navigation__item {
+                    margin-bottom: 0 !important;
+                    a {
+                         color: $govuk-link-colour !important;
+                    }
+                    &.secondaryTab-Selected {
+                         a {
+                              color: black !important;
+                         }
+                    }
+               }
+          }
+     }
+}
+
 nav.tube-map-ea {
      margin-top: 1em;
      ul {

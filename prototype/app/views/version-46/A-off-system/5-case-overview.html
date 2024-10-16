@@ -22,44 +22,80 @@
             <!-- /////////////// TABS - START /////////////// -->
             <h2 class="govuk-tabs__title">Contents</h2>
             <ul class="govuk-tabs__list">
-                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number">0</span> EA/Reviews</a></li>
+                {% if data['completeAndExitEA'] == 'true' or data['caseAccess'] == 'true' %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-1-content">Overview</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
+                {% endif %}
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number">0</span> EA/Reviews</a></li>
+                {% endif %}
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content">Suspects</a></li>
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content">Witnesses/Victims</a></li>
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content">Charges</a></li>
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content">Materials</a></li>
-                <li class="govuk-tabs__list-item">
-                    <a class="tab-link tab-8-content">
-                        {% if data['newCase_Access-Email5'] %}
-                            <span class="number contacts-number">6</span>Permissions
-                        {% elseif data['newCase_Access-Email4'] %}
-                            <span class="number contacts-number">5</span>Permissions
-                        {% elseif data['newCase_Access-Email3'] %}
-                            <span class="number contacts-number">4</span>Permissions
-                        {% elseif data['newCase_Access-Email2'] %}
-                            <span class="number contacts-number">3</span>Permissions
-                        {% elseif data['newCase_Access-Email'] %}
-                            <span class="number contacts-number">2</span>Permissions
-                        {% else %}
-                            <span class="number contacts-number">1</span>Permissions
-                        {% endif %}
-                    </a>
-                </li>
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content">Materials &amp; Comms</a></li>
+                {% if data['caseAccess'] == 'true' %}
+                    <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected">
+                        <a class="tab-link tab-8-content">
+                            {% if data['newCase_Access-Email5'] %}
+                                <span class="number contacts-number">6</span>Permissions
+                            {% elseif data['newCase_Access-Email4'] %}
+                                <span class="number contacts-number">5</span>Permissions
+                            {% elseif data['newCase_Access-Email3'] %}
+                                <span class="number contacts-number">4</span>Permissions
+                            {% elseif data['newCase_Access-Email2'] %}
+                                <span class="number contacts-number">3</span>Permissions
+                            {% elseif data['newCase_Access-Email'] %}
+                                <span class="number contacts-number">2</span>Permissions
+                            {% else %}
+                                <span class="number contacts-number">1</span>Permissions
+                            {% endif %}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="govuk-tabs__list-item">
+                        <a class="tab-link tab-8-content">
+                            {% if data['newCase_Access-Email5'] %}
+                                <span class="number contacts-number">6</span>Permissions
+                            {% elseif data['newCase_Access-Email4'] %}
+                                <span class="number contacts-number">5</span>Permissions
+                            {% elseif data['newCase_Access-Email3'] %}
+                                <span class="number contacts-number">4</span>Permissions
+                            {% elseif data['newCase_Access-Email2'] %}
+                                <span class="number contacts-number">3</span>Permissions
+                            {% elseif data['newCase_Access-Email'] %}
+                                <span class="number contacts-number">2</span>Permissions
+                            {% else %}
+                                <span class="number contacts-number">1</span>Permissions
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endif %}
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li>
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-11-content">CMR</a></li>
             </ul>   
             <!-- /////////////// TABS - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
-            <div class="panel" id="tab-1-content">
+            {% if data['completeAndExitEA'] == 'true' %}
+                <div class="panel" id="tab-1-content" style="display: none;">
+            {% else %}
+                <div class="panel" id="tab-1-content">
+            {% endif %}
                 {% include "../includes/off-system/overview-overview.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
-            <div class="panel" id="tab-2-content" style="display: none;">
+            {% if data['completeAndExitEA'] == 'true' %}
+                <div class="panel" id="tab-2-content">
+            {% else %}
+                <div class="panel" id="tab-2-content" style="display: none;">
+            {% endif %}
                 {% include "../includes/off-system/overview-ea.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 2 - END /////////////// -->
@@ -75,12 +111,6 @@
                 {% include "../includes/off-system/overview-witnesses.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 4 - END /////////////// -->
-
-            <!-- /////////////// TAB CONTENT 5 - START /////////////// -->
-            <div class="panel" id="tab-5-content" style="display: none;">
-                {% include "../includes/off-system/overview-victims.html" %}
-            </div>
-            <!-- /////////////// TAB CONTENT 5 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 6 - START /////////////// -->
             <div class="panel" id="tab-6-content" style="display: none;">
@@ -99,12 +129,6 @@
                 {% include "../includes/off-system/overview-contacts.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 8 - END /////////////// -->
-
-            <!-- /////////////// TAB CONTENT 9 - START /////////////// -->
-            <div class="panel" id="tab-9-content" style="display: none;">
-                {% include "../includes/off-system/overview-comms.html" %}
-            </div>
-            <!-- /////////////// TAB CONTENT 9 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 10 - START /////////////// -->
             <div class="panel" id="tab-10-content" style="display: none;">

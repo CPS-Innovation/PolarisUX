@@ -1,6 +1,52 @@
 <h2 class="govuk-heading-l">EA/Reviews</h2>
 <span class="govuk-caption-m">Last updated <span id="EA-timestamp"></span></span>
 
+<div class="section-wrapper section-row">
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case reviews</h3>
+        </div>
+        <div class="section-content">
+            <p class="govuk-!-margin-bottom-0">There are no current Case reviews on this case</p>
+        </div>
+    </section>
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Early advice</h3>
+        </div>
+        <div class="section-content">
+            {% if data['completeAndExitEA'] == 'true' %}
+                <table class="govuk-table settings-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row" id="ea2Introduction-Content" style="display: none;">
+                            <th scope="row" class="govuk-table__header">Introduction</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row" id="ea2Materials-Content" style="display: none;">
+                            <th scope="row" class="govuk-table__header">List of given materials</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row" id="ea2Summary-Content" style="display: none;">
+                            <th scope="row" class="govuk-table__header">Summary of Advice</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row" id="ea2Law-Content" style="display: none;">
+                            <th scope="row" class="govuk-table__header">Law</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row" id="ea2NextSteps-Content" style="display: none;">
+                            <th scope="row" class="govuk-table__header">Next steps</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                </tbody>
+                </table>
+            {% else %}
+                <p class="govuk-!-margin-bottom-0">There are no early adivce items on this case</p>
+            {% endif %}
+        </div>
+    </section>
+</div>
+
 <div class="cta-wrapper">
     <div class="add-new">
         <p>There has been <strong>no Reviews</strong> added to this case</p>

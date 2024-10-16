@@ -445,8 +445,29 @@ function copyOutlookLink() {
     $('#copyEgressLink, #copyDriveLink').text('Copy text');
 }
 
+// ========================= Secondary Tabs ========================= //
+function secondaryTab1() {
+    $('.secondaryTabContent').hide();
+    $('.secondaryTabContent#secondaryTabContent-1').show();
 
-// ========================= EA Report ========================= //
+    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.moj-sub-navigation__item#secondaryTab-1').addClass('secondaryTab-Selected');
+    $('.moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.moj-sub-navigation__item#secondaryTab-1 a').attr('aria-current','page');
+}
+
+function secondaryTab2() {
+    $('.secondaryTabContent').hide();
+    $('.secondaryTabContent#secondaryTabContent-2').show();
+
+    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.moj-sub-navigation__item#secondaryTab-2').addClass('secondaryTab-Selected');
+    $('.moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.moj-sub-navigation__item#secondaryTab-2 a').attr('aria-current','page');
+}
+
+
+// ========================= Create REVIEW Report ========================= //
 $(document).ready(function () {
     $("#eaCaseSummary-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaCaseSummary').addClass('completed'); });
     $("#eaEvidentialAanalysis-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.eaEvidentialAanalysis').addClass('completed'); });
@@ -684,6 +705,88 @@ function eaPreview() {
     if ($('input[id=eaCaseMonitoring_Checkboxes-G]').is(':checked')) { $('.monitoringCodes .local-codes').append('RTA fatality' + '<br>'); }
     if ($('input[id=eaCaseMonitoring_Checkboxes-H]').is(':checked')) { $('.monitoringCodes .local-codes').append('Victim focus' + '<br>'); }
 
+}
+
+// ========================= Create EA Report ========================= //
+$(document).ready(function () {
+    $("#ea2Introduction-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Introduction').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+    $("#ea2Materials-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Materials').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+    $("#ea2Summary-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Summary').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+    $("#ea2Law-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Law').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+    $("#ea2NextSteps-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2NextSteps').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+})
+
+function ea2Introduction() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Introduction').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Introduction').addClass('show-panel');
+}
+
+function ea2Materials() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Materials').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Materials').addClass('show-panel');
+}
+
+function ea2Summary() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Summary').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Summary').addClass('show-panel');
+}
+
+function ea2Law() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Law').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Law').addClass('show-panel');
+}
+
+function ea2NextSteps() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2NextSteps').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2NextSteps').addClass('show-panel');
+}
+
+function ea2Preview() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Preview').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Preview').addClass('show-panel');
+
+    var ea2Introduction = $('#ea2Introduction-Editor').html();
+    if (ea2Introduction.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>Introduction</strong><br>` + ea2Introduction + `<br><br>`); }
+
+    var ea2Materials = $('#ea2Materials-Editor').html();
+    if (ea2Materials.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>List of given materials</strong><br>` + ea2Materials + `<br><br>`); }
+
+    var ea2Summary = $('#ea2Summary-Editor').html();
+    if (ea2Summary.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>Summary of Advice</strong><br>` + ea2Summary + `<br><br>`); }
+
+    var ea2Law = $('#ea2Law-Editor').html();
+    if (ea2Law.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>Law</strong><br>` + ea2Law + `<br><br>`); }
+
+    var ea2NextSteps = $('#ea2NextSteps-Editor').html();
+    if (ea2NextSteps.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>Next steps</strong><br>` + ea2NextSteps + `<br><br>`); }
 
 }
 
+function test() {
+    const ea2IntroductionContent = $('#ea2Introduction-Editor').html();
+    if (ea2IntroductionContent.length >= 1 ) { $('#ea2Introduction-Content td').append(ea2IntroductionContent).show(); }
+
+    const ea2MaterialsContent = $('#ea2Materials-Editor').html();
+    if (ea2MaterialsContent.length >= 1 ) { $('#ea2Materials-Content td').append(ea2MaterialsContent).show(); }
+
+    const ea2SummaryContent = $('#ea2Summary-Editor').html();
+    if (ea2SummaryContent.length >= 1 ) { $('#ea2Summary-Content td').append(ea2SummaryContent).show(); }
+
+    const ea2LawContent = $('#ea2Law-Editor').html();
+    if (ea2LawContent.length >= 1 ) { $('#ea2Law-Content td').append(ea2LawContent).show(); }
+
+    const ea2NextStepsContent = $('#ea2NextSteps-Editor').html();
+    if (ea2NextStepsContent.length >= 1 ) { $('#ea2NextSteps-Content td').append(ea2NextStepsContent).show(); }
+}
