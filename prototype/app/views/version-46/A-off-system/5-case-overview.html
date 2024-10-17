@@ -3,7 +3,7 @@
     {% include "../includes/banner-OFF-V3.html" %}
 {% endblock %}
 {% block beforeContent %}
-
+    {% include "../includes/off-system/modal-EA.html" %}
 {% endblock %}
 {% block content %}
 
@@ -22,23 +22,30 @@
             <!-- /////////////// TABS - START /////////////// -->
             <h2 class="govuk-tabs__title">Contents</h2>
             <ul class="govuk-tabs__list">
-                {% if data['completeAndExitEA'] == 'true' or data['caseAccess'] == 'true' %}
+
+                <!-- OVERVIEW - Show on Case creation -->
+                {% if data['completeAndExitEA'] == 'true' or data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' or data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
                     <li class="govuk-tabs__list-item"><a class="tab-link tab-1-content">Overview</a></li>
                 {% else %}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
                 {% endif %}
-                {% if data['completeAndExitEA'] == 'true' %}
+
+                <!-- EA/REVIEW - Show on EA -->
+                {% if data['completeAndExitEA'] == 'true' and data['caseAccess'] == 'false' %}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
                 {% else %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number">0</span> EA/Reviews</a></li>
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
                 {% endif %}
+
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content">Suspects</a></li>
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content">Witnesses/Victims</a></li>
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content">Charges</a></li>
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content">Materials &amp; Comms</a></li>
-                {% if data['caseAccess'] == 'true' %}
-                    <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected">
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">1</span> Materials &amp; Comms</a></li>
+
+                <!-- PERMISSIONS - Show on NEW permission -->
+                {% if data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' %}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                         <a class="tab-link tab-8-content">
                             {% if data['newCase_Access-Email5'] %}
                                 <span class="number contacts-number">6</span>Permissions
@@ -75,13 +82,20 @@
                     </li>
                 {% endif %}
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li>
+
+                <!-- SETTING - Show on NEW settings -->
+                {% if data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-10-content">Settings</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li>
+                {% endif %}
+
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-11-content">CMR</a></li>
             </ul>   
             <!-- /////////////// TABS - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
-            {% if data['completeAndExitEA'] == 'true' %}
+            {% if data['completeAndExitEA'] == 'true' or data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' or data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
                 <div class="panel" id="tab-1-content" style="display: none;">
             {% else %}
                 <div class="panel" id="tab-1-content">
@@ -91,7 +105,7 @@
             <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
-            {% if data['completeAndExitEA'] == 'true' %}
+            {% if data['completeAndExitEA'] == 'true' and data['caseAccess'] == 'false' %}
                 <div class="panel" id="tab-2-content">
             {% else %}
                 <div class="panel" id="tab-2-content" style="display: none;">
@@ -125,13 +139,21 @@
             <!-- /////////////// TAB CONTENT 7 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 8 - START /////////////// -->
-            <div class="panel" id="tab-8-content" style="display: none;">
+            {% if data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' %}
+                <div class="panel" id="tab-8-content">
+            {% else %}
+                <div class="panel" id="tab-8-content" style="display: none;">
+            {% endif %}
                 {% include "../includes/off-system/overview-contacts.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 8 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 10 - START /////////////// -->
-            <div class="panel" id="tab-10-content" style="display: none;">
+            {% if data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
+                <div class="panel" id="tab-10-content">
+            {% else %}
+                <div class="panel" id="tab-10-content" style="display: none;">
+            {% endif %}
                 {% include "../includes/off-system/overview-settings.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 10 - END /////////////// -->

@@ -152,13 +152,13 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-2-content, &.tab-8-content {
+                         &.tab-2-content, &.tab-7-content, &.tab-8-content {
                               padding-left: 1.5em;
                          }
                          .number {
                               position: absolute;
                               display: flex;
-                              background: red;
+                              background: $govuk-brand-colour;
                               color: white;
                               border-radius: 50%;
                               width: 1.5em;
@@ -168,7 +168,11 @@ html {
                               margin: 0.05em 0.35em 0 0;
                               text-decoration: none;
                               justify-content: center;
-                              align-items: center;                         
+                              align-items: center; 
+                              &.zero {
+                                   background: govuk-colour("dark-grey");
+                                   color: govuk-colour("light-grey");
+                              }                        
                          }
                     }
                }
@@ -195,8 +199,32 @@ html {
                     margin: 1em 1.25em;
                     display: inline-block;
                     width: auto;
+                    position: relative;
                     &.image-header {
                          line-height: 0;
+                    }
+                    &.with-number {
+                         padding-left: 1.75em;
+                    }
+                    .number {
+                         position: absolute;
+                         display: flex;
+                         background: $govuk-brand-colour;
+                         color: white;
+                         border-radius: 50%;
+                         width: 1.5em;
+                         left: 0;
+                         font-size: 1rem;
+                         height: 1.5em;
+                         font-weight: bold;
+                         margin: 0.05em 0.35em 0 0;
+                         text-decoration: none;
+                         justify-content: center;
+                         align-items: center;
+                         &.zero {
+                              background: govuk-colour("dark-grey");
+                              color: govuk-colour("light-grey");
+                         }                        
                     }
                }
                a {
@@ -298,16 +326,23 @@ html {
                &:last-of-type {
                     margin-right: 0;
                }
+               .permissions {
+                    width: 94%;
+                    padding: 1.5em 3% 0 3%;
+                    input {
+                         width: 84% !important;
+                    }
+               }
           }
      }
      section {
           border: 1px solid $govuk-border-colour;
           .permissions {
-               width: 95%;
+               width: 94%;
                padding: 1em 1.75% 0 1.75%;
                display: inline-block;
                input {
-                    width: 60% !important;
+                    width: 92% !important;
                     float: left;
                     font-size: 1rem;
                     margin-bottom: 0;
@@ -585,6 +620,10 @@ nav.moj-sub-navigation {
                     margin-bottom: 0 !important;
                     a {
                          color: $govuk-link-colour !important;
+                         padding-left: 1.5em;
+                         span {
+                              left: 0;
+                         }
                     }
                     &.secondaryTab-Selected {
                          a {
@@ -593,6 +632,19 @@ nav.moj-sub-navigation {
                     }
                }
           }
+     }
+}
+
+#ea-available {
+     .govuk-table__cell {
+          &.with-button {
+               padding: 0;
+          }
+     }
+     button {
+          float: right;
+          margin-bottom: 0;
+          font-size: 1rem;
      }
 }
 
@@ -692,3 +744,195 @@ nav.tube-map-ea {
      }
 }
 
+// ==================================== Email Viewer ==================================== //
+#emailViewer { 
+     display: inline-block;
+     width: 96%;
+     padding: 0 1.75% 1.5em 1.75%;     
+     .emails {
+          display: inline-block;
+          width: 31%;
+          float: left;
+          table#emailTable {
+               width: 94%;
+               tbody {
+                    tr {
+                         td {
+                              vertical-align: middle;
+                              .wrapper {
+                                   padding: 0;
+                                   float: left;
+                                   width: 90%;
+                                   a {
+                                        font-size: 1.2rem;
+                                        margin-bottom: 0.5em;
+                                        display: inline-block;
+                                   }
+                                   p.date-added {
+                                        font-size: 1rem;
+                                        color: $govuk-secondary-text-colour;
+                                        a {
+                                             font-size: 1rem;
+                                             margin-bottom: 0;
+                                        }
+                                        .icon-new {
+                                             width: 1.15em;
+                                             height: 1.15em;
+                                             margin-top: 0;
+                                             margin-bottom: -0.25em;                                             
+                                        }
+                                   }
+                              }
+                              .more-options {
+                                   position: absolute;
+                                   display: inline-block;
+                                   background: url("../images/more-black.svg") no-repeat 50% 50%;
+                                   background-size: contain;
+                                   border: none;
+                                   position: absolute;
+                                   right: 0;
+                                   width: 2em;
+                                   height: 2em;
+                                   top: 50%;
+                                   padding: 0;
+                                   margin-top: -1em;
+                                   &.show {
+                                        border-radius: 3px;
+                                        background: url("../images/more-blue.svg") govuk-colour("light-grey") no-repeat 50% 50%;
+                                        background-size: contain;
+                                   }
+                                   &:hover, &:active, &:focus {
+                                        background: url("../images/more-blue.svg") no-repeat 50% 50%;
+                                        background-size: contain;
+                                        transform: scale(1.2);      
+                                        cursor: pointer; 
+                                        .visuallyhidden {
+                                             background: rgba(0,0,0,0.7);
+                                             display: inline-block;
+                                             padding: 0.5em;
+                                             border-radius: 5px;
+                                             width: max-content;
+                                             max-width: 265px;
+                                             text-align: left;
+                                             right: 0px;
+                                             top: 27px;
+                                             z-index: 1;
+                                             left: inherit;
+                                             // margin-left: -23px;
+                                             position: absolute;
+                                             font-family: "GDS Transport", arial, sans-serif;
+                                             color: white;
+                                             font-size: 0.875rem;
+                                             // font-weight: bold;
+                                             &:after {
+                                                  display: none;
+                                             }
+                                             &:before {
+                                                  width: 0; 
+                                                  height: 0; 
+                                                  border-left: 8px solid transparent;
+                                                  border-right: 8px solid transparent;
+                                                  border-bottom: 8px solid rgba(0,0,0,0.7);
+                                                  position: absolute;
+                                                  right: 11px;
+                                                  margin-right: -6px;
+                                                  top: -8px;
+                                                  content: ' ';
+                                             }
+                                        }
+                                   }
+                              }
+                              .document-nav {
+                                   &.show {
+                                        display: inline-block;
+                                   }
+                                   display: none;
+                                   text-align: left;
+                                   background: white;
+                                   box-shadow: 0 0 10px 0 rgba(black,0.3);
+                                   padding: 0;
+                                   margin: 0;
+                                   position: absolute;
+                                   right: 0;
+                                   top: 5.5em;
+                                   z-index: 1;
+                                   width: 11em;
+                                   input {
+                                        display: none;
+                                   }
+                                   button {
+                                        padding: 0.5em;
+                                        display: inline-block;
+                                        color: $govuk-link-colour;
+                                        text-decoration: underline;
+                                        width: 100%;
+                                        text-align: left;
+                                        background: none;
+                                        border: none;
+                                        font-size: 1rem;
+                                        .icon-new {
+                                             height: 1.25em;
+                                             width: 1.25em;
+                                             margin-top: 0;
+                                             margin-bottom: -0.25em;
+                                             margin-right: 0.5em;
+                                             &.email-reply {
+                                                  background: url("../images/reply-grey.svg") no-repeat 50% 50%;
+                                                  background-size: contain;                                                  
+                                             }
+                                             &.email-forward {
+                                                  background: url("../images/forward-grey.svg") no-repeat 50% 50%;
+                                                  background-size: contain;
+                                             }
+                                             &.email-delete {
+                                                  background: url("../images/trash-grey.svg") no-repeat 50% 50%;
+                                                  background-size: contain;
+                                             }
+                                        }
+                                        &:hover, &:focus, &:active {
+                                             background: $govuk-link-colour;
+                                             color: white;
+                                             cursor: pointer;
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+     }
+     .email-container {
+          display: inline-block;
+          width: 64%;
+          float: right;
+          // border-left: 1px solid $govuk-border-colour;
+          background: govuk-colour("light-grey");
+          padding: 2.5%;
+          .email-wrapper {
+               background: white;
+               min-height: 50em;
+               width: 96%;
+               padding: 2%;
+               display: inline-block;
+               box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+               .email-subject {
+                    margin-bottom: 1.5em;
+                    padding-bottom: 1.5em;
+                    border-bottom: 1px solid $govuk-border-colour;
+                    p {
+                         font-size: 1rem;
+                         margin-bottom: 0;
+                         color: $govuk-secondary-text-colour;
+                         strong {
+                              color: $govuk-text-colour;
+                         }
+                    }
+               }
+               .email-content {
+                    p {
+                         font-size: 1.2rem;
+                    }
+               }
+          }
+     }
+}

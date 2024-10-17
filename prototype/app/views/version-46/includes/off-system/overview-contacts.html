@@ -5,7 +5,8 @@
 
 <p> </p>
 
-<div class="section-wrapper govuk-!-margin-bottom-6">
+<div class="section-wrapper section-row">
+
     <section>
         <div class="title-wrapper">
             <h3 class="govuk-heading-s image-header"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"></h3>
@@ -83,32 +84,29 @@
 
         </div>
     </section>
-</div>
 
-<div class="section-wrapper">
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s">Case materials</h3>
+            <h3 class="govuk-heading-s">Shared drive</h3>
         </div>
 
         <div class="permissions">
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Shared drive</h3>
             <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
             <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
         </div>
         <p><br></p>
     </section>
-</div>        
 
+</div>
 
 {% if data['caseAccess'] == 'true' %}
-    <div class="cta-wrapper contacts-added">
-        <p>Add additional contacts to this case</p>
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        <p>Add additional permissions to this case</p>
         <button type="submit" class="govuk-button" style="" onclick="location.href='4C-create-case';">Add a contact</button>
     </div>
 {% else %}
-    <div class="cta-wrapper contacts-added">
-        <p>There has been <strong>no additional Contacts</strong> added to this case</p>
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        <p>There has been <strong>no additional permissions</strong> added to this case</p>
         <button type="submit" class="govuk-button" style="" onclick="location.href='4C-create-case';">Add a contact</button>
     </div>
 {% endif %}

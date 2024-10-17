@@ -1,5 +1,5 @@
 <h2 class="govuk-heading-l">Case Management Record</h2>
-<span class="govuk-caption-m">Last updated <span id="settings-timestamp"></span></span>
+<span class="govuk-caption-m">Last updated <span id="CMR-stamp"></span></span>
 <p> </p>
 
 <div class="section-wrapper">
@@ -28,6 +28,17 @@
         </div>
         <div class="section-content">
             <div class="hods-timeline">
+
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Early advice added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description ea-description">Early advice for the case was created and added, containing </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
 
                 {% if data['caseAccess'] == 'true' %}
                     <div class="hods-timeline__item">

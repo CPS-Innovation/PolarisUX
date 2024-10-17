@@ -147,8 +147,10 @@ $(document).ready(function() {
             <div class="ea-panel-cta">
                 <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Materials();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
+                    <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-1" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>
@@ -192,8 +194,10 @@ $(document).ready(function() {
             <div class="ea-panel-cta">
                 <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Summary();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
+                    <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-2" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>
@@ -202,7 +206,7 @@ $(document).ready(function() {
         <!-- //////////////////////////////// 3 - Summary of Advice - START //////////////////////////////// -->
         <div class="ea-content-panel" id="ea2Summary">
             <h2 class="govuk-heading-l govuk-!-margin-top-2">Summary of Advice</h2>
-            <p>Provide a a description of the Summary of advice you gave to the investigating agency.</p>
+            <p>Provide a description of the Summary of advice you gave to the investigating agency.</p>
             <details class="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">Help with summary of advice notes</span>
@@ -237,8 +241,10 @@ $(document).ready(function() {
             <div class="ea-panel-cta">
                 <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Law();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
+                    <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-3" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>
@@ -282,8 +288,10 @@ $(document).ready(function() {
             <div class="ea-panel-cta">
                 <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2NextSteps();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
+                    <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-4" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>
@@ -327,8 +335,10 @@ $(document).ready(function() {
             <div class="ea-panel-cta">
                 <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Summary();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
+                    <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-5" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>
@@ -355,9 +365,10 @@ $(document).ready(function() {
 
             <div class="ea-panel-cta">
                 <form action="5-case-overview" method="get" class="form" style="">
+                    <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
                     <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
                     <input id="completeAndExit-6" name="completeAndExitEA" type="text" value="true" style="display: none;">
-                    <button type="submit" data-module="govuk-button" class="govuk-button" onclick="return test();">Complete and exit</button>
+                    <button type="submit" data-module="govuk-button" class="govuk-button" onclick="return saveCA();">Complete and exit</button>
                 </form>
             </div>
         </div>

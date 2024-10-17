@@ -5,10 +5,10 @@
 <nav class="secondaryTabs moj-sub-navigation" aria-label="Sub navigation">
     <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item secondaryTab-Selected" id="secondaryTab-1">
-            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Materials</a>
+            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();"><span class="number materials-number zero">0</span> Materials</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Comms</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();"><span class="number comms-number">1</span> Comms</a>
         </li>
     </ul>
 </nav>
@@ -37,7 +37,54 @@
             </div>
             <p> </p>
 
-            <iframe class="outlook-viewer" src="https://outlook.office365.com/owa/?ItemID=AAMkAGQzMDdjZTI0LTRjZDYtNDg1Yi1hMjAwLTUzMWM4MjlhMGUzZgBGAAAAAAB3Gs5vaIomQK1bzIVX9oS8BwCziJeCo%2BB4SbPPLZdcjSz4AAAJ%2FYj7AACziJeCo%2BB4SbPPLZdcjSz4AAAJ%2FZyHAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"></iframe>
+            <div id="emailViewer">
+
+                <div class="emails">
+                    <table class="govuk-table" id="emailTable">
+                        <tbody id="accordion-tbody-communication">
+                            <tr class="govuk-table__row document-holder document-19 alpha-2 date-1" id="group9-doc1">
+                                <td class="govuk-table__cell govuk-body-s unreadDocument" scope="row">
+                                    <div class="wrapper">
+                                        <a class="show-case email-document" onclick="">E-mail regarding Operation {{ data['newCase_OperationName'] }}</a>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span><span id="email-date">####</span>
+                                            <br>
+                                            <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
+                                            From: <a href="mailto:SA.OffSystemAlpha@cps.gov.uk">SA.OffSystemAlpha@cps.gov.uk</a>
+                                            <br>
+                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span>0 attachments
+                                        </p>
+                                    </div>
+                                    <button class="more-options">
+                                        <span class="visuallyhidden">More options</span>
+                                    </button>
+                                    <div class="document-nav">
+                                        <button onclick="" class=""><span class="icon-new email-reply"></span>Reply to email</button>
+                                        <button onclick="" class=""><span class="icon-new email-forward"></span>Forward email</button>
+                                        <button onclick="" class=""><span class="icon-new email-delete"></span>Delete email</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="email-container">
+                    <div class="email-wrapper">
+                        <div class="email-subject">
+                            <p><strong>From:</strong> SA Off System Alpha <SA.OffSystemAlpha@cps.gov.uk></p>
+                            <p><strong>Date:</strong> <span id="email-date2">####</span></p>
+                            <p><strong>To:</strong> {{ data['offCMS_Username'] }}</p>
+                            <p><strong>Subject:</strong> E-mail regarding Operation {{ data['newCase_OperationName'] }}</p>
+                        </div>
+                        <div class="email-content">
+                            <p>This is the shared folder for operation <strong>{{ data['newCase_OperationName'] }}</strong></p>
+                        </div>
+                    </strong>
+                </div>
+            </div>
+
         </section>
     </div>
 </div>

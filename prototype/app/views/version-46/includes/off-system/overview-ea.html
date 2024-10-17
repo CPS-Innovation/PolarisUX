@@ -4,7 +4,7 @@
 <div class="section-wrapper section-row">
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s">Case reviews</h3>
+            <h3 class="govuk-heading-s with-number"><span class="number reviews-number zero">0</span> Case reviews</h3>
         </div>
         <div class="section-content">
             <p class="govuk-!-margin-bottom-0">There are no current Case reviews on this case</p>
@@ -12,37 +12,31 @@
     </section>
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s">Early advice</h3>
-        </div>
-        <div class="section-content">
             {% if data['completeAndExitEA'] == 'true' %}
-                <table class="govuk-table settings-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row" id="ea2Introduction-Content" style="display: none;">
-                            <th scope="row" class="govuk-table__header">Introduction</th>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                        <tr class="govuk-table__row" id="ea2Materials-Content" style="display: none;">
-                            <th scope="row" class="govuk-table__header">List of given materials</th>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                        <tr class="govuk-table__row" id="ea2Summary-Content" style="display: none;">
-                            <th scope="row" class="govuk-table__header">Summary of Advice</th>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                        <tr class="govuk-table__row" id="ea2Law-Content" style="display: none;">
-                            <th scope="row" class="govuk-table__header">Law</th>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                        <tr class="govuk-table__row" id="ea2NextSteps-Content" style="display: none;">
-                            <th scope="row" class="govuk-table__header">Next steps</th>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                </tbody>
-                </table>
+                <h3 class="govuk-heading-s with-number"><span class="number ea-number">1</span> Early advice</h3>
             {% else %}
-                <p class="govuk-!-margin-bottom-0">There are no early adivce items on this case</p>
+                <h3 class="govuk-heading-s with-number"><span class="number ea-number zero">0</span> Early advice</h3>
             {% endif %}
+        </div>
+
+        <div class="section-content">
+
+            <!-- EA Available - START -->
+            <table class="govuk-table govuk-!-margin-bottom-0" id="ea-available">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row" >
+                        <th scope="row" class="govuk-table__header"><span id="EA-timestamp-NEW"></span></th>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell with-button"><button type="submit" data-module="govuk-button" class="govuk-button govuk-button--secondary" onclick="return openEA();">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- EA Available - END -->
+
+            <!-- EA NOT Available - START -->
+            <p class="govuk-!-margin-bottom-0" id="ea-NotAvailable">There are no early adivce items on this case</p>
+            <!-- EA NOT Available - END -->
+
         </div>
     </section>
 </div>

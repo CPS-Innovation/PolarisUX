@@ -117,141 +117,6 @@ if ($("#create-case-journey").length == 0) {
     $('#global-navigation.off-cms-journey ul li.create-case').addClass('current');
 }
 
-$(document).ready(function () {
-
-    // My cases updated
-    document.getElementById("my-cases-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // EA updated
-    document.getElementById("EA-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Suspects updated
-    document.getElementById("suspects-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Witnesses updated
-    document.getElementById("witnesses-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Victims updated
-    document.getElementById("victims-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Charges updated
-    document.getElementById("charges-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Materials updated
-    document.getElementById("materials-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Contacts updated
-    document.getElementById("contacts-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Settings updated
-    document.getElementById("settings-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // New case created
-    document.getElementById("case-created-stamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // Comms updated
-    document.getElementById("comms-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-})
 
 // ========================= TABS =========================
 $(document).ready(function () {
@@ -774,19 +639,242 @@ function ea2Preview() {
 
 }
 
-function test() {
-    const ea2IntroductionContent = $('#ea2Introduction-Editor').html();
-    if (ea2IntroductionContent.length >= 1 ) { $('#ea2Introduction-Content td').append(ea2IntroductionContent).show(); }
-
-    const ea2MaterialsContent = $('#ea2Materials-Editor').html();
-    if (ea2MaterialsContent.length >= 1 ) { $('#ea2Materials-Content td').append(ea2MaterialsContent).show(); }
-
-    const ea2SummaryContent = $('#ea2Summary-Editor').html();
-    if (ea2SummaryContent.length >= 1 ) { $('#ea2Summary-Content td').append(ea2SummaryContent).show(); }
-
-    const ea2LawContent = $('#ea2Law-Editor').html();
-    if (ea2LawContent.length >= 1 ) { $('#ea2Law-Content td').append(ea2LawContent).show(); }
-
-    const ea2NextStepsContent = $('#ea2NextSteps-Editor').html();
-    if (ea2NextStepsContent.length >= 1 ) { $('#ea2NextSteps-Content td').append(ea2NextStepsContent).show(); }
+function saveCA() {
+    $.cookie("ea2IntroductionContent", $('#ea2Introduction-Editor').html(), {path:'/'});
+    $.cookie("ea2MaterialsContent", $('#ea2Materials-Editor').html(), {path:'/'});
+    $.cookie("ea2SummaryContent", $('#ea2Summary-Editor').html(), {path:'/'});
+    $.cookie("ea2LawContent", $('#ea2Law-Editor').html(), {path:'/'});
+    $.cookie("ea2NextStepsContent", $('#ea2NextSteps-Editor').html(), {path:'/'});
 }
+
+$(document).ready(function () {
+
+    if ($.cookie("ea2IntroductionContent") || $.cookie("ea2MaterialsContent") || $.cookie("ea2SummaryContent") || $.cookie("ea2LawContent") || $.cookie("ea2NextStepsContent")) {
+        $('#ea-NotAvailable').hide();
+        $('#ea-available').show();
+    } else {
+        $('#ea-NotAvailable').show();
+        $('#ea-available').hide();
+    }
+
+    // 1 - Introduction
+    if ($.cookie("ea2IntroductionContent") == '' || $.cookie("ea2IntroductionContent") == 'undefined') {
+        $('#ea2Introduction-Content').hide();
+    } else if ($.cookie("ea2IntroductionContent")) { 
+        $('#ea2Introduction-Content').show(); $('#ea2Introduction-Content td').append($.cookie("ea2IntroductionContent")); 
+        $('.ea-description').append('an introduction, ');
+    } 
+
+    // 2 - List of given materials
+    if ($.cookie("ea2MaterialsContent") == '' || $.cookie("ea2MaterialsContent") == 'undefined') {
+        $('#ea2Materials-Content').hide();
+    } else if ($.cookie("ea2MaterialsContent")) { 
+        $('#ea2Materials-Content').show(); $('#ea2Materials-Content td').append($.cookie("ea2MaterialsContent")); 
+        $('.ea-description').append('a list of given materials,');
+    }  
+
+    // 3 - Summary of Advice
+    if ($.cookie("ea2SummaryContent") == '' || $.cookie("ea2SummaryContent") == 'undefined') {
+        $('#ea2Summary-Content').hide();
+    } else if ($.cookie("ea2SummaryContent")) { 
+        $('#ea2Summary-Content').show(); $('#ea2Summary-Content td').append($.cookie("ea2SummaryContent")); 
+        $('.ea-description').append('a summary of Advice, ');
+    }
+
+    // 4 - Law
+    if ($.cookie("ea2LawContent") == '' || $.cookie("ea2LawContent") == 'undefined') {
+        $('#ea2Law-Content').hide();
+    } else if ($.cookie("ea2LawContent")) { 
+        $('#ea2Law-Content').show(); $('#ea2Law-Content td').append($.cookie("ea2LawContent")); 
+        $('.ea-description').append('a description of law, ');
+    } 
+
+    // 5 - Next steps
+    if ($.cookie("ea2NextStepsContent") == '' || $.cookie("ea2NextStepsContent") == 'undefined') {
+        $('#ea2NextSteps-Content').hide();
+    } else if ($.cookie("ea2NextStepsContent")) { 
+        $('#ea2NextSteps-Content').show(); $('#ea2NextSteps-Content td').append($.cookie("ea2NextStepsContent")); 
+        $('.ea-description').append('some next steps, ');
+    } 
+})
+
+function openEA() {
+    $('#eaModal').removeClass('rj-dont-display');
+}
+function closeEAModal() {
+    $('#eaModal').addClass('rj-dont-display');
+}
+
+
+$(document).ready(function () {
+
+    // My cases updated
+    document.getElementById("my-cases-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // EA updated
+    document.getElementById("EA-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // EA New updated
+    document.getElementById("EA-timestamp-NEW").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // EA New updated
+    document.getElementById("EA-timestamp-NEW2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Suspects updated
+    document.getElementById("suspects-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Witnesses updated
+    document.getElementById("witnesses-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Charges updated
+    document.getElementById("charges-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Materials updated
+    document.getElementById("materials-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Contacts updated
+    document.getElementById("contacts-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Settings updated
+    document.getElementById("settings-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // New case created
+    document.getElementById("case-created-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // CMR
+    document.getElementById("CMR-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Emails
+    document.getElementById("email-date").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+    
+    // Emails
+    document.getElementById("email-date2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+})
+
