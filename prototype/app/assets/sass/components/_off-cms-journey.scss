@@ -131,6 +131,7 @@ html {
                li {
                     margin-bottom: 4px;
                     position: relative;
+                    padding: 10px 15px;
                     &.govuk-tabs__list-item--selected {
                          padding-right: 19px !important;
                          margin-bottom: -2px;
@@ -152,7 +153,7 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-2-content, &.tab-7-content, &.tab-8-content {
+                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-7-content, &.tab-8-content {
                               padding-left: 1.5em;
                          }
                          .number {
@@ -231,6 +232,8 @@ html {
                     float: right;
                     font-size: 1.2rem;
                     margin: 1em 1.25em;
+                    font-weight: bold;
+                    color: $govuk-link-colour;
                }
                .govuk-form-group {
                     float: right;
@@ -617,6 +620,7 @@ nav.moj-sub-navigation {
      &.secondaryTabs {
           ul.moj-sub-navigation__list {
                li.moj-sub-navigation__item {
+                    padding: 0 !important;
                     margin-bottom: 0 !important;
                     a {
                          color: $govuk-link-colour !important;
@@ -757,20 +761,54 @@ nav.tube-map-ea {
                width: 94%;
                tbody {
                     tr {
+                         &:last-of-type {
+                              td {
+                                   border-bottom: none;
+                              }
+                         }
                          td {
                               vertical-align: middle;
+                              &.activeDocument {
+                                   box-shadow: inset -5px 0px 0px 0px $govuk-link-colour;
+                                   .more-options {
+                                        right: 15px;
+                                   }
+                              }
+                              &.unreadDocument {
+                                   box-shadow: inset 5px 0px 0px 0px $govuk-link-colour;
+                                   background: rgba($govuk-link-colour,0.1);
+                                   padding-left: 15px;
+                                   .more-options {
+                                        right: 10px;
+                                   }
+                                   .current {
+                                        display: none;
+                                   }
+                              }
                               .wrapper {
                                    padding: 0;
                                    float: left;
                                    width: 90%;
+                                   strong {
+                                        margin-bottom: 0.25em;
+                                        font-size: 0.875rem;
+                                   }
                                    a {
                                         font-size: 1.2rem;
                                         margin-bottom: 0.5em;
                                         display: inline-block;
+                                        color: $govuk-link-colour;
+                                        &:hover, &:active, &:focus {
+                                             cursor: pointer;
+                                        }
+                                        &.show-case {
+                                             width: 100%;
+                                        }
                                    }
                                    p.date-added {
                                         font-size: 1rem;
                                         color: $govuk-secondary-text-colour;
+                                        margin-bottom: 0;
                                         a {
                                              font-size: 1rem;
                                              margin-bottom: 0;

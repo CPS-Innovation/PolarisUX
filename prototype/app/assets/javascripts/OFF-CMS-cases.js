@@ -705,7 +705,28 @@ function closeEAModal() {
     $('#eaModal').addClass('rj-dont-display');
 }
 
+// ========================= EMAILS ========================= //
+function showEmail1() {
+    $('.email-wrapper').hide();
+    $('.email-wrapper#email1').show();
+    $('table#emailTable tr td').removeClass('activeDocument');
+    $('table#emailTable tr td strong.govuk-tag').hide();
+    $('table#emailTable tr td#emailLink1').addClass('activeDocument');
+    $('table#emailTable tr td strong.govuk-tag').hide();
+    $('table#emailTable tr td#emailLink1 strong.govuk-tag').show();
+}
 
+function showEmail2() {
+    $('.email-wrapper').hide();
+    $('.email-wrapper#email2').show();
+    $('table#emailTable tr td').removeClass('activeDocument');
+    $('table#emailTable tr td#emailLink2').addClass('activeDocument').removeClass('unreadDocument');
+    $('table#emailTable tr td strong.govuk-tag').hide();
+    $('table#emailTable tr td#emailLink2 strong.govuk-tag').show();
+}
+
+
+// ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {
 
     // My cases updated
@@ -864,7 +885,6 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
     
-    // Emails
     document.getElementById("email-date2").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
@@ -875,6 +895,29 @@ $(document).ready(function () {
             days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
+
+    document.getElementById("email-date3").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    document.getElementById("email-date4").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
 
 })
 

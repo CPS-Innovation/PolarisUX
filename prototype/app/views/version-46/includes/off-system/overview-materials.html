@@ -42,10 +42,13 @@
                 <div class="emails">
                     <table class="govuk-table" id="emailTable">
                         <tbody id="accordion-tbody-communication">
-                            <tr class="govuk-table__row document-holder document-19 alpha-2 date-1" id="group9-doc1">
-                                <td class="govuk-table__cell govuk-body-s unreadDocument" scope="row">
+
+                            <!-- EMAIL LINK - 1 - START -->
+                            <tr class="govuk-table__row document-holder">
+                                <td class="govuk-table__cell govuk-body-s activeDocument" scope="row" id="emailLink1">
                                     <div class="wrapper">
-                                        <a class="show-case email-document" onclick="">E-mail regarding Operation {{ data['newCase_OperationName'] }}</a>
+                                        <strong class="govuk-tag current">Active email</strong>
+                                        <a class="show-case email-document" onclick="return showEmail1();">E-mail regarding Operation {{ data['newCase_OperationName'] }}</a>
                                         <br>
                                         <p class="date-added">
                                             <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span><span id="email-date">####</span>
@@ -66,24 +69,77 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!-- EMAIL LINK - 1 - END -->
+
+                            <!-- EMAIL LINK - 2 - START -->
+                            <tr class="govuk-table__row document-holder">
+                                <td class="govuk-table__cell govuk-body-s unreadDocument" scope="row" id="emailLink2">
+                                    <div class="wrapper">
+                                        <strong class="govuk-tag current">Active email</strong>
+                                        <a class="show-case email-document" onclick="return showEmail2();">Early advice with {{ data['newCase_OperationName'] }}</a>
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span><span id="email-date3">####</span>
+                                            <br>
+                                            <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
+                                            From: <a href="mailto:PC12345@criminl.justice.gmp.police.uk">PC12345@criminl.justice.gmp.police.uk</a>
+                                            <br>
+                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span>0 attachments
+                                        </p>
+                                    </div>
+                                    <button class="more-options">
+                                        <span class="visuallyhidden">More options</span>
+                                    </button>
+                                    <div class="document-nav">
+                                        <button onclick="" class=""><span class="icon-new email-reply"></span>Reply to email</button>
+                                        <button onclick="" class=""><span class="icon-new email-forward"></span>Forward email</button>
+                                        <button onclick="" class=""><span class="icon-new email-delete"></span>Delete email</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- EMAIL LINK - 2 - END -->
+
                         </tbody>
                     </table>
                 </div>
 
                 <div class="email-container">
-                    <div class="email-wrapper">
+
+                    <!-- EMAIL - 1 - START -->
+                    <div class="email-wrapper" id="email1">
                         <div class="email-subject">
-                            <p><strong>From:</strong> SA Off System Alpha <SA.OffSystemAlpha@cps.gov.uk></p>
+                            <p><strong>From:</strong> SA Off System Alpha &#60;SA.OffSystemAlpha@cps.gov.uk&#62;</p>
                             <p><strong>Date:</strong> <span id="email-date2">####</span></p>
                             <p><strong>To:</strong> {{ data['offCMS_Username'] }}</p>
                             <p><strong>Subject:</strong> E-mail regarding Operation {{ data['newCase_OperationName'] }}</p>
                         </div>
                         <div class="email-content">
-                            <p>This is the shared folder for operation <strong>{{ data['newCase_OperationName'] }}</strong></p>
+                            <p>This is the shared outlook folder for operation <strong>{{ data['newCase_OperationName'] }}</strong></p>
                         </div>
-                    </strong>
+                    </div>
+                    <!-- EMAIL - 1 - END -->
+
+                    <!-- EMAIL - 2 - START -->
+                    <div class="email-wrapper" id="email2" style="display: none;">
+                        <div class="email-subject">
+                            <p><strong>From:</strong> PC12345@criminl.justice.gmp.police.uk</p>
+                            <p><strong>Date:</strong> <span id="email-date4">####</span></p>
+                            <p><strong>To:</strong> {{ data['offCMS_Username'] }}</p>
+                            <p><strong>Subject:</strong> Early advice for {{ data['newCase_OperationName'] }}</p>
+                        </div>
+                        <div class="email-content">
+                            <p>Dear {{ data['offCMS_Username'] }},</p>
+                            <p>Please can you contact me regarding the new operation: <strong>{{ data['newCase_OperationName'] }}</strong>. I would love to get your thoughts on how to progress the case and any Early advice you can give me.</p>
+                            <p>Kind Regards,<br>PC Steven Hachting</p>
+                        </div>
+                    </div>
+                    <!-- EMAIL - 2 - END -->
+
                 </div>
             </div>
+
+
+            
 
         </section>
     </div>
