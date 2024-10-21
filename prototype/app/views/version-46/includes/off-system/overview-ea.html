@@ -27,7 +27,7 @@
                     <tr class="govuk-table__row" >
                         <th scope="row" class="govuk-table__header"><span id="EA-timestamp-NEW"></span></th>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell with-button"><button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button></td>
+                        <td class="govuk-table__cell"><button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -47,7 +47,12 @@
         <button type="submit" class="govuk-button" style="" onclick="location.href='8-create-charging-decision';">Create a Review</button>
     </div>
     <div class="file-upload">
-        <p>There has been <strong>no EAs</strong> added to this case</p>
+        
+        {% if data['completeAndExitEA'] == 'true' %}
+            <p>Add <strong>additional Early advice</strong> to this case</p>
+        {% else %}
+            <p>There has been <strong>no EAs</strong> added to this case</p>
+        {% endif %}
         <button type="submit" class="govuk-button govuk-button--secondary third-colour" style="" onclick="location.href='7-create-ea';">Create a EA</button>
     </div> 
 </div>

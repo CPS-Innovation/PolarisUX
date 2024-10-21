@@ -90,11 +90,67 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
+    $('#newCase_SharedAccess').on("click", function() {
+        if ($('input[id=newCase_SharedAccess-Egress]').is(':checked')) {
+            $.cookie("newCase_SharedAccess-Egress", true, {path:'/'});
+        }
+        if ($('input[id=newCase_SharedAccess-Holmes]').is(':checked')) {
+            $.cookie("newCase_SharedAccess-Holmes", true, {path:'/'});
+        }
+            if ($('input[id=newCase_SharedAccess-Relativity]').is(':checked')) {
+            $.cookie("newCase_SharedAccess-Relativity", true, {path:'/'});
+        }
+        if ($('input[id=newCase_SharedAccess-Drive]').is(':checked')) {
+            $.cookie("newCase_SharedAccess-Drive", true, {path:'/'});
+        }
+        if ($('input[id=newCase_SharedAccess-Outlook]').is(':checked')) {
+            $.cookie("newCase_SharedAccess-Outlook", true, {path:'/'});
+        }
+
+    });
+
+    if ($.cookie("newCase_SharedAccess-Egress") == 'true') {
+        $('#newCase_SharedAccess-EgressShow').show();
+    } else {
+        $('#newCase_SharedAccess-EgressShow').hide();
+    }
+
+    if ($.cookie("newCase_SharedAccess-Holmes") == 'true') {
+        $('#newCase_SharedAccess-HolmesShow').show();
+    } else {
+        $('#newCase_SharedAccess-HolmesShow').hide();
+    }
+
+    if ($.cookie("newCase_SharedAccess-Relativity") == 'true') {
+        $('#newCase_SharedAccess-RelativityShow').show();
+    } else {
+        $('#newCase_SharedAccess-RelativityShow').hide();
+    }
+
+    if ($.cookie("newCase_SharedAccess-Drive") == 'true') {
+        $('#newCase_SharedAccess-DriveShow').show();
+    } else {
+        $('#newCase_SharedAccess-DriveShow').hide();
+    }
+
+    if ($.cookie("newCase_SharedAccess-Outlook") == 'true') {
+        $('#newCase_SharedAccess-OutlookShow').show();
+    } else {
+        $('#newCase_SharedAccess-OutlookShow').hide();
+    }
+
+})
+
+
+// ========================= 4C Create Case =========================
+
+$(document).ready(function () {
+
     $('input[name=newCase_Access]').on("change", function() {
         if ($('input[id=newCase_Access--Later]').is(':checked')) {
-            $('#newCase_Form-B').attr('action','5-case-overview');
+            $('#newCase_Form-C').attr('action','5-case-overview');
         } else if ($('input[id=newCase_Access--Now]').is(':checked')) {
-            $('#newCase_Form-B').attr('action','4C-create-case');
+            $('#newCase_Form-C').attr('action','4D-create-case');
         }      
     });
 
@@ -724,6 +780,82 @@ function showEmail2() {
     $('table#emailTable tr td strong.govuk-tag').hide();
     $('table#emailTable tr td#emailLink2 strong.govuk-tag').show();
 }
+
+// ========================= ADD SUSPECT ========================= //
+
+$(document).ready(function () {
+    $('.add-suspect-continue, #addSuspect_CompanyDetails-error, #addSuspect_Errors, #addSuspect_Details-error, .addSuspect_Errors-CompanyName').hide();
+
+    $("input[name=addSuspect_Details]").on("change", function (e) { 
+        if ($('input[id=addSuspect_Details_Person]').is(':checked')) {
+            $('.add-suspect-error, #addSuspect_Errors, .addSuspect_Errors-Type, #addSuspect_Details-error').hide(); 
+            $('.add-suspect-continue').show();
+            $('#addSuspect_Form-A').attr('action','9B-add-suspect');
+        } else if ($('input[id=addSuspect_Details_Company]').is(':checked')) {
+            // $('.add-suspect-error, #addSuspect_Errors, .addSuspect_Errors-Type, #addSuspect_Details-error').show(); 
+            $('.add-suspect-error').show();
+            $('.add-suspect-continue').hide();
+            $('.addSuspect_Errors-CompanyName').show();
+        }
+    });
+
+    $("#addSuspect_CompanyName").on("keyup", function (e) { 
+        if ($(this).length >= 1) {
+            $('#addSuspect_Form-A').attr('action','5-case-overview');
+            $('.add-suspect-error').hide();
+            $('.add-suspect-continue').show();
+        } else {
+            $('#addSuspect_Form-A').removeAttr('action');
+            $('.add-suspect-error').show();
+            $('.add-suspect-continue').hide();
+        }
+    });
+
+    $("#addSuspect_ErrorActivate").on("click", function (e) { 
+        $('#addSuspect_Errors, .addSuspect_Errors-Type, #addSuspect_Details-error').show(); 
+        $('#addSuspect_Details-Type').addClass('govuk-form-group--error');
+        if ($('input[id=addSuspect_Details_Company]').is(':checked')) {
+            $('.addSuspect_Errors-Type, #addSuspect_Details-error').hide();
+            $('#addSuspect_CompanyName').addClass('govuk-input--error');
+            $('#addSuspect_CompanyDetails-error').show();
+        }
+    });
+
+    $(".preview-link").hide();
+
+    $(".preview-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.hide-link').show();
+        $(this).parent().parent().find('.suspects-details-wrapper').show();
+    });
+
+    $(".hide-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.preview-link').show();
+        $(this).parent().parent().find('.suspects-details-wrapper').hide();
+    });
+
+    $('#addSuspect_Form-TypeHidden').hide();
+
+    $("input[name=addSuspect_Form-Type]").on("change", function (e) { 
+        if ($('input[id=addSuspect_Form-Type-YO]').is(':checked') || $('input[id=addSuspect_Form-Type-PYO]').is(':checked') ||  $('input[id=addSuspect_Form-Type-Both]').is(':checked')) {
+            $('#addSuspect_Form-TypeHidden').show();
+        } else {
+            $('#addSuspect_Form-TypeHidden').hide();
+        }
+    }); 
+
+    $("input[id=addSuspect_Form-Aliases]").on("change", function (e) { 
+        if ($(this).is(':checked')) {
+            $('#addSuspect_Form-B').attr('action','9C-add-suspect');
+        } else {
+            $('#addSuspect_Form-B').attr('action','5-case-overview');
+        }
+    }); 
+
+    
+    
+})
 
 
 // ========================= TIMESTAMPS ========================= //

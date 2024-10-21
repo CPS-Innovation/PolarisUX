@@ -1,10 +1,145 @@
 <h2 class="govuk-heading-l">Suspects</h2>
 <span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
 
+{% if data['addSuspectStarted'] == 'true' %}
+    {% if data['addSuspect_Details'] == 'Person of interest' %}
+        <div class="suspects">
+            <div class="suspects-details">
+                <h3 class="govuk-heading-l">
+                    {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                        <span>{{ data['addSuspect_Form-Surname'] }}</span> {{ data['addSuspect_Form-Forename'] }}
+                    {% else %}
+                        Person of interest
+                    {% endif %}
+                    {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                        <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                    {% else %}
+
+                    {% endif %}
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                    <div class="suspects-details-wrapper has-details">
+                        <div class="title"><h4 class="govuk-heading-s">Suspects details</h4></div>
+                        <div class="suspects-content-wrapper">
+
+                            <div class="suspects-sections">
+
+                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                    <section><p>Name <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }}</span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Aliases'] %}
+                                    <section><p>Aliases <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }}</span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Gender'] %}
+                                    <section><p>Gender <span><strong>{{ data['addSuspect_Form-Gender'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Ethnicity'] %}
+                                    <section><p>Ethnicity <span><strong>{{ data['addSuspect_Form-Ethnicity'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Religion'] %}
+                                    <section><p>Religion <span><strong>{{ data['addSuspect_Form-Religion'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                    <section><p>DoB <span><strong>{{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Disability'] %}
+                                    <section><p>Disability <span><strong>{{ data['addSuspect_Form-Disability'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Type'] %}
+                                    <section><p>Type <span><strong>{{ data['addSuspect_Form-Type'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Type'] and data['addSuspect_Form-Arrest-Day'] %}
+                                    <section><p>Arrest date <span><strong>{{ data['addSuspect_Form-Arrest-Day'] }}/{{ data['addSuspect_Form-Arrest-Month'] }}/{{ data['addSuspect_Form-Arrest-Year'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-SDO'] %}
+                                    <section><p>SDO <span><strong>{{ data['addSuspect_Form-SDO'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Long'] %}
+                                    <section><p>Long term interest <span><strong>{{ data['addSuspect_Form-Long'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-ASN'] %}
+                                    <section><p>ASN <span><strong>{{ data['addSuspect_Form-ASN'] }}</strong></span></p></section>
+                                {% else %}
+
+                                {% endif %}
+
+
+
+
+                            </div>
+
+                            <div class="cta-wrapper"><button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button></div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="suspects-details-wrapper" style="display: none;">
+                        <p>There are no further details on <strong>Person of interest</strong> at this time.</p>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% elseif data['addSuspect_Details'] == 'Company' %}
+        <div class="suspects">
+            <div class="suspects-details">
+                <h3 class="govuk-heading-l">
+                    {{ data['addSuspect_CompanyName'] }}
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                <div class="suspects-details-wrapper" style="display: none;">
+                    <p>There are no further details on <strong>{{ data['addSuspect_CompanyName'] }}</strong> at this time.</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+
+{% endif %}
+
 <div class="cta-wrapper">
     <div class="add-new">
-        <p>There has been <strong>no Suspects</strong> added to this case</p>
-        <button type="submit" class="govuk-button" style="">Add a suspect</button>
+        {% if data['completeAddSuspect'] == 'true' %}
+            <p>Add additional <strong>suspects</strong> to this case</p>
+        {% else %}
+            <p>There has been <strong>no Suspects</strong> added to this case</p>
+        {% endif %}
+        <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a suspect</button>
     </div>
     <div class="govuk-form-group file-upload">
         <label class="govuk-label" for="file-upload-3">Upload a list of Suspects</label>

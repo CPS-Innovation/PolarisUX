@@ -30,6 +30,15 @@
      }
 }
 
+button {
+     &.govuk-link {
+          background: none;
+          border: none;
+          color: $govuk-link-colour;
+          font-size: 1rem;
+     }
+}
+
 html {
      &.govuk-template {
           body, main {
@@ -280,9 +289,9 @@ html {
                width: auto;
           }
           .cta-wrapper {
-               border: 1px solid $govuk-border-colour;
-               background: govuk-colour("light-grey");
-               padding: 1.25em 1.5em 1.5em 1.5em;
+               // border: 1px solid $govuk-border-colour;
+               // background: govuk-colour("light-grey");
+               // padding: 1.25em 1.5em 1.5em 1.5em;
                display: inline-block;
                width: auto;
                float: left;
@@ -908,6 +917,26 @@ nav.tube-map-ea {
                                         background: none;
                                         border: none;
                                         font-size: 1rem;
+                                        &:hover, &:active, &:focus {
+                                             &.reply-button {
+                                                  .icon-new {
+                                                       background: url("../images/reply-white.svg") no-repeat 50% 50%;
+                                                       background-size: contain;    
+                                                  }
+                                             }
+                                             &.forward-button {
+                                                  .icon-new {
+                                                       background: url("../images/forward-white.svg") no-repeat 50% 50%;
+                                                       background-size: contain;    
+                                                  }
+                                             }
+                                             &.delete-button {
+                                                  .icon-new {
+                                                       background: url("../images/trash-white.svg") no-repeat 50% 50%;
+                                                       background-size: contain;    
+                                                  }
+                                             }
+                                        }
                                         .icon-new {
                                              height: 1.25em;
                                              width: 1.25em;
@@ -916,7 +945,7 @@ nav.tube-map-ea {
                                              margin-right: 0.5em;
                                              &.email-reply {
                                                   background: url("../images/reply-grey.svg") no-repeat 50% 50%;
-                                                  background-size: contain;                                                  
+                                                  background-size: contain;    
                                              }
                                              &.email-forward {
                                                   background: url("../images/forward-grey.svg") no-repeat 50% 50%;
@@ -972,5 +1001,147 @@ nav.tube-map-ea {
                     }
                }
           }
+     }
+}
+
+.preview-link, .hide-link {
+     font-size: 1rem;
+     float: right;
+     // padding-right: 1em;
+     text-decoration: underline;
+     font-weight: normal;
+     color: $govuk-link-colour;
+     &:hover, &:active, &:focus {
+          cursor: pointer;
+     }
+     .icon-new {
+          background: url("../images/arrow-down-blue.svg") no-repeat 50% 50%;
+          background-size: contain;
+          width: 0.75em;
+          height: 0.75em;
+          margin: 0em 0 -0.15em 0.25em;
+     }
+}
+
+.hide-link {
+     .icon-new {
+          background: url("../images/arrow-up-blue.svg") no-repeat 50% 50%;
+          background-size: contain;
+     }
+}
+
+// ==================================== Suspects ==================================== //
+.govuk-form-group {
+     &.float-inline {
+          display: inline-block;
+          float: left;
+          clear: none;
+          &.width-30-percent {
+               width: 30%; 
+          }
+          &.width-auto-percent {
+               width: auto;
+               padding-left: 0;
+          }
+          &.padding-left {
+               padding-left: 2em;
+          }
+     }
+     &.no-float {
+          width: 100%;
+          clear: both;
+     }
+}
+
+
+.suspects {
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 1.5em;
+     .suspects-details {
+          display: inline-block;
+          width: 100%;
+          padding-bottom: 1.5em;
+          margin-bottom: 1.5em;
+          border-bottom: 1px solid $govuk-border-colour;
+          &:last-of-type {
+               padding-bottom: 1em;
+               margin-bottom: 1em;
+               border-bottom: none;
+          }
+          h3 {
+               margin-bottom: 0;
+               span {
+                    text-transform: uppercase;
+                    &.dob {
+                         text-transform: inherit;
+                         font-weight: normal;
+                    }
+               }
+               .preview-link, .hide-link {
+                    margin-top: 1em;
+               }
+          }
+          .suspects-details-wrapper {
+               margin-top: 1em;
+               padding: 1em;
+               background: govuk-colour("light-grey");
+               border: 1px solid $govuk-border-colour; 
+               p {
+                    margin-bottom: 0;
+               }
+               &.has-details {
+                    padding: 0;
+                    background: none;
+                    border: none;
+                    .title {
+                         padding: 1em;
+                         background: govuk-colour("light-grey");
+                         h4 {
+                              margin-bottom: 0;
+                         }
+                    }
+                    .suspects-content-wrapper {
+                         background: white;
+                         padding: 1em 1.5%;
+                         box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
+                         display: inline-block;
+                         width: 97%;
+                         .suspects-sections {
+                              display: inline-block;
+                              width: 100%;
+                              // display: flex;
+                              // flex-direction: row;
+                              // flex-wrap: wrap;
+                              section {
+                                   float: left;
+                                   width: 31.1%;
+                                   // flex: 23%;
+                                   padding: 0 0 0.5em 0;
+                                   margin: 0.5em 2em 1em 0.5em;
+                                   border-bottom: 1px solid $govuk-border-colour;
+                                   span {
+                                        float: right;
+                                        &.surname {
+                                             text-transform: uppercase;
+                                        }
+                                   }
+                                   &:nth-of-type(3n), &:last-of-type {
+                                        margin-right: 0;
+                                   }
+                              }
+                         }
+                         .cta-wrapper {
+                              display: inline-block;
+                              width: 100% !important;
+                              padding-top: 1em;
+                              button {
+                                   float: right;
+                              }
+                         }
+                    }
+               }
+          }
+
      }
 }

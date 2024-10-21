@@ -24,92 +24,59 @@
             <ul class="govuk-tabs__list">
 
                 <!-- OVERVIEW - Show on Case creation -->
-                {% if data['completeAndExitEA'] == 'true' or data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' or data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-1-content">Overview</a></li>
-                {% else %}
-                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
-                {% endif %}
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
 
                 <!-- EA/REVIEW - Show on EA -->
-                {% if data['completeAndExitEA'] == 'true' and data['caseAccess'] == 'false' %}
-                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
                 {% else %}
                     <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
                 {% endif %}
 
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects</a></li>
+                <!-- ADD SUSPECT - Show on Add -->
+                {% if data['addSuspectStarted'] == 'true' %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects</a></li>
+                {% endif %}
+
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content"><span class="number charges-number zero">0</span> Charges</a></li>
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">1</span> Materials &amp; Comms</a></li>
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">2</span> Materials &amp; Comms</a></li>
 
-                <!-- PERMISSIONS - Show on NEW permission -->
-                {% if data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' %}
-                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                        <a class="tab-link tab-8-content">
-                            {% if data['newCase_Access-Email5'] %}
-                                <span class="number contacts-number">6</span>Permissions
-                            {% elseif data['newCase_Access-Email4'] %}
-                                <span class="number contacts-number">5</span>Permissions
-                            {% elseif data['newCase_Access-Email3'] %}
-                                <span class="number contacts-number">4</span>Permissions
-                            {% elseif data['newCase_Access-Email2'] %}
-                                <span class="number contacts-number">3</span>Permissions
-                            {% elseif data['newCase_Access-Email'] %}
-                                <span class="number contacts-number">2</span>Permissions
-                            {% else %}
-                                <span class="number contacts-number">1</span>Permissions
-                            {% endif %}
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="govuk-tabs__list-item">
-                        <a class="tab-link tab-8-content">
-                            {% if data['newCase_Access-Email5'] %}
-                                <span class="number contacts-number">6</span>Permissions
-                            {% elseif data['newCase_Access-Email4'] %}
-                                <span class="number contacts-number">5</span>Permissions
-                            {% elseif data['newCase_Access-Email3'] %}
-                                <span class="number contacts-number">4</span>Permissions
-                            {% elseif data['newCase_Access-Email2'] %}
-                                <span class="number contacts-number">3</span>Permissions
-                            {% elseif data['newCase_Access-Email'] %}
-                                <span class="number contacts-number">2</span>Permissions
-                            {% else %}
-                                <span class="number contacts-number">1</span>Permissions
-                            {% endif %}
-                        </a>
-                    </li>
-                {% endif %}
+                <li class="govuk-tabs__list-item">
+                    <a class="tab-link tab-8-content">
+                        {% if data['newCase_Access-Email5'] %}
+                            <span class="number contacts-number">6</span>Permissions
+                        {% elseif data['newCase_Access-Email4'] %}
+                            <span class="number contacts-number">5</span>Permissions
+                        {% elseif data['newCase_Access-Email3'] %}
+                            <span class="number contacts-number">4</span>Permissions
+                        {% elseif data['newCase_Access-Email2'] %}
+                            <span class="number contacts-number">3</span>Permissions
+                        {% elseif data['newCase_Access-Email'] %}
+                            <span class="number contacts-number">2</span>Permissions
+                        {% else %}
+                            <span class="number contacts-number">1</span>Permissions
+                        {% endif %}
+                    </a>
+                </li>
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
 
-                <!-- SETTING - Show on NEW settings -->
-                {% if data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
-                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-10-content">Settings</a></li>
-                {% else %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li>
-                {% endif %}
-
+                <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li>
                 <li class="govuk-tabs__list-item"><a class="tab-link tab-11-content">CMR</a></li>
             </ul>   
             <!-- /////////////// TABS - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
-            {% if data['completeAndExitEA'] == 'true' or data['newCase_Access'] == 'Later' and data['caseAccess'] == 'true' or data['caseSettings'] == 'true' and data['caseAccess'] == 'false' %}
-                <div class="panel" id="tab-1-content" style="display: none;">
-            {% else %}
-                <div class="panel" id="tab-1-content">
-            {% endif %}
+            <div class="panel" id="tab-1-content">
                 {% include "../includes/off-system/overview-overview.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
 
             <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
-            {% if data['completeAndExitEA'] == 'true' and data['caseAccess'] == 'false' %}
-                <div class="panel" id="tab-2-content">
-            {% else %}
-                <div class="panel" id="tab-2-content" style="display: none;">
-            {% endif %}
+            <div class="panel" id="tab-2-content" style="display: none;">
                 {% include "../includes/off-system/overview-ea.html" %}
             </div>
             <!-- /////////////// TAB CONTENT 2 - END /////////////// -->

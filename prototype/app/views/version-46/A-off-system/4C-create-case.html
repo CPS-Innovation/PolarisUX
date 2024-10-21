@@ -7,205 +7,97 @@
 {% endblock %}
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
-    </div>
-</div>
-
-{% if data['caseAccess'] == 'true' %}
-<div class="govuk-grid-row">
-{% else %}
 <div class="govuk-grid-row" id="create-case-journey">
-{% endif %}
     <div class="govuk-grid-column-two-thirds">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
         <div class="wrapper gov-pages">
 
-            <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo">
-            <h1 class="govuk-heading-xl" style="">Access to materials on Egress</h1>
+            <h1 class="govuk-heading-xl" style="">Case materials</h1>
 
-            <form method="get" action="5-case-overview" id="newCase_Form-C">  
+            <form method="get" action="4D-create-case" id="newCase_Form-C">  
 
-                <p> </p>
-
-                <div id="userDetails-1">
-                    <!-- OPTION 1 - START -->
+                <div id="newCase_SharedAccess-EgressShow">
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email">Who would you like to share this case with?</label>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email" name="newCase_Access-Email" type="text">
+                        <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo govuk-!-margin-bottom-2">
+                        <!-- <h3 class="govuk-heading-s">Egress</h3> -->
+                        <p>Below is where the case materials will be place and shared within Egress, you can copy and paste the link and share with the approriate users.</p>
+                        <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+                        <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
                     </div>
-                    <!-- OPTION 1 - END -->
 
-                    <!-- OPTION 2 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Permissions">What permissions would you like them to have?</label>
-                        <select class="govuk-select" id="newCase_Access-Permissions" name="newCase_Access-Permissions">
-                            <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
-                        </select>
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Would you like to configure access rights for egress now?</legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="newCase_Access--Now" name="newCase_Access" type="radio" value="Now" checked>
+                                    <label class="govuk-label govuk-radios__label" for="newCase_Access--Now">Now</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="newCase_Access--Later" name="newCase_Access" type="radio" value="Later">
+                                    <label class="govuk-label govuk-radios__label" for="newCase_Access--Later">Later</label>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
-                    <!-- OPTION 2 - END -->
 
-                    <a class="govuk-button add-user-button" id="addUser1" onclick="addUser1()"><span class="icon-new"></span>Add user</a>
+                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 </div>
 
-                <div id="userDetails-2">
-                    <!-- OPTION 1 - START -->
+                <div id="newCase_SharedAccess-HolmesShow">
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email2">Who would you like to share this case with?</label>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email2" name="newCase_Access-Email2" type="text">
+                        <h3 class="govuk-heading-m">Holmes</h3>
+                        <p>Below is where the case materials will be place and shared within the Holmes application, you can copy and paste the link and share with the approriate users.</p>
+                        <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Holmes" class="url-text" disabled>
+                        <a class="govuk-button copy-button" id="copyHolmesLink" onclick="copyHolmesLink()">Copy path</a>
                     </div>
-                    <!-- OPTION 1 - END -->
 
-                    <!-- OPTION 2 - START -->
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                </div>  
+
+                <div id="newCase_SharedAccess-RelativityShow">
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Permissions2">What permissions would you like them to have?</label>
-                        <select class="govuk-select" id="newCase_Access-Permissions2" name="newCase_Access-Permissions2">
-                            <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
-                        </select>
+                        <h3 class="govuk-heading-m">Relativity app</h3>
+                        <p>Below is where the case materials will be place and shared within the Relativity application, you can copy and paste the link and share with the approriate users.</p>
+                        <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Relativity" class="url-text" disabled>
+                        <a class="govuk-button copy-button" id="copyRelativityLink" onclick="copyRelativityLink()">Copy path</a>
                     </div>
-                    <!-- OPTION 2 - END -->
 
-                    <a class="govuk-button add-user-button" id="addUser2" onclick="addUser2()"><span class="icon-new"></span>Add user</a>
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                </div>  
+
+                <div id="newCase_SharedAccess-DriveShow">
+                    <div class="govuk-form-group">
+                        <h3 class="govuk-heading-m">Shared drive</h3>
+                        <p>Below is where the case materials will be place and shared within the Shared Drive, you can copy and paste the link and share with the approriate users.</p>
+                        <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+                        <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                </div>  
+
+
+                <div id="newCase_SharedAccess-OutlookShow">
+                    <div class="govuk-form-group">
+                        <h3 class="govuk-heading-m"><img src="../../../public/images/outlook-logo.jpg" alt="Outlook" class="outlook-logo">Outlook emails</h3>
+                        <p>Below is where the case materials will be place and shared within Outlook, you can copy and paste the link and share with the approriate users.</p>
+                        <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
+                        <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
+                    </div>
                 </div>
 
-                <div id="userDetails-3">
-                    <!-- OPTION 1 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email3">Who would you like to share this case with?</label>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email3" name="newCase_Access-Email3" type="text">
-                    </div>
-                    <!-- OPTION 1 - END -->
+                <p><br></p>
 
-                    <!-- OPTION 2 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Permissions3">What permissions would you like them to have?</label>
-                        <select class="govuk-select" id="newCase_Access-Permissions3" name="newCase_Access-Permissions3">
-                            <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
-                        </select>
-                    </div>
-                    <!-- OPTION 2 - END -->
-
-                    <a class="govuk-button add-user-button" id="addUser3" onclick="addUser3()"><span class="icon-new"></span>Add user</a>
-                </div>
-
-                <div id="userDetails-4">
-                    <!-- OPTION 1 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email4">Who would you like to share this case with?</label>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email4" name="newCase_Access-Email4" type="text">
-                    </div>
-                    <!-- OPTION 1 - END -->
-
-                    <!-- OPTION 2 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Permissions4">What permissions would you like them to have?</label>
-                        <select class="govuk-select" id="newCase_Access-Permissions4" name="newCase_Access-Permissions4">
-                            <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
-                        </select>
-                    </div>
-                    <!-- OPTION 2 - END -->
-
-                    <a class="govuk-button add-user-button" id="addUser4" onclick="addUser4()"><span class="icon-new"></span>Add user</a>
-                </div>
-
-                <div id="userDetails-5">
-                    <!-- OPTION 1 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email5">Who would you like to share this case with?</label>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email5" name="newCase_Access-Email5" type="text">
-                    </div>
-                    <!-- OPTION 1 - END -->
-
-                    <!-- OPTION 2 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Permissions5">What permissions would you like them to have?</label>
-                        <select class="govuk-select" id="newCase_Access-Permissions5" name="newCase_Access-Permissions5">
-                            <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
-                        </select>
-                    </div>
-                    <!-- OPTION 2 - END -->
-
-                    <a class="govuk-button add-user-button" id="addUser5" onclick="addUser5()"><span class="icon-new"></span>Add user</a>
-                </div>
-
-                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-                <input id="caseAccess" name="caseAccess" type="text" value="true" style="display: none;">
-                <button type="submit" class="govuk-button" style="">Save and exit</button>
-                {% if data['caseAccess'] == 'true' %}
-                    <button type="button" onclick="location.href='5-case-overview';" class="non-button margin-left" id="">Cancel</button>
-                {% else %}
-                    <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
-                {% endif %}
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
 
             </form>
 
         </div>
     </div>
     <div class="govuk-grid-column-one-third">
-        <div class="existing-contacts">
-            <h2 class="govuk-heading-s" style="">Existing contacts</h2>
-            <div class="contacts">
-                <div id="new-contacts">
-                    <p><span class="icon-new user"></span>{{ data['offCMS_Username'] }}<br><strong class="govuk-tag">Administrator</strong></p>
-                    {% if data['newCase_Access-Email'] %}
-                        <p><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></p>
-                    {% else %}
 
-                    {% endif %}
-                    {% if data['newCase_Access-Email2'] %}
-                        <p><span class="icon-new user"></span>{{ data['newCase_Access-Email2'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions2'] }}</strong></p>
-                    {% else %}
-
-                    {% endif %}
-                    {% if data['newCase_Access-Email3'] %}
-                        <p><span class="icon-new user"></span>{{ data['newCase_Access-Email3'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions3'] }}</strong></p>
-                    {% else %}
-
-                    {% endif %}
-                    {% if data['newCase_Access-Email4'] %}
-                        <p><span class="icon-new user"></span>{{ data['newCase_Access-Email4'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions4'] }}</strong></p>
-                    {% else %}
-
-                    {% endif %}
-                    {% if data['newCase_Access-Email5'] %}
-                        <p><span class="icon-new user"></span>{{ data['newCase_Access-Email5'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions5'] }}</strong></p>
-                    {% else %}
-
-                    {% endif %}
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
