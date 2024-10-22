@@ -393,6 +393,9 @@ html {
                                         border-bottom: none;
                                    }
                               }
+                              a {
+                                   color: $govuk-link-colour;
+                              }
                          }
                     }
                }
@@ -447,7 +450,7 @@ html {
 
 a {
      &.govuk-button {
-          &.copy-button, &.add-user-button {
+          &.copy-button, &.add-user-button, &.add-alias-button {
                margin-bottom: 0;
                background: white;
                color: $govuk-success-colour;
@@ -455,7 +458,7 @@ a {
                border: 1px solid $govuk-success-colour;
                box-shadow: 0 2px 0 $govuk-success-colour;
           }
-          &.add-user-button {
+          &.add-user-button, &.add-alias-button {
                font-size: 1.2rem;
                .icon-new {
                     width: 1em;
@@ -469,7 +472,7 @@ a {
      }
 }
 
-.existing-contacts {
+.existing-contacts, .existing-aliases {
      display: inline-block;
      width: 100%;
      border: 1px solid $govuk-border-colour;
@@ -481,7 +484,7 @@ a {
      }
      .contacts {
           padding: 1em;
-          #new-contacts {
+          #new-contacts, #new-aliases {
                p {
                     padding: 1em 0;
                     border-bottom: 1px solid $govuk-border-colour;
@@ -499,6 +502,10 @@ a {
                }
           }
      }
+}
+
+.surname {
+     text-transform: uppercase;
 }
 
 .egress-logo {
@@ -1043,12 +1050,25 @@ nav.tube-map-ea {
                width: auto;
                padding-left: 0;
           }
+          &.width-45-percent {
+               width: 45%;
+               padding-left: 0;
+          }
           &.padding-left {
                padding-left: 2em;
           }
      }
      &.no-float {
           width: 100%;
+          clear: both;
+     }
+}
+
+.aliasesDetails {
+     display: inline-block;
+     width: 100%;
+     .add-alias-button {
+          float: left;
           clear: both;
      }
 }
@@ -1122,8 +1142,10 @@ nav.tube-map-ea {
                                    border-bottom: 1px solid $govuk-border-colour;
                                    span {
                                         float: right;
-                                        &.surname {
-                                             text-transform: uppercase;
+                                        strong {
+                                             &.surname {
+                                                  text-transform: uppercase;
+                                             }
                                         }
                                    }
                                    &:nth-of-type(3n), &:last-of-type {
@@ -1137,6 +1159,15 @@ nav.tube-map-ea {
                               padding-top: 1em;
                               button {
                                    float: right;
+                              }
+                              .removeSuspect {
+                                   float: right;
+                                   font-size: 1.2rem;
+                                   color: $govuk-link-colour;
+                                   margin: 0.35em 1em;
+                                   &:hover, &:active, &:focus {
+                                        cursor: pointer;
+                                   }
                               }
                          }
                     }

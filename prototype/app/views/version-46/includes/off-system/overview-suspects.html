@@ -7,7 +7,7 @@
             <div class="suspects-details">
                 <h3 class="govuk-heading-l">
                     {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
-                        <span>{{ data['addSuspect_Form-Surname'] }}</span> {{ data['addSuspect_Form-Forename'] }}
+                        <span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}
                     {% else %}
                         Person of interest
                     {% endif %}
@@ -19,7 +19,7 @@
                     <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
                     <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
                 </h3>
-                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                {% if data['addSuspectPerson'] == 'true' %}
                     <div class="suspects-details-wrapper has-details">
                         <div class="title"><h4 class="govuk-heading-s">Suspects details</h4></div>
                         <div class="suspects-content-wrapper">
@@ -27,13 +27,13 @@
                             <div class="suspects-sections">
 
                                 {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
-                                    <section><p>Name <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }}</span></p></section>
+                                    <section><p>Name <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <span class="forename">{{ data['addSuspect_Form-Forename'] }}</span></span></p></section>
                                 {% else %}
 
                                 {% endif %}
 
                                 {% if data['addSuspect_Form-Aliases'] %}
-                                    <section><p>Aliases <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }}</span></p></section>
+                                    <section><p>Aliases <span>Yes</span></p></section>
                                 {% else %}
 
                                 {% endif %}
@@ -98,16 +98,50 @@
 
                                 {% endif %}
 
+                                {% if data['addSuspect_Form-Aliases'] %}
+                                    <section>
+                                        <p>Aliases 
+                                            {% if data['addSuspect-Alias-Surname'] or data['addSuspect-Alias-Forename'] %}
+                                                <span><strong class="surname">{{ data['addSuspect-Alias-Surname'] }}</strong>, {{ data['addSuspect-Alias-Forename'] }}</span>
+                                            {% else %}
 
+                                            {% endif %}
+                                            {% if data['addSuspect-Alias-Surname2'] or data['addSuspect-Alias-Forename2'] %}
+                                                <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname2'] }}</strong>, {{ data['addSuspect-Alias-Forename2'] }}</span>
+                                            {% else %}
 
+                                            {% endif %}
+                                            {% if data['addSuspect-Alias-Surname3'] or data['addSuspect-Alias-Forename3'] %}
+                                                <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname3'] }}</strong>, {{ data['addSuspect-Alias-Forename3'] }}</span>
+                                            {% else %}
+
+                                            {% endif %}
+                                            {% if data['addSuspect-Alias-Surname4'] or data['addSuspect-Alias-Forename4'] %}
+                                                <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname4'] }}</strong>, {{ data['addSuspect-Alias-Forename4'] }}</span>
+                                            {% else %}
+
+                                            {% endif %}
+                                            {% if data['addSuspect-Alias-Surname5'] or data['addSuspect-Alias-Forename5'] %}
+                                                <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname5'] }}</strong>, {{ data['addSuspect-Alias-Forename5'] }}</span>
+                                            {% else %}
+
+                                            {% endif %}
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
 
                             </div>
 
-                            <div class="cta-wrapper"><button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button></div>
+                            <div class="cta-wrapper">
+                                <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button>
+                                <a class="removeSuspect">Remove suspect</a>
+                            </div>
                         </div>
                     </div>
                 {% else %}
-                    <div class="suspects-details-wrapper" style="display: none;">
+                    <div class="suspects-details-wrapper">
                         <p>There are no further details on <strong>Person of interest</strong> at this time.</p>
                     </div>
                 {% endif %}

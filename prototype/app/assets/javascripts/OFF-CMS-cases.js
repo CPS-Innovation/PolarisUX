@@ -248,7 +248,7 @@ $(document).ready(function () {
 function addUser1() {
     var userEmail = $('#newCase_Access-Email').val();
     var userAccess = $('#newCase_Access-Permissions').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail + '<br><strong class="govuk-tag">' + userAccess + '</strong></p>');
+    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess + '</strong></p>');
     $('#userDetails-1').hide();
     $('#userDetails-2').show();
 }
@@ -256,7 +256,7 @@ function addUser1() {
 function addUser2() {
     var userEmail2 = $('#newCase_Access-Email2').val();
     var userAccess2 = $('#newCase_Access-Permissions2').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail2 + '<br><strong class="govuk-tag">' + userAccess2 + '</strong></p>');
+    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail2 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess2 + '</strong></p>');
     $('#userDetails-2').hide();
     $('#userDetails-3').show();
 }
@@ -264,7 +264,7 @@ function addUser2() {
 function addUser3() {
     var userEmail3 = $('#newCase_Access-Email3').val();
     var userAccess3 = $('#newCase_Access-Permissions3').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail3 + '<br><strong class="govuk-tag">' + userAccess3 + '</strong></p>');
+    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail3 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess3 + '</strong></p>');
     $('#userDetails-3').hide();
     $('#userDetails-4').show();
 }
@@ -272,7 +272,7 @@ function addUser3() {
 function addUser4() {
     var userEmail4 = $('#newCase_Access-Email4').val();
     var userAccess4 = $('#newCase_Access-Permissions4').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail4 + '<br><strong class="govuk-tag">' + userAccess4 + '</strong></p>');
+    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail4 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess4 + '</strong></p>');
     $('#userDetails-4').hide();
     $('#userDetails-5').show();
 }
@@ -280,7 +280,7 @@ function addUser4() {
 function addUser5() {
     var userEmail5 = $('#newCase_Access-Email5').val();
     var userAccess5 = $('#newCase_Access-Permissions5').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail5 + '<br><strong class="govuk-tag">' + userAccess5 + '</strong></p>');
+    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail5 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess5 + '</strong></p>');
 }
 
 // ========================= REMOVE USERS =========================
@@ -851,11 +851,76 @@ $(document).ready(function () {
         } else {
             $('#addSuspect_Form-B').attr('action','5-case-overview');
         }
-    }); 
-
-    
+    });
     
 })
+
+function closeConfirmRemoveSuspect() {
+    $('#confirmRemoveSuspect').addClass('rj-dont-display');
+}
+
+$(document).ready(function () {
+    $('#aliasesDetails-2, #aliasesDetails-3, #aliasesDetails-4, #aliasesDetails-5').hide();
+
+    $(".removeSuspect").on("click", function (e) { 
+        $('#confirmRemoveSuspect').removeClass('rj-dont-display');
+    });
+
+    $("input[id=offCMS_Remove_Suspect]").on("change", function (e) {
+        if ($(this).is(':checked')) {
+            $('#confirm-RemoveSuspects').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('onClick','return confirmRemoveSuspects();');
+        } else {
+            $('#confirm-RemoveSuspects').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
+        }
+    });
+
+})
+
+function confirmRemoveSuspects() {
+    $('.suspects').hide();
+    $('#confirmRemoveSuspect').addClass('rj-dont-display');
+}
+
+
+function addAlias1() {
+    var suspectSurname = $('#addSuspect-Alias-Surname').val();
+    var suspectForename = $('#addSuspect-Alias-Forename').val();
+    $('#new-aliases').append('<p><strong class="surname">' + suspectSurname + '</strong>, ' + suspectForename + '</p>');
+    $('#aliasesDetails-1').hide();
+    $('#aliasesDetails-2').show();
+    $('.no-aliases').remove();
+}
+
+function addAlias2() {
+    var suspectSurname2 = $('#addSuspect-Alias-Surname2').val();
+    var suspectForename2 = $('#addSuspect-Alias-Forename2').val();
+    $('#new-aliases').append('<p><strong class="surname">' + suspectSurname2 + '</strong>, ' + suspectForename2 + '</p>');
+    $('#aliasesDetails-2').hide();
+    $('#aliasesDetails-3').show();
+}
+
+function addAlias3() {
+    var suspectSurname3 = $('#addSuspect-Alias-Surname3').val();
+    var suspectForename3 = $('#addSuspect-Alias-Forename3').val();
+    $('#new-aliases').append('<p><strong class="surname">' + suspectSurname3 + '</strong>, ' + suspectForename3 + '</p>');
+    $('#aliasesDetails-3').hide();
+    $('#aliasesDetails-4').show();
+}
+
+function addAlias4() {
+    var suspectSurname4 = $('#addSuspect-Alias-Surname4').val();
+    var suspectForename4 = $('#addSuspect-Alias-Forename4').val();
+    $('#new-aliases').append('<p><strong class="surname">' + suspectSurname4 + '</strong>, ' + suspectForename4 + '</p>');
+    $('#aliasesDetails-4').hide();
+    $('#aliasesDetails-5').show();
+}
+
+function addAlias5() {
+    var suspectSurname5 = $('#addSuspect-Alias-Surname5').val();
+    var suspectForename5 = $('#addSuspect-Alias-Forename5').val();
+    $('#new-aliases').append('<p><strong class="surname">' + suspectSurname5 + '</strong>, ' + suspectForename5 + '</p>');
+}
+
 
 
 // ========================= TIMESTAMPS ========================= //
