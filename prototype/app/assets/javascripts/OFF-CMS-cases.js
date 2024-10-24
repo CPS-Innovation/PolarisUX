@@ -921,7 +921,38 @@ function addAlias5() {
     $('#new-aliases').append('<p><strong class="surname">' + suspectSurname5 + '</strong>, ' + suspectForename5 + '</p>');
 }
 
+// ========================= ADD Witness ========================= //
 
+$(document).ready(function () {
+
+    $("input[name=addWitness_Details-Type]").on("change", function (e) { 
+
+        if ($('input[id=addWitness_Details-Type-Vulnerable]').is(':checked') || $('input[id=addWitness_Details-Type-Intimidated]').is(':checked')) {
+            $('#addWitness_Details-Type-Need').attr('disabled','disabled');
+        } else if ($('input[id=addWitness_Details-Type-Need]').is(':checked')) {
+            $('#addWitness_Details-Type-Vulnerable').attr('disabled','disabled');
+            $('#addWitness_Details-Type-Intimidated').attr('disabled','disabled');
+        } else {
+            $('#addWitness_Details-Type-Need').removeAttr('disabled');
+            $('#addWitness_Details-Type-Vulnerable').removeAttr('disabled');
+            $('#addWitness_Details-Type-Intimidated').removeAttr('disabled');
+        }
+    });
+
+    $("#findAddress").on("click", function (e) { 
+        $('#witnessAddress').attr('open','open');
+        e.preventDefault();
+        var witnessPostcode = $('#addWitness_Form-Postcode').val();
+        $('#addWitness_Form-Address_5').val(witnessPostcode);
+
+        $('#addWitness_Form-Address_1').val('31 Plough Rd');
+        $('#addWitness_Form-Address_2').val('Yateley');
+        $('#addWitness_Form-Address_3').val('Hampshire');
+        $('#addWitness_Form-Address_3').val('United Kingdom');        
+    });
+
+    
+})
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {

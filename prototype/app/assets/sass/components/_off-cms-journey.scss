@@ -1037,7 +1037,7 @@ nav.tube-map-ea {
      }
 }
 
-// ==================================== Suspects ==================================== //
+// ==================================== Suspects & Witnesses ==================================== //
 .govuk-form-group {
      &.float-inline {
           display: inline-block;
@@ -1074,11 +1074,11 @@ nav.tube-map-ea {
 }
 
 
-.suspects {
+.suspects, .witnesses {
      display: inline-block;
      width: 100%;
      margin-bottom: 1.5em;
-     .suspects-details {
+     .suspects-details, .witnesses-details {
           display: inline-block;
           width: 100%;
           padding-bottom: 1.5em;
@@ -1102,7 +1102,7 @@ nav.tube-map-ea {
                     margin-top: 1em;
                }
           }
-          .suspects-details-wrapper {
+          .suspects-details-wrapper, .witnesses-details-wrapper {
                margin-top: 1em;
                padding: 1em;
                background: govuk-colour("light-grey");
@@ -1121,13 +1121,13 @@ nav.tube-map-ea {
                               margin-bottom: 0;
                          }
                     }
-                    .suspects-content-wrapper {
+                    .suspects-content-wrapper, .witnesses-content-wrapper {
                          background: white;
                          padding: 1em 1.5%;
                          box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
                          display: inline-block;
                          width: 97%;
-                         .suspects-sections {
+                         .suspects-sections, .witnesses-sections {
                               display: inline-block;
                               width: 100%;
                               // display: flex;
@@ -1135,16 +1135,20 @@ nav.tube-map-ea {
                               // flex-wrap: wrap;
                               section {
                                    float: left;
-                                   width: 31.1%;
+                                   width: 31.75%;
                                    // flex: 23%;
                                    padding: 0 0 0.5em 0;
-                                   margin: 0.5em 2em 1em 0.5em;
+                                   margin: 0.5em 2em 1em 0;
                                    border-bottom: 1px solid $govuk-border-colour;
                                    span {
                                         float: right;
                                         strong {
                                              &.surname {
                                                   text-transform: uppercase;
+                                             }
+                                             &.govuk-tag {
+                                                  float: right;
+                                                  margin-bottom: 0.5em;
                                              }
                                         }
                                    }
@@ -1160,7 +1164,7 @@ nav.tube-map-ea {
                               button {
                                    float: right;
                               }
-                              .removeSuspect {
+                              .removeSuspect, .removeWitness {
                                    float: right;
                                    font-size: 1.2rem;
                                    color: $govuk-link-colour;

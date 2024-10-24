@@ -29,6 +29,64 @@
         <div class="section-content">
             <div class="hods-timeline">
 
+                {% if data['addWitnessStarted'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Witness added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description witness-description">
+                            {% if data['suspectType-conditional'] == 'Person of interest' %}
+                                {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                                    <strong>{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}</strong>,
+                                    {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
+                                        <span class="dob">({{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }})</span>
+                                    {% else %}
+
+                                    {% endif %}
+                                    added as a witness for the case.
+                                {% else %}
+                                    Person of interest added as a witness for the case.
+                                {% endif %}
+                            {% elseif data['suspectType-conditional'] == 'Company' %}
+                                {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                                    <strong>{{ data['addWitness_Form-Company'] }}</strong> added as a witness for the case.
+                                {% else %}
+                                    <strong>Company<.strong> added as a witness for the case.
+                                {% endif %}
+                            {% endif %}
+                        </p>    
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['addSuspectStarted'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Suspect added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description suspect-description">
+                            {% if data['addSuspect_Details'] == 'Person of interest' %}
+                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                    <strong>{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }} added as a suspect for the case.
+                                {% else %}
+                                    Person of interest
+                                {% endif %}
+                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                {% else %}
+
+                                {% endif %}
+                            {% elseif data['addSuspect_Details'] == 'Company' %}
+                                <strong>{{ data['addSuspect_CompanyName'] }}</strong>
+                                 added as a suspect for the case.
+                            {% endif %}
+                        </p>    
+                    </div>
+                {% else %}
+
+                {% endif %}
+
                 {% if data['completeAndExitEA'] == 'true' %}
                     <div class="hods-timeline__item">
                         <h2 class="hods-timeline__title">Early advice added</h2>
