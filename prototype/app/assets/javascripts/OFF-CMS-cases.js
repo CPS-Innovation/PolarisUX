@@ -951,6 +951,20 @@ $(document).ready(function () {
         $('#addWitness_Form-Address_3').val('United Kingdom');        
     });
 
+    $(".preview-witness-link").hide();
+
+    $(".preview-witness-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.hide-witness-link').show();
+        $(this).parent().parent().find('.witnesses-details-wrapper').show();
+    });
+
+    $(".hide-witness-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.preview-witness-link').show();
+        $(this).parent().parent().find('.witnesses-details-wrapper').hide();
+    });
+
     
 })
 

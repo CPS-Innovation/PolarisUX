@@ -1011,7 +1011,7 @@ nav.tube-map-ea {
      }
 }
 
-.preview-link, .hide-link {
+.preview-link, .hide-link, .preview-witness-link, .hide-witness-link {
      font-size: 1rem;
      float: right;
      // padding-right: 1em;
@@ -1120,6 +1120,9 @@ nav.tube-map-ea {
                          h4 {
                               margin-bottom: 0;
                          }
+                         .govuk-warning-text {
+                              margin: 0;
+                         }
                     }
                     .suspects-content-wrapper, .witnesses-content-wrapper {
                          background: white;
@@ -1135,11 +1138,18 @@ nav.tube-map-ea {
                               // flex-wrap: wrap;
                               section {
                                    float: left;
-                                   width: 31.75%;
+                                   width: 100%;
                                    // flex: 23%;
                                    padding: 0 0 0.5em 0;
-                                   margin: 0.5em 2em 1em 0;
+                                   margin: 0.5em 0 0 0;
                                    border-bottom: 1px solid $govuk-border-colour;
+                                   &.address {
+                                        span {
+                                             strong {
+                                                  float: right;
+                                             }
+                                        }
+                                   }
                                    span {
                                         float: right;
                                         strong {
@@ -1155,6 +1165,16 @@ nav.tube-map-ea {
                                    &:nth-of-type(3n), &:last-of-type {
                                         margin-right: 0;
                                    }
+                                   p {
+                                        span.tag-wrapper, span.address-wrapper, span.aliases-wrapper {
+                                             display: inline-block;
+                                             float: right;
+                                        }
+                                        a {
+                                             float: right;
+                                             margin: 0 0 0 2.5em;
+                                        }
+                                   }
                               }
                          }
                          .cta-wrapper {
@@ -1162,7 +1182,11 @@ nav.tube-map-ea {
                               width: 100% !important;
                               padding-top: 1em;
                               button {
-                                   float: right;
+                                   &.govuk-button {
+                                        float: right;
+                                        color: $govuk-text-colour;
+                                        margin: 0;
+                                   }
                               }
                               .removeSuspect, .removeWitness {
                                    float: right;

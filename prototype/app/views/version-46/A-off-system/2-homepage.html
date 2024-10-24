@@ -56,7 +56,6 @@
                         <th scope="col" class="govuk-table__header">URN</th>
                         <th scope="col" class="govuk-table__header">Type</th>
                         <th scope="col" class="govuk-table__header">Location</th>
-                        <th scope="col" class="govuk-table__header">Case</th>
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body">
@@ -64,13 +63,47 @@
                     {% if data['createCaseStarted'] == 'true' %}
                         <!-- CASE NEW - START --> 
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header"><a href="5-case-overview">{{ data['newCase_OperationName'] }}</a></th>
+                            <th scope="row" class="govuk-table__header">
+                                <strong class="govuk-tag govuk-tag--green">New</strong> - 
+                                <a href="5-case-overview">{{ data['newCase_OperationName'] }}</a>
+                            </th>
                             <td class="govuk-table__cell">
                                 {{ data['newCase_URN-A'] }}{{ data['newCase_URN-B'] }}{{ data['newCase_URN-C'] }}/{{ data['newCase_URN-D'] }}
                             </td>
-                            <td class="govuk-table__cell">£109.80 per week</td>
-                            <td class="govuk-table__cell">£109.80 per week</td>
-                            <td class="govuk-table__cell">£109.80 per week</td>
+                            <td class="govuk-table__cell">
+                                {% if data['newCase_URN-B'] == '01' %}
+                                    Terrorism
+                                {% elseif data['newCase_URN-B'] == '02' %}
+                                    Inciting Hatred
+                                {% elseif data['newCase_URN-B'] == '03' %}
+                                    Official Secrets Act
+                                {% elseif data['newCase_URN-B'] == '04' %}
+                                    Extraditions
+                                {% elseif data['newCase_URN-B'] == '05' %}
+                                    War Crimes
+                                {% elseif data['newCase_URN-B'] == '06' %}
+                                    Hijacking/Abduction
+                                {% elseif data['newCase_URN-B'] == '07' %}
+                                    Appeals
+                                {% elseif data['newCase_URN-B'] == '08' %}
+                                    Other Types of Cases
+                                {% elseif data['newCase_URN-B'] == '09' %}
+                                    TPIM Monitoring
+                                {% elseif data['newCase_URN-B'] == '10' %}
+                                    Domestic Extremisim
+                                {% elseif data['newCase_URN-B'] == '11' %}
+                                    Supreme Court
+                                {% elseif data['newCase_URN-B'] == '12' %}
+                                    CTIRU
+                                {% elseif data['newCase_URN-B'] == '13' %}
+                                    TPIM Breaches
+                                {% elseif data['newCase_URN-B'] == '14' %}
+                                    TRO
+                                {% elseif data['newCase_URN-B'] == '15' %}
+                                    SOCPA
+                                {% endif %}
+                            </td>
+                            <td class="govuk-table__cell">Greater London</td>
                         </tr>
                         <!-- CASE NEW - END --> 
                     {% else %}
@@ -79,32 +112,80 @@
 
                     <!-- CASE 1 - START --> 
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <th scope="row" class="govuk-table__header"><a href="">Groundhog day</a></th>
+                        <td class="govuk-table__cell">920620952/24</td>
+                        <td class="govuk-table__cell">Hijacking/Abduction</td>
+                        <td class="govuk-table__cell">Manchester</td>
                     </tr>
                     <!-- CASE 1 - END --> 
 
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <th scope="row" class="govuk-table__header"><a href="">Overlord</a></th>
+                        <td class="govuk-table__cell">840320999/24</td>
+                        <td class="govuk-table__cell">Official Secrets Act</td>
+                        <td class="govuk-table__cell">Greater London</td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header"><a href="">First 6 weeks</a></th>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
-                        <td class="govuk-table__cell">£109.80 per week</td>
+                        <th scope="row" class="govuk-table__header"><a href="">Rolling thunder</a></th>
+                        <td class="govuk-table__cell">120120933/24</td>
+                        <td class="govuk-table__cell">Terrorism</td>
+                        <td class="govuk-table__cell">Birmingham</td>
                     </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">Mincemeat</a></th>
+                        <td class="govuk-table__cell">120520944/24</td>
+                        <td class="govuk-table__cell">War Crimes</td>
+                        <td class="govuk-table__cell">Birmingham</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">Beastmaster</a></th>
+                        <td class="govuk-table__cell">920620953/24</td>
+                        <td class="govuk-table__cell">Hijacking/Abduction</td>
+                        <td class="govuk-table__cell">Manchester</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">Urgent fury</a></th>
+                        <td class="govuk-table__cell">880120801/24</td>
+                        <td class="govuk-table__cell">Terrorism</td>
+                        <td class="govuk-table__cell">Liverpool</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><a href="">Game of Thrones</a></th>
+                        <td class="govuk-table__cell">120720952/24</td>
+                        <td class="govuk-table__cell">Appeals</td>
+                        <td class="govuk-table__cell">Birmingham</td>
+                    </tr>
+                    {% if data['createCaseStarted'] == 'true' %}
 
-
+                    {% else %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><a href="">Top Gun</a></th>
+                            <td class="govuk-table__cell">840120988/24</td>
+                            <td class="govuk-table__cell">Terrorism</td>
+                            <td class="govuk-table__cell">Greater London</td>
+                        </tr>
+                    {% endif %}
                 </tbody>
             </table>
+
+            <nav class="govuk-pagination" aria-label="Pagination">
+                <ul class="govuk-pagination__list">
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">1</a>
+                    </li>
+                    <li class="govuk-pagination__item">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">2</a>
+                    </li>
+                </ul>
+                <div class="govuk-pagination__next">
+                        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                            <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+                            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
 
         </div>
     </div>
