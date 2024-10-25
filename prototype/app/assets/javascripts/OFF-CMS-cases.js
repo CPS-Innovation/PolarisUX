@@ -642,6 +642,7 @@ function ea2Introduction() {
     $('nav.tube-map-ea ul li.ea2Introduction').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Introduction').addClass('show-panel');
+    window.scrollTo(0, 0);
 }
 
 function ea2Materials() {
@@ -649,6 +650,7 @@ function ea2Materials() {
     $('nav.tube-map-ea ul li.ea2Materials').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Materials').addClass('show-panel');
+    window.scrollTo(0, 0);
 }
 
 function ea2Summary() {
@@ -656,6 +658,7 @@ function ea2Summary() {
     $('nav.tube-map-ea ul li.ea2Summary').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Summary').addClass('show-panel');
+    window.scrollTo(0, 0);
 }
 
 function ea2Law() {
@@ -663,6 +666,7 @@ function ea2Law() {
     $('nav.tube-map-ea ul li.ea2Law').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Law').addClass('show-panel');
+    window.scrollTo(0, 0);
 }
 
 function ea2NextSteps() {
@@ -670,6 +674,7 @@ function ea2NextSteps() {
     $('nav.tube-map-ea ul li.ea2NextSteps').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2NextSteps').addClass('show-panel');
+    window.scrollTo(0, 0);
 }
 
 function ea2Preview() {
@@ -677,6 +682,7 @@ function ea2Preview() {
     $('nav.tube-map-ea ul li.ea2Preview').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Preview').addClass('show-panel');
+    window.scrollTo(0, 0);
 
     var ea2Introduction = $('#ea2Introduction-Editor').html();
     if (ea2Introduction.length >= 1 ) { $('#ea2Preview-Preview').append(`<strong>Introduction</strong><br>` + ea2Introduction + `<br><br>`); }

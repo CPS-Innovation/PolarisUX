@@ -314,6 +314,10 @@ html {
                     display: inline-block;
                     float: left;
                     margin-right: 1.5em;
+                    &.secondary {
+                         padding-left: 1.5em;
+                         border-left: 1px solid $govuk-border-colour;
+                    }
                }
                .file-upload {
                     display: inline-block;
@@ -656,6 +660,12 @@ nav.moj-sub-navigation {
 }
 
 #ea-available {
+     .govuk-table__header {
+          .added-by {
+               font-weight: normal;
+               color: $govuk-secondary-text-colour;
+          }
+     }
      .govuk-table__cell {
           &.with-button {
                padding: 0;

@@ -137,7 +137,12 @@
                     <p class="hods-timeline__date"><span id="case-created-stamp">####</span></p>
                     <p class="hods-timeline__description">
                         {% if data['newCase_Access'] == 'Now' %}
-                            Case materials links created, Case access given to
+                            Case materials links created, Case access given to {% if data['newCase_Access-Email'] %}{{ data['newCase_Access-Email'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email2'] %}{{ data['newCase_Access-Email2'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email3'] %}{{ data['newCase_Access-Email3'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email4'] %}{{ data['newCase_Access-Email4'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email5'] %}{{ data['newCase_Access-Email5'] }} added, {% else %} {% endif %}
+
                         {% else %}
                             Case materials links created, no case access given at this time.
                         {% endif %}

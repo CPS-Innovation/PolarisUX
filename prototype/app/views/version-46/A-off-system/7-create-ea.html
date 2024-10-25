@@ -333,7 +333,7 @@ $(document).ready(function() {
                 </fieldset>
             </div>
             <div class="ea-panel-cta">
-                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Summary();">Continue</button>
+                <button type="submit" class="govuk-button" data-module="govuk-button" onclick="return ea2Preview();">Continue</button>
                 <form action="5-case-overview" method="get" class="form" style="">
                     <input id="caseSettings" name="caseSettings" type="text" value="false" style="display: none;">
                     <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
@@ -350,14 +350,6 @@ $(document).ready(function() {
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <div class="editor-container">
-                        <div class="toolbar">
-                            <button onclick="execCmd('bold')"><b>B</b></button>
-                            <button onclick="execCmd('italic')"><i>I</i></button>
-                            <button onclick="execCmd('underline')"><u>U</u></button>
-                            <button onclick="execCmd('fontSize', '5')">A<small>A</small></button>
-                            <button onclick="execCmd('insertOrderedList')">1.</button>
-                            <button onclick="execCmd('insertUnorderedList')">•</button>
-                        </div>
                         <div id="ea2Preview-Preview" contenteditable="false" class="editor" disabled></div>
                     </div>
                 </fieldset>

@@ -4,14 +4,6 @@
 <div class="section-wrapper section-row">
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s with-number"><span class="number reviews-number zero">0</span> Case reviews</h3>
-        </div>
-        <div class="section-content">
-            <p class="govuk-!-margin-bottom-0">There are no current Case reviews on this case</p>
-        </div>
-    </section>
-    <section>
-        <div class="title-wrapper">
             {% if data['completeAndExitEA'] == 'true' %}
                 <h3 class="govuk-heading-s with-number"><span class="number ea-number">1</span> Early advice</h3>
             {% else %}
@@ -25,7 +17,10 @@
             <table class="govuk-table govuk-!-margin-bottom-0" id="ea-available">
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row" >
-                        <th scope="row" class="govuk-table__header"><span id="EA-timestamp-NEW"></span></th>
+                        <th scope="row" class="govuk-table__header">
+                            <span id="EA-timestamp-NEW"></span><Br>
+                            <span class="added-by">created by {{ data['offCMS_Username'] }}</span>
+                        </th>
                         <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"><button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button></td>
                     </tr>
@@ -39,20 +34,27 @@
 
         </div>
     </section>
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s with-number"><span class="number reviews-number zero">0</span> Case reviews</h3>
+        </div>
+        <div class="section-content">
+            <p class="govuk-!-margin-bottom-0">There are no current Case reviews on this case</p>
+        </div>
+    </section>
 </div>
 
 <div class="cta-wrapper">
     <div class="add-new">
-        <p>There has been <strong>no Reviews</strong> added to this case</p>
-        <button type="submit" class="govuk-button" style="" onclick="location.href='8-create-charging-decision';">Create a Review</button>
-    </div>
-    <div class="file-upload">
-        
         {% if data['completeAndExitEA'] == 'true' %}
             <p>Add <strong>additional Early advice</strong> to this case</p>
         {% else %}
             <p>There has been <strong>no EAs</strong> added to this case</p>
         {% endif %}
-        <button type="submit" class="govuk-button govuk-button--secondary third-colour" style="" onclick="location.href='7-create-ea';">Create a EA</button>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='7-create-ea';">Create a EA</button>
     </div> 
+    <div class="add-new secondary">
+        <p>There has been <strong>no Reviews</strong> added to this case</p>
+        <button type="submit" class="govuk-button govuk-button--secondary third-colour" style="" onclick="location.href='8-create-charging-decision';">Create a Review</button>
+    </div>
 </div>
