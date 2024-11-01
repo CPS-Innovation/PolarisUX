@@ -33,12 +33,7 @@
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="offCMS_Remove_Witness" name="offCMS_Remove_Witness" type="checkbox" value="Remove">
                                                     <label class="govuk-label govuk-checkboxes__label" for="offCMS_Remove_Witness">
-                                                        I confirm I want to remove 
-                                                        {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
-                                                            <strong class="witnessRemove">{{ data['addWitness_Form-Surname'] }}</strong>, {{ data['addWitness_Form-Forename'] }}
-                                                        {% else %}
-                                                            <strong>Person of interest</strong>
-                                                        {% endif %}
+                                                        I confirm I want to remove <strong class="witnessRemove">{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}</strong>
                                                         {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
                                                             <span class="dob">({{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }})</span>
                                                         {% else %}

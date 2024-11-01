@@ -6,11 +6,13 @@
         <div class="witnesses">
             <div class="witnesses-details open">
                 <h3 class="govuk-heading-l">
-                    {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
-                        <span>{{ data['addWitness_Form-Surname'] }}</span>, {{ data['addWitness_Form-Forename'] }}
-                    {% else %}
-                        Person of interest
-                    {% endif %}
+                    <div class="name_WrapperWitness">
+                        {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                            <span>{{ data['addWitness_Form-Surname'] }}</span>, {{ data['addWitness_Form-Forename'] }}
+                        {% else %}
+                            Person of interest
+                        {% endif %}
+                    </div>
                     {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
                         <span class="dob">({{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }})</span>
                     {% else %}
@@ -513,7 +515,7 @@
     <!-- WITNESS - 1 - START -->
     <div class="witnesses-details open">
         <h3 class="govuk-heading-l">
-            <span>Norton</span>, Asia
+            <div class="name_WrapperWitness"><span>Norton</span>, Asia</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
@@ -557,7 +559,7 @@
     <!-- WITNESS - 2 - START -->
     <div class="witnesses-details open">
         <h3 class="govuk-heading-l">
-            <span>Horton</span>, Rowan
+            <div class="name_WrapperWitness"><span>Horton</span>, Rowan</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
@@ -600,7 +602,7 @@
     <!-- WITNESS - 3 - START -->
     <div class="witnesses-details open">
         <h3 class="govuk-heading-l">
-            <span>Lindsey</span>, Aishah
+            <div class="name_WrapperWitness"><span>Lindsey</span>, Aishah</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
@@ -643,7 +645,7 @@
     <!-- WITNESS - 4 - START -->
     <div class="witnesses-details open">
         <h3 class="govuk-heading-l">
-            <span>Mclaughlin</span>, Annie
+            <div class="name_WrapperWitness"><span>Mclaughlin</span>, Annie</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
@@ -686,7 +688,7 @@
     <!-- WITNESS - 5 - START -->
     <div class="witnesses-details open">
         <h3 class="govuk-heading-l">
-            <span>Odling</span>, Mariam
+            <div class="name_WrapperWitness"><span>Odling</span>, Mariam</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>

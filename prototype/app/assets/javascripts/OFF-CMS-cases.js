@@ -892,9 +892,9 @@ $(document).ready(function () {
 
     $(".removeSuspect").on("click", function (e) { 
         $('#confirmRemoveSuspect').removeClass('rj-dont-display');
-        $(this).parent().parent().parent().parent().addClass('removeSuspect');
+        $(this).closest('.suspects-details').addClass('removeSuspect');
 
-        var suspectName = $(this).parent().parent().parent().parent().find('.name_Wrapper')
+        var suspectName = $(this).closest('.suspects-details').find('.name_Wrapper').text();
         $('.suspectRemove').text(suspectName);
     });
 
@@ -919,7 +919,7 @@ $(document).ready(function () {
 })
 
 function confirmRemoveSuspects() {
-    $('.suspects').hide();
+    $('.removeSuspect').hide();
     $('#confirmRemoveSuspect').addClass('rj-dont-display');
 }
 
@@ -1048,7 +1048,10 @@ $(document).ready(function () {
 
     $(".removeWitness").on("click", function (e) { 
         $('#confirmRemoveWitness').removeClass('rj-dont-display');
-        $(this).parent().parent().parent().parent().addClass('removeWitness');
+        $(this).closest('.witnesses-details').addClass('removeWitness');
+
+        var witnessName = $(this).closest('.witnesses-details').find('.name_WrapperWitness').text();
+        $('.witnessRemove').text(witnessName);
     });
 
     $("input[id=offCMS_Remove_Witness]").on("change", function (e) {
