@@ -1,0 +1,181 @@
+<h2 class="govuk-heading-l">Overview</h2>
+<span class="govuk-caption-m">Last updated <span id="my-cases-timestamp"></span></span>
+
+<p></p>
+
+<div class="section-wrapper section-row">
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case details</h3>
+            <a href="#">Edit</a>
+        </div>
+        <div class="section-content">
+
+            <table class="govuk-table settings-table">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Operation name</th>
+                        <td class="govuk-table__cell">{{ data['newCase_OperationName'] }}</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Case type</th>
+                        <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--blue">
+                        		{% if data['newCase_URN-B'] == '01' %}
+                        			07 - Corp man
+                                {% elseif data['newCase_URN-B'] == '02' %}
+                                	08 - Med man
+                                {% elseif data['newCase_URN-B'] == '03' %}
+                                	09 - Other GNM
+                                {% elseif data['newCase_URN-B'] == '04' %}
+                                	10 - Corruption
+                                {% elseif data['newCase_URN-B'] == '05' %}
+                                	11 - DIC
+                                {% elseif data['newCase_URN-B'] == '06' %}
+                                	12 - Election offences
+                                {% elseif data['newCase_URN-B'] == '07' %}
+                                	13 - Assisted suicide
+                                {% elseif data['newCase_URN-B'] == '08' %}
+                                	14 - MPs
+                                {% elseif data['newCase_URN-B'] == '09' %}
+                                	15 - High profile other
+                                {% elseif data['newCase_URN-B'] == '10' %}
+                                	16 - CPS/NCA staff
+                                {% elseif data['newCase_URN-B'] == '11' %}
+                                	17 - Private prosecution
+                                {% elseif data['newCase_URN-B'] == '12' %}
+                                	18 - Disaster
+                                {% elseif data['newCase_URN-B'] == '13' %}
+                                	19 - Other
+                                {% elseif data['newCase_URN-B'] == '14' %}
+                                	01 - Terrorism
+                                {% elseif data['newCase_URN-B'] == '15' %}
+                                	02 - Inciting Hatred
+                                {% elseif data['newCase_URN-B'] == '16' %}
+                                	03 - Official Secrets Act
+                                {% elseif data['newCase_URN-B'] == '17' %}
+                                	04 - Extraditions
+                                {% elseif data['newCase_URN-B'] == '18' %}
+                                	05 - War Crimes
+                                {% elseif data['newCase_URN-B'] == '19' %}
+                                	06 - Hijacking/Abduction
+                                {% elseif data['newCase_URN-B'] == '20' %}
+                                	07 - Appeals
+                                {% elseif data['newCase_URN-B'] == '21' %}
+                                	08 - Other Types of Cases
+                                {% elseif data['newCase_URN-B'] == '22' %}
+                                	09 - TPIM Monitoring
+                                {% elseif data['newCase_URN-B'] == '23' %}
+                                	10 - Domestic Extremisim
+                                {% elseif data['newCase_URN-B'] == '24' %}
+                                	11 - Supreme Court
+                                {% elseif data['newCase_URN-B'] == '25' %}
+                                	12 - CTIRU
+                                {% elseif data['newCase_URN-B'] == '26' %}
+                                	13 - TPIM Breaches
+                                {% elseif data['newCase_URN-B'] == '27' %}
+                                	14 - TRO
+                                {% elseif data['newCase_URN-B'] == '28' %}
+                                	15 - SOCPA
+                                {% elseif data['newCase_URN-B'] == '29' %}
+
+                                {% elseif data['newCase_URN-B'] == '30' %}
+
+                                {% elseif data['newCase_URN-B'] == '31' %}
+
+                                {% elseif data['newCase_URN-B'] == '32' %}
+
+                                {% elseif data['newCase_URN-B'] == '33' %}
+
+                                {% elseif data['newCase_URN-B'] == '34' %}
+
+                                {% elseif data['newCase_URN-B'] == '35' %}
+
+                                {% elseif data['newCase_URN-B'] == '36' %}
+
+                                {% elseif data['newCase_URN-B'] == '37' %}
+
+                                {% elseif data['newCase_URN-B'] == '38' %}
+
+                                {% elseif data['newCase_URN-B'] == '39' %}
+
+                                {% elseif data['newCase_URN-B'] == '10' %}
+
+                                {% endif %}
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Caseworker</th>
+                        <td class="govuk-table__cell"><a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Prosecutor</th>
+                        <td class="govuk-table__cell">Not yet selected</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case settings</h3>
+            <a href="6-case-settings">Edit</a>
+        </div>
+        <div class="section-content">
+
+            <table class="govuk-table settings-table">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Case complexity</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Complexity'] == 'Low' %}
+                                <strong class="govuk-tag govuk-tag--green">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'Medium' %}
+                                <strong class="govuk-tag govuk-tag--blue">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'High' %}
+                                <strong class="govuk-tag govuk-tag--yellow">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% elseif data['caseSettings_Complexity'] == 'Exceptional' %}
+                                <strong class="govuk-tag govuk-tag--red">{{ data['caseSettings_Complexity'] }}</strong>
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">International case?</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_International'] %}
+                                {{ data['caseSettings_International'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Case sensitivity</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Sensitivity'] %}
+                                {{ data['caseSettings_Sensitivity'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Summary of investigation</th>
+                        <td class="govuk-table__cell">
+                            {% if data['caseSettings_Summary'] %}
+                                {{ data['caseSettings_Summary'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+</div>

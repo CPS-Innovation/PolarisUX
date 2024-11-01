@@ -1,0 +1,41 @@
+<h2 class="govuk-heading-l">Case permissions</h2>
+<span class="govuk-caption-m">Last updated <span id="permissions-timestamp"></span></span>
+
+<p> </p>
+
+<div class="section-wrapper section-row">
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case permissions</h3>
+            <a href="#">Edit</a>
+        </div>
+
+        <div class="section-content">
+
+            <table class="govuk-table contacts-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Users</th>
+                        <th scope="col" class="govuk-table__header">Role</th>
+                        <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['offCMS_Username'] }}</th>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
+                        <td class="govuk-table__cell"></td>
+                    </tr>
+      </tbody>
+            </table>
+
+        </div>
+    </section>
+
+</div>
+
+<div class="cta-wrapper">
+    <p>Add users and set permissions to the case</p>
+    <button type="submit" class="govuk-button" style="">Add a user to the case</button>
+</div>

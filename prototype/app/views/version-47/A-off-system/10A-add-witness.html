@@ -1,0 +1,133 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row" id="">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+        <div class="wrapper gov-pages">
+
+            <form method="get" action="10B-add-witness" id="addWitness_Form-A">  
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl"><h1 class="govuk-fieldset__heading">Relationship to case</h1></legend>
+
+                <!-- OPTION 1 - START -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend">Witness group</legend>
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="witnessType-conditional-Person" name="witnessType-conditional" type="radio" value="Person of interest">
+                                <label class="govuk-label govuk-radios__label" for="witnessType-conditional-Person">Person of interest</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="witnessType-conditional-Company" name="witnessType-conditional" type="radio" value="Company">
+                                <label class="govuk-label govuk-radios__label" for="witnessType-conditional-Company">Company</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- OPTION 1 - END -->
+
+                <!-- OPTION 2 - START -->
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="addWitness_Details-Type-hint">
+                        <legend class="govuk-fieldset__legend">Type of witness</legend>
+                        <div id="addWitness_Details-Type-hint" class="govuk-hint">Select all that apply</div>
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Victim" name="addWitness_Details-Type" type="checkbox" value="(V) - Victim">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Victim">(V) - Victim</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Police" name="addWitness_Details-Type" type="checkbox" value="(P) - Police">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Police">(P) - Police</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Child" name="addWitness_Details-Type" type="checkbox" value="(C) - Child">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Child">(C) - Child</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Professional" name="addWitness_Details-Type" type="checkbox" value="(F) - Professional">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Professional">(F) - Professional</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Expert" name="addWitness_Details-Type" type="checkbox" value="(X) - Expert">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Expert">(X) - Expert</label>
+                            </div>
+                            <div class="govuk-checkboxes__item" id="witnessType-Vulnerable">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Vulnerable" name="addWitness_Details-Type" type="checkbox" value="(L) - Vulnerable">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Vulnerable">(L) - Vulnerable</label>
+                            </div>
+                            <div class="govuk-checkboxes__item" id="witnessType-Intimidated">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Intimidated" name="addWitness_Details-Type" type="checkbox" value="(T) - Intimidated">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Intimidated">(T) - Intimidated</label>
+                            </div>
+                            <div class="govuk-checkboxes__item" id="witnessType-Need">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Need" name="addWitness_Details-Type" type="checkbox" value="(G) - Greatest need">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Need">(G) - Greatest need</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Special" name="addWitness_Details-Type" type="checkbox" value="(S) - Special">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Special">(S) - Special</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Prisoner" name="addWitness_Details-Type" type="checkbox" value="(H) - Prisoner">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Prisoner">(H) - Prisoner</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Interpreter" name="addWitness_Details-Type" type="checkbox" value="(I) - This person is an interpreter">
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Interpreter">(I) - This person is an interpreter</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+                <!-- OPTION 2 - END -->
+
+                <!-- OPTION 3 - START -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend">Key witness status</legend>
+                        <div class="govuk-radios  govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="addWitness_Details-Status-Yes" name="addWitness_Details-Status" type="radio" value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="addWitness_Details-Status-Yes">Yes</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="addWitness_Details-Status-No" name="addWitness_Details-Status" type="radio" value="No">
+                                <label class="govuk-label govuk-radios__label" for="addWitness_Details-Status-No">No</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="addWitness_Details-Status-Unknown" name="addWitness_Details-Status" type="radio" value="Unknown">
+                                <label class="govuk-label govuk-radios__label" for="addWitness_Details-Status-Unknown">Unknown</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="addWitness_Details-Status-NA" name="addWitness_Details-Status" type="radio" value="N/A">
+                                <label class="govuk-label govuk-radios__label" for="addWitness_Details-Status-NA">N/A</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>                
+                <!-- OPTION 3 - END -->
+
+                <input id="addWitnessStarted" name="addWitnessStarted" type="text" value="true" style="display: none;">
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='5-case-overview';" class="non-button margin-left" id="">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}

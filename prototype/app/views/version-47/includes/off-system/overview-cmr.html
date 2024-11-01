@@ -1,0 +1,150 @@
+<h2 class="govuk-heading-l">Case Management Record</h2>
+<span class="govuk-caption-m">Last updated <span id="CMR-stamp"></span></span>
+<p> </p>
+
+<div class="section-wrapper">
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Activity</h3>
+            <div class="govuk-form-group search">
+                <label class="govuk-label search-label" for="searchCMS_URN">Search Off System cases</label>
+                <div class="search-wrapper-CMR">
+                    <input class="govuk-input govuk-!-width-full" id="searchCMS_URN" name="searchCMS_URN" type="text" placeholder="Search..." value="" />
+                    <button type="submit" class="govuk-button" style="">Search</button>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">Sort by</label>
+                <select class="govuk-select" id="sort" name="sort">
+                    <option value="Most recent" selected>Most recent</option>
+                    <option value="Oldest">Oldest</option>
+                    <option value="EAs only">EAs only</option>
+                    <option value="Witnesses">Witnesses</option>
+                    <option value="Suspects">Suspects</option>
+                    <option value="Charges">Charges</option>
+                </select>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="hods-timeline">
+
+                {% if data['addWitnessStarted'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Witness added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description witness-description">
+                            {% if data['suspectType-conditional'] == 'Person of interest' %}
+                                {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                                    <strong>{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}</strong>,
+                                    {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
+                                        <span class="dob">({{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }})</span>
+                                    {% else %}
+
+                                    {% endif %}
+                                    added as a witness for the case.
+                                {% else %}
+                                    Person of interest added as a witness for the case.
+                                {% endif %}
+                            {% elseif data['suspectType-conditional'] == 'Company' %}
+                                {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                                    <strong>{{ data['addWitness_Form-Company'] }}</strong> added as a witness for the case.
+                                {% else %}
+                                    <strong>Company<.strong> added as a witness for the case.
+                                {% endif %}
+                            {% endif %}
+                        </p>    
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['addSuspectStarted'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Suspect added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description suspect-description">
+                            {% if data['addSuspect_Details'] == 'Person of interest' %}
+                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                    <strong>{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }} added as a suspect for the case.
+                                {% else %}
+                                    Person of interest
+                                {% endif %}
+                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                {% else %}
+
+                                {% endif %}
+                            {% elseif data['addSuspect_Details'] == 'Company' %}
+                                <strong>{{ data['addSuspect_CompanyName'] }}</strong>
+                                 added as a suspect for the case.
+                            {% endif %}
+                        </p>    
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Early advice added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description ea-description">Early advice for the case was created and added, containing </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['caseAccess'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Material permissions added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description">
+                            {% if data['newCase_Access-Email'] %}{{ data['newCase_Access-Email'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email2'] %}{{ data['newCase_Access-Email2'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email3'] %}{{ data['newCase_Access-Email3'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email4'] %}{{ data['newCase_Access-Email4'] }} added, {% else %} {% endif %}
+                            {% if data['newCase_Access-Email5'] %}{{ data['newCase_Access-Email5'] }} added, {% else %} {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                {% if data['caseSettings'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Case settings added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description">
+                            {% if data['caseSettings_Complexity'] %}Case complexity added, {% else %} {% endif %}
+                            {% if data['caseSettings_International'] %}International settings added, {% else %} {% endif %}
+                            {% if data['caseSettings_Sensitivity'] %}Case sensitivity added, {% else %} {% endif %}
+                            {% if data['caseSettings_Summary'] %}Case summary added{% else %} {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
+                <div class="hods-timeline__item">
+                    <h2 class="hods-timeline__title">Case created</h2>
+                    <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                    <p class="hods-timeline__date"><span id="case-created-stamp">####</span></p>
+                </div>
+
+            </div>
+
+            <div class="cta-wrapper">
+                <button type="submit" class="govuk-button" style="" onclick="#">Add item</button>
+                <button class="govuk-button govuk-button--secondary">Export CMR</button>
+            </div>
+
+        </div>
+    </section>
+
+</div>

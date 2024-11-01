@@ -1,0 +1,257 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-V5.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <a href="javascript:history.back()" class="govuk-back-link no-margin-top no-margin-bottom">Back</a>
+        <div class="wrapper gov-pages">
+            <h1 class="govuk-heading-l" style="">Select the document type</h1>
+
+            {% if data['scenario'] == 'one' %}
+                <form method="get" action="D-document-name">  
+            {% elseif data['scenario'] == 'two' %}
+                <form method="get" action="B-statement-details">  
+            {% elseif data['scenario'] == 'three' %}
+                <form method="get" action="C-exhibit-details">  
+            {% endif %}
+
+                <div class="govuk-form-group">
+
+                    {% if data['scenario'] == 'one' %}
+                        <label class="govuk-label" for="documentType">Select document type for <mark class="hods-highlight"><strong>Asset Rec 1</strong></mark></label>
+                    {% elseif data['scenario'] == 'two' %}
+                        <label class="govuk-label" for="documentType">Select document type for <mark class="hods-highlight"><strong>MG11 - 1</strong></mark></label>
+                    {% elseif data['scenario'] == 'three' %}
+                        <label class="govuk-label" for="documentType">Select document type for <mark class="hods-highlight"><strong>Exhibit - 1</strong></mark></label>
+                    {% endif %}
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <!-- <div id="contact-hint" class="govuk-hint">Select one option.</div> -->
+                            <div class="govuk-radios" data-module="govuk-radios">
+
+                                <!-- OPTION 1 - START -->
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="documentType-ONE" name="documentType" type="radio" value="Statements" data-aria-controls="documentType-statements">
+                                    <label class="govuk-label govuk-radios__label" for="documentType-ONE">Statement</label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="documentType-statements">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-ONE-MG11" name="documentType-ONE-Statements" type="radio" value="MG11">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-ONE-MG11">MG11</label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-ONE-MG11-R" name="documentType-ONE-Statements" type="radio" value="MG11 (R)">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-ONE-MG11-R">MG11 (R)</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- OPTION 1 - END -->
+
+                                <!-- OPTION 2 - START -->
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="documentType-TWO" name="documentType" type="radio" value="Exhibit" data-aria-controls="documentType-exhibit">
+                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO">Exhibit</label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="documentType-exhibit">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-TWO-MG15-SDN" name="documentType-TWO-Exhibits" type="radio" value="MG15 (SDN)">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO-MG15-SDN">MG15 (SDN)</label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-TWO-MG15-ROTI" name="documentType-TWO-Exhibits" type="radio" value="MG15 (ROTI)">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO-MG15-ROTI">MG15 (ROTI)</label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-TWO-MG15-ROVI" name="documentType-TWO-Exhibits" type="radio" value="MG15 (ROVI)">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO-MG15-ROVI">MG15 (ROVI)</label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-TWO-MG15-CONI" name="documentType-TWO-Exhibits" type="radio" value="MG15 (CONI)">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO-MG15-CONI">MG15 (CONI)</label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-TWO-Other" name="documentType-TWO-Exhibits" type="radio" value="Other Exhibit">
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-TWO-Other">Other Exhibit</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- OPTION 2 - END -->
+
+                                <!-- OPTION 3 - START -->
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="documentType-THREE" name="documentType" type="radio" value="Other Communication">
+                                    <label class="govuk-label govuk-radios__label" for="documentType-THREE">Other Communication</label>
+                                </div>
+<!--                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="documentType-Communications">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-THREE-Communications" name="documentType-THREE-Communications" type="radio" value="Other Communication" checked>
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-THREE-Communications">Other Communication</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+ -->                                
+                                <!-- OPTION 3 - END -->
+
+                                <!-- OPTION 4 - START -->
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="documentType-FOUR" name="documentType" type="radio" value="Other" data-aria-controls="documentType-Other">
+                                    <label class="govuk-label govuk-radios__label" for="documentType-FOUR">Other</label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="documentType-Other">
+                                    <select class="govuk-select" id="documentType-FOUR-Type" name="documentType-FOUR-Type" aria-describedby="location-hint">
+                                        <option disabled selected>Choose document type</option>
+                                        <option value="ABE">ABE</option>
+                                        <option value="Asset recovery">Asset recovery</option>
+                                        <option value="Asset recovery 3rd Party">Asset recovery 3rd Party</option>
+                                        <option value="Complaint">Complaint</option>
+                                        <option value="Correspondence">Correspondence</option>
+                                        <option value="Counsel Case Acknowledgement">Counsel Case Acknowledgement</option>
+                                        <option value="DCF">DCF</option>
+                                        <option value="DREP">DREP</option>
+                                        <option value="Defence Statement">Defence Statement</option>
+                                        <option value="MG00">MG00</option>
+                                        <option value="MG1">MG1</option>
+                                        <option value="MG2">MG2</option>
+                                        <option value="MG3">MG3</option>
+                                        <option value="MG3A">MG3A</option>
+                                        <option value="MG4">MG4</option>
+                                        <option value="MG4A">MG4A</option>
+                                        <option value="MG4B">MG4B</option>
+                                        <option value="MG4C">MG4C</option>
+                                        <option value="MG4D">MG4D</option>
+                                        <option value="MG4E">MG4E</option>
+                                        <option value="MG4(post)">MG4(post)</option>
+                                        <option value="MG4F">MG4F</option>
+                                        <option value="MG5">MG5</option>
+                                        <option value="MG5(SP)">MG5(SP)</option>
+                                        <option value="MG6">MG6</option>
+                                        <option value="MG6A">MG6A</option>
+                                        <option value="MGB">MG6B</option>
+                                        <option value="MG6C">MG6C</option>
+                                        <option value="MG6D">MG6D</option>
+                                        <option value="MG6E">MG6E</option>
+                                        <option value="MG7">MG7</option>
+                                        <option value="MG8">MG8</option>
+                                        <option value="MG9">MG9</option>
+                                        <option value="MG10">MG10</option>
+                                        <option value="MG12">MG12</option>
+                                        <option value="MG13">MG13</option>
+                                        <option value="MG14">MG14</option>
+                                        <option value="MG16">MG16</option>
+                                        <option value="MG16(DBCI)">MG16(DBCI)</option>
+                                        <option value="MG16(DOI)">MG16(DOI)</option>
+                                        <option value="MG17">MG17</option>
+                                        <option value="MG18">MG18</option>
+                                        <option value="MG19">MG19</option>
+                                        <option value="MG20">MG20</option>
+                                        <option value="MG21">MG21</option>
+                                        <option value="MG21A">MG21A</option>
+                                        <option value="MG22 SFR">MG22 SFR</option>
+                                        <option value="MGDD">MGDD</option>
+                                        <option value="MG/FSSA">MG/FSSA</option>
+                                        <option value="MG/FSSB">MG/FSSB</option>
+                                        <option value="Other Material">Other Material</option>
+                                        <option value="PCN1">PCN1</option>
+                                        <option value="PCN2">PCN2</option>
+                                        <option value="PCN3">PCN3</option>
+                                        <option value="PE1">PE1</option>
+                                        <option value="PE2">PE2</option>
+                                        <option value="PE3">PE3</option>
+                                        <option value="PE4">PE4</option>
+                                        <option value="SDC">SDC</option>
+                                        <option value="Service of ABE">Service of ABE</option>
+                                    </select>
+                                </div>
+                                <!-- OPTION 4 - END -->
+
+                                <!-- OPTION 5 - START -->
+<!--                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="documentType-THREE" name="documentType" type="radio" value="Communications">
+                                    <label class="govuk-label govuk-radios__label" for="documentType-THREE">Other Materials</label>
+                                </div>
+                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="documentType-Communications">
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="documentType-THREE-Communications" name="documentType-THREE-Communications" type="radio" value="Other Communication" checked>
+                                                    <label class="govuk-label govuk-radios__label" for="documentType-THREE-Communications">Other Communication</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+ -->                                
+                                <!-- OPTION 5 - END -->
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+<!--                 <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend">What is the document status?</legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                {% if data['docType-document-status'] == 'Used' and data['answers-complete'] == 'true' %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used" checked>
+                                {% else %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Evidential" name="docType-document-status" type="radio" value="Used">
+                                {% endif %}
+                                <label class="govuk-label govuk-radios__label" for="docType-document-status-Evidential">Used</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                {% if data['docType-document-status'] == 'Unused' and data['answers-complete'] == 'true' %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused" checked>
+                                {% else %}
+                                    <input class="govuk-radios__input" id="docType-document-status-Unused" name="docType-document-status" type="radio" value="Unused">
+                                {% endif %}
+                                <label class="govuk-label govuk-radios__label" for="docType-document-status-Unused">Unused</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+ -->
+                <button type="submit" class="govuk-button" style="">Continue</button>
+                <button type="button" onclick="location.href='../1-new-designs/C-casefile-1.html';" class="non-button margin-left" id="cancelPageLoad">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="image-holder">
+            {% if data['scenario'] == 'one' %}
+                <img src="../../../public/files/Asset-Rec-PREVIEW.png" alt="Asset Rec - 1 - Preview" class="">
+            {% elseif data['scenario'] == 'two' %}
+                <img src="../../../public/files/MG11_1-PREVIEW.png" alt="MG11 - 1 - Preview" class="">
+            {% elseif data['scenario'] == 'three' %}
+                <img src="../../../public/files/MG12_1-PREVIEW.png" alt="Exhibit - 1 - Preview" class="">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

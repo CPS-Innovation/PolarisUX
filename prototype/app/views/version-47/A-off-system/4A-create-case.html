@@ -1,0 +1,163 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row" id="create-case-journey">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+        <div class="wrapper gov-pages">
+
+            <!-- ERROR MESSAGE - START -->
+            <div class="govuk-error-summary" data-module="govuk-error-summary" id="newCase_Errors">
+                <div role="alert">
+                    <h2 class="govuk-error-summary__title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <ul class="govuk-list govuk-error-summary__list">
+                            <li class="newCase_Errors-ValueOperation"><a href="#newCase_URN-Value">Enter an Operation name</a></li>
+                            <li class="newCase_Errors-ValueURN"><a href="#newCase_URN-Value">Enter a URN (Unique Reference Number)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ERROR MESSAGE - END -->
+
+            <h1 class="govuk-heading-xl" style="">Create a case</h1>
+
+            <form method="get" action="4B-create-case" id="newCase_Form-A">  
+
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group" id="newCase_OperationName-Value">
+                        <label class="govuk-label" for="newCase_OperationName">Operation name</label>
+                        <p id="newCase_OperationName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Operation name</p>
+                        <input class="govuk-input govuk-input--width-20" id="newCase_OperationName" name="newCase_OperationName" type="text">
+                    </div>                                
+                    <!-- OPTION 1 - END -->
+
+                    {% if 'scd' in data['offCMS_Username'] %}
+                        <!-- OPTION 2 - START -->
+                        <div class="govuk-form-group" id="newCase_URN-Value">
+                            <label class="govuk-label" for="newCase_URN">Case URN</label>
+                            <div id="newCase_URN-hint" class="govuk-hint">This is a generated URN, if you would like to edit this please see the <a href="#">case creation guidance</a>.</div>
+                            <p id="newCase_URN-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an (Unique Reference Number)</p>
+                            <div class="form-wrapper">
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-A" name="newCase_URN-A" type="text" value="84">
+                                <label class="govuk-label" for="newCase_URN-B" style="display: none;">Type code</label>
+                                <select class="govuk-select govuk-input--width-2" id="newCase_URN-B" name="newCase_URN-B">
+                                    <option value="01" selected>07 - Corp man</option>
+                                    <option value="02">08 - Med man</option>
+                                    <option value="03">09 - Other GNM</option>
+                                    <option value="04">10 - Corruption</option>
+                                    <option value="05">11 - DIC</option>
+                                    <option value="06">12 - Election offences</option>
+                                    <option value="07">13 - Assisted suicide</option>
+                                    <option value="08">14 - MPs</option>
+                                    <option value="09">15 - High profile other</option>
+                                    <option value="10">16 - CPS/NCA staff</option>
+                                    <option value="11">17 - Private prosecution</option>
+                                    <option value="12">18 - Disaster</option>
+                                    <option value="13">19 - Other</option>
+                                </select>
+                                <input class="govuk-input govuk-input--width-4" id="newCase_URN-C" name="newCase_URN-C" type="text" value="20982">
+                                <p>/</p>
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-D" name="newCase_URN-D" type="text" value="24">
+                            </div>
+                        </div>                                
+                        <!-- OPTION 2 - END -->
+                    {% elseif 'ctd' in data['offCMS_Username'] %}
+                        <!-- OPTION 2 - START -->
+                        <div class="govuk-form-group" id="newCase_URN-Value">
+                            <label class="govuk-label" for="newCase_URN">Case URN</label>
+                            <div id="newCase_URN-hint" class="govuk-hint">This is a generated URN, if you would like to edit this please see the <a href="#">case creation guidance</a>.</div>
+                            <p id="newCase_URN-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an (Unique Reference Number)</p>
+                            <div class="form-wrapper">
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-A" name="newCase_URN-A" type="text" value="84">
+                                <label class="govuk-label" for="newCase_URN-B" style="display: none;">Type code</label>
+                                <select class="govuk-select govuk-input--width-2" id="newCase_URN-B" name="newCase_URN-B">
+                                    <option value="14" selected>01 - Terrorism</option>
+                                    <option value="15">02 - Inciting Hatred</option>
+                                    <option value="16">03 - Official Secrets Act</option>
+                                    <option value="17">04 - Extraditions</option>
+                                    <option value="18">05 - War Crimes</option>
+                                    <option value="19">06 - Hijacking/Abduction</option>
+                                    <option value="20">07 - Appeals</option>
+                                    <option value="21">08 - Other Types of Cases</option>
+                                    <option value="22">09 - TPIM Monitoring</option>
+                                    <option value="23">10 - Domestic Extremisim</option>
+                                    <option value="24">11 - Supreme Court</option>
+                                    <option value="25">12 - CTIRU</option>
+                                    <option value="26">13 - TPIM Breaches</option>
+                                    <option value="27">14 - TRO</option>
+                                    <option value="28">15 - SOCPA</option>
+                                </select>
+                                <input class="govuk-input govuk-input--width-4" id="newCase_URN-C" name="newCase_URN-C" type="text" value="20982">
+                                <p>/</p>
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-D" name="newCase_URN-D" type="text" value="24">
+                            </div>
+                        </div>                                
+                        <!-- OPTION 2 - END -->
+                    {% elseif 'seoc' in data['offCMS_Username'] %}
+
+                    {% else %}
+                        <!-- OPTION 2 - START -->
+                        <div class="govuk-form-group" id="newCase_URN-Value">
+                            <label class="govuk-label" for="newCase_URN">Case URN</label>
+                            <div id="newCase_URN-hint" class="govuk-hint">This is a generated URN, if you would like to edit this please see the <a href="#">case creation guidance</a>.</div>
+                            <p id="newCase_URN-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an (Unique Reference Number)</p>
+                            <div class="form-wrapper">
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-A" name="newCase_URN-A" type="text" value="84">
+                                <label class="govuk-label" for="newCase_URN-B" style="display: none;">Type code</label>
+                                <select class="govuk-select govuk-input--width-2" id="newCase_URN-B" name="newCase_URN-B">
+                                    <option value="01" selected>01 - Terrorism</option>
+                                    <option value="02">02 - Inciting Hatred</option>
+                                    <option value="03">03 - Official Secrets Act</option>
+                                    <option value="04">04 - Extraditions</option>
+                                    <option value="05">05 - War Crimes</option>
+                                    <option value="06">06 - Hijacking/Abduction</option>
+                                    <option value="07">07 - Appeals</option>
+                                    <option value="08">08 - Other Types of Cases</option>
+                                    <option value="09">09 - TPIM Monitoring</option>
+                                    <option value="10">10 - Domestic Extremisim</option>
+                                    <option value="11">11 - Supreme Court</option>
+                                    <option value="12">12 - CTIRU</option>
+                                    <option value="13">13 - TPIM Breaches</option>
+                                    <option value="14">14 - TRO</option>
+                                    <option value="15">15 - SOCPA</option>
+                                </select>
+                                <input class="govuk-input govuk-input--width-4" id="newCase_URN-C" name="newCase_URN-C" type="text" value="20982">
+                                <p>/</p>
+                                <input class="govuk-input govuk-input--width-2" id="newCase_URN-D" name="newCase_URN-D" type="text" value="24">
+                            </div>
+                        </div>                                
+                        <!-- OPTION 2 - END -->
+                    {% endif %}
+
+                </fieldset>
+
+                <div class="create-case-error">
+                    <button type="submit" class="govuk-button" style="" id="newCase_ErrorActivate">Continue</button>
+                    <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
+                </div>
+
+                <div class="create-case-continue">
+                    <input id="createCaseStarted" name="createCaseStarted" type="text" value="true" style="display: none;">
+                    <button type="submit" class="govuk-button" style="">Continue</button>
+                    <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}

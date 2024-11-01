@@ -57,31 +57,48 @@ html {
                                    position: relative;
                                    display: inline-block;
                                    width: 50%;
+                                   float: left;
+                                   clear: both;
+                                   margin-top: 1em;
                                    button {
                                         text-indent: -1000em;
                                         position: absolute;
                                         right: 0;
                                         top: 0;
-                                        width: 2em;
-                                        height: 2em;
-                                        background: url("../images/search-white.svg") black no-repeat 50% 50%;
+                                        width: 50px;
+                                        height: 50px;
+                                        background: url("../images/search-blue.svg") #d2e2f1 no-repeat 50% 50%;
                                         background-size: 1em;
+                                        box-shadow: none;
                                    }
                                    input {
                                         width: 100%;
+                                        height: 50px;
+                                        font-size: 1.1875rem;
+                                        border: none;
                                    }
                               }
                          }
+                         label, span {
+                              font-size: 4rem;
+                              margin-bottom: 0;
+                              line-height: 1.07;
+                         }
                          label {
                               color: white;
-                              margin-bottom: 0.5em;
+                              &.override {
+                                   font-size: 1.1875rem;
+                                   font-weight: bold;
+                                   float: left;
+                                   clear: both;
+                              }
                          }
                          span {
                               margin-bottom: 0.5em;
                               color: rgba(255,255,255, 0.7);
-                              strong {
-                                   color: white;
-                              }
+                              // strong {
+                              //      color: white;
+                              // }
                          }
                          button {
                               margin-bottom: 0;
@@ -94,7 +111,7 @@ html {
                               position: absolute;
                               top: 0;
                               right: 0;
-                              bottom: -15em;
+                              bottom: -30em;
                               left: 0;
                               padding: 1.5em 2em 2em 2em;
                               input {
@@ -102,6 +119,7 @@ html {
                               }
                               h2 {
                                    color: white;
+                                   font-size: 4rem;
                               }
                               p { 
                                    color: rgba(255,255,255, 0.7);
@@ -162,7 +180,7 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-7-content, &.tab-8-content {
+                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-8-content {
                               padding-left: 1.5em;
                          }
                          .number {
@@ -309,6 +327,9 @@ html {
                          border: 1px solid $govuk-link-colour;
                          box-shadow: 0 2px 0 $govuk-link-colour;
                     }
+                    &.govuk-button--warning {
+                         color: white;
+                    }
                }
                .add-new {
                     display: inline-block;
@@ -355,7 +376,7 @@ html {
           border: 1px solid $govuk-border-colour;
           .permissions {
                width: 94%;
-               padding: 1em 1.75% 0 1.75%;
+               padding: 1em 3% 0 3%;
                display: inline-block;
                input {
                     width: 92% !important;
@@ -368,7 +389,9 @@ html {
                }
           }
           .section-content {
-               padding: 1em 1.5em 1.5em 1.5em;
+               padding: 1em 3% 1.5em 3%;
+               display: inline-block;
+               width: 94%;
                h3 {
                     float: left;
                }
@@ -399,8 +422,23 @@ html {
                               }
                               a {
                                    color: $govuk-link-colour;
+                                   &:hover, &:active, &:focus {
+                                        cursor: pointer;
+                                   }
                               }
                          }
+                    }
+               }
+               .cta-wrapper {
+                    display: inline-block;
+                    width: 100% !important;
+                    padding-top: 1em;
+                    margin-top: 1em;
+                    border-top: 1px solid $govuk-border-colour;
+                    button {
+                         display: inline-block;
+                         float: right;
+                         margin: 0 0 0 1em;
                     }
                }
           }
@@ -1024,6 +1062,7 @@ nav.tube-map-ea {
 .preview-link, .hide-link, .preview-witness-link, .hide-witness-link {
      font-size: 1rem;
      float: right;
+     margin-top: 0.75em;
      // padding-right: 1em;
      text-decoration: underline;
      font-weight: normal;
@@ -1094,10 +1133,17 @@ nav.tube-map-ea {
           padding-bottom: 1.5em;
           margin-bottom: 1.5em;
           border-bottom: 1px solid $govuk-border-colour;
+          border-bottom: 1px solid $govuk-border-colour;
+          &.open {
+               border-bottom: none;
+               &:last-of-type {
+                    border-bottom: none;
+               }
+          }
           &:last-of-type {
                padding-bottom: 1em;
                margin-bottom: 1em;
-               border-bottom: none;
+               border-bottom: 1px solid $govuk-border-colour;
           }
           h3 {
                margin-bottom: 0;
@@ -1192,10 +1238,12 @@ nav.tube-map-ea {
                               width: 100% !important;
                               padding-top: 1em;
                               button {
+                                   margin-left: 1em;
                                    &.govuk-button {
                                         float: right;
                                         color: $govuk-text-colour;
                                         margin: 0;
+                                        margin-left: 1em !important;
                                    }
                               }
                               .removeSuspect, .removeWitness {
@@ -1211,6 +1259,5 @@ nav.tube-map-ea {
                     }
                }
           }
-
      }
 }

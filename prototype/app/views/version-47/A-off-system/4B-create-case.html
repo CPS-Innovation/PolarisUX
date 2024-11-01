@@ -1,0 +1,67 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row" id="create-case-journey">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+        <div class="wrapper gov-pages">
+
+            <form method="get" action="5-case-overview" id="newCase_Form-B">  
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">What platforms would you like to use up for the case?</h1>
+                        </legend>
+                        <div id="waste-hint" class="govuk-hint">Select all that apply</div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-Egress" name="newCase_SharedAccess" type="checkbox" value="Egress" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-Egress">Egress</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-Drive" name="newCase_SharedAccess" type="checkbox" value="Shared drive" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-Drive">Shared drive</label>
+                            </div>                            
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-Outlook" name="newCase_SharedAccess" type="checkbox" value="Outlook" checked>
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-Outlook">Outlook</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-REMs" name="newCase_SharedAccess" type="checkbox" value="REMs">
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-REMs">REMs</label>
+                            </div>
+
+
+
+<!--                             <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-Relativity" name="newCase_SharedAccess" type="checkbox" value="Relativity App">
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-Relativity">Relativity App</label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="newCase_SharedAccess-Holmes" name="newCase_SharedAccess" type="checkbox" value="Holmes">
+                                <label class="govuk-label govuk-checkboxes__label" for="newCase_SharedAccess-Holmes">Holmes</label>
+                            </div>
+ -->                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="submit" class="govuk-button" style="" id="newCase_SharedAccess">Continue</button>
+                <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}

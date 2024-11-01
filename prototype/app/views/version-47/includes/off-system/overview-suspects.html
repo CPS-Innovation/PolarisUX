@@ -1,0 +1,344 @@
+<h2 class="govuk-heading-l">Suspects</h2>
+<span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
+
+{% if data['addSuspectStarted'] == 'true' %}
+    {% if data['addSuspect_Details'] == 'Person of interest' %}
+        <div class="suspects">
+            <div class="suspects-details open">
+                <h3 class="govuk-heading-l">
+                    <div class="name_Wrapper">
+                        {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                            <span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}
+                        {% else %}
+                            Person of interest
+                        {% endif %}
+                        {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                            <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                        {% else %}
+
+                        {% endif %}
+                    </div>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                {% if data['addSuspectPerson'] == 'true' %}
+                    <div class="suspects-details-wrapper has-details">
+                        <div class="title"><h4 class="govuk-heading-s">Suspects details</h4></div>
+                        <div class="suspects-content-wrapper">
+
+                            <div class="suspects-sections">
+
+                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                    <section>
+                                        <p>Name 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect name</span></a>
+                                            <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <span class="forename">{{ data['addSuspect_Form-Forename'] }}</span></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Aliases'] %}
+                                    <section>
+                                        <p>
+                                            Aliases 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                            <span>Yes</span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Gender'] %}
+                                    <section>
+                                        <p>
+                                            Gender 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect gender</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Gender'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Ethnicity'] %}
+                                    <section>
+                                        <p>
+                                            Ethnicity 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ethnicity</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Ethnicity'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Religion'] %}
+                                    <section>
+                                        <p>
+                                            Religion 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect religion</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Religion'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                    <section>
+                                        <p>
+                                            Date of birth
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect date of birth</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Disability'] %}
+                                    <section>
+                                        <p>
+                                            Disability 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect disability</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Disability'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Type'] %}
+                                    <section>
+                                        <p>
+                                            Type
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect type</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Type'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Type'] and data['addSuspect_Form-Arrest-Day'] %}
+                                    <section>
+                                        <p>
+                                            Arrest date 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect arrest date</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Arrest-Day'] }}/{{ data['addSuspect_Form-Arrest-Month'] }}/{{ data['addSuspect_Form-Arrest-Year'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-SDO'] %}
+                                    <section>
+                                        <p>
+                                            SDO 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect SDO</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-SDO'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Long'] %}
+                                    <section>
+                                        <p>
+                                            Long term interest 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect long term insterest</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-Long'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-ASN'] %}
+                                    <section>
+                                        <p>
+                                            ASN 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ASN</span></a>
+                                            <span><strong>{{ data['addSuspect_Form-ASN'] }}</strong></span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                                {% if data['addSuspect_Form-Aliases'] %}
+                                    <section>
+                                        <p>
+                                            Aliases 
+                                            <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                            <span class="aliases-wrapper">
+                                                {% if data['addSuspect-Alias-Surname'] or data['addSuspect-Alias-Forename'] %}
+                                                    <span><strong class="surname">{{ data['addSuspect-Alias-Surname'] }}</strong>, {{ data['addSuspect-Alias-Forename'] }}</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                {% if data['addSuspect-Alias-Surname2'] or data['addSuspect-Alias-Forename2'] %}
+                                                    <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname2'] }}</strong>, {{ data['addSuspect-Alias-Forename2'] }}</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                {% if data['addSuspect-Alias-Surname3'] or data['addSuspect-Alias-Forename3'] %}
+                                                    <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname3'] }}</strong>, {{ data['addSuspect-Alias-Forename3'] }}</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                {% if data['addSuspect-Alias-Surname4'] or data['addSuspect-Alias-Forename4'] %}
+                                                    <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname4'] }}</strong>, {{ data['addSuspect-Alias-Forename4'] }}</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                {% if data['addSuspect-Alias-Surname5'] or data['addSuspect-Alias-Forename5'] %}
+                                                    <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname5'] }}</strong>, {{ data['addSuspect-Alias-Forename5'] }}</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                            </span>
+                                        </p>
+                                    </section>
+                                {% else %}
+
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cta-wrapper">
+                                <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button>
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="suspects-details-wrapper  has-details">
+                        <div class="suspects-content-wrapper">
+                            <div class="suspects-sections">
+                                <p>There are no further details on <strong>Person of interest</strong> at this time.</p>
+                            </div>
+                            <div class="cta-wrapper">
+                                <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button>
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% elseif data['addSuspect_Details'] == 'Company' %}
+        <div class="suspects">
+            <div class="suspects-details open">
+                <h3 class="govuk-heading-l">
+                    <div class="name_Wrapper">{{ data['addSuspect_CompanyName'] }}</div>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                <div class="suspects-details-wrapper  has-details">
+                    <div class="suspects-content-wrapper">
+                        <div class="suspects-sections">
+                            <p>There are no further details on <strong>{{ data['addSuspect_CompanyName'] }}</strong> at this time.</p>
+                        </div>
+                        <div class="cta-wrapper">
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9A-add-suspect';">Edit suspect</button>
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+
+{% endif %}
+
+<!-- MULTIPLE SUSPECTS - START -->
+<div class="suspects" id="multiple_Suspect_Details">
+
+    <!-- SUSPECT - 1 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-l">
+            <div class="name_Wrapper">CHAVEZ, Zahra</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="suspects-details-wrapper  has-details">
+            <div class="suspects-content-wrapper">
+                <div class="suspects-sections">
+                    <p>There are no further details on <strong>CHAVEZ, Zahra</strong> at this time.</p>
+                </div>
+                <div class="cta-wrapper">
+                    <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='#';">Edit suspect</button>
+                    <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 1 - END -->
+
+    <!-- SUSPECT - 2 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-l">
+            <div class="name_Wrapper">TERRY, Jayson</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="suspects-details-wrapper  has-details">
+            <div class="suspects-content-wrapper">
+                <div class="suspects-sections">
+                    <p>There are no further details on <strong>TERRY, Jayson</strong> at this time.</p>
+                </div>
+                <div class="cta-wrapper">
+                    <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='#';">Edit suspect</button>
+                    <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 2 - END -->
+
+    <!-- SUSPECT - 3 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-l">
+            <div class="name_Wrapper">SINGH, Mateo</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="suspects-details-wrapper  has-details">
+            <div class="suspects-content-wrapper">
+                <div class="suspects-sections">
+                    <p>There are no further details on <strong>SINGH, Mateo </strong> at this time.</p>
+                </div>
+                <div class="cta-wrapper">
+                    <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='#';">Edit suspect</button>
+                    <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 3 - END -->
+
+</div>
+<!-- MULTIPLE SUSPECTS - END -->
+
+<div class="cta-wrapper">
+    <div class="add-new">
+        {% if data['completeAddSuspect'] == 'true' %}
+            <p>Add additional <strong>suspects</strong> to this case</p>
+        {% else %}
+            <p>There has been <strong>no Suspects</strong> added to this case</p>
+        {% endif %}
+        <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a suspect</button>
+    </div>
+    <div class="govuk-form-group file-upload">
+        <label class="govuk-label" for="multiple_Suspects">Upload a list of Suspects</label>
+        <input class="govuk-file-upload" id="multiple_Suspects" name="multiple_Suspects" type="file">
+    </div> 
+</div>
