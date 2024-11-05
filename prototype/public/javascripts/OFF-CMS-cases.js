@@ -1103,6 +1103,157 @@ $(document).ready(function () {
 
 })
 
+// ========================= ADD A CHARGE ========================= //
+$(document).ready(function () {
+
+    // Page 1
+    $('.create-charge-continue, #newChargeCode_ErrorPanel-B').hide();
+
+    $("#newCharge_ErrorActivate").on("click", function (e) { 
+        $('#newChargeCode_ErrorPanel-A, #newChargeCode_Error-A').show();
+        $('#newChargeCode_Error').addClass('govuk-form-group--error');
+        $('#newChargeCode').addClass('govuk-input--error');
+    });
+
+    $("#newChargeCode").on("keyup", function (e) { 
+        if ($(this).val().length >= 5) {
+            $('#newChargeCode_A').attr('action','12B-charge-details');
+            $('.create-charge-error').hide();
+            $('.create-charge-continue').show();
+        }
+    });
+
+    // Page 2
+    $('.create-charge-continue_B, #newChargeCode_ErrorPanel-B').hide();
+    $('.addCharge_Form_Date-Day-Error, #addCharge_Form_Date-Day-Error').hide();
+    $('.addCharge_Form-Address_1-Error, #addCharge_Form-Address_1-Error').hide();
+    $('.addCharge_Form-Address_3-Error, #addCharge_Form-Address_3-Error').hide();
+    $('.addCharge_Form-Postcode-Error, #addCharge_Form-Postcode-Error').hide();
+    $('.addCharge_Form-Address_4-Error, #addCharge_Form-Address_4-Error').hide();
+
+    $("#newCharge_ErrorActivate_B").on("click", function (e) { 
+        e.preventDefault();
+        $('#newChargeCode_ErrorPanel-B').show();
+
+        // Date of Offence
+        if ($('#addCharge_Form_Date-Day').val() && $('#addCharge_Form_Date-Month').val() && $('#addCharge_Form_Date-Year').val()) {
+            $('.addCharge_Form_Date-Day-Error, #addCharge_Form_Date-Day-Error').hide();
+            $('#addCharge_Form_Date-Day, #addCharge_Form_Date-Month, #addCharge_Form_Date-Year').removeClass('govuk-input--error');
+            $('#dateRange-Container').removeClass('govuk-form-group--error');
+        } else {
+            $('.addCharge_Form_Date-Day-Error, #addCharge_Form_Date-Day-Error').show();
+            $('#addCharge_Form_Date-Day, #addCharge_Form_Date-Month, #addCharge_Form_Date-Year').addClass('govuk-input--error');
+            $('#dateRange-Container').addClass('govuk-form-group--error');
+        }
+
+        // Address line 1
+        if ($('#addCharge_Form-Address_1').val()) {
+            $('.addCharge_Form-Address_1-Error, #addCharge_Form-Address_1-Error').hide();
+            $('#addCharge_Form-Address_1').removeClass('govuk-input--error');
+            $('#newChargeCode_Error-A').removeClass('govuk-form-group--error');
+        } else {
+            $('.addCharge_Form-Address_1-Error, #addCharge_Form-Address_1-Error').show();
+            $('#addCharge_Form-Address_1').addClass('govuk-input--error');
+            $('#newChargeCode_Error-A').addClass('govuk-form-group--error');
+        }
+
+        // Address line 3 - Town or City
+        if ($('#addCharge_Form-Address_3').val()) {
+            $('.addCharge_Form-Address_3-Error, #addCharge_Form-Address_3-Error').hide();
+            $('#addCharge_Form-Address_3').removeClass('govuk-input--error');
+            $('#newChargeCode_Error-B').removeClass('govuk-form-group--error');
+        } else {
+            $('.addCharge_Form-Address_3-Error, #addCharge_Form-Address_3-Error').show();
+            $('#addCharge_Form-Address_3').addClass('govuk-input--error');
+            $('#newChargeCode_Error-B').addClass('govuk-form-group--error');
+        }
+
+        // Address Postcode
+        if ($('#addCharge_Form-Postcode').val()) {
+            $('.addCharge_Form-Postcode-Error, #addCharge_Form-Postcode-Error').hide();
+            $('#addCharge_Form-Postcode').removeClass('govuk-input--error');
+            $('#newChargeCode_Error-C').removeClass('govuk-form-group--error');
+        } else {
+            $('.addCharge_Form-Postcode-Error, #addCharge_Form-Postcode-Error').show();
+            $('#addCharge_Form-Postcode').addClass('govuk-input--error');
+            $('#newChargeCode_Error-C').addClass('govuk-form-group--error');
+        }
+
+        // Address line 4 - Country
+        if ($('#addCharge_Form-Address_4').val()) {
+            $('.addCharge_Form-Address_4-Error, #addCharge_Form-Address_4-Error').hide();
+            $('#addCharge_Form-Address_4').removeClass('govuk-input--error');
+            $('#newChargeCode_Error-D').removeClass('govuk-form-group--error');
+        } else {
+            $('.addCharge_Form-Address_4-Error, #addCharge_Form-Address_4-Error').show();
+            $('#addCharge_Form-Address_4').addClass('govuk-input--error');
+            $('#newChargeCode_Error-D').addClass('govuk-form-group--error');
+        }
+
+    });
+
+    // $("#addCharge_Form_Date-Day").on("keyup", function (e) { 
+    //     if ($('#addCharge_Form-Address_1').val() && $('#addCharge_Form-Address_3').val() && $('#addCharge_Form-Postcode').val() && $('#addCharge_Form-Address_4').val()) {
+    //         $('.create-charge-continue_B').show();
+    //         $('.create-charge-error_B').hide();
+    //     }
+    // });
+
+    // $("#addCharge_Form-Address_1").on("keyup", function (e) { 
+    //     if ($('#addCharge_Form_Date-Day').val() && $('#addCharge_Form-Address_3').val() && $('#addCharge_Form-Postcode').val() && $('#addCharge_Form-Address_4').val()) {
+    //         $('.create-charge-continue_B').show();
+    //         $('.create-charge-error_B').hide();
+    //     }
+    // });
+
+    // $("#addCharge_Form-Address_3").on("keyup", function (e) { 
+    //     if ($('#addCharge_Form_Date-Day').val() && $('addCharge_Form-Address_1').val() && $('#addCharge_Form-Postcode').val() && $('#addCharge_Form-Address_4').val()) {
+    //         $('.create-charge-continue_B').show();
+    //         $('.create-charge-error_B').hide();
+    //     }
+    // });
+
+    // $("#addCharge_Form-Postcode").on("keyup", function (e) { 
+    //     if ($('#addCharge_Form_Date-Day').val() && $('addCharge_Form-Address_1').val() && $('#addCharge_Form-Address_3').val() && $('#addCharge_Form-Address_4').val()) {
+    //         $('.create-charge-continue_B').show();
+    //         $('.create-charge-error_B').hide();
+    //     }
+    // });
+
+    $("#addCharge_Form-Address_4").on("keyup", function (e) { 
+        $('.create-charge-continue_B').show();
+        $('.create-charge-error_B').hide();
+        $('#newChargeCode_B').attr('action','12C-charge-details');
+    });
+
+})
+
+function datePicker() {
+    $('#addCharge_Form_Date-Day').val('20');
+    $('#addCharge_Form_Date-Month').val('10');
+    $('#addCharge_Form_Date-Year').val('2024');
+}
+
+function dateRange() {
+    $('#addCharge_Form_Date-Day').val('20');
+    $('#addCharge_Form_Date-Month').val('10');
+    $('#addCharge_Form_Date-Year').val('2024');
+    $('#addCharge_Form_Date-Day_2').val('21');
+    $('#addCharge_Form_Date-Month_2').val('10');
+    $('#addCharge_Form_Date-Year_2').val('2024');
+    $('#dateRangeButton').hide();
+    $('#dateRange-Container_2').show();
+}
+
+function dateSingle() {
+    $('#dateRange-Container_2').hide();
+}
+
+function generateSummary() {
+    $('#addCharge_Form-Particulars').prepend(`On 21st October 2022 at 31 North Road, destroyed a something to the value of £3500 belonging to `);
+}
+
+
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {
 

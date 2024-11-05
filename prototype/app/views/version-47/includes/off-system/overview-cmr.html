@@ -35,7 +35,7 @@
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
                         <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
                         <p class="hods-timeline__description witness-description">
-                            {% if data['suspectType-conditional'] == 'Person of interest' %}
+                            {% if data['suspectType-conditional'] == 'Individual' %}
                                 {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
                                     <strong>{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}</strong>,
                                     {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
@@ -45,7 +45,7 @@
                                     {% endif %}
                                     added as a witness for the case.
                                 {% else %}
-                                    Person of interest added as a witness for the case.
+                                    Individual added as a witness for the case.
                                 {% endif %}
                             {% elseif data['suspectType-conditional'] == 'Company' %}
                                 {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
@@ -66,11 +66,11 @@
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
                         <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
                         <p class="hods-timeline__description suspect-description">
-                            {% if data['addSuspect_Details'] == 'Person of interest' %}
+                            {% if data['addSuspect_Details'] == 'Individual' %}
                                 {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
                                     <strong>{{ data['addSuspect_Form-Surname'] }}</strong>, {{ data['addSuspect_Form-Forename'] }} added as a suspect for the case.
                                 {% else %}
-                                    Person of interest
+                                    Individual
                                 {% endif %}
                                 {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
                                     <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>

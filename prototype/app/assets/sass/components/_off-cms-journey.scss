@@ -39,6 +39,25 @@ button {
      }
 }
 
+.floating-link, #newChargeCode {
+     float: left;
+     display: inline-block;
+     margin: 0;
+}
+
+.floating-link {
+     margin: 0.325em 0 0 1em;
+}
+
+#addCharge_Form-VictimStatus-Wrapper {
+     .govuk-checkboxes__item {
+          float: left;
+          display: inline-block;
+          clear: none;
+          margin-right: 1em;
+     }
+}
+
 html {
      &.govuk-template {
           body, main {
@@ -546,8 +565,50 @@ a {
      }
 }
 
+h2 {
+     a {
+           float: right;
+           font-size: 1rem;
+           font-weight: normal;
+           margin-top: 0.5em;
+           color: $govuk-link-colour !important;
+     }
+}
+
 .surname {
      text-transform: uppercase;
+}
+
+.date_range_wrapper {
+     display: inline-block;
+     width: 100%;
+     #addCharge_Form_Date--To {
+          p {
+               margin: 1.8em 1em 0em 1.75em;
+               display: inline-block;
+          }
+     }
+     #dateRange-Container, #dateRange-Container_2 {
+          display: inline-block;
+          float: left;
+     }
+}
+
+#addCharge_Form_Date {
+     .govuk-date-input__item {
+          float: left;
+     }
+     button {
+          float: left;
+          margin: 1.5em 0 0 1em;
+          &.datePicker {
+               margin-left: 0; 
+               text-indent: -1000em;
+               width: 2em;
+                    background: url("../images/calendar-white.svg") $govuk-link-colour no-repeat 50% 50%;
+                    background-size: 1.15em;   
+          }
+     }
 }
 
 .egress-logo {
@@ -1105,6 +1166,22 @@ nav.tube-map-ea {
           }
           &.padding-left {
                padding-left: 2em;
+          }
+     }
+     &.inline-form {
+          label, input, select {
+               display: inline-block; 
+               float: left;
+          }
+          select {
+               margin-right: 0.75em;
+          }
+          label {
+               width: auto;
+               margin: 0.35em 0.75em 0 0;
+               &.last-of-type {
+                    margin-left: 0.75em;
+               }
           }
      }
      &.no-float {

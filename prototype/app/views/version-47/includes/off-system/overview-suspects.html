@@ -1,8 +1,8 @@
-<h2 class="govuk-heading-l">Suspects</h2>
+<h2 class="govuk-heading-l">Suspects & Charges</h2>
 <span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
 
 {% if data['addSuspectStarted'] == 'true' %}
-    {% if data['addSuspect_Details'] == 'Person of interest' %}
+    {% if data['addSuspect_Details'] == 'Individual' %}
         <div class="suspects">
             <div class="suspects-details open">
                 <h3 class="govuk-heading-l">
@@ -10,7 +10,7 @@
                         {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
                             <span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}
                         {% else %}
-                            Person of interest
+                            Individual
                         {% endif %}
                         {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
                             <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
@@ -217,11 +217,24 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="suspects-details-wrapper has-details">
+                        <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                        <div class="suspects-content-wrapper">
+                            <div class="suspects-sections">
+                                <section>
+                                    <p>
+                                        There are charges for <strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <strong class="forename">{{ data['addSuspect_Form-Forename'] }}</strong> at this time.
+                                    </p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                 {% else %}
                     <div class="suspects-details-wrapper  has-details">
                         <div class="suspects-content-wrapper">
                             <div class="suspects-sections">
-                                <p>There are no further details on <strong>Person of interest</strong> at this time.</p>
+                                <p>There are no further details on <strong>Individual</strong> at this time.</p>
                             </div>
                             <div class="cta-wrapper">
                                 <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='9B-add-suspect';">Edit suspect</button>
