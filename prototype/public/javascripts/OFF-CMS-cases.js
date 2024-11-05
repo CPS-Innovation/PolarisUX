@@ -994,7 +994,7 @@ $(document).ready(function () {
 })
 
 function confirmRemoveSuspects() {
-    $('.removeSuspect').hide();
+    $('.suspects-details.removeSuspect').hide();
     $('#confirmRemoveSuspect').addClass('rj-dont-display');
 }
 
@@ -1175,7 +1175,7 @@ $(document).ready(function () {
 })
 
 function confirmRemoveWitness() {
-    $('.removeWitness').hide();
+    $('.witnesses-details.removeWitness').hide();
     $('#confirmRemoveWitness').addClass('rj-dont-display');
 }
 
@@ -1354,6 +1354,14 @@ function generateSummary() {
     $('#addCharge_Form-Particulars').prepend(`On 21st October 2022 at 31 North Road, destroyed a something to the value of £3500 belonging to `);
 }
 
+
+function openCharge() {
+    $('#chargesModal').removeClass('rj-dont-display');
+}
+
+function closeChargesModal() {
+    $('#chargesModal').addClass('rj-dont-display');
+}
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {

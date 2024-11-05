@@ -152,37 +152,31 @@
                     </div>
                     <select class="govuk-select" id="addCharge_Form-Suspect" name="addCharge_Form-Suspect" aria-describedby="addCharge_Form-Suspect-hint">
                         <option value="Select" selected>Select</option>
-                        {% if data['addSuspect_Details'] == 'Individual' %}
-                            {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
-                                <option value="{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}">{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}</option>
-                            {% else %}
-                                <option value="Individual">Individual</option>
-                            {% endif %}
-                        {% elseif data['addSuspect_Details'] == 'Company' %}
-                            <option value="{{ data['addSuspect_CompanyName'] }}">{{ data['addSuspect_CompanyName'] }}</option>
+                        {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                            <option value="{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}">{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}</option>
+                        {% else %}
+
                         {% endif %}
                     </select>
                 </div>
 
                 <div class="govuk-form-group" id="multiple_Suspects_Selection">
-                    <label class="govuk-label govuk-label--s" for="addCharge_Form-Suspect">Victim (Suspect)</label>
-                    <div id="addCharge_Form-Suspect-hint" class="govuk-hint">
+                    <label class="govuk-label govuk-label--s" for="addCharge_Form-Victim">Victim (optional)</label>
+                    <div id="addCharge_Form-Victim-hint" class="govuk-hint">
                         Where a suspect is accused of multiple instances of the same offence, victim name can be appended to the charge, making it easier to identify individual offences.
                     </div>
-                    <select class="govuk-select" id="addCharge_Form-Suspect" name="addCharge_Form-Suspect" aria-describedby="addCharge_Form-Suspect-hint">
+                    <select class="govuk-select" id="addCharge_Form-Victim" name="addCharge_Form-Victim" aria-describedby="addCharge_Form-Victim-hint">
                         <option value="Select" selected>Select</option>
-                        {% if data['addSuspect_Details'] == 'Individual' %}
-                            {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
-                                <option value="{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}">{{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}</option>
-                            {% else %}
-                                <option value="Individual">Individual</option>
-                            {% endif %}
-                        {% elseif data['addSuspect_Details'] == 'Company' %}
-                            <option value="{{ data['addSuspect_CompanyName'] }}" selected>{{ data['addSuspect_CompanyName'] }}</option>
+                        {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
+                            <option value="{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}">{{ data['addWitness_Form-Surname'] }}, {{ data['addWitness_Form-Forename'] }}</option>
+                        {% else %}
+
                         {% endif %}
-                        <option value="CHAVEZ, Zahra">CHAVEZ, Zahra</option>
-                        <option value="TERRY, Jayson">TERRY, Jayson</option>
-                        <option value="SINGH, Mateo">SINGH, Mateo</option>
+                        <option value="NORTON, Asia">NORTON, Asia</option>
+                        <option value="HORTON, Rowan">HORTON, Rowan</option>
+                        <option value="LINDSEY, Aishah">LINDSEY, Aishah</option>
+                        <option value="McLAUGHLIN, Annie">McLAUGHLIN, Annie</option>
+                        <option value="ODLING, Mariam">ODLING, Mariam</option>
                     </select>
                 </div>
                 <!-- OPTION 3 - END -->

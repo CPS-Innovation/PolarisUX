@@ -129,6 +129,23 @@
                     </div>                    
                     <!-- OPTION 4 - END -->
 
+                    <!-- OPTION 5 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    {% if data['caseSettings_Long'] %}
+                                        <input class="govuk-checkboxes__input" id="caseSettings_Long" name="caseSettings_Long" type="checkbox" value="Long term interest" checked>
+                                    {% else %}
+                                        <input class="govuk-checkboxes__input" id="caseSettings_Long" name="caseSettings_Long" type="checkbox" value="Long term interest">
+                                    {% endif %}
+                                    <label class="govuk-label govuk-checkboxes__label" for="caseSettings_Long">Long term interest</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 5 - END -->
+
                 </fieldset>
 
                 <input id="caseAccess" name="caseAccess" type="text" value="false" style="display: none;">
