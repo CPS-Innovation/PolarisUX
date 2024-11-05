@@ -112,37 +112,37 @@
             <ul class="govuk-tabs__list">
 
                 <!-- OVERVIEW - Show on Case creation -->
-                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="tab-link tab-1-content">Overview</a></li>
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" id="tab-1"><a class="tab-link tab-1-content">Overview</a></li>
 
                 <!-- EA/REVIEW - Show on EA -->
                 {% if data['completeAndExitEA'] == 'true' %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
                 {% else %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
                 {% endif %}
 
                 <!-- ADD SUSPECT - Show on Add -->
                 {% if data['addSuspectStarted'] == 'true' %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
                 {% else %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects & Charges</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects & Charges</a></li>
                 {% endif %}
 
                 {% if data['addWitnessStarted'] == 'true' %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content"><span class="number witnesses-number">1</span> Witnesses/Victims</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number">1</span> Witnesses/Victims</a></li>
                 {% else %}
-                    <li class="govuk-tabs__list-item"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
                 {% endif %}
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content"><span class="number charges-number zero">0</span> Charges</a></li> -->
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">2</span> Materials &amp; Comms</a></li> -->
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content">Materials &amp; Comms</a></li>
+                <li class="govuk-tabs__list-item" id="tab-7"><a class="tab-link tab-7-content">Materials &amp; Comms</a></li>
 
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-8-content"><span class="number contacts-number">1</span>Case permissions</a></li>
+                <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">1</span>Case permissions</a></li>
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
 
                 <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li> -->
-                <li class="govuk-tabs__list-item"><a class="tab-link tab-11-content">CMR</a></li>
+                <li class="govuk-tabs__list-item" id="tab-11"><a class="tab-link tab-11-content">CMR</a></li>
             </ul>   
             <!-- /////////////// TABS - END /////////////// -->
 

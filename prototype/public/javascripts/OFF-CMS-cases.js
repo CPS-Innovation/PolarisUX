@@ -146,13 +146,13 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-    $('input[name=newCase_Access]').on("change", function() {
-        if ($('input[id=newCase_Access--Later]').is(':checked')) {
-            $('#newCase_Form-C').attr('action','5-case-overview');
-        } else if ($('input[id=newCase_Access--Now]').is(':checked')) {
-            $('#newCase_Form-C').attr('action','4D-create-case');
-        }      
-    });
+    // $('input[name=newCase_Access]').on("change", function() {
+    //     if ($('input[id=newCase_Access--Later]').is(':checked')) {
+    //         $('#newCase_Form-C').attr('action','5-case-overview');
+    //     } else if ($('input[id=newCase_Access--Now]').is(':checked')) {
+    //         $('#newCase_Form-C').attr('action','4D-create-case');
+    //     }      
+    // });
 
 })
 
@@ -239,6 +239,54 @@ $(document).ready(function () {
     });
 
 })
+
+$(document).ready(function() {
+
+    // 1 - Overview
+    if (window.location.href.indexOf("overviewTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-1').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-1-content').show();
+    }
+
+    // 2 - EA
+    if (window.location.href.indexOf("eaTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-2').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-2-content').show();
+    }
+
+    // 3 - Suspects
+    if (window.location.href.indexOf("suspectsTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+    }
+
+    // 4 - Witnesses
+    if (window.location.href.indexOf("witnessesTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-4').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-4-content').show();
+    }
+
+    // 5 - Materials
+    if (window.location.href.indexOf("materialsTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-7').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-7-content').show();
+    }
+});
 
 // ========================= ADD USERS =========================
 $(document).ready(function () {
@@ -828,7 +876,7 @@ $(document).ready(function () {
 
     $("#addSuspect_CompanyName").on("keyup", function (e) { 
         if ($(this).length >= 1) {
-            $('#addSuspect_Form-A').attr('action','5-case-overview');
+            $('#addSuspect_Form-A').attr('action','5-case-overview#suspectsTab');
             $('.add-suspect-error').hide();
             $('.add-suspect-continue').show();
         } else {
@@ -848,18 +896,45 @@ $(document).ready(function () {
         }
     });
 
+
+    // All items
+    $(".preview-all-link").hide();
+
+    $(".preview-all-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $('.hide-all-link').show();
+        $('.suspects-details-wrapper').show();
+        $(".preview-link").hide();
+        $(".hide-link").show();
+        $('.suspects-details').addClass('open');
+    });
+
+    $(".hide-all-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $('.preview-all-link').show();
+        $('.suspects-details-wrapper').hide().removeClass('open');
+        $(".preview-link").show();
+        $(".hide-link").hide();
+        $('.suspects-details').removeClass('open');
+    });
+
+    // One by one
     $(".preview-link").hide();
 
     $(".preview-link").on("click", function (e) { 
         $(this).hide();
         $(this).parent().find('.hide-link').show();
         $(this).parent().parent().find('.suspects-details-wrapper').show();
+        $(this).parent().parent().addClass('open');
     });
 
     $(".hide-link").on("click", function (e) { 
         $(this).hide();
         $(this).parent().find('.preview-link').show();
         $(this).parent().parent().find('.suspects-details-wrapper').hide();
+        $(this).parent().parent().removeClass('open');
     });
 
     $('#addSuspect_Form-TypeHidden').hide();
@@ -876,7 +951,7 @@ $(document).ready(function () {
         if ($(this).is(':checked')) {
             $('#addSuspect_Form-B').attr('action','9C-add-suspect');
         } else {
-            $('#addSuspect_Form-B').attr('action','5-case-overview');
+            $('#addSuspect_Form-B').attr('action','5-case-overview#suspectsTab');
         }
     });
     
@@ -1020,6 +1095,30 @@ $(document).ready(function () {
         $('#addWitness_Form-Address_3').val('United Kingdom');        
     });
 
+    // All items
+    $(".preview-all-witnesses-link").hide();
+
+    $(".preview-all-witnesses-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $('.hide-all-witnesses-link').show();
+        $('.witnesses-details-wrapper').show();
+        $(".preview-witness-link").hide();
+        $(".hide-witness-link").show();
+        $('.witnesses-details').addClass('open');
+    });
+
+    $(".hide-all-witnesses-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $('.preview-all-witnesses-link').show();
+        $('.witnesses-details-wrapper').hide().removeClass('open');
+        $(".preview-witness-link").show();
+        $(".hide-witness-link").hide();
+        $('.witnesses-details').removeClass('open');
+    });
+
+    // One by one
     $(".preview-witness-link").hide();
 
     $(".preview-witness-link").on("click", function (e) { 
@@ -1107,9 +1206,10 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     // Page 1
-    $('.create-charge-continue, #newChargeCode_ErrorPanel-B').hide();
+    $('.create-charge-continue, #newChargeCode_ErrorPanel-A, #newChargeCode_Error-A').hide();
 
     $("#newCharge_ErrorActivate").on("click", function (e) { 
+        e.preventDefault();
         $('#newChargeCode_ErrorPanel-A, #newChargeCode_Error-A').show();
         $('#newChargeCode_Error').addClass('govuk-form-group--error');
         $('#newChargeCode').addClass('govuk-input--error');
@@ -1150,11 +1250,11 @@ $(document).ready(function () {
         if ($('#addCharge_Form-Address_1').val()) {
             $('.addCharge_Form-Address_1-Error, #addCharge_Form-Address_1-Error').hide();
             $('#addCharge_Form-Address_1').removeClass('govuk-input--error');
-            $('#newChargeCode_Error-A').removeClass('govuk-form-group--error');
+            $('#newChargeCode_Address_1').removeClass('govuk-form-group--error');
         } else {
             $('.addCharge_Form-Address_1-Error, #addCharge_Form-Address_1-Error').show();
             $('#addCharge_Form-Address_1').addClass('govuk-input--error');
-            $('#newChargeCode_Error-A').addClass('govuk-form-group--error');
+            $('#newChargeCode_Address_1').addClass('govuk-form-group--error');
         }
 
         // Address line 3 - Town or City
@@ -1247,6 +1347,7 @@ function dateRange() {
 
 function dateSingle() {
     $('#dateRange-Container_2').hide();
+    $('#dateRangeButton').show();
 }
 
 function generateSummary() {

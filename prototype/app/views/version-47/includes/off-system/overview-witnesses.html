@@ -1,10 +1,18 @@
 <h2 class="govuk-heading-l">Witnesses/Victims</h2>
-<span class="govuk-caption-m">Last updated <span id="witnesses-timestamp"></span></span>
+<div class="hide-all-title-wrapper">
+    <span class="govuk-caption-m">Last updated <span id="witnesses-timestamp"></span></span>
+    {% if data['addSuspectStarted'] == 'true' %}
+        <a href="" class="hide-all-witnesses-link">Hide all <span class="icon-new arrow-up"></span></a>
+    {% else %}
+
+    {% endif %}
+    <a href="" class="preview-all-witnesses-link">Show all <span class="icon-new arrow-down"></span></a>
+</div>
 
 {% if data['addWitnessStarted'] == 'true' %}
     <div class="witnesses">
         <div class="witnesses-details open">
-            <h3 class="govuk-heading-l">
+            <h3 class="govuk-heading-m">
                 <div class="name_WrapperWitness">
                     {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
                         <span>{{ data['addWitness_Form-Surname'] }}</span>, {{ data['addWitness_Form-Forename'] }}
@@ -47,7 +55,7 @@
                 <div class="witnesses-content-wrapper">
 
                     <!-- SECTION 1 - START -->
-                    <h4 class="govuk-heading-m">Relationship to case</h4>
+                    <h4 class="govuk-heading-s">Relationship to case</h4>
                     <div class="witnesses-sections">
 
                         {% if data['suspectType-conditional'] %}
@@ -144,7 +152,7 @@
                     <!-- SECTION 1 - END -->
 
                     <!-- SECTION 2 - START -->
-                    <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Personal details</h4>
+                    <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Personal details</h4>
                     <div class="witnesses-sections">
 
                         {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
@@ -276,7 +284,7 @@
                     <!-- SECTION 2 - END -->
 
                     <!-- SECTION 3 - START -->
-                    <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                    <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                     <div class="witnesses-sections">
                         {% if data['addWitness_Form-Email'] or data['addWitness_Form-Mobile'] or data['addWitness_Form-Telephone'] %}
                             {% if data['addWitness_Form-Email'] %}
@@ -334,7 +342,7 @@
 
     <!-- WITNESS - 1 - START -->
     <div class="witnesses-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>Norton</span>, Asia</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -345,7 +353,7 @@
             <div class="witnesses-content-wrapper">
 
                 <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Norton</strong>, <span class="forename"> Asia</span></span></p>
@@ -354,7 +362,7 @@
                 <!-- SECTION 1 - END -->
 
                 <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>asia.norton@gmail.com</strong></span></p>
@@ -378,7 +386,7 @@
 
     <!-- WITNESS - 2 - START -->
     <div class="witnesses-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>Horton</span>, Rowan</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -388,7 +396,7 @@
             <div class="witnesses-content-wrapper">
 
                 <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Horton</strong>, <span class="forename"> Rowan</span></span></p>
@@ -397,7 +405,7 @@
                 <!-- SECTION 1 - END -->
 
                 <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>rowan.horton@gogglemail.com</strong></span></p>
@@ -421,7 +429,7 @@
 
     <!-- WITNESS - 3 - START -->
     <div class="witnesses-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>Lindsey</span>, Aishah</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -431,7 +439,7 @@
             <div class="witnesses-content-wrapper">
 
                 <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Lindsey</strong>, <span class="forename"> Aishah</span></span></p>
@@ -440,7 +448,7 @@
                 <!-- SECTION 1 - END -->
 
                 <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>aishah.lindsey@hotmail.com</strong></span></p>
@@ -464,7 +472,7 @@
 
     <!-- WITNESS - 4 - START -->
     <div class="witnesses-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>Mclaughlin</span>, Annie</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -474,7 +482,7 @@
             <div class="witnesses-content-wrapper">
 
                 <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Mclaughlin</strong>, <span class="forename"> Annie</span></span></p>
@@ -483,7 +491,7 @@
                 <!-- SECTION 1 - END -->
 
                 <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>annie.mclaughlin@cps.gov.uk</strong></span></p>
@@ -507,7 +515,7 @@
 
     <!-- WITNESS - 5 - START -->
     <div class="witnesses-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>Odling</span>, Mariam</div>
             <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -517,7 +525,7 @@
             <div class="witnesses-content-wrapper">
 
                 <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Odling</strong>, <span class="forename"> Mariam</span></span></p>
@@ -526,7 +534,7 @@
                 <!-- SECTION 1 - END -->
 
                 <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
+                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
                 <div class="witnesses-sections">
                     <section>
                         <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>mariam.odling@adling.construction.org.uk</strong></span></p>

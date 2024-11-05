@@ -332,6 +332,7 @@ html {
                display: inline-block;
                width: auto;
                float: left;
+               margin-top: 1.5em;
                &.contacts-added {
                     margin-top: 1.5em;
                }
@@ -393,6 +394,11 @@ html {
      }
      section {
           border: 1px solid $govuk-border-colour;
+          .shared-drive {
+               display: inline-block;
+               width: 94%;
+               padding: 0.5em 3% 0 3%;
+          }
           .permissions {
                width: 94%;
                padding: 1em 3% 0 3%;
@@ -1120,7 +1126,7 @@ nav.tube-map-ea {
      }
 }
 
-.preview-link, .hide-link, .preview-witness-link, .hide-witness-link {
+.preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link {
      font-size: 1rem;
      float: right;
      margin-top: 0.75em;
@@ -1131,19 +1137,26 @@ nav.tube-map-ea {
      &:hover, &:active, &:focus {
           cursor: pointer;
      }
-     .icon-new {
-          background: url("../images/arrow-down-blue.svg") no-repeat 50% 50%;
-          background-size: contain;
+     .arrow-down, .arrow-up {
           width: 0.75em;
           height: 0.75em;
           margin: 0em 0 -0.15em 0.25em;
      }
-}
-
-.hide-link {
-     .icon-new {
+     .arrow-down {
+          background: url("../images/arrow-down-blue.svg") no-repeat 50% 50%;
+          background-size: contain;
+     }
+     .arrow-up {
           background: url("../images/arrow-up-blue.svg") no-repeat 50% 50%;
           background-size: contain;
+     }
+
+}
+
+.hide-all-link, .hide-all-witnesses-link {
+     .icon-new {
+          float: right;
+          margin-top: 0.25em;
      }
 }
 
@@ -1205,10 +1218,23 @@ nav.tube-map-ea {
      float: left;
 }
 
+.hide-all-title-wrapper {
+     span.govuk-caption-m {
+          display: inline-block;
+          float: left;
+          width: auto;
+     }
+     a {
+          display: inline-block;
+          float: right;
+          font-size: 1rem;
+     }
+}
+
 .suspects, .witnesses {
      display: inline-block;
      width: 100%;
-     margin-bottom: 1.5em;
+     // margin-bottom: 1.5em;
      .suspects-details, .witnesses-details {
           display: inline-block;
           width: 100%;
@@ -1222,11 +1248,11 @@ nav.tube-map-ea {
                     border-bottom: none;
                }
           }
-          &:last-of-type {
-               padding-bottom: 1em;
-               margin-bottom: 1em;
-               border-bottom: 1px solid $govuk-border-colour;
-          }
+          // &:last-of-type {
+          //      padding-bottom: 1em;
+          //      margin-bottom: 1em;
+          //      border-bottom: 1px solid $govuk-border-colour;
+          // }
           h3 {
                margin-bottom: 0;
                display: inline-block;
@@ -1239,7 +1265,7 @@ nav.tube-map-ea {
                     }
                }
                .preview-link, .hide-link {
-                    margin-top: 1em;
+                    margin-top: 0.5em;
                }
           }
           .suspects-details-wrapper, .witnesses-details-wrapper {
@@ -1321,6 +1347,7 @@ nav.tube-map-ea {
                               display: inline-block;
                               width: 100% !important;
                               padding-top: 1em;
+                              margin-top: 0 !important;
                               button {
                                    margin-left: 1em;
                                    &.govuk-button {

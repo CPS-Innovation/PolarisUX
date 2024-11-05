@@ -1,11 +1,19 @@
 <h2 class="govuk-heading-l">Suspects & Charges</h2>
-<span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
+<div class="hide-all-title-wrapper">
+    <span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
+    {% if data['addSuspectStarted'] == 'true' %}
+        <a href="" class="hide-all-link">Hide all <span class="icon-new arrow-up"></span></a>
+    {% else %}
+
+    {% endif %}
+    <a href="" class="preview-all-link">Show all <span class="icon-new arrow-down"></span></a>
+</div>
 
 {% if data['addSuspectStarted'] == 'true' %}
     {% if data['addSuspect_Details'] == 'Individual' %}
         <div class="suspects">
             <div class="suspects-details open">
-                <h3 class="govuk-heading-l">
+                <h3 class="govuk-heading-m">
                     <div class="name_Wrapper">
                         {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
                             <span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}
@@ -226,6 +234,7 @@
                                     <p>
                                         There are charges for <strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <strong class="forename">{{ data['addSuspect_Form-Forename'] }}</strong> at this time.
                                     </p>
+                                    <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Add a charge</button>
                                 </section>
                             </div>
                         </div>
@@ -249,7 +258,7 @@
     {% elseif data['addSuspect_Details'] == 'Company' %}
         <div class="suspects">
             <div class="suspects-details open">
-                <h3 class="govuk-heading-l">
+                <h3 class="govuk-heading-m">
                     <div class="name_Wrapper">{{ data['addSuspect_CompanyName'] }}</div>
                     <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
                     <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -277,7 +286,7 @@
 
     <!-- SUSPECT - 1 - START -->
     <div class="suspects-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_Wrapper">CHAVEZ, Zahra</div>
             <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -298,7 +307,7 @@
 
     <!-- SUSPECT - 2 - START -->
     <div class="suspects-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_Wrapper">TERRY, Jayson</div>
             <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
@@ -319,7 +328,7 @@
 
     <!-- SUSPECT - 3 - START -->
     <div class="suspects-details open">
-        <h3 class="govuk-heading-l">
+        <h3 class="govuk-heading-m">
             <div class="name_Wrapper">SINGH, Mateo</div>
             <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
