@@ -1,4 +1,10 @@
-<h2 class="govuk-heading-l">Suspects & Charges</h2>
+{% if data['chargeAddedComplete'] == 'true' %}
+    <h2 class="govuk-heading-l">Defendants & Charges</h2>
+{% else %}
+    <h2 class="govuk-heading-l">Suspects & Charges</h2>
+{% endif %}
+
+
 <div class="hide-all-title-wrapper">
     <span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
     {% if data['addSuspectStarted'] == 'true' %}
@@ -33,7 +39,11 @@
                     <div class="flexbox">
                         <div class="suspects-details-wrapper has-details">
                             <div class="title">
-                                <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% if data['chargeAddedComplete'] == 'true' %}
+                                    <h4 class="govuk-heading-s">Defendants details</h4>
+                                {% else %}
+                                    <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% endif %}
                                 <a href="9B-add-suspect" class="">Edit</a>
                             </div>
                             <div class="suspects-content-wrapper">
@@ -43,7 +53,11 @@
                                     {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
                                         <section>
                                             <p>Name 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect name</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendants name</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect name</span></a>
+                                                {% endif %}
                                                 <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <span class="forename">{{ data['addSuspect_Form-Forename'] }}</span></span>
                                             </p>
                                         </section>
@@ -55,7 +69,11 @@
                                         <section>
                                             <p>
                                                 Aliases 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendants aliases</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% endif %}
                                                 <span>Yes</span>
                                             </p>
                                         </section>
@@ -67,7 +85,11 @@
                                         <section>
                                             <p>
                                                 Gender 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect gender</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant gender</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect gender</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Gender'] }}</strong></span>
                                             </p>
                                         </section>
@@ -79,7 +101,11 @@
                                         <section>
                                             <p>
                                                 Ethnicity 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ethnicity</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant ethnicity</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ethnicity</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Ethnicity'] }}</strong></span>
                                             </p>
                                         </section>
@@ -91,7 +117,11 @@
                                         <section>
                                             <p>
                                                 Religion 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect religion</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant religion</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect religion</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Religion'] }}</strong></span>
                                             </p>
                                         </section>
@@ -103,7 +133,11 @@
                                         <section>
                                             <p>
                                                 Date of birth
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect date of birth</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant date of birth</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect date of birth</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }}</strong></span>
                                             </p>
                                         </section>
@@ -115,7 +149,11 @@
                                         <section>
                                             <p>
                                                 Disability 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect disability</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant disability</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect disability</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Disability'] }}</strong></span>
                                             </p>
                                         </section>
@@ -127,7 +165,11 @@
                                         <section>
                                             <p>
                                                 Type
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect type</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant type</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect type</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Type'] }}</strong></span>
                                             </p>
                                         </section>
@@ -139,7 +181,11 @@
                                         <section>
                                             <p>
                                                 Arrest date 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect arrest date</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant arrest date</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect arrest date</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-Arrest-Day'] }}/{{ data['addSuspect_Form-Arrest-Month'] }}/{{ data['addSuspect_Form-Arrest-Year'] }}</strong></span>
                                             </p>
                                         </section>
@@ -151,20 +197,12 @@
                                         <section>
                                             <p>
                                                 SDO 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect SDO</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant SDO</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect SDO</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-SDO'] }}</strong></span>
-                                            </p>
-                                        </section>
-                                    {% else %}
-
-                                    {% endif %}
-
-                                    {% if data['addSuspect_Form-Long'] %}
-                                        <section>
-                                            <p>
-                                                Long term interest 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect long term insterest</span></a>
-                                                <span><strong>{{ data['addSuspect_Form-Long'] }}</strong></span>
                                             </p>
                                         </section>
                                     {% else %}
@@ -175,7 +213,11 @@
                                         <section>
                                             <p>
                                                 ASN 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ASN</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant ASN</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ASN</span></a>
+                                                {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-ASN'] }}</strong></span>
                                             </p>
                                         </section>
@@ -187,7 +229,11 @@
                                         <section>
                                             <p>
                                                 Aliases 
-                                                <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant aliases</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% endif %}
                                                 <span class="aliases-wrapper">
                                                     {% if data['addSuspect-Alias-Surname'] or data['addSuspect-Alias-Forename'] %}
                                                         <span><strong class="surname">{{ data['addSuspect-Alias-Surname'] }}</strong>, {{ data['addSuspect-Alias-Forename'] }}</span>
@@ -259,13 +305,21 @@
                     </div>
 
                     <div class="cta-wrapper">
-                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% if data['chargeAddedComplete'] == 'true' %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                        {% else %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% endif %}
                     </div>
                 {% else %}
                     <div class="flexbox">
                         <div class="suspects-details-wrapper has-details">
                             <div class="title">
-                                <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% if data['chargeAddedComplete'] == 'true' %}
+                                    <h4 class="govuk-heading-s">Defendants details</h4>
+                                {% else %}
+                                    <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% endif %}
                                 <a href="9B-add-suspect" class="">Edit</a>
                             </div>
                             <div class="suspects-content-wrapper">
@@ -273,7 +327,11 @@
                                     <p>There are no further details on <strong>Individual</strong> at this time.</p>
                                 </div>
                                 <div class="cta-wrapper">
-                                    <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                                    {% if data['chargeAddedComplete'] == 'true' %}
+                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                                    {% else %}
+                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -300,7 +358,11 @@
                     </div>
 
                     <div class="cta-wrapper">
-                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% if data['chargeAddedComplete'] == 'true' %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                        {% else %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% endif %}
                     </div>
                 {% endif %}
 
@@ -317,7 +379,11 @@
                 <div class="flexbox">
                     <div class="suspects-details-wrapper has-details">
                         <div class="title">
-                            <h4 class="govuk-heading-s">Suspects details</h4>
+                            {% if data['chargeAddedComplete'] == 'true' %}
+                                <h4 class="govuk-heading-s">Defendants details</h4>
+                            {% else %}
+                                <h4 class="govuk-heading-s">Suspects details</h4>
+                            {% endif %}
                             <a href="9B-add-suspect" class="">Edit</a>
                         </div>
                         <div class="suspects-content-wrapper">
@@ -347,7 +413,11 @@
                     </div>
                 </div>
                 <div class="cta-wrapper">
-                    <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                    {% else %}
+                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -369,7 +439,11 @@
         <div class="flexbox">
             <div class="suspects-details-wrapper has-details">
                 <div class="title">
-                    <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
                     <a href="#" class="">Edit</a>
                 </div>
                 <div class="suspects-content-wrapper">
@@ -393,7 +467,11 @@
             </div>
         </div>
         <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
         </div>
     </div>
     <!-- SUSPECT - 1 - END -->
@@ -408,7 +486,11 @@
         <div class="flexbox">
             <div class="suspects-details-wrapper has-details">
                 <div class="title">
-                    <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
                     <a href="#" class="">Edit</a>
                 </div>
                 <div class="suspects-content-wrapper">
@@ -432,7 +514,11 @@
             </div>
         </div>
         <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
         </div>
     </div>
     <!-- SUSPECT - 2 - END -->
@@ -447,7 +533,11 @@
         <div class="flexbox">
             <div class="suspects-details-wrapper has-details">
                 <div class="title">
-                    <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
                     <a href="#" class="">Edit</a>
                 </div>
                 <div class="suspects-content-wrapper">
@@ -471,7 +561,11 @@
             </div>
         </div>
         <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
         </div>
     </div>
     <!-- SUSPECT - 3 - END -->
@@ -481,15 +575,27 @@
 
 <div class="cta-wrapper">
     <div class="add-new">
-        {% if data['completeAddSuspect'] == 'true' %}
-            <p>Add additional <strong>suspects</strong> to this case</p>
+        {% if data['addSuspectStarted'] == 'true' %}
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <p>Add additional <strong>defendants</strong> to this case</p>
+            {% else %}
+                <p>Add additional <strong>suspects</strong> to this case</p>
+            {% endif %}
         {% else %}
             <p>There has been <strong>no Suspects</strong> added to this case</p>
         {% endif %}
-        <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a suspect</button>
+        {% if data['chargeAddedComplete'] == 'true' %}
+            <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a defendant</button>
+        {% else %}
+            <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a suspect</button>
+        {% endif %}
     </div>
     <div class="govuk-form-group file-upload">
-        <label class="govuk-label" for="multiple_Suspects">Upload a list of Suspects</label>
+        {% if data['chargeAddedComplete'] == 'true' %}
+            <label class="govuk-label" for="multiple_Suspects">Upload a list of Defendants</label>
+        {% else %}
+            <label class="govuk-label" for="multiple_Suspects">Upload a list of Suspects</label>
+        {% endif %}
         <input class="govuk-file-upload" id="multiple_Suspects" name="multiple_Suspects" type="file">
     </div> 
 </div>

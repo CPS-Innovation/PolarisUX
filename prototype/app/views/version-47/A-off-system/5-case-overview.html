@@ -124,7 +124,11 @@
 
                 <!-- ADD SUSPECT - Show on Add -->
                 {% if data['addSuspectStarted'] == 'true' %}
-                    <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Defendants & Charges</a></li>
+                    {% else %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
+                    {% endif %}
                 {% else %}
                     <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects & Charges</a></li>
                 {% endif %}
