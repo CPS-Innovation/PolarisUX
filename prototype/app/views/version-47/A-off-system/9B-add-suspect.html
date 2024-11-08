@@ -432,9 +432,9 @@
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
                                     {% if data['addSuspect_Form-SDO'] %}
-                                        <input class="govuk-checkboxes__input" id="addSuspect_Form-SDO" name="addSuspect_Form-SDO" type="checkbox" value="SDO" checked>
+                                        <input class="govuk-checkboxes__input" id="addSuspect_Form-SDO" name="addSuspect_Form-SDO" type="checkbox" value="Yes" checked>
                                     {% else %}
-                                        <input class="govuk-checkboxes__input" id="addSuspect_Form-SDO" name="addSuspect_Form-SDO" type="checkbox" value="SDO">
+                                        <input class="govuk-checkboxes__input" id="addSuspect_Form-SDO" name="addSuspect_Form-SDO" type="checkbox" value="Yes">
                                     {% endif %}
                                     <label class="govuk-label govuk-checkboxes__label" for="addSuspect_Form-SDO">Serious and Dangerous Offender</label>
                                 </div>
@@ -445,7 +445,7 @@
 
                     <!-- OPTION 12 - START -->
                     <div class="govuk-form-group no-float">
-                        <label class="govuk-label" for="addSuspect_Form-ASN">ASN</label>
+                        <label class="govuk-label" for="addSuspect_Form-ASN">Arrest summaries number</label>
                         {% if data['addSuspect_Form-ASN'] %}
                             <input class="govuk-input govuk-input--width-20" id="addSuspect_Form-ASN" name="addSuspect_Form-ASN" type="text" value="{{ data['addSuspect_Form-Long'] }}">
                         {% else %}

@@ -1,35 +1,16 @@
-{% include "../off-system/modalConfirmation-RemoveUser.html" %}
-
-<h2 class="govuk-heading-l">Materials and Comms</h2>
+<h2 class="govuk-heading-m">Materials and Comms</h2>
 <span class="govuk-caption-m">Last updated <span id="materials-timestamp"></span></span>
 
 <!-- TABS - START -->
-<nav class="secondaryTabs moj-sub-navigation" aria-label="Sub navigation">
+<nav class="secondaryTabs moj-sub-navigation tabsGroup-1" aria-label="Sub navigation" id="">
     <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item secondaryTab-Selected" id="secondaryTab-1">
-            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">
-                {% if data['newCase_Access-Email5'] %}
-                    <span class="number contacts-number">6</span> Case Permissions
-                {% elseif data['newCase_Access-Email4'] %}
-                    <span class="number contacts-number">5</span> Case Permissions
-                {% elseif data['newCase_Access-Email3'] %}
-                    <span class="number contacts-number">4</span> Case Permissions
-                {% elseif data['newCase_Access-Email2'] %}
-                    <span class="number contacts-number">3</span> Case Permissions
-                {% elseif data['newCase_Access-Email'] %}
-                    <span class="number contacts-number">2</span> Case Permissions
-                {% else %}
-                    <span class="number contacts-number">1</span> Case Permissions
-                {% endif %}
-            </a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab1();"><span class="number materials-number zero">0</span> Egress</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();"><span class="number materials-number zero">0</span> Case materials</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();"><span class="number materials-number zero">0</span> Shared drive</a>
         </li>
-<!--         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab3();"><span class="number materials-number zero">0</span> Shared drive</a>
-        </li>
- -->        <li class="moj-sub-navigation__item" id="secondaryTab-3">
+        <li class="moj-sub-navigation__item" id="secondaryTab-3">
             <a class="moj-sub-navigation__link" onclick="return secondaryTab3();"><span class="number comms-number">2</span> Outlook</a>
         </li>
     </ul>
@@ -37,91 +18,35 @@
 <!-- TABS - END -->
 
 <!-- TABS CONTENT - ONE - START -->
-<div class="secondaryTabContent selected-content" id="secondaryTabContent-1">
-    <div class="section-wrapper section-row">
-
+<div class="secondaryTabContent selected-content tabsGroup-1" id="secondaryTabContent-1">
+    <div class="section-wrapper">
         <section>
             <div class="title-wrapper">
                 <h3 class="govuk-heading-s image-header"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"></h3>
-                <a href="11-case-permissions">Edit</a>
+                <!-- <a href="11-case-permissions">Edit</a> -->
             </div>
 
             <div class="permissions">
                 <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
                 <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
             </div>
-
-            <div class="section-content">
-
-                <table class="govuk-table contacts-table">
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Users</th>
-                            <th scope="col" class="govuk-table__header">Role</th>
-                            <th scope="col" class="govuk-table__header"></th>
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['offCMS_Username'] }}</th>
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
-                        {% if data['newCase_Access-Email'] %}
-                            <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}</th>
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
-                            </tr>
-                        {% else %}
-
-                        {% endif %}
-                        {% if data['newCase_Access-Email2'] %}
-                            <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email2'] }}</th>
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions2'] }}</strong></td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
-                            </tr>
-                        {% else %}
-
-                        {% endif %}
-                        {% if data['newCase_Access-Email3'] %}
-                            <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email3'] }}</th>
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions3'] }}</strong></td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
-                            </tr>
-                        {% else %}
-
-                        {% endif %}
-                        {% if data['newCase_Access-Email4'] %}
-                            <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email4'] }}</th>
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions4'] }}</strong></td>
-                                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
-                            </tr>
-                        {% else %}
-
-                        {% endif %}
-                        {% if data['newCase_Access-Email5'] %}
-                            <tr class="govuk-table__row">
-                                <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email5'] }}</th>
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions5'] }}</strong></td>
-                                <td class="govuk-table__cell  govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
-                            </tr>
-                        {% else %}
-
-                        {% endif %}
-                    </tbody>
-                </table>
-
-            </div>
+            <p><img src="../../../public/images/screenshot.png" alt="Shared drive" class="shared-drive"></p>
         </section>
+    </div>
+    <div class="cta-wrapper">
+        <p>There has been <strong>no Materials</strong> added to this case</p>
+        <button type="submit" class="govuk-button" style="">Add materials</button>
+    </div>
+</div>
+<!-- TABS CONTENT - ONE - END -->
 
+<!-- TABS CONTENT - TWO - START -->
+<div class="secondaryTabContent tabsGroup-1" id="secondaryTabContent-2" style="display: none;">
+    <div class="section-wrapper">
         <section>
             <div class="title-wrapper">
                 <h3 class="govuk-heading-s">Shared drive</h3>
-                <a href="11-case-permissions">Edit</a>
+                <!-- <a href="11-case-permissions">Edit</a> -->
             </div>
 
             <div class="permissions">
@@ -130,24 +55,7 @@
             </div>
             <p><img src="../../../public/images/screenshot.png" alt="Shared drive" class="shared-drive"></p>
         </section>
-
     </div>
-    {% if data['caseAccess'] == 'true' %}
-        <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
-            <p>Add additional permissions to this case</p>
-            <button type="submit" class="govuk-button" style="" onclick="location.href='11-case-permissions';">Add a contact</button>
-        </div>
-    {% else %}
-        <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
-            <p>There has been <strong>no additional permissions</strong> added to this case</p>
-            <button type="submit" class="govuk-button" style="" onclick="location.href='11-case-permissions';">Add a contact</button>
-        </div>
-    {% endif %}
-</div>
-<!-- TABS CONTENT - ONE - END -->
-
-<!-- TABS CONTENT - TWO - START -->
-<div class="secondaryTabContent" id="secondaryTabContent-2" style="display: none;">
     <div class="cta-wrapper">
         <p>There has been <strong>no Materials</strong> added to this case</p>
         <button type="submit" class="govuk-button" style="">Add materials</button>
@@ -156,7 +64,7 @@
 <!-- TABS CONTENT - TWO - END -->
 
 <!-- TABS CONTENT - THREE - START -->
-<div class="secondaryTabContent" id="secondaryTabContent-3" style="display: none;">
+<div class="secondaryTabContent tabsGroup-1" id="secondaryTabContent-3" style="display: none;">
     <div class="section-wrapper">
         <section>
             <div class="title-wrapper">

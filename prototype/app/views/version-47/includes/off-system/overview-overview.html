@@ -1,4 +1,4 @@
-<h2 class="govuk-heading-l">Overview</h2>
+<h2 class="govuk-heading-m">Overview</h2>
 <span class="govuk-caption-m">Last updated <span id="my-cases-timestamp"></span></span>
 
 <p></p>
@@ -108,13 +108,26 @@
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Caseworker(s)</th>
                         <td class="govuk-table__cell">
-                            <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
+                            {% if data['newCase_Access-Role'] == 'Lead Caseworker' %}
+                                <strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['offCMS_Username'] }}
+                            {% elseif data['newCase_Access-Role'] == 'Caseworker' %}
+                                {{ data['offCMS_Username'] }}
+                            {% else %}
+                                Not yet selected
+                            {% endif %}                    
+                            <!-- <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a> -->
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Prosecutor(s)</th>
                         <td class="govuk-table__cell">
-                            Not yet selected
+                            {% if data['newCase_Access-Role'] == 'Lead Prosecutor' %}
+                                <strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['offCMS_Username'] }}
+                            {% elseif data['newCase_Access-Role'] == 'Prosecutor' %}
+                                 {{ data['offCMS_Username'] }}
+                            {% else %}
+                                Not yet selected
+                            {% endif %}                    
                         </td>
                     </tr>
                 </tbody>

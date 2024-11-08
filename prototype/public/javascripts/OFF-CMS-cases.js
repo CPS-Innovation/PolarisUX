@@ -216,11 +216,17 @@ $(document).ready(function () {
     $("#new-tabs .tab-7-content").on("click", function (e) {
         $('.panel').hide();
         $('#tab-7-content').show();
+
+        $('nav.secondaryTabs li a').removeAttr('aria-current');
+        $('nav.secondaryTabs li#secondaryTab-1 a').attr('aria-current','page');
     });
 
     $("#new-tabs .tab-8-content").on("click", function (e) {
         $('.panel').hide();
         $('#tab-8-content').show();
+
+        $('nav.secondaryTabs li a').removeAttr('aria-current');
+        $('nav.secondaryTabs li#secondaryTab-4 a').attr('aria-current','page');
     });
 
     $("#new-tabs .tab-9-content").on("click", function (e) {
@@ -285,6 +291,15 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-7').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-7-content').show();
+    }
+
+    // 8 - Permissions
+    if (window.location.href.indexOf("permissionsTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-8').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-8-content').show();
     }
 });
 
@@ -417,43 +432,73 @@ function copyOutlookLink() {
 
 // ========================= Secondary Tabs ========================= //
 function secondaryTab1() {
-    $('.secondaryTabContent').hide();
-    $('.secondaryTabContent#secondaryTabContent-1').show();
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-1').show();
 
-    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item#secondaryTab-1').addClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item a').removeAttr('aria-current');
-    $('.moj-sub-navigation__item#secondaryTab-1 a').attr('aria-current','page');
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-1').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-1 a').attr('aria-current','page');
 }
 
 function secondaryTab2() {
-    $('.secondaryTabContent').hide();
-    $('.secondaryTabContent#secondaryTabContent-2').show();
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-2').show();
 
-    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item#secondaryTab-2').addClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item a').removeAttr('aria-current');
-    $('.moj-sub-navigation__item#secondaryTab-2 a').attr('aria-current','page');
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-2').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-2 a').attr('aria-current','page');
 }
 
 function secondaryTab3() {
-    $('.secondaryTabContent').hide();
-    $('.secondaryTabContent#secondaryTabContent-3').show();
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-3').show();
 
-    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item#secondaryTab-3').addClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item a').removeAttr('aria-current');
-    $('.moj-sub-navigation__item#secondaryTab-3 a').attr('aria-current','page');
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-3').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-3 a').attr('aria-current','page');
 }
 
 function secondaryTab4() {
-    $('.secondaryTabContent').hide();
-    $('.secondaryTabContent#secondaryTabContent-4').show();
+    $('.tabsGroup-2.secondaryTabContent').hide();
+    $('.tabsGroup-2.secondaryTabContent#secondaryTabContent-4').show();
 
-    $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item#secondaryTab-4').addClass('secondaryTab-Selected');
-    $('.moj-sub-navigation__item a').removeAttr('aria-current');
-    $('.moj-sub-navigation__item#secondaryTab-4 a').attr('aria-current','page');
+    $('.tabsGroup-2 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-4').addClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-4 a').attr('aria-current','page');
+}
+
+function secondaryTab5() {
+    $('.tabsGroup-2.secondaryTabContent').hide();
+    $('.tabsGroup-2.secondaryTabContent#secondaryTabContent-5').show();
+
+    $('.tabsGroup-2 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-5').addClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-5 a').attr('aria-current','page');
+}
+
+function secondaryTab6() {
+    $('.tabsGroup-2.secondaryTabContent').hide();
+    $('.tabsGroup-2.secondaryTabContent#secondaryTabContent-6').show();
+
+    $('.tabsGroup-2 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-6').addClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-6 a').attr('aria-current','page');
+}
+
+function secondaryTab7() {
+    $('.tabsGroup-2.secondaryTabContent').hide();
+    $('.tabsGroup-2.secondaryTabContent#secondaryTabContent-7').show();
+
+    $('.tabsGroup-2 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-7').addClass('secondaryTab-Selected');
+    $('.tabsGroup-2 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-2 .moj-sub-navigation__item#secondaryTab-7 a').attr('aria-current','page');
 }
 
 
@@ -896,6 +941,13 @@ $(document).ready(function () {
         }
     });
 
+    $("#addSuspect_Form-DOB-Year").on("keyup", function (e) { 
+        if ($(this).val() < '2007') {
+            $('#addSuspect_Form-Type-YO').removeAttr('checked');
+        } else if ($(this).val() >= '2007') { 
+            $('#addSuspect_Form-Type-YO').attr('checked','checked');
+        } 
+    }); 
 
     // All items
     $(".preview-all-link").hide();
@@ -1041,6 +1093,7 @@ function addAlias5() {
 $(document).ready(function () {
 
     $('#multiple_Suspect_Details').hide();
+    $('#multiple_Suspects_Added').hide();
 
     $("#multiple_Suspects").on("click", function (e) { 
         setTimeout(function () {
@@ -1049,8 +1102,9 @@ $(document).ready(function () {
         var addSuspectsWitnesses = parseInt($('.suspects-number').text());
         $('.suspects-number').text(addSuspectsWitnesses + 3);
         $.cookie("multiple_Suspects", true, {path:'/'});
-
+        $('#multiple_Suspects_Added').show();
     });
+
 
     $('#multiple_Suspects_Selection').hide();
 
@@ -1060,6 +1114,9 @@ $(document).ready(function () {
         $('#multiple_Suspect_Details').show();
         $('#multiple_Suspects_Selection').show();
         $('#single_Suspects_Selection').remove();
+
+        // CMR
+        $('#multiple_Suspects_Added').show();
     }
 
 })
@@ -1184,6 +1241,8 @@ $(document).ready(function () {
 
     $('#multiple_Witnesses_Details').hide();
 
+    $('#multiple_Witnesses_Added').hide();
+
 
     $("#multiple_Witnesses").on("click", function (e) { 
         setTimeout(function () {
@@ -1192,12 +1251,18 @@ $(document).ready(function () {
         var addMultipleWitnesses = parseInt($('.witnesses-number').text());
         $('.witnesses-number').text(addMultipleWitnesses + 5);
         $.cookie("multiple_Witnesses", true, {path:'/'});
+
+        // CMR
+        $('#multiple_Witnesses_Added').show();
     });
 
     if ($.cookie("multiple_Witnesses") == 'true') {
         var addMultipleWitnesses = parseInt($('.witnesses-number').text());
         $('.witnesses-number').text(addMultipleWitnesses + 5);
         $('#multiple_Witnesses_Details').show();
+
+        // CMR
+        $('#multiple_Witnesses_Added').show();
     }
 
 })

@@ -1,7 +1,7 @@
 {% if data['chargeAddedComplete'] == 'true' %}
-    <h2 class="govuk-heading-l">Defendants & Charges</h2>
+    <h2 class="govuk-heading-m">Defendants & Charges</h2>
 {% else %}
-    <h2 class="govuk-heading-l">Suspects & Charges</h2>
+    <h2 class="govuk-heading-m">Suspects & Charges</h2>
 {% endif %}
 
 
@@ -196,11 +196,11 @@
                                     {% if data['addSuspect_Form-SDO'] %}
                                         <section>
                                             <p>
-                                                SDO 
+                                                Serious and Dangerous Offender 
                                                 {% if data['chargeAddedComplete'] == 'true' %}
-                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant SDO</span></a>
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant Serious and Dangerous Offender</span></a>
                                                 {% else %}
-                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect SDO</span></a>
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect Serious and Dangerous Offender</span></a>
                                                 {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-SDO'] }}</strong></span>
                                             </p>
@@ -212,11 +212,11 @@
                                     {% if data['addSuspect_Form-ASN'] %}
                                         <section>
                                             <p>
-                                                ASN 
+                                                Arrest summaries number 
                                                 {% if data['chargeAddedComplete'] == 'true' %}
-                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant ASN</span></a>
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant Arrest summaries number</span></a>
                                                 {% else %}
-                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ASN</span></a>
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect Arrest summaries number</span></a>
                                                 {% endif %}
                                                 <span><strong>{{ data['addSuspect_Form-ASN'] }}</strong></span>
                                             </p>
@@ -278,23 +278,30 @@
                                 <div class="suspects-sections">
                                     <section>
                                         {% if data['chargeAddedComplete'] == 'true' %}
-                                            {% if data['newChargeCode'] %}
-                                                <section>
-                                                    <p>
-                                                        {{ data['newChargeCode'] }} -
-                                                        <strong>Criminal damage to property valued under £5000</strong>
-                                                        <span class="links-wrapper">
-                                                            <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
-                                                            <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
-                                                        </span>
-                                                    </p>
-                                                </section>
-                                            {% else %}
-
-                                            {% endif %}
+                                            <section>
+                                                <p>
+                                                    {{ data['newChargeCode'] }} -
+                                                    <strong>Criminal damage to property valued under £5000</strong>
+                                                    <span class="links-wrapper">
+                                                        <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                        <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                    </span>
+                                                </p>
+                                            </section>
                                         {% else %}
                                             <p>
-                                                There are charges no for <strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <strong class="forename">{{ data['addSuspect_Form-Forename'] }}</strong> at this time.
+                                                There are no charges for 
+                                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                                    <strong><span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}</strong>
+                                                {% else %}
+                                                    <strong>Individual</strong>
+                                                {% endif %}
+                                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                at this time.
                                             </p>
                                         {% endif %}
                                         <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
@@ -342,12 +349,30 @@
                                 <div class="suspects-sections">
                                     <section>
                                         {% if data['chargeAddedComplete'] == 'true' %}
-                                            <p>
-                                                Test
-                                            </p>
+                                            <section>
+                                                <p>
+                                                    {{ data['newChargeCode'] }} -
+                                                    <strong>Criminal damage to property valued under £5000</strong>
+                                                    <span class="links-wrapper">
+                                                        <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                        <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                    </span>
+                                                </p>
+                                            </section>
                                         {% else %}
                                             <p>
-                                                There are no charges for <strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <strong class="forename">{{ data['addSuspect_Form-Forename'] }}</strong> at this time.
+                                                There are no charges for 
+                                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                                    <strong><span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}</strong>
+                                                {% else %}
+                                                    <strong>Individual</strong>
+                                                {% endif %}
+                                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                at this time.
                                             </p>
                                         {% endif %}
                                         <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
@@ -398,9 +423,16 @@
                             <div class="suspects-sections">
                                 <section>
                                     {% if data['chargeAddedComplete'] == 'true' %}
-                                        <p>
-                                            Test
-                                        </p>
+                                        <section>
+                                            <p>
+                                                {{ data['newChargeCode'] }} -
+                                                <strong>Criminal damage to property valued under £5000</strong>
+                                                <span class="links-wrapper">
+                                                    <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                    <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                </span>
+                                            </p>
+                                        </section>
                                     {% else %}
                                         <p>
                                             There are no charges for <strong>{{ data['addSuspect_CompanyName'] }}</strong> at this time.

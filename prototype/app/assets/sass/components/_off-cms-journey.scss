@@ -47,7 +47,7 @@ button {
 
 .hide-all-title-wrapper {
      display: inline-block;
-     width: 100%;
+     width: 100%
 }
 
 .floating-link {
@@ -389,8 +389,8 @@ html {
                     margin-right: 0;
                }
                .permissions {
-                    width: 94%;
-                    padding: 1.5em 3% 0 3%;
+                    width: 96.5%;
+                    padding: 1.5em 1.75% 0 1.75%;
                     input {
                          width: 84% !important;
                     }
@@ -401,12 +401,12 @@ html {
           border: 1px solid $govuk-border-colour;
           .shared-drive {
                display: inline-block;
-               width: 94%;
-               padding: 0.5em 3% 0 3%;
+               width: 96.5%;
+               padding: 0.5em 1.75% 0 1.75%;
           }
           .permissions {
-               width: 94%;
-               padding: 1em 3% 0 3%;
+               width: 96.5%;
+               padding: 1.5em 1.75% 0 1.75%;
                display: inline-block;
                input {
                     width: 92% !important;
@@ -418,10 +418,44 @@ html {
                     float: left;
                }
           }
+          table {
+               margin: 0 1.75% 1em 1.75%;
+               width: 96.5%;
+               thead {
+                    tr {
+                         th {
+                              .egress-logo.small {
+                                   width: 5em;
+                                   margin: 0 0 -0.25em 0;
+                              }
+                         }
+                    }
+               }
+               tbody {
+                    tr {
+                         &:last-of-type {
+                              td, th {
+                                   border-bottom: none;
+                              }
+                         }
+                         td, th {
+                              a {
+                                   float: right;
+                                   color: $govuk-link-colour !important;
+                                   &.removeContact {
+                                        padding-right: 0.5em;
+                                        margin-right: 0.5em;
+                                        border-right: 1px solid $govuk-border-colour;
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
           .section-content {
-               padding: 1em 3% 1.5em 3%;
+               padding: 1em 1.75% 1em 1.75%;
                display: inline-block;
-               width: 94%;
+               width: 96.5%;
                h3 {
                     float: left;
                }
@@ -667,10 +701,15 @@ h2 {
           display: inline-block;
           float: left;
      }
+     span.govuk-caption-m {
+          display: inline-block;
+          float: left;
+          clear: both;
+     }
      p {
           display: inline-block;
           float: right;
-          margin: 1.15em 0 0 0;
+          margin: 0 0 1.15em 0;
      }
      hr {
           display: inline-block;
@@ -734,7 +773,7 @@ h2 {
      }
      .editor {
           padding: 10px;
-          min-height: 800px;
+          min-height: 600px;
           border: none;
           outline: none;
           color: black;
