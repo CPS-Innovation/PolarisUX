@@ -530,6 +530,15 @@ html {
           width: auto;
           margin-bottom: 0;
      }
+     select {
+          &#newCase_URN-B-77, &#newCase_URN-B-83, &#newCase_URN-B-85, &#newCase_URN-B-86, &#newCase_URN-B-87, &#newCase_URN-B-88, &#newCase_URN-B-96 {
+               width: auto;
+               min-width: auto;
+          }
+          &#newCase_URN-B-77, &#newCase_URN-B-85, &#newCase_URN-B-86, &#newCase_URN-B-87, &#newCase_URN-B-88, &#newCase_URN-B-96 {
+               display: none;
+          }
+     }
 }
 
 .outlook-viewer {

@@ -61,6 +61,37 @@ $(document).ready(function () {
             $('.create-case-continue').show();
             $('.create-case-error').hide();
         }
+
+        // SEOCID code
+        if ($(this).val() == 77) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-77').show();
+        } else if ($(this).val() == 83) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-83').show();
+        } else if ($(this).val() == 85) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-85').show();
+        } else if ($(this).val() == 86) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-86').show();
+        } else if ($(this).val() == 87) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-87').show();
+        } else if ($(this).val() == 88) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-88').show();
+        } else if ($(this).val() == 89) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-89').show();
+        } else if ($(this).val() == 96) {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-96').show();
+        } else {
+            $('.form-wrapper select').hide();
+            $('.form-wrapper select#newCase_URN-B-83').show();
+        }
+
     });
 
     $("input[id=newCase_URN-C]").on("keyup", function (e) {
