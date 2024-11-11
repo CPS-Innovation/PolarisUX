@@ -151,6 +151,14 @@
                             {% endif %}                    
                         </td>
                     </tr>
+                    {% if data['newCase_NEWAccess-Role'] == 'Crown Advocate (HCA)' and data['newCase_Access-Email'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Crown Advocate (HCA)</th>
+                            <td class="govuk-table__cell">{{ data['newCase_Access-Email'] }}</td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}                    
                 </tbody>
             </table>
 

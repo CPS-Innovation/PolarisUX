@@ -63,17 +63,17 @@
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                    
-                        {% if data['newCase_NEWAccess-Egress'] %}
+                        {% if 'Egress' in data['newCase_NEWAccess'] %}
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-EgressPermissions'] }}</strong></td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                    
-                        {% if data['newCase_NEWAccess-Shared-Drive'] %}
+                        {% if 'Shared drive' in data['newCase_NEWAccess'] %}
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-SharedDrivePermissions'] }}</strong></td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                    
-                        {% if data['newCase_NEWAccess-Outlook'] %}
+                        {% if 'Outlook' in data['newCase_NEWAccess'] %}
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-OutlookPermissions'] }}</strong></td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
