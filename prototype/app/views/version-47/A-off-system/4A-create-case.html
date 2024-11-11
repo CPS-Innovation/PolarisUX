@@ -18,6 +18,7 @@
                     <h2 class="govuk-error-summary__title">There is a problem</h2>
                     <div class="govuk-error-summary__body">
                         <ul class="govuk-list govuk-error-summary__list">
+                            <li class="newCase_Errors-ValueDefendant"><a href="#newCase_URN-Value">Enter an Operation name</a></li>
                             <li class="newCase_Errors-ValueOperation"><a href="#newCase_URN-Value">Enter an Operation name</a></li>
                             <li class="newCase_Errors-ValueURN"><a href="#newCase_URN-Value">Enter a URN (Unique Reference Number)</a></li>
                         </ul>
@@ -30,14 +31,37 @@
 
             <form method="get" action="4B-create-case" id="newCase_Form-A">  
 
-                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <fieldset class="govuk-fieldset">
 
                     <!-- OPTION 1 - START -->
-                    <div class="govuk-form-group" id="newCase_OperationName-Value">
-                        <label class="govuk-label" for="newCase_OperationName">Operation name</label>
-                        <p id="newCase_OperationName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Operation name</p>
-                        <input class="govuk-input govuk-input--width-20" id="newCase_OperationName" name="newCase_OperationName" type="text">
-                    </div>                                
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="caseName_Type-Defendant" name="caseName_Type" type="radio" value="Defendant name" data-aria-controls="conditional-DefendantName">
+                                    <label class="govuk-label govuk-radios__label" for="caseName_Type-Defendant">Defendant name</label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-DefendantName">
+                                    <div class="govuk-form-group" id="newCase_DefendantName-Value">
+                                        <label class="govuk-label" for="newCase_DefendantName">Defendant name</label>
+                                        <p id="newCase_DefendantName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Defendant name</p>
+                                        <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName" name="newCase_DefendantName" type="text">
+                                    </div>                                
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="caseName_Type-Operation" name="caseName_Type" type="radio" value="Operation name" data-aria-controls="conditional-OperationName">
+                                    <label class="govuk-label govuk-radios__label" for="caseName_Type-Operation">Operation name</label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-OperationName">
+                                    <div class="govuk-form-group" id="newCase_OperationName-Value">
+                                        <label class="govuk-label" for="newCase_OperationName">Operation name</label>
+                                        <p id="newCase_OperationName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Operation name</p>
+                                        <input class="govuk-input govuk-input--width-20" id="newCase_OperationName" name="newCase_OperationName" type="text">
+                                    </div>  
+                                </div>                              
+                            </div>
+                        </fieldset>
+                    </div>
                     <!-- OPTION 1 - END -->
 
                     {% if 'scd' in data['offCMS_Username'] %}

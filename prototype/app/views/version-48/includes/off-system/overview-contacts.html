@@ -1,0 +1,115 @@
+<h2 class="govuk-heading-m">Permissions</h2>
+<span class="govuk-caption-m">Last updated <span id="contacts-timestamp"></span></span>
+
+<p> </p>
+
+<div class="section-wrapper section-row">
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s image-header"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"></h3>
+            <a href="4C-create-case">Edit</a>
+        </div>
+
+        <div class="permissions">
+            <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+            <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
+        </div>
+
+        <div class="section-content">
+
+            <table class="govuk-table contacts-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Users</th>
+                        <th scope="col" class="govuk-table__header">Role</th>
+                        <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['offCMS_Username'] }}</th>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
+                        <td class="govuk-table__cell"></td>
+                    </tr>
+                    {% if data['newCase_Access-Email'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email2'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email2'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions2'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email3'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email3'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions3'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email4'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email4'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions4'] }}</strong></td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                    {% if data['newCase_Access-Email5'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span>{{ data['newCase_Access-Email5'] }}</th>
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions5'] }}</strong></td>
+                            <td class="govuk-table__cell  govuk-table__cell--numeric"><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Shared drive</h3>
+        </div>
+
+        <div class="permissions">
+            {% if data['caseName_Type'] == 'Operation name' %}
+                <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+            {% else %}
+                <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Drive" class="url-text" disabled>
+            {% endif %}                               
+            <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+        </div>
+        <p><br></p>
+    </section>
+
+</div>
+
+{% if data['caseAccess'] == 'true' %}
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        <p>Add additional permissions to this case</p>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='4D-create-case';">Add a contact</button>
+    </div>
+{% else %}
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        <p>There has been <strong>no additional permissions</strong> added to this case</p>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='4D-create-case';">Add a contact</button>
+    </div>
+{% endif %}
+

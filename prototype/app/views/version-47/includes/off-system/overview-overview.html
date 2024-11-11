@@ -135,6 +135,13 @@
                                 {{ data['offCMS_Username'] }}
                             {% else %}
                                 Not yet selected
+                            {% endif %}     
+                            {% if data['newCase_NEWAccess-Role'] == 'Lead Caseworker' %}
+                                <br><strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['newCase_Access-Email'] }}
+                            {% data['newCase_NEWAccess-Role'] == 'Caseworker' %}
+                                <br>{{ data['newCase_Access-Email'] }}
+                            {% else %}
+
                             {% endif %}                    
                             <!-- <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a> -->
                         </td>
@@ -148,6 +155,13 @@
                                  {{ data['offCMS_Username'] }}
                             {% else %}
                                 Not yet selected
+                            {% endif %}    
+                            {% if data['newCase_NEWAccess-Role'] == 'Lead Prosecutor' %}
+                                <br><strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['newCase_Access-Email'] }}
+                            {% elseif data['newCase_NEWAccess-Role'] == 'Prosecutor' %}
+                                <br>{{ data['newCase_Access-Email'] }}
+                            {% else %}
+
                             {% endif %}                    
                         </td>
                     </tr>

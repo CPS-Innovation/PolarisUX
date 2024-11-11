@@ -1,0 +1,198 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V3.html" %}
+{% endblock %}
+{% block beforeContent %}
+    {% include "../includes/off-system/modal-EA.html" %}
+    {% include "../includes/off-system/modal-Charges.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveSuspect.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveWitness.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveUser.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveUser.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+        {% if data['caseName_Type'] == 'Operation name' %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2">{{ data['newCase_OperationName'] }}</h1>
+        {% else %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
+        {% endif %}
+
+        <span class="govuk-caption-m govuk-!-margin-bottom-4">
+            {{ data['newCase_URN-A'] }}
+            <!-- CONDITIONAL ELEMTENTS - per division - START -->
+            <!-- SCD -->
+            {% if 'scd' in data['offCMS_Username'] %}
+                {{ data['newCase_URN-B'] }}
+            <!-- CTD -->
+            {% elseif 'ctd' in data['offCMS_Username'] %}
+                {% if data['newCase_URN-B'] == '14' %}
+                    01
+                {% elseif data['newCase_URN-B'] == '15' %}
+                    02
+                {% elseif data['newCase_URN-B'] == '16' %}
+                    03
+                {% elseif data['newCase_URN-B'] == '17' %}
+                    04
+                {% elseif data['newCase_URN-B'] == '18' %}
+                    05
+                {% elseif data['newCase_URN-B'] == '19' %}
+                    06
+                {% elseif data['newCase_URN-B'] == '20' %}
+                    07
+                {% elseif data['newCase_URN-B'] == '21' %}
+                    08
+                {% elseif data['newCase_URN-B'] == '22' %}
+                    09
+                {% elseif data['newCase_URN-B'] == '23' %}
+                    10
+                {% elseif data['newCase_URN-B'] == '24' %}
+                    11
+                {% elseif data['newCase_URN-B'] == '25' %}
+                    12
+                {% elseif data['newCase_URN-B'] == '26' %}
+                    13
+                {% elseif data['newCase_URN-B'] == '27' %}
+                    14
+                {% elseif data['newCase_URN-B'] == '28' %}
+                    15
+                {% else %}
+                    {{ data['newCase_URN-B'] }}
+                {% endif %}
+            <!-- SEOCID -->
+            {% elseif 'seocid' in data['offCMS_Username'] %}
+                {% if data['newCase_URN-B-77'] %}
+                    {{ data['newCase_URN-B-77'] }} 
+                {% elseif data['newCase_URN-B-83'] %}
+                    {{ data['newCase_URN-B-83'] }}
+                {% elseif data['newCase_URN-B-85'] %}
+                    {{ data['newCase_URN-B-85'] }}
+                {% elseif data['newCase_URN-B-86'] %}
+                    {{ data['newCase_URN-B-86'] }}
+                {% elseif data['newCase_URN-B-87'] %}
+                    {{ data['newCase_URN-B-87'] }}
+                {% elseif data['newCase_URN-B-88'] %}
+                    {{ data['newCase_URN-B-88'] }}
+                {% elseif data['newCase_URN-B-96'] %}
+                    {{ data['newCase_URN-B-96'] }}
+                {% else %}
+                    {{ data['newCase_URN-B-83'] }}
+                {% endif %}
+            <!-- POC -->
+            {% elseif 'poc' in data['offCMS_Username'] %}
+
+            {% else %}
+                {{ data['newCase_URN-B'] }}
+            {% endif %}
+            <!-- CONDITIONAL ELEMTENTS - per division - START -->
+            {{ data['newCase_URN-C'] }}
+            /
+            {{ data['newCase_URN-D'] }}
+        </span>
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs off-cms-overview" id="new-tabs">
+
+            <!-- /////////////// TABS - START /////////////// -->
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+
+                <!-- OVERVIEW - Show on Case creation -->
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" id="tab-1"><a class="tab-link tab-1-content">Overview</a></li>
+
+                <!-- EA/REVIEW - Show on EA -->
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
+                {% endif %}
+
+                <!-- ADD SUSPECT - Show on Add -->
+                {% if data['addSuspectStarted'] == 'true' %}
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Defendants & Charges</a></li>
+                    {% else %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects & Charges</a></li>
+                {% endif %}
+
+                {% if data['addWitnessStarted'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number">1</span> Witnesses/Victims</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
+                {% endif %}
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content"><span class="number charges-number zero">0</span> Charges</a></li> -->
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">2</span> Materials &amp; Comms</a></li> -->
+                <li class="govuk-tabs__list-item" id="tab-7"><a class="tab-link tab-7-content">Materials &amp; Comms</a></li>
+
+                <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">1</span>Permissions</a></li>
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
+
+                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li> -->
+                <li class="govuk-tabs__list-item" id="tab-11"><a class="tab-link tab-11-content">CMR</a></li>
+            </ul>   
+            <!-- /////////////// TABS - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
+            <div class="panel" id="tab-1-content">
+                {% include "../includes/off-system/overview-overview.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
+            <div class="panel" id="tab-2-content" style="display: none;">
+                {% include "../includes/off-system/overview-ea.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 2 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 3 - START /////////////// -->
+            <div class="panel" id="tab-3-content" style="display: none;">
+                {% include "../includes/off-system/overview-suspects.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 3 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 4 - START /////////////// -->
+            <div class="panel" id="tab-4-content" style="display: none;">
+                {% include "../includes/off-system/overview-witnesses.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 4 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 6 - START /////////////// -->
+            <div class="panel" id="tab-6-content" style="display: none;">
+                {% include "../includes/off-system/overview-charges.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 6 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 7 - START /////////////// -->
+            <div class="panel" id="tab-7-content" style="display: none;">
+                {% include "../includes/off-system/overview-materials.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 7 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 8 - START /////////////// -->
+            <div class="panel" id="tab-8-content" style="display: none;">
+                {% include "../includes/off-system/overview-permissions.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 8 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 11 - START /////////////// -->
+            <div class="panel" id="tab-11-content" style="display: none;">
+                {% include "../includes/off-system/overview-cmr.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 11 - END /////////////// -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
