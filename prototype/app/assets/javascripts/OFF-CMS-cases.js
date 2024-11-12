@@ -334,6 +334,9 @@ $(document).ready(function () {
 
 $(document).ready(function() {
 
+    $('#last-action-hero .hods-timeline__item').hide();
+    $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').show();
+
     // 1 - Overview
     if (window.location.href.indexOf("overviewTab") > -1) {
         $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
@@ -341,6 +344,8 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-1').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-1-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').show();
     }
 
     // 2 - EA
@@ -350,6 +355,9 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-2').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-2-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-EARLY_ADVICE').show();
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
     }
 
     // 3 - Suspects
@@ -359,6 +367,9 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-3-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-SUSPECT').show();
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
     }
 
     // 4 - Witnesses
@@ -368,6 +379,9 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-4').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-4-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-WITNESS').show();
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
     }
 
     // 5 - Materials
@@ -377,6 +391,9 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-7').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-7-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-PERMISSIONS').show();
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
     }
 
     // 8 - Permissions
@@ -386,6 +403,9 @@ $(document).ready(function() {
 
         $('#new-tabs .govuk-tabs__list-item#tab-8').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-8-content').show();
+
+        $('#last-action-hero .hods-timeline__item.last-action-hero-PERMISSIONS').show();
+        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
     }
 });
 
@@ -1329,7 +1349,6 @@ $(document).ready(function () {
 
     $('#multiple_Witnesses_Added').hide();
 
-
     $("#multiple_Witnesses").on("click", function (e) { 
         setTimeout(function () {
             $('#multiple_Witnesses_Details').show();
@@ -1687,6 +1706,17 @@ $(document).ready(function () {
 
     // New case created
     document.getElementById("case-created-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    document.getElementById("case-created-stamp2").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),

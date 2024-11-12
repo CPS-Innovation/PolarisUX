@@ -356,6 +356,11 @@ html {
                     }
                }
           }
+          .hods-timeline {
+               &#last-action-hero {
+                    padding-top: 1em;
+               }
+          }
           .hods-timeline__item {
                width: 100%;
           }
@@ -409,6 +414,10 @@ html {
                }
           }
      }
+}
+
+#multiple_Witnesses_Added, #multiple_Suspects_Added {
+     display: none;
 }
 
 .section-wrapper {
@@ -1034,6 +1043,7 @@ nav.tube-map-ea {
                                         margin-bottom: 0.5em;
                                         display: inline-block;
                                         color: $govuk-link-colour;
+                                        float: inherit;
                                         &:hover, &:active, &:focus {
                                              cursor: pointer;
                                         }
