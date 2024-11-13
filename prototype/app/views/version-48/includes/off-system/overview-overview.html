@@ -26,7 +26,7 @@
                         <td class="govuk-table__cell">
                             <strong class="govuk-tag govuk-tag--blue">
                                 <!-- SCD - START -->
-                                {% if 'scd' in data['offCMS_Username'] %}
+                                {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
                                     {% if data['newCase_URN-B'] == '01' %}
                                         01 - IPCC ind assault
                                     {% elseif data['newCase_URN-B'] == '02' %}
@@ -70,7 +70,7 @@
                                     {% endif %}
                                 <!-- SCD - END -->
                                 <!-- CTD - START -->
-                                {% elseif 'ctd' in data['offCMS_Username'] %}
+                                {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
                                     {% if data['newCase_URN-B'] == '21' %}
                                         01 - Terrorism
                                     {% elseif data['newCase_URN-B'] == '22' %}
@@ -104,7 +104,7 @@
                                     {% endif %}
                                 <!-- CTD - END -->
                                 <!-- SEOCID - START -->
-                                {% elseif 'seocid' in data['offCMS_Username'] %}
+                                {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
                                     {% if data['newCase_URN-B-77'] %}
                                         {{ data['newCase_URN-B-77'] }}
                                     {% elseif data['newCase_URN-B-83'] %}
@@ -123,7 +123,7 @@
                                 <!-- SEOCID - END -->
                                     
                                 <!-- POC - START -->
-                                {% elseif 'poc' in data['offCMS_Username'] %}
+                                {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
 
                                 <!-- POC - END -->
                                 {% endif %}

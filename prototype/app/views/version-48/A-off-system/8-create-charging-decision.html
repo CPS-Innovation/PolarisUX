@@ -76,10 +76,10 @@ $(document).ready(function() {
             {{ data['newCase_URN-A'] }}
                 <!-- CONDITIONAL ELEMTENTS - per division - START -->
                 <!-- SCD -->
-                {% if 'scd' in data['offCMS_Username'] %}
+                {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
                     {{ data['newCase_URN-B'] }}
                 <!-- CTD -->
-                {% elseif 'ctd' in data['offCMS_Username'] %}
+                {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
                     {% if data['newCase_URN-B'] == '14' %}
                         01
                     {% elseif data['newCase_URN-B'] == '15' %}
@@ -114,7 +114,7 @@ $(document).ready(function() {
                         {{ data['newCase_URN-B'] }}
                     {% endif %}
                 <!-- SEOCID -->
-                {% elseif 'seocid' in data['offCMS_Username'] %}
+                {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
                     {% if data['newCase_URN-B-77'] %}
                         {{ data['newCase_URN-B-77'] }} 
                     {% elseif data['newCase_URN-B-83'] %}
@@ -133,7 +133,7 @@ $(document).ready(function() {
                         {{ data['newCase_URN-B-83'] }}
                     {% endif %}
                 <!-- POC -->
-                {% elseif 'poc' in data['offCMS_Username'] %}
+                {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
 
                 {% else %}
                     {{ data['newCase_URN-B'] }}

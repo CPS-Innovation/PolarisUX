@@ -52,7 +52,7 @@
                     </div>
                     <!-- OPTION 1 - END -->
 
-                    {% if 'scd' in data['offCMS_Username'] %}
+                        {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
                         <!-- OPTION 2 - START -->
                         <div class="govuk-form-group" id="newCase_URN-Value">
                             <label class="govuk-label" for="newCase_URN">Case URN</label>
@@ -89,7 +89,7 @@
                             </div>
                         </div>                                
                         <!-- OPTION 2 - END -->
-                    {% elseif 'ctd' in data['offCMS_Username'] %}
+                    {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
                         <!-- OPTION 2 - START -->
                         <div class="govuk-form-group" id="newCase_URN-Value">
                             <label class="govuk-label" for="newCase_URN">Case URN</label>
@@ -121,7 +121,7 @@
                             </div>
                         </div>                                
                         <!-- OPTION 2 - END -->
-                    {% elseif 'seocid' in data['offCMS_Username'] %}
+                    {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
                         <!-- OPTION 2 - START -->
                         <div class="govuk-form-group" id="newCase_URN-Value">
                             <label class="govuk-label" for="newCase_URN">Case URN</label>
@@ -301,7 +301,7 @@
                             </div>
                         </div>                                
                         <!-- OPTION 2 - END -->
-                    {% elseif 'poc' in data['offCMS_Username'] %}
+                    {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
                         <!-- OPTION 2 - START -->
                         <div class="govuk-form-group" id="newCase_URN-Value">
                             <label class="govuk-label" for="newCase_URN">Case URN</label>
