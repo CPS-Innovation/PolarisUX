@@ -124,8 +124,10 @@
                                     
                                 <!-- POC - START -->
                                 {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-
+                                    {{ data['newCase_URN-B'] }}
                                 <!-- POC - END -->
+                                {% else %}
+                                    {{ data['newCase_URN-B'] }}
                                 {% endif %}
                             </strong>
                         </td>

@@ -105,7 +105,7 @@
 
                 <!-- OPTION 1 - START -->
                 <div class="govuk-form-group inline-form" id="">
-                    <label class="govuk-label" for="addCharge_Form-Location">On {{ data['addCharge_Form_Date-Day'] }}/{{ data['addCharge_Form_Date-Month'] }}/{{ data['addCharge_Form_Date-Year'] }} at </label>
+                    <label class="govuk-label" for="addCharge_Form-Location">On <span class="dateOffence">{{ data['addCharge_Form_Date-Day'] }}/{{ data['addCharge_Form_Date-Month'] }}/{{ data['addCharge_Form_Date-Year'] }}</span> at </label>
                     {% if data['addCharge_Form-Address_1'] %}
                         <input class="govuk-input govuk-input--width-20" id="addCharge_Form-Location" name="addCharge_Form-Location" type="text" value="{{ data['addCharge_Form-Address_1'] }}">
                     {% else %}
@@ -139,10 +139,10 @@
 
                 <!-- OPTION 4 - START -->
                 <div class="govuk-form-group inline-form" id="">
-                    {% if data['addCharge_Form-Value'] %}
-                        <input class="govuk-input govuk-input--width-20" id="addCharge_Form-Value" name="addCharge_Form-Owner" type="text" value="{{ data['addCharge_Form-Owner'] }}">
+                    {% if data['addCharge_Form-Owner'] %}
+                        <input class="govuk-input govuk-input--width-20" id="addCharge_Form-Owner" name="addCharge_Form-Owner" type="text" value="{{ data['addCharge_Form-Owner'] }}">
                     {% else %}
-                        <input class="govuk-input govuk-input--width-20" id="addCharge_Form-Value" name="addCharge_Form-Owner" type="text" value="Name">
+                        <input class="govuk-input govuk-input--width-20" id="addCharge_Form-Owner" name="addCharge_Form-Owner" type="text" value="Name">
                     {% endif %}            
                     <label class="govuk-label last-of-type" for="addCharge_Form-Owner">intending to destroy or damage such</label>
                 </div>                            
@@ -157,9 +157,7 @@
                 <!-- OPTION 5 - START -->
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--m" for="addCharge_Form-Particulars">Summary of charge particulars (optional)</label>
-                    <textarea class="govuk-textarea" id="addCharge_Form-Particulars" name="addCharge_Form-Particulars" rows="5"> 
-                        {{ data['addCharge_Form-Owner'] }}
-                    </textarea>
+                    <textarea class="govuk-textarea" id="addCharge_Form-Particulars" name="addCharge_Form-Particulars" rows="5"></textarea>
                 </div>
                 <!-- OPTION 5 - START -->
 

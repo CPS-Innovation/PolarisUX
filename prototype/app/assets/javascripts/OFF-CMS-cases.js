@@ -1521,7 +1521,13 @@ function dateSingle() {
 }
 
 function generateSummary() {
-    $('#addCharge_Form-Particulars').prepend(`On 21st October 2022 at 31 North Road, destroyed a something to the value of £3500 belonging to `);
+    var chargeDate = $('.dateOffence').text();
+    var chargeLocation = $('#addCharge_Form-Location').val();
+    var chargeType = $('#addCharge_Form-Type').val();
+    var chargeProperty = $('#addCharge_Form-Property').val();
+    var chargeValue = $('#addCharge_Form-Value').val();
+    var chargeOwner = $('#addCharge_Form-Owner').val();
+    $('#addCharge_Form-Particulars').text(`On ` + chargeDate + ` at ` + chargeLocation + `, ` + chargeType + ` a ` + chargeProperty + ` to the ` + chargeValue + ` belonging to ` + chargeOwner);
 }
 
 

@@ -1447,6 +1447,9 @@ nav.tube-map-ea {
                                    }
                                    span {
                                         float: right;
+                                        &.dob {
+                                             float: inherit;
+                                        }
                                         strong {
                                              &.surname {
                                                   text-transform: uppercase;
