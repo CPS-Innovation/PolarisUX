@@ -38,12 +38,6 @@
                         {% endif %}
                     </div> 
 
-<!--                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="documentExhibit-Subject">Subject</label>
-                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Subject" name="documentExhibit-Subject" type="text">
-                    </div> 
- -->
-
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
                         <select class="govuk-select" id="documentExhibit-Witness" name="documentExhibit-Witness" aria-describedby="documentExhibit-Witness" onclick="" onchange="other1(event)">
@@ -124,88 +118,6 @@
                         </div>                            
                     </div>
 
-<!--                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
-                                <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'PC Blaynee' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-1" name="documentExhibit-Witness" type="radio" value="PC Blaynee" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-1" name="documentExhibit-Witness" type="radio" value="PC Blaynee">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-1">PC Blaynee</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'PC Jones' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-2" name="documentExhibit-Witness" type="radio" value="PC Jones" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-2" name="documentExhibit-Witness" type="radio" value="PC Jones">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-2">PC Jones</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'Lucy Doyle' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-3" name="documentExhibit-Witness" type="radio" value="Lucy Doyle" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-3" name="documentExhibit-Witness" type="radio" value="Lucy Doyle">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-3">Lucy Doyle</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'Shelagh Mclove' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-4" name="documentExhibit-Witness" type="radio" value="Shelagh Mclove" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-4" name="documentExhibit-Witness" type="radio" value="Shelagh Mclove">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-4">Shelagh Mclove</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'Geoff McLove' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-5" name="documentExhibit-Witness" type="radio" value="Geoff McLove" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-5" name="documentExhibit-Witness" type="radio" value="Geoff McLove">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-5">Geoff McLove</label>
-                                </div>
-                                <div class="govuk-radios__divider">or</div>
-                                <div class="govuk-radios__item">
-                                    {% if data['documentExhibit-Witness'] == 'Other' and data['answers-complete'] == 'true' %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-Other" name="documentExhibit-Witness" type="radio" value="Other" data-aria-controls="conditional-Statements" checked>
-                                    {% else %}
-                                        <input class="govuk-radios__input" id="documentExhibit-Witness-Other" name="documentExhibit-Witness" type="radio" value="Other" data-aria-controls="conditional-Statements">
-                                    {% endif %}
-                                    <label class="govuk-label govuk-radios__label" for="documentExhibit-Witness-Other">Other producer or witness</label>
-                                </div>
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Statements">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label" for="documentExhibit-Witness-Other-Name"><span class="govuk-hint">Enter name</span></label>
-                                        {% if data['documentExhibit-Witness-Other-Name'] and data['answers-complete'] == 'true' %}
-                                            <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Witness-Other-Name" name="documentExhibit-Witness-Other-Name" type="text" value="{{ data['documentExhibit-Witness-Other-Name'] }}">
-                                        {% else %}
-                                            <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Witness-Other-Name" name="documentExhibit-Witness-Other-Name" type="text">
-                                        {% endif %}
-                                    </div>
-                                </div>                            
-                            </div>
-                        </fieldset>
-                    </div>
- -->
-<!--                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="documentExhibit-Witness">Select existing producer or witness</label>
-                        <select class="govuk-select" id="documentExhibit-Witness" name="documentExhibit-Witness">
-                            <option value="PC Blaynee">PC Blaynee</option>
-                            <option value="PC Jones">PC Jones</option>
-                            <option value="Lucy Doyle">Lucy Doyle</option>
-                            <option value="Shelagh Mclove">Shelagh Mclove</option>
-                            <option value="Geoff McLove">Geoff McLove</option>
-                        </select>
-                    </div>                    
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="documentExhibit-Produced">Produced by</label>
-                        <input class="govuk-input govuk-!-width-one-half" id="documentExhibit-Produced" name="documentExhibit-Produced" type="text">
-                    </div>  
- -->                        
 
                     {% if data['documentType'] == 'Asset recovery' or data['documentType'] == 'Asset recovery 3rd Party' or data['documentType'] == 'Complaint' or data['documentType'] == 'Correspondence' or data['documentType'] == 'Counsel Case Acknowledgement' or data['documentType'] == 'Defence Statement' or data['documentType'] == 'MG6C' or data['documentType'] == 'MG6D' or data['documentType'] == 'MG6E' or data['documentType'] == 'Other Communication' or data['documentType'] == 'PCN3' or data['documentType'] == 'SDC' or data['documentType'] == 'Service of ABE' %}
 

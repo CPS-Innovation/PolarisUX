@@ -2690,7 +2690,26 @@ $(document).ready(function() {
 
     $('#cancelPageLoad').click (function (e) {
         $('#saving-to-cms').show();
-    });    
+    });  
+
+    $('#document_Option_1, #document_Option_2, #document_Option_3, #used_Unused').hide();
+
+    $("#documentType").on("change", function (e) {
+        if ($(this).val() == 'MG11' || $(this).val() == 'MG11 (R)') {
+            $('#document_Option_1').show();
+            $('#document_Option_2, #document_Option_3').hide();
+        } else if ($(this).val() == 'MG15 (SDN)' || $(this).val() == 'MG15 (ROTI)' || $(this).val() == 'MG15 (ROVI)' || $(this).val() == 'MG15 (CONI)' || $(this).val() == 'Other Exhibit') {
+            $('#document_Option_2').show();
+            $('#document_Option_1, #document_Option_3').hide();
+        } else if ($(this).val() == 'Asset recovery' || $(this).val() == 'Asset recovery' || $(this).val() == 'Asset recovery 3rd Party' || $(this).val() == 'Complaint' || $(this).val() == 'Correspondence' || $(this).val() == 'Counsel Case Acknowledgement' || $(this).val() == 'Defence Statement' || $(this).val() == 'MG6C' || $(this).val() == 'MG6D' || $(this).val() == 'MG6E' || $(this).val() == 'Other Communication' || $(this).val() == 'PCN3' || $(this).val() == 'SDC' || $(this).val() == 'Service of ABE') {
+            $('#document_Option_3').show();
+            $('#document_Option_1, #document_Option_2, #used_Unused').hide();
+        } else {
+            $('#document_Option_3, #used_Unused').show();
+            $('#document_Option_1, #document_Option_2').hide();
+        }
+    });  
+  
 
     // if (document.getElementById("cancelPageLoad")) {
     //     setTimeout("submitForm()", 5000); // set timout 

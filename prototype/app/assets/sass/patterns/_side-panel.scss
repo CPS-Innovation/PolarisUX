@@ -1,6 +1,6 @@
 // Side panel pattern
 
-#left-column, #left-column-top {
+#left-column, #left-column-top, #newMaterials-column {
     // transition: all 0.3s linear;
     // transform: translate3d(0,0,-825px);
     &.show-menu {
@@ -26,7 +26,7 @@
     font-weight: normal !important;
 }
  
-#left-column {
+#left-column, #newMaterials-column {
     overflow-y: scroll;
     height: 72vh;
     // position: fixed;
@@ -342,16 +342,16 @@
                                         button.notes-link {
                                             display: inline-block;
                                             background: url("../images/notes-black.svg") no-repeat 50% 50%;
-                                            background-size: 1.5em;
+                                            background-size: contain;
                                             border: none;
                                             padding: 0;
-                                            width: 1.5em;
-                                            height: 1.5em;
+                                            width: 1.25em;
+                                            height: 1.25em;
                                             // float: right;
                                             // text-indent: -1000em;
                                             position: relative;
                                             // font-family: "GDS Transport", arial, sans-serif;
-                                            margin: 0.25em 0 -0.5em 0.5em;
+                                            margin: 0 0 -0.5em 0.5em;
                                             // color: $govuk-secondary-text-colour;
                                             box-shadow: none;
                                             text-decoration: underline;
@@ -649,37 +649,37 @@
 }
 
 @media (min-width: 2001px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 24%;
     }
 }
 
 @media (min-width: 1751px) and (max-width: 2000px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 24%;
     }
 }
 
 @media (min-width: 1501px) and (max-width: 1750px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 24%;
     }
 }
 
 @media (min-width: 1251px) and (max-width: 1500px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 24%;
     }
 }
 
 @media (min-width: 1001px) and (max-width: 1250px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 25%;
     }
 }
 
 @media only screen and (max-width: 1000px) {
-    #left-column {
+    #left-column, #newMaterials-column {
         width: 25%;
     }
 }

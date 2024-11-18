@@ -1225,6 +1225,7 @@ $(document).ready(function () {
         $('#multiple_Suspects_Added').show();
     }
 
+
 })
 
 
@@ -1538,6 +1539,208 @@ function openCharge() {
 function closeChargesModal() {
     $('#chargesModal').addClass('rj-dont-display');
 }
+
+// ========================= MATERIALS ========================= //
+
+$(document).ready(function () {
+
+    // Title open
+    $(".title-open").on("click", function (e) { 
+        e.preventDefault();
+        $(this).parent().parent().find('.preview-materials-link').hide();
+        $(this).parent().parent().find('.hide-materials-link').show();
+        $(this).parent().parent().parent().find('.materials-details-wrapper').show();
+        $(this).parent().parent().parent().addClass('open');
+    });
+
+    // One by one
+    $(".hide-materials-link").hide();
+
+    $(".preview-materials-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.hide-materials-link').show();
+        $(this).parent().parent().find('.materials-details-wrapper').show();
+        $(this).parent().parent().addClass('open');
+    });
+
+    $(".hide-materials-link").on("click", function (e) { 
+        $(this).hide();
+        $(this).parent().find('.preview-materials-link').show();
+        $(this).parent().parent().find('.materials-details-wrapper').hide();
+        $(this).parent().parent().removeClass('open');
+    });
+
+    // Select all - Folders
+    $("#transfer_Folder_All").click(function() {
+        $("input[type=checkbox]").prop("checked", $(this).prop("checked"));
+        $('#transfer_Materials').removeAttr('disabled').attr('aria-disabled','false');
+    });
+
+    $("input[name=transfer_Folder]").click(function() {
+        if (!$(this).prop("checked")) {
+            $("#transfer_Folder_All").prop("checked", false);
+        }
+        var numberChecked = $('input[name=transfer_Folder]:checked').length;
+        if (numberChecked >= 1) {
+            $('#transfer_Materials').removeAttr('disabled').attr('aria-disabled','false').attr('href','5-case-overview#materialsTab');
+        } else if (numberChecked == 0) {
+            $('#transfer_Materials').attr('disabled','disabled').attr('aria-disabled','true');
+        }
+    });
+
+    // Select all -  Folder 1
+    $("#transfer_Folder_1").click(function() {
+        if ($(this).is(':checked')) {
+            $('#transfer_Folder_1A, #transfer_Folder_1A_1, #transfer_Folder_1B, #transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4, #transfer_Folder_1C').attr('checked','checked');
+        } else {
+            $('#transfer_Folder_1A, #transfer_Folder_1A_1, #transfer_Folder_1B, #transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4, #transfer_Folder_1C').removeAttr("checked");
+        }
+    });
+
+    $("#transfer_Folder_1A").click(function() {
+        if ($(this).is(':checked')) {
+            $('#transfer_Folder_1A_1').attr('checked','checked');
+        } else {
+            $('#transfer_Folder_1A_1').removeAttr("checked");
+        }
+    });
+
+    $("#transfer_Folder_1B").click(function() {
+        if ($(this).is(':checked')) {
+            $('#transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4').attr('checked','checked');
+        } else {
+            $('#transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4').removeAttr("checked");
+        }
+    });
+
+    $("#transfer_Folder_1C").click(function() {
+        if ($(this).is(':checked')) {
+            $('#transfer_Folder_1C_1, #transfer_Folder_1C_2, #transfer_Folder_1C_3, #transfer_Folder_1C_4, #transfer_Folder_1C_5, #transfer_Folder_1C_6').attr('checked','checked');
+        } else {
+            $('#transfer_Folder_1C_1, #transfer_Folder_1C_2, #transfer_Folder_1C_3, #transfer_Folder_1C_4, #transfer_Folder_1C_5, #transfer_Folder_1C_6').removeAttr("checked");
+        }
+    });
+
+    $(".accordion-section-header").on("click", function (e) { 
+        $(this).toggleClass('open');
+        $(this).parent().find('.accordion-section-body').toggle();
+    });
+
+    // Mark as unread
+    $("#newMaterials-column a.show-case").on("click", function (e) { 
+        $(this).closest('td').removeClass('unreadDocument');
+    });
+
+    // Show documents - Folder 1
+    $("#newMaterials-column a.show-case.folder_1_document").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').addClass('document_present');
+        $('.document_holder.folder_1_Documents .holder').hide();
+    });
+
+    // Folder 1A - Document 1
+    $("#newMaterials-column a.show-case.document_1").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/MCLOVEMG3.pdf"></embed>`);
+    });
+
+    // Folder 1B - Document 1
+    $("#newMaterials-column a.show-case.document_2").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/CM01.pdf"></embed>`);
+    });
+
+    // Folder 1B - Document 2
+    $("#newMaterials-column a.show-case.document_3").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/MG05MCLOVE.pdf"></embed>`);
+    });
+
+    // Folder 1B - Document 3
+    $("#newMaterials-column a.show-case.document_4").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/MG06_3June.pdf"></embed>`);
+    });
+
+    // Folder 1B - Document 4
+    $("#newMaterials-column a.show-case.document_5").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/MG06_10june.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 1
+    $("#newMaterials-column a.show-case.document_6").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/stmt_BLAYNEE_2034_1_JUNE_mg11.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 2
+    $("#newMaterials-column a.show-case.document_7").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/stmt_JONES_1989_1_JUNE_mg11.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 3
+    $("#newMaterials-column a.show-case.document_8").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/stmt_Lucy_Doyle_MG11.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 4
+    $("#newMaterials-column a.show-case.document_9").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/stmt_Shelagh_McLove_MG11_hand.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 5
+    $("#newMaterials-column a.show-case.document_10").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/Shelagh_McLove_VPS_mg11.pdf"></embed>`);
+    });
+
+    // Folder 1C - Document 6
+    $("#newMaterials-column a.show-case.document_11").on("click", function (e) { 
+        $('.document_holder.folder_1_Documents').html(`<embed src="../../../public/files/MG11_Shelagh_MCLOVE_retraction.pdf"></embed>`);
+    });
+
+})
+
+// Row 1
+function materials_Row_1() {
+    $('#materials_Row_1').toggle();
+    $('.folder.materials_Row_1').toggleClass('open');
+}
+
+function materials_Row_1A() {
+    $('#materials_Row_1A').toggle();
+    $('.folder.materials_Row_1A').toggleClass('open');
+}
+
+function materials_Row_1B() {
+    $('#materials_Row_1B').toggle();
+    $('.folder.materials_Row_1B').toggleClass('open');
+}
+
+function materials_Row_1C() {
+    $('#materials_Row_1C').toggle();
+    $('.folder.materials_Row_1C').toggleClass('open');
+}
+
+// Row 2
+function materials_Row_2() {
+    $('#materials_Row_2').toggle();
+    $('.folder.materials_Row_2').toggleClass('open');
+}
+
+function materials_Row_3() {
+    $('#materials_Row_3').toggle();
+    $('.folder.materials_Row_3').toggleClass('open');
+}
+
+function materials_Row_4() {
+    $('#materials_Row_4').toggle();
+    $('.folder.materials_Row_4').toggleClass('open');
+}
+
+function materials_Row_5() {
+    $('#materials_Row_5').toggle();
+    $('.folder.materials_Row_5').toggleClass('open');
+}
+
+function materials_Row_6() {
+    $('#materials_Row_6').toggle();
+    $('.folder.materials_Row_6').toggleClass('open');
+}
+
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {

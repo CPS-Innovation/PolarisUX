@@ -206,6 +206,36 @@ html {
      }
 }
 
+.number {
+     position: absolute;
+     display: flex;
+     background: $govuk-brand-colour;
+     color: white;
+     border-radius: 50%;
+     width: 1.5em;
+     font-size: 1rem;
+     height: 1.5em;
+     font-weight: bold;
+     margin: 0.05em 0.35em 0 0;
+     text-decoration: none;
+     justify-content: center;
+     align-items: center; 
+     &.materials-number, &.inbound-number {
+          font-size: 0.875rem;
+          width: 1.75em;
+          height: 1.75em;
+          &.zero {
+               width: 1.5em;
+               font-size: 1rem;
+               height: 1.5em;
+          }
+     }
+     &.zero {
+          background: govuk-colour("dark-grey");
+          color: govuk-colour("light-grey");
+     }                        
+}
+
 #new-tabs {
      &.off-cms-overview {
           ul {
@@ -236,27 +266,8 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-8-content {
+                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-7-content, &.tab-8-content {
                               padding-left: 1.5em;
-                         }
-                         .number {
-                              position: absolute;
-                              display: flex;
-                              background: $govuk-brand-colour;
-                              color: white;
-                              border-radius: 50%;
-                              width: 1.5em;
-                              font-size: 1rem;
-                              height: 1.5em;
-                              font-weight: bold;
-                              margin: 0.05em 0.35em 0 0;
-                              text-decoration: none;
-                              justify-content: center;
-                              align-items: center; 
-                              &.zero {
-                                   background: govuk-colour("dark-grey");
-                                   color: govuk-colour("light-grey");
-                              }                        
                          }
                     }
                }
@@ -378,6 +389,10 @@ html {
                &.contacts-added {
                     margin-top: 1.5em;
                }
+               &.cta-materials {
+                    padding-left: 1.75em;
+                    margin-bottom: 2em;
+               }
                p {
                     margin-bottom: 0.5em;
                }
@@ -416,7 +431,7 @@ html {
      }
 }
 
-#multiple_Witnesses_Added, #multiple_Suspects_Added {
+#multiple_Witnesses_Added, #multiple_Suspects_Added, .documents-available {
      display: none;
 }
 
@@ -440,6 +455,8 @@ html {
      }
      section {
           border: 1px solid $govuk-border-colour;
+          display: inline-block;
+          width: 100%;
           .shared-drive {
                display: inline-block;
                width: 96.5%;
@@ -459,9 +476,179 @@ html {
                     float: left;
                }
           }
+          .accordion-wrapper, .table-wrapper {
+               display: inline-block;
+               width: 96.5%;
+               padding: 0.5em 1.75% 0 1.75%;
+               .materials {
+                    padding-top: 1em;
+                    border-bottom: 1px solid $govuk-border-colour;
+                    display: inline-block;
+                    width: 100%;
+                    &:last-of-type {
+                         border-bottom: none;
+                    }
+                    &.open {
+
+                    }
+                    h3 {
+                         display: inline-block;
+                         width: 100%;
+                         margin-bottom: 0.5em;
+                         .number {
+                              position: relative;
+                              float: left;
+                              margin-top: 0.15em;
+                         }
+                         a {
+                              float: right;
+                              margin-top: 0.5em;
+                         }
+                    }
+                    .documents-holder {
+                         margin: 0;
+                         padding: 0;
+                         background: govuk-colour("light-grey");
+                    }
+
+               }
+          }
           table {
                margin: 0 1.75% 1em 1.75%;
                width: 96.5%;
+               &#materials-table {
+                    margin-top: 1em;
+                    thead {
+                         tr {
+                              th {
+                                   .govuk-form-group {
+                                        margin: 0;
+                                        label {
+                                             text-indent: -1000em;
+                                             padding: 0;
+                                             &:before {
+                                                  top: 0;
+                                             }
+                                             &:after {
+                                                  top: 7px;
+                                             }
+                                        }
+                                        .govuk-checkboxes__item {
+                                             padding-left: 0.5em;
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    tbody {
+                         tr {
+                              &.sub-row {
+                                   display: none;
+                                   background: govuk-colour("light-grey");
+                                   box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+                                   td {
+                                        padding: 0;
+                                   }
+                              }
+                              td {
+                                   &:nth-of-type(1) {
+                                        width: 3%;
+                                   }
+                                   &:nth-of-type(2) {
+                                        width: 37%;
+                                   }                                             
+                                   &:nth-of-type(3) {
+                                        width: 10%;
+                                   }                                             
+                                   &:nth-of-type(4) {
+                                        width: 20%;
+                                   }                                             
+                                   &:nth-of-type(5) {
+                                        width: 15%;
+                                   }                                             
+                                   &:nth-of-type(6) {
+                                        width: 15%;
+                                   } 
+                                   &.file_name_cell {
+                                        font-size: 1rem;
+                                        padding-right: 0;
+                                   }                                            
+                                   a {
+                                        float: left;
+                                        font-weight: normal;
+                                        &:hover, &:active, &:focus {
+                                             cursor: pointer;
+                                        }
+                                   }
+                                   p {
+                                        margin: 0;
+                                        padding: 0.5em 0.5em;
+                                   }
+                                   .icon-new {
+                                        float: left;
+                                        margin-right: 0.75em;
+                                        width: 1.25em;
+                                        height: 1.25em;
+                                        margin: 0 0.5em 0 0;
+                                   }
+                                   .govuk-form-group {
+                                        margin: 0;
+                                        label {
+                                             text-indent: -1000em;
+                                             padding: 0;
+                                             &:before {
+                                                  top: 0;
+                                             }
+                                             &:after {
+                                                  top: 7px;
+                                             }
+                                        }
+                                        .govuk-checkboxes__item {
+                                             padding-left: 0.5em;
+                                        }
+                                   }
+                                   table.sub-table, table.sub-table2 {
+                                        margin: 0;
+                                        width: 100%;
+                                        tr {
+                                             td {
+                                                  padding: 0.5em 1em;
+                                                  &:nth-of-type(1) {
+                                                       width: 3%;
+                                                       padding-left: 0.75em;
+                                                       padding-right: 0;
+                                                  }
+                                                  &:nth-of-type(2) {
+                                                       width: 35.5%;
+                                                  }                                             
+                                                  &:nth-of-type(3) {
+                                                       width: 10%;
+                                                  }                                             
+                                                  &:nth-of-type(4) {
+                                                       width: 20%;
+                                                  }                                             
+                                                  &:nth-of-type(5) {
+                                                       width: 15%;
+                                                  }                                             
+                                                  &:nth-of-type(6) {
+                                                       width: 16%;
+                                                  }                                             
+                                             }
+                                        }
+                                   }
+                                   table.sub-table2 {
+                                        tr {
+                                             td {
+                                                  &:nth-of-type(2) {
+                                                       width: 34.25%;
+                                                  }     
+                                             }
+                                        }
+                                   }                                        
+                              }
+                         }
+                    }
+               }
                thead {
                     tr {
                          th {
@@ -564,7 +751,7 @@ html {
      }
 }
 
-#my-cases-table {
+#my-cases-table, #materials-table {
      thead {
           button {
                margin: 0;
@@ -742,11 +929,31 @@ h2 {
 }
 
 .icon-new {
+     width: 1em;
+     height: 1em;
+     margin-bottom: -0.15em;
      &.user {
-          width: 1em;
-          height: 1em;
-          margin-bottom: -0.15em;
           background: url("../images/user-blue.svg") no-repeat 50% 50%;
+          background-size: contain;   
+     }
+     &.folder {
+          background: url("../images/folder-blue.svg") no-repeat 50% 50%;
+          background-size: contain;   
+          &.open {
+               background: url("../images/folder-open-blue.svg") no-repeat 50% 50%;
+               background-size: contain;   
+          }
+          &.empty {
+               background: url("../images/folder-grey.svg") no-repeat 50% 50%;
+               background-size: contain;   
+               &.open {
+                    background: url("../images/folder-open-grey.svg") no-repeat 50% 50%;
+                    background-size: contain;   
+               }
+          }
+     }
+     &.file {
+          background: url("../images/document-black.svg") no-repeat 50% 50%;
           background-size: contain;   
      }
 }
@@ -1241,7 +1448,7 @@ nav.tube-map-ea {
      }
 }
 
-.preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link {
+.preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link, .hide-materials-link, .preview-materials-link {
      font-size: 1rem;
      float: right;
      margin-top: 0.75em;
@@ -1331,6 +1538,15 @@ nav.tube-map-ea {
      display: inline-block;
      width: auto;
      float: left;
+     a {
+          &.title-open {
+               color: $govuk-link-colour;
+               margin: 0 !important;
+               &:hover, &:active, &:focus {
+                    cursor: pointer;
+               }
+          }
+     }
 }
 
 .hide-all-title-wrapper {
@@ -1540,5 +1756,82 @@ nav.tube-map-ea {
                     }
                }
           }
+     }
+}
+
+// ==================================== Materials ==================================== //
+
+.materials-details-wrapper {
+     background: govuk-colour("light-grey");
+     padding: 1.5em 1.5em;
+     box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.2);
+     #newMaterials-column {
+          height: 100vh;
+          display: inline-block;
+          position: relative;
+          padding-left: 0;
+          .wrapper {
+               padding: 0;
+               .icon-new.time-added {
+                    background-size: contain;
+               }
+          }
+          .accordion .accordion-section {
+               .accordion-section-header {
+                    background: darken(govuk-colour("light-grey"),5%);
+                    &.open {
+                         .icon {
+                              background-position: 0 0;
+                         }
+                    }
+               }
+               .accordion-section-body {
+                    .sort-documents {
+                         margin-top: 1em;
+                    }
+                    table {
+                         width: 100%;
+                         tbody tr td {
+                              a.show-case {
+                                   padding-left: 1.5em;
+                                   background: url("../images/document-blue.svg") no-repeat 0% 0%;
+                                   background-size: 1em;
+                                   font-weight: bold;
+                              }
+                              .document-nav {
+                                   top: 3em;
+                                   &:before {
+                                        content: '';
+                                        border-style: solid;
+                                        border-width: 0 7px 10px 7px;
+                                        border-color: transparent transparent white transparent;
+                                        position: absolute;
+                                        top: -10px;
+                                        right: 3px;
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+     }
+     .documents-available {
+          width: 100%;
+          .document_holder {
+               display: flex;
+               float: right;
+               width: 74%;
+               text-align: center;
+               flex-direction: column;
+               height: 100vh;
+               justify-content: center;
+               &.document_present {
+                    justify-content: top;
+                    embed {
+                         height: 100vh;
+                    }
+               }
+          }
+
      }
 }

@@ -147,7 +147,7 @@ button {
     }
     &.time-added {
         background: url("../images/time.svg") no-repeat 50% 50%;
-        background-size: 1.25em;
+        background-size: contain;
         margin-left: 0.5em;
     }
     // &.notes-added {
