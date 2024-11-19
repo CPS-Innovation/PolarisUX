@@ -1,0 +1,633 @@
+{% if data['chargeAddedComplete'] == 'true' %}
+    <h2 class="govuk-heading-m">Defendants & Charges</h2>
+{% else %}
+    <h2 class="govuk-heading-m">Suspects & Charges</h2>
+{% endif %}
+
+
+<div class="hide-all-title-wrapper">
+    <span class="govuk-caption-m">Last updated <span id="suspects-timestamp"></span></span>
+    {% if data['addSuspectStarted'] == 'true' %}
+        <a href="" class="hide-all-link">Hide all <span class="icon-new arrow-up"></span></a>
+    {% else %}
+
+    {% endif %}
+    <a href="" class="preview-all-link">Show all <span class="icon-new arrow-down"></span></a>
+</div>
+
+{% if data['addSuspectStarted'] == 'true' %}
+    {% if data['addSuspect_Details'] == 'Individual' %}
+        <div class="suspects single">
+            <div class="suspects-details open">
+                <h3 class="govuk-heading-m">
+                    <div class="name_Wrapper">
+                        {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                            <span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}
+                        {% else %}
+                            Individual
+                        {% endif %}
+                        {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                            <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                        {% else %}
+
+                        {% endif %}
+                    </div>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                {% if data['addSuspectPerson'] == 'true' %}
+                    <div class="flexbox">
+                        <div class="suspects-details-wrapper has-details">
+                            <div class="title">
+                                {% if data['chargeAddedComplete'] == 'true' %}
+                                    <h4 class="govuk-heading-s">Defendants details</h4>
+                                {% else %}
+                                    <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% endif %}
+                                <a href="9B-add-suspect" class="">Edit</a>
+                            </div>
+                            <div class="suspects-content-wrapper">
+
+                                <div class="suspects-sections">
+
+                                    {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                        <section>
+                                            <p>Name 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendants name</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect name</span></a>
+                                                {% endif %}
+                                                <span><strong class="surname">{{ data['addSuspect_Form-Surname'] }}</strong>, <span class="forename">{{ data['addSuspect_Form-Forename'] }}</span></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Aliases'] %}
+                                        <section>
+                                            <p>
+                                                Aliases 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendants aliases</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% endif %}
+                                                <span>Yes</span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Gender'] %}
+                                        <section>
+                                            <p>
+                                                Gender 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant gender</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect gender</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Gender'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Ethnicity'] %}
+                                        <section>
+                                            <p>
+                                                Ethnicity 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant ethnicity</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect ethnicity</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Ethnicity'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Religion'] %}
+                                        <section>
+                                            <p>
+                                                Religion 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant religion</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect religion</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Religion'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                        <section>
+                                            <p>
+                                                Date of birth
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant date of birth</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect date of birth</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Disability'] %}
+                                        <section>
+                                            <p>
+                                                Disability 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant disability</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect disability</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Disability'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Type'] %}
+                                        <section>
+                                            <p>
+                                                Type
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant type</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect type</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Type'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Type'] and data['addSuspect_Form-Arrest-Day'] %}
+                                        <section>
+                                            <p>
+                                                Arrest date 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant arrest date</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect arrest date</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-Arrest-Day'] }}/{{ data['addSuspect_Form-Arrest-Month'] }}/{{ data['addSuspect_Form-Arrest-Year'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-SDO'] %}
+                                        <section>
+                                            <p>
+                                                Serious and Dangerous Offender 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant Serious and Dangerous Offender</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect Serious and Dangerous Offender</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-SDO'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-ASN'] %}
+                                        <section>
+                                            <p>
+                                                Arrest summaries number 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant Arrest summaries number</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect Arrest summaries number</span></a>
+                                                {% endif %}
+                                                <span><strong>{{ data['addSuspect_Form-ASN'] }}</strong></span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                    {% if data['addSuspect_Form-Aliases'] %}
+                                        <section>
+                                            <p>
+                                                Aliases 
+                                                {% if data['chargeAddedComplete'] == 'true' %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">defendant aliases</span></a>
+                                                {% else %}
+                                                    <a href="9B-add-suspect">Change <span class="visuallyhidden">suspect aliases</span></a>
+                                                {% endif %}
+                                                <span class="aliases-wrapper">
+                                                    {% if data['addSuspect-Alias-Surname'] or data['addSuspect-Alias-Forename'] %}
+                                                        <span><strong class="surname">{{ data['addSuspect-Alias-Surname'] }}</strong>, {{ data['addSuspect-Alias-Forename'] }}</span>
+                                                    {% else %}
+
+                                                    {% endif %}
+                                                    {% if data['addSuspect-Alias-Surname2'] or data['addSuspect-Alias-Forename2'] %}
+                                                        <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname2'] }}</strong>, {{ data['addSuspect-Alias-Forename2'] }}</span>
+                                                    {% else %}
+
+                                                    {% endif %}
+                                                    {% if data['addSuspect-Alias-Surname3'] or data['addSuspect-Alias-Forename3'] %}
+                                                        <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname3'] }}</strong>, {{ data['addSuspect-Alias-Forename3'] }}</span>
+                                                    {% else %}
+
+                                                    {% endif %}
+                                                    {% if data['addSuspect-Alias-Surname4'] or data['addSuspect-Alias-Forename4'] %}
+                                                        <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname4'] }}</strong>, {{ data['addSuspect-Alias-Forename4'] }}</span>
+                                                    {% else %}
+
+                                                    {% endif %}
+                                                    {% if data['addSuspect-Alias-Surname5'] or data['addSuspect-Alias-Forename5'] %}
+                                                        <br><span><strong class="surname">{{ data['addSuspect-Alias-Surname5'] }}</strong>, {{ data['addSuspect-Alias-Forename5'] }}</span>
+                                                    {% else %}
+
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+
+                                    {% endif %}
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="suspects-details-wrapper has-details">
+                            <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                            <div class="suspects-content-wrapper">
+                                <div class="suspects-sections">
+                                    <section>
+                                        {% if data['chargeAddedComplete'] == 'true' %}
+                                            <section>
+                                                <p>
+                                                    {{ data['newChargeCode'] }} -
+                                                    <strong>Criminal damage to property valued under £5000</strong>
+                                                    <span class="links-wrapper">
+                                                        <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                        <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                    </span>
+                                                </p>
+                                            </section>
+                                        {% else %}
+                                            <p>
+                                                There are no charges for 
+                                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                                    <strong class="uppercase">{{ data['addSuspect_Form-Surname'] }}</strong><strong>, {{ data['addSuspect_Form-Forename'] }}</strong>
+                                                {% else %}
+                                                    <strong>Individual</strong>
+                                                {% endif %}
+                                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                at this time.
+                                            </p>
+                                        {% endif %}
+                                        <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-wrapper">
+                        {% if data['chargeAddedComplete'] == 'true' %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                        {% else %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="flexbox">
+                        <div class="suspects-details-wrapper has-details">
+                            <div class="title">
+                                {% if data['chargeAddedComplete'] == 'true' %}
+                                    <h4 class="govuk-heading-s">Defendants details</h4>
+                                {% else %}
+                                    <h4 class="govuk-heading-s">Suspects details</h4>
+                                {% endif %}
+                                <a href="9B-add-suspect" class="">Edit</a>
+                            </div>
+                            <div class="suspects-content-wrapper">
+                                <div class="suspects-sections">
+                                    <p>There are no further details on <strong>Individual</strong> at this time.</p>
+                                </div>
+                                <div class="cta-wrapper">
+                                    {% if data['chargeAddedComplete'] == 'true' %}
+                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                                    {% else %}
+                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="suspects-details-wrapper has-details">
+                            <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                            <div class="suspects-content-wrapper">
+                                <div class="suspects-sections">
+                                    <section>
+                                        {% if data['chargeAddedComplete'] == 'true' %}
+                                            <section>
+                                                <p>
+                                                    {{ data['newChargeCode'] }} -
+                                                    <strong>Criminal damage to property valued under £5000</strong>
+                                                    <span class="links-wrapper">
+                                                        <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                        <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                    </span>
+                                                </p>
+                                            </section>
+                                        {% else %}
+                                            <p>
+                                                There are no charges for 
+                                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                                    <strong><span>{{ data['addSuspect_Form-Surname'] }}</span>, {{ data['addSuspect_Form-Forename'] }}</strong>
+                                                {% else %}
+                                                    <strong>Individual</strong>
+                                                {% endif %}
+                                                {% if data['addSuspect_Form-DOB-Day'] or data['addSuspect_Form-DOB-Month'] or data['addSuspect_Form-DOB-Year'] %}
+                                                    <span class="dob">({{ data['addSuspect_Form-DOB-Day'] }}/{{ data['addSuspect_Form-DOB-Month'] }}/{{ data['addSuspect_Form-DOB-Year'] }})</span>
+                                                {% else %}
+
+                                                {% endif %}
+                                                at this time.
+                                            </p>
+                                        {% endif %}
+                                        <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-wrapper">
+                        {% if data['chargeAddedComplete'] == 'true' %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                        {% else %}
+                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% elseif data['addSuspect_Details'] == 'Company' %}
+        <div class="suspects">
+            <div class="suspects-details open">
+                <h3 class="govuk-heading-m">
+                    <div class="name_Wrapper">{{ data['addSuspect_CompanyName'] }}</div>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+                </h3>
+                <div class="flexbox">
+                    <div class="suspects-details-wrapper has-details">
+                        <div class="title">
+                            {% if data['chargeAddedComplete'] == 'true' %}
+                                <h4 class="govuk-heading-s">Defendants details</h4>
+                            {% else %}
+                                <h4 class="govuk-heading-s">Suspects details</h4>
+                            {% endif %}
+                            <a href="9B-add-suspect" class="">Edit</a>
+                        </div>
+                        <div class="suspects-content-wrapper">
+                            <div class="suspects-sections">
+                                <p>There are no further details on <strong>{{ data['addSuspect_CompanyName'] }}</strong> at this time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="suspects-details-wrapper has-details">
+                        <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                        <div class="suspects-content-wrapper">
+                            <div class="suspects-sections">
+                                <section>
+                                    {% if data['chargeAddedComplete'] == 'true' %}
+                                        <section>
+                                            <p>
+                                                {{ data['newChargeCode'] }} -
+                                                <strong>Criminal damage to property valued under £5000</strong>
+                                                <span class="links-wrapper">
+                                                    <a href="12A-charge-details">Change <span class="visuallyhidden">charge details</span></a>
+                                                    <a onclick="return openCharge();">View <span class="visuallyhidden">charge details</span></a>
+                                                </span>
+                                            </p>
+                                        </section>
+                                    {% else %}
+                                        <p>
+                                            There are no charges for <strong>{{ data['addSuspect_CompanyName'] }}</strong> at this time.
+                                        </p>
+                                    {% endif %}
+                                    <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-wrapper">
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                    {% else %}
+                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+
+{% endif %}
+
+<!-- MULTIPLE SUSPECTS - START -->
+<div class="suspects" id="multiple_Suspect_Details">
+
+    <!-- SUSPECT - 1 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">CHAVEZ, Zahra</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title">
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
+                    <a href="#" class="">Edit</a>
+                </div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <p>There are no further details on <strong>CHAVEZ, Zahra</strong> at this time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>CHAVEZ, Zahra</strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="">Draft new charge</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-wrapper">
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
+        </div>
+    </div>
+    <!-- SUSPECT - 1 - END -->
+
+    <!-- SUSPECT - 2 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">TERRY, Jayson</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title">
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
+                    <a href="#" class="">Edit</a>
+                </div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <p>There are no further details on <strong>TERRY, Jayson</strong> at this time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>TERRY, Jayson</strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="">Draft new charge</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-wrapper">
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
+        </div>
+    </div>
+    <!-- SUSPECT - 2 - END -->
+
+    <!-- SUSPECT - 3 - START -->
+    <div class="suspects-details open">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">SINGH, Mateo</div>
+            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title">
+                    {% if data['chargeAddedComplete'] == 'true' %}
+                        <h4 class="govuk-heading-s">Defendants details</h4>
+                    {% else %}
+                        <h4 class="govuk-heading-s">Suspects details</h4>
+                    {% endif %}
+                    <a href="#" class="">Edit</a>
+                </div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <p>There are no further details on <strong>SINGH, Mateo</strong> at this time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>SINGH, Mateo </strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="">Draft new charge</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-wrapper">
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+            {% else %}
+                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+            {% endif %}
+        </div>
+    </div>
+    <!-- SUSPECT - 3 - END -->
+
+</div>
+<!-- MULTIPLE SUSPECTS - END -->
+
+<div class="cta-wrapper">
+    <div class="add-new">
+        {% if data['addSuspectStarted'] == 'true' %}
+            {% if data['chargeAddedComplete'] == 'true' %}
+                <p>Add additional <strong>defendants</strong> to this case</p>
+            {% else %}
+                <p>Add additional <strong>suspects</strong> to this case</p>
+            {% endif %}
+        {% else %}
+            <p>There has been <strong>no Suspects</strong> added to this case</p>
+        {% endif %}
+        {% if data['chargeAddedComplete'] == 'true' %}
+            <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a defendant</button>
+        {% else %}
+            <button type="submit" class="govuk-button" style="" onclick="location.href='9A-add-suspect';">Add a suspect</button>
+        {% endif %}
+    </div>
+    <div class="govuk-form-group file-upload">
+        {% if data['chargeAddedComplete'] == 'true' %}
+            <label class="govuk-label" for="multiple_Suspects">Upload a list of Defendants</label>
+        {% else %}
+            <label class="govuk-label" for="multiple_Suspects">Upload a list of Suspects</label>
+        {% endif %}
+        <input class="govuk-file-upload" id="multiple_Suspects" name="multiple_Suspects" type="file">
+    </div> 
+</div>

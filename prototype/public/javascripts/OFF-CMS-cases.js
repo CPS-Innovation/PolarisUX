@@ -1547,10 +1547,10 @@ $(document).ready(function () {
     // Title open
     $(".title-open").on("click", function (e) { 
         e.preventDefault();
-        $(this).parent().parent().find('.preview-materials-link').hide();
-        $(this).parent().parent().find('.hide-materials-link').show();
-        $(this).parent().parent().parent().find('.materials-details-wrapper').show();
-        $(this).parent().parent().parent().addClass('open');
+        $(this).parent().parent().find('.preview-materials-link').toggle();
+        $(this).parent().parent().find('.hide-materials-link').toggle();
+        $(this).parent().parent().parent().find('.materials-details-wrapper').toggle();
+        $(this).parent().parent().parent().toggleClass('open');
     });
 
     // One by one
@@ -1621,7 +1621,7 @@ $(document).ready(function () {
         }
     });
 
-    $(".accordion-section-header").on("click", function (e) { 
+    $("#newMaterials-column .accordion-section-header").on("click", function (e) { 
         $(this).toggleClass('open');
         $(this).parent().find('.accordion-section-body').toggle();
     });

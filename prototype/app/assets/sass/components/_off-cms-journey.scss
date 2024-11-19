@@ -390,8 +390,11 @@ html {
                     margin-top: 1.5em;
                }
                &.cta-materials {
-                    padding-left: 1.75em;
+                    padding-left: 1.25em;
                     margin-bottom: 2em;
+                    a {
+                         margin-bottom: 0;
+                    }
                }
                p {
                     margin-bottom: 0.5em;
@@ -453,6 +456,40 @@ html {
                }
           }
      }
+     &.materials_holder {
+          display: flex;
+          section.width_70 {
+               width: 70%;
+               margin-right: 1.5%;
+               .permissions {
+                    width: 95%;
+                    padding: 1.5em 2.5% 0 2.5%;
+                    input {
+                         width: 88.85% !important;
+                    }
+               }
+               .accordion-wrapper {
+                    width: 95%;
+                    padding: 0.5em 2.5% 0 2.5%;
+               }
+          }
+          section.width_30 {
+               width: 30%;
+               .title-wrapper {
+                    img {
+                         width: 4.5em;
+                         margin: 0 0.35em -0.25em 0;
+                    }
+               }
+               .permissions {
+                    width: 88%;
+                    padding: 1.5em 6% 0 6%;
+                    input {
+                         width: 79.5% !important;
+                    }
+               }
+          }
+     }
      section {
           border: 1px solid $govuk-border-colour;
           display: inline-block;
@@ -507,7 +544,7 @@ html {
                     }
                     .documents-holder {
                          margin: 0;
-                         padding: 0;
+                         padding: 1em;
                          background: govuk-colour("light-grey");
                     }
 
@@ -518,6 +555,8 @@ html {
                width: 96.5%;
                &#materials-table {
                     margin-top: 1em;
+                    margin: 1em 6% 1em 6%;
+                    width: 88%;                    
                     thead {
                          tr {
                               th {
@@ -546,32 +585,38 @@ html {
                                    display: none;
                                    background: govuk-colour("light-grey");
                                    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
+                                   padding-top: 5px;
+                                   padding-bottom: 5px;
                                    td {
                                         padding: 0;
                                    }
                               }
                               td {
                                    &:nth-of-type(1) {
-                                        width: 3%;
+                                        width: 10%;
+                                        padding-right: 0;
                                    }
                                    &:nth-of-type(2) {
-                                        width: 37%;
+                                        width: 90%;
                                    }                                             
-                                   &:nth-of-type(3) {
-                                        width: 10%;
-                                   }                                             
-                                   &:nth-of-type(4) {
-                                        width: 20%;
-                                   }                                             
-                                   &:nth-of-type(5) {
-                                        width: 15%;
-                                   }                                             
-                                   &:nth-of-type(6) {
-                                        width: 15%;
-                                   } 
+                                   // &:nth-of-type(3) {
+                                   //      width: 10%;
+                                   // }                                             
+                                   // &:nth-of-type(4) {
+                                   //      width: 20%;
+                                   // }                                             
+                                   // &:nth-of-type(5) {
+                                   //      width: 15%;
+                                   // }                                             
+                                   // &:nth-of-type(6) {
+                                   //      width: 15%;
+                                   // } 
                                    &.file_name_cell {
                                         font-size: 1rem;
                                         padding-right: 0;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
                                    }                                            
                                    a {
                                         float: left;
@@ -614,33 +659,41 @@ html {
                                              td {
                                                   padding: 0.5em 1em;
                                                   &:nth-of-type(1) {
-                                                       width: 3%;
+                                                       width: 10%;
                                                        padding-left: 0.75em;
                                                        padding-right: 0;
+                                                       padding: 10px 0px 10px 10px;
                                                   }
                                                   &:nth-of-type(2) {
-                                                       width: 35.5%;
+                                                       width: 90%;
+                                                       padding-left: 10px;
                                                   }                                             
-                                                  &:nth-of-type(3) {
-                                                       width: 10%;
-                                                  }                                             
-                                                  &:nth-of-type(4) {
-                                                       width: 20%;
-                                                  }                                             
-                                                  &:nth-of-type(5) {
-                                                       width: 15%;
-                                                  }                                             
-                                                  &:nth-of-type(6) {
-                                                       width: 16%;
-                                                  }                                             
+                                                  // &:nth-of-type(3) {
+                                                  //      width: 10%;
+                                                  // }                                             
+                                                  // &:nth-of-type(4) {
+                                                  //      width: 20%;
+                                                  // }                                             
+                                                  // &:nth-of-type(5) {
+                                                  //      width: 15%;
+                                                  // }                                             
+                                                  // &:nth-of-type(6) {
+                                                  //      width: 16%;
+                                                  // }                                             
                                              }
                                         }
                                    }
                                    table.sub-table2 {
                                         tr {
                                              td {
+                                                  &:nth-of-type(1) {
+                                                       padding-left: 0.75em;
+                                                       padding-top: 10px;
+                                                       padding-bottom: 10px;
+                                                  }
                                                   &:nth-of-type(2) {
-                                                       width: 34.25%;
+                                                       width: 88%;
+                                                       padding-top: 12px;
                                                   }     
                                              }
                                         }
@@ -1762,14 +1815,14 @@ nav.tube-map-ea {
 // ==================================== Materials ==================================== //
 
 .materials-details-wrapper {
-     background: govuk-colour("light-grey");
-     padding: 1.5em 1.5em;
-     box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.2);
+     // background: govuk-colour("light-grey");
+     // padding: 1.5em 1.5em;
+     // box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.2);
      #newMaterials-column {
           height: 100vh;
           display: inline-block;
           position: relative;
-          padding-left: 0;
+          padding: 0;
           .wrapper {
                padding: 0;
                .icon-new.time-added {
@@ -1817,6 +1870,7 @@ nav.tube-map-ea {
      }
      .documents-available {
           width: 100%;
+          margin-bottom: 1.5em;
           .document_holder {
                display: flex;
                float: right;
@@ -1825,6 +1879,7 @@ nav.tube-map-ea {
                flex-direction: column;
                height: 100vh;
                justify-content: center;
+               // padding: 1em;
                &.document_present {
                     justify-content: top;
                     embed {

@@ -16,9 +16,9 @@ $(document).ready(function () {
         var materialsNumber1 = parseInt($('#materials_Nav .materials-number').text());
         var materialsNumber2 = parseInt($('.number-1').text());
         var inboundNumber1 = parseInt($('#materials_Nav .inbound-number').text());
-        $('#materials_Nav .materials-number').text(materialsNumber1 + 11);
-        $('.number-1').text(materialsNumber2 + 11);
-        $('#materials_Nav .inbound-number').text(inboundNumber1 - 11);
+        // $('#materials_Nav .materials-number').text(materialsNumber1 + 11);
+        // $('.number-1').text(materialsNumber2 + 11);
+        // $('#materials_Nav .inbound-number').text(inboundNumber1 - 11);
 
         // Content
         $('.materials_section_1 .documents-available').css('display','inline-block');
