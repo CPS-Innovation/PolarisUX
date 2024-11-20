@@ -37,6 +37,14 @@ button {
           color: $govuk-link-colour;
           font-size: 1rem;
      }
+     &.edit_EA {
+          border-right: 1px solid $govuk-border-colour;
+          padding-right: 0.75em;
+          margin-right: 0.25em;
+     }
+     &.margin_left {
+          margin-left: 1em !important;
+     }
 }
 
 .floating-link, #newChargeCode {

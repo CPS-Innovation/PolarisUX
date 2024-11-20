@@ -259,6 +259,13 @@ if ($("#create-case-journey").length == 0) {
     $('#global-navigation.off-cms-journey ul li.create-case').addClass('current');
 }
 
+// Search
+if ($("#search-journey").length == 0) {
+    $('#global-navigation.off-cms-journey ul li.search').removeClass('current');
+} else {
+    $('#global-navigation.off-cms-journey ul li.search').addClass('current');
+}
+
 
 // ========================= TABS =========================
 $(document).ready(function () {
@@ -1206,7 +1213,7 @@ $(document).ready(function () {
             $('#multiple_Suspect_Details').show();
         }, 2500)
         var addSuspectsWitnesses = parseInt($('.suspects-number').text());
-        $('.suspects-number').text(addSuspectsWitnesses + 3);
+        $('.suspects-number').text(addSuspectsWitnesses + 3).removeClass('zero');
         $.cookie("multiple_Suspects", true, {path:'/'});
         $('#multiple_Suspects_Added').show();
     });

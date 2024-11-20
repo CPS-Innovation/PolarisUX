@@ -367,13 +367,23 @@
                         <!-- OPTION 2 - END -->
                     {% endif %}
 
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-inset-text">
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
+                                        <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Lock down this case</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <!-- OPTION 3 - END -->
+
                 </fieldset>
 
-<!--                 <div class="create-case-error">
-                    <button type="submit" class="govuk-button" style="" id="newCase_ErrorActivate">Continue</button>
-                    <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>
-                </div>
- -->
                 <input id="createCaseStarted" name="createCaseStarted" type="text" value="true" style="display: none;">
                 <button type="submit" class="govuk-button" style="">Continue</button>
                 <button type="button" onclick="location.href='2-homepage';" class="non-button margin-left" id="">Cancel</button>

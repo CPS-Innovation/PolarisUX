@@ -19,10 +19,14 @@
                     <tr class="govuk-table__row" >
                         <th scope="row" class="govuk-table__header">
                             <span id="EA-timestamp-NEW"></span><Br>
-                            <span class="added-by">created by {{ data['offCMS_Username'] }}</span>
+                            <span class="added-by">created by {{ data['offCMS_Username'] }}</span><br>
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
                         </th>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell"><button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button></td>
+                        <td class="govuk-table__cell">
+                            <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button>
+                            <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state edit_EA" onclick="location.href='7-create-ea';">Edit</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

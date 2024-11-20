@@ -5,7 +5,7 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form method="get" action="3-search-results">
+                    <form method="get" action="13B-search-results">
                         <fieldset>
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--xl">Complex case division</label>
@@ -64,11 +64,17 @@
             <table class="govuk-table" id="my-cases-table">
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Operation or defendant name</button></th>
+                        {% if 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+                            <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Operation or claimant name</button></th>
+                        {% else %}
+                            <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Operation or defendant name</button></th>
+                        {% endif %}
                         <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Case status</button></th>
                         <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Type</button></th>
                         <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Team</button></th>
+                        <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">CTL</button></th>
                         <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Court location</button></th>
+                        <th scope="col" class="govuk-table__header"><button class="govuk-button" data-module="govuk-button" onClick="return sortTable();">Hearing</button></th>
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body">
@@ -273,7 +279,9 @@
 
                                 {% endif %}                    
                             </td>
-                            <td class="govuk-table__cell">Greater London</td>
+                            <td class="govuk-table__cell">--</td>
+                            <td class="govuk-table__cell">--</td>
+                            <td class="govuk-table__cell">--</td>
                         </tr>
                         <!-- CASE NEW - END --> 
                     {% else %}
@@ -287,12 +295,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">920620952/24</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
-                        <td class="govuk-table__cell">Hijacking/Abduction</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                Corruption
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Hijacking/Abduction
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                LT
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Hijacking/Abduction
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:alex.byrne@cps.gov.uk">alex.byrne@cps.gov.uk</a>
                         </td>
-                        <td class="govuk-table__cell">Manchester (Crown Square)</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
                     </tr>
                     <!-- CASE 1 - END --> 
 
@@ -302,12 +324,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">840320999/24</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
-                        <td class="govuk-table__cell">Official Secrets Act</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                MPs
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Official Secrets Act
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                LT
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Official Secrets Act
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:archibald.england@cps.gov.uk">archibald.england@cps.gov.uk</a>
                         </td>
-                        <td class="govuk-table__cell">Greater London</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
                     </tr>
                     <tr class="govuk-table__row charged">
                         <th scope="row" class="govuk-table__header">
@@ -315,12 +351,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">120120933/23</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Charged</strong></td>
-                        <td class="govuk-table__cell">Terrorism</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                High profile other
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Terrorism
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                AB
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Terrorism
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:catrin.guerra@cps.gov.uk">catrin.guerra@cps.gov.uk</a>
                         </td>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">20 days</strong></td>
                         <td class="govuk-table__cell">Birmingham</td>
+                        <td class="govuk-table__cell"><strong>14/11/2025</strong></td>
                     </tr>
                     <tr class="govuk-table__row charged">
                         <th scope="row" class="govuk-table__header">
@@ -328,12 +378,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">120520944/24</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Charged</strong></td>
-                        <td class="govuk-table__cell">War Crimes</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                Corp man
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                War Crimes
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                CC
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                War Crimes
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:malachy.fletcher@cps.gov.uk">malachy.fletcher@cps.gov.uk</a>
                         </td>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">75 days</strong></td>
                         <td class="govuk-table__cell">Birmingham</td>
+                        <td class="govuk-table__cell"><strong>12/10/2025</strong></td>
                     </tr>
                     <tr class="govuk-table__row pre-charge">
                         <th scope="row" class="govuk-table__header">
@@ -341,12 +405,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">920620953/21</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
-                        <td class="govuk-table__cell">Hijacking/Abduction</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                Private prosecution
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Hijacking/Abduction
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                FT
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Hijacking/Abduction
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:maria.burgess@cps.gov.uk">maria.burgess@cps.gov.uk</a>
                         </td>
-                        <td class="govuk-table__cell">Manchester (Crown Square)</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
                     </tr>
                     <tr class="govuk-table__row charged">
                         <th scope="row" class="govuk-table__header">
@@ -354,12 +432,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">880120801/24</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Charged</strong></td>
-                        <td class="govuk-table__cell">Terrorism</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                IPCC sum assault
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Terrorism
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                OI
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Terrorism
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:bruce.farley@cps.gov.uk">bruce.farley@cps.gov.uk</a>
                         </td>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">6 days</strong></td>
                         <td class="govuk-table__cell">Liverpool</td>
+                        <td class="govuk-table__cell"><strong>20/12/2025</strong></td>
                     </tr>
                     <tr class="govuk-table__row pre-charge">
                         <th scope="row" class="govuk-table__header">
@@ -367,12 +459,26 @@
                             <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">120720952/24</span>
                         </th>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
-                        <td class="govuk-table__cell">Appeals</td>
+                        <td class="govuk-table__cell">
+                            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                Assisted suicide
+                            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                Appeals
+                            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                OI
+                            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                            {% else %}
+                                Appeals
+                            {% endif %}
+                        </td>
                         <td class="govuk-table__cell">
                             Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                             Prosecutor: <a href="mailto:audrey.erickson@cps.gov.uk">audrey.erickson@cps.gov.uk</a>
                         </td>
-                        <td class="govuk-table__cell">Birmingham</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
+                        <td class="govuk-table__cell">--</td>
                     </tr>
                     {% if data['createCaseStarted'] == 'true' %}
 
@@ -383,12 +489,26 @@
                                 <span class="govuk-caption-m govuk-body-s govuk-!-margin-bottom-0">840120988/24</span>
                             </th>
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
-                            <td class="govuk-table__cell">Terrorism</td>
+                            <td class="govuk-table__cell">
+                                {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                    Election offences
+                                {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                    Terrorism
+                                {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                    WR
+                                {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+
+                                {% else %}
+                                    Terrorism
+                                {% endif %}
+                            </td>
                             <td class="govuk-table__cell">
                                 Caseworker: <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a><br>
                                 Prosecutor: <a href="mailto:talha.cobb@cps.gov.uk">talha.cobb@cps.gov.uk</strong>
                             </td>
-                            <td class="govuk-table__cell">Greater London</td>
+                            <td class="govuk-table__cell">--</td>
+                            <td class="govuk-table__cell">--</td>
+                            <td class="govuk-table__cell">--</td>
                         </tr>
                     {% endif %}
                 </tbody>

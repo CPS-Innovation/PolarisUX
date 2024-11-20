@@ -11,6 +11,18 @@
         </div>
         <div class="section-content">
 
+            {% if data['newCase_URN-Lockdown'] == 'Yes' %}
+                <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-visually-hidden">Warning</span>
+                        This case is locked down.
+                    </strong>
+                </div>
+            {% else %}
+
+            {% endif %}
+
             <table class="govuk-table settings-table">
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
@@ -22,7 +34,15 @@
                         {% endif %}                   
                     </tr>
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Case type</th>
+                        <th scope="row" class="govuk-table__header">Status</th>
+                        {% if data['chargeAddedComplete'] == 'True' %}
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--gree">Charged</strong></td>
+                        {% else %}
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
+                        {% endif %}                   
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Type</th>
                         <td class="govuk-table__cell">
                             <strong class="govuk-tag govuk-tag--blue">
                                 <!-- SCD - START -->

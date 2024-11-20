@@ -1,99 +1,128 @@
 <h2 class="govuk-heading-m">Case permissions</h2>
 <span class="govuk-caption-m">Last updated <span id="permissions-timestamp"></span></span>
 
-<div class="section-wrapper section-row">
+{% if data['newCase_URN-Lockdown'] == 'Yes' %}
+    <div class="section-wrapper section-row">
 
-    <section>
-        <div class="title-wrapper">
-            <h3 class="govuk-heading-s">User permissions</h3>
-        </div>
+        <section>
+            <div class="title-wrapper">
+                <h3 class="govuk-heading-s">User permissions</h3>
+            </div>
 
-        <table class="govuk-table contacts-table">
-            <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">User</th>
-                    <th scope="col" class="govuk-table__header">Case role</th>
-                    <th scope="col" class="govuk-table__header"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"></th>
-                    <th scope="col" class="govuk-table__header">Shared Drive</th>
-                    <th scope="col" class="govuk-table__header"><img src="../../../public/images/outlook-logo.jpg" alt="Outlook" class="outlook-logo">Outlook</th>
-                    <th scope="col" class="govuk-table__header"></th>
-                </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['offCMS_Username'] }}</th>
-                    {% if data['newCase_Access-Role'] %}
-                        {% if data['newCase_Access-Role'] == 'Lead Prosecutor' or data['newCase_Access-Role'] == 'Lead Caseworker' %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Lead</strong> - {{ data['newCase_Access-Role'] }}</td>
-                        {% else %}
-                            <td class="govuk-table__cell">{{ data['newCase_Access-Role'] }}</td>
-                        {% endif %}                    
-                    {% else %}
-                        <td class="govuk-table__cell">--</td>
-                    {% endif %}                    
-                    {% if data['newCase_Access-EgressPermissions'] %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-EgressPermissions'] }}</strong></td>
-                    {% else %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
-                    {% endif %}                    
-                    {% if data['newCase_Access-SharedDrivePermissions'] %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-SharedDrivePermissions'] }}</strong></td>
-                    {% else %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
-                    {% endif %}                    
-                    {% if data['newCase_Access-OutlookPermissions'] %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-OutlookPermissions'] }}</strong></td>
-                    {% else %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Administrator</strong></td>
-                    {% endif %}                    
-                    <td class="govuk-table__cell"><a href="11A-case-permissions">Edit</a></td>
-                </tr>
-
-                {% if data['caseAccessNEW-Complete'] %}
+            <table class="govuk-table contacts-table">
+                <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email'] }}</th>
-                        {% if data['newCase_NEWAccess-Role'] %}
-                            {% if data['newCase_NEWAccess-Role'] == 'Lead Prosecutor' or data['newCase_NEWAccess-Role'] == 'Lead Caseworker' %}
-                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Lead</strong> - {{ data['newCase_NEWAccess-Role'] }}</td>
-                            {% elseif data['newCase_NEWAccess-Role'] %}
-                                <td class="govuk-table__cell">{{ data['newCase_NEWAccess-Role'] }}</td>
+                        <th scope="col" class="govuk-table__header">User</th>
+                        <th scope="col" class="govuk-table__header">Case role</th>
+                        <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['offCMS_Username'] }}</th>
+                        {% if data['newCase_Access-Role'] %}
+                            {% if data['newCase_Access-Role'] == 'Lead Prosecutor' or data['newCase_Access-Role'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Lead</strong> - {{ data['newCase_Access-Role'] }}</td>
                             {% else %}
-                                <td class="govuk-table__cell">--</td>
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Role'] }}</strong></td>
                             {% endif %}                    
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                    
-                        {% if 'Egress' in data['newCase_NEWAccess'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-EgressPermissions'] }}</strong></td>
-                        {% else %}
-                            <td class="govuk-table__cell">--</td>
-                        {% endif %}                    
-                        {% if 'Shared drive' in data['newCase_NEWAccess'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-SharedDrivePermissions'] }}</strong></td>
-                        {% else %}
-                            <td class="govuk-table__cell">--</td>
-                        {% endif %}                    
-                        {% if 'Outlook' in data['newCase_NEWAccess'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_NEWAccess-OutlookPermissions'] }}</strong></td>
-                        {% else %}
-                            <td class="govuk-table__cell">--</td>
-                        {% endif %}                    
-                        <td class="govuk-table__cell"><a href="11C-case-permissions">Edit</a><a class="removeContact">Remove</a></td>
+                        <td class="govuk-table__cell"><a href="#">Edit</a></td>
                     </tr>
-                {% else %}
 
-                {% endif %}                    
+                    {% if data['newCase_Access-Email'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email'] }}</th>
+                            {% if data['newCase_Access-Permissions'] == 'Lead Prosecutor' or data['newCase_Access-Permissions'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['newCase_Access-Permissions'] }}</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></td>
+                            {% endif %}                    
+                            <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
 
-            </tbody>
-        </table>
-    </section>
-</div>
+                    {% endif %}    
 
-<div class="cta-wrapper contacts-added govuk-!-margin-top-0">
-    {% if data['caseAccessNEW-Complete'] %}
-        <p>Add additional <strong>permissions</strong> to this case</p>
-    {% else %}
-        <p>There has been <strong>no additional permissions</strong> added to this case</p>
-    {% endif %}                    
-    <button type="submit" class="govuk-button" style="" onclick="location.href='11B-case-permissions';">Add a contact</button>
-</div>
+                    {% if data['newCase_Access-Email2'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email2'] }}</th>
+                            {% if data['newCase_Access-Permissions2'] == 'Lead Prosecutor' or data['newCase_Access-Permissions2'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['newCase_Access-Permissions2'] }}</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions2'] }}</strong></td>
+                            {% endif %}                    
+                            <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}  
+
+                    {% if data['newCase_Access-Email3'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email3'] }}</th>
+                            {% if data['newCase_Access-Permissions3'] == 'Lead Prosecutor' or data['newCase_Access-Permissions3'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['newCase_Access-Permissions3'] }}</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions3'] }}</strong></td>
+                            {% endif %}                    
+                            <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}       
+
+                    {% if data['newCase_Access-Email4'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email4'] }}</th>
+                            {% if data['newCase_Access-Permissions4'] == 'Lead Prosecutor' or data['newCase_Access-Permissions4'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['newCase_Access-Permissions4'] }}</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions4'] }}</strong></td>
+                            {% endif %}                    
+                            <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}                    
+
+                    {% if data['newCase_Access-Email5'] %}
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><span class="icon-new user"></span> {{ data['newCase_Access-Email5'] }}</th>
+                            {% if data['newCase_Access-Permissions5'] == 'Lead Prosecutor' or data['newCase_Access-Permissions5'] == 'Lead Caseworker' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['newCase_Access-Permissions5'] }}</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions5'] }}</strong></td>
+                            {% endif %}                    
+                            <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                        </tr>
+                    {% else %}
+
+                    {% endif %}                    
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        {% if data['caseAccessLockedDown'] %}
+            <p>Add additional <strong>permissions</strong> to this case</p>
+        {% else %}
+            <p>There has been <strong>no additional permissions</strong> added to this case</p>
+        {% endif %}                    
+        <button type="submit" class="govuk-button" style="" onclick="location.href='11B-case-permissions';">Add a contact</button>
+    </div>
+{% else %}
+    <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
+        <p>This case is open to anyone.</p>
+        <form method="get" action="14-lock-down" id="">  
+            <input id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="text" value="Yes" style="display: none;">
+            <button type="submit" class="govuk-button" style="">Lock down case</button>
+        </form>
+    </div>
+{% endif %}
+
+

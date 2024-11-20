@@ -14,17 +14,16 @@
 </div>
 
 {% if data['caseAccess'] == 'true' %}
-<div class="govuk-grid-row">
+    <div class="govuk-grid-row">
 {% else %}
-<div class="govuk-grid-row" id="create-case-journey">
+    <div class="govuk-grid-row" id="create-case-journey">
 {% endif %}
     <div class="govuk-grid-column-two-thirds">
         <div class="wrapper gov-pages">
 
-            <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo">
-            <h1 class="govuk-heading-xl" style="">Access to materials on Egress</h1>
+            <h1 class="govuk-heading-xl" style="">Access to {{ data['newCase_OperationName'] }}</h1>
 
-            <form method="get" action="5-case-overview#materialsTab" id="newCase_Form-D">  
+            <form method="get" action="5-case-overview" id="newCase_Form-D">  
 
                 <p> </p>
 
@@ -41,12 +40,11 @@
                         <label class="govuk-label" for="newCase_Access-Permissions">What permissions would you like them to have?</label>
                         <select class="govuk-select" id="newCase_Access-Permissions" name="newCase_Access-Permissions">
                             <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
+                            <option value="Lead Prosecutor">Lead Prosecutor</option>
+                            <option value="Prosecutor">Prosecutor</option>
+                            <option value="Lead Caseworker">Lead Caseworker</option>
+                            <option value="Caseworker">Caseworker</option>
+                            <option value="Crown Advocate (HCA)">Crown Advocate (HCA)</option>
                         </select>
                     </div>
                     <!-- OPTION 2 - END -->
@@ -67,12 +65,11 @@
                         <label class="govuk-label" for="newCase_Access-Permissions2">What permissions would you like them to have?</label>
                         <select class="govuk-select" id="newCase_Access-Permissions2" name="newCase_Access-Permissions2">
                             <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
+                            <option value="Lead Prosecutor">Lead Prosecutor</option>
+                            <option value="Prosecutor">Prosecutor</option>
+                            <option value="Lead Caseworker">Lead Caseworker</option>
+                            <option value="Caseworker">Caseworker</option>
+                            <option value="Crown Advocate (HCA)">Crown Advocate (HCA)</option>
                         </select>
                     </div>
                     <!-- OPTION 2 - END -->
@@ -93,12 +90,11 @@
                         <label class="govuk-label" for="newCase_Access-Permissions3">What permissions would you like them to have?</label>
                         <select class="govuk-select" id="newCase_Access-Permissions3" name="newCase_Access-Permissions3">
                             <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
+                            <option value="Lead Prosecutor">Lead Prosecutor</option>
+                            <option value="Prosecutor">Prosecutor</option>
+                            <option value="Lead Caseworker">Lead Caseworker</option>
+                            <option value="Caseworker">Caseworker</option>
+                            <option value="Crown Advocate (HCA)">Crown Advocate (HCA)</option>
                         </select>
                     </div>
                     <!-- OPTION 2 - END -->
@@ -119,12 +115,11 @@
                         <label class="govuk-label" for="newCase_Access-Permissions4">What permissions would you like them to have?</label>
                         <select class="govuk-select" id="newCase_Access-Permissions4" name="newCase_Access-Permissions4">
                             <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
+                            <option value="Lead Prosecutor">Lead Prosecutor</option>
+                            <option value="Prosecutor">Prosecutor</option>
+                            <option value="Lead Caseworker">Lead Caseworker</option>
+                            <option value="Caseworker">Caseworker</option>
+                            <option value="Crown Advocate (HCA)">Crown Advocate (HCA)</option>
                         </select>
                     </div>
                     <!-- OPTION 2 - END -->
@@ -145,12 +140,11 @@
                         <label class="govuk-label" for="newCase_Access-Permissions5">What permissions would you like them to have?</label>
                         <select class="govuk-select" id="newCase_Access-Permissions5" name="newCase_Access-Permissions5">
                             <option value="Administrator" selected>Administrator</option>
-                            <option value="CPS Admin">CPS Admin</option>
-                            <option value="CPS Prosecutor and Paralegal">CPS Prosecutor and Paralegal</option>
-                            <option value="CPS Unit Manager">CPS Unit Manager</option>
-                            <option value="Download only">Download only</option>
-                            <option value="Guest User">Guest User</option>
-                            <option value="User">User</option>
+                            <option value="Lead Prosecutor">Lead Prosecutor</option>
+                            <option value="Prosecutor">Prosecutor</option>
+                            <option value="Lead Caseworker">Lead Caseworker</option>
+                            <option value="Caseworker">Caseworker</option>
+                            <option value="Crown Advocate (HCA)">Crown Advocate (HCA)</option>
                         </select>
                     </div>
                     <!-- OPTION 2 - END -->
@@ -160,7 +154,7 @@
 
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-                <input id="caseAccess" name="caseAccess" type="text" value="true" style="display: none;">
+                <input id="caseAccessLockedDown" name="caseAccessLockedDown" type="text" value="true" style="display: none;">
                 <button type="submit" class="govuk-button" style="">Save and exit</button>
                 {% if data['caseAccess'] == 'true' %}
                     <button type="button" onclick="location.href='5-case-overview';" class="non-button margin-left" id="">Cancel</button>
@@ -177,7 +171,7 @@
             <h2 class="govuk-heading-s" style="">Existing contacts</h2>
             <div class="contacts">
                 <div id="new-contacts">
-                    <p><span class="icon-new user"></span>{{ data['offCMS_Username'] }}<br><strong class="govuk-tag govuk-tag--blue">Administrator</strong></p>
+                    <p><span class="icon-new user"></span>{{ data['offCMS_Username'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Role'] }}</strong></p>
                     {% if data['newCase_Access-Email'] %}
                         <p><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></p>
                     {% else %}

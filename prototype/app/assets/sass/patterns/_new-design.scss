@@ -491,6 +491,10 @@ main.search {
     }
 }
 
+.search-bar-wrapper {
+    margin-bottom: 2em;
+}
+
 .cps-bar-wrapper {
     padding: 0;
     margin-bottom: 2em;
@@ -549,8 +553,8 @@ main.search {
     }
 }
 
-main.search-results {
-    padding: 2.5em 0 0 0 !important;
+.search-results {
+    padding: 0 0 0 0 !important;
     display: inline-block;
     .govuk-caption-m {
         margin: 0.75em 0 0 0;
@@ -571,6 +575,10 @@ main.search-results {
                 a {
                     margin: 0 0 0.25em 0;
                     display: inline-block;
+                    font-size: 2rem;
+                    display: inline-block;
+                    width: 100%;
+                    font-weight: bold;
                 }
                 span {
                     margin: 0;

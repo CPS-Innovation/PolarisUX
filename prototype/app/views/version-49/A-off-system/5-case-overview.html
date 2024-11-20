@@ -128,15 +128,26 @@
                 {% else %}
                     <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
                 {% endif %}
-                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-5-content">Victims</a></li> -->
-                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-6-content"><span class="number charges-number zero">0</span> Charges</a></li> -->
-                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-7-content"><span class="number materials-number">2</span> Materials &amp; Comms</a></li> -->
+
                 <li class="govuk-tabs__list-item" id="tab-7"><a class="tab-link tab-7-content"><span class="number materials-number">26</span> Materials &amp; Comms</a></li>
 
-                <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">1</span>Permissions</a></li>
-                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-9-content">Comms</a></li> -->
+                {% if data['newCase_URN-Lockdown'] == 'Yes' %}
+                    {% if data['newCase_Access-Email'] %}
+                        <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">2</span>Permissions</a></li>
+                    {% elseif data['newCase_Access-Email2'] %}
+                        <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">3</span>Permissions</a></li>
+                    {% elseif data['newCase_Access-Email3'] %}
+                        <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">4</span>Permissions</a></li>
+                    {% elseif data['newCase_Access-Email4'] %}
+                        <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">5</span>Permissions</a></li>
+                    {% elseif data['newCase_Access-Email5'] %}
+                    {% else %}
+                        <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number">1</span>Permissions</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content"><span class="number contacts-number zero">0</span>Permissions</a></li>
+                {% endif %}
 
-                <!-- <li class="govuk-tabs__list-item"><a class="tab-link tab-10-content">Settings</a></li> -->
                 <li class="govuk-tabs__list-item" id="tab-11"><a class="tab-link tab-11-content">CMR</a></li>
             </ul>   
             <!-- /////////////// TABS - END /////////////// -->
