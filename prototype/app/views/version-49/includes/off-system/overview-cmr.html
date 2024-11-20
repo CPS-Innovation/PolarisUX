@@ -29,6 +29,13 @@
         <div class="section-content">
             <div class="hods-timeline">
 
+                <div class="hods-timeline__item" id="new_CMR_Item_Added">
+                    <h2 class="hods-timeline__title">CMR Item added</h2>
+                    <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                    <p class="hods-timeline__date">Today 10:04am</p>
+                    <p class="hods-timeline__description item-description"></p>    
+                </div>
+
                 {% if data['newChargeCode'] %}
                     <div class="hods-timeline__item">
                         <h2 class="hods-timeline__title">Charge added</h2>
@@ -211,6 +218,10 @@
             </div>
 
             <div class="cta-wrapper">
+                <div class="add_item">
+                    <input class="govuk-input govuk-!-width-one-half" id="CMR_item" name="CMR_item" type="text">
+                    <button class="govuk-button" id="add_CMR_item">Add</button>
+                </div>
                 <button type="submit" class="govuk-button" style="" onclick="#">Add item</button>
                 <button class="govuk-button govuk-button--secondary">Export CMR</button>
                 <button class="govuk-button govuk-button--secondary">Upload to CMR</button>

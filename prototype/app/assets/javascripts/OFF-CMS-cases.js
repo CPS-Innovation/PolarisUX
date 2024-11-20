@@ -1380,6 +1380,21 @@ $(document).ready(function () {
 
 })
 
+// ========================= ADD CMR ITEM ========================= //
+$(document).ready(function () {
+
+    $('#new_CMR_Item_Added').hide();
+
+    $("#add_CMR_item").on("click", function (e) { 
+        $('#new_CMR_Item_Added').show();
+        var CMR_item = $('#CMR_item').val();
+        $('.item-description').text(CMR_item);
+    });
+
+})
+
+
+
 // ========================= ADD A CHARGE ========================= //
 $(document).ready(function () {
 

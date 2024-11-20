@@ -404,6 +404,14 @@ html {
                          margin-bottom: 0;
                     }
                }
+               .add_item {
+                    input, button {
+                         float: left;
+                    }
+                    button {
+                         margin-left: 0.5em;
+                    }
+               }
                p {
                     margin-bottom: 0.5em;
                }
