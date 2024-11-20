@@ -15,83 +15,87 @@
 <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-full">
-        {% if data['caseName_Type'] == 'Operation name' %}
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2">{{ data['newCase_OperationName'] }}</h1>
+        {% if data['existing_Case'] == 'true' %}
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2">Groundhog day</h1>
+            <span class="govuk-caption-m govuk-!-margin-bottom-4">920620952/24</span>
         {% else %}
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
-        {% endif %}
+            {% if data['caseName_Type'] == 'Operation name' %}
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2">{{ data['newCase_OperationName'] }}</h1>
+            {% else %}
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-margin-top-2"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
+            {% endif %}
+            <span class="govuk-caption-m govuk-!-margin-bottom-4">
+                {{ data['newCase_URN-A'] }}
+                <!-- CONDITIONAL ELEMTENTS - per division - START -->
+                <!-- SCD -->
+                {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                    {{ data['newCase_URN-B'] }}
+                <!-- CTD -->
+                {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                    {% if data['newCase_URN-B'] == '21' %}
+                        01
+                    {% elseif data['newCase_URN-B'] == '22' %}
+                        02
+                    {% elseif data['newCase_URN-B'] == '23' %}
+                        03
+                    {% elseif data['newCase_URN-B'] == '24' %}
+                        04
+                    {% elseif data['newCase_URN-B'] == '25' %}
+                        05
+                    {% elseif data['newCase_URN-B'] == '26' %}
+                        06
+                    {% elseif data['newCase_URN-B'] == '27' %}
+                        07
+                    {% elseif data['newCase_URN-B'] == '28' %}
+                        08
+                    {% elseif data['newCase_URN-B'] == '29' %}
+                        09
+                    {% elseif data['newCase_URN-B'] == '30' %}
+                        10
+                    {% elseif data['newCase_URN-B'] == '31' %}
+                        11
+                    {% elseif data['newCase_URN-B'] == '32' %}
+                        12
+                    {% elseif data['newCase_URN-B'] == '33' %}
+                        13
+                    {% elseif data['newCase_URN-B'] == '34' %}
+                        14
+                    {% elseif data['newCase_URN-B'] == '35' %}
+                        15
+                    {% else %}
+                        {{ data['newCase_URN-B'] }}
+                    {% endif %}
+                <!-- SEOCID -->
+                {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                    {% if data['newCase_URN-B-77'] %}
+                        {{ data['newCase_URN-B-77'] }} 
+                    {% elseif data['newCase_URN-B-83'] %}
+                        {{ data['newCase_URN-B-83'] }}
+                    {% elseif data['newCase_URN-B-85'] %}
+                        {{ data['newCase_URN-B-85'] }}
+                    {% elseif data['newCase_URN-B-86'] %}
+                        {{ data['newCase_URN-B-86'] }}
+                    {% elseif data['newCase_URN-B-87'] %}
+                        {{ data['newCase_URN-B-87'] }}
+                    {% elseif data['newCase_URN-B-88'] %}
+                        {{ data['newCase_URN-B-88'] }}
+                    {% elseif data['newCase_URN-B-96'] %}
+                        {{ data['newCase_URN-B-96'] }}
+                    {% else %}
+                        {{ data['newCase_URN-B-83'] }}
+                    {% endif %}
+                <!-- POC -->
+                {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
 
-        <span class="govuk-caption-m govuk-!-margin-bottom-4">
-            {{ data['newCase_URN-A'] }}
-            <!-- CONDITIONAL ELEMTENTS - per division - START -->
-            <!-- SCD -->
-            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
-                {{ data['newCase_URN-B'] }}
-            <!-- CTD -->
-            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                {% if data['newCase_URN-B'] == '21' %}
-                    01
-                {% elseif data['newCase_URN-B'] == '22' %}
-                    02
-                {% elseif data['newCase_URN-B'] == '23' %}
-                    03
-                {% elseif data['newCase_URN-B'] == '24' %}
-                    04
-                {% elseif data['newCase_URN-B'] == '25' %}
-                    05
-                {% elseif data['newCase_URN-B'] == '26' %}
-                    06
-                {% elseif data['newCase_URN-B'] == '27' %}
-                    07
-                {% elseif data['newCase_URN-B'] == '28' %}
-                    08
-                {% elseif data['newCase_URN-B'] == '29' %}
-                    09
-                {% elseif data['newCase_URN-B'] == '30' %}
-                    10
-                {% elseif data['newCase_URN-B'] == '31' %}
-                    11
-                {% elseif data['newCase_URN-B'] == '32' %}
-                    12
-                {% elseif data['newCase_URN-B'] == '33' %}
-                    13
-                {% elseif data['newCase_URN-B'] == '34' %}
-                    14
-                {% elseif data['newCase_URN-B'] == '35' %}
-                    15
                 {% else %}
                     {{ data['newCase_URN-B'] }}
                 {% endif %}
-            <!-- SEOCID -->
-            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
-                {% if data['newCase_URN-B-77'] %}
-                    {{ data['newCase_URN-B-77'] }} 
-                {% elseif data['newCase_URN-B-83'] %}
-                    {{ data['newCase_URN-B-83'] }}
-                {% elseif data['newCase_URN-B-85'] %}
-                    {{ data['newCase_URN-B-85'] }}
-                {% elseif data['newCase_URN-B-86'] %}
-                    {{ data['newCase_URN-B-86'] }}
-                {% elseif data['newCase_URN-B-87'] %}
-                    {{ data['newCase_URN-B-87'] }}
-                {% elseif data['newCase_URN-B-88'] %}
-                    {{ data['newCase_URN-B-88'] }}
-                {% elseif data['newCase_URN-B-96'] %}
-                    {{ data['newCase_URN-B-96'] }}
-                {% else %}
-                    {{ data['newCase_URN-B-83'] }}
-                {% endif %}
-            <!-- POC -->
-            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-
-            {% else %}
-                {{ data['newCase_URN-B'] }}
-            {% endif %}
-            <!-- CONDITIONAL ELEMTENTS - per division - START -->
-            {{ data['newCase_URN-C'] }}
-            /
-            {{ data['newCase_URN-D'] }}
-        </span>
+                <!-- CONDITIONAL ELEMTENTS - per division - START -->
+                {{ data['newCase_URN-C'] }}
+                /
+                {{ data['newCase_URN-D'] }}
+            </span>
+        {% endif %}
     </div>
 
     <div class="govuk-grid-column-full">

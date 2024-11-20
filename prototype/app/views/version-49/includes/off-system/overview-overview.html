@@ -27,11 +27,15 @@
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Operation name</th>
-                        {% if data['caseName_Type'] == 'Operation name' %}
-                            <td class="govuk-table__cell">{{ data['newCase_OperationName'] }}</td>
-                        {% else %}
-                            <td class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</td>
-                        {% endif %}                   
+                            {% if data['existing_Case'] == 'true' %}
+                                <td class="govuk-table__cell">Groundhog day</td>
+                            {% else %}
+                                {% if data['caseName_Type'] == 'Operation name' %}
+                                    <td class="govuk-table__cell">{{ data['newCase_OperationName'] }}</td>
+                                {% else %}
+                                    <td class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</td>
+                                {% endif %}                   
+                            {% endif %}                   
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Status</th>
@@ -44,157 +48,179 @@
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Type</th>
                         <td class="govuk-table__cell">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                <!-- SCD - START -->
+                            {% if data['existing_Case'] == 'true' %}
                                 {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
-                                    {% if data['newCase_URN-B'] == '01' %}
-                                        01 - IPCC ind assault
-                                    {% elseif data['newCase_URN-B'] == '02' %}
-                                        02 - IPCC sum assault
-                                    {% elseif data['newCase_URN-B'] == '03' %}
-                                        03 - IPCC RASSO
-                                    {% elseif data['newCase_URN-B'] == '04' %}
-                                        04 - IPCC MIPO/PCJ
-                                    {% elseif data['newCase_URN-B'] == '05' %}
-                                        05 - IPCC DIC
-                                    {% elseif data['newCase_URN-B'] == '06' %}
-                                        06 - IPCC other
-                                    {% elseif data['newCase_URN-B'] == '07' %}
-                                        07 - Corp man
-                                    {% elseif data['newCase_URN-B'] == '08' %}
-                                        08 - Med man
-                                    {% elseif data['newCase_URN-B'] == '09' %}
-                                        09 - Other GNM
-                                    {% elseif data['newCase_URN-B'] == '10' %}
-                                        10 - Corruption
-                                    {% elseif data['newCase_URN-B'] == '11' %}
-                                        11 - DIC
-                                    {% elseif data['newCase_URN-B'] == '12' %}
-                                        12 - Election offences
-                                    {% elseif data['newCase_URN-B'] == '13' %}
-                                        13 - Assisted suicide
-                                    {% elseif data['newCase_URN-B'] == '14' %}
-                                        14 - MPs
-                                    {% elseif data['newCase_URN-B'] == '15' %}
-                                        15 - High profile other
-                                    {% elseif data['newCase_URN-B'] == '16' %}
-                                        16 - CPS/NCA staff
-                                    {% elseif data['newCase_URN-B'] == '17' %}
-                                        17 - Private prosecution
-                                    {% elseif data['newCase_URN-B'] == '18' %}
-                                        18 - Disaster
-                                    {% elseif data['newCase_URN-B'] == '19' %}
-                                        19 - Other
-                                    {% elseif data['newCase_URN-B'] == '20' %}
-                                        20 - Grossly offense communication
-                                    {% endif %}
-                                <!-- SCD - END -->
-                                <!-- CTD - START -->
+                                    <strong class="govuk-tag govuk-tag--blue">Corruption</strong>
                                 {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                                    {% if data['newCase_URN-B'] == '21' %}
-                                        01 - Terrorism
-                                    {% elseif data['newCase_URN-B'] == '22' %}
-                                        02 - Inciting Hatred
-                                    {% elseif data['newCase_URN-B'] == '23' %}
-                                        03 - Official Secrets Act
-                                    {% elseif data['newCase_URN-B'] == '24' %}
-                                        04 - Extraditions
-                                    {% elseif data['newCase_URN-B'] == '25' %}
-                                        05 - War Crimes
-                                    {% elseif data['newCase_URN-B'] == '26' %}
-                                        06 - Hijacking/Abduction
-                                    {% elseif data['newCase_URN-B'] == '27' %}
-                                        07 - Appeals
-                                    {% elseif data['newCase_URN-B'] == '28' %}
-                                        08 - Other Types of Cases
-                                    {% elseif data['newCase_URN-B'] == '29' %}
-                                        09 - TPIM Monitoring
-                                    {% elseif data['newCase_URN-B'] == '30' %}
-                                        10 - Domestic Extremisim
-                                    {% elseif data['newCase_URN-B'] == '31' %}
-                                        11 - Supreme Court
-                                    {% elseif data['newCase_URN-B'] == '32' %}
-                                        12 - CTIRU
-                                    {% elseif data['newCase_URN-B'] == '33' %}
-                                        13 - TPIM Breaches
-                                    {% elseif data['newCase_URN-B'] == '34' %}
-                                        14 - TRO
-                                    {% elseif data['newCase_URN-B'] == '35' %}
-                                        15 - SOCPA
-                                    {% endif %}
-                                <!-- CTD - END -->
-                                <!-- SEOCID - START -->
+                                    <strong class="govuk-tag govuk-tag--blue">Hijacking/Abduction</strong>
                                 {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
-                                    {% if data['newCase_URN-B-77'] %}
-                                        {{ data['newCase_URN-B-77'] }}
-                                    {% elseif data['newCase_URN-B-83'] %}
-                                        {{ data['newCase_URN-B-83'] }}
-                                    {% elseif data['newCase_URN-B-85'] %}
-                                        {{ data['newCase_URN-B-85'] }}
-                                    {% elseif data['newCase_URN-B-86'] %}
-                                        {{ data['newCase_URN-B-86'] }}
-                                    {% elseif data['newCase_URN-B-87'] %}
-                                        {{ data['newCase_URN-B-87'] }}
-                                    {% elseif data['newCase_URN-B-88'] %}
-                                        {{ data['newCase_URN-B-88'] }}
-                                    {% elseif data['newCase_URN-B-96'] %}
-                                        {{ data['newCase_URN-B-96'] }}
-                                    {% endif %}
-                                <!-- SEOCID - END -->
-                                    
-                                <!-- POC - START -->
+                                    <strong class="govuk-tag govuk-tag--blue">LT</strong>
                                 {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-                                    {{ data['newCase_URN-B'] }}
-                                <!-- POC - END -->
+
                                 {% else %}
-                                    {{ data['newCase_URN-B'] }}
+                                    <strong class="govuk-tag govuk-tag--blue">Hijacking/Abduction</strong>
                                 {% endif %}
-                            </strong>
+                            {% else %}
+                                <strong class="govuk-tag govuk-tag--blue">
+                                    <!-- SCD - START -->
+                                    {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
+                                        {% if data['newCase_URN-B'] == '01' %}
+                                            01 - IPCC ind assault
+                                        {% elseif data['newCase_URN-B'] == '02' %}
+                                            02 - IPCC sum assault
+                                        {% elseif data['newCase_URN-B'] == '03' %}
+                                            03 - IPCC RASSO
+                                        {% elseif data['newCase_URN-B'] == '04' %}
+                                            04 - IPCC MIPO/PCJ
+                                        {% elseif data['newCase_URN-B'] == '05' %}
+                                            05 - IPCC DIC
+                                        {% elseif data['newCase_URN-B'] == '06' %}
+                                            06 - IPCC other
+                                        {% elseif data['newCase_URN-B'] == '07' %}
+                                            07 - Corp man
+                                        {% elseif data['newCase_URN-B'] == '08' %}
+                                            08 - Med man
+                                        {% elseif data['newCase_URN-B'] == '09' %}
+                                            09 - Other GNM
+                                        {% elseif data['newCase_URN-B'] == '10' %}
+                                            10 - Corruption
+                                        {% elseif data['newCase_URN-B'] == '11' %}
+                                            11 - DIC
+                                        {% elseif data['newCase_URN-B'] == '12' %}
+                                            12 - Election offences
+                                        {% elseif data['newCase_URN-B'] == '13' %}
+                                            13 - Assisted suicide
+                                        {% elseif data['newCase_URN-B'] == '14' %}
+                                            14 - MPs
+                                        {% elseif data['newCase_URN-B'] == '15' %}
+                                            15 - High profile other
+                                        {% elseif data['newCase_URN-B'] == '16' %}
+                                            16 - CPS/NCA staff
+                                        {% elseif data['newCase_URN-B'] == '17' %}
+                                            17 - Private prosecution
+                                        {% elseif data['newCase_URN-B'] == '18' %}
+                                            18 - Disaster
+                                        {% elseif data['newCase_URN-B'] == '19' %}
+                                            19 - Other
+                                        {% elseif data['newCase_URN-B'] == '20' %}
+                                            20 - Grossly offense communication
+                                        {% endif %}
+                                    <!-- SCD - END -->
+                                    <!-- CTD - START -->
+                                    {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
+                                        {% if data['newCase_URN-B'] == '21' %}
+                                            01 - Terrorism
+                                        {% elseif data['newCase_URN-B'] == '22' %}
+                                            02 - Inciting Hatred
+                                        {% elseif data['newCase_URN-B'] == '23' %}
+                                            03 - Official Secrets Act
+                                        {% elseif data['newCase_URN-B'] == '24' %}
+                                            04 - Extraditions
+                                        {% elseif data['newCase_URN-B'] == '25' %}
+                                            05 - War Crimes
+                                        {% elseif data['newCase_URN-B'] == '26' %}
+                                            06 - Hijacking/Abduction
+                                        {% elseif data['newCase_URN-B'] == '27' %}
+                                            07 - Appeals
+                                        {% elseif data['newCase_URN-B'] == '28' %}
+                                            08 - Other Types of Cases
+                                        {% elseif data['newCase_URN-B'] == '29' %}
+                                            09 - TPIM Monitoring
+                                        {% elseif data['newCase_URN-B'] == '30' %}
+                                            10 - Domestic Extremisim
+                                        {% elseif data['newCase_URN-B'] == '31' %}
+                                            11 - Supreme Court
+                                        {% elseif data['newCase_URN-B'] == '32' %}
+                                            12 - CTIRU
+                                        {% elseif data['newCase_URN-B'] == '33' %}
+                                            13 - TPIM Breaches
+                                        {% elseif data['newCase_URN-B'] == '34' %}
+                                            14 - TRO
+                                        {% elseif data['newCase_URN-B'] == '35' %}
+                                            15 - SOCPA
+                                        {% endif %}
+                                    <!-- CTD - END -->
+                                    <!-- SEOCID - START -->
+                                    {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                                        {% if data['newCase_URN-B-77'] %}
+                                            {{ data['newCase_URN-B-77'] }}
+                                        {% elseif data['newCase_URN-B-83'] %}
+                                            {{ data['newCase_URN-B-83'] }}
+                                        {% elseif data['newCase_URN-B-85'] %}
+                                            {{ data['newCase_URN-B-85'] }}
+                                        {% elseif data['newCase_URN-B-86'] %}
+                                            {{ data['newCase_URN-B-86'] }}
+                                        {% elseif data['newCase_URN-B-87'] %}
+                                            {{ data['newCase_URN-B-87'] }}
+                                        {% elseif data['newCase_URN-B-88'] %}
+                                            {{ data['newCase_URN-B-88'] }}
+                                        {% elseif data['newCase_URN-B-96'] %}
+                                            {{ data['newCase_URN-B-96'] }}
+                                        {% endif %}
+                                    <!-- SEOCID - END -->
+                                        
+                                    <!-- POC - START -->
+                                    {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
+                                        {{ data['newCase_URN-B'] }}
+                                    <!-- POC - END -->
+                                    {% else %}
+                                        {{ data['newCase_URN-B'] }}
+                                    {% endif %}
+                                </strong>
+                            {% endif %}                   
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Caseworker(s)</th>
                         <td class="govuk-table__cell">
-                            {% if data['newCase_Access-Role'] == 'Lead Caseworker' %}
-                                <strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['offCMS_Username'] }}
-                            {% elseif data['newCase_Access-Role'] == 'Caseworker' %}
-                                {{ data['offCMS_Username'] }}
+                            {% if data['existing_Case'] == 'true' %}
+                                <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
                             {% else %}
-                                Not yet selected
-                            {% endif %}     
-                            {% if data['newCase_NEWAccess-Role'] == 'Lead Caseworker' %}
-                                <br><strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['newCase_Access-Email'] }}
-                            {% elseif data['newCase_NEWAccess-Role'] == 'Caseworker' %}
-                                <br>{{ data['newCase_Access-Email'] }}
-                            {% else %}
+                                {% if data['newCase_Access-Role'] == 'Lead Caseworker' %}
+                                    <strong class="govuk-tag govuk-tag--green">Lead</strong> <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
+                                {% elseif data['newCase_Access-Role'] == 'Caseworker' %}
+                                    <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
+                                {% else %}
+                                    Not yet selected
+                                {% endif %}     
+                                {% if data['newCase_NEWAccess-Role'] == 'Lead Caseworker' %}
+                                    <br><strong class="govuk-tag govuk-tag--green">Lead</strong> <a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a>
+                                {% elseif data['newCase_NEWAccess-Role'] == 'Caseworker' %}
+                                    <br><a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a>
+                                {% else %}
 
-                            {% endif %}                    
-                            <!-- <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a> -->
+                                {% endif %}                    
+                                <!-- <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a> -->
+                            {% endif %}
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Prosecutor(s)</th>
                         <td class="govuk-table__cell">
-                            {% if data['newCase_Access-Role'] == 'Lead Prosecutor' %}
-                                <strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['offCMS_Username'] }}
-                            {% elseif data['newCase_Access-Role'] == 'Prosecutor' %}
-                                 {{ data['offCMS_Username'] }}
+                            {% if data['existing_Case'] == 'true' %}
+                                <a href="mailto:alex.byrne@cps.gov.uk">alex.byrne@cps.gov.uk</a>
                             {% else %}
-                                Not yet selected
-                            {% endif %}    
-                            {% if data['newCase_NEWAccess-Role'] == 'Lead Prosecutor' %}
-                                <br><strong class="govuk-tag govuk-tag--green">Lead</strong> {{ data['newCase_Access-Email'] }}
-                            {% elseif data['newCase_NEWAccess-Role'] == 'Prosecutor' %}
-                                <br>{{ data['newCase_Access-Email'] }}
-                            {% else %}
+                                {% if data['newCase_Access-Role'] == 'Lead Prosecutor' %}
+                                    <strong class="govuk-tag govuk-tag--green">Lead</strong> <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
+                                {% elseif data['newCase_Access-Role'] == 'Prosecutor' %}
+                                     <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
+                                {% else %}
+                                    Not yet selected
+                                {% endif %}    
+                                {% if data['newCase_NEWAccess-Role'] == 'Lead Prosecutor' %}
+                                    <br><strong class="govuk-tag govuk-tag--green">Lead</strong> <a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a>
+                                {% elseif data['newCase_NEWAccess-Role'] == 'Prosecutor' %}
+                                    <br><a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a>
+                                {% else %}
 
-                            {% endif %}                    
+                                {% endif %}                    
+                            {% endif %}
                         </td>
                     </tr>
                     {% if data['newCase_NEWAccess-Role'] == 'Crown Advocate (HCA)' and data['newCase_Access-Email'] %}
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Crown Advocate (HCA)</th>
-                            <td class="govuk-table__cell">{{ data['newCase_Access-Email'] }}</td>
+                            <td class="govuk-table__cell"><a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a></td>
                         </tr>
                     {% else %}
 

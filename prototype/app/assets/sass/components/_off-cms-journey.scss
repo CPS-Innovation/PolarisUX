@@ -783,6 +783,15 @@ html {
                table {
                     &.contacts-table, &.settings-table {
                          margin-bottom: 0;
+                         tbody {
+                              tr {
+                                   td {
+                                        a {
+                                             float: left;
+                                        }
+                                   }
+                              }
+                         }
                     }
                     tbody {
                          tr {
@@ -842,6 +851,20 @@ html {
                padding: 0 1em 0 0;
                background: url("../images/table-sort.svg") no-repeat 100% 50%;
                background-size: 0.75em;   
+          }
+     }
+     tbody {
+          button {
+               background: none;
+               border: none;
+               font-size: 1.1875rem;
+               font-weight: bold;
+               text-decoration: underline;
+               padding: 0;
+               color: $govuk-link-colour;
+               &:hover, &:active, &:focus {
+                    cursor: pointer;
+               }
           }
      }
 }
@@ -1857,7 +1880,7 @@ nav.tube-map-ea {
           }
           .accordion .accordion-section {
                .accordion-section-header {
-                    background: darken(govuk-colour("light-grey"),5%);
+                    // background: darken(govuk-colour("light-grey"),5%);
                     &.open {
                          .icon {
                               background-position: 0 0;
