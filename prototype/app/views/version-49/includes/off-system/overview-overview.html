@@ -181,7 +181,7 @@
                                 {% elseif data['newCase_Access-Role'] == 'Caseworker' %}
                                     <a href="mailto:{{ data['offCMS_Username'] }}">{{ data['offCMS_Username'] }}</a>
                                 {% else %}
-                                    Not yet selected
+                                    {{ data['offCMS_Username'] }}
                                 {% endif %}     
                                 {% if data['newCase_NEWAccess-Role'] == 'Lead Caseworker' %}
                                     <br><strong class="govuk-tag govuk-tag--green">Lead</strong> <a href="mailto:{{ data['newCase_Access-Email'] }}">{{ data['newCase_Access-Email'] }}</a>

@@ -1,0 +1,159 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V3.html" %}
+{% endblock %}
+{% block beforeContent %}
+    {% include "../includes/off-system/modal-EA.html" %}
+    {% include "../includes/off-system/modal-Charges.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveSuspect.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveWitness.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveUser.html" %}
+    {% include "../includes/off-system/modalConfirmation-RemoveUser.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full main_Case_Title">
+
+        {% if data['newCase_URN-Lockdown'] == 'Yes' %}
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                    <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-visually-hidden">Warning</span>
+                            This case is restricted to specific users.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+
+        {% endif %}
+
+        <div class="title-wrapper">
+            {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                {% if data['newCase_OperationName'] %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['newCase_OperationName'] }}</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
+                {% endif %}
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">
+                    {{ data['newCase_URN-A'] }}
+                    {{ data['newCase_URN-B'] }}
+                    {{ data['newCase_URN-C'] }}
+                    /
+                    {{ data['newCase_URN-D'] }}
+                </span>
+            {% elseif data['existing_Case'] == 'true' %}
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Groundhog day</h1>
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">920620952/24</span>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs off-cms-overview" id="new-tabs">
+
+            <!-- /////////////// TABS - START /////////////// -->
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+
+                <!-- OVERVIEW - Show on Case creation -->
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" id="tab-1"><a class="tab-link tab-1-content">Overview</a></li>
+
+                <!-- EA/REVIEW - Show on EA -->
+                {% if data['completeAndExitEA'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number">1</span> EA/Reviews</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content"><span class="number ea-number zero">0</span> EA/Reviews</a></li>
+                {% endif %}
+
+                <!-- ADD SUSPECT - Show on Add -->
+                {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                    {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">2</span> Defendants & Charges</a></li>
+                    {% elseif data['addSuspectStarted'] == 'true' %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">2</span> Suspects & Charges</a></li>
+                    {% else %}
+                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number">1</span> Suspects & Charges</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content"><span class="number suspects-number zero">0</span> Suspects & Charges</a></li>
+                {% endif %}
+
+                {% if data['addWitnessStarted'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number">1</span> Witnesses/Victims</a></li>
+                {% else %}
+                    <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content"><span class="number witnesses-number zero">0</span> Witnesses/Victims</a></li>
+                {% endif %}
+
+                <li class="govuk-tabs__list-item" id="tab-7"><a class="tab-link tab-7-content"><span class="number materials-number">26</span> Materials &amp; Comms</a></li>
+
+                <li class="govuk-tabs__list-item" id="tab-8"><a class="tab-link tab-8-content">Case settings and access</a></li>
+
+                <li class="govuk-tabs__list-item" id="tab-11"><a class="tab-link tab-11-content">CMR</a></li>
+            </ul>   
+            <!-- /////////////// TABS - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 1 - START /////////////// -->
+            <div class="panel" id="tab-1-content">
+                {% include "../includes/off-system/overview-overview.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 1 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 2 - START /////////////// -->
+            <div class="panel" id="tab-2-content" style="display: none;">
+                {% include "../includes/off-system/overview-ea.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 2 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 3 - START /////////////// -->
+            <div class="panel" id="tab-3-content" style="display: none;">
+                {% include "../includes/off-system/overview-suspects.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 3 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 4 - START /////////////// -->
+            <div class="panel" id="tab-4-content" style="display: none;">
+                {% include "../includes/off-system/overview-witnesses.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 4 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 6 - START /////////////// -->
+            <div class="panel" id="tab-6-content" style="display: none;">
+                {% include "../includes/off-system/overview-charges.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 6 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 7 - START /////////////// -->
+            <div class="panel" id="tab-7-content" style="display: none;">
+                {% include "../includes/off-system/overview-materials.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 7 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 8 - START /////////////// -->
+            <div class="panel" id="tab-8-content" style="display: none;">
+                {% include "../includes/off-system/overview-permissions.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 8 - END /////////////// -->
+
+            <!-- /////////////// TAB CONTENT 11 - START /////////////// -->
+            <div class="panel" id="tab-11-content" style="display: none;">
+                {% include "../includes/off-system/overview-cmr.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 11 - END /////////////// -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

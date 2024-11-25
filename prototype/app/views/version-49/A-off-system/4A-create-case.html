@@ -20,35 +20,19 @@
 
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="caseName_Type-Defendant" name="caseName_Type" type="checkbox" value="Defendant name" data-aria-controls="conditional-DefendantName">
-                                    <label class="govuk-label govuk-checkboxes__label" for="caseName_Type-Defendant">Defendant name</label>
-                                </div>
-                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-DefendantName">
-                                    <div class="govuk-form-group" id="">
-                                        <label class="govuk-label" for="newCase_DefendantName-Surname">Surname</label>
-                                        <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Surname" name="newCase_DefendantName-Surname" type="text">
-                                    </div>   
-                                    <div class="govuk-form-group" id="">
-                                        <label class="govuk-label" for="newCase_DefendantName-Forename">Forename</label>
-                                        <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
-                                    </div>                                
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="caseName_Type-Operation" name="caseName_Type" type="checkbox" value="Operation name" data-aria-controls="conditional-OperationName">
-                                    <label class="govuk-label govuk-checkboxes__label" for="caseName_Type-Operation">Operation name</label>
-                                </div>
-                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-OperationName">
-                                    <div class="govuk-form-group" id="newCase_OperationName-Value">
-                                        <label class="govuk-label govuk-visually-hidden" for="newCase_OperationName">Operation name</label>
-                                        <p id="newCase_OperationName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Operation name</p>
-                                        <input class="govuk-input govuk-input--width-20" id="newCase_OperationName" name="newCase_OperationName" type="text">
-                                    </div>  
-                                </div>                              
-                            </div>
-                        </fieldset>
+                        <div class="govuk-form-group" id="">
+                            <label class="govuk-label" for="newCase_OperationName">Operation name</label>
+                            <p id="newCase_OperationName-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Enter an Operation name</p>
+                            <input class="govuk-input govuk-input--width-20" id="newCase_OperationName" name="newCase_OperationName" type="text">
+                        </div>  
+                        <div class="govuk-form-group" id="">
+                            <label class="govuk-label" for="newCase_DefendantName-Surname">Lead suspect/defendant surname</label>
+                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Surname" name="newCase_DefendantName-Surname" type="text">
+                        </div>   
+                        <div class="govuk-form-group" id="">
+                            <label class="govuk-label" for="newCase_DefendantName-Forename">Lead suspect/defendant forename</label>
+                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
+                        </div>                                
                     </div>
                     <!-- OPTION 1 - END -->
 
@@ -374,7 +358,7 @@
                                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                     <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
-                                        <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Lock down this case</label>
+                                        <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Restrict access to this case</label>
                                     </div>
                                 </div>
                             </fieldset>

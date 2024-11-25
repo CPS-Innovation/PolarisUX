@@ -1,0 +1,698 @@
+<h2 class="govuk-heading-m">Materials and Comms</h2>
+<span class="govuk-caption-m">Last updated <span id="materials-timestamp"></span></span>
+
+<!-- TABS - START -->
+<nav class="secondaryTabs moj-sub-navigation tabsGroup-1" aria-label="Sub navigation" id="materials_Nav">
+    <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item secondaryTab-Selected" id="secondaryTab-1">
+            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();"><span class="number materials-number">24</span> Case materials</a>
+        </li>
+        <li class="moj-sub-navigation__item" id="secondaryTab-2">
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();"><span class="number comms-number">2</span> Outlook</a>
+        </li>
+    </ul>
+</nav>
+<!-- TABS - END -->
+
+<!-- TABS CONTENT - ONE - START -->
+<div class="secondaryTabContent tabsGroup-1" id="secondaryTabContent-1">
+    <div class="section-wrapper materials_holder">
+        <section class="width_70">
+            <div class="title-wrapper">
+                <h3 class="govuk-heading-s">Case materials</h3>
+                <!-- <a href="11-case-permissions">Edit</a> -->
+            </div>
+
+            <div class="permissions">
+                {% if data['caseName_Type'] == 'Operation name' %}
+                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+                {% else %}
+                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Drive" class="url-text" disabled>
+                {% endif %}                               
+                <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+            </div>
+
+            <div class="loading" id="loading_materials">
+                <div>
+                    <div class="hods-loading-spinner">
+                        <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                    </div>
+                    <p>Transferring documents from Egress to the Shared Drive...</p>
+                </div>
+            </div>
+
+            <!-- ////////////////////////////// ACCORDIONS - START ////////////////////////////// -->
+            <div class="accordion-wrapper">
+
+                <!-- ONE - START -->
+                <div class="materials materials_section_1">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-1 zero">0</span> <a class="title-open">ABEs for transcript</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                        <div class="documents-available">
+                            {% include "../../includes/off-system/documents-Folder_1.html" %}
+
+                            <div id="" class="document_holder folder_1_Documents">
+                                <div class="holder">
+                                    <h2 class="govuk-heading-m">View your documents</h2>
+                                    <p>Search or choose a file to start reviewing documents</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ONE - END -->
+
+                <!-- TWO - START -->
+                <div class="materials materials_section_2">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-2 zero">0</span> <a class="title-open">Counsel only</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                    </div>
+                </div>
+                <!-- TWO - END -->
+
+                <!-- THREE - START -->
+                <div class="materials materials_section_3">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-3 zero">0</span> <a class="title-open">Investigator</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                    </div>
+                </div>
+                <!-- THREE - END -->
+
+                <!-- FOUR - START -->
+                <div class="materials materials_section_4">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-4 zero">0</span> <a class="title-open">Multimedia</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                    </div>
+                </div>
+                <!-- FOUR - END -->
+
+                <!-- FIVE - START -->
+                <div class="materials materials_section_5">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-5 zero">0</span> <a class="title-open">Served evidence</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                    </div>
+                </div>
+                <!-- FIVE - END -->
+
+                <!-- SIX - START -->
+                <div class="materials materials_section_6">
+                    <h3 class="govuk-heading-m">
+                        <div class="name_Wrapper"><span class="number number-6 zero">0</span> <a class="title-open">Unused - disclosed</a></div>
+                        <a onclick="return toggleButtonShow();" class="preview-materials-link">Preview <span class="icon-new arrow-down"></span></a>
+                        <a onclick="return toggleButtonHide();" class="hide-materials-link">Hide <span class="icon-new arrow-up"></span></a>
+                    </h3>
+                    <div class="materials-details-wrapper" style="display: none;">
+                        <p class="documents-holder">There are no documents currently in this folder</p>
+                    </div>
+                </div>
+                <!-- SIX - END -->
+
+            </div>
+            <!-- ////////////////////////////// ACCORDIONS -- END ////////////////////////////// -->
+
+        </section>
+
+        <section class="width_30">
+            <div class="title-wrapper">
+                <h3 class="govuk-heading-s"><img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"> Inbound documents</h3>
+            </div>
+
+            <div class="permissions">
+                <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+                <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
+            </div>
+
+            <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
+            <table class="govuk-table" id="materials-table">
+                <tbody class="govuk-table__body">
+
+                    <!-- FOLDER 1 - START -->
+                    <tr class="govuk-table__row materials_row_1">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1" name="transfer_Folder" type="checkbox" value="Folder1">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1">Transfer ABEs for transcript</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder materials_Row_1"></span><a onclick="return materials_Row_1();" class="govuk-link govuk-link--no-visited-state">ABEs for transcript</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_1">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+
+                            <!-- SUB FOLDER 1 - START -->
+                            <table class="govuk-table sub-table" id="">
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <td scope="row" class="govuk-table__cell">
+                                            <div class="govuk-form-group">
+                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1A" name="transfer_Folder" type="checkbox" value="Reviews">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1A">Reviews</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <span class="icon-new folder materials_Row_1A"></span><a onclick="return materials_Row_1A();" class="govuk-link govuk-link--no-visited-state">Reviews</a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- SUB FOLDER 1 - FILES - START -->
+                                    <tr class="govuk-table__row sub-row" id="materials_Row_1A">
+                                        <td scope="row" class="govuk-table__cell" colspan="2">
+
+                                            <table class="govuk-table sub-table2" id="">
+                                                <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1A_1" name="transfer_Folder" type="checkbox" value="MCLOVEMG3.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1A_1">MCLOVEMG3.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1A_1"></span>MCLOVEMG3.pdf
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- SUB FOLDER 1 - FILES - END -->
+
+                                    <tr class="govuk-table__row">
+                                        <td scope="row" class="govuk-table__cell">
+                                            <div class="govuk-form-group">
+                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1B" name="transfer_Folder" type="checkbox" value="Case overview">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1B">Case overview</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <span class="icon-new folder materials_Row_1B"></span><a onclick="return materials_Row_1B();" class="govuk-link govuk-link--no-visited-state">Case overview</a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- SUB FOLDER 2 - FILES - START -->
+                                    <tr class="govuk-table__row sub-row" id="materials_Row_1B">
+                                        <td scope="row" class="govuk-table__cell" colspan="2">
+
+                                            <table class="govuk-table sub-table2" id="">
+                                                <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1B_1" name="transfer_Folder" type="checkbox" value="CM01.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1B_1">CM01.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1B_1"></span>CM01.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1B_2" name="transfer_Folder" type="checkbox" value="CM01.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1B_2">CM01.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1B_2"></span>CM01.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1B_3" name="transfer_Folder" type="checkbox" value="MG06_3June.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1B_3">MG06_3June.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1B_3"></span>MG06_3June.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1B_4" name="transfer_Folder" type="checkbox" value="MG06_10june.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1B_4">MG06_10june.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1B_4"></span>MG06_10june.pdf
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- SUB FOLDER 2 - FILES - END -->
+
+                                    <tr class="govuk-table__row">
+                                        <td scope="row" class="govuk-table__cell">
+                                            <div class="govuk-form-group">
+                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                    <div class="govuk-checkboxes__item">
+                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C" name="transfer_Folder" type="checkbox" value="Statements">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C">Statements</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                            <span class="icon-new folder materials_Row_1C"></span><a onclick="return materials_Row_1C();" class="govuk-link govuk-link--no-visited-state">Statements</a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- SUB FOLDER 3 - FILES - START -->
+                                    <tr class="govuk-table__row sub-row" id="materials_Row_1C">
+                                        <td scope="row" class="govuk-table__cell" colspan="2">
+
+                                            <table class="govuk-table sub-table2" id="">
+                                                <tbody class="govuk-table__body">
+                                                   <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_1" name="transfer_Folder" type="checkbox" value="stmt_BLAYNEE_2034_1_JUNE_mg11.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_1">stmt_BLAYNEE_2034_1_JUNE_mg11.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_1"></span>stmt_BLAYNEE_2034_1_JUNE_mg11.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_2" name="transfer_Folder" type="checkbox" value="stmt_JONES_1989_1_JUNE_mg11.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_2">stmt_JONES_1989_1_JUNE_mg11.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_2"></span>stmt_JONES_1989_1_JUNE_mg11.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_3" name="transfer_Folder" type="checkbox" value="stmt_Lucy_Doyle_MG11.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_3">stmt_Lucy_Doyle_MG11.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_3"></span>stmt_Lucy_Doyle_MG11.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_4" name="transfer_Folder" type="checkbox" value="stmt_Shelagh_McLove_MG11_hand.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_4">stmt_Shelagh_McLove_MG11_hand.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_4"></span>stmt_Shelagh_McLove_MG11_hand.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_5" name="transfer_Folder" type="checkbox" value="Shelagh_McLove_VPS_mg11.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_5">Shelagh_McLove_VPS_mg11.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_5"></span>Shelagh_McLove_VPS_mg11.pdf
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell">
+                                                            <div class="govuk-form-group">
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="transfer_Folder_1C_6" name="transfer_Folder" type="checkbox" value="MG11_Shelagh_MCLOVE_retraction.pdf">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_1C_6">MG11_Shelagh_MCLOVE_retraction.pdf</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="govuk-table__cell file_name_cell">
+                                                            <span class="icon-new file materials_Row_1C_6"></span>MG11_Shelagh_MCLOVE_retraction.pdf
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- SUB FOLDER 3 - FILES - END -->
+                                </tbody>
+                            </table>
+                            <!-- SUB FOLDER 1 - END -->
+
+                        </td>
+                    </tr>
+                    <!-- FOLDER 1  - END -->
+
+                    <!-- FOLDER 2 - START -->
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_2" name="transfer_Folder" type="checkbox" value="Counsel only">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_2">Transfer Counsel only</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder empty materials_Row_2"></span><a onclick="return materials_Row_2();" class="govuk-link govuk-link--no-visited-state">Counsel only</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_2">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+                            <p>There are no documents currently in this folder</p>
+                        </td>
+                    </tr>
+                    <!-- FOLDER 2 - END -->
+
+                    <!-- FOLDER 3 - START -->
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_3" name="transfer_Folder" type="checkbox" value="Investigator">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_3">Investigator</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder empty materials_Row_3"></span><a onclick="return materials_Row_3();" class="govuk-link govuk-link--no-visited-state">Investigator</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_3">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+                            <p>There are no documents currently in this folder</p>
+                        </td>
+                    </tr>
+                    <!-- FOLDER 3 - END -->
+
+                    <!-- FOLDER 4 - START -->
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_4" name="transfer_Folder" type="checkbox" value="Multimedia">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_4">Multimedia</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder empty materials_Row_4"></span><a onclick="return materials_Row_4();" class="govuk-link govuk-link--no-visited-state">Multimedia</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_4">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+                            <p>There are no documents currently in this folder</p>
+                        </td>
+                    </tr>
+                    <!-- FOLDER 4 - END -->
+
+                    <!-- FOLDER 5 - START -->
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_5" name="transfer_Folder" type="checkbox" value="Served evidence">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_5">Served evidence</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder empty materials_Row_5"></span><a onclick="return materials_Row_5();" class="govuk-link govuk-link--no-visited-state">Served evidence</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_5">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+                            <p>There are no documents currently in this folder</p>
+                        </td>
+                    </tr>
+                    <!-- FOLDER 5 - END -->
+
+                    <!-- FOLDER 5 - START -->
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-form-group">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="transfer_Folder_6" name="transfer_Folder" type="checkbox" value="Unused - disclosed">
+                                        <label class="govuk-label govuk-checkboxes__label" for="transfer_Folder_6">Unused - disclosed</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell"><span class="icon-new folder empty materials_Row_6"></span><a onclick="return materials_Row_6();" class="govuk-link govuk-link--no-visited-state">Unused - disclosed</a></td>
+                    </tr>
+                    <tr class="govuk-table__row sub-row" id="materials_Row_6">
+                        <td scope="row" class="govuk-table__cell" colspan="2">
+                            <p>There are no documents currently in this folder</p>
+                        </td>
+                    </tr>
+                    <!-- FOLDER 5 - END -->
+
+                </tbody>
+            </table>
+            <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
+
+            <div class="cta-wrapper cta-materials govuk-!-margin-top-2">
+                <a disabled class="govuk-button" id="transfer_Materials" data-module="govuk-button">Transfer materials</a>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+<!-- TABS CONTENT - ONE - END -->
+
+<!-- TABS CONTENT - TWO - START -->
+<div class="secondaryTabContent tabsGroup-1" id="secondaryTabContent-2" style="display: none;">
+    <div class="section-wrapper">
+        <section>
+            <div class="title-wrapper">
+                <h3 class="govuk-heading-s"><img src="../../../public/images/outlook-logo.jpg" alt="Outlook" class="outlook-logo">Outlook emails</h3>
+            </div>
+
+            <div class="permissions">
+                {% if data['caseName_Type'] == 'Operation name' %}
+                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
+                {% else %}
+                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Outlook" class="url-text" disabled>
+                {% endif %}                               
+                <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
+            </div>
+            <p> </p>
+
+            <div id="emailViewer">
+
+                <div class="emails">
+                    <table class="govuk-table" id="emailTable">
+                        <tbody id="accordion-tbody-communication">
+
+                            <!-- EMAIL LINK - 1 - START -->
+                            <tr class="govuk-table__row document-holder">
+                                <td class="govuk-table__cell govuk-body-s activeDocument" scope="row" id="emailLink1">
+                                    <div class="wrapper">
+                                        <strong class="govuk-tag current">Active email</strong>
+                                        {% if data['caseName_Type'] == 'Operation name' %}
+                                            <a class="show-case email-document" onclick="return showEmail1();">E-mail regarding Operation {{ data['newCase_OperationName'] }}</a>
+                                        {% else %}
+                                            <a class="show-case email-document" onclick="return showEmail1();">E-mail regarding Operation <span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</a>
+                                        {% endif %}                               
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span><span id="email-date">####</span>
+                                            <br>
+                                            <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
+                                            From: <a href="mailto:SA.OffSystemAlpha@cps.gov.uk">SA.OffSystemAlpha@cps.gov.uk</a>
+                                            <br>
+                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span>0 attachments
+                                        </p>
+                                    </div>
+                                    <button class="more-options">
+                                        <span class="visuallyhidden">More options</span>
+                                    </button>
+                                    <div class="document-nav">
+                                        <button onclick="" class="reply-button"><span class="icon-new email-reply"></span>Reply to email</button>
+                                        <button onclick="" class="forward-button"><span class="icon-new email-forward"></span>Forward email</button>
+                                        <button onclick="" class="delete-button"><span class="icon-new email-delete"></span>Delete email</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- EMAIL LINK - 1 - END -->
+
+                            <!-- EMAIL LINK - 2 - START -->
+                            <tr class="govuk-table__row document-holder">
+                                <td class="govuk-table__cell govuk-body-s unreadDocument" scope="row" id="emailLink2">
+                                    <div class="wrapper">
+                                        <strong class="govuk-tag current">Active email</strong>
+                                        {% if data['caseName_Type'] == 'Operation name' %}
+                                            <a class="show-case email-document" onclick="return showEmail2();">E-mail regarding Operation {{ data['newCase_OperationName'] }}</a>
+                                        {% else %}
+                                            <a class="show-case email-document" onclick="return showEmail2();">E-mail regarding Operation <span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</a>
+                                        {% endif %}                               
+                                        <br>
+                                        <p class="date-added">
+                                            <span class="icon-new date-added"><span class="visuallyhidden">Date</span></span><span id="email-date3">####</span>
+                                            <br>
+                                            <span class="icon-new sender"><span class="visuallyhidden">Sender</span></span>
+                                            From: <a href="mailto:PC12345@criminl.justice.gmp.police.uk">PC12345@criminl.justice.gmp.police.uk</a>
+                                            <br>
+                                            <span class="icon-new attachments"><span class="visuallyhidden">Attachments</span></span>0 attachments
+                                        </p>
+                                    </div>
+                                    <button class="more-options">
+                                        <span class="visuallyhidden">More options</span>
+                                    </button>
+                                    <div class="document-nav">
+                                        <button onclick="" class="reply-button"><span class="icon-new email-reply"></span>Reply to email</button>
+                                        <button onclick="" class="forward-button"><span class="icon-new email-forward"></span>Forward email</button>
+                                        <button onclick="" class="delete-button"><span class="icon-new email-delete"></span>Delete email</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- EMAIL LINK - 2 - END -->
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="email-container">
+
+                    <!-- EMAIL - 1 - START -->
+                    <div class="email-wrapper" id="email1">
+                        <div class="email-subject">
+                            <p><strong>From:</strong> SA Off System Alpha &#60;SA.OffSystemAlpha@cps.gov.uk&#62;</p>
+                            <p><strong>Date:</strong> <span id="email-date2">####</span></p>
+                            <p><strong>To:</strong> {{ data['offCMS_Username'] }}</p>
+                            {% if data['caseName_Type'] == 'Operation name' %}
+                                <p><strong>Subject:</strong> E-mail regarding Operation {{ data['newCase_OperationName'] }}</p>
+                            {% else %}
+                                <p><strong>Subject:</strong> E-mail regarding Defendat <span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</p>
+                            {% endif %}                               
+
+                        </div>
+                        <div class="email-content">
+                            {% if data['caseName_Type'] == 'Operation name' %}
+                                <p>This is the shared outlook folder for operation <strong>{{ data['newCase_OperationName'] }}</strong></p>
+                            {% else %}
+                                <p>This is the shared outlook folder for operation <strong class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</strong>, <strong>{{ data['newCase_DefendantName-Forename'] }}</strong></p>
+                            {% endif %}                               
+                        </div>
+                    </div>
+                    <!-- EMAIL - 1 - END -->
+
+                    <!-- EMAIL - 2 - START -->
+                    <div class="email-wrapper" id="email2" style="display: none;">
+                        <div class="email-subject">
+                            <p><strong>From:</strong> PC12345@criminl.justice.gmp.police.uk</p>
+                            <p><strong>Date:</strong> <span id="email-date4">####</span></p>
+                            <p><strong>To:</strong> {{ data['offCMS_Username'] }}</p>
+                            {% if data['caseName_Type'] == 'Operation name' %}
+                                <p><strong>Subject:</strong> Early advice for {{ data['newCase_OperationName'] }}</p>
+                            {% else %}
+                                <p><strong>Subject:</strong> Early advice for <span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</p>
+                            {% endif %}                               
+                        </div>
+                        <div class="email-content">
+                            <p>Dear {{ data['offCMS_Username'] }},</p>
+                            {% if data['caseName_Type'] == 'Operation name' %}
+                                <p>Please can you contact me regarding the new operation: <strong>{{ data['newCase_OperationName'] }}</strong>. I would love to get your thoughts on how to progress the case and any Early advice you can give me.</p>
+                            {% else %}
+                                <p>Please can you contact me regarding the new operation: <strong class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</strong>, <strong>{{ data['newCase_DefendantName-Forename'] }}</strong>. I would love to get your thoughts on how to progress the case and any Early advice you can give me.</p>
+                            {% endif %}                               
+                            <p>Kind Regards,<br>PC Steven Hachting</p>
+                        </div>
+                    </div>
+                    <!-- EMAIL - 2 - END -->
+
+                </div>
+            </div>        
+
+        </section>
+    </div>
+</div>
+<!-- TABS CONTENT - TWO - END -->

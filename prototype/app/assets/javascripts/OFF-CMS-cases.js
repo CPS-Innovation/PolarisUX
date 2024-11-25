@@ -341,8 +341,8 @@ $(document).ready(function () {
 
 $(document).ready(function() {
 
-    $('#last-action-hero .hods-timeline__item').hide();
-    $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').show();
+    // $('#last-action-hero .hods-timeline__item').hide();
+    // $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').show();
 
     // 1 - Overview
     if (window.location.href.indexOf("overviewTab") > -1) {
@@ -1056,8 +1056,10 @@ $(document).ready(function () {
 
     $("#addSuspect_Form-DOB-Year").on("keyup", function (e) { 
         if ($(this).val() < '2007') {
+            $('#addSuspect_Form_YouthOffender').removeAttr('checked');
             $('#addSuspect_Form-Type-YO').removeAttr('checked');
         } else if ($(this).val() >= '2007') { 
+            $('#addSuspect_Form_YouthOffender').attr('checked','checked');
             $('#addSuspect_Form-Type-YO').attr('checked','checked');
         } 
     }); 
