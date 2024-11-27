@@ -8,7 +8,7 @@
 {% block content %}
 
 <div class="govuk-grid-row" id="">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
         <div class="wrapper gov-pages">
 
@@ -82,20 +82,52 @@
                     <!-- OPTION 3 - END -->
 
                     <!-- OPTION 4 - START -->
-                    <div class="govuk-form-group govuk-!-margin-bottom-0">
-                        <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset">
-                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="addSuspect_Form_YouthOffender" name="addSuspect_Form_YouthOffender" type="checkbox" value="Youth offender">
-                                        <label class="govuk-label govuk-checkboxes__label" for="addSuspect_Form_YouthOffender">Youth offender</label>
-                                    </div>
+                    <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="addSuspect_Form_YouthOffender" name="addSuspect_Form_YouthOffender" type="checkbox" value="Youth offender">
+                                    <label class="govuk-label govuk-checkboxes__label" for="addSuspect_Form_YouthOffender">Youth offender</label>
                                 </div>
-                            </fieldset>
-                        </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 4 - END -->
+
+                    <!-- OPTION 5 - START -->
+                    <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="addSuspect_Form_Vulnerable" name="addSuspect_Form_Vulnerable" type="checkbox" value="Vulnerable">
+                                    <label class="govuk-label govuk-checkboxes__label" for="addSuspect_Form_Vulnerable">Vulnerable</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 5 - END -->
+
+                    <!-- OPTION 6 - START -->
+                    <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="addSuspect_Form_Neurodivergent" name="addSuspect_Form_Neurodivergent" type="checkbox" value="Neurodivergent">
+                                    <label class="govuk-label govuk-checkboxes__label" for="addSuspect_Form_Neurodivergent">Neurodivergent</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <details class="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">Help with neurodivergent</span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                The suspect will be neurodivergent if they have a developmental or learning disorder, such as autism, ADHD, dyslexia, or Tourette's syndrome.
+                            </div>
+                        </details>
                     </div>
                     <p><br></p>
-                    <!-- OPTION 4 - END -->
+                    <!-- OPTION 6 - END -->
 
                 </fieldset>
 

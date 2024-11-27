@@ -14,7 +14,7 @@
 
             <h1 class="govuk-heading-xl" style="">Personal details</h1>
 
-            <form method="get" action="10C-add-witness" id="addWitness_Form-B">  
+            <form method="get" action="5-case-overview#witnessesTab" id="addWitness_Form-B">  
 
                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
@@ -56,115 +56,6 @@
 
                     {% endif %}
 
-                    <!-- OPTION 2 - START -->
-                    <div class="govuk-form-group no-float">
-                        <label class="govuk-label" for="addWitness_Form-Title">Title</label>
-                        <select class="govuk-select govuk-input--width-5" id="addWitness_Form-Title" name="addWitness_Form-Title">
-                            {% if data['addWitness_Form-Title'] == 'Dr' %}
-                                <option value="Dr" selected>Dr</option>
-                            {% else %}
-                                <option value="Dr">Dr</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Miss' %}
-                                <option value="Miss" selected>Miss</option>
-                            {% else %}
-                                <option value="Miss">Miss</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Mr' %}
-                                <option value="Mr" selected>Mr</option>
-                            {% else %}
-                                <option value="Mr">Mr</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Mrs' %}
-                                <option value="Mrs" selected>Mrs</option>
-                            {% else %}
-                                <option value="Mrs">Mrs</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Ms' %}
-                                <option value="Ms" selected>Ms</option>
-                            {% else %}
-                                <option value="Ms">Ms</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Prof' %}
-                                <option value="Prof" selected>Prof</option>
-                            {% else %}
-                                <option value="Prof">Prof</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'Rev' %}
-                                <option value="Rev" selected>Rev</option>
-                            {% else %}
-                                <option value="Rev">Rev</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'PC' or '(P) - Police' in data['addWitness_Details-Type'] %}
-                                <option value="PC" selected>PC</option>
-                            {% else %}
-                                <option value="PC">PC</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'DC' %}
-                                <option value="DC" selected>DC</option>
-                            {% else %}
-                                <option value="DC">DC</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'PS' %}
-                                <option value="PS" selected>PS</option>
-                            {% else %}
-                                <option value="PS">PS</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'DS' %}
-                                <option value="DS" selected>DS</option>
-                            {% else %}
-                                <option value="DS">DS</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'INS' %}
-                                <option value="INS" selected>INS</option>
-                            {% else %}
-                                <option value="INS">INS</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'DI' %}
-                                <option value="DI" selected>DI</option>
-                            {% else %}
-                                <option value="DI">DI</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'PCSO' %}
-                                <option value="PCSO" selected>PCSO</option>
-                            {% else %}
-                                <option value="PCSO">PCSO</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'CI' %}
-                                <option value="CI" selected>CI</option>
-                            {% else %}
-                                <option value="CI">CI</option>
-                            {% endif %}
-                            {% if data['addWitness_Form-Title'] == 'SC' %}
-                                <option value="SC" selected>SC</option>
-                            {% else %}
-                                <option value="SC">SC</option>
-                            {% endif %}
-                        </select>
-                    </div>
-                    <!-- OPTION 2 - END -->
-
-                    <!-- OPTION 3 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="addWitness_Form-Surname">Surname</label>
-                        {% if data['addWitness_Form-Surname'] %}
-                            <input class="govuk-input govuk-input--width-20" id="addWitness_Form-Surname" name="addWitness_Form-Surname" type="text" value="{{ data['addWitness_Form-Surname'] }}">
-                        {% else %}
-                            <input class="govuk-input govuk-input--width-20" id="addWitness_Form-Surname" name="addWitness_Form-Surname" type="text">
-                        {% endif %}
-                    </div>                    
-                    <!-- OPTION 3 - END -->
-
-                    <!-- OPTION 4 - START -->
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="addWitness_Form-Forename">Forename</label>
-                        {% if data['addWitness_Form-Forename'] %}
-                            <input class="govuk-input govuk-input--width-20" id="addWitness_Form-Forename" name="addWitness_Form-Forename" type="text" value="{{ data['addWitness_Form-Forename'] }}">
-                        {% else %}
-                            <input class="govuk-input govuk-input--width-20" id="addWitness_Form-Forename" name="addWitness_Form-Forename" type="text">
-                        {% endif %}
-                    </div>                    
-                    <!-- OPTION 4 - END -->
 
                     {% if '(P) - Police' in data['addWitness_Details-Type'] %}
                         <!-- OPTION 5 - START -->

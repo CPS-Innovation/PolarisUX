@@ -857,11 +857,21 @@ function eaPreview() {
 
 // ========================= Create EA Report ========================= //
 $(document).ready(function () {
+    // EA - V1
     $("#ea2Introduction-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Introduction').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
     $("#ea2Materials-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Materials').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
     $("#ea2Summary-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Summary').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
     $("#ea2Law-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Law').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
     $("#ea2NextSteps-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2NextSteps').addClass('completed'); $('nav.tube-map-ea ul li.ea2Preview').addClass('completed'); });
+
+    // EA - V2
+    $("#ea2Part1-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part1').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part2-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part2').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part3-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part3').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part4-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part4').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part5-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part5').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part6-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part6').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+    $("#ea2Part7-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part7').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
 })
 
 function ea2Introduction() {
@@ -869,6 +879,14 @@ function ea2Introduction() {
     $('nav.tube-map-ea ul li.ea2Introduction').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Introduction').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
+function ea2Part1() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part1').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part1').addClass('show-panel');
     window.scrollTo(0, 0);
 }
 
@@ -880,11 +898,27 @@ function ea2Materials() {
     window.scrollTo(0, 0);
 }
 
+function ea2Part2() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part2').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part2').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
 function ea2Summary() {
     $('nav.tube-map-ea ul li').removeClass('selected');
     $('nav.tube-map-ea ul li.ea2Summary').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2Summary').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
+function ea2Part3() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part3').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part3').addClass('show-panel');
     window.scrollTo(0, 0);
 }
 
@@ -896,11 +930,43 @@ function ea2Law() {
     window.scrollTo(0, 0);
 }
 
+function ea2Part4() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part4').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part4').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
 function ea2NextSteps() {
     $('nav.tube-map-ea ul li').removeClass('selected');
     $('nav.tube-map-ea ul li.ea2NextSteps').addClass('selected');
     $('.ea-content-panel').removeClass('show-panel');
     $('#ea2NextSteps').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
+function ea2Part5() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part5').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part5').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
+function ea2Part6() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part6').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part6').addClass('show-panel');
+    window.scrollTo(0, 0);
+}
+
+function ea2Part7() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part7').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part7').addClass('show-panel');
     window.scrollTo(0, 0);
 }
 
@@ -928,16 +994,58 @@ function ea2Preview() {
 
 }
 
+function ea2Part8() {
+    $('nav.tube-map-ea ul li').removeClass('selected');
+    $('nav.tube-map-ea ul li.ea2Part8').addClass('selected');
+    $('.ea-content-panel').removeClass('show-panel');
+    $('#ea2Part8').addClass('show-panel');
+    window.scrollTo(0, 0);
+
+    var ea2Part1 = $('#ea2Part1-Editor').html();
+    if (ea2Part1.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Background</strong><br>` + ea2Part1 + `<br><br>`); }
+
+    var ea2Part2 = $('#ea2Part2-Editor').html();
+    if (ea2Part2.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Offences considered</strong><br>` + ea2Part2 + `<br><br>`); }
+
+    var ea2Part3 = $('#ea2Part3-Editor').html();
+    if (ea2Part3.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Relevant Law/Legal Considerations</strong><br>` + ea2Part3 + `<br><br>`); }
+
+    var ea2Part4 = $('#ea2Part4-Editor').html();
+    if (ea2Part4.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Summary of Evidence Considered</strong><br>` + ea2Part4 + `<br><br>`); }
+
+    var ea2Part5 = $('#ea2Part5-Editor').html();
+    if (ea2Part5.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Disclosure considerations</strong><br>` + ea2Part5 + `<br><br>`); }
+
+    var ea2Part6 = $('#ea2Part6-Editor').html();
+    if (ea2Part6.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Advice and assessement of evidence</strong><br>` + ea2Part6 + `<br><br>`); }
+
+    var ea2Part7 = $('#ea2Part7-Editor').html();
+    if (ea2Part7.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Action plan/line of enquiry</strong><br>` + ea2Part7 + `<br><br>`); }
+
+}
+
 function saveCA() {
+    // EA - V1
     $.cookie("ea2IntroductionContent", $('#ea2Introduction-Editor').html(), {path:'/'});
     $.cookie("ea2MaterialsContent", $('#ea2Materials-Editor').html(), {path:'/'});
     $.cookie("ea2SummaryContent", $('#ea2Summary-Editor').html(), {path:'/'});
     $.cookie("ea2LawContent", $('#ea2Law-Editor').html(), {path:'/'});
     $.cookie("ea2NextStepsContent", $('#ea2NextSteps-Editor').html(), {path:'/'});
+
+    // EA - V2
+    $.cookie("ea2Part1Content", $('#ea2Part1-Editor').html(), {path:'/'});
+    $.cookie("ea2Part2Content", $('#ea2Part2-Editor').html(), {path:'/'});
+    $.cookie("ea2Part3Content", $('#ea2Part3-Editor').html(), {path:'/'});
+    $.cookie("ea2Part4Content", $('#ea2Part4-Editor').html(), {path:'/'});
+    $.cookie("ea2Part5Content", $('#ea2Part5-Editor').html(), {path:'/'});
+    $.cookie("ea2Part6Content", $('#ea2Part6-Editor').html(), {path:'/'});
+    $.cookie("ea2Part7Content", $('#ea2Part7-Editor').html(), {path:'/'});
+    $.cookie("ea2Part8Content", $('#ea2Part8-Editor').html(), {path:'/'});
 }
 
 $(document).ready(function () {
 
+    // EA - V1
     if ($.cookie("ea2IntroductionContent") || $.cookie("ea2MaterialsContent") || $.cookie("ea2SummaryContent") || $.cookie("ea2LawContent") || $.cookie("ea2NextStepsContent")) {
         $('#ea-NotAvailable').hide();
         $('#ea-available').show();
@@ -985,6 +1093,72 @@ $(document).ready(function () {
         $('#ea2NextSteps-Content').show(); $('#ea2NextSteps-Content td').append($.cookie("ea2NextStepsContent")); 
         $('.ea-description').append('some next steps, ');
     } 
+
+    // EA - V2
+    if ($.cookie("ea2Part1Content") || $.cookie("ea2Part2Content") || $.cookie("ea2Part3Content") || $.cookie("ea2Part4Content") || $.cookie("ea2Part5Content") || $.cookie("ea2Part6Content") || $.cookie("ea2Part7Content")) {
+        $('#ea-NotAvailable').hide();
+        $('#ea-available').show();
+    } else {
+        $('#ea-NotAvailable').show();
+        $('#ea-available').hide();
+    }
+
+    // 1 - Background
+    if ($.cookie("ea2Part1Content") == '' || $.cookie("ea2Part1Content") == 'undefined') {
+        $('#ea2Part1-Content').hide();
+    } else if ($.cookie("ea2Part1Content")) { 
+        $('#ea2Part1-Content').show(); $('#ea2Part1-Content td').append($.cookie("ea2Part1Content")); 
+        $('.ea-description').append(`<li>a background</li>`);
+    } 
+
+    // 2 - Offences considered
+    if ($.cookie("ea2Part2Content") == '' || $.cookie("ea2Part2Content") == 'undefined') {
+        $('#ea2Part2-Content').hide();
+    } else if ($.cookie("ea2Part2Content")) { 
+        $('#ea2Part2-Content').show(); $('#ea2Part2-Content td').append($.cookie("ea2Part2Content")); 
+        $('.ea-description').append(`<li>offences considered</li>`);
+    }  
+
+    // 3 - Relevant Law/Legal Considerations
+    if ($.cookie("ea2Part3Content") == '' || $.cookie("ea2Part3Content") == 'undefined') {
+        $('#ea2Part3-Content').hide();
+    } else if ($.cookie("ea2Part3Content")) { 
+        $('#ea2Part3-Content').show(); $('#ea2Part3-Content td').append($.cookie("ea2Part3Content")); 
+        $('.ea-description').append(`<li>Relevant Law/Legal Considerations</li>`);
+    }
+
+    // 4 - Summary of Evidence Considered
+    if ($.cookie("ea2Part4Content") == '' || $.cookie("ea2Part4Content") == 'undefined') {
+        $('#ea2Part4-Content').hide();
+    } else if ($.cookie("ea2Part4Content")) { 
+        $('#ea2Part4-Content').show(); $('#ea2Part4-Content td').append($.cookie("ea2Part4Content")); 
+        $('.ea-description').append(`<li>a summary of evidence considered</li>`);
+    } 
+
+    // 5 - Disclosure considerations
+    if ($.cookie("ea2Part5Content") == '' || $.cookie("ea2Part5Content") == 'undefined') {
+        $('#ea2Part5-Content').hide();
+    } else if ($.cookie("ea2Part5Content")) { 
+        $('#ea2Part5-Content').show(); $('#ea2Part5-Content td').append($.cookie("ea2Part5Content")); 
+        $('.ea-description').append(`<li>some disclosure considerations</li>`);
+    } 
+
+    // 6 - Advice and assessement of evidence
+    if ($.cookie("ea2Part6Content") == '' || $.cookie("ea2Part6Content") == 'undefined') {
+        $('#ea2Part6-Content').hide();
+    } else if ($.cookie("ea2Part6Content")) { 
+        $('#ea2Part6-Content').show(); $('#ea2Part6-Content td').append($.cookie("ea2Part6Content")); 
+        $('.ea-description').append(`<li>advice and assessement of evidence</li>`);
+    } 
+
+    // 7 - Action plan/line of enquiry
+    if ($.cookie("ea2Part7Content") == '' || $.cookie("ea2Part7Content") == 'undefined') {
+        $('#ea2Part7-Content').hide();
+    } else if ($.cookie("ea2Part7Content")) { 
+        $('#ea2Part7-Content').show(); $('#ea2Part7-Content td').append($.cookie("ea2Part7Content")); 
+        $('.ea-description').append(`<li>action plan/line of enquiry</li>`);
+    } 
+
 })
 
 function openEA() {
@@ -1242,6 +1416,16 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
+    $('#witness_Police').hide();
+
+    $("#addWitness_Form-Title").on("change", function (e) { 
+        if ($(this).val() == 'PC') {
+            $('#witness_Police').show();
+        } else {
+            $('#witness_Police').hide();
+        }
+    });
+
     $("input[name=addWitness_Details-Type]").on("change", function (e) { 
 
         if ($('input[id=addWitness_Details-Type-Vulnerable]').is(':checked') || $('input[id=addWitness_Details-Type-Intimidated]').is(':checked')) {
@@ -1270,7 +1454,8 @@ $(document).ready(function () {
 
     // All items
     $(".preview-all-witnesses-link").hide();
-
+    $(".hide-all-witnesses-link").hide();
+    
     $(".preview-all-witnesses-link").on("click", function (e) { 
         e.preventDefault();
         $(this).hide();
@@ -1365,6 +1550,7 @@ $(document).ready(function () {
         }, 2500)
         var addMultipleWitnesses = parseInt($('.witnesses-number').text());
         $('.witnesses-number').text(addMultipleWitnesses + 5);
+        $('.witnesses-number').removeClass('zero');
         $.cookie("multiple_Witnesses", true, {path:'/'});
 
         // CMR
@@ -1375,6 +1561,7 @@ $(document).ready(function () {
         var addMultipleWitnesses = parseInt($('.witnesses-number').text());
         $('.witnesses-number').text(addMultipleWitnesses + 5);
         $('#multiple_Witnesses_Details').show();
+        $('.witnesses-number').removeClass('zero');
 
         // CMR
         $('#multiple_Witnesses_Added').show();
@@ -1717,6 +1904,13 @@ $(document).ready(function () {
     });
 
 })
+
+function windowSizeChange2() {
+    $('.window-size').toggleClass('close');
+    $('.width_30').toggle();
+    $('.width_70').toggleClass('full-width');
+}
+
 
 // Row 1
 function materials_Row_1() {

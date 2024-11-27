@@ -23,7 +23,15 @@ $(document).ready(function () {
         // Content
         $('.materials_section_1 .documents-available').css('display','inline-block');
         $('.materials_section_1 .documents-holder').hide();
-        $('#materials-table .materials_row_1').hide();
+        $('#materials-table .folder.materials_Row_1').addClass('empty');
+        $('#materials_Row_1 td table').remove();
+        $('#materials_Row_1 td').append(`
+            <td scope="row" class="govuk-table__cell" colspan="2">
+                <p>There are no documents currently in this folder</p>
+            </td>
+        `);
+
+
         
         $('.accordion-wrapper').hide();
         $('#loading_materials').show();

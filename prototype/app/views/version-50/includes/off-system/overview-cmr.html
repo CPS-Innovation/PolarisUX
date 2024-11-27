@@ -36,6 +36,24 @@
                     <p class="hods-timeline__description item-description"></p>    
                 </div>
 
+                <!-- CASE SETTINGS -->
+                {% if data['caseSettings'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <h2 class="hods-timeline__title">Case settings added</h2>
+                        <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
+                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
+                        <p class="hods-timeline__description">
+                            {% if data['caseSettings_Complexity'] %}Case complexity added, {% else %} {% endif %}
+                            {% if data['caseSettings_International'] %}International settings added, {% else %} {% endif %}
+                            {% if data['caseSettings_Sensitivity'] %}Case sensitivity added, {% else %} {% endif %}
+                            {% if data['caseSettings_Summary'] %}Case summary added{% else %} {% endif %}
+                            {% if data['caseSettings_Long'] %}Case is classed as Long term interest{% else %} {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+
+                {% endif %}
+
                 {% if data['newChargeCode'] %}
                     <div class="hods-timeline__item">
                         <h2 class="hods-timeline__title">Charge added</h2>
@@ -150,7 +168,8 @@
                         <h2 class="hods-timeline__title">Early advice added</h2>
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
                         <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
-                        <p class="hods-timeline__description ea-description">Early advice for the case was created and added, containing </p>
+                        <p class="hods-timeline__description">Early advice for the case was created and added, containing:</p>
+                        <ul class="govuk-list govuk-list--bullet ea-description"></ul>
                     </div>
                 {% else %}
 
@@ -162,47 +181,46 @@
 
                 {% endif %}                    
 
-                <!-- NEW EGRESS PERMISSIONS -->
-                {% if data['caseAccessNEW-Complete'] == 'true' %}
+                <!-- CPS TEAM ADDED -->
+                {% if data['caseAccessLockedDown'] == 'true' %}
                     <div class="hods-timeline__item">
-                        <h2 class="hods-timeline__title">User added to the case</h2>
+                        <h2 class="hods-timeline__title">CPS team added to the case</h2>
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
-                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
-                        <p class="hods-timeline__description">
-                            <strong>{{ data['newCase_Access-Email'] }}</strong> added as a {{ data['newCase_NEWAccess-Role'] }}
-                        </p>
+                        <p class="hods-timeline__date"><span id="">Today 10:04am</span></p>
                     </div>
                 {% else %}
 
                 {% endif %}
 
-                <!-- EGRESS PERMISSIONS -->
-                {% if data['caseAccessAdmin'] == 'true' %}
+                {% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                     <div class="hods-timeline__item">
-                        <h2 class="hods-timeline__title">Case permissions changed</h2>
+                        <h2 class="hods-timeline__title">Suspect added</h2>
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
-                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
-                        <p class="hods-timeline__description">
-                            <strong>{{ data['offCMS_Username'] }}</strong> user permissions changed
-                        </p>
+                        <p class="hods-timeline__date"><span id="">Today 10:04am</span></p>
+                        <p class="hods-timeline__description suspect-description">
+                            {% if data['newCase_Defendant'] == 'Individual' %}
+                                {% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                                    <strong>{{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</strong> added as a suspect for the case.
+                                {% else %}
+                                    An <strong>Individual</strong> has been added as a suspect for the case.
+                                {% endif %}
+                            {% elseif data['newCase_Defendant'] == 'Company' %}
+                                <strong>{{ data['newCase_DefendantName-CompanyName'] }}</strong> added as a suspect for the case.
+                            {% endif %}
+                        </p>    
                     </div>
-                {% else %}
-
-                {% endif %}
-
-                <!-- CASE SETTINGS -->
-                {% if data['caseSettings'] == 'true' %}
+                {% elseif data['newCase_DefendantName-CompanyName'] %}
                     <div class="hods-timeline__item">
-                        <h2 class="hods-timeline__title">Case settings added</h2>
+                        <h2 class="hods-timeline__title">Suspect added</h2>
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
-                        <p class="hods-timeline__date"><span id="">Thu 10/10/2024 10:04am</span></p>
-                        <p class="hods-timeline__description">
-                            {% if data['caseSettings_Complexity'] %}Case complexity added, {% else %} {% endif %}
-                            {% if data['caseSettings_International'] %}International settings added, {% else %} {% endif %}
-                            {% if data['caseSettings_Sensitivity'] %}Case sensitivity added, {% else %} {% endif %}
-                            {% if data['caseSettings_Summary'] %}Case summary added{% else %} {% endif %}
-                            {% if data['caseSettings_Long'] %}Case is classed as Long term interest{% else %} {% endif %}
-                        </p>
+                        <p class="hods-timeline__date"><span id="">Today 10:04am</span></p>
+                        <p class="hods-timeline__description suspect-description">
+                            {% if data['newCase_DefendantName-CompanyName'] %}
+                                <strong>{{ data['newCase_DefendantName-CompanyName'] }}</strong> added as a suspect for the case.
+                            {% elseif data['newCase_Defendant'] == 'Company' %}
+                                A company has been added as a suspect for the case.
+                            {% endif %}
+                        </p>    
                     </div>
                 {% else %}
 

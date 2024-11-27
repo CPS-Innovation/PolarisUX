@@ -1,7 +1,7 @@
 <h2 class="govuk-heading-m">EA/Reviews</h2>
 <span class="govuk-caption-m">Last updated <span id="EA-timestamp"></span></span>
 
-<div class="section-wrapper section-row">
+<div class="section-wrapper section-row ea_Review">
     <section>
         <div class="title-wrapper">
             {% if data['completeAndExitEA'] == 'true' %}
@@ -13,24 +13,27 @@
 
         <div class="section-content">
 
-            <!-- EA Available - START -->
-            <table class="govuk-table govuk-!-margin-bottom-0" id="ea-available">
-                <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row" >
-                        <th scope="row" class="govuk-table__header">
-                            <span id="EA-timestamp-NEW"></span><Br>
-                            <span class="added-by">created by {{ data['offCMS_Username'] }}</span><br>
-                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
-                        </th>
-                        <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell">
-                            <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button>
-                            <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state edit_EA" onclick="location.href='7-create-ea';">Edit</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- EA Available - END -->
+            <div class="hods-timeline" id="ea-available">
+                <!-- EA Available - START -->
+                <div class="hods-timeline__item" id="">
+                    <table class="govuk-table govuk-!-margin-bottom-0">
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row" >
+                                <th scope="row" class="govuk-table__header">
+                                    <span id="EA-timestamp-NEW"></span><br>
+                                    <span class="added-by">created by {{ data['offCMS_Username'] }}</span><br>
+                                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                </th>
+                                <td class="govuk-table__cell">
+                                    <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button>
+                                    <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state edit_EA" onclick="location.href='7-create-ea';">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- EA Available - END -->
+            </div>
 
             <!-- EA NOT Available - START -->
             <p class="govuk-!-margin-bottom-0" id="ea-NotAvailable">There are no early advice items on this case</p>

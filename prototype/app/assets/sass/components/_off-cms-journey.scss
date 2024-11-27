@@ -74,9 +74,25 @@ button {
      margin: 0;
 }
 
+
+.filter_Suspects {
+     h2 {
+          display: inline-block;
+          float: left;
+     }
+     .govuk-form-group {
+          display: inline-block;
+          float: right;
+          margin: -0.5em 0 0 0;
+          label {
+               display: none;
+          }
+     }
+}
+
 .hide-all-title-wrapper {
      display: inline-block;
-     width: 100%
+     width: 100%;
 }
 
 .floating-link {
@@ -270,6 +286,12 @@ html {
           ul {
                overflow-y: visible;
                overflow-x: visible; 
+               &.ea-description {
+                    li {
+                         padding: 0;
+                         font-size: 1rem;
+                    }
+               }
                li {
                     margin-bottom: 4px;
                     position: relative;
@@ -289,6 +311,7 @@ html {
                               height: 5px;
                          }
                     }
+
                     a {
                          color: black;
                          position: relative;
@@ -486,8 +509,36 @@ html {
 }
 
 .section-wrapper {
+     &.ea_Review {
+          section {
+               .section-content {
+                    padding: 1em 4% 1em 4%;
+                    width: 92%; 
+               }
+          }
+     }
      &.section-row {
           display: flex;
+          &.flex-30 {
+               section {
+                    &:first-of-type {
+                         flex: 30%;
+                         .section-content {
+                              padding: 1em 4% 1em 4%;
+                              width: 92%; 
+                              .cta-wrapper {
+                                   margin-top: 0 !important;
+                                   padding-top: 0;
+                                   border-top: none;
+                                   button {
+                                        float: left;
+                                        margin: 0;
+                                   }
+                              }
+                         }                    
+                   }
+               }
+          }
           section {
                margin: 0 2% 2em 0;
                flex: 50%;
@@ -508,6 +559,34 @@ html {
           section.width_70 {
                width: 70%;
                margin-right: 1.5%;
+               position: relative;
+               &.full-width {
+                    width: 100%;
+                    margin: 0;
+               }
+               .window-size {
+                    position: absolute;
+                    right: -1.5em;
+                    // float: right;
+                    top: 25em;
+                    rotate: 180deg;
+                    &.close {
+                         span {
+                              margin-left: -20px;
+                              &:before {
+                                   right: inherit;
+                                   left: 76%;
+                              }
+                         }
+                    }
+                    span {
+                         rotate: 180deg;
+                         top: -2.5em;
+                         bottom: inherit;
+                         left: 50%;
+                         margin-left: -60px;
+                    }
+               }
                .permissions {
                     width: 95%;
                     padding: 1.5em 2.5% 0 2.5%;
@@ -522,6 +601,7 @@ html {
           }
           section.width_30 {
                width: 30%;
+               position: relative; 
                .title-wrapper {
                     img {
                          width: 4.5em;
@@ -571,6 +651,7 @@ html {
                     width: 100%;
                     &:last-of-type {
                          border-bottom: none;
+                         margin-bottom: 2em;
                     }
                     &.open {
 
@@ -679,6 +760,7 @@ html {
                                    p {
                                         margin: 0;
                                         padding: 0.5em 0.5em;
+                                        font-size: 1rem;
                                    }
                                    .icon-new {
                                         float: left;
@@ -1216,16 +1298,19 @@ nav.moj-sub-navigation {
 }
 
 #ea-available {
+     padding-top: 1em;
      .govuk-table__header {
           .added-by {
                font-weight: normal;
                color: $govuk-secondary-text-colour;
           }
      }
-     .govuk-table__cell {
+     .govuk-table__cell, .govuk-table__header {
           &.with-button {
                padding: 0;
           }
+          padding-top: 0;
+          padding-bottom: 0;
      }
      button {
           float: right;
@@ -1669,6 +1754,8 @@ nav.tube-map-ea {
      width: auto;
      float: left;
      a {
+          // font-size: 1.2rem;
+          font-weight: normal;
           &.title-open {
                color: $govuk-link-colour;
                margin: 0 !important;
@@ -1676,6 +1763,9 @@ nav.tube-map-ea {
                     cursor: pointer;
                }
           }
+     }
+     .govuk-tag {
+          margin: -0.25em 0.5em 0 0;
      }
 }
 
@@ -1697,8 +1787,8 @@ nav.tube-map-ea {
      width: 100%;
      // margin-bottom: 1.5em;
      &.single {
-          border-top: 1px solid $govuk-border-colour;
-          padding-top: 1.5em;
+          // border-top: 1px solid $govuk-border-colour;
+          // padding-top: 1.5em;
      }
      .suspects-details, .witnesses-details {
           display: inline-block;
@@ -1731,12 +1821,33 @@ nav.tube-map-ea {
                .preview-link, .hide-link {
                     margin-top: 0.5em;
                }
+               a {
+                    margin-left: 0.5em;
+                    font-weight: normal;
+                    padding-left: 0.5em;
+                    border-left: 1px solid $govuk-border-colour;
+               }
           }
           .suspects-details-wrapper, .witnesses-details-wrapper {
                margin-top: 1em;
                padding: 1em;
                background: govuk-colour("light-grey");
                border: 1px solid $govuk-border-colour; 
+               .title {
+                    display: inline-block;
+                    width: 96.5%;
+                    padding-left: 1.75% !important;
+                    padding-right: 1.75% !important;
+                    h4 {
+                         display: inline-block;
+                         float: left;
+                    }
+                    .govuk-warning-text {
+                         display: inline-block;
+                         float: right;
+                         padding: 0;
+                    }
+               }
                p {
                     margin-bottom: 0;
                }
@@ -1778,7 +1889,7 @@ nav.tube-map-ea {
                                    width: 100%;
                                    // flex: 23%;
                                    padding: 0 0 0.5em 0;
-                                   margin: 0.5em 0 0 0;
+                                   margin: 0 0 0 0;
                                    border-bottom: 1px solid $govuk-border-colour;
                                    position: relative;
                                    &:last-of-type {
@@ -1834,12 +1945,46 @@ nav.tube-map-ea {
                                    }
                                    button {
                                         margin: 0.5em 0 0 0;
-                                        &.removeSuspect {
+                                        &.removeSuspect, &.removeWitness {
                                              float: right;
                                         }
                                         // position: absolute;
                                         // bottom: 0;
                                         // right: 0;
+                                   }
+                                   .hods-timeline {
+                                        margin-bottom: 0;
+                                        .hods-timeline__item {
+                                             width: 98.5% !important;
+                                        }
+                                        table {
+                                             tbody {
+                                                  tr {
+                                                       th {
+                                                            border-bottom: none;
+                                                            text-align: left;
+                                                            padding-top: 0;
+                                                            span {
+                                                                 float: left;
+                                                                 &.added-by {
+                                                                      font-weight: normal;
+                                                                      font-size: 1rem;
+                                                                      color: $govuk-secondary-text-colour;
+                                                                 }
+                                                            }
+                                                       }
+                                                       td {
+                                                            text-align: right;
+                                                            border-bottom: none;
+                                                            padding-top: 0;
+                                                            button {
+                                                                 margin-top: 0;
+                                                                 font-size: 1.185rem;
+                                                            }
+                                                       }
+                                                  }
+                                             }
+                                        }
                                    }
                               }
                          }
@@ -1958,15 +2103,30 @@ nav.tube-map-ea {
                text-align: center;
                flex-direction: column;
                height: 100vh;
-               justify-content: center;
+               justify-content: top;
+               margin-top: 5em;
                // padding: 1em;
                &.document_present {
                     justify-content: top;
+                    margin-top: 0;
                     embed {
                          height: 100vh;
                     }
                }
           }
+     }
+}
 
+#type_Of_Witness {
+     display: inline-block;
+     width: 100%;
+     .govuk-checkboxes__item {
+          display: inline-block;
+          float: left;
+          width: 29%;
+          clear: none;
+          &:last-of-type {
+               width: 100%;
+          }
      }
 }

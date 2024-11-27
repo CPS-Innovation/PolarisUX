@@ -1,4 +1,4 @@
-<h2 class="govuk-heading-m">Witnesses/Victims</h2>
+<h2 class="govuk-heading-m">Witnesses/Complainants</h2>
 <div class="hide-all-title-wrapper">
     <span class="govuk-caption-m">Last updated <span id="witnesses-timestamp"></span></span>
     {% if data['addSuspectStarted'] == 'true' %}
@@ -15,13 +15,14 @@
             <h3 class="govuk-heading-m">
                 <div class="name_WrapperWitness">
                     {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
-                        <span>{{ data['addWitness_Form-Surname'] }}</span>, {{ data['addWitness_Form-Forename'] }}
+                        <span>{{ data['addWitness_Form-Surname'] }}</span>, {{ data['addWitness_Form-Title'] }} {{ data['addWitness_Form-Forename'] }}
                     {% else %}
                         Individual
                     {% endif %}
                 </div>
-                {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
-                    <span class="dob">({{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }})</span>
+                <a href="10A-add-witness">Edit</a><br>
+                {% if data['addWitness_Details_Complainant'] %}
+                    <strong class="govuk-tag govuk-tag--blue">Complainant</strong>
                 {% else %}
 
                 {% endif %}
@@ -31,17 +32,24 @@
             <div class="witnesses-details-wrapper has-details">
                 {% if '(L) - Vulnerable' in data['addWitness_Details-Type'] or data['addWitness_Details-Status'] == 'Yes' %}
                     <div class="title">
+                        <h4 class="govuk-heading-s">Witness details</h4>
                         <div class="govuk-warning-text">
                             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                             <strong class="govuk-warning-text__text">
                                 <span class="govuk-visually-hidden">Warning</span>
-                                {% if data['addWitness_Details-Status'] == 'Yes' %}
-                                    Witness is key, 
+                                This witness is 
+                                {% if data['addWitness_Details_Key'] %}
+                                    Key, 
                                 {% else %}
 
                                 {% endif %}
                                 {% if '(L) - Vulnerable' in data['addWitness_Details-Type'] %}
-                                    Witness is Vulnerable
+                                    Vulnerable,
+                                {% else %}
+
+                                {% endif %}
+                                {% if data['addWitness_Details_Neurodivergent'] %}
+                                    Neurodivergent
                                 {% else %}
 
                                 {% endif %}
@@ -54,282 +62,35 @@
 
                 <div class="witnesses-content-wrapper">
 
-                    <!-- SECTION 1 - START -->
-                    <h4 class="govuk-heading-s">Relationship to case</h4>
                     <div class="witnesses-sections">
-
-                        {% if data['suspectType-conditional'] %}
-                            <section>
-                                <p>
-                                    Group <span><strong>{{ data['suspectType-conditional'] }}</strong></span>
-                                    <a href="10A-add-witness">Change <span class="visuallyhidden">relationship group</span></a>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Details-Type'] %}
-                            <section>
-                                <p>Type 
-                                    <a href="10A-add-witness">Change <span class="visuallyhidden">relationship type</span></a>
-                                    <span class="tag-wrapper">
-                                        {% if '(V) - Victim' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(V) - Victim</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(P) - Police' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(P) - Police</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(C) - Child' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(C) - Child</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(F) - Professional' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(F) - Professional</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(X) - Expert' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(X) - Expert</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(L) - Vulnerable' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(L) - Vulnerable</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(T) - Intimidated' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(T) - Intimidated</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(G) - Greatest need' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(G) - Greatest need</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(S) - Special' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(S) - Special</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(H) - Prisoner' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(H) - Prisoner</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if '(I) - This person is an interpreter' in data['addWitness_Details-Type'] %}
-                                            <strong class="govuk-tag govuk-tag--blue">(I) - This person is an interpreter</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-
-                                    </span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Details-Status'] %}
-                            <section>
-                                <p>
-                                    Key witness status <span><strong>{{ data['addWitness_Details-Status'] }}</strong>
-                                    <a href="10A-add-witness">Change <span class="visuallyhidden">key witness status</span></a>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                    </div>
-                    <!-- SECTION 1 - END -->
-
-                    <!-- SECTION 2 - START -->
-                    <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Personal details</h4>
-                    <div class="witnesses-sections">
-
-                        {% if data['addWitness_Form-Surname'] or data['addWitness_Form-Forename'] %}
-                            <section>
-                                <p>
-                                    Name 
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a>
-                                    <span><strong class="surname">{{ data['addWitness_Form-Surname'] }}</strong>, <span class="forename">{{ data['addWitness_Form-Forename'] }}</span></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Gender'] %}
-                            <section>
-                                <p>
-                                    Gender
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness gender</span></a>
-                                    <span><strong>{{ data['addWitness_Form-Gender'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Ethnicity'] %}
-                            <section>
-                                <p>
-                                    Ethnicity
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness ethnicity</span></a>
-                                    <span><strong>{{ data['addWitness_Form-Ethnicity'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Religion'] %}
-                            <section>
-                                <p>
-                                    Religion 
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness religion</span></a>
-                                    <span><strong>{{ data['addWitness_Form-Religion'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-DOB-Day'] or data['addWitness_Form-DOB-Month'] or data['addWitness_Form-DOB-Year'] %}
-                            <section>
-                                <p>
-                                    Date of birth
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness date of birth</span></a>
-                                    <span><strong>{{ data['addWitness_Form-DOB-Day'] }}/{{ data['addWitness_Form-DOB-Month'] }}/{{ data['addWitness_Form-DOB-Year'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Disability'] %}
-                            <section>
-                                <p>
-                                    Disability 
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness disability</span></a>
-                                    <span><strong>{{ data['addWitness_Form-Disability'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Type'] %}
-                            <section>
-                                <p>
-                                    Type 
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness type</span></a>
-                                    <span><strong>{{ data['addWitness_Form-Type'] }}</strong></span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-
-                        {% if data['addWitness_Form-Postcode'] %}
-                            <section class="address">
-                                <p>Address 
-                                    <a href="10B-add-witness">Change <span class="visuallyhidden">witness address</span></a>
-                                    <span class="address-wrapper">
-                                        {% if data['addWitness_Form-Address_1'] %}
-                                            <strong>{{ data['addWitness_Form-Address_1'] }}</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if data['addWitness_Form-Address_2'] %}
-                                            <strong>{{ data['addWitness_Form-Address_2'] }}</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if data['addWitness_Form-Address_3'] %}
-                                            <strong>{{ data['addWitness_Form-Address_3'] }}</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if data['addWitness_Form-Address_4'] %}
-                                            <strong>{{ data['addWitness_Form-Address_4'] }}</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if data['addWitness_Form-Address_5'] %}
-                                            <strong>{{ data['addWitness_Form-Address_5'] }}</strong><br>
-                                        {% else %}
-
-                                        {% endif %}
-                                        {% if data['addWitness_Form-Postcode'] %}
-                                            <strong>{{ data['addWitness_Form-Postcode'] }}</strong>
-                                        {% else %}
-
-                                        {% endif %}
-                                    </span>
-                                </p>
-                            </section>
-                        {% else %}
-
-                        {% endif %}
-                    </div>
-                    <!-- SECTION 2 - END -->
-
-                    <!-- SECTION 3 - START -->
-                    <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                    <div class="witnesses-sections">
-                        {% if data['addWitness_Form-Email'] or data['addWitness_Form-Mobile'] or data['addWitness_Form-Telephone'] %}
-                            {% if data['addWitness_Form-Email'] %}
-                                <section>
-                                    <p>Email address 
-                                        <a href="10C-add-witness">Change <span class="visuallyhidden">witness email address</span></a>
-                                        <span><strong>{{ data['addWitness_Form-Email'] }}</strong></span>
-                                    </p>
-                                </section>
+                        <section>
+                            {% if data['addWitness_Details_Statement'] %}
+                                <div class="hods-timeline" id="">
+                                    <div class="hods-timeline__item" id="">
+                                        <table class="govuk-table govuk-!-margin-bottom-0">
+                                            <tbody class="govuk-table__body">
+                                                <tr class="govuk-table__row" >
+                                                    <th scope="row" class="govuk-table__header">
+                                                        <span id="">stmt_TANNON_1989_1_JUNE_mg11.pdf</span><br>
+                                                        <span class="added-by">date of statement {{ data['addWitness_Details_Date-Day'] }}/{{ data['addWitness_Details_Date-Month'] }}/{{ data['addWitness_Details_Date-Year'] }}</span><br>
+                                                        <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                    </th>
+                                                    <td class="govuk-table__cell">
+                                                        <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="">View</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             {% else %}
-
+                                <p>This witness has no statement.</p>
                             {% endif %}
-                            {% if data['addWitness_Form-Mobile'] %}
-                                <section>
-                                    <p>
-                                        Mobile phone 
-                                        <a href="10C-add-witness">Change <span class="visuallyhidden">witness mobile phone</span></a>
-                                        <span><strong>{{ data['addWitness_Form-Mobile'] }}</strong></span>
-                                    </p>
-                                </section>
-                            {% else %}
-
-                            {% endif %}
-                            {% if data['addWitness_Form-Telephone'] %}
-                                <section>
-                                    <p>
-                                        Home phone 
-                                        <a href="10C-add-witness">Change <span class="visuallyhidden">witness home phone</span></a>
-                                        <span><strong>{{ data['addWitness_Form-Telephone'] }}</strong></span>
-                                    </p>
-                                </section>
-                            {% else %}
-
-                            {% endif %}
-                        {% else %}
-                            <p>There have been no <strong>contact methods</strong> added.</p>
-                        {% endif %}
+                            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                        </section>
                     </div>
-                    <!-- SECTION 3 - END -->
 
                 </div>
-            </div>
-            <div class="cta-wrapper">
-                <!-- <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='10A-add-witness';">Edit witness</button> -->
-                <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
             </div>
         </div>
     </div>
@@ -560,12 +321,12 @@
         {% if data['addWitnessStarted'] == 'true' %}
             <p>Add additional <strong>witnesses</strong> to this case</p>
         {% else %}
-            <p>There has been <strong>no Witnesses or Victims</strong> added to this case</p>
+            <p>There has been <strong>no Witnesses or Complainants</strong> added to this case</p>
         {% endif %}
-        <button type="submit" class="govuk-button" style="" onclick="location.href='10A-add-witness';">Add a Witnesses/Victims</button>
+        <button type="submit" class="govuk-button" style="" onclick="location.href='10A-add-witness';">Add a Witnesses/Complainants</button>
     </div>
     <div class="govuk-form-group file-upload">
-        <label class="govuk-label" for="multiple_Witnesses">Upload a list of Witnesses/Victims</label>
+        <label class="govuk-label" for="multiple_Witnesses">Upload a list of Witnesses/Complainants</label>
         <input class="govuk-file-upload" id="multiple_Witnesses" name="multiple_Witnesses" type="file">
     </div> 
 </div>
