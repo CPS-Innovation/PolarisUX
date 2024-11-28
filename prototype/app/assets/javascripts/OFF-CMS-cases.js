@@ -1962,48 +1962,27 @@ function materials_Row_6() {
 
 
 // ========================= LOCKDOWN CASE ========================= //
+function openLockDown() {
+    $('#confirmLockDown').removeClass('rj-dont-display');
+}
 
 function closeLockdownCase() {
-    $('#confirmRemoveWitness').addClass('rj-dont-display');
-    $('.witnesses-details').removeClass('removeWitness');
+    $('#confirmLockDown').addClass('rj-dont-display');
 }
 
 $(document).ready(function () {
 
-    $(".removeWitness").on("click", function (e) { 
-        $('#confirmRemoveWitness').removeClass('rj-dont-display');
-        $(this).closest('.witnesses-details').addClass('removeWitness');
+    $('.caseAccessLockedDown').hide();
 
-        var witnessName = $(this).closest('.witnesses-details').find('.name_WrapperWitness').text();
-        $('.witnessRemove').text(witnessName);
-    });
-
-    $("input[id=offCMS_Remove_Witness]").on("change", function (e) {
+    $("input[id=newCase_URN-Lockdown]").on("change", function (e) {
         if ($(this).is(':checked')) {
-            $('#confirm-RemoveWitness').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('onClick','return confirmRemoveWitness();');
+            $('#confirm-LockDown').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('type','submit');
         } else {
-            $('#confirm-RemoveWitness').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
-        }
-    });
-
-    $("#confirm-RemoveWitness").on("click", function (e) {
-        var witnessNumber = parseInt($('.witnesses-number').text()); 
-        if ($('input[id=offCMS_Remove_Witness]').is(':checked')) { 
-            $('.witnesses-number').text(witnessNumber - 1);
-            var witnessNumberNew = parseInt($('.witnesses-number').text()); 
-            if (witnessNumberNew <= 0) {
-                $('.witnesses-number').addClass('zero');
-            }
+            $('#confirm-LockDown').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
         }
     });
 
 })
-
-function confirmLockdownCase() {
-    $('.witnesses-details.removeWitness').hide();
-    $('#confirmRemoveWitness').addClass('rj-dont-display');
-}
-
 
 
 // ========================= TIMESTAMPS ========================= //

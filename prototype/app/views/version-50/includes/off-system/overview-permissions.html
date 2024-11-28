@@ -15,12 +15,12 @@
                     {% else %}
                         <p>There has been <strong>no additional permissions</strong> added to this case</p>
                     {% endif %}                    
-                    <button type="submit" class="govuk-button" style="" onclick="location.href='11B-case-permissions';">Add a contact</button>
+                    <button type="submit" class="govuk-button" style="" onclick="location.href='14-lock-down';">Add a contact</button>
                 </div>
             {% else %}
                 <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
                     <p>This case is open to anyone.</p>
-                    <button class="govuk-button" style="" onclick="return openLockDown();">Lock down case</button>
+                    <button class="govuk-button" style="" onclick="return openLockDown();">Restrict access</button>
                 </div>
             {% endif %}
         </div>
