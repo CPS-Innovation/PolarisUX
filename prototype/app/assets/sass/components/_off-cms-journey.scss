@@ -1,5 +1,9 @@
 // OFF CMS journey
 
+#homepage-journey {
+     margin-top: 2em;
+}
+
 .off-cms-journey {
      .wrapper {
           padding: 3em 0 1em 0;
@@ -1824,8 +1828,9 @@ nav.tube-map-ea {
                a {
                     margin-left: 0.5em;
                     font-weight: normal;
-                    padding-left: 0.5em;
-                    border-left: 1px solid $govuk-border-colour;
+                    font-size: 1.1875rem;
+                    // padding-left: 0.5em;
+                    // border-left: 1px solid $govuk-border-colour;
                }
           }
           .suspects-details-wrapper, .witnesses-details-wrapper {

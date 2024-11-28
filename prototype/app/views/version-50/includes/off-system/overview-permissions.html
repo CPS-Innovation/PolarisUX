@@ -20,10 +20,7 @@
             {% else %}
                 <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
                     <p>This case is open to anyone.</p>
-                    <form method="get" action="14-lock-down" id="">  
-                        <input id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="text" value="Yes" style="display: none;">
-                        <button type="submit" class="govuk-button" style="">Lock down case</button>
-                    </form>
+                    <button class="govuk-button" style="" onclick="return openLockDown();">Lock down case</button>
                 </div>
             {% endif %}
         </div>

@@ -20,9 +20,9 @@
                         Individual
                     {% endif %}
                 </div>
-                <a href="10A-add-witness">Edit</a><br>
+                <a href="10A-add-witness">Edit</a>
                 {% if data['addWitness_Details_Complainant'] %}
-                    <strong class="govuk-tag govuk-tag--blue">Complainant</strong>
+                    <br><strong class="govuk-tag govuk-tag--blue">Complainant</strong>
                 {% else %}
 
                 {% endif %}
@@ -30,7 +30,7 @@
                 <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="witnesses-details-wrapper has-details">
-                {% if '(L) - Vulnerable' in data['addWitness_Details-Type'] or data['addWitness_Details-Status'] == 'Yes' %}
+                {% if data['addWitness_Details_Key'] or '(L) - Vulnerable' in data['addWitness_Details-Type'] or data['addWitness_Details_Neurodivergent'] %}
                     <div class="title">
                         <h4 class="govuk-heading-s">Witness details</h4>
                         <div class="govuk-warning-text">
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                             {% else %}
-                                <p>This witness has no statement.</p>
+                                <p>This witness has no statements.</p>
                             {% endif %}
                             <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                         </section>
@@ -112,34 +112,14 @@
             <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
 
             <div class="witnesses-content-wrapper">
-
-                <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
-                        <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Norton</strong>, <span class="forename"> Asia</span></span></p>
+                        <p>This witness has no statements.</p>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                     </section>
                 </div>
-                <!-- SECTION 1 - END -->
-
-                <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                <div class="witnesses-sections">
-                    <section>
-                        <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>asia.norton@gmail.com</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Mobile phone <a href="#">Change <span class="visuallyhidden">witness mobile phone</span></a><span><strong>07765482276</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Home phone <a href="#">Change <span class="visuallyhidden">witness home phone</span></a> <span><strong>--</strong></span></p>
-                    </section>
-                </div>
-                <!-- SECTION 2 - END -->
             </div>
-        </div>
-        <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+
         </div>
     </div>
     <!-- WITNESS - 1 - END -->
@@ -154,34 +134,13 @@
         <div class="witnesses-details-wrapper has-details">
             <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
             <div class="witnesses-content-wrapper">
-
-                <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
-                        <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Horton</strong>, <span class="forename"> Rowan</span></span></p>
+                        <p>This witness has no statements.</p>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                     </section>
                 </div>
-                <!-- SECTION 1 - END -->
-
-                <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                <div class="witnesses-sections">
-                    <section>
-                        <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>rowan.horton@gogglemail.com</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Mobile phone <a href="#">Change <span class="visuallyhidden">witness mobile phone</span></a><span><strong>06684973357</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Home phone <a href="#">Change <span class="visuallyhidden">witness home phone</span></a> <span><strong>--</strong></span></p>
-                    </section>
-                </div>
-                <!-- SECTION 2 - END -->
             </div>
-        </div>
-        <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
         </div>
     </div>
     <!-- WITNESS - 2 - END -->
@@ -196,34 +155,13 @@
         <div class="witnesses-details-wrapper has-details">
             <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
             <div class="witnesses-content-wrapper">
-
-                <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
-                        <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Lindsey</strong>, <span class="forename"> Aishah</span></span></p>
+                        <p>This witness has no statements.</p>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                     </section>
                 </div>
-                <!-- SECTION 1 - END -->
-
-                <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                <div class="witnesses-sections">
-                    <section>
-                        <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>aishah.lindsey@hotmail.com</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Mobile phone <a href="#">Change <span class="visuallyhidden">witness mobile phone</span></a><span><strong>09987546621</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Home phone <a href="#">Change <span class="visuallyhidden">witness home phone</span></a> <span><strong>--</strong></span></p>
-                    </section>
-                </div>
-                <!-- SECTION 2 - END -->
             </div>
-        </div>
-        <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
         </div>
     </div>
     <!-- WITNESS - 3 - END -->
@@ -238,34 +176,13 @@
         <div class="witnesses-details-wrapper has-details">
             <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
             <div class="witnesses-content-wrapper">
-
-                <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
-                        <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Mclaughlin</strong>, <span class="forename"> Annie</span></span></p>
+                        <p>This witness has no statements.</p>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                     </section>
-                </div>
-                <!-- SECTION 1 - END -->
-
-                <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                <div class="witnesses-sections">
-                    <section>
-                        <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>annie.mclaughlin@cps.gov.uk</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Mobile phone <a href="#">Change <span class="visuallyhidden">witness mobile phone</span></a><span><strong>07768947751</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Home phone <a href="#">Change <span class="visuallyhidden">witness home phone</span></a> <span><strong>--</strong></span></p>
-                    </section>
-                </div>
-                <!-- SECTION 2 - END -->
+                </div>  
             </div>
-        </div>
-        <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
         </div>
     </div>
     <!-- WITNESS - 4 - END -->
@@ -280,35 +197,13 @@
         <div class="witnesses-details-wrapper has-details">
             <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
             <div class="witnesses-content-wrapper">
-
-                <!-- SECTION 1 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-0">Personal details</h4>
                 <div class="witnesses-sections">
                     <section>
-                        <p>Name <a href="10B-add-witness">Change <span class="visuallyhidden">witness name</span></a><span><strong class="surname">Odling</strong>, <span class="forename"> Mariam</span></span></p>
+                        <p>This witness has no statements.</p>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
                     </section>
                 </div>
-                <!-- SECTION 1 - END -->
-
-                <!-- SECTION 2 - START -->
-                <h4 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">Contact methods</h4>
-                <div class="witnesses-sections">
-                    <section>
-                        <p>Email address <a href="#">Change <span class="visuallyhidden">witness email address</span></a><span><strong>mariam.odling@adling.construction.org.uk</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Mobile phone <a href="#">Change <span class="visuallyhidden">witness mobile phone</span></a><span><strong>07468571102</strong></span></p>
-                    </section>
-                    <section>
-                        <p>Home phone <a href="#">Change <span class="visuallyhidden">witness home phone</span></a> <span><strong>--</strong></span></p>
-                    </section>
-                </div>
-                <!-- SECTION 2 - END -->
-
             </div>
-        </div>
-        <div class="cta-wrapper">
-            <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
         </div>
     </div>
     <!-- WITNESS - 5 - END -->
