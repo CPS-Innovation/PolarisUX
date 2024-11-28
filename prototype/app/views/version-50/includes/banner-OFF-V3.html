@@ -282,11 +282,34 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                    <ul style="display:flex; width:99%" class="">
+                    <ul style="display:flex; width:auto; float: left;" class="">
                         <li class="homepage"><a href="2-homepage">Home</a></li>
-                        <li class="search"><a href="13A-search">Search</a></li>
+                        <!-- <li class="search"><a href="13A-search">Search</a></li> -->
                         <li class="create-case"><a href="4A-create-case">Create a case</a></li>
                     </ul>
+                    <!-- SEARCH - START -->
+                    <div class="moj-primary-navigation__search">
+                        <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+                            <div class="moj-search-toggle__toggle">
+                                <button class="moj-search-toggle__button" type="button" aria-haspopup="true" aria-expanded="true">Find case<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="moj-search-toggle__button__icon"><path d="M7.433,12.5790048 C6.06762625,12.5808611 4.75763941,12.0392925 3.79217348,11.0738265 C2.82670755,10.1083606 2.28513891,8.79837375 2.28699522,7.433 C2.28513891,6.06762625 2.82670755,4.75763941 3.79217348,3.79217348 C4.75763941,2.82670755 6.06762625,2.28513891 7.433,2.28699522 C8.79837375,2.28513891 10.1083606,2.82670755 11.0738265,3.79217348 C12.0392925,4.75763941 12.5808611,6.06762625 12.5790048,7.433 C12.5808611,8.79837375 12.0392925,10.1083606 11.0738265,11.0738265 C10.1083606,12.0392925 8.79837375,12.5808611 7.433,12.5790048 L7.433,12.5790048 Z M14.293,12.579 L13.391,12.579 L13.071,12.269 C14.2300759,10.9245158 14.8671539,9.20813198 14.866,7.433 C14.866,3.32786745 11.5381325,-1.65045755e-15 7.433,-1.65045755e-15 C3.32786745,-1.65045755e-15 -1.65045755e-15,3.32786745 -1.65045755e-15,7.433 C-1.65045755e-15,11.5381325 3.32786745,14.866 7.433,14.866 C9.208604,14.8671159 10.9253982,14.2296624 12.27,13.07 L12.579,13.39 L12.579,14.294 L18.296,20 L20,18.296 L14.294,12.579 L14.293,12.579 Z"></path></svg></button>                            
+                            </div>
+                            <div class="moj-search-toggle__search">
+                                <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+                                    <form action="13B-search-results" method="get">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label moj-search__label govuk-visually-hidden" for="searchOFF_URN">Search</label>
+                                            <div id="searchOFF_URN-hint" class="govuk-hint moj-search__hint ">
+                                                Enter case operation name, team member, URN or defendants name
+                                            </div>
+                                            <input class="govuk-input moj-search__input " id="searchOFF_URN" name="searchOFF_URN" type="search" aria-describedby="searchOFF_URN-hint">
+                                        </div>
+                                        <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SEARCH - START -->
                 </div>
             </div>
         </div>

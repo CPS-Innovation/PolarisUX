@@ -14,6 +14,11 @@ $(document).ready(function () {
         }
     });
 
+    $(".moj-search-toggle__button").on("click", function (e) {
+        $(this).closest('.moj-primary-navigation__search').find('.moj-search').toggleClass('moj-js-hidden');
+    });
+
+
 })
 
 function sortTable() {

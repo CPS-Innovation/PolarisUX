@@ -32,6 +32,13 @@
           padding: 0;
           margin: 0;
      }
+     .moj-primary-navigation__search {
+          float: right;
+          .moj-search-toggle__button {
+               color: $govuk-link-colour;
+               
+          }
+     }
 }
 
 .main_Case_Title {
