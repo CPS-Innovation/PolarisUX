@@ -1424,7 +1424,7 @@ $(document).ready(function () {
     $('#witness_Police').hide();
 
     $("#addWitness_Form-Title").on("change", function (e) { 
-        if ($(this).val() == 'PC') {
+        if ($(this).val() == 'PC' || $(this).val() == 'DC' || $(this).val() == 'PS' || $(this).val() == 'DS' || $(this).val() == 'INS' || $(this).val() == 'DI' || $(this).val() == 'PCSO' || $(this).val() == 'CI' || $(this).val() == 'SC') {
             $('#witness_Police').show();
         } else {
             $('#witness_Police').hide();

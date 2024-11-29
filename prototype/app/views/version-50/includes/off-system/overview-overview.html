@@ -26,27 +26,22 @@
                         {% endif %}
                     </tr>
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Lead suspect/defendant name</th>
-                        {% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
-                            <td class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</td>
-                        {% elseif data['newCase_DefendantName-CompanyName'] %}
-                            <td class="govuk-table__cell">{{ data['newCase_DefendantName-CompanyName'] }}</td>
-                        {% else %}
-                            <td class="govuk-table__cell">--</td>
-                        {% endif %}
-                    </tr>
-                    {% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Suspect/defendant(s) name</th>
-                            {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
-                                <td class="govuk-table__cell"><span class="uppercase">{{ data['addSuspect_Form-Surname'] }}, </span>{{ data['addSuspect_Form-Forename'] }}</td>
-                            {% else %}
-                                <td class="govuk-table__cell">--</td>
-                            {% endif %}
-                        </tr>   
-                    {% else %}
+                        <th scope="row" class="govuk-table__header">Suspect/defendant name(s)</th>
+                        <td class="govuk-table__cell">
+                            {% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                                <span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}
+                                {% if data['addSuspect_Form-Surname'] or data['addSuspect_Form-Forename'] %}
+                                    <br><span class="uppercase">{{ data['addSuspect_Form-Surname'] }}, </span>{{ data['addSuspect_Form-Forename'] }}
+                                {% else %}
 
-                    {% endif %}
+                                {% endif %}
+                            {% elseif data['newCase_DefendantName-CompanyName'] %}
+                                {{ data['newCase_DefendantName-CompanyName'] }}
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>    
+                    </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Status</th>
                         {% if data['chargeAddedComplete'] == 'True' %}

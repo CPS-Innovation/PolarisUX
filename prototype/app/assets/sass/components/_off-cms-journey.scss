@@ -36,7 +36,7 @@
           float: right;
           .moj-search-toggle__button {
                color: $govuk-link-colour;
-               
+
           }
      }
 }
@@ -329,9 +329,9 @@ html {
                          &:hover, &:active, &:focus {
                               cursor: pointer;
                          }
-                         &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-7-content {
-                              padding-left: 1.5em;
-                         }
+                         // &.tab-2-content, &.tab-3-content, &.tab-4-content, &.tab-6-content, &.tab-7-content {
+                         //      padding-left: 1.5em;
+                         // }
                     }
                }
           }
@@ -1675,7 +1675,7 @@ nav.tube-map-ea {
 }
 
 .preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link, .hide-materials-link, .preview-materials-link {
-     font-size: 1rem;
+     font-size: 1.1875rem;
      float: right;
      margin-top: 0.75em;
      // padding-right: 1em;
@@ -1770,6 +1770,7 @@ nav.tube-map-ea {
           &.title-open {
                color: $govuk-link-colour;
                margin: 0 !important;
+               font-weight: bold;
                &:hover, &:active, &:focus {
                     cursor: pointer;
                }

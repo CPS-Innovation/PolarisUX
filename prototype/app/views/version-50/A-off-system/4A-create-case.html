@@ -27,38 +27,57 @@
                     <!-- OPTION 1 - END -->
 
                     <!-- OPTION 2 - START -->
-                    <div class="govuk-form-group" id="">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend"><h1 class="govuk-fieldset__heading">Add a lead suspect/defendant</h1></legend>
-                            <div class="govuk-radios" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="newCase_Defendant_Individual" name="newCase_Defendant" type="radio" value="Individual" data-aria-controls="newCase_Defendant_Individual-Conditional">
-                                    <label class="govuk-label govuk-radios__label" for="newCase_Defendant_Individual">Individual</label>
-                                </div>
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="newCase_Defendant_Individual-Conditional">
-                                    <div class="govuk-form-group" id="">
-                                        <label class="govuk-label" for="newCase_DefendantName-Surname">Surname</label>
-                                        <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Surname" name="newCase_DefendantName-Surname" type="text">
-                                    </div>   
-                                    <div class="govuk-form-group" id="">
-                                        <label class="govuk-label" for="newCase_DefendantName-Forename">Forename</label>
-                                        <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
-                                    </div>  
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="newCase_Defendant_Company" name="newCase_Defendant" type="radio" value="Company" data-aria-controls="newCase_Defendant_Company-Conditional">
-                                    <label class="govuk-label govuk-radios__label" for="newCase_Defendant_Company">Company</label>
-                                </div>
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="newCase_Defendant_Company-Conditional">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label" for="newCase_DefendantName-CompanyName">Company name</label>
-                                        <input class="govuk-input govuk-!-width-one-third" id="newCase_DefendantName-CompanyName" name="newCase_DefendantName-CompanyName" type="text" spellcheck="false">
+                    {% if 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
+                        <div class="govuk-form-group" id="">
+                            <label class="govuk-label" for="newCase_DefendantName-Surname">Surname</label>
+                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Surname" name="newCase_DefendantName-Surname" type="text">
+                        </div>   
+                        <div class="govuk-form-group govuk-!-margin-bottom-6" id="">
+                            <label class="govuk-label" for="newCase_DefendantName-Forename">Forename</label>
+                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
+                        </div>  
+                    {% else %}
+                        <div class="govuk-form-group govuk-!-margin-bottom-2" id="">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend"><h1 class="govuk-fieldset__heading">Add a suspect/defendant</h1></legend>
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="newCase_Defendant_Individual" name="newCase_Defendant" type="radio" value="Individual" data-aria-controls="newCase_Defendant_Individual-Conditional">
+                                        <label class="govuk-label govuk-radios__label" for="newCase_Defendant_Individual">Individual</label>
                                     </div>
-                                </div>                            
-                            </div>  
-                        </fieldset>
-                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="newCase_Defendant_Individual-Conditional">
+                                        <div class="govuk-form-group" id="">
+                                            <label class="govuk-label" for="newCase_DefendantName-Surname">Surname</label>
+                                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Surname" name="newCase_DefendantName-Surname" type="text">
+                                        </div>   
+                                        <div class="govuk-form-group" id="">
+                                            <label class="govuk-label" for="newCase_DefendantName-Forename">Forename</label>
+                                            <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
+                                        </div>  
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="newCase_Defendant_Company" name="newCase_Defendant" type="radio" value="Company" data-aria-controls="newCase_Defendant_Company-Conditional">
+                                        <label class="govuk-label govuk-radios__label" for="newCase_Defendant_Company">Company</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="newCase_Defendant_Company-Conditional">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="newCase_DefendantName-CompanyName">Company name</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="newCase_DefendantName-CompanyName" name="newCase_DefendantName-CompanyName" type="text" spellcheck="false">
+                                        </div>
+                                    </div>                            
+                                </div>  
+                            </fieldset>
+                        </div>
+                    {% endif %}
                     <!-- OPTION 2 - END -->
+
+                    <div class="govuk-warning-text govuk-!-margin-bottom-6 govuk-!-margin-top-0" style="margin-left: 0;">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-visually-hidden">Warning</span>
+                            More suspects can be added after case creation.
+                        </strong>
+                    </div>
 
                     <!-- OPTION 3 - START -->
                     <div class="govuk-form-group" id="newCase_URN-Value">

@@ -214,6 +214,23 @@
                     <fieldset class="govuk-fieldset">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
+                                {% if data['addWitness_Details_Vulnerable'] %}
+                                    <input class="govuk-checkboxes__input" id="addWitness_Details_Vulnerable" name="addWitness_Details_Vulnerable" type="checkbox" value="Vulnerable" checked>
+                                {% else %}
+                                    <input class="govuk-checkboxes__input" id="addWitness_Details_Vulnerable" name="addWitness_Details_Vulnerable" type="checkbox" value="Vulnerable">
+                                {% endif %}
+                                <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details_Vulnerable">Vulnerable</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- OPTION 9 - END -->
+
+                <!-- OPTION 10 - START -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
                                 {% if data['addWitness_Details_Statement'] %}
                                     <input class="govuk-checkboxes__input" id="addWitness_Details_Statement" name="addWitness_Details_Statement" type="checkbox" value="Statement" data-aria-controls="conditional-addWitness_Details_Statement" checked>
                                 {% else %}
@@ -264,9 +281,9 @@
                         </div>
                     </fieldset>
                 </div>
-                <!-- OPTION 9 - END -->
+                <!-- OPTION 10 - END -->
 
-                <!-- OPTION 10 - START -->
+                <!-- OPTION 11 - START -->
                 <div class="govuk-form-group">
 
                     <fieldset class="govuk-fieldset" aria-describedby="addWitness_Details-Type-hint">
@@ -291,10 +308,12 @@
                                 <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Expert" name="addWitness_Details-Type" type="checkbox" value="(X) - Expert">
                                 <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Expert">(X) - Expert</label>
                             </div>
-                            <div class="govuk-checkboxes__item" id="witnessType-Vulnerable">
+
+<!--                             <div class="govuk-checkboxes__item" id="witnessType-Vulnerable">
                                 <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Vulnerable" name="addWitness_Details-Type" type="checkbox" value="(L) - Vulnerable">
                                 <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Vulnerable">(L) - Vulnerable</label>
                             </div>
+ -->                            
                             <div class="govuk-checkboxes__item" id="witnessType-Intimidated">
                                 <input class="govuk-checkboxes__input" id="addWitness_Details-Type-Intimidated" name="addWitness_Details-Type" type="checkbox" value="(T) - Intimidated">
                                 <label class="govuk-label govuk-checkboxes__label" for="addWitness_Details-Type-Intimidated">(T) - Intimidated</label>
@@ -319,7 +338,7 @@
                     </fieldset>
 
                 </div>
-                <!-- OPTION 10 - END -->
+                <!-- OPTION 11 - END -->
 
                 <input id="addWitnessStarted" name="addWitnessStarted" type="text" value="true" style="display: none;">
                 <button type="submit" class="govuk-button" style="">Continue</button>
