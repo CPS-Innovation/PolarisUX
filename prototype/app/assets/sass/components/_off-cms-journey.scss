@@ -680,6 +680,12 @@ html {
                               float: right;
                               margin-top: 0.5em;
                          }
+                         .name_Wrapper {
+                              a {
+                                   float: left;
+                                   margin-right: 0.25em !important;
+                              }
+                         }
                     }
                     .documents-holder {
                          margin: 0;

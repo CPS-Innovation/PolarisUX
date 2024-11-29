@@ -1805,35 +1805,35 @@ $(document).ready(function () {
     });
 
     // Select all -  Folder 1
-    $("#transfer_Folder_1").click(function() {
+    $("#transfer_Folder_3").click(function() {
         if ($(this).is(':checked')) {
-            $('#transfer_Folder_1A, #transfer_Folder_1A_1, #transfer_Folder_1B, #transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4, #transfer_Folder_1C').attr('checked','checked');
+            $('#transfer_Folder_3A, #transfer_Folder_3A_1, #transfer_Folder_3B, #transfer_Folder_3B_1, #transfer_Folder_3B_2, #transfer_Folder_3B_3, #transfer_Folder_3B_4, #transfer_Folder_3C').attr('checked','checked');
         } else {
-            $('#transfer_Folder_1A, #transfer_Folder_1A_1, #transfer_Folder_1B, #transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4, #transfer_Folder_1C').removeAttr("checked");
+            $('#transfer_Folder_3A, #transfer_Folder_3A_1, #transfer_Folder_3B, #transfer_Folder_3B_1, #transfer_Folder_3B_2, #transfer_Folder_3B_3, #transfer_Folder_3B_4, #transfer_Folder_3C').removeAttr("checked");
         }
     });
 
-    $("#transfer_Folder_1A").click(function() {
+    $("#transfer_Folder_3A").click(function() {
         if ($(this).is(':checked')) {
-            $('#transfer_Folder_1A_1').attr('checked','checked');
+            $('#transfer_Folder_3A_1').attr('checked','checked');
         } else {
-            $('#transfer_Folder_1A_1').removeAttr("checked");
+            $('#transfer_Folder_3A_1').removeAttr("checked");
         }
     });
 
-    $("#transfer_Folder_1B").click(function() {
+    $("#transfer_Folder_3B").click(function() {
         if ($(this).is(':checked')) {
-            $('#transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4').attr('checked','checked');
+            $('#transfer_Folder_3B_1, #transfer_Folder_3B_2, #transfer_Folder_3B_3, #transfer_Folder_3B_4').attr('checked','checked');
         } else {
-            $('#transfer_Folder_1B_1, #transfer_Folder_1B_2, #transfer_Folder_1B_3, #transfer_Folder_1B_4').removeAttr("checked");
+            $('#transfer_Folder_3B_1, #transfer_Folder_3B_2, #transfer_Folder_3B_3, #transfer_Folder_3B_4').removeAttr("checked");
         }
     });
 
-    $("#transfer_Folder_1C").click(function() {
+    $("#transfer_Folder_3C").click(function() {
         if ($(this).is(':checked')) {
-            $('#transfer_Folder_1C_1, #transfer_Folder_1C_2, #transfer_Folder_1C_3, #transfer_Folder_1C_4, #transfer_Folder_1C_5, #transfer_Folder_1C_6').attr('checked','checked');
+            $('#transfer_Folder_3C_1, #transfer_Folder_3C_2, #transfer_Folder_3C_3, #transfer_Folder_3C_4, #transfer_Folder_3C_5, #transfer_Folder_3C_6').attr('checked','checked');
         } else {
-            $('#transfer_Folder_1C_1, #transfer_Folder_1C_2, #transfer_Folder_1C_3, #transfer_Folder_1C_4, #transfer_Folder_1C_5, #transfer_Folder_1C_6').removeAttr("checked");
+            $('#transfer_Folder_3C_1, #transfer_Folder_3C_2, #transfer_Folder_3C_3, #transfer_Folder_3C_4, #transfer_Folder_3C_5, #transfer_Folder_3C_6').removeAttr("checked");
         }
     });
 

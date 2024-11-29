@@ -3,12 +3,12 @@ $(document).ready(function () {
 
     $("#transfer_Materials").on("click", function (e) { 
         location.reload();
-        if ($('input[id=transfer_Folder_1]').is(':checked')) {
-            $.cookie("transfer_Folder_1", true, {path:'/'});
+        if ($('input[id=transfer_Folder_3]').is(':checked')) {
+            $.cookie("transfer_Folder_3", true, {path:'/'});
         }
     });
 
-    if ($.cookie("transfer_Folder_1") == 'true') {
+    if ($.cookie("transfer_Folder_3") == 'true') {
         // Numbers
         $('#materials_Nav .materials-number').removeClass('zero');
         $('.number-1').removeClass('zero');

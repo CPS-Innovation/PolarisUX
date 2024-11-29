@@ -30,7 +30,7 @@
                 <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="witnesses-details-wrapper has-details">
-                {% if data['addWitness_Details_Key'] or '(L) - Vulnerable' in data['addWitness_Details-Type'] or data['addWitness_Details_Neurodivergent'] %}
+                {% if data['addWitness_Details_Key'] or data['addWitness_Details_Vulnerable'] or data['addWitness_Details_Neurodivergent'] %}
                     <div class="title">
                         <h4 class="govuk-heading-s">Witness details</h4>
                         <div class="govuk-warning-text">
