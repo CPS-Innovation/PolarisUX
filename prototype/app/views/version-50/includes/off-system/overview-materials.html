@@ -5,10 +5,10 @@
 <nav class="secondaryTabs moj-sub-navigation tabsGroup-1" aria-label="Sub navigation" id="materials_Nav">
     <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item secondaryTab-Selected" id="secondaryTab-1">
-            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();"><span class="number materials-number">11</span> Case materials</a>
+            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Case materials (<span class="materials-number">11</span>)</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();"><span class="number comms-number">2</span> Outlook</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Outlook (<span class="comms-number">2</span>)</a>
         </li>
     </ul>
 </nav>
@@ -27,11 +27,15 @@
             </div>
 
             <div class="permissions">
-                {% if data['caseName_Type'] == 'Operation name' %}
-                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
-                {% else %}
-                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Drive" class="url-text" disabled>
-                {% endif %}                               
+                {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                    {% if data['newCase_OperationName'] %}
+                        <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Drive" class="url-text" disabled>
+                    {% else %}
+                        <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Drive" class="url-text" disabled>
+                    {% endif %}
+                {% elseif data['existing_Case'] == 'true' %}
+                    <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > Groundhog Day" id="filePath-Drive" class="url-text" disabled>
+                {% endif %}
                 <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
             </div>
 
@@ -48,11 +52,11 @@
             {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
                 {% include "../../includes/off-system/documents-Folder-SEOCID.html" %}
             {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/documents-Folder-SEOCID.html" %}
+                {% include "../../includes/off-system/documents-Folder-CTD.html" %}
             {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
                 {% include "../../includes/off-system/documents-Folder-SEOCID.html" %}
             {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/documents-Folder-SEOCID.html" %}
+                {% include "../../includes/off-system/documents-Folder-POC.html" %}
             {% else %}
                 {% include "../../includes/off-system/documents-Folder-SEOCID.html" %}
             {% endif %}           
@@ -75,21 +79,21 @@
                 <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
             </div>
 
+            <div class="loading" id="loading_transfer">
+                <div>
+                    <div class="hods-loading-spinner">
+                        <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                    </div>
+                    <p>Transferring documents from Shared Drive to Egress...</p>
+                </div>
+            </div>
+
             <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
-            {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/files-SEOCID.html" %}
-            {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/files-SEOCID.html" %}
-            {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/files-SEOCID.html" %}
-            {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-                {% include "../../includes/off-system/files-SEOCID.html" %}
-            {% else %}
-                {% include "../../includes/off-system/files-SEOCID.html" %}
-            {% endif %}           
+            {% include "../../includes/off-system/egress-files.html" %}
             <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
 
             <div class="cta-wrapper cta-materials govuk-!-margin-top-2">
+                <p>There are <strong class="selected-number">11 files</strong> to transfer</p>
                 <a disabled class="govuk-button" id="transfer_Materials" data-module="govuk-button">Transfer materials</a>
             </div>
 
@@ -109,11 +113,15 @@
             </div>
 
             <div class="permissions">
-                {% if data['caseName_Type'] == 'Operation name' %}
-                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
-                {% else %}
-                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Outlook" class="url-text" disabled>
-                {% endif %}                               
+                {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                    {% if data['newCase_OperationName'] %}
+                        <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_OperationName'] }}" id="filePath-Outlook" class="url-text" disabled>
+                    {% else %}
+                        <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}" id="filePath-Outlook" class="url-text" disabled>
+                    {% endif %}
+                {% elseif data['existing_Case'] == 'true' %}
+                    <input type="text" value="Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > Groundhog Day" id="filePath-Outlook" class="url-text" disabled>
+                {% endif %}
                 <a class="govuk-button copy-button" id="copyOutlookLink" onclick="copyOutlookLink()">Copy path</a>
             </div>
             <p> </p>

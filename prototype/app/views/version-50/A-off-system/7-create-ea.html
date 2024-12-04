@@ -469,7 +469,15 @@ $(document).ready(function() {
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <div class="editor-container">
-                        <div id="ea2Part8-Preview" contenteditable="false" class="editor" disabled></div>
+                        <div class="toolbar">
+                            <button onclick="execCmd('bold')"><b>B</b></button>
+                            <button onclick="execCmd('italic')"><i>I</i></button>
+                            <button onclick="execCmd('underline')"><u>U</u></button>
+                            <button onclick="execCmd('fontSize', '5')">A<small>A</small></button>
+                            <button onclick="execCmd('insertOrderedList')">1.</button>
+                            <button onclick="execCmd('insertUnorderedList')">•</button>
+                        </div>
+                        <div id="ea2Part8-Preview" contenteditable="true" class="editor"></div>
                     </div>
                 </fieldset>
             </div>

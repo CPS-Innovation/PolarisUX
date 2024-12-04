@@ -30,7 +30,7 @@
                 <div id="userDetails-1">
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email">Email an address or workspace ID</label>
+                        <label class="govuk-label" for="newCase_Access-Email">Enter an email address or workspace ID</label>
                         {% if data['newCase_Access-Email'] == 'true' %}
                             <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email" name="newCase_Access-Email" type="text" value="{{ data['newCase_Access-Email'] }}">
                         {% else %}
@@ -60,7 +60,7 @@
                 <div id="userDetails-2">
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email2">Email an address or workspace ID</label>
+                        <label class="govuk-label" for="newCase_Access-Email2">Enter an email address or workspace ID</label>
                         {% if data['newCase_Access-Email2'] == 'true' %}
                             <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email2" name="newCase_Access-Email2" type="text" value="{{ data['newCase_Access-Email2'] }}">
                         {% else %}
@@ -90,7 +90,7 @@
                 <div id="userDetails-3">
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email3">Email an address or workspace ID</label>
+                        <label class="govuk-label" for="newCase_Access-Email3">Enter an email address or workspace ID</label>
                         {% if data['newCase_Access-Email3'] == 'true' %}
                             <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email3" name="newCase_Access-Email3" type="text" value="{{ data['newCase_Access-Email3'] }}">
                         {% else %}
@@ -120,7 +120,7 @@
                 <div id="userDetails-4">
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email4">Email an address or workspace ID</label>
+                        <label class="govuk-label" for="newCase_Access-Email4">Enter an email address or workspace ID</label>
                         {% if data['newCase_Access-Email4'] == 'true' %}
                             <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email4" name="newCase_Access-Email4" type="text" value="{{ data['newCase_Access-Email4'] }}">
                         {% else %}
@@ -150,7 +150,7 @@
                 <div id="userDetails-5">
                     <!-- OPTION 1 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="newCase_Access-Email5">Email an address or workspace ID</label>
+                        <label class="govuk-label" for="newCase_Access-Email5">Enter an email address or workspace ID</label>
                         {% if data['newCase_Access-Email5'] == 'true' %}
                             <input class="govuk-input govuk-input--width-20" id="newCase_Access-Email5" name="newCase_Access-Email5" type="text" value="{{ data['newCase_Access-Email5'] }}">
                         {% else %}
@@ -196,7 +196,15 @@
             <h2 class="govuk-heading-s" style="">CPS team members</h2>
             <div class="contacts">
                 <div id="new-contacts">
-                    <p><span class="icon-new user"></span>{{ data['offCMS_Username'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Role'] }}</strong></p>
+                    <p><span class="icon-new user"></span>{{ data['offCMS_Username'] }}<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                            {% if data['newCase_Access-Role'] %}
+                                {{ data['newCase_Access-Role'] }}
+                            {% else %}
+                                Administrator
+                            {% endif %}
+                        </strong>
+                    </p>
                     {% if data['newCase_Access-Email'] %}
                         <p><span class="icon-new user"></span>{{ data['newCase_Access-Email'] }}<br><strong class="govuk-tag govuk-tag--blue">{{ data['newCase_Access-Permissions'] }}</strong></p>
                     {% else %}

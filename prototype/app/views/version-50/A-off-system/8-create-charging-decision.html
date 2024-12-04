@@ -67,82 +67,23 @@ $(document).ready(function() {
         <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
         <div class="ea-title-wrapper">
-            {% if data['caseName_Type'] == 'Operation name' %}
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-0" style="">{{ data['newCase_OperationName'] }}</h1>
+            {% if data['existing_Case'] == 'true' %}
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-0" style="">Groundhog day</h1>
+                <span class="govuk-caption-m">920620952/24</span>
             {% else %}
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-0" style=""><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
-            {% endif %}                               
-            <span class="govuk-caption-m">
-            {{ data['newCase_URN-A'] }}
-                <!-- CONDITIONAL ELEMTENTS - per division - START -->
-                <!-- SCD -->
-                {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
-                    {{ data['newCase_URN-B'] }}
-                <!-- CTD -->
-                {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                    {% if data['newCase_URN-B'] == '14' %}
-                        01
-                    {% elseif data['newCase_URN-B'] == '15' %}
-                        02
-                    {% elseif data['newCase_URN-B'] == '16' %}
-                        03
-                    {% elseif data['newCase_URN-B'] == '17' %}
-                        04
-                    {% elseif data['newCase_URN-B'] == '18' %}
-                        05
-                    {% elseif data['newCase_URN-B'] == '19' %}
-                        06
-                    {% elseif data['newCase_URN-B'] == '20' %}
-                        07
-                    {% elseif data['newCase_URN-B'] == '21' %}
-                        08
-                    {% elseif data['newCase_URN-B'] == '22' %}
-                        09
-                    {% elseif data['newCase_URN-B'] == '23' %}
-                        10
-                    {% elseif data['newCase_URN-B'] == '24' %}
-                        11
-                    {% elseif data['newCase_URN-B'] == '25' %}
-                        12
-                    {% elseif data['newCase_URN-B'] == '26' %}
-                        13
-                    {% elseif data['newCase_URN-B'] == '27' %}
-                        14
-                    {% elseif data['newCase_URN-B'] == '28' %}
-                        15
-                    {% else %}
-                        {{ data['newCase_URN-B'] }}
-                    {% endif %}
-                <!-- SEOCID -->
-                {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
-                    {% if data['newCase_URN-B-77'] %}
-                        {{ data['newCase_URN-B-77'] }} 
-                    {% elseif data['newCase_URN-B-83'] %}
-                        {{ data['newCase_URN-B-83'] }}
-                    {% elseif data['newCase_URN-B-85'] %}
-                        {{ data['newCase_URN-B-85'] }}
-                    {% elseif data['newCase_URN-B-86'] %}
-                        {{ data['newCase_URN-B-86'] }}
-                    {% elseif data['newCase_URN-B-87'] %}
-                        {{ data['newCase_URN-B-87'] }}
-                    {% elseif data['newCase_URN-B-88'] %}
-                        {{ data['newCase_URN-B-88'] }}
-                    {% elseif data['newCase_URN-B-96'] %}
-                        {{ data['newCase_URN-B-96'] }}
-                    {% else %}
-                        {{ data['newCase_URN-B-83'] }}
-                    {% endif %}
-                <!-- POC -->
-                {% elseif 'poc' in data['offCMS_Username'] or 'POC' in data['offCMS_Username'] %}
-
+                {% if data['caseName_Type'] == 'Operation name' %}
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-0" style="">{{ data['newCase_OperationName'] }}</h1>
                 {% else %}
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-0" style=""><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}, </span>{{ data['newCase_DefendantName-Forename'] }}</h1>
+                {% endif %}                               
+                <span class="govuk-caption-m">
+                    {{ data['newCase_URN-A'] }}
                     {{ data['newCase_URN-B'] }}
-                {% endif %}
-                <!-- CONDITIONAL ELEMTENTS - per division - START -->
-                {{ data['newCase_URN-C'] }}
-                /
-                {{ data['newCase_URN-D'] }}
-            </span>
+                    {{ data['newCase_URN-C'] }}
+                    /
+                    {{ data['newCase_URN-D'] }}
+                </span>
+            {% endif %} 
             <p>Autosave is on. Last saved <span id="auto-save"></span></p>
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-10">
         </div>
@@ -936,7 +877,7 @@ $(document).ready(function() {
                             <button onclick="execCmd('insertOrderedList')">1.</button>
                             <button onclick="execCmd('insertUnorderedList')">•</button>
                         </div>
-                        <div id="eaCaseSummary-Preview" contenteditable="false" class="editor" disabled></div>
+                        <div id="eaCaseSummary-Preview" contenteditable="true" class="editor"></div>
                     </div>
                 </fieldset>
             </div>

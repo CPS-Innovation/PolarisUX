@@ -45,7 +45,7 @@
                     {% endif %}
                 </div>
                 <a href="#" class="">Edit</a>
-                <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
                 <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="flexbox">
@@ -95,15 +95,17 @@
             </div>
         </div>
     </div>
-{% elseif data['newCase_DefendantName-CompanyName'] %}
-    <div class="suspects">
+{% else %}
+
+{% endif %}
+
+{% if data['newCase_DefendantName-CompanyName'] %}
+    <div class="suspects single">
         <div class="suspects-details open">
             <h3 class="govuk-heading-m">
-                <div class="name_Wrapper">
-                    {{ data['newCase_DefendantName-CompanyName'] }}
-                </div>
+                <div class="name_Wrapper">{{ data['newCase_DefendantName-CompanyName'] }}</div>
                 <a href="#" class="">Edit</a>
-                <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
                 <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="flexbox">
@@ -164,7 +166,7 @@
                         {% endif %}
                     </div>
                     <a href="#" class="">Edit</a>
-                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
                     <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
                 </h3>
                 {% if data['addSuspectPerson'] == 'true' %}
@@ -172,29 +174,32 @@
                         <div class="suspects-details-wrapper has-details">
                             <div class="title">
                                 <h4 class="govuk-heading-s">Charge details</h4>
-                                <div class="govuk-warning-text">
-                                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                                        <strong class="govuk-warning-text__text">
-                                        <span class="govuk-visually-hidden">Warning</span>
-                                        Suspect is 
-                                        {% if data['addSuspect_Form_YouthOffender'] %}
-                                            a Youth Offender,
-                                        {% else %}
+                                {% if data['addSuspect_Form_YouthOffender'] or data['addSuspect_Form_Vulnerable'] or data['addSuspect_Form_Neurodivergent'] %}
+                                    <div class="govuk-warning-text">
+                                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                            <strong class="govuk-warning-text__text">
+                                            <span class="govuk-visually-hidden">Warning</span>
+                                            Suspect is 
+                                            {% if data['addSuspect_Form_YouthOffender'] %}
+                                                a Youth Offender,
+                                            {% else %}
 
-                                        {% endif %}
-                                        {% if data['addSuspect_Form_Vulnerable'] %}
-                                            Vulnerable,
-                                        {% else %}
+                                            {% endif %}
+                                            {% if data['addSuspect_Form_Vulnerable'] %}
+                                                Vulnerable,
+                                            {% else %}
 
-                                        {% endif %}
-                                        {% if data['addSuspect_Form_Neurodivergent'] %}
-                                            Neurodivergent
-                                        {% else %}
+                                            {% endif %}
+                                            {% if data['addSuspect_Form_Neurodivergent'] %}
+                                                Neurodivergent
+                                            {% else %}
 
-                                        {% endif %}
-                                    </strong>
-                                </div>
+                                            {% endif %}
+                                        </strong>
+                                    </div>
+                                {% else %}
 
+                                {% endif %}
                             </div>
                             <div class="suspects-content-wrapper">
                                 <div class="suspects-sections">
@@ -315,7 +320,7 @@
                         {{ data['addSuspect_CompanyName'] }}
                     </div>
                     <a href="#" class="">Edit</a>
-                    <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+                    <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
                     <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
                 </h3>
                 <div class="flexbox">
@@ -369,7 +374,7 @@
                 CHAVEZ, Zahra
             </div>
             <a href="#" class="">Edit</a>
-            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="flexbox">
@@ -401,7 +406,7 @@
         <h3 class="govuk-heading-m">
             <div class="name_Wrapper">TERRY, Jayson</div>
             <a href="#" class="">Edit</a>
-            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="flexbox">
@@ -433,7 +438,7 @@
         <h3 class="govuk-heading-m">
             <div class="name_Wrapper">SINGH, Mateo</div>
             <a href="#" class="">Edit</a>
-            <a onclick="return toggleButtonShow();" class="preview-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="flexbox">
@@ -443,7 +448,7 @@
                     <div class="suspects-sections">
                         <section>
                             <p>
-                                There are no charges for <strong>SINGH, Mateo </strong> at this time.
+                                There are no charges for <strong>SINGH, Mateo</strong> at this time.
                             </p>
                             <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
                             <button type="submit" class="govuk-button govuk-button--secondary margin_left" style="" onclick="">Upload a new charge</button>
@@ -462,6 +467,110 @@
 
 </div>
 <!-- MULTIPLE SUSPECTS - END -->
+
+<!-- TRANSFERRED SUSPECTS - START -->
+<div class="suspects" id="transferred_Suspect_Details">
+
+    <!-- SUSPECT - 1 - START -->
+    <div class="suspects-details open multiple_Suspect_1">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">
+                HICKS, Niamh
+            </div>
+            <a href="#" class="">Edit</a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>HICKS, Niamh</strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                            <button type="submit" class="govuk-button govuk-button--secondary margin_left" style="" onclick="">Upload a new charge</button>
+                            {% if data['chargeAddedComplete'] == 'true' %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                            {% else %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                            {% endif %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 1 - END -->
+
+    <!-- SUSPECT - 2 - START -->
+    <div class="suspects-details open multiple_Suspect_2">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">FRANCIS, Emily</div>
+            <a href="#" class="">Edit</a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>FRANCIS, Emily</strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                            <button type="submit" class="govuk-button govuk-button--secondary margin_left" style="" onclick="">Upload a new charge</button>
+                            {% if data['chargeAddedComplete'] == 'true' %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                            {% else %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                            {% endif %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 2 - END -->
+
+    <!-- SUSPECT - 3 - START -->
+    <div class="suspects-details open multiple_Suspect_3">
+        <h3 class="govuk-heading-m">
+            <div class="name_Wrapper">CARTER, Charlie</div>
+            <a href="#" class="">Edit</a>
+            <a onclick="return toggleButtonShow();" class="preview-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="flexbox">
+            <div class="suspects-details-wrapper has-details">
+                <div class="title"><h4 class="govuk-heading-s">Charge details</h4></div>
+                <div class="suspects-content-wrapper">
+                    <div class="suspects-sections">
+                        <section>
+                            <p>
+                                There are no charges for <strong>CARTER, Charlie</strong> at this time.
+                            </p>
+                            <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
+                            <button type="submit" class="govuk-button govuk-button--secondary margin_left" style="" onclick="">Upload a new charge</button>
+                            {% if data['chargeAddedComplete'] == 'true' %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                            {% else %}
+                                <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                            {% endif %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUSPECT - 3 - END -->
+
+</div>
+<!-- TRANSFERRED SUSPECTS - END -->
 
 <div class="cta-wrapper">
     <div class="add-new">

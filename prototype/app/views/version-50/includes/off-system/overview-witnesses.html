@@ -26,7 +26,7 @@
                 {% else %}
 
                 {% endif %}
-                <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+                <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
                 <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="witnesses-details-wrapper has-details">
@@ -65,19 +65,16 @@
                     <div class="witnesses-sections">
                         <section>
                             {% if data['addWitness_Details_Statement'] %}
-                                <div class="hods-timeline" id="">
+                                <div class="hods-timeline statements" id="">
                                     <div class="hods-timeline__item" id="">
                                         <table class="govuk-table govuk-!-margin-bottom-0">
                                             <tbody class="govuk-table__body">
                                                 <tr class="govuk-table__row" >
                                                     <th scope="row" class="govuk-table__header">
-                                                        <span id="">stmt_TANNON_1989_1_JUNE_mg11.pdf</span><br>
-                                                        <span class="added-by">date of statement {{ data['addWitness_Details_Date-Day'] }}/{{ data['addWitness_Details_Date-Month'] }}/{{ data['addWitness_Details_Date-Year'] }}</span><br>
                                                         <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                        <a href="" id="">stmt_<span class="uppercase">{{ data['addWitness_Form-Surname'] }}</span>_1989_1_JUNE_mg11.pdf</a><br>
+                                                        <span class="added-by">date of statement {{ data['addWitness_Details_Date-Day'] }}/{{ data['addWitness_Details_Date-Month'] }}/{{ data['addWitness_Details_Date-Year'] }}</span>
                                                     </th>
-                                                    <td class="govuk-table__cell">
-                                                        <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="">View</button>
-                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -102,10 +99,10 @@
 <div class="witnesses" id="multiple_Witnesses_Details">
 
     <!-- WITNESS - 1 - START -->
-    <div class="witnesses-details open">
+    <div class="witnesses-details open multiple_Witness_1">
         <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>NORTON</span>, Asia</div>
-            <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
@@ -125,10 +122,10 @@
     <!-- WITNESS - 1 - END -->
 
     <!-- WITNESS - 2 - START -->
-    <div class="witnesses-details open">
+    <div class="witnesses-details open multiple_Witness_2">
         <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>HORTON</span>, Rowan</div>
-            <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
@@ -146,10 +143,10 @@
     <!-- WITNESS - 2 - END -->
 
     <!-- WITNESS - 3 - START -->
-    <div class="witnesses-details open">
+    <div class="witnesses-details open multiple_Witness_3">
         <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>LINDSEY</span>, Aishah</div>
-            <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
@@ -167,10 +164,10 @@
     <!-- WITNESS - 3 - END -->
 
     <!-- WITNESS - 4 - START -->
-    <div class="witnesses-details open">
+    <div class="witnesses-details open multiple_Witness_4">
         <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>McLAUGHLIN</span>, Annie</div>
-            <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
@@ -188,10 +185,10 @@
     <!-- WITNESS - 4 - END -->
 
     <!-- WITNESS - 5 - START -->
-    <div class="witnesses-details open">
+    <div class="witnesses-details open multiple_Witness_5">
         <h3 class="govuk-heading-m">
             <div class="name_WrapperWitness"><span>ODLING</span>, Mariam</div>
-            <a onclick="return toggleButtonShow();" class="preview-witness-link">Preview <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
@@ -210,6 +207,228 @@
 
 </div>
 <!-- MULTIPLE WITNESSES - END -->
+
+<!-- TRANSFERRED WITNESSES - START -->
+<div class="witnesses" id="transferred_Witness_Details">
+
+    <!-- WITNESS - 1 - START -->
+    <div class="witnesses-details open multiple_Witness_1">
+        <h3 class="govuk-heading-m">
+            <div class="name_WrapperWitness"><span>JENKINS</span>, Naomi</div>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="witnesses-details-wrapper has-details">
+            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+
+            <div class="witnesses-content-wrapper">
+                <div class="witnesses-sections">
+                    <section>
+                        <div class="hods-timeline statements" id="">
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0 statements">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_JENKINS_2034_1_JUNE_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Blaynee</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0 statements">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_JENKINS_2018_2_AUGUST_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Blaynee</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- WITNESS - 1 - END -->
+
+    <!-- WITNESS - 2 - START -->
+    <div class="witnesses-details open multiple_Witness_2">
+        <h3 class="govuk-heading-m">
+            <div class="name_WrapperWitness"><span>PALMER</span>, Henry</div>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="witnesses-details-wrapper has-details">
+            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="witnesses-content-wrapper">
+                <div class="witnesses-sections">
+                    <section>
+                        <div class="hods-timeline statements" id="">
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_PALMER_2025_1_JUNE_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Blaynee</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WITNESS - 2 - END -->
+
+    <!-- WITNESS - 3 - START -->
+    <div class="witnesses-details open multiple_Witness_3">
+        <h3 class="govuk-heading-m">
+            <div class="name_WrapperWitness"><span>BLAKE</span>, Robert</div>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="witnesses-details-wrapper has-details">
+            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="witnesses-content-wrapper">
+                <div class="witnesses-sections">
+                    <section>
+                        <div class="hods-timeline statements" id="">
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_BLAKE_2024_1_JUNE_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Jones</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 5</strong>
+                                                <a href="#">stmt_BLAKE_2006_2_SEPTEMBER_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Jones</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 3</strong>
+                                                <a href="#">stmt_BLAKE_2065_3_JANUARY_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Jones</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WITNESS - 3 - END -->
+
+    <!-- WITNESS - 4 - START -->
+    <div class="witnesses-details open multiple_Witness_4">
+        <h3 class="govuk-heading-m">
+            <div class="name_WrapperWitness"><span>SIMMONS</span>, James</div>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="witnesses-details-wrapper has-details">
+            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="witnesses-content-wrapper">
+                <div class="witnesses-sections">
+                    <section>
+                        <div class="hods-timeline statements" id="">
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_SIMMONS_2017_1_MARCH_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Blaynee</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                    </section>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- WITNESS - 4 - END -->
+
+    <!-- WITNESS - 5 - START -->
+    <div class="witnesses-details open multiple_Witness_5">
+        <h3 class="govuk-heading-m">
+            <div class="name_WrapperWitness"><span>WALL</span>, Daisy</div>
+            <a onclick="return toggleButtonShow();" class="preview-witness-link">Show <span class="icon-new arrow-down"></span></a>
+            <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
+        </h3>
+        <div class="witnesses-details-wrapper has-details">
+            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="witnesses-content-wrapper">
+                <div class="witnesses-sections">
+                    <section>
+                        <div class="hods-timeline statements" id="">
+                            <div class="hods-timeline__item" id="">
+                                <table class="govuk-table govuk-!-margin-bottom-0">
+                                    <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row" >
+                                            <th scope="row" class="govuk-table__header">
+                                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                                <a href="#">stmt_WALL_2012_1_DECEMBER_mg11.pdf</a><br>
+                                                <span class="added-by">created by PC Jones</span>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="govuk-button govuk-button--secondary removeWitness govuk-button--warning">Remove witness</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WITNESS - 5 - END -->
+
+</div>
+<!-- TRANSFERRED WITNESSES - END -->
 
 <div class="cta-wrapper">
     <div class="add-new">

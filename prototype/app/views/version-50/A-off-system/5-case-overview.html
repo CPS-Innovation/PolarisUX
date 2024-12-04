@@ -9,6 +9,10 @@
     {% include "../includes/off-system/modalConfirmation-RemoveWitness.html" %}
     {% include "../includes/off-system/modalConfirmation-RemoveUser.html" %}
     {% include "../includes/off-system/modalConfirmation-LockDown.html" %}
+    {% include "../includes/off-system/modal-MaterialsTransfer_1.html" %}
+    {% include "../includes/off-system/modal-MaterialsTransfer_2.html" %}
+    {% include "../includes/off-system/modal-egressTransfer.html" %}
+    {% include "../includes/off-system/modal-MaterialsMove.html" %}
 {% endblock %}
 {% block content %}
 
@@ -80,9 +84,17 @@
                     {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
                         <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Defendants & Charges (<span class="suspects-number">2</span>)</a></li>
                     {% elseif data['addSuspectStarted'] == 'true' %}
-                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">2</span>)</a></li>
+                        {% if data['addSuspectStarted'] == 'true' and data['newCase_DefendantName-CompanyName'] and data['newCase_DefendantName-Surname'] %}
+                            <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">3</span>)</a></li>
+                        {% else %}
+                            <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">2</span>)</a></li>
+                        {% endif %}
                     {% else %}
-                        <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">1</span>)</a></li>
+                        {% if data['newCase_DefendantName-CompanyName'] and data['newCase_DefendantName-Surname'] %}
+                            <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">2</span>)</a></li>
+                        {% else %}
+                            <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">1</span>)</a></li>
+                        {% endif %}
                     {% endif %}
                 {% else %}
                     <li class="govuk-tabs__list-item" id="tab-3"><a class="tab-link tab-3-content">Suspects & Charges (<span class="suspects-number">0</span>)</a></li>
