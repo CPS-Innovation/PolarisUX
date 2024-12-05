@@ -2088,6 +2088,12 @@ function materials_Row_6() {
 // =================================== MATERIALS - COOKIES =================================== //
 $(document).ready(function () {
 
+    // File location
+    $("#transfer_Files_to_Shared_Drive").on("click", function (e) { 
+        $.cookie("transfer_Files_to_Shared_Drive", $('input[name=transfer_Folder_Destination]:checked').val(), {path:'/'});
+    });
+
+    // Egress
     $("#transfer_Materials").on("click", function (e) { 
         if ($('input[id=transfer_Folder_3]').is(':checked')) {
             $.cookie("transfer_Folder_3", true, {path:'/'});
@@ -2099,15 +2105,8 @@ $(document).ready(function () {
         $('#materials_Nav .materials-number').removeClass('zero');
         $('.number-2').removeClass('zero');
 
-        var materialsNumber1 = parseInt($('#materials_Nav .materials-number').text());
-        var materialsNumber2 = parseInt($('.number-2').text());
-        var inboundNumber1 = parseInt($('#materials_Nav .inbound-number').text());
-        $('.number-2').text(materialsNumber2 + 11);
-
-        // Shared drive
-        $('.materials_section_2 .documents-available').css('display','inline-block');
-        $('.materials_section_2 .documents-holder').hide();
-        $('.materials_section_2').addClass('documents');
+        // var materialsNumber1 = parseInt($('#materials_Nav .materials-number').text());
+        // var inboundNumber1 = parseInt($('#materials_Nav .inbound-number').text());
 
         // Egress section
         $('#materials-table .folder.materials_Row_3').addClass('empty');
@@ -2126,6 +2125,127 @@ $(document).ready(function () {
             $('.accordion-wrapper').show();
         }, 3000)
 
+    }
+
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_1') {
+        var materialsNumber1 = parseInt($('.number-1').text());
+        $('.number-1').text(materialsNumber1 + 11);
+        // Shared drive
+        $('.materials_section_1 .documents-available').css('display','inline-block');
+        $('.materials_section_1 .documents-holder').hide();
+        $('.materials_section_1').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_2') {
+        var materialsNumber2 = parseInt($('.number-2').text());
+        $('.number-2').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_2 .documents-available').css('display','inline-block');
+        $('.materials_section_2 .documents-holder').hide();
+        $('.materials_section_2').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_3') {
+        var materialsNumber3 = parseInt($('.number-3').text());
+        $('.number-3').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_3 .documents-available').css('display','inline-block');
+        $('.materials_section_3 .documents-holder').hide();
+        $('.materials_section_3').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_4') {
+        var materialsNumber4 = parseInt($('.number-4').text());
+        $('.number-4').text(materialsNumber4 + 11);
+        // Shared drive
+        $('.materials_section_4 .documents-available').css('display','inline-block');
+        $('.materials_section_4 .documents-holder').hide();
+        $('.materials_section_4').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_5') {
+        var materialsNumber5 = parseInt($('.number-5').text());
+        $('.number-5').text(materialsNumber5 + 11);
+        // Shared drive
+        $('.materials_section_5 .documents-available').css('display','inline-block');
+        $('.materials_section_5 .documents-holder').hide();
+        $('.materials_section_5').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_6') {
+        var materialsNumber6 = parseInt($('.number-6').text());
+        $('.number-6').text(materialsNumber6 + 11);
+        // Shared drive
+        $('.materials_section_6 .documents-available').css('display','inline-block');
+        $('.materials_section_6 .documents-holder').hide();
+        $('.materials_section_6').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_7') {
+        var materialsNumber7 = parseInt($('.number-2').text());
+        $('.number-7').text(materialsNumber7 + 11);
+        // Shared drive
+        $('.materials_section_7 .documents-available').css('display','inline-block');
+        $('.materials_section_7 .documents-holder').hide();
+        $('.materials_section_72').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_8') {
+        var materialsNumber8 = parseInt($('.number-2').text());
+        $('.number-8').text(materialsNumber8 + 11);
+        // Shared drive
+        $('.materials_section_8 .documents-available').css('display','inline-block');
+        $('.materials_section_8 .documents-holder').hide();
+        $('.materials_section_8').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_9') {
+        var materialsNumber9 = parseInt($('.number-9').text());
+        $('.number-9').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_9 .documents-available').css('display','inline-block');
+        $('.materials_section_9 .documents-holder').hide();
+        $('.materials_section_9').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_10') {
+        var materialsNumber10 = parseInt($('.number-10').text());
+        $('.number-10').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_10 .documents-available').css('display','inline-block');
+        $('.materials_section_10 .documents-holder').hide();
+        $('.materials_section_10').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_11') {
+        var materialsNumber11 = parseInt($('.number-11').text());
+        $('.number-11').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_11 .documents-available').css('display','inline-block');
+        $('.materials_section_11 .documents-holder').hide();
+        $('.materials_section_11').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_12') {
+        var materialsNumber12 = parseInt($('.number-12').text());
+        $('.number-12').text(materialsNumber12 + 11);
+        // Shared drive
+        $('.materials_section_12 .documents-available').css('display','inline-block');
+        $('.materials_section_12 .documents-holder').hide();
+        $('.materials_section_12').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_13') {
+        var materialsNumber13 = parseInt($('.number-2').text());
+        $('.number-13').text(materialsNumber13 + 11);
+        // Shared drive
+        $('.materials_section_13 .documents-available').css('display','inline-block');
+        $('.materials_section_13 .documents-holder').hide();
+        $('.materials_section_13').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_14') {
+        var materialsNumber14 = parseInt($('.number-14').text());
+        $('.number-14').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_14 .documents-available').css('display','inline-block');
+        $('.materials_section_14 .documents-holder').hide();
+        $('.materials_section_14').addClass('documents');
+    }
+    if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_15') {
+        var materialsNumber15 = parseInt($('.number-15').text());
+        $('.number-15').text(materialsNumber2 + 11);
+        // Shared drive
+        $('.materials_section_15 .documents-available').css('display','inline-block');
+        $('.materials_section_15 .documents-holder').hide();
+        $('.materials_section_15').addClass('documents');
     }
 
     // Transfer Suspects
