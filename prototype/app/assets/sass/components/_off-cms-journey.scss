@@ -49,11 +49,12 @@
      .title-wrapper {
           display: inline-block;
           float: left;
+          clear: both;
      }
      .govuk-notification-banner {
-          float: right;
+          float: left;
           margin-top: 10px;
-          margin-bottom: 15px;
+          margin-bottom: 0;
           .govuk-notification-banner__header {
                padding-left: 10px;
           }
@@ -542,12 +543,27 @@ html {
      }
 }
 
+#userDetails-2, #userDetails-3, #userDetails-4, #userDetails-5 {
+     display: none;
+     &.active {
+          display: inline-block;
+          width: 100%;
+     }
+}
+
+#removeUser1, #removeUser2, #removeUser3, #removeUser4, #removeUser5 {
+     float: right;
+}
+
 .section-wrapper {
      &.ea_Review {
           section {
                .section-content {
-                    padding: 1em 4% 1em 4%;
-                    width: 92%; 
+                    padding: 1em 5.5% 1em 5.5%;
+                    width: 89%; 
+                    .govuk-table__header {
+                         width: 75%;
+                    }
                }
           }
      }
@@ -1367,6 +1383,12 @@ nav.moj-sub-navigation {
                color: $govuk-secondary-text-colour;
           }
      }
+     .hods-timeline__item {
+          width: 95% !important;
+          table {
+               margin-right: 0;
+          }
+     }
      .govuk-table__cell, .govuk-table__header {
           &.with-button {
                padding: 0;
@@ -1378,6 +1400,9 @@ nav.moj-sub-navigation {
           float: right;
           margin-bottom: 0;
           font-size: 1rem;
+          &:first-of-type {
+               padding-right: 0;
+          }
      }
 }
 
@@ -1728,7 +1753,7 @@ nav.tube-map-ea {
 .preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link, .hide-materials-link, .preview-materials-link {
      font-size: 1.1875rem;
      float: right;
-     margin-top: 0.75em;
+     margin-top: 0.25em;
      // padding-right: 1em;
      text-decoration: underline;
      font-weight: normal;
@@ -1965,6 +1990,9 @@ nav.tube-map-ea {
                                                   float: right;
                                              }
                                         }
+                                   }
+                                   .govuk-warning-text {
+                                        margin-left: 0;
                                    }
                                    span {
                                         float: right;

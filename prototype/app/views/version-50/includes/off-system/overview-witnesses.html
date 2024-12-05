@@ -20,7 +20,6 @@
                         Individual
                     {% endif %}
                 </div>
-                <a href="10A-add-witness">Edit</a>
                 {% if data['addWitness_Details_Complainant'] %}
                     <br><strong class="govuk-tag govuk-tag--blue">Complainant</strong>
                 {% else %}
@@ -30,40 +29,41 @@
                 <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
             </h3>
             <div class="witnesses-details-wrapper has-details">
-                {% if data['addWitness_Details_Key'] or data['addWitness_Details_Vulnerable'] or data['addWitness_Details_Neurodivergent'] %}
-                    <div class="title">
-                        <h4 class="govuk-heading-s">Witness details</h4>
-                        <div class="govuk-warning-text">
-                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                            <strong class="govuk-warning-text__text">
-                                <span class="govuk-visually-hidden">Warning</span>
-                                This witness is 
-                                {% if data['addWitness_Details_Key'] %}
-                                    Key, 
-                                {% else %}
-
-                                {% endif %}
-                                {% if data['addWitness_Details_Vulnerable'] %}
-                                    Vulnerable,
-                                {% else %}
-
-                                {% endif %}
-                                {% if data['addWitness_Details_Neurodivergent'] %}
-                                    Neurodivergent
-                                {% else %}
-
-                                {% endif %}
-                            </strong>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
-                {% endif %}
+                <div class="title">
+                    <h4 class="govuk-heading-s">Witness details</h4>
+                    <a href="10A-add-witness">Edit</a>
+                </div>
 
                 <div class="witnesses-content-wrapper">
 
                     <div class="witnesses-sections">
                         <section>
+                            {% if data['addWitness_Details_Key'] or data['addWitness_Details_Vulnerable'] or data['addWitness_Details_Neurodivergent'] %}
+                                <div class="govuk-warning-text">
+                                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                    <strong class="govuk-warning-text__text">
+                                        <span class="govuk-visually-hidden">Warning</span>
+                                        This witness is 
+                                        {% if data['addWitness_Details_Key'] %}
+                                            Key, 
+                                        {% else %}
+
+                                        {% endif %}
+                                        {% if data['addWitness_Details_Vulnerable'] %}
+                                            Vulnerable,
+                                        {% else %}
+
+                                        {% endif %}
+                                        {% if data['addWitness_Details_Neurodivergent'] %}
+                                            Neurodivergent
+                                        {% else %}
+
+                                        {% endif %}
+                                    </strong>
+                                </div>
+                            {% else %}
+
+                            {% endif %}
                             {% if data['addWitness_Details_Statement'] %}
                                 <div class="hods-timeline statements" id="">
                                     <div class="hods-timeline__item" id="">
@@ -106,8 +106,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
-
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -129,7 +131,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -150,7 +155,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -171,7 +179,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -192,7 +203,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -219,8 +233,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
-
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -269,7 +285,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -304,7 +323,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -365,7 +387,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>
@@ -400,7 +425,10 @@
             <a onclick="return toggleButtonHide();" class="hide-witness-link">Hide <span class="icon-new arrow-up"></span></a>
         </h3>
         <div class="witnesses-details-wrapper has-details">
-            <div class="title"><h4 class="govuk-heading-s">Witness details</h4></div>
+            <div class="title">
+                <h4 class="govuk-heading-s">Witness details</h4>
+                <a href="#">Edit</a>
+            </div>
             <div class="witnesses-content-wrapper">
                 <div class="witnesses-sections">
                     <section>

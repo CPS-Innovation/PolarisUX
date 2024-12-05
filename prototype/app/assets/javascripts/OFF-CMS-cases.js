@@ -423,45 +423,73 @@ $(document).ready(function() {
 
 // ========================= ADD USERS =========================
 $(document).ready(function () {
-    $('#userDetails-2, #userDetails-3, #userDetails-4, #userDetails-5').hide();
+    // $('#userDetails-2, #userDetails-3, #userDetails-4, #userDetails-5').hide();
+    $('#userDetails-1 a#removeUser1').hide();
 })
 
 function addUser1() {
     var userEmail = $('#newCase_Access-Email').val();
     var userAccess = $('#newCase_Access-Permissions').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess + '</strong></p>');
-    $('#userDetails-1').hide();
-    $('#userDetails-2').show();
+    $('#new-contacts').append('<p class="userDetails-1"><span class="icon-new user"></span>' + userEmail + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess + '</strong></p>');
+    $('#userDetails-2').addClass('active');
+    $('#addUser1').hide();
+    $('#userDetails-1 a#removeUser1').show();
 }
+
+function removeUser1() {
+    $('#userDetails-1').hide();
+    $('.userDetails-1').hide();
+}
+
 
 function addUser2() {
     var userEmail2 = $('#newCase_Access-Email2').val();
     var userAccess2 = $('#newCase_Access-Permissions2').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail2 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess2 + '</strong></p>');
+    $('#new-contacts').append('<p class="userDetails-2"><span class="icon-new user"></span>' + userEmail2 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess2 + '</strong></p>');
+    $('#userDetails-3').addClass('active');
+    $('#addUser2').hide();
+}
+
+function removeUser2() {
     $('#userDetails-2').hide();
-    $('#userDetails-3').show();
+    $('.userDetails-2').hide();
 }
 
 function addUser3() {
     var userEmail3 = $('#newCase_Access-Email3').val();
     var userAccess3 = $('#newCase_Access-Permissions3').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail3 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess3 + '</strong></p>');
+    $('#new-contacts').append('<p class="userDetails-3"><span class="icon-new user"></span>' + userEmail3 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess3 + '</strong></p>');
+    $('#userDetails-4').addClass('active');
+    $('#addUser3').hide();
+}
+
+function removeUser3() {
     $('#userDetails-3').hide();
-    $('#userDetails-4').show();
+    $('.userDetails-3').hide();
 }
 
 function addUser4() {
     var userEmail4 = $('#newCase_Access-Email4').val();
     var userAccess4 = $('#newCase_Access-Permissions4').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail4 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess4 + '</strong></p>');
+    $('#new-contacts').append('<p class="userDetails-4"><span class="icon-new user"></span>' + userEmail4 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess4 + '</strong></p>');
+    $('#userDetails-5').addClass('active');
+    $('#addUser4').hide();
+}
+
+function removeUser4() {
     $('#userDetails-4').hide();
-    $('#userDetails-5').show();
+    $('.userDetails-4').hide();
 }
 
 function addUser5() {
     var userEmail5 = $('#newCase_Access-Email5').val();
     var userAccess5 = $('#newCase_Access-Permissions5').val();
-    $('#new-contacts').append('<p><span class="icon-new user"></span>' + userEmail5 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess5 + '</strong></p>');
+    $('#new-contacts').append('<p class="userDetails-5"><span class="icon-new user"></span>' + userEmail5 + '<br><strong class="govuk-tag govuk-tag--blue">' + userAccess5 + '</strong></p>');
+}
+
+function removeUser5() {
+    $('#userDetails-5').hide();
+    $('.userDetails-5').hide();
 }
 
 // ========================= REMOVE USERS =========================
@@ -877,6 +905,35 @@ $(document).ready(function () {
     $("#ea2Part5-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part5').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
     $("#ea2Part6-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part6').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
     $("#ea2Part7-Editor").on("keyup", function (e) { $('nav.tube-map-ea ul li.ea2Part7').addClass('completed'); $('nav.tube-map-ea ul li.ea2Part8').addClass('completed'); });
+
+    // Upload
+    $("#upload_EA").on("click", function (e) { 
+        var numberOfReviews = parseInt($('.ea-number').html());
+
+        setTimeout(function () {
+            $('.ea-number').html(numberOfReviews + 1);
+            $('#ea-available').prepend(`
+                <div class="hods-timeline__item" id="">
+                    <table class="govuk-table govuk-!-margin-bottom-0">
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">
+                                    <span id="">EIA-Template-V1-2024.docm</span><br>
+                                    <span class="added-by">created by ctd, Today at 12:05pm</span><br>
+                                    <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">Document</strong>
+                                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
+                                </th>
+                                <td class="govuk-table__cell">
+                                    <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openEA();">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `);
+        }, 2500)
+    });
+
 })
 
 function ea2Introduction() {

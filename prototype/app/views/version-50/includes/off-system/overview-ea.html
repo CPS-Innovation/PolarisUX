@@ -5,9 +5,9 @@
     <section>
         <div class="title-wrapper">
             {% if data['completeAndExitEA'] == 'true' %}
-                <h3 class="govuk-heading-s with-number"><span class="number ea-number">1</span> Early advice</h3>
+                <h3 class="govuk-heading-s with-number">Early advice (<span class="ea-number">1</span>)</h3>
             {% else %}
-                <h3 class="govuk-heading-s with-number"><span class="number ea-number zero">0</span> Early advice</h3>
+                <h3 class="govuk-heading-s with-number">Early advice (<span class="ea-number">0</span>)</h3>
             {% endif %}
         </div>
 
@@ -20,8 +20,9 @@
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row" >
                                 <th scope="row" class="govuk-table__header">
-                                    <span id="EA-timestamp-NEW"></span><br>
-                                    <span class="added-by">created by {{ data['offCMS_Username'] }}</span><br>
+                                    <span id="">Digital EIA Form - V1</span><br>
+                                    <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW"></span></span><br>
+                                    <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Digital</strong>
                                     <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
                                 </th>
                                 <td class="govuk-table__cell">
@@ -43,7 +44,7 @@
     </section>
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s with-number"><span class="number reviews-number zero">0</span> Case reviews</h3>
+            <h3 class="govuk-heading-s with-number">Case reviews (<span class="reviews-number">0</span>)</h3>
         </div>
         <div class="section-content">
             <p class="govuk-!-margin-bottom-0">There are no current Case reviews documents on this case</p>
@@ -51,7 +52,7 @@
     </section>
     <section>
         <div class="title-wrapper">
-            <h3 class="govuk-heading-s with-number"><span class="number reviews-number zero">0</span> Charging decision</h3>
+            <h3 class="govuk-heading-s with-number">Charging decision (<span class="reviews-number">0</span>)</h3>
         </div>
         <div class="section-content">
             <p class="govuk-!-margin-bottom-0">There are no current Charging decision documents on this case</p>
