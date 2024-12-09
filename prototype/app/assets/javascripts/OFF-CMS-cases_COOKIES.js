@@ -182,6 +182,7 @@ $(document).ready(function () {
         if ($('input[id=transfer_Folder_Egress_1]').is(':checked')) {
             $('#materials_Row_1 td p').hide();
             $('.folder.materials_Row_1').removeClass('empty');
+            $('.egress_number-1').html('1');
             $('#materials_Row_1 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -206,6 +207,7 @@ $(document).ready(function () {
         } else if ($('input[id=transfer_Folder_Egress_2]').is(':checked')) {
             $('#materials_Row_2 td p').hide();
             $('.folder.materials_Row_2').removeClass('empty');
+            $('.egress_number-2').html('1');
             $('#materials_Row_2 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -230,6 +232,7 @@ $(document).ready(function () {
         } else if ($('input[id=transfer_Folder_Egress_3]').is(':checked')) {
             $('#materials_Row_3 td p').hide();
             $('.folder.materials_Row_3').removeClass('empty');
+            $('.egress_number-3').html('1');
             $('#materials_Row_3 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -254,6 +257,7 @@ $(document).ready(function () {
         } else if ($('input[id=transfer_Folder_Egress_4]').is(':checked')) {
             $('#materials_Row_4 td p').hide();
             $('.folder.materials_Row_4').removeClass('empty');
+            $('.egress_number-4').html('1');
             $('#materials_Row_4 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -278,6 +282,7 @@ $(document).ready(function () {
         } else if ($('input[id=transfer_Folder_Egress_5]').is(':checked')) {
             $('#materials_Row_5 td p').hide();
             $('.folder.materials_Row_5').removeClass('empty');
+            $('.egress_number-5').html('1');
             $('#materials_Row_5 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -302,6 +307,7 @@ $(document).ready(function () {
         } else if ($('input[id=transfer_Folder_Egress_6]').is(':checked')) {
             $('#materials_Row_6 td p').hide();
             $('.folder.materials_Row_6').removeClass('empty');
+            $('.egress_number-6').html('1');
             $('#materials_Row_6 td').append(`
                 <table class="govuk-table sub-table2" id="">
                     <tbody class="govuk-table__body">
@@ -2100,6 +2106,8 @@ $(document).ready(function () {
         }
     });
 
+    $('#folder-destination').hide();
+
     if ($.cookie("transfer_Folder_3") == 'true') {
         // Numbers
         $('#materials_Nav .materials-number').removeClass('zero');
@@ -2111,6 +2119,7 @@ $(document).ready(function () {
         // Egress section
         $('#materials-table .folder.materials_Row_3').addClass('empty');
         $('#materials_Row_3 td table').remove();
+        $('.egress_number-3').html('0');
         $('#materials_Row_3 td').append(`
             <td scope="row" class="govuk-table__cell" colspan="2">
                 <p>Materials received and deleted <strong id="TRANSFER-stamp">Today, 11:05am</strong>.</p>
@@ -2125,6 +2134,8 @@ $(document).ready(function () {
             $('.accordion-wrapper').show();
         }, 3000)
 
+        $('#folder-destination').show();
+
     }
 
     if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_1') {
@@ -2134,6 +2145,7 @@ $(document).ready(function () {
         $('.materials_section_1 .documents-available').css('display','inline-block');
         $('.materials_section_1 .documents-holder').hide();
         $('.materials_section_1').addClass('documents');
+        // $('.folder-destination')
     }
     if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_2') {
         var materialsNumber2 = parseInt($('.number-2').text());

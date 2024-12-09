@@ -308,6 +308,53 @@ html {
                          font-size: 1rem;
                     }
                }
+               .extended-navigation {
+                    display: inline-block;
+                    margin-bottom: 4px;
+                    // width: 3em;
+                    // height: 3em;
+                    background: govuk-colour("light-grey");
+                    padding: 0.5em;
+                    position: relative;
+                    // text-indent: -1000em;
+                    &.govuk-tabs__list-item--selected {
+                         padding-right: 0.5em !important;
+                         border-left: none;
+                         border-right: none;
+                         border-bottom: 1px solid $govuk-border-colour;
+                         margin-top: 0;
+                         margin-bottom: 0;
+                    }
+                    .extra-nav {
+                         display: none;
+                         position: absolute;
+                         z-index: 100000000;
+                         top: 3.5em;
+                         right: -0.25em;
+                         width: 14em;
+                         li {
+                              float: right;
+                         }
+                    }
+                    a.show-hide {
+                         display: inline-block;
+                         width: 1.25em;
+                         margin-top: 0.5em;
+                         height: 1em;
+                         background: url("../images/arrow-down-black.svg") no-repeat 50% 50%;
+                         background-size: contain;
+                         &.active {
+                              background: url("../images/arrow-up-black.svg") no-repeat 50% 50%;
+                              background-size: contain;
+                         }
+                         span {
+                              display: none;
+                         }
+                    }
+                    // li {
+                    //      display: none;
+                    // }
+               }
                li {
                     margin-bottom: 4px;
                     position: relative;
