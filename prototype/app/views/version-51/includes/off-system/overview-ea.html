@@ -1,5 +1,96 @@
-<h2 class="govuk-heading-m">Case progression</h2>
-<span class="govuk-caption-m">Last updated <span id="EA-timestamp"></span></span>
+<div class="add_case_progression">
+    <h2 class="govuk-heading-m">Case progression</h2>
+    <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Menu title">
+        <button type="button" class="govuk-button moj-button-menu__toggle-button" aria-haspopup="true" aria-expanded="false" onclick="return toggleCaseProgression();">
+            <span>
+                Add item
+                <svg width="11" height="5" viewBox="0 0 11 5" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0L11 5L0 5L5.5 0Z" fill="currentColor"></path></svg>
+            </span>
+        </button>
+        <ul role="list" class="moj-button-menu__wrapper" hidden="">
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Asset Recovery
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Asset Recovery 3rd Party
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='8-create-charging-decision';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Case Review
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Complaint
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Conference with Counsel
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Correspondence
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Cousel Case Acknowledgement
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    CPS WCU Communication
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='7-create-ea';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Early Advice
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Joint Investigitive Strategy
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Meeting
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Other Communication
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Physical Media
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Record Communication
+                </button>
+            </li>
+            <li>
+                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                    Service of ABE
+                </button>
+            </li>
+        </ul>
+    </div>    
+</div>
+
+<div class="hide-all-title-wrapper">
+    <span class="govuk-caption-m">Last updated <span id="EA-timestamp"></span></span>
+</div>
+
 
 <div class="section-wrapper section-row">
     <section>
@@ -15,7 +106,7 @@
 
             <div class="hods-timeline" id="ea-available">
                 <!-- EA Available - START -->
-                <div class="hods-timeline__item" id="">
+                <div class="hods-timeline__item" id="ea_Digital">
                     <table class="govuk-table govuk-!-margin-bottom-0">
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row" >
@@ -45,7 +136,7 @@
 </div>
 
 <div class="cta-wrapper">
-    <div class="add-new">
+<!--     <div class="add-new">
         {% if data['completeAndExitEA'] == 'true' %}
             <p>Add <strong>additional Early advice</strong> to this case</p>
         {% else %}
@@ -57,7 +148,7 @@
         <p>There have been <strong>no Reviews</strong> added to this case</p>
         <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='8-create-charging-decision';">Create a Review</button>
     </div>
-    <div class="govuk-form-group file-upload">
+ -->    <div class="govuk-form-group">
         <label class="govuk-label" for="upload_EA">Upload an Early Advice or Joint Investigative strategy document</label>
         <input class="govuk-file-upload" id="upload_EA" name="upload_EA" type="file">
     </div> 

@@ -968,6 +968,8 @@ $(document).ready(function () {
 
         setTimeout(function () {
             $('.ea-number').html(numberOfReviews + 1);
+            $('#ea-available').show();
+            $('#ea-NotAvailable').hide();
             $('#ea-available').prepend(`
                 <div class="hods-timeline__item" id="">
                     <table class="govuk-table govuk-!-margin-bottom-0">
@@ -1216,9 +1218,11 @@ $(document).ready(function () {
     if ($.cookie("ea2Part1Content") || $.cookie("ea2Part2Content") || $.cookie("ea2Part3Content") || $.cookie("ea2Part4Content") || $.cookie("ea2Part5Content") || $.cookie("ea2Part6Content") || $.cookie("ea2Part7Content")) {
         $('#ea-NotAvailable').hide();
         $('#ea-available').show();
+        $('#ea_Digital').show();
     } else {
         $('#ea-NotAvailable').show();
         $('#ea-available').hide();
+        $('#ea_Digital').hide();
     }
 
     // 1 - Background
@@ -1284,6 +1288,11 @@ function openEA() {
 }
 function closeEAModal() {
     $('#eaModal').addClass('rj-dont-display');
+}
+
+// ========================= CASE PROGRESSION ========================= //
+function toggleCaseProgression() {
+    $('.moj-button-menu__wrapper').toggle();
 }
 
 // ========================= EMAILS ========================= //

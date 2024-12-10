@@ -2193,7 +2193,7 @@ $(document).ready(function () {
         // Shared drive
         $('.materials_section_7 .documents-available').css('display','inline-block');
         $('.materials_section_7 .documents-holder').hide();
-        $('.materials_section_72').addClass('documents');
+        $('.materials_section_7').addClass('documents');
     }
     if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_8') {
         var materialsNumber8 = parseInt($('.number-2').text());

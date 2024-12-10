@@ -91,7 +91,7 @@ button {
 }
 
 
-.filter_Suspects {
+.filter_Suspects, .add_case_progression {
      h2 {
           display: inline-block;
           float: left;
@@ -99,9 +99,52 @@ button {
      .govuk-form-group {
           display: inline-block;
           float: right;
-          margin: -0.5em 0 0 0;
+          margin: 0 0 -0.5em 0;
           label {
                display: none;
+          }
+     }
+     .moj-button-menu {
+          float: right;
+          margin: 0 0 -1em 0;
+          position: relative;
+          button {
+               margin: 0;
+               &:after, &:before {
+                    display: none;
+               }
+               svg {
+                    transform: rotateX(180deg);
+                    margin: 0 0 0.15em 0.25em;
+               }
+          }
+          ul {
+               position: absolute;
+               z-index: 1000;
+               right: 0;
+               // top: 3em;
+               padding: 0;
+               width: auto;
+               li {
+                    padding: 0 !important;
+                    width: 100%;
+                    border-bottom: 2px solid $govuk-border-colour;
+                    display: inline-block;
+                    float: right;
+                    clear: both;
+                    margin: 0 !important;
+                    &:first-of-type {
+                         button {
+                              margin-top: 0.3em !important;
+                         }
+                    }
+                    button {
+                         box-shadow: none;
+                         text-decoration: underline;
+                         text-align: right;
+                         min-width: 15.5em;
+                    }
+               }
           }
      }
 }
