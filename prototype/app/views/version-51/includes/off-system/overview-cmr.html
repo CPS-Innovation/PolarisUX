@@ -33,6 +33,62 @@
         <div class="section-content">
             <div class="hods-timeline">
 
+                <!-- Comms added - START -->
+                {% if data['comms_Form_Completed'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <table class="govuk-table govuk-!-margin-bottom-0">
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row" >
+                                    <th scope="row" class="govuk-table__header">
+                                        {% if data['comms_Type'] == 'comms_Type_1' %}
+                                            <a onclick="return openComms();" id="">Asset Recovery details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_2' %}
+                                            <a onclick="return openComms();" id="">Asset Recovery 3rd Party details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_3' %}
+                                            <a onclick="return openComms();" id="">Complaint added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_4' %}
+                                            <a onclick="return openComms();" id="">Conference with Counsel details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_5' %}
+                                            <a onclick="return openComms();" id="">Correspondence details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_6' %}
+                                            <a onclick="return openComms();" id="">Cousel Case Acknowledgement details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_7' %}
+                                            <a onclick="return openComms();" id="">CPS WCU Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_8' %}
+                                            <a onclick="return openComms();" id="">Meeting details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_9' %}
+                                            <a onclick="return openComms();" id="">Other Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_10' %}
+                                            <a onclick="return openComms();" id="">Physical Media details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_11' %}
+                                            <a onclick="return openComms();" id="">Record Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_12' %}
+                                            <a onclick="return openComms();" id="">Service of ABE details added</a><br>
+                                        {% endif %}
+                                        <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW3"></span></span><br>
+                                        {% if data['comms_Form_commsTask'] %}
+                                            <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2">Task created</strong>
+                                        {% else %}
+
+                                        {% endif %}
+                                        {% if data['comms_Form_markRead'] %}
+                                            <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Read</strong>
+                                        {% else %}
+
+                                        {% endif %}
+                                    </th>
+                                    <td class="govuk-table__cell">
+                                        <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openComms();">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+
+                {% endif %}            
+                <!-- Comms added - END -->
+
                 <div class="hods-timeline__item" id="new_CMR_Item_Added">
                     <h2 class="hods-timeline__title">CMR Item added</h2>
                     <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>

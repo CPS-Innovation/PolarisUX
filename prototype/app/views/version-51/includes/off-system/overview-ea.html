@@ -8,81 +8,93 @@
             </span>
         </button>
         <ul role="list" class="moj-button-menu__wrapper" hidden="">
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Asset Recovery
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Asset Recovery 3rd Party
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='8-create-charging-decision';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Case Review
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Complaint
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Conference with Counsel
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Correspondence
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Cousel Case Acknowledgement
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    CPS WCU Communication
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='7-create-ea';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Early Advice
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Joint Investigitive Strategy
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Meeting
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Other Communication
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Physical Media
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Record Communication
-                </button>
-            </li>
-            <li>
-                <button type="button" onClick="location.href='15-communcation';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
-                    Service of ABE
-                </button>
-            </li>
+            <div class="left-column">
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_1" name="comms_Type" type="text" value="comms_Type_1" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Asset Recovery</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_2" name="comms_Type" type="text" value="comms_Type_2" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Asset Recovery 3rd Party</button>
+                    </form>
+                </li>
+                <li>
+                    <button type="button" onClick="location.href='8-create-charging-decision';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">
+                        Case Review
+                    </button>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_3" name="comms_Type" type="text" value="comms_Type_3" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Complaint</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_4" name="comms_Type" type="text" value="comms_Type_4" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Conference with Counsel</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_5" name="comms_Type" type="text" value="comms_Type_5" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Correspondence</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_6" name="comms_Type" type="text" value="comms_Type_6" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Counsel Case Acknowledgement</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_7" name="comms_Type" type="text" value="comms_Type_7" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">CPS WCU Communication</button>
+                    </form>
+                </li>
+            </div>
+            <div class="left-column">
+                <li>
+                    <button type="button" onClick="location.href='7-create-ea';" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="" tabindex="-1">Early Advice</button>
+                </li>
+                <li>
+                    <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Joint Investigitive Strategy</button>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_8" name="comms_Type" type="text" value="comms_Type_8" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Meeting</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_9" name="comms_Type" type="text" value="comms_Type_9" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Other Communication</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_10" name="comms_Type" type="text" value="comms_Type_10" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Physical Media</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_11" name="comms_Type" type="text" value="comms_Type_11" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Record Communication</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="post" action="15-communcation">
+                        <input id="comms_Type_12" name="comms_Type" type="text" value="comms_Type_12" style="display: none;">
+                        <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Service of ABE</button>
+                    </form>
+                </li>
+            </div>
         </ul>
     </div>    
 </div>
@@ -95,23 +107,57 @@
 <div class="section-wrapper section-row">
     <section>
         <div class="title-wrapper">
-            {% if data['completeAndExitEA'] == 'true' %}
+            {% if data['completeAndExitEA'] == 'true' and data['comms_Form_Completed'] == 'true' %}
+                <h3 class="govuk-heading-s">Progression documentation (<span class="ea-number">2</span>)</h3>
+            {% elseif data['completeAndExitEA'] == 'true' %}
+                <h3 class="govuk-heading-s">Progression documentation (<span class="ea-number">1</span>)</h3>
+            {% elseif data['comms_Form_Completed'] == 'true' %}
                 <h3 class="govuk-heading-s">Progression documentation (<span class="ea-number">1</span>)</h3>
             {% else %}
-                <h3 class="govuk-heading-s">Progression documentation (<span class="ea-number">0</span>)</h3>
+                <h3 class="govuk-heading-s">Progression documentation (<span class="ea-number">1</span>)</h3>
             {% endif %}
+            <div class="govuk-form-group search">
+                <label class="govuk-label search-label" for="searchCMS_URN">Search Off System cases</label>
+                <div class="search-wrapper-CMR">
+                    <input class="govuk-input govuk-!-width-full" id="searchCMS_URN" name="searchCMS_URN" type="text" placeholder="Search..." value="" />
+                    <button type="submit" class="govuk-button" style="">Search</button>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="filter_CMR">Filter</label>
+                <select class="govuk-select" id="filter_CMR" name="filter_CMR">
+                    <option value="Most recent" selected>Most recent</option>
+                    <option value="Oldest">Oldest</option>
+                    <option value="Asset Recovery">Asset Recovery</option>
+                    <option value="Asset Recovery 3rd Party">Asset Recovery 3rd Party</option>
+                    <option value="Case Review">Case Review</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Conference with Counsel">Conference with Counsel</option>
+                    <option value="Correspondence">Correspondence</option>
+                    <option value="Counsel Case Acknowledgement">Counsel Case Acknowledgement</option>
+                    <option value="CPS WCU Communication">CPS WCU Communication</option>
+                    <option value="Early Advice">Early Advice</option>
+                    <option value="Joint Investigitive Strategy">Joint Investigitive Strategy</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Other Communication">Other Communication</option>
+                    <option value="Physical Media">Physical Media</option>
+                    <option value="Record Communication">Record Communication</option>
+                    <option value="Service of ABE">Service of ABE</option>
+                </select>
+            </div>
         </div>
 
         <div class="section-content">
 
             <div class="hods-timeline" id="ea-available">
+
                 <!-- EA Available - START -->
                 <div class="hods-timeline__item" id="ea_Digital">
                     <table class="govuk-table govuk-!-margin-bottom-0">
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row" >
                                 <th scope="row" class="govuk-table__header">
-                                    <span id="">Digital EIA Form - V1</span><br>
+                                    <a onclick="return openEA();" id="">Digital EIA Form - V1</a><br>
                                     <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW"></span></span><br>
                                     <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Digital</strong>
                                     <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
@@ -125,10 +171,71 @@
                     </table>
                 </div>
                 <!-- EA Available - END -->
+
+                <!-- Comms added - START -->
+                {% if data['comms_Form_Completed'] == 'true' %}
+                    <div class="hods-timeline__item">
+                        <table class="govuk-table govuk-!-margin-bottom-0">
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row" >
+                                    <th scope="row" class="govuk-table__header">
+                                        {% if data['comms_Type'] == 'comms_Type_1' %}
+                                            <a onclick="return openComms();" id="">Asset Recovery details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_2' %}
+                                            <a onclick="return openComms();" id="">Asset Recovery 3rd Party details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_3' %}
+                                            <a onclick="return openComms();" id="">Complaint added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_4' %}
+                                            <a onclick="return openComms();" id="">Conference with Counsel details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_5' %}
+                                            <a onclick="return openComms();" id="">Correspondence details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_6' %}
+                                            <a onclick="return openComms();" id="">Counsel Case Acknowledgement details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_7' %}
+                                            <a onclick="return openComms();" id="">CPS WCU Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_8' %}
+                                            <a onclick="return openComms();" id="">Meeting details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_9' %}
+                                            <a onclick="return openComms();" id="">Other Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_10' %}
+                                            <a onclick="return openComms();" id="">Physical Media details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_11' %}
+                                            <a onclick="return openComms();" id="">Record Communication details added</a><br>
+                                        {% elseif data['comms_Type'] == 'comms_Type_12' %}
+                                            <a onclick="return openComms();" id="">Service of ABE details added</a><br>
+                                        {% endif %}
+                                        <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW3"></span></span><br>
+                                        {% if data['comms_Form_commsTask'] %}
+                                            <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2">Task created</strong>
+                                        {% else %}
+
+                                        {% endif %}
+                                        {% if data['comms_Form_markRead'] %}
+                                            <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Read</strong>
+                                        {% else %}
+
+                                        {% endif %}
+                                    </th>
+                                    <td class="govuk-table__cell">
+                                        <button type="submit" data-module="govuk-button" class="govuk-link govuk-link--no-visited-state" onclick="return openComms();">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+
+                {% endif %}            
+                <!-- Comms added - END -->
+
             </div>
 
             <!-- EA NOT Available - START -->
-            <p class="govuk-!-margin-bottom-0" id="ea-NotAvailable">There are no early advice documents on this case</p>
+            {% if data['comms_Form_Completed'] == 'true' %}
+
+            {% else %}
+                <p class="govuk-!-margin-bottom-0" id="ea-NotAvailable">There are no early advice documents on this case</p>
+            {% endif %}            
             <!-- EA NOT Available - END -->
 
         </div>

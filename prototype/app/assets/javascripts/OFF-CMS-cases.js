@@ -968,7 +968,7 @@ $(document).ready(function () {
 
         setTimeout(function () {
             $('.ea-number').html(numberOfReviews + 1);
-            $('#ea-available').show();
+            // $('#ea-available').show();
             $('#ea-NotAvailable').hide();
             $('#ea-available').prepend(`
                 <div class="hods-timeline__item" id="">
@@ -976,7 +976,7 @@ $(document).ready(function () {
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                                 <th scope="row" class="govuk-table__header">
-                                    <span id="">EIA-Template-V1-2024.docm</span><br>
+                                    <a onclick="return openEA();" id="">EIA-Template-V1-2024.docm</a><br>
                                     <span class="added-by">created by ctd, Today at 12:05pm</span><br>
                                     <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">Document</strong>
                                     <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
@@ -1168,10 +1168,10 @@ $(document).ready(function () {
     // EA - V1
     if ($.cookie("ea2IntroductionContent") || $.cookie("ea2MaterialsContent") || $.cookie("ea2SummaryContent") || $.cookie("ea2LawContent") || $.cookie("ea2NextStepsContent")) {
         $('#ea-NotAvailable').hide();
-        $('#ea-available').show();
+        // $('#ea-available').show();
     } else {
         $('#ea-NotAvailable').show();
-        $('#ea-available').hide();
+        // $('#ea-available').hide();
     }
 
     // 1 - Introduction
@@ -1217,11 +1217,11 @@ $(document).ready(function () {
     // EA - V2
     if ($.cookie("ea2Part1Content") || $.cookie("ea2Part2Content") || $.cookie("ea2Part3Content") || $.cookie("ea2Part4Content") || $.cookie("ea2Part5Content") || $.cookie("ea2Part6Content") || $.cookie("ea2Part7Content")) {
         $('#ea-NotAvailable').hide();
-        $('#ea-available').show();
+        // $('#ea-available').show();
         $('#ea_Digital').show();
     } else {
         $('#ea-NotAvailable').show();
-        $('#ea-available').hide();
+        // $('#ea-available').hide();
         $('#ea_Digital').hide();
     }
 
@@ -1904,6 +1904,32 @@ $(document).ready(function () {
 
 })
 
+// ========================= COMMUNCATIONS ========================= //
+
+$(document).ready(function () {
+
+    if ($.cookie("comms_Form_Description-Text")) {
+        $('#comms_Form_Description-Text').html($.cookie("comms_Form_Description-Text"));
+    }
+
+})
+
+function saveComms() {
+    $.cookie("comms_Form_Description-Text", $("#comms_Form_Description").html(), {path:'/'});
+}
+
+function datePicker2() {
+    $('#comms_Form_Date-Day').val('20');
+    $('#comms_Form_Date-Month').val('10');
+    $('#comms_Form_Date-Year').val('2024');
+}
+
+function openComms() {
+    $('#commsModal').removeClass('rj-dont-display');
+}
+function closeCommsModal() {
+    $('#commsModal').addClass('rj-dont-display');
+}
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {
@@ -1946,6 +1972,30 @@ $(document).ready(function () {
 
     // 2C - EA New updated
     document.getElementById("EA-timestamp-NEW2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // 2D - EA New updated
+    document.getElementById("EA-timestamp-NEW3").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // 2E - EA New updated
+    document.getElementById("EA-timestamp-NEW4").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),

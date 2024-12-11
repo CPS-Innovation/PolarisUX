@@ -50,6 +50,18 @@
           display: inline-block;
           float: left;
           clear: both;
+          width: 100%;
+          h1, span {
+               display: inline-block;
+               float: left;
+          }
+          span {
+               clear: both;
+          }
+          button {
+               float: right;
+               margin: 1.5em 0 0 0;
+          }
      }
      .govuk-notification-banner {
           float: left;
@@ -125,6 +137,10 @@ button {
                // top: 3em;
                padding: 0;
                width: auto;
+               .left-column, .right-column {
+                    display: inline-block;
+                    float: left;
+               }
                li {
                     padding: 0 !important;
                     width: 100%;
@@ -532,6 +548,21 @@ html {
           }
           .hods-timeline__item {
                width: 100%;
+               table {
+                    margin: 0;
+                    // width: 100%;
+                    .govuk-table__header {
+                         padding: 0;
+                         a {
+                              float: left;
+                         }
+                    }
+                    .govuk-table__cell {
+                         button {
+                              float: right;
+                         }
+                    }
+               }
           }
           .hods-timeline__title {
                width: auto;
@@ -1271,7 +1302,7 @@ h2 {
      }
 }
 
-#addCharge_Form_Date {
+#addCharge_Form_Date, #comms_Form_Date {
      .govuk-date-input__item {
           float: left;
      }
@@ -1466,7 +1497,7 @@ nav.moj-sub-navigation {
 }
 
 #ea-available {
-     padding-top: 1em;
+     padding-top: 0;
      .govuk-table__header {
           .added-by {
                font-weight: normal;
@@ -1474,9 +1505,24 @@ nav.moj-sub-navigation {
           }
      }
      .hods-timeline__item {
+          &:first-of-type {
+               padding-top: 1em;
+          }
           width: 95% !important;
           table {
-               margin-right: 0;
+               margin: 0;
+               width: 100%;
+               .govuk-table__header {
+                    a {
+                         float: left;
+                    }
+               }
+          }
+          &:first-of-type:after {
+               top: 21px;
+          }
+          &:last-of-type:after {
+               top: 5px;
           }
      }
      .govuk-table__cell, .govuk-table__header {
@@ -2333,7 +2379,7 @@ nav.tube-map-ea {
 }
 
 #MaterialsTransfer_1_Modal {
-     .govuk-checkboxes {
+     .govuk-radios {
           display: inline-block;
           float: left;
           width: 50%;

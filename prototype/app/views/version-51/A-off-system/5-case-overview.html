@@ -13,6 +13,7 @@
     {% include "../includes/off-system/modal-MaterialsTransfer_2.html" %}
     {% include "../includes/off-system/modal-egressTransfer.html" %}
     {% include "../includes/off-system/modal-MaterialsMove.html" %}
+    {% include "../includes/off-system/modal-Comms.html" %}
 {% endblock %}
 {% block content %}
 
@@ -40,6 +41,7 @@
         {% endif %}
 
         <div class="title-wrapper">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Export case</button>
             {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                 {% if data['newCase_OperationName'] %}
                     <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['newCase_OperationName'] }}</h1>
@@ -85,7 +87,11 @@
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" id="tab-1"><a class="tab-link tab-1-content">Overview</a></li>
 
                 <!-- EA/REVIEW - Show on EA -->
-                {% if data['completeAndExitEA'] == 'true' %}
+                {% if data['completeAndExitEA'] == 'true' and data['comms_Form_Completed'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content">Case progression (<span class="ea-number">2</span>)</a></li>
+                {% elseif data['completeAndExitEA'] == 'true' %}
+                    <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content">Case progression (<span class="ea-number">1</span>)</a></li>
+                {% elseif data['comms_Form_Completed'] == 'true' %}
                     <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content">Case progression (<span class="ea-number">1</span>)</a></li>
                 {% else %}
                     <li class="govuk-tabs__list-item" id="tab-2"><a class="tab-link tab-2-content">Case progression (<span class="ea-number">0</span>)</a></li>
