@@ -134,12 +134,30 @@ button {
                position: absolute;
                z-index: 1000;
                right: 0;
-               // top: 3em;
+               top: 2.6rem;
                padding: 0;
-               width: auto;
+               width: 36.975rem;
                .left-column, .right-column {
                     display: inline-block;
                     float: left;
+               }
+               .left-column {
+                    border-right: 2px solid $govuk-border-colour;
+                    li {
+                         margin-right: -2px;
+                         &:last-of-type {
+                              border-bottom: none;
+                         }
+                    }
+               }
+               .right-column {
+                    float: right;
+                    li {
+                         margin-left: -1px;
+                         &:last-of-type {
+                              border-bottom: none;
+                         }
+                    }
                }
                li {
                     padding: 0 !important;
@@ -149,11 +167,11 @@ button {
                     float: right;
                     clear: both;
                     margin: 0 !important;
-                    &:first-of-type {
-                         button {
-                              margin-top: 0.3em !important;
-                         }
-                    }
+                    // &:first-of-type {
+                    //      button {
+                    //           margin-top: 0.3em !important;
+                    //      }
+                    // }
                     button {
                          box-shadow: none;
                          text-decoration: underline;
@@ -555,6 +573,11 @@ html {
                          padding: 0;
                          a {
                               float: left;
+                         }
+                         .added-by {
+                              font-weight: normal;
+                              color: $govuk-secondary-text-colour;
+                              font-size: 1rem;
                          }
                     }
                     .govuk-table__cell {
