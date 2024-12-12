@@ -43,7 +43,7 @@
                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
                     <!-- OPTION 1 - START -->
-                    {% if data['comms_Type'] == 'comms_Type_7' or data['comms_Type'] == 'comms_Type_8' %}
+                    {% if data['comms_Type'] == 'comms_Type_7' or data['comms_Type'] == 'comms_Type_8' or data['comms_Type'] == 'comms_Type_11' %}
 
                     {% else %}
                         <div class="govuk-form-group">
@@ -134,6 +134,65 @@
                                 </div>
                             </fieldset>
                         </div> 
+                    {% elseif data['comms_Type'] == 'comms_Type_11' %}
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="comms_Form_With-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Who is it with?</legend>
+                                <div id="contact-hint" class="govuk-hint">Select one option</div>
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="comms_Form_With-Counsel" name="comms_Form_With" type="radio" value="Counsel" data-aria-controls="conditional-comms_Form_With-Counsel">
+                                        <label class="govuk-label govuk-radios__label" for="comms_Form_With-Counsel">Counsel</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comms_Form_With-Counsel">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-visually-hidden" for="comms_Form_With-Counsel-Text">Who it was with?</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="comms_Form_With-Counsel-Text" name="comms_Form_With-Counsel-Text" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="comms_Form_With-Court" name="comms_Form_With" type="radio" value="Court" data-aria-controls="conditional-comms_Form_With-Court">
+                                        <label class="govuk-label govuk-radios__label" for="comms_Form_With-Court">Court</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comms_Form_With-Court">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-visually-hidden" for="comms_Form_With-Court-Text">Who it was with?</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="comms_Form_With-Court-Text" name="comms_Form_With-Court-Text" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="comms_Form_With-Defence" name="comms_Form_With" type="radio" value="Defence" data-aria-controls="conditional-comms_Form_With-Defence">
+                                        <label class="govuk-label govuk-radios__label" for="comms_Form_With-Defence">Defence</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comms_Form_With-Defence">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-visually-hidden" for="comms_Form_With-Defence-Text">Who it was with?</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="comms_Form_With-Defence-Text" name="comms_Form_With-Defence-Text" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="comms_Form_With-Police" name="comms_Form_With" type="radio" value="Police" data-aria-controls="conditional-comms_Form_With-Police">
+                                        <label class="govuk-label govuk-radios__label" for="comms_Form_With-Police">Police</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comms_Form_With-Police">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-visually-hidden" for="comms_Form_With-Police-Text">Who it was with?</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="comms_Form_With-Police-Text" name="comms_Form_With-Police-Text" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="comms_Form_With-WCU" name="comms_Form_With" type="radio" value="WCU" data-aria-controls="conditional-comms_Form_With-WCU">
+                                        <label class="govuk-label govuk-radios__label" for="comms_Form_With-WCU">WCU</label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comms_Form_With-WCU">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-visually-hidden" for="comms_Form_With-WCU-Text">Who it was with?</label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="comms_Form_With-Police-Text" name="comms_Form_With-WCU-Text" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div> 
                     {% else %}
                         <div class="govuk-form-group">
                             <fieldset class="govuk-fieldset" aria-describedby="comms_Form_With-hint">
@@ -208,7 +267,11 @@
 
                     <!-- OPTION 3 - START -->
                         <div class="govuk-form-group">
-                            <label class="govuk-label govuk-label--s" for="comms_Form_Title">Title</label>
+                            {% if data['comms_Type'] == 'comms_Type_11' %}
+                                <label class="govuk-label govuk-label--s" for="comms_Form_Title">Subject</label>
+                            {% else %}
+                                <label class="govuk-label govuk-label--s" for="comms_Form_Title">Title</label>
+                            {% endif %}
                             {% if data['comms_Type'] == 'comms_Type_1' %}
                                 <input class="govuk-input govuk-input--width-20" id="comms_Form_Title" name="comms_Form_Title" type="text" value="Asset Recovery">
                             {% elseif data['comms_Type'] == 'comms_Type_2' %}
@@ -263,19 +326,31 @@
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="comms_Form_Date-Day">Day</label>
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Day" name="comms_Form_Date-Day" type="text" inputmode="numeric">
+                                            {% if data['comms_Type'] == 'comms_Type_11' %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Day" name="comms_Form_Date-Day" type="text" inputmode="numeric" value="10">
+                                            {% else %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Day" name="comms_Form_Date-Day" type="text" inputmode="numeric">
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="comms_Form_Date-Month">Month</label>
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Month" name="comms_Form_Date-Month" type="text" inputmode="numeric">
+                                            {% if data['comms_Type'] == 'comms_Type_11' %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Month" name="comms_Form_Date-Month" type="text" inputmode="numeric" value="12">
+                                            {% else %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="comms_Form_Date-Month" name="comms_Form_Date-Month" type="text" inputmode="numeric">
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="comms_Form_Date-Year">Year</label>
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="comms_Form_Date-Year" name="comms_Form_Date-Year" type="text" inputmode="numeric">
+                                            {% if data['comms_Type'] == 'comms_Type_11' %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="comms_Form_Date-Year" name="comms_Form_Date-Year" type="text" inputmode="numeric" value="2024">
+                                            {% else %}
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="comms_Form_Date-Year" name="comms_Form_Date-Year" type="text" inputmode="numeric">
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <button type="button" class="govuk-button datePicker" data-module="govuk-button" onclick="return datePicker2();">Date picker</button>
@@ -297,45 +372,71 @@
                     <!-- OPTION 7 - END -->
 
                     <!-- OPTION 8 - START -->
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="4000">
                         <label class="govuk-label govuk-label--s" for="comms_Form_Description">Description</label>
-                        <textarea class="govuk-textarea" id="comms_Form_Description" name="comms_Form_Description" rows="5"></textarea>
-                    </div>                    
+                        <textarea class="govuk-textarea govuk-js-character-count" id="comms_Form_Description" name="comms_Form_Description" rows="5" aria-describedby="comms_Form_Description-info with-hint-hint"></textarea>
+                        <div id="comms_Form_Description-info" class="govuk-hint govuk-character-count__message">You can enter up to 4000 characters</div> 
+                    </div>                  
                     <!-- OPTION 8 - END -->
 
                     <!-- OPTION 9 - START -->
-                    {% if data['comms_Type'] == 'comms_Type_1' or data['comms_Type'] == 'comms_Type_2' or data['comms_Type'] == 'comms_Type_3' or data['comms_Type'] == 'comms_Type_6' %}
-                        <div class="govuk-form-group govuk-!-margin-bottom-2">
-                    {% else %}
-                        <div class="govuk-form-group">
-                    {% endif %}
-                        <fieldset class="govuk-fieldset">
-                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="comms_Form_commsTask" name="comms_Form_commsTask" type="checkbox" value="Create 'Check New Communications' Task">
-                                    <label class="govuk-label govuk-checkboxes__label" for="comms_Form_commsTask">Create 'Check New Communications' Task</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!-- OPTION 9 - END -->
+                    {% if data['comms_Type'] == 'comms_Type_11' %}
 
-                    {% if data['comms_Type'] == 'comms_Type_1' or data['comms_Type'] == 'comms_Type_2' or data['comms_Type'] == 'comms_Type_3' or data['comms_Type'] == 'comms_Type_6' %}
-                        <!-- OPTION 10 - START -->
-                        <div class="govuk-form-group">
+                    {% else %}
+                        {% if data['comms_Type'] == 'comms_Type_1' or data['comms_Type'] == 'comms_Type_2' or data['comms_Type'] == 'comms_Type_3' or data['comms_Type'] == 'comms_Type_6' %}
+                            <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        {% else %}
+                            <div class="govuk-form-group">
+                        {% endif %}
                             <fieldset class="govuk-fieldset">
                                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="comms_Form_markRead" name="comms_Form_markRead" type="checkbox" value="Mark as Read">
-                                        <label class="govuk-label govuk-checkboxes__label" for="comms_Form_markRead">Mark as Read</label>
+                                        <input class="govuk-checkboxes__input" id="comms_Form_commsTask" name="comms_Form_commsTask" type="checkbox" value="Create 'Check New Communications' Task">
+                                        <label class="govuk-label govuk-checkboxes__label" for="comms_Form_commsTask">Create 'Check New Communications' Task</label>
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-                        <!-- OPTION 10 - END -->
+                    {% endif %}
+                    <!-- OPTION 9 - END -->
+
+                    <!-- OPTION 10 - START -->
+                    {% if data['comms_Type'] == 'comms_Type_11' %}
+
+                    {% else %}
+                        {% if data['comms_Type'] == 'comms_Type_1' or data['comms_Type'] == 'comms_Type_2' or data['comms_Type'] == 'comms_Type_3' or data['comms_Type'] == 'comms_Type_6' %}
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="comms_Form_markRead" name="comms_Form_markRead" type="checkbox" value="Mark as Read">
+                                            <label class="govuk-label govuk-checkboxes__label" for="comms_Form_markRead">Mark as Read</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        {% else %}
+
+                        {% endif %}
+                    {% endif %}
+                    <!-- OPTION 10 - END -->
+
+                    <!-- OPTION 11 - START -->
+                    {% if data['comms_Type'] == 'comms_Type_11' %}
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="comms_Form_phoneCall" name="comms_Form_phoneCall" type="checkbox" value="Raise check Phone Call Task">
+                                        <label class="govuk-label govuk-checkboxes__label" for="comms_Form_phoneCall">Raise check Phone Call Task</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
                     {% else %}
 
                     {% endif %}
+                    <!-- OPTION 11 - END -->
 
                 </fieldset>
 

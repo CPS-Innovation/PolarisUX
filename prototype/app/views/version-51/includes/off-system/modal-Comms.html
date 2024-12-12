@@ -77,7 +77,11 @@
                                         {% endif %}
                                         {% if data['comms_Form_Title'] %}
                                             <tr class="govuk-table__row">
-                                                <th scope="row" class="govuk-table__header">Title</th>
+                                                {% if data['comms_Type'] == 'comms_Type_11' %}
+                                                    <th scope="row" class="govuk-table__header">Subject</th>
+                                                {% else %}
+                                                    <th scope="row" class="govuk-table__header">Title</th>
+                                                {% endif %}
                                                 <td class="govuk-table__cell">{{ data['comms_Form_Title'] }}</td>
                                             </tr>
                                         {% else %}
@@ -131,6 +135,14 @@
                                             <tr class="govuk-table__row">
                                                 <th scope="row" class="govuk-table__header">Mark as read</th>
                                                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Read</strong></td>
+                                            </tr>
+                                        {% else %}
+
+                                        {% endif %}
+                                        {% if data['comms_Form_phoneCall'] %}
+                                            <tr class="govuk-table__row">
+                                                <th scope="row" class="govuk-table__header">Raise check Phone Call Task</th>
+                                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Task created</strong></td>
                                             </tr>
                                         {% else %}
 

@@ -1927,9 +1927,67 @@ function datePicker2() {
 function openComms() {
     $('#commsModal').removeClass('rj-dont-display');
 }
+
 function closeCommsModal() {
     $('#commsModal').addClass('rj-dont-display');
 }
+
+// ========================= STRATEGY ========================= //
+
+function toggleGuidance1() {
+    $('.tooltiptext-1').toggleClass('active');
+    $('.tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance1() {
+    $('.tooltiptext-1').removeClass('active');
+}
+
+function toggleGuidance2() {
+    $('.tooltiptext-2').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance2() {
+    $('.tooltiptext-2').removeClass('active');
+}
+
+function toggleGuidance3() {
+    $('.tooltiptext-3').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance3() {
+    $('.tooltiptext-3').removeClass('active');
+}
+
+function toggleGuidance4() {
+    $('.tooltiptext-4').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance4() {
+    $('.tooltiptext-4').removeClass('active');
+}
+
+function toggleGuidance5() {
+    $('.tooltiptext-5').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance5() {
+    $('.tooltiptext-5').removeClass('active');
+}
+
+function toggleGuidance6() {
+    $('.tooltiptext-6').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5').removeClass('active');
+}
+
+function closeToggleGuidance6() {
+    $('.tooltiptext-6').removeClass('active');
+}
+
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {
