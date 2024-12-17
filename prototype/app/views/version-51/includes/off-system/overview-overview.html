@@ -7,7 +7,7 @@
     <section>
         <div class="title-wrapper">
             <h3 class="govuk-heading-s">Case details</h3>
-            <a href="#">Edit</a>
+            <a href="16-case-details">Edit</a>
         </div>
         <div class="section-content">
 
@@ -44,40 +44,56 @@
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Crest/Indictment no.</th>
-                        {% if data['caseFile_Indictment'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['caseFile_Indictment'] }}</strong></td>
+                        {% if data['caseDetails_Crest'] %}
+                            <td class="govuk-table__cell">{{ data['caseDetails_Crest'] }}</td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                   
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Force/Investigative Agency</th>
-                        {% if data['caseFile_Agency'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['caseFile_Agency'] }}</strong></td>
+                        {% if data['caseDetails_Agency'] %}
+                            <td class="govuk-table__cell">{{ data['caseDetails_Agency'] }}</td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                   
                     </tr>
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Complexity rating</th>
-                        {% if data['caseFile_Complexity'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['caseFile_Complexity'] }}</strong></td>
-                        {% else %}
-                            <td class="govuk-table__cell">--</td>
-                        {% endif %}                   
+                        <td class="govuk-table__cell">
+                            {% if data['caseDetails_Complexity'] == 'Low' %}
+                                <strong class="govuk-tag govuk-tag--green">{{ data['caseDetails_Complexity'] }}</strong>
+                            {% elseif data['caseDetails_Complexity'] == 'Medium' %}
+                                <strong class="govuk-tag govuk-tag--blue">{{ data['caseDetails_Complexity'] }}</strong>
+                            {% elseif data['caseDetails_Complexity'] == 'High' %}
+                                <strong class="govuk-tag govuk-tag--yellow">{{ data['caseDetails_Complexity'] }}</strong>
+                            {% elseif data['caseDetails_Complexity'] == 'Exceptional' %}
+                                <strong class="govuk-tag govuk-tag--red">{{ data['caseDetails_Complexity'] }}</strong>
+                            {% else %}
+                                --
+                            {% endif %}
+                        </td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Status</th>
+                        <th scope="row" class="govuk-table__header">Current case status</th>
                         {% if data['chargeAddedComplete'] == 'True' %}
                             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Charged</strong></td>
                         {% else %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
+                            {% if data['caseDetails_Status'] == 'Early Advice' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Early Advice</strong></td>
+                            {% elseif data['caseDetails_Status'] == 'Pre Charge Request' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
+                            {% elseif data['caseDetails_Status'] == 'Charged' %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Charged</strong></td>
+                            {% else %}
+                                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pre-charge</strong></td>
+                            {% endif %} 
                         {% endif %}                   
                     </tr>
                     <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">File type</th>
-                        {% if data['caseFile_Type'] %}
-                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">{{ data['caseFile_Type'] }}</strong></td>
+                        <th scope="row" class="govuk-table__header">Proceeding type</th>
+                        {% if data['caseDetails_Type'] %}
+                            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['caseDetails_Type'] }}</strong></td>
                         {% else %}
                             <td class="govuk-table__cell">--</td>
                         {% endif %}                   
