@@ -663,6 +663,26 @@ function secondaryTab3() {
     $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-3 a').attr('aria-current','page');
 }
 
+function secondaryTab4_V2() {
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-4').show();
+
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-4').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-4 a').attr('aria-current','page');
+}
+
+function secondaryTab5_V2() {
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-5').show();
+
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-5').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-5 a').attr('aria-current','page');
+}
+
 function secondaryTab4() {
     $('.tabsGroup-2.secondaryTabContent').hide();
     $('.tabsGroup-2.secondaryTabContent#secondaryTabContent-4').show();
