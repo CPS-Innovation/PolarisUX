@@ -477,7 +477,7 @@ $(document).ready(function() {
     }
 });
 
-// ========================= ADD USERS =========================
+// ========================= ADD USERS ========================= //
 $(document).ready(function () {
     // $('#userDetails-2, #userDetails-3, #userDetails-4, #userDetails-5').hide();
     $('#userDetails-1 a#removeUser1').hide();
@@ -547,6 +547,271 @@ function removeUser5() {
     $('#userDetails-5').hide();
     $('.userDetails-5').hide();
 }
+
+// ========================= REMOVE USERS =========================
+$(document).ready(function () {
+    $(".removeContact").on("click", function (e) {
+        $('.contacts-table tr').removeClass('removeContact-Row');
+        $(this).parent().parent().addClass('removeContact-Row');
+        var userName = $(this).parent().parent().find('.govuk-table__header').text();
+        $('#confirmRemoveUser').removeClass('rj-dont-display');
+        $('.usernameRemove').text(userName);
+    });
+
+    $("input[id=offCMS_Username-Remove]").on("change", function (e) {
+        if ($(this).is(':checked')) {
+            $('#confirm-RemoveUsers').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('onClick','return confirmRemoveUsers();');
+        } else {
+            $('#confirm-RemoveUsers').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
+        }
+    });
+
+    
+})
+
+function closeConfirmRemoveUser() {
+    $('#confirmRemoveUser').addClass('rj-dont-display');
+    $('table.contacts-table tbody tr').removeClass('removeContact-Row');
+}
+
+function confirmRemoveUsers() {
+    $('#confirmRemoveUser').addClass('rj-dont-display');
+    $('table.contacts-table tbody tr.removeContact-Row').hide();
+    var userNumbers = parseInt($('.tab-8-content .contacts-number').text());
+    $('.tab-8-content .contacts-number').text(userNumbers-1);
+
+}
+
+// ========================= ADD CONTACTS ========================= //
+$(document).ready(function () {
+    $('#contactsDetails-1 a#removeContact1').hide();
+
+    $("#keyContact_Role_1").on("change", function (e) {
+        if ($(this).val() == 'Counsel 1' || $(this).val() == 'Counsel 2' || $(this).val() == 'Counsel 3') {
+            $('#conditional-keyContact_Role_1').show();
+        } else {
+            $('#conditional-keyContact_Role_1').hide();
+        }
+    });
+
+    $("#keyContact_Role_2").on("change", function (e) {
+        if ($(this).val() == 'Counsel 1' || $(this).val() == 'Counsel 2' || $(this).val() == 'Counsel 3') {
+            $('#conditional-keyContact_Role_2').show();
+        } else {
+            $('#conditional-keyContact_Role_2').hide();
+        }
+    });
+
+    $("#keyContact_Role_3").on("change", function (e) {
+        if ($(this).val() == 'Counsel 1' || $(this).val() == 'Counsel 2' || $(this).val() == 'Counsel 3') {
+            $('#conditional-keyContact_Role_3').show();
+        } else {
+            $('#conditional-keyContact_Role_3').hide();
+        }
+    });
+
+    $("#keyContact_Role_4").on("change", function (e) {
+        if ($(this).val() == 'Counsel 1' || $(this).val() == 'Counsel 2' || $(this).val() == 'Counsel 3') {
+            $('#conditional-keyContact_Role_4').show();
+        } else {
+            $('#conditional-keyContact_Role_4').hide();
+        }
+    });
+
+    $("#keyContact_Role_5").on("change", function (e) {
+        if ($(this).val() == 'Counsel 1' || $(this).val() == 'Counsel 2' || $(this).val() == 'Counsel 3') {
+            $('#conditional-keyContact_Role_5').show();
+        } else {
+            $('#conditional-keyContact_Role_5').hide();
+        }
+    });
+
+})
+
+function addContact1() {
+    var contactSurname_1 = $('#keyContact_Name_1A').val();
+    var contactForname_1 = $('#keyContact_Name_1B').val();
+    var contactRole_1 = $('#keyContact_Role_1').val();
+    var contactType_1 = $('#keyContact_Role_1-Type').val();
+    var contactEmail_1 = $('#keyContact_Email_1').val();
+    var contactPhone_1 = $('#keyContact_Phone_1').val();
+    var contactDay_1 = $('#keyContact_Date_1-Day').val();
+    var contactMonth_1 = $('#keyContact_Date_1-Month').val();
+    var contactYear_1 = $('#keyContact_Date_1-Year').val();
+
+    $('#new-contacts').append(`
+        <p class="contactDetails-1">
+            <span class="icon-new user"></span><strong>` + contactSurname_1 + `, ` + contactForname_1 + `</strong>
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Contact details</span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Role:</strong><span>` + contactRole_1 + `</span><br>
+                <strong>Email:</strong> <a href="mailto:` + contactEmail_1 + `" class="copy_Item">` + contactEmail_1 + `</a><br>
+                <strong>Telephone:</strong> <a href="tel:` + contactPhone_1 + `" class="copy_Item">` + contactPhone_1 + `</a><br>
+                <strong>Date:</strong><span>` + contactDay_1 + `/` + contactMonth_1 + `/` + contactYear_1 + `</span>
+            </div>
+        </details>                    
+    `);
+    $('#contactsDetails-2').addClass('active');
+    $('#addContact1').hide();
+    $('#contactsDetails-1 a#removeContact1').show();
+}
+
+function removeContact1() {
+    $('#contactsDetails-1').hide();
+    $('.contactsDetails-1').hide();
+}
+
+function addContact2() {
+    var contactSurname_2 = $('#keyContact_Name_2A').val();
+    var contactForname_2 = $('#keyContact_Name_2B').val();
+    var contactRole_2 = $('#keyContact_Role_2').val();
+    var contactType_2 = $('#keyContact_Role_2-Type').val();
+    var contactEmail_2 = $('#keyContact_Email_2').val();
+    var contactPhone_2 = $('#keyContact_Phone_2').val();
+    var contactDay_2 = $('#keyContact_Date_2-Day').val();
+    var contactMonth_2 = $('#keyContact_Date_2-Month').val();
+    var contactYear_2 = $('#keyContact_Date_2-Year').val();
+
+    $('#new-contacts').append(`
+        <p class="contactDetails-2">
+            <span class="icon-new user"></span><strong>` + contactSurname_2 + `, ` + contactForname_2 + `</strong>
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Contact details</span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Role:</strong><span>` + contactRole_2 + `</span><br>
+                <strong>Email:</strong> <a href="mailto:` + contactEmail_2 + `" class="copy_Item">` + contactEmail_2 + `</a><br>
+                <strong>Telephone:</strong> <a href="tel:` + contactPhone_2 + `" class="copy_Item">` + contactPhone_2 + `</a><br>
+                <strong>Date:</strong><span>` + contactDay_2 + `/` + contactMonth_2 + `/` + contactYear_2 + `</span>
+            </div>
+        </details>                    
+    `);
+    $('#contactsDetails-3').addClass('active');
+    $('#addContact2').hide();
+    $('#contactsDetails-2 a#removeContact2').show();
+}
+
+function removeContact2() {
+    $('#contactsDetails-2').hide();
+    $('.contactsDetails-2').hide();
+}
+
+function addContact3() {
+    var contactSurname_3 = $('#keyContact_Name_3A').val();
+    var contactForname_3 = $('#keyContact_Name_3B').val();
+    var contactRole_3 = $('#keyContact_Role_3').val();
+    var contactType_3 = $('#keyContact_Role_3-Type').val();
+    var contactEmail_3 = $('#keyContact_Email_3').val();
+    var contactPhone_3 = $('#keyContact_Phone_3').val();
+    var contactDay_3 = $('#keyContact_Date_3-Day').val();
+    var contactMonth_3 = $('#keyContact_Date_3-Month').val();
+    var contactYear_3 = $('#keyContact_Date_3-Year').val();
+
+    $('#new-contacts').append(`
+        <p class="contactDetails-3">
+            <span class="icon-new user"></span><strong>` + contactSurname_3 + `, ` + contactForname_3 + `</strong>
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Contact details</span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Role:</strong><span>` + contactRole_3 + `</span><br>
+                <strong>Email:</strong> <a href="mailto:` + contactEmail_3 + `" class="copy_Item">` + contactEmail_3 + `</a><br>
+                <strong>Telephone:</strong> <a href="tel:` + contactPhone_3 + `" class="copy_Item">` + contactPhone_3 + `</a><br>
+                <strong>Date:</strong><span>` + contactDay_3 + `/` + contactMonth_3 + `/` + contactYear_3 + `</span>
+            </div>
+        </details>                    
+    `);
+    $('#contactsDetails-4').addClass('active');
+    $('#addContact3').hide();
+    $('#contactsDetails-3 a#removeContact3').show();
+}
+
+function removeContact3() {
+    $('#contactsDetails-3').hide();
+    $('.contactsDetails-3').hide();
+}
+
+function addContact4() {
+    var contactSurname_4 = $('#keyContact_Name_4A').val();
+    var contactForname_4 = $('#keyContact_Name_4B').val();
+    var contactRole_4 = $('#keyContact_Role_4').val();
+    var contactType_4 = $('#keyContact_Role_4-Type').val();
+    var contactEmail_4 = $('#keyContact_Email_4').val();
+    var contactPhone_4 = $('#keyContact_Phone_4').val();
+    var contactDay_4 = $('#keyContact_Date_4-Day').val();
+    var contactMonth_4 = $('#keyContact_Date_4-Month').val();
+    var contactYear_4 = $('#keyContact_Date_4-Year').val();
+
+    $('#new-contacts').append(`
+        <p class="contactDetails-4">
+            <span class="icon-new user"></span><strong>` + contactSurname_4 + `, ` + contactForname_4 + `</strong>
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Contact details</span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Role:</strong><span>` + contactRole_4 + `</span><br>
+                <strong>Email:</strong> <a href="mailto:` + contactEmail_4 + `" class="copy_Item">` + contactEmail_4 + `</a><br>
+                <strong>Telephone:</strong> <a href="tel:` + contactPhone_4 + `" class="copy_Item">` + contactPhone_4 + `</a><br>
+                <strong>Date:</strong><span>` + contactDay_4 + `/` + contactMonth_4 + `/` + contactYear_4 + `</span>
+            </div>
+        </details>                    
+    `);
+    $('#contactsDetails-5').addClass('active');
+    $('#addContact4').hide();
+    $('#contactsDetails-4 a#removeContact4').show();
+}
+
+function removeContact4() {
+    $('#contactsDetails-4').hide();
+    $('.contactsDetails-4').hide();
+}
+
+function addContact5() {
+    var contactSurname_5 = $('#keyContact_Name_5A').val();
+    var contactForname_5 = $('#keyContact_Name_5B').val();
+    var contactRole_5 = $('#keyContact_Role_5').val();
+    var contactType_5 = $('#keyContact_Role_5-Type').val();
+    var contactEmail_5 = $('#keyContact_Email_5').val();
+    var contactPhone_5 = $('#keyContact_Phone_5').val();
+    var contactDay_5 = $('#keyContact_Date_5-Day').val();
+    var contactMonth_5 = $('#keyContact_Date_5-Month').val();
+    var contactYear_5 = $('#keyContact_Date_5-Year').val();
+
+    $('#new-contacts').append(`
+        <p class="contactDetails-5">
+            <span class="icon-new user"></span><strong>` + contactSurname_5 + `, ` + contactForname_5 + `</strong>
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Contact details</span>
+            </summary>
+            <div class="govuk-details__text">
+                <strong>Role:</strong><span>` + contactRole_5 + `</span><br>
+                <strong>Email:</strong> <a href="mailto:` + contactEmail_5 + `" class="copy_Item">` + contactEmail_5 + `</a><br>
+                <strong>Telephone:</strong> <a href="tel:` + contactPhone_5 + `" class="copy_Item">` + contactPhone_5 + `</a><br>
+                <strong>Date:</strong><span>` + contactDay_5 + `/` + contactMonth_5 + `/` + contactYear_5 + `</span>
+            </div>
+        </details>                    
+    `);
+    $('#addContact5').hide();
+    $('#contactsDetails-5 a#removeContact3').show();
+}
+
+function removeContact5() {
+    $('#contactsDetails-5').hide();
+    $('.contactsDetails-5').hide();
+}
+
 
 // ========================= REMOVE USERS =========================
 $(document).ready(function () {
