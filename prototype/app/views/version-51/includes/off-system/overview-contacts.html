@@ -10,7 +10,11 @@
         <section>
             <div class="title-wrapper">
                 <h3 class="govuk-heading-s">Key contacts</h3>
-                <a href="17-key-contacts">Edit</a>
+                {% if data['contactsAdded'] %}
+                    <a href="17-key-contacts">Edit</a>
+                {% else %}
+                    <a href="17-key-contacts">Add</a>
+                {% endif %} 
             </div>
 
             <div class="section-content">
@@ -112,15 +116,6 @@
 
                         {% endif %}    
 
-
-
-
-
-
-
-
-
-
                         {% if data['keyContact_Name_1A'] or data['keyContact_Name_2A'] or data['keyContact_Name_3A'] or data['keyContact_Name_4A'] or data['keyContact_Name_5A'] %}
 
                         {% else %}
@@ -138,8 +133,12 @@
     </div>
 
     <div class="cta-wrapper contacts-added govuk-!-margin-top-0">
-        <p>There has been <strong>no key contacts</strong> added to this case</p>
-        <button type="submit" class="govuk-button" style="" onclick="location.href='#';">Add a contact</button>
+        {% if data['contactsAdded'] %}
+            <p>Add additional <strong>key contacts</strong> to this case</p>
+        {% else %}
+            <p>There has been <strong>no key contacts</strong> added to this case</p>
+        {% endif %} 
+        <button type="submit" class="govuk-button" style="" onclick="location.href='17-key-contacts';">Add a contact</button>
     </div>
 
 </div>

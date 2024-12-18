@@ -27,7 +27,7 @@
                 <h1 class="govuk-heading-xl" style="">Add Key contacts to Groundhog day</h1>
             {% endif %}
 
-            <form method="get" action="5-case-overview#" id="">  
+            <form method="get" action="5-case-overview#contactsTab" id="">  
 
                 <p> </p>
 
@@ -81,10 +81,10 @@
                             {% else %}
                                 <option value="OIC Supervision">OIC Supervision</option>
                             {% endif %}
-                            {% if data['keyContact_Role_1'] == 'Discolosure Officer' %}
-                                <option value="Discolosure Officer" selected>Discolosure Officer</option>
+                            {% if data['keyContact_Role_1'] == 'Disclosure Officer' %}
+                                <option value="Disclosure Officer" selected>Disclosure Officer</option>
                             {% else %}
-                                <option value="Discolosure Officer">Discolosure Officer</option>
+                                <option value="Disclosure Officer">Disclosure Officer</option>
                             {% endif %}
                             {% if data['keyContact_Role_1'] == 'Counsel 1' %}
                                 <option value="Counsel 1" selected>Counsel 1</option>
@@ -110,7 +110,7 @@
                                     <option value="Led Junior">Led Junior</option>
                                     <option value="Leading Junior">Leading Junior</option>
                                     <option value="QC">QC</option>
-                                    <option value="Discolosure Counsel">Discolosure Counsel</option>
+                                    <option value="Disclosure Counsel">Disclosure Counsel</option>
                                 </select>
                             </div>
                         </div>                    
@@ -239,10 +239,10 @@
                             {% else %}
                                 <option value="OIC Supervision">OIC Supervision</option>
                             {% endif %}
-                            {% if data['keyContact_Role_2'] == 'Discolosure Officer' %}
-                                <option value="Discolosure Officer" selected>Discolosure Officer</option>
+                            {% if data['keyContact_Role_2'] == 'Disclosure Officer' %}
+                                <option value="Disclosure Officer" selected>Disclosure Officer</option>
                             {% else %}
-                                <option value="Discolosure Officer">Discolosure Officer</option>
+                                <option value="Disclosure Officer">Disclosure Officer</option>
                             {% endif %}
                             {% if data['keyContact_Role_2'] == 'Counsel 1' %}
                                 <option value="Counsel 1" selected>Counsel 1</option>
@@ -268,7 +268,7 @@
                                     <option value="Led Junior">Led Junior</option>
                                     <option value="Leading Junior">Leading Junior</option>
                                     <option value="QC">QC</option>
-                                    <option value="Discolosure Counsel">Discolosure Counsel</option>
+                                    <option value="Disclosure Counsel">Disclosure Counsel</option>
                                 </select>
                             </div>
                         </div>                    
@@ -397,10 +397,10 @@
                             {% else %}
                                 <option value="OIC Supervision">OIC Supervision</option>
                             {% endif %}
-                            {% if data['keyContact_Role_3'] == 'Discolosure Officer' %}
-                                <option value="Discolosure Officer" selected>Discolosure Officer</option>
+                            {% if data['keyContact_Role_3'] == 'Disclosure Officer' %}
+                                <option value="Disclosure Officer" selected>Disclosure Officer</option>
                             {% else %}
-                                <option value="Discolosure Officer">Discolosure Officer</option>
+                                <option value="Disclosure Officer">Disclosure Officer</option>
                             {% endif %}
                             {% if data['keyContact_Role_3'] == 'Counsel 1' %}
                                 <option value="Counsel 1" selected>Counsel 1</option>
@@ -426,7 +426,7 @@
                                     <option value="Led Junior">Led Junior</option>
                                     <option value="Leading Junior">Leading Junior</option>
                                     <option value="QC">QC</option>
-                                    <option value="Discolosure Counsel">Discolosure Counsel</option>
+                                    <option value="Disclosure Counsel">Disclosure Counsel</option>
                                 </select>
                             </div>
                         </div>                    
@@ -555,10 +555,10 @@
                             {% else %}
                                 <option value="OIC Supervision">OIC Supervision</option>
                             {% endif %}
-                            {% if data['keyContact_Role_4'] == 'Discolosure Officer' %}
-                                <option value="Discolosure Officer" selected>Discolosure Officer</option>
+                            {% if data['keyContact_Role_4'] == 'Disclosure Officer' %}
+                                <option value="Disclosure Officer" selected>Disclosure Officer</option>
                             {% else %}
-                                <option value="Discolosure Officer">Discolosure Officer</option>
+                                <option value="Disclosure Officer">Disclosure Officer</option>
                             {% endif %}
                             {% if data['keyContact_Role_4'] == 'Counsel 1' %}
                                 <option value="Counsel 1" selected>Counsel 1</option>
@@ -584,7 +584,7 @@
                                     <option value="Led Junior">Led Junior</option>
                                     <option value="Leading Junior">Leading Junior</option>
                                     <option value="QC">QC</option>
-                                    <option value="Discolosure Counsel">Discolosure Counsel</option>
+                                    <option value="Disclosure Counsel">Disclosure Counsel</option>
                                 </select>
                             </div>
                         </div>                    
@@ -713,10 +713,10 @@
                             {% else %}
                                 <option value="OIC Supervision">OIC Supervision</option>
                             {% endif %}
-                            {% if data['keyContact_Role_5'] == 'Discolosure Officer' %}
-                                <option value="Discolosure Officer" selected>Discolosure Officer</option>
+                            {% if data['keyContact_Role_5'] == 'Disclosure Officer' %}
+                                <option value="Disclosure Officer" selected>Disclosure Officer</option>
                             {% else %}
-                                <option value="Discolosure Officer">Discolosure Officer</option>
+                                <option value="Disclosure Officer">Disclosure Officer</option>
                             {% endif %}
                             {% if data['keyContact_Role_5'] == 'Counsel 1' %}
                                 <option value="Counsel 1" selected>Counsel 1</option>
@@ -742,7 +742,7 @@
                                     <option value="Led Junior">Led Junior</option>
                                     <option value="Leading Junior">Leading Junior</option>
                                     <option value="QC">QC</option>
-                                    <option value="Discolosure Counsel">Discolosure Counsel</option>
+                                    <option value="Disclosure Counsel">Disclosure Counsel</option>
                                 </select>
                             </div>
                         </div>                    
@@ -817,6 +817,7 @@
                 </div>
                 <!-- CONTACT 5 -- END -->
 
+                <input id="contactsAdded" name="contactsAdded" type="text" value="true" style="display: none;">
                 <button type="submit" class="govuk-button" style="">Save and exit</button>
                 <button type="button" onclick="location.href='5-case-overview';" class="non-button margin-left" id="">Cancel</button>
 
