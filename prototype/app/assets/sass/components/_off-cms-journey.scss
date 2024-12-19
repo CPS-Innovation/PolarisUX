@@ -745,7 +745,7 @@ html {
                     }
                }
           }
-          .tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6 {
+          .tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7 {
                &.active {
                     visibility: visible;
                }
@@ -817,14 +817,14 @@ html {
                     }
                }
           }
-          .tooltiptext-3, .tooltiptext-5 {
-               left: inherit;
-               right: -1em;
-               &:after {
-                    left: inherit;
-                    right: 9.25em;
-               }
-          }
+          // .tooltiptext-3, .tooltiptext-5 {
+          //      left: inherit;
+          //      right: -1em;
+          //      &:after {
+          //           left: inherit;
+          //           right: 9.25em;
+          //      }
+          // }
      }
 }
 
@@ -1454,6 +1454,26 @@ a {
                     margin-bottom: -0.15em;
                     background: url("../images/add-green.svg") white no-repeat 50% 50%;
                     background-size: contain;   
+               }
+          }
+     }
+}
+
+button {
+     &.govuk-button {
+          &.non-button {
+               padding: 0;
+               margin: 1em 1.25em;
+               float: right;
+               font-size: 1.2rem;
+               box-shadow: none;
+               border: none; 
+               font-weight: bold;
+               color: $govuk-link-colour;
+               text-decoration: underline;
+               &:hover, &:active, &:focus {
+                    background: none;
+                    cursor: pointer;
                }
           }
      }
@@ -2139,6 +2159,11 @@ nav.tube-map-ea {
 
 }
 
+.hide-all-link, .preview-all-link {
+     margin-top: 1.25em;
+     font-size: 1.1875rem;
+}
+
 .hide-all-link, .hide-all-witnesses-link {
      .icon-new {
           float: right;
@@ -2228,7 +2253,7 @@ nav.tube-map-ea {
      a {
           display: inline-block;
           float: right;
-          font-size: 1rem;
+          // font-size: 1rem;
      }
 }
 

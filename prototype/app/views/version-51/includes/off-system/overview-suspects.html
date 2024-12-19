@@ -256,25 +256,6 @@
                             </div>
                             <div class="suspects-content-wrapper">
                                 <div class="suspects-sections">
-                                    <p>There are no further details on <strong>Individual</strong> at this time.</p>
-                                </div>
-                                <div class="cta-wrapper">
-                                    {% if data['chargeAddedComplete'] == 'true' %}
-                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
-                                    {% else %}
-                                        <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="suspects-details-wrapper has-details">
-                            <div class="title">
-                                <h4 class="govuk-heading-s">Charge details</h4>
-                                <a href="#" class="">Edit</a>
-                            </div>
-                            <div class="suspects-content-wrapper">
-                                <div class="suspects-sections">
                                     <section>
                                         {% if data['chargeAddedComplete'] == 'true' %}
                                             <section>
@@ -305,18 +286,15 @@
                                         {% endif %}
                                         <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='12A-charge-details';">Draft new charge</button>
                                         <button type="submit" class="govuk-button govuk-button--secondary margin_left" style="" onclick="">Upload a new charge</button>
+                                        {% if data['chargeAddedComplete'] == 'true' %}
+                                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
+                                        {% else %}
+                                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
+                                        {% endif %}
                                     </section>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="cta-wrapper">
-                        {% if data['chargeAddedComplete'] == 'true' %}
-                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove defendant</button>
-                        {% else %}
-                            <button class="govuk-button govuk-button--secondary removeSuspect govuk-button--warning">Remove suspect</button>
-                        {% endif %}
                     </div>
                 {% endif %}
 

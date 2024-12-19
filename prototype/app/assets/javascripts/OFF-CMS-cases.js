@@ -393,24 +393,113 @@ $(document).ready(function() {
     }
 
     // 3 - Case strategy
-    if (window.location.href.indexOf("stategyTab") > -1) {
+    if (window.location.href.indexOf("strategyTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+    }
+
+    if (window.location.href.indexOf("strategyTab_subTab_1") > -1) {
         $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel').hide();
 
         $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel#tab-3-content').show();
 
-        $('#last-action-hero .hods-timeline__item.last-action-hero-SUSPECT').show();
-        $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-1').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-1 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-1').show();
     }
 
-    // 4 - Suspects
-    if (window.location.href.indexOf("witnessesTab") > -1) {
+    if (window.location.href.indexOf("strategyTab_subTab_2") > -1) {
         $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
         $('#new-tabs .panel').hide();
 
-        $('#new-tabs .govuk-tabs__list-item#tab-5').addClass('govuk-tabs__list-item--selected');
-        $('#new-tabs .panel#tab-5-content').show();
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-2').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-2 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-2').show();
+    }
+
+    if (window.location.href.indexOf("strategyTab_subTab_3") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-3').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-3 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-3').show();
+    }
+
+    if (window.location.href.indexOf("strategyTab_subTab_4") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-4').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-4 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-4').show();
+    }
+
+    if (window.location.href.indexOf("strategyTab_subTab_5") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-5').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-5 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-5').show();
+    }
+
+    if (window.location.href.indexOf("strategyTab_subTab_6") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-3').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-3-content').show();
+
+        $('.moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+        $('.moj-sub-navigation__item#secondaryTab-6').addClass('secondaryTab-Selected');
+        $('#strategy_Nav a').removeAttr('aria-current');
+        $('#strategy_Nav #secondaryTab-6 a').attr('aria-current','page');
+        $('.secondaryTabContent').hide();
+        $('.secondaryTabContent#secondaryTabContent-6').show();
+    }
+
+
+    // 4 - Suspects
+    if (window.location.href.indexOf("suspectsTab") > -1) {
+        $('#new-tabs .govuk-tabs__list-item').removeClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel').hide();
+
+        $('#new-tabs .govuk-tabs__list-item#tab-4').addClass('govuk-tabs__list-item--selected');
+        $('#new-tabs .panel#tab-4-content').show();
 
         $('#last-action-hero .hods-timeline__item.last-action-hero-SUSPECT').show();
         $('#last-action-hero .hods-timeline__item.last-action-hero-CREATED').hide();
@@ -946,6 +1035,16 @@ function secondaryTab5_V2() {
     $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-5').addClass('secondaryTab-Selected');
     $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
     $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-5 a').attr('aria-current','page');
+}
+
+function secondaryTab6_V2() {
+    $('.tabsGroup-1.secondaryTabContent').hide();
+    $('.tabsGroup-1.secondaryTabContent#secondaryTabContent-6').show();
+
+    $('.tabsGroup-1 .moj-sub-navigation__item').removeClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-6').addClass('secondaryTab-Selected');
+    $('.tabsGroup-1 .moj-sub-navigation__item a').removeAttr('aria-current');
+    $('.tabsGroup-1 .moj-sub-navigation__item#secondaryTab-6 a').attr('aria-current','page');
 }
 
 function secondaryTab4() {
@@ -2219,9 +2318,82 @@ function closeCommsModal() {
 
 // ========================= STRATEGY ========================= //
 
+function saveStrategyDesctiption() {
+    $.cookie("strategy_Description", $('#strategy_Description-Editor').html(), {path:'/'});
+}
+function saveStrategyProsecution() {
+    $.cookie("strategy_Prosecution", $('#strategy_Prosecution-Editor').html(), {path:'/'});
+}
+function saveStrategyVictim() {
+    $.cookie("strategy_Victim", $('#strategy_Victim-Editor').html(), {path:'/'});
+}
+function saveStrategyProceeds() {
+    $.cookie("strategy_Proceeds", $('#strategy_Proceeds-Editor').html(), {path:'/'});
+}
+function saveStrategyDisclosure() {
+    $.cookie("strategy_Disclosure", $('#strategy_Disclosure-Editor').html(), {path:'/'});
+}
+function saveStrategyAsset() {
+    $.cookie("strategy_Asset", $('#strategy_Asset-Editor').html(), {path:'/'});
+}
+function saveStrategyInternational() {
+    $.cookie("strategy_International", $('#strategy_International-Editor').html(), {path:'/'});
+}
+
+
+
+
+
+
+
+$(document).ready(function () {
+    if ($.cookie("strategy_Description")) {
+        var strategiesNumber = parseInt($('.strategies-number').html());
+        $('.strategies-number').html(strategiesNumber + 1);
+        $('#strategy_Description-Editor').html($.cookie("strategy_Description"));
+        $('#strategy_Description-Text').html($.cookie("strategy_Description"));
+    }
+    if ($.cookie("strategy_Prosecution")) {
+        var strategiesNumber = parseInt($('.strategies-number').html());
+        $('.strategies-number').html(strategiesNumber + 1);
+        $('#strategy_Prosecution-Editor').html($.cookie("strategy_Prosecution"));
+        $('#strategy_Prosecution-Text').html($.cookie("strategy_Prosecution"));
+    }
+    if ($.cookie("strategy_Victim")) {
+        var strategiesNumber = parseInt($('.strategies-number').html());
+        $('.strategies-number').html(strategiesNumber + 1);
+        $('#strategy_Victim-Editor').html($.cookie("strategy_Victim"));
+        $('#strategy_Victim-Text').html($.cookie("strategy_Victim"));
+    }
+    if ($.cookie("strategy_Proceeds")) {
+        var strategiesNumber = parseInt($('.strategies-number').html());
+        $('.strategies-number').html(strategiesNumber + 1);
+        $('#strategy_Proceeds-Editor').html($.cookie("strategy_Proceeds"));
+        $('#strategy_Proceeds-Text').html($.cookie("strategy_Proceeds"));
+    }
+    if ($.cookie("strategy_Disclosure")) {
+        var strategiesNumber = parseInt($('.strategies-number').html());
+        $('.strategies-number').html(strategiesNumber + 1);
+        $('#strategy_Disclosure-Editor').html($.cookie("strategy_Disclosure"));
+        $('#strategy_Disclosure-Text').html($.cookie("strategy_Disclosure"));
+    }
+    if ($.cookie("strategy_Asset")) {
+        var strategiesNumber = parseInt($('.asset-number').html());
+        $('.asset-number').html(strategiesNumber + 1);
+        $('#strategy_Asset-Editor').html($.cookie("strategy_Asset"));
+        $('#strategy_Asset-Text').html($.cookie("strategy_Asset"));
+    }
+    if ($.cookie("strategy_International")) {
+        var strategiesNumber = parseInt($('.international-number').html());
+        $('.international-number').html(strategiesNumber + 1);
+        $('#strategy_International-Editor').html($.cookie("strategy_International"));
+        $('#strategy_International-Text').html($.cookie("strategy_International"));
+    }
+})
+
 function toggleGuidance1() {
     $('.tooltiptext-1').toggleClass('active');
-    $('.tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+    $('.tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance1() {
@@ -2230,7 +2402,7 @@ function closeToggleGuidance1() {
 
 function toggleGuidance2() {
     $('.tooltiptext-2').toggleClass('active');
-    $('.tooltiptext-1, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+    $('.tooltiptext-1, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance2() {
@@ -2239,7 +2411,7 @@ function closeToggleGuidance2() {
 
 function toggleGuidance3() {
     $('.tooltiptext-3').toggleClass('active');
-    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance3() {
@@ -2248,7 +2420,7 @@ function closeToggleGuidance3() {
 
 function toggleGuidance4() {
     $('.tooltiptext-4').toggleClass('active');
-    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance4() {
@@ -2257,7 +2429,7 @@ function closeToggleGuidance4() {
 
 function toggleGuidance5() {
     $('.tooltiptext-5').toggleClass('active');
-    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-6').removeClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-6, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance5() {
@@ -2266,12 +2438,23 @@ function closeToggleGuidance5() {
 
 function toggleGuidance6() {
     $('.tooltiptext-6').toggleClass('active');
-    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5').removeClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-7').removeClass('active');
 }
 
 function closeToggleGuidance6() {
     $('.tooltiptext-6').removeClass('active');
 }
+
+function toggleGuidance7() {
+    $('.tooltiptext-7').toggleClass('active');
+    $('.tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6').removeClass('active');
+}
+
+function closeToggleGuidance7() {
+    $('.tooltiptext-7').removeClass('active');
+}
+
+
 
 
 // ========================= TIMESTAMPS ========================= //
