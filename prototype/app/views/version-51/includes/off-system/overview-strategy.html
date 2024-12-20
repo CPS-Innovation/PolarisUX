@@ -8,7 +8,7 @@
             <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Description & Linked</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+            {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['strategy_Add_New_Suspect-Surname'] %}
                 {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
 		            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant (<span class="suspects-number">2</span>)</a>
                 {% elseif data['addSuspectStarted'] == 'true' %}
@@ -105,15 +105,12 @@
 		    <section>
 		        <div class="title-wrapper">
 	                <h3 class="govuk-heading-s">Suspect / Defendant</h3>
-
-		            <form method="get" action="18-case-strategy" id="">  
+		            <form method="get" action="18B-case-strategy" id="">  
+		                <input id="strategy_Edit_Suspect_1" name="strategy_Edit_Suspect_1" type="text" value="false" style="display: none;">
+		                <input id="strategy_Edit_Suspect_2" name="strategy_Edit_Suspect_2" type="text" value="false" style="display: none;">
+		                <input id="strategy_Add_New_Suspect" name="strategy_Add_New_Suspect" type="text" value="true" style="display: none;">
 		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_2" style="display: none;">
-		                <input id="strategy_2_Suspect" name="strategy_2_Suspect" type="text" value="true" style="display: none;">
-	                    {% if data['strategy_2_Suspect'] and data['strategy_Complete'] %}
-			                <button type="submit" class="govuk-button non-button" style="">Edit</button>
-	                    {% else %}
-			                <button type="submit" class="govuk-button non-button" style="">Add</button>
-	                    {% endif %}
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
 		            </form>
 		        </div>
 		        <div class="section-content">
@@ -130,13 +127,69 @@
 						</thead>
 						<tbody class="govuk-table__body">
 
+							{% if data['strategy_Add_New_Suspect-Surname'] %}
+								<tr class="govuk-table__row">
+									<th class="govuk-table__cell"><span class="uppercase">{{ data['strategy_Add_New_Suspect-Surname'] }}</span>, {{ data['strategy_Add_New_Suspect-Forename'] }}</td>
+									{% if data['strategy_Add_New_Suspect-Counts'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Add_New_Suspect-Counts'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Add_New_Suspect-Sentence'] %}
+										<td class="govuk-table__cell">
+											{{ data['strategy_Add_New_Suspect-Sentence'] }} - {{ data['strategy_Add_New_Suspect-Day'] }}/{{ data['strategy_Add_New_Suspect-Month'] }}/{{ data['strategy_Add_New_Suspect-Year'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Add_New_Suspect-GFS'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Add_New_Suspect-GFS'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">
+							            <form method="get" action="18B-case-strategy" id="">  
+							                <input id="strategy_Edit_Suspect_1" name="strategy_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="strategy_Edit_Suspect_2" name="strategy_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="strategy_Add_New_Suspect" name="strategy_Add_New_Suspect" type="text" value="true" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_2" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
 							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
 								<tr class="govuk-table__row">
 									<th class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</td>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
+									{% if data['strategy_Edit_Suspect_1-Counts'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Edit_Suspect_1-Counts'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Edit_Suspect_1-Sentence'] %}
+										<td class="govuk-table__cell">
+											{{ data['strategy_Edit_Suspect_1-Sentence'] }} - {{ data['strategy_Edit_Suspect_1-Day'] }}/{{ data['strategy_Edit_Suspect_1-Month'] }}/{{ data['strategy_Edit_Suspect_1-Year'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Edit_Suspect_1-GFS'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Edit_Suspect_1-GFS'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">
+							            <form method="get" action="18B-case-strategy" id="">  
+							                <input id="strategy_Edit_Suspect_1" name="strategy_Edit_Suspect_1" type="text" value="true" style="display: none;">
+							                <input id="strategy_Edit_Suspect_2" name="strategy_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="strategy_Add_New_Suspect" name="strategy_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_2" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
 								</tr>
 		                    {% else %}
 
@@ -145,16 +198,38 @@
 							{% if data['newCase_DefendantName-CompanyName'] %}
 								<tr class="govuk-table__row">
 									<th class="govuk-table__cell">{{ data['newCase_DefendantName-CompanyName'] }}</th>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
-									<td class="govuk-table__cell">--</td>
+									{% if data['strategy_Edit_Suspect_2-Counts'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Edit_Suspect_2-Counts'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Edit_Suspect_2-Sentence'] %}
+										<td class="govuk-table__cell">
+											{{ data['strategy_Edit_Suspect_2-Sentence'] }} - {{ data['strategy_Edit_Suspect_2-Day'] }}/{{ data['strategy_Edit_Suspect_2-Month'] }}/{{ data['strategy_Edit_Suspect_2-Year'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['strategy_Edit_Suspect_2-GFS'] %}
+										<td class="govuk-table__cell">{{ data['strategy_Edit_Suspect_2-GFS'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">
+							            <form method="get" action="18B-case-strategy" id="">  
+							                <input id="strategy_Edit_Suspect_1" name="strategy_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="strategy_Edit_Suspect_2" name="strategy_Edit_Suspect_2" type="text" value="true" style="display: none;">
+							                <input id="strategy_Add_New_Suspect" name="strategy_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_2" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
 								</tr>
 		                    {% else %}
 
 		                    {% endif %}
 
-							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['newCase_DefendantName-CompanyName'] %}
+							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['newCase_DefendantName-CompanyName'] or data['strategy_Add_New_Suspect-Surname'] %}
 
 		                    {% else %}
 								<tr class="govuk-table__row">
@@ -500,7 +575,13 @@
 		    <section>
 		        <div class="title-wrapper">
 					<h3 class="govuk-heading-s">Defendants Restrained</h3>
-					<a href="#">Add</a>
+		            <form method="get" action="18H-case-strategy" id="">  
+		                <input id="restrained_Edit_Suspect_1" name="restrained_Edit_Suspect_1" type="text" value="false" style="display: none;">
+		                <input id="restrained_Edit_Suspect_2" name="restrained_Edit_Suspect_2" type="text" value="false" style="display: none;">
+		                <input id="restrained_Add_New_Suspect" name="restrained_Add_New_Suspect" type="text" value="true" style="display: none;">
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_9" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
 		        </div>
 		        <div class="section-content">
 
@@ -513,12 +594,140 @@
 								<th scope="col" class="govuk-table__header">Date of Restraint</th>
 								<th scope="col" class="govuk-table__header">Date of Restraint Discharge</th>
 								<th scope="col" class="govuk-table__header">Initials</th>
+								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
-							<tr class="govuk-table__row">
-								<td class="govuk-table__cell" colspan="5">There is no Defendants Restrained on this case</td>
-							</tr>
+							{% if data['restrained_Add_New_Suspect-Surname'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 2:04pm</td>
+									<th class="govuk-table__cell"><span class="uppercase">{{ data['restrained_Add_New_Suspect-Surname'] }}</span>, {{ data['restrained_Add_New_Suspect-Forename'] }}</td>
+									{% if data['restrained_Add_New_Suspect-Lawyer'] %}
+										<td class="govuk-table__cell">{{ data['restrained_Add_New_Suspect-Lawyer'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Add_New_Suspect-Day_1'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Add_New_Suspect-Day_1'] }}/{{ data['restrained_Add_New_Suspect-Month_1'] }}/{{ data['restrained_Add_New_Suspect-Year_1'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Add_New_Suspect-Day_2'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Add_New_Suspect-Day_2'] }}/{{ data['restrained_Add_New_Suspect-Month_2'] }}/{{ data['restrained_Add_New_Suspect-Year_2'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18H-case-strategy" id="">  
+							                <input id="restrained_Edit_Suspect_1" name="restrained_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="restrained_Edit_Suspect_2" name="restrained_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="restrained_Add_New_Suspect" name="restrained_Add_New_Suspect" type="text" value="true" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_9" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+								<tr class="govuk-table__row">
+									{% if data['strategy_9_Complete'] %}
+										<td class="govuk-table__cell">Today, 2:04pm</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<th class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</td>
+									{% if data['restrained_Edit_Suspect_1-Lawyer'] %}
+										<td class="govuk-table__cell">{{ data['restrained_Edit_Suspect_1-Lawyer'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Edit_Suspect_1-Day_1'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Edit_Suspect_1-Day_1'] }}/{{ data['restrained_Edit_Suspect_1-Month_1'] }}/{{ data['restrained_Edit_Suspect_1-Year_1'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Edit_Suspect_1-Day_2'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Edit_Suspect_1-Day_2'] }}/{{ data['restrained_Edit_Suspect_1-Month_2'] }}/{{ data['restrained_Edit_Suspect_1-Year_2'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18H-case-strategy" id="">  
+							                <input id="restrained_Edit_Suspect_1" name="restrained_Edit_Suspect_1" type="text" value="true" style="display: none;">
+							                <input id="restrained_Edit_Suspect_2" name="restrained_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="restrained_Add_New_Suspect" name="restrained_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_9" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-CompanyName'] %}
+								<tr class="govuk-table__row">
+									{% if data['strategy_9_Complete'] %}
+										<td class="govuk-table__cell">Today, 2:04pm</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<th class="govuk-table__cell">{{ data['newCase_DefendantName-CompanyName'] }}</td>
+									{% if data['restrained_Edit_Suspect_2-Lawyer'] %}
+										<td class="govuk-table__cell">{{ data['restrained_Edit_Suspect_2-Lawyer'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Edit_Suspect_2-Day_1'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Edit_Suspect_2-Day_1'] }}/{{ data['restrained_Edit_Suspect_2-Month_1'] }}/{{ data['restrained_Edit_Suspect_2-Year_1'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['restrained_Edit_Suspect_2-Day_2'] %}
+										<td class="govuk-table__cell">
+											{{ data['restrained_Edit_Suspect_2-Day_2'] }}/{{ data['restrained_Edit_Suspect_2-Month_2'] }}/{{ data['restrained_Edit_Suspect_2-Year_2'] }}
+										</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18H-case-strategy" id="">  
+							                <input id="restrained_Edit_Suspect_1" name="restrained_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="restrained_Edit_Suspect_2" name="restrained_Edit_Suspect_2" type="text" value="true" style="display: none;">
+							                <input id="restrained_Add_New_Suspect" name="restrained_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_9" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['newCase_DefendantName-CompanyName'] or data['restrained_Add_New_Suspect-Surname'] %}
+
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="7">There is no Defendants Restrained on this case</td>
+								</tr>
+		                    {% endif %}
+
 						</tbody>
 					</table>
 
@@ -540,7 +749,13 @@
 		    <section>
 		        <div class="title-wrapper">
 					<h3 class="govuk-heading-s">Changes to charges</h3>
-					<a href="#">Add</a>
+		            <form method="get" action="18I-case-strategy" id="">  
+		                <input id="charges_Edit_Suspect_1" name="charges_Edit_Suspect_1" type="text" value="false" style="display: none;">
+		                <input id="charges_Edit_Suspect_2" name="charges_Edit_Suspect_2" type="text" value="false" style="display: none;">
+		                <input id="charges_Add_New_Suspect" name="charges_Add_New_Suspect" type="text" value="true" style="display: none;">
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_10" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
 		        </div>
 		        <div class="section-content">
 
@@ -552,12 +767,116 @@
 								<th scope="col" class="govuk-table__header">Change to Charge</th>
 								<th scope="col" class="govuk-table__header">Rational</th>
 								<th scope="col" class="govuk-table__header">Initial</th>
+								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
-							<tr class="govuk-table__row">
-								<td class="govuk-table__cell" colspan="5">There are no Changes to charges on this case</td>
-							</tr>
+							{% if data['charges_Add_New_Suspect-Surname'] %}
+								<tr class="govuk-table__row">
+									<th class="govuk-table__cell"><span class="uppercase">{{ data['charges_Add_New_Suspect-Surname'] }}</span>, {{ data['charges_Add_New_Suspect-Forename'] }}</td>
+									{% if data['charges_Add_New_Suspect-Original'] %}
+										<td class="govuk-table__cell">{{ data['charges_Add_New_Suspect-Original'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Add_New_Suspect-Change'] %}
+										<td class="govuk-table__cell">{{ data['charges_Add_New_Suspect-Change'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Add_New_Suspect-Rational'] %}
+										<td class="govuk-table__cell">{{ data['charges_Add_New_Suspect-Rational'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18I-case-strategy" id="">  
+							                <input id="charges_Edit_Suspect_1" name="charges_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="charges_Edit_Suspect_2" name="charges_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="charges_Add_New_Suspect" name="charges_Add_New_Suspect" type="text" value="true" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_10" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+								<tr class="govuk-table__row">
+									<th class="govuk-table__cell"><span class="uppercase">{{ data['newCase_DefendantName-Surname'] }}</span>, {{ data['newCase_DefendantName-Forename'] }}</td>
+									{% if data['charges_Edit_Suspect_1-Original'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_1-Original'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Edit_Suspect_1-Change'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_1-Change'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Edit_Suspect_1-Rational'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_1-Rational'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18I-case-strategy" id="">  
+							                <input id="charges_Edit_Suspect_1" name="charges_Edit_Suspect_1" type="text" value="true" style="display: none;">
+							                <input id="charges_Edit_Suspect_2" name="charges_Edit_Suspect_2" type="text" value="false" style="display: none;">
+							                <input id="charges_Add_New_Suspect" name="charges_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_10" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-CompanyName'] %}
+								<tr class="govuk-table__row">
+									<th class="govuk-table__cell">{{ data['newCase_DefendantName-CompanyName'] }}</td>
+									{% if data['charges_Edit_Suspect_2-Original'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_2-Original'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Edit_Suspect_2-Change'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_2-Change'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									{% if data['charges_Edit_Suspect_2-Rational'] %}
+										<td class="govuk-table__cell">{{ data['charges_Edit_Suspect_2-Rational'] }}</td>
+				                    {% else %}
+										<td class="govuk-table__cell">--</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell">
+							            <form method="get" action="18I-case-strategy" id="">  
+							                <input id="charges_Edit_Suspect_1" name="charges_Edit_Suspect_1" type="text" value="false" style="display: none;">
+							                <input id="charges_Edit_Suspect_2" name="charges_Edit_Suspect_2" type="text" value="true" style="display: none;">
+							                <input id="charges_Add_New_Suspect" name="charges_Add_New_Suspect" type="text" value="false" style="display: none;">
+							                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_10" style="display: none;">
+							                <button type="submit" class="govuk-button non-button" style="margin: 0; font-weight: normal;">Edit</button>
+							            </form>
+									</td>
+								</tr>
+		                    {% else %}
+
+		                    {% endif %}
+
+							{% if data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['newCase_DefendantName-CompanyName'] or data['restrained_Add_New_Suspect-Surname'] %}
+
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="6">There are no Changes to charges on this case</td>
+								</tr>
+		                    {% endif %}
 						</tbody>
 					</table>
 
@@ -598,7 +917,7 @@
 		                </div>
 		            </div>
 		            <form method="get" action="18J-case-strategy" id="">  
-		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_10" style="display: none;">
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_11" style="display: none;">
 		                <button type="submit" class="govuk-button non-button" style="">Add</button>
 		            </form>
 		        </div>
@@ -614,12 +933,12 @@
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
-		                    {% if data['strategy_10_Complete'] %}
+		                    {% if data['strategy_11_Complete'] %}
 								<tr class="govuk-table__row">
 									<td class="govuk-table__cell">Today, 12:07pm</td>
 									<td class="govuk-table__cell"><span id="strategy_International-Text"></span></td>
 									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
-									<td class="govuk-table__cell"><a href="18G-case-strategy">Edit</a></td>
+									<td class="govuk-table__cell"><a href="18J-case-strategy">Edit</a></td>
 								</tr>
 		                    {% else %}
 								<tr class="govuk-table__row">
@@ -639,7 +958,10 @@
 		    <section>
 		        <div class="title-wrapper">
 					<h3 class="govuk-heading-s">Record of International Requests</h3>
-					<a href="#">Add</a>
+		            <form method="get" action="18K-case-strategy" id="">  
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_12" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
 		        </div>
 		        <div class="section-content">
 
@@ -653,12 +975,30 @@
 								<th scope="col" class="govuk-table__header">Direct Transmission or via UKCA</th>
 								<th scope="col" class="govuk-table__header">Response Received</th>
 								<th scope="col" class="govuk-table__header">Initials</th>
+								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
-							<tr class="govuk-table__row">
-								<td class="govuk-table__cell" colspan="5">There are no Record of International Requests on this case</td>
-							</tr>
+		                    {% if data['strategy_12_Complete'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 12:07pm</td>
+									<td class="govuk-table__cell">{{ data['strategy_International-Country'] }}</td>
+									<td class="govuk-table__cell">{{ data['strategy_International-Type'] }}</td>
+									<td class="govuk-table__cell">{{ data['strategy_International-Day_1'] }}/{{ data['strategy_International-Month_1'] }}/{{ data['strategy_International-Year_1'] }}</td>
+									<td class="govuk-table__cell">{{ data['strategy_International-Transmission'] }}</td>
+				                    {% if data['strategy_International-Response'] == "Yes" %}
+										<td class="govuk-table__cell">Yes</td>
+				                    {% else %}
+										<td class="govuk-table__cell">No</td>
+				                    {% endif %}
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell"><a href="18K-case-strategy">Edit</a></td>
+								</tr>
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="8">There are no Record of International Requests on this case</td>
+								</tr>
+		                    {% endif %}
 						</tbody>
 					</table>
 

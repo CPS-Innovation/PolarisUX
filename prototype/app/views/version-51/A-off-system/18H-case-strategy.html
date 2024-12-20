@@ -1,0 +1,353 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+
+            {% if data['restrained_Add_New_Suspect'] == 'true' %}
+                {% if data['restrained_Add_New_Suspect-Surname'] %}
+                    <h1 class="govuk-heading-xl" style="">Edit {{ data['restrained_Add_New_Suspect-Surname'] }}, {{ data['restrained_Add_New_Suspect-Forename'] }} data</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl" style="">Add Defendant Restrained data</h1>
+                {% endif %}
+            {% elseif data['restrained_Edit_Suspect_1'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Add a Description to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+            {% elseif data['restrained_Edit_Suspect_2'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Add a Description to {{ data['newCase_OperationName'] }}</h1>
+            {% endif %}
+
+            <form method="get" action="5-case-overview#strategyTab_subTab_4" id="">  
+
+                <p> </p>
+
+                {% if data['restrained_Add_New_Suspect'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="restrained_Add_New_Suspect-Surname">Surname</label>
+                        {% if data['restrained_Add_New_Suspect-Surname'] %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Surname" name="restrained_Add_New_Suspect-Surname" type="text" value="{{ data['restrained_Add_New_Suspect-Surname'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Surname" name="restrained_Add_New_Suspect-Surname" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="restrained_Add_New_Suspect-Forename">Forename</label>
+                        {% if data['restrained_Add_New_Suspect-Forename'] %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Forename" name="restrained_Add_New_Suspect-Forename" type="text" value="{{ data['restrained_Add_New_Suspect-Forename'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Forename" name="restrained_Add_New_Suspect-Forename" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="restrained_Add_New_Suspect-Lawyer">POC Lawyer</label>
+                        {% if data['restrained_Add_New_Suspect-Lawyer'] %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Lawyer" name="restrained_Add_New_Suspect-Lawyer" type="text" value="{{ data['restrained_Add_New_Suspect-Lawyer'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Add_New_Suspect-Lawyer" name="restrained_Add_New_Suspect-Lawyer" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 3 - END -->
+
+                    <!-- OPTION 4 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Add_New_Suspect-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint</legend>
+                            <div id="restrained_Add_New_Suspect-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Add_New_Suspect">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Day_1">Day</label>
+                                        {% if data['restrained_Add_New_Suspect-Day_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Day_1" name="restrained_Add_New_Suspect-Day_1" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Day_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Day_1" name="restrained_Add_New_Suspect-Day_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Month_1">Month</label>
+                                        {% if data['restrained_Add_New_Suspect-Month_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Month_1" name="restrained_Add_New_Suspect-Month_1" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Month_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Month_1" name="restrained_Add_New_Suspect-Month_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Year_1">Year</label>
+                                        {% if data['restrained_Add_New_Suspect-Year_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Add_New_Suspect-Year_1" name="restrained_Add_New_Suspect-Year_1" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Year_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Add_New_Suspect-Year_1" name="restrained_Add_New_Suspect-Year_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 4 - END -->
+
+                    <!-- OPTION 5 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Add_New_Suspect-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint Discharge</legend>
+                            <div id="restrained_Add_New_Suspect-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Add_New_Suspect">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Day_2">Day</label>
+                                        {% if data['restrained_Add_New_Suspect-Day_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Day_2" name="restrained_Add_New_Suspect-Day_2" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Day_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Day_2" name="restrained_Add_New_Suspect-Day_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Month_2">Month</label>
+                                        {% if data['restrained_Add_New_Suspect-Month_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Month_2" name="restrained_Add_New_Suspect-Month_2" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Month_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Add_New_Suspect-Month_2" name="restrained_Add_New_Suspect-Month_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Add_New_Suspect-Year_2">Year</label>
+                                        {% if data['restrained_Add_New_Suspect-Year_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Add_New_Suspect-Year_2" name="restrained_Add_New_Suspect-Year_2" type="text" inputmode="numeric" value="{{ data['restrained_Add_New_Suspect-Year_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Add_New_Suspect-Year_2" name="restrained_Add_New_Suspect-Year_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 5 - END -->
+                {% elseif data['restrained_Edit_Suspect_1'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="restrained_Edit_Suspect_1-Lawyer">POC Lawyer</label>
+                        {% if data['restrained_Edit_Suspect_1-Lawyer'] %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Edit_Suspect_1-Lawyer" name="restrained_Edit_Suspect_1-Lawyer" type="text" value="{{ data['restrained_Edit_Suspect_1-Lawyer'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Edit_Suspect_1-Lawyer" name="restrained_Edit_Suspect_1-Lawyer" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Edit_Suspect_1-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint</legend>
+                            <div id="restrained_Edit_Suspect_1-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Edit_Suspect_1">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Day_1">Day</label>
+                                        {% if data['restrained_Edit_Suspect_1-Day_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Day_1" name="restrained_Edit_Suspect_1-Day_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Day_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Day_1" name="restrained_Edit_Suspect_1-Day_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Month_1">Month</label>
+                                        {% if data['restrained_Edit_Suspect_1-Month_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Month_1" name="restrained_Edit_Suspect_1-Month_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Month_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Month_1" name="restrained_Edit_Suspect_1-Month_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Year_1">Year</label>
+                                        {% if data['restrained_Edit_Suspect_1-Year_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_1-Year_1" name="restrained_Edit_Suspect_1-Year_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Year_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_1-Year_1" name="restrained_Edit_Suspect_1-Year_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Edit_Suspect_1-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint Discharge</legend>
+                            <div id="restrained_Edit_Suspect_1-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Edit_Suspect_1">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Day_2">Day</label>
+                                        {% if data['restrained_Edit_Suspect_1-Day_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Day_2" name="restrained_Edit_Suspect_1-Day_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Day_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Day_2" name="restrained_Edit_Suspect_1-Day_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Month_2">Month</label>
+                                        {% if data['restrained_Edit_Suspect_1-Month_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Month_2" name="restrained_Edit_Suspect_1-Month_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Month_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_1-Month_2" name="restrained_Edit_Suspect_1-Month_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_1-Year_2">Year</label>
+                                        {% if data['restrained_Edit_Suspect_1-Year_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_1-Year_2" name="restrained_Edit_Suspect_1-Year_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_1-Year_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_1-Year_2" name="restrained_Edit_Suspect_1-Year_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 3 - END -->
+                {% elseif data['restrained_Edit_Suspect_2'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="restrained_Edit_Suspect_2-Lawyer">POC Lawyer</label>
+                        {% if data['restrained_Edit_Suspect_2-Lawyer'] %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Edit_Suspect_2-Lawyer" name="restrained_Edit_Suspect_2-Lawyer" type="text" value="{{ data['restrained_Edit_Suspect_2-Lawyer'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="restrained_Edit_Suspect_2-Lawyer" name="restrained_Edit_Suspect_2-Lawyer" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Edit_Suspect_2-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint</legend>
+                            <div id="restrained_Edit_Suspect_2-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Edit_Suspect_2">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Day_1">Day</label>
+                                        {% if data['restrained_Edit_Suspect_2-Day_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Day_1" name="restrained_Edit_Suspect_2-Day_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Day_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Day_1" name="restrained_Edit_Suspect_2-Day_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Month_1">Month</label>
+                                        {% if data['restrained_Edit_Suspect_2-Month_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Month_1" name="restrained_Edit_Suspect_2-Month_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Month_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Month_1" name="restrained_Edit_Suspect_2-Month_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Year_1">Year</label>
+                                        {% if data['restrained_Edit_Suspect_2-Year_1'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_2-Year_1" name="restrained_Edit_Suspect_2-Year_1" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Year_1'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_2-Year_1" name="restrained_Edit_Suspect_2-Year_1" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="restrained_Edit_Suspect_2-hint">
+                            <legend class="govuk-fieldset__legend">Date of Restraint Discharge</legend>
+                            <div id="restrained_Edit_Suspect_2-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="restrained_Edit_Suspect_2">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Day_2">Day</label>
+                                        {% if data['restrained_Edit_Suspect_2-Day_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Day_2" name="restrained_Edit_Suspect_2-Day_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Day_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Day_2" name="restrained_Edit_Suspect_2-Day_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Month_2">Month</label>
+                                        {% if data['restrained_Edit_Suspect_2-Month_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Month_2" name="restrained_Edit_Suspect_2-Month_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Month_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="restrained_Edit_Suspect_2-Month_2" name="restrained_Edit_Suspect_2-Month_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="restrained_Edit_Suspect_2-Year_2">Year</label>
+                                        {% if data['restrained_Edit_Suspect_2-Year_2'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_2-Year_2" name="restrained_Edit_Suspect_2-Year_2" type="text" inputmode="numeric" value="{{ data['restrained_Edit_Suspect_2-Year_2'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="restrained_Edit_Suspect_2-Year_2" name="restrained_Edit_Suspect_2-Year_2" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 3 - END -->
+                {% endif %}
+
+                <input id="strategy_9_Complete" name="strategy_9_Complete" type="text" value="true" style="display: none;">
+                <button type="submit" class="govuk-button" style="" onclick="">Save and exit</button>
+                <button type="button" onclick="location.href='5-case-overview';" class="non-button margin-left" id="">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}
