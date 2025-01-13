@@ -1768,7 +1768,7 @@ nav.moj-sub-navigation {
                top: 21px;
           }
           &:last-of-type:after {
-               top: 5px;
+               top: 21px;
           }
      }
      .govuk-table__cell, .govuk-table__header {
@@ -2444,6 +2444,9 @@ nav.tube-map-ea {
                                         }
                                         .hods-timeline__item {
                                              width: 98.5% !important;
+                                              a strong {
+                                                  color: inherit;
+                                              }
                                         }
                                         table {
                                              tbody {

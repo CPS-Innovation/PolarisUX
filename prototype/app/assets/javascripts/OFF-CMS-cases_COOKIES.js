@@ -2261,8 +2261,8 @@ $(document).ready(function () {
     }
 
     // Transfer Suspects
-    $('#transferred_Suspect_Details, .multiple_Suspect_1, .multiple_Suspect_2, .multiple_Suspect_3').hide();
-    $('#transferred_Witness_Details, .multiple_Witness_1, .multiple_Witness_2, .multiple_Witness_3, .multiple_Witness_4, .multiple_Witness_5').hide();
+    $('#transferred_Suspect_Details, .transferred_Suspect_1, .transferred_Suspect_2, .transferred_Suspect_3').hide();
+    $('#transferred_Witness_Details, .transferred_Witness_1, .transferred_Witness_2, .transferred_Witness_3, .transferred_Witness_4, .transferred_Witness_5').hide();
 
     $("#finish_Transfer").on("click", function (e) { 
         $.cookie("finish_Transfer", true, {path:'/'});
@@ -2315,29 +2315,29 @@ $(document).ready(function () {
     }
 
     if ($.cookie("transfer_Folder_Suspect_1") == 'true') {
-        $('.multiple_Suspect_1').show();
+        $('.transferred_Suspect_1').show();
     }
     if ($.cookie("transfer_Folder_Suspect_2") == 'true') {
-        $('.multiple_Suspect_2').show();
+        $('.transferred_Suspect_2').show();
     }
     if ($.cookie("transfer_Folder_Suspect_3") == 'true') {
-        $('.multiple_Suspect_3').show();
+        $('.transferred_Suspect_3').show();
     }
 
     if ($.cookie("transfer_Folder_Witness_1") == 'true') {
-        $('.multiple_Witness_1').show();
+        $('.transferred_Witness_1').show();
     }
     if ($.cookie("transfer_Folder_Witness_2") == 'true') {
-        $('.multiple_Witness_2').show();
+        $('.transferred_Witness_2').show();
     }
     if ($.cookie("transfer_Folder_Witness_3") == 'true') {
-        $('.multiple_Witness_3').show();
+        $('.transferred_Witness_3').show();
     }
     if ($.cookie("transfer_Folder_Witness_4") == 'true') {
-        $('.multiple_Witness_4').show();
+        $('.transferred_Witness_4').show();
     }
     if ($.cookie("transfer_Folder_Witness_5") == 'true') {
-        $('.multiple_Witness_5').show();
+        $('.transferred_Witness_5').show();
     }
 
 })

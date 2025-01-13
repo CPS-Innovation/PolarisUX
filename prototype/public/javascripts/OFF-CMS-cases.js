@@ -1328,6 +1328,128 @@ function eaPreview() {
 
 }
 
+function saveCR() {
+    $.cookie("eaCaseSummary", $('#eaCaseSummary-Editor').html(), {path:'/'});
+    $.cookie("eaEvidentialAanalysis", $('#eaEvidentialAanalysis-Editor').html(), {path:'/'});
+    $.cookie("eaPublicInterestAssesment", $('#eaPublicInterestAssesment-Editor').html(), {path:'/'});
+    $.cookie("eaWitnessVictim", $('#eaWitnessVictim-Editor').html(), {path:'/'});
+    $.cookie("eaTrialStrategy", $('#eaTrialStrategy-Editor').html(), {path:'/'});
+    $.cookie("eaAllocation", $('#eaAllocation-Editor').html(), {path:'/'});
+    $.cookie("eaDisclosureActions", $('#eaDisclosureActions-Editor').html(), {path:'/'});
+    $.cookie("eaHumanRights", $('#eaHumanRights-Editor').html(), {path:'/'});
+    $.cookie("eaCaseAdvocate", $('#eaCaseAdvocate-Editor').html(), {path:'/'});
+    $.cookie("eaCaseMonitoring", $('#eaCaseMonitoring-Editor').html(), {path:'/'});
+    $.cookie("eaCaseRelationship", $('#eaCaseRelationship-Editor').html(), {path:'/'});
+}
+
+$(document).ready(function () {
+
+    // CR
+    if ($.cookie("eaCaseSummary") || $.cookie("eaEvidentialAanalysis") || $.cookie("eaPublicInterestAssesment") || $.cookie("eaWitnessVictim") || $.cookie("eaTrialStrategy") || $.cookie("eaAllocation") || $.cookie("eaDisclosureActions") || $.cookie("eaHumanRights") || $.cookie("eaCaseAdvocate") || $.cookie("eaCaseMonitoring") || $.cookie("eaCaseRelationship")) {
+        $('#ea-NotAvailable').hide();
+        // $('#ea-available').show();
+    } else {
+        $('#ea-NotAvailable').show();
+        // $('#ea-available').hide();
+    }
+
+    // 1 - Case summary
+    if ($.cookie("eaCaseSummary") == '' || $.cookie("eaCaseSummary") == 'undefined') {
+        $('#eaCaseSummary-Content').hide();
+    } else if ($.cookie("eaCaseSummary")) { 
+        $('#eaCaseSummary-Content').show(); $('#eaCaseSummary-Content td').append($.cookie("eaCaseSummary")); 
+        $('.cr-description').append('a case summary, ');
+    } 
+
+    // 2 - Evidential analysis
+    if ($.cookie("eaEvidentialAanalysis") == '' || $.cookie("eaEvidentialAanalysis") == 'undefined') {
+        $('#eaEvidentialAanalysis-Content').hide();
+    } else if ($.cookie("eaEvidentialAanalysis")) { 
+        $('#eaEvidentialAanalysis-Content').show(); $('#eaEvidentialAanalysis-Content td').append($.cookie("eaEvidentialAanalysis")); 
+        $('.cr-description').append('an Evidential analysis, ');
+    }  
+
+    // 3 - Public interest assessment
+    if ($.cookie("eaPublicInterestAssesment") == '' || $.cookie("eaPublicInterestAssesment") == 'undefined') {
+        $('#eaPublicInterestAssesment-Content').hide();
+    } else if ($.cookie("eaPublicInterestAssesment")) { 
+        $('#eaPublicInterestAssesment-Content').show(); $('#eaPublicInterestAssesment-Content td').append($.cookie("eaPublicInterestAssesment")); 
+        $('.cr-description').append('a public interest assessment, ');
+    }
+
+    // 4 - Witness and victim strategy
+    if ($.cookie("eaWitnessVictim") == '' || $.cookie("eaWitnessVictim") == 'undefined') {
+        $('#eaWitnessVictim-Content').hide();
+    } else if ($.cookie("eaWitnessVictim")) { 
+        $('#eaWitnessVictim-Content').show(); $('#eaWitnessVictim-Content td').append($.cookie("eaWitnessVictim")); 
+        $('.cr-description').append('a Witness and victim strategy, ');
+    } 
+
+    // 5 - Trial strategy
+    if ($.cookie("eaTrialStrategy") == '' || $.cookie("eaTrialStrategy") == 'undefined') {
+        $('#eaTrialStrategy-Content').hide();
+    } else if ($.cookie("eaTrialStrategy")) { 
+        $('#eaTrialStrategy-Content').show(); $('#eaTrialStrategy-Content td').append($.cookie("eaTrialStrategy")); 
+        $('.cr-description').append('a Trial strategy, ');
+    } 
+
+    // 6 - Allocation
+    if ($.cookie("eaAllocation") == '' || $.cookie("eaAllocation") == 'undefined') {
+        $('#eaAllocation-Content').hide();
+    } else if ($.cookie("eaAllocation")) { 
+        $('#eaAllocation-Content').show(); $('#eaAllocation-Content td').append($.cookie("eaAllocation")); 
+        $('.cr-description').append('a Allocation, ');
+    } 
+
+    // 7 - Disclosure
+    if ($.cookie("eaDisclosureActions") == '' || $.cookie("eaDisclosureActions") == 'undefined') {
+        $('#eaDisclosureActions-Content').hide();
+    } else if ($.cookie("eaDisclosureActions")) { 
+        $('#eaDisclosureActions-Content').show(); $('#eaDisclosureActions-Content td').append($.cookie("eaDisclosureActions")); 
+        $('.cr-description').append('a Disclosure, ');
+    } 
+
+    // 8 - Human rights factors
+    if ($.cookie("eaHumanRights") == '' || $.cookie("eaHumanRights") == 'undefined') {
+        $('#eaHumanRights-Content').hide();
+    } else if ($.cookie("eaHumanRights")) { 
+        $('#eaHumanRights-Content').show(); $('#eaHumanRights-Content td').append($.cookie("eaHumanRights")); 
+        $('.cr-description').append('a Human rights factor, ');
+    } 
+
+    // 9 - Advocate and op.delivery instructions
+    if ($.cookie("eaCaseAdvocate") == '' || $.cookie("eaCaseAdvocate") == 'undefined') {
+        $('#eaCaseAdvocate-Content').hide();
+    } else if ($.cookie("eaCaseAdvocate")) { 
+        $('#eaCaseAdvocate-Content').show(); $('#eaCaseAdvocate-Content td').append($.cookie("eaCaseAdvocate")); 
+        $('.cr-description').append('a Advocate and op.delivery instruction, ');
+    } 
+
+    // 10A - Monitoring codes
+    if ($.cookie("eaCaseMonitoring") == '' || $.cookie("eaCaseMonitoring") == 'undefined') {
+        $('#eaCaseMonitoring-Content').hide();
+    } else if ($.cookie("eaCaseMonitoring")) { 
+        $('#eaCaseMonitoring-Content').show(); $('#eaCaseMonitoring-Content td').append($.cookie("eaCaseMonitoring")); 
+        $('.cr-description').append('a Monitoring code, ');
+    } 
+
+    // 10B - Victim-suspect relationship
+    if ($.cookie("eaCaseRelationship") == '' || $.cookie("eaCaseRelationship") == 'undefined') {
+        $('#eaCaseRelationship-Content').hide();
+    } else if ($.cookie("eaCaseRelationship")) { 
+        $('#eaCaseRelationship-Content').show(); $('#eaCaseRelationship-Content td').append($.cookie("eaCaseRelationship")); 
+        $('.cr-description').append('a Victim-suspect relationship, ');
+    } 
+
+})
+
+function openCR() {
+    $('#crModal').removeClass('rj-dont-display');
+}
+function closeCRModal() {
+    $('#crModal').addClass('rj-dont-display');
+}
+
 // ========================= Create EA Report ========================= //
 $(document).ready(function () {
     // EA - V1
@@ -1900,7 +2022,7 @@ $(document).ready(function () {
             $('#multiple_Suspect_Details').show();
         }, 2500)
         var addSuspectsWitnesses = parseInt($('.suspects-number').text());
-        $('.suspects-number').text(addSuspectsWitnesses + 3).removeClass('zero');
+        $('.suspects-number').html(addSuspectsWitnesses + 3).removeClass('zero');
         $.cookie("multiple_Suspects", true, {path:'/'});
         $('#multiple_Suspects_Added').show();
     });
@@ -1910,7 +2032,7 @@ $(document).ready(function () {
 
     if ($.cookie("multiple_Suspects") == 'true') {
         var addSuspectsWitnesses = parseInt($('.suspects-number').text());
-        $('.suspects-number').text(addSuspectsWitnesses + 3);
+        $('.suspects-number').html(addSuspectsWitnesses + 3);
         $('#multiple_Suspect_Details').show();
         $('#multiple_Suspects_Selection').show();
         $('#single_Suspects_Selection').remove();
@@ -2003,7 +2125,6 @@ $(document).ready(function () {
         $(this).parent().parent().find('.witnesses-details-wrapper').hide();
         $(this).parent().parent().removeClass('open');
     });
-
     
 })
 
@@ -2340,12 +2461,6 @@ function saveStrategyInternational() {
     $.cookie("strategy_International", $('#strategy_International-Editor').html(), {path:'/'});
 }
 
-
-
-
-
-
-
 $(document).ready(function () {
     if ($.cookie("strategy_Description")) {
         var strategiesNumber = parseInt($('.strategies-number').html());
@@ -2459,6 +2574,18 @@ function closeToggleGuidance7() {
 
 // ========================= TIMESTAMPS ========================= //
 $(document).ready(function () {
+
+    // HEADER - Case created
+    document.getElementById("date-created-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
     // TAB 1 - My cases updated
     document.getElementById("my-cases-timestamp").innerHTML = formatAMPM();
@@ -2593,12 +2720,78 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 
+    // Case Review
+    document.getElementById("CR-timestamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+    // Case Review - Modal
+    document.getElementById("CR-timestamp2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
 
+    // 6B -  Emails
+    document.getElementById("email-date").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
+    // 6C -  Emails
+    document.getElementById("email-date2").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
+    // 6D -  Emails
+    document.getElementById("email-date3").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
-
+    // 6E -  Emails
+    document.getElementById("email-date4").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
 
     // New case created
     document.getElementById("case-created-stamp").innerHTML = formatAMPM();
@@ -2672,67 +2865,6 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 
-    // 6B -  Emails
-    document.getElementById("email-date").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6C -  Emails
-    document.getElementById("email-date2").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6D -  Emails
-    document.getElementById("email-date3").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6E -  Emails
-    document.getElementById("email-date4").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-
-
-    // ?? - Case created
-    document.getElementById("date-created-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
 
 
     // Transferred date

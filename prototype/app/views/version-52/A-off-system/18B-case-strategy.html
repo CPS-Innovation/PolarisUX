@@ -1,0 +1,368 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+
+            {% if data['strategy_Add_New_Suspect'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Add a Suspect / Defendant data</h1>
+            {% elseif data['strategy_Edit_Suspect_1'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Edit {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+            {% elseif data['strategy_Edit_Suspect_2'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Edit {{ data['newCase_OperationName'] }}</h1>
+            {% elseif data['strategy_Edit_Suspect_3'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Edit {{ data['addSuspect_Form-Surname'] }}, {{ data['addSuspect_Form-Forename'] }}</h1>
+            {% endif %}
+
+            <form method="get" action="5-case-overview#strategyTab_subTab_2" id="">  
+
+                <p> </p>
+
+                {% if data['strategy_Add_New_Suspect'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Add_New_Suspect-Surname">Surname</label>
+                        {% if data['strategy_Add_New_Suspect-Surname'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Surname" name="strategy_Add_New_Suspect-Surname" type="text" value="{{ data['strategy_Add_New_Suspect-Surname'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Surname" name="strategy_Add_New_Suspect-Surname" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Add_New_Suspect-Forename">Forename</label>
+                        {% if data['strategy_Add_New_Suspect-Forename'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Forename" name="strategy_Add_New_Suspect-Forename" type="text" value="{{ data['strategy_Add_New_Suspect-Forename'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Forename" name="strategy_Add_New_Suspect-Forename" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Add_New_Suspect-Counts">Counts</label>
+                        {% if data['strategy_Add_New_Suspect-Counts'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Counts" name="strategy_Add_New_Suspect-Counts" type="text" value="{{ data['strategy_Add_New_Suspect-Counts'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Counts" name="strategy_Add_New_Suspect-Counts" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 3 - END -->
+
+                    <!-- OPTION 4 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Add_New_Suspect-Sentence">Sentence</label>
+                        {% if data['strategy_Add_New_Suspect-Sentence'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Sentence" name="strategy_Add_New_Suspect-Sentence" type="text" value="{{ data['strategy_Add_New_Suspect-Sentence'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-Sentence" name="strategy_Add_New_Suspect-Sentence" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 4 - END -->
+
+                    <!-- OPTION 5 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="strategy_Add_New_Suspect-hint">
+                            <legend class="govuk-fieldset__legend">Date of sentence</legend>
+                            <div id="strategy_Add_New_Suspect-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="strategy_Add_New_Suspect">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Add_New_Suspect-Day">Day</label>
+                                        {% if data['strategy_Add_New_Suspect-Day'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Add_New_Suspect-Day" name="strategy_Add_New_Suspect-Day" type="text" inputmode="numeric" value="{{ data['strategy_Add_New_Suspect-Day'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Add_New_Suspect-Day" name="strategy_Add_New_Suspect-Day" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Add_New_Suspect-Month">Month</label>
+                                        {% if data['strategy_Add_New_Suspect-Month'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Add_New_Suspect-Month" name="strategy_Add_New_Suspect-Month" type="text" inputmode="numeric" value="{{ data['strategy_Add_New_Suspect-Month'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Add_New_Suspect-Month" name="strategy_Add_New_Suspect-Month" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Add_New_Suspect-Year">Year</label>
+                                        {% if data['strategy_Add_New_Suspect-Year'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Add_New_Suspect-Year" name="strategy_Add_New_Suspect-Year" type="text" inputmode="numeric" value="{{ data['strategy_Add_New_Suspect-Year'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Add_New_Suspect-Year" name="strategy_Add_New_Suspect-Year" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 5 - END -->
+
+                    <!-- OPTION 6 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Add_New_Suspect-GFS">GFS Offence Class</label>
+                        {% if data['strategy_Add_New_Suspect-GFS'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-GFS" name="strategy_Add_New_Suspect-GFS" type="text" value="{{ data['strategy_Add_New_Suspect-GFS'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Add_New_Suspect-GFS" name="strategy_Add_New_Suspect-GFS" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 6 - END -->
+                {% elseif data['strategy_Edit_Suspect_1'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_1-Counts">Counts</label>
+                        {% if data['strategy_Edit_Suspect_1-Counts'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-Counts" name="strategy_Edit_Suspect_1-Counts" type="text" value="{{ data['strategy_Edit_Suspect_1-Counts'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-Counts" name="strategy_Edit_Suspect_1-Counts" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_1-Sentence">Sentence</label>
+                        {% if data['strategy_Edit_Suspect_1-Sentence'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-Sentence" name="strategy_Edit_Suspect_1-Sentence" type="text" value="{{ data['strategy_Edit_Suspect_1-Sentence'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-Sentence" name="strategy_Edit_Suspect_1-Sentence" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="strategy_Edit_Suspect_1-hint">
+                            <legend class="govuk-fieldset__legend">Date of sentence</legend>
+                            <div id="strategy_Edit_Suspect_1-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="strategy_Edit_Suspect_1">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_1-Day">Day</label>
+                                        {% if data['strategy_Edit_Suspect_1-Day'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_1-Day" name="strategy_Edit_Suspect_1-Day" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_1-Day'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_1-Day" name="strategy_Edit_Suspect_1-Day" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_1-Month">Month</label>
+                                        {% if data['strategy_Edit_Suspect_1-Month'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_1-Month" name="strategy_Edit_Suspect_1-Month" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_1-Month'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_1-Month" name="strategy_Edit_Suspect_1-Month" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_1-Year">Year</label>
+                                        {% if data['strategy_Edit_Suspect_1-Year'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_1-Year" name="strategy_Edit_Suspect_1-Year" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_1-Year'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_1-Year" name="strategy_Edit_Suspect_1-Year" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 3 - END -->
+
+                    <!-- OPTION 4 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_1-GFS">GFS Offence Class</label>
+                        {% if data['strategy_Edit_Suspect_1-GFS'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-GFS" name="strategy_Edit_Suspect_1-GFS" type="text" value="{{ data['strategy_Edit_Suspect_1-GFS'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_1-GFS" name="strategy_Edit_Suspect_1-GFS" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 4 - END -->
+                {% elseif data['strategy_Edit_Suspect_2'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_2-Counts">Counts</label>
+                        {% if data['strategy_Edit_Suspect_2-Counts'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-Counts" name="strategy_Edit_Suspect_2-Counts" type="text" value="{{ data['strategy_Edit_Suspect_2-Counts'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-Counts" name="strategy_Edit_Suspect_2-Counts" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_2-Sentence">Sentence</label>
+                        {% if data['strategy_Edit_Suspect_2-Sentence'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-Sentence" name="strategy_Edit_Suspect_2-Sentence" type="text" value="{{ data['strategy_Edit_Suspect_2-Sentence'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-Sentence" name="strategy_Edit_Suspect_2-Sentence" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="strategy_Edit_Suspect_2-hint">
+                            <legend class="govuk-fieldset__legend">Date of sentence</legend>
+                            <div id="strategy_Edit_Suspect_2-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="strategy_Edit_Suspect_2">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_2-Day">Day</label>
+                                        {% if data['strategy_Edit_Suspect_2-Day'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_2-Day" name="strategy_Edit_Suspect_2-Day" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_2-Day'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_2-Day" name="strategy_Edit_Suspect_2-Day" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_2-Month">Month</label>
+                                        {% if data['strategy_Edit_Suspect_2-Month'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_2-Month" name="strategy_Edit_Suspect_2-Month" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_2-Month'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_2-Month" name="strategy_Edit_Suspect_2-Month" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_2-Year">Year</label>
+                                        {% if data['strategy_Edit_Suspect_2-Year'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_2-Year" name="strategy_Edit_Suspect_2-Year" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_2-Year'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_2-Year" name="strategy_Edit_Suspect_2-Year" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 3 - END -->
+
+                    <!-- OPTION 4 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_2-GFS">GFS Offence Class</label>
+                        {% if data['strategy_Edit_Suspect_2-GFS'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-GFS" name="strategy_Edit_Suspect_2-GFS" type="text" value="{{ data['strategy_Edit_Suspect_2-GFS'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_2-GFS" name="strategy_Edit_Suspect_2-GFS" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 4 - END -->
+                {% elseif data['strategy_Edit_Suspect_3'] == 'true' %}
+                    <!-- OPTION 1 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_3-Counts">Counts</label>
+                        {% if data['strategy_Edit_Suspect_3-Counts'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-Counts" name="strategy_Edit_Suspect_3-Counts" type="text" value="{{ data['strategy_Edit_Suspect_3-Counts'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-Counts" name="strategy_Edit_Suspect_3-Counts" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 1 - END -->
+
+                    <!-- OPTION 2 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_3-Sentence">Sentence</label>
+                        {% if data['strategy_Edit_Suspect_3-Sentence'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-Sentence" name="strategy_Edit_Suspect_3-Sentence" type="text" value="{{ data['strategy_Edit_Suspect_3-Sentence'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-Sentence" name="strategy_Edit_Suspect_3-Sentence" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 2 - END -->
+
+                    <!-- OPTION 3 - START -->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="strategy_Edit_Suspect_3-hint">
+                            <legend class="govuk-fieldset__legend">Date of sentence</legend>
+                            <div id="strategy_Edit_Suspect_3-hint" class="govuk-hint">For example, 27 3 2007</div>
+                            <div class="govuk-date-input" id="strategy_Edit_Suspect_3">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_3-Day">Day</label>
+                                        {% if data['strategy_Edit_Suspect_3-Day'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_3-Day" name="strategy_Edit_Suspect_3-Day" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_3-Day'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_3-Day" name="strategy_Edit_Suspect_3-Day" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_3-Month">Month</label>
+                                        {% if data['strategy_Edit_Suspect_3-Month'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_3-Month" name="strategy_Edit_Suspect_3-Month" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_3-Month'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="strategy_Edit_Suspect_3-Month" name="strategy_Edit_Suspect_3-Month" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="strategy_Edit_Suspect_3-Year">Year</label>
+                                        {% if data['strategy_Edit_Suspect_3-Year'] %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_3-Year" name="strategy_Edit_Suspect_3-Year" type="text" inputmode="numeric" value="{{ data['strategy_Edit_Suspect_3-Year'] }}">
+                                        {% else %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="strategy_Edit_Suspect_3-Year" name="strategy_Edit_Suspect_3-Year" type="text" inputmode="numeric">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- OPTION 3 - END -->
+
+                    <!-- OPTION 4 - START -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="strategy_Edit_Suspect_3-GFS">GFS Offence Class</label>
+                        {% if data['strategy_Edit_Suspect_3-GFS'] %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-GFS" name="strategy_Edit_Suspect_3-GFS" type="text" value="{{ data['strategy_Edit_Suspect_3-GFS'] }}">
+                        {% else %}
+                            <input class="govuk-input govuk-input--width-20" id="strategy_Edit_Suspect_3-GFS" name="strategy_Edit_Suspect_3-GFS" type="text">
+                        {% endif %}
+                    </div>                    
+                    <!-- OPTION 4 - END -->
+                {% endif %}
+
+                <input id="strategy_2_Complete" name="strategy_2_Complete" type="text" value="true" style="display: none;">
+                <button type="submit" class="govuk-button" style="" onclick="">Save and exit</button>
+                <button type="button" onclick="location.href='5-case-overview#strategyTab_subTab_2';" class="non-button margin-left" id="">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}
