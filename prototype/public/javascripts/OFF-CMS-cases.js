@@ -2576,16 +2576,16 @@ function closeToggleGuidance7() {
 $(document).ready(function () {
 
     // HEADER - Case created
-    document.getElementById("date-created-timestamp").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
+    // document.getElementById("date-created-timestamp").innerHTML = formatAMPM();
+    // function formatAMPM() {
+    // var d = new Date(),
+    //     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+    //     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    //     ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    //         months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+    //         days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    //     return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    // }
 
     // TAB 1 - My cases updated
     document.getElementById("my-cases-timestamp").innerHTML = formatAMPM();
@@ -2684,6 +2684,54 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 
+            // 7B -  Emails
+            document.getElementById("email-date").innerHTML = formatAMPM();
+            function formatAMPM() {
+            var d = new Date(),
+                minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            }
+
+            // 7C -  Emails
+            document.getElementById("email-date2").innerHTML = formatAMPM();
+            function formatAMPM() {
+            var d = new Date(),
+                minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            }
+
+            // 7D -  Emails
+            document.getElementById("email-date3").innerHTML = formatAMPM();
+            function formatAMPM() {
+            var d = new Date(),
+                minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            }
+
+            // 7E -  Emails
+            document.getElementById("email-date4").innerHTML = formatAMPM();
+            function formatAMPM() {
+            var d = new Date(),
+                minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+                    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+            }
+
     // Tab 8 - Contacts
     document.getElementById("contacts-timestamp").innerHTML = formatAMPM();
     function formatAMPM() {
@@ -2720,6 +2768,26 @@ $(document).ready(function () {
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
 
+    // New case created
+    document.getElementById("case-created-stamp").innerHTML = formatAMPM();
+    function formatAMPM() {
+    var d = new Date(),
+        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+        ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    }
+
+
+
+
+
+
+
+
+
     // Case Review
     document.getElementById("CR-timestamp").innerHTML = formatAMPM();
     function formatAMPM() {
@@ -2734,67 +2802,6 @@ $(document).ready(function () {
 
     // Case Review - Modal
     document.getElementById("CR-timestamp2").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-
-    // 6B -  Emails
-    document.getElementById("email-date").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6C -  Emails
-    document.getElementById("email-date2").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6D -  Emails
-    document.getElementById("email-date3").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // 6E -  Emails
-    document.getElementById("email-date4").innerHTML = formatAMPM();
-    function formatAMPM() {
-    var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        ampm = d.getHours() >= 12 ? 'pm' : 'am',
-            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-            days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    }
-
-    // New case created
-    document.getElementById("case-created-stamp").innerHTML = formatAMPM();
     function formatAMPM() {
     var d = new Date(),
         minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
@@ -2864,8 +2871,6 @@ $(document).ready(function () {
             days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return days[d.getDay()]+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
     }
-
-
 
     // Transferred date
     document.getElementById("TRANSFER-stamp").innerHTML = formatAMPM();
