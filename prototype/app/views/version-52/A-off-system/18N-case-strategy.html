@@ -1,0 +1,133 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V2.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="wrapper gov-pages">
+
+            {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
+                {% if data['newCase_OperationName'] %}
+                    <h1 class="govuk-heading-xl" style="">Record an Action or Decision to {{ data['newCase_OperationName'] }}</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl" style="">Record an Action or Decision to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+                {% endif %}
+            {% elseif data['existing_Case'] == 'true' %}
+                <h1 class="govuk-heading-xl" style="">Record an Action or Decision to Groundhog day</h1>
+            {% endif %}
+
+            <form method="get" action="5-case-overview#strategyTab_subTab_7" id="">  
+
+                <p> </p>
+
+                <!-- OPTION 1 - START -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--s" for="decision_Category">Category</label>
+                    <select class="govuk-select" id="decision_Category" name="decision_Category">
+                        {% if data['decision_Category'] == 'Evidence' %}
+                            <option value="Evidence" selected>Evidence</option>
+                        {% else %}
+                            <option value="Evidence">Evidence</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Disclosure' %}
+                            <option value="Disclosure" selected>Disclosure</option>
+                        {% else %}
+                            <option value="Disclosure">Disclosure</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'International' %}
+                            <option value="International" selected>International</option>
+                        {% else %}
+                            <option value="International">International</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'POC Restraint' %}
+                            <option value="POC Restraint" selected>POC Restraint</option>
+                        {% else %}
+                            <option value="POC Restraint">POC Restraint</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'POC Confiscation' %}
+                            <option value="POC Confiscation" selected>POC Confiscation</option>
+                        {% else %}
+                            <option value="POC Confiscation">POC Confiscation</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Appeal' %}
+                            <option value="Appeal" selected>Appeal</option>
+                        {% else %}
+                            <option value="Appeal">Appeal</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Fees' %}
+                            <option value="Fees" selected>Fees</option>
+                        {% else %}
+                            <option value="Fees">Fees</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Trial Presentation' %}
+                            <option value="Trial Presentation" selected>Trial Presentation</option>
+                        {% else %}
+                            <option value="Trial Presentation">Trial Presentation</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Bail and CTLs' %}
+                            <option value="Bail and CTLs" selected>Bail and CTLs</option>
+                        {% else %}
+                            <option value="Bail and CTLs">Bail and CTLs</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Conference' %}
+                            <option value="Conference" selected>Conference</option>
+                        {% else %}
+                            <option value="Conference">Conference</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Rolling Action Plan' %}
+                            <option value="Rolling Action Plan" selected>Rolling Action Plan</option>
+                        {% else %}
+                            <option value="Rolling Action Plan">Rolling Action Plan</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Judges Orders' %}
+                            <option value="Judges Orders" selected>Judges Orders</option>
+                        {% else %}
+                            <option value="Judges Orders">Judges Orders</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Review' %}
+                            <option value="Review" selected>Review</option>
+                        {% else %}
+                            <option value="Review">Review</option>
+                        {% endif %}
+                        {% if data['decision_Category'] == 'Other' %}
+                            <option value="Other" selected>Other</option>
+                        {% else %}
+                            <option value="Other">Other</option>
+                        {% endif %}
+                    </select>
+                </div>                
+                <!-- OPTION 1 - END -->
+
+                <!-- OPTION 2 - START -->
+                <div class="govuk-form-group govuk-!-width-two-thirds">
+                    <label class="govuk-label govuk-label--s" for="decision_Action">Chronological Record of Decisions, Actions, Reviews & Events (including key meetings and conferences)</label>
+                    <div id="decision_Action" name="decision_Action" rows="5" contenteditable="true" class="editor govuk-textarea"></div>
+                </div>
+                <!-- OPTION 2 - END -->
+
+                <input id="strategy_15_Complete" name="strategy_15_Complete" type="text" value="true" style="display: none;">
+                <button type="submit" class="govuk-button" style="" onclick="return saveDecisionLog();">Save and exit</button>
+                <button type="button" onclick="location.href='5-case-overview#strategyTab_subTab_7';" class="non-button margin-left" id="">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+</div>
+
+{% endblock %}

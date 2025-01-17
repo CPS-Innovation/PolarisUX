@@ -2094,6 +2094,14 @@ function materials_Row_6() {
 // =================================== MATERIALS - COOKIES =================================== //
 $(document).ready(function () {
 
+    $('.accordion-wrapper, #materials-table').hide();
+    $('#loading_materials, #loading_transfer').show();
+
+    setTimeout(function () {
+        $('#loading_materials, #loading_transfer').hide();
+        $('.accordion-wrapper, #materials-table').show();
+    }, 3000)
+
     // File location
     $("#transfer_Files_to_Shared_Drive").on("click", function (e) { 
         $.cookie("transfer_Files_to_Shared_Drive", $('input[name=transfer_Folder_Destination]:checked').val(), {path:'/'});

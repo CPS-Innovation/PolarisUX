@@ -20,7 +20,11 @@
         <div class="wrapper main-cotent">
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="">Complex case management</h1>
             <p><strong>Sign in to your account</strong></p>
-            <form method="get" action="2-homepage">
+            {% if data['verion_MVP'] == 'true' %}
+                <form method="get" action="13A-search">
+            {% else %}
+                <form method="get" action="2-homepage">
+            {% endif %}
                 <fieldset>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="offCMS_Username">Username</label>

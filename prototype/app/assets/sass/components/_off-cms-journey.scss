@@ -41,6 +41,23 @@
      }
 }
 
+.result-item {
+     .heading {
+          .govuk-heading-l {
+               button {
+                    font-size: inherit;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    margin-bottom: 0.25em;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    color: $govuk-link-colour;
+               }
+          }
+     }
+}
+
 table {
      tr {
           td {
@@ -52,6 +69,11 @@ table {
                }   
           }
      }
+}
+
+#risk_Register-Risk, #risk_Register-Action, #actions_Log-Action, #decision_Action, #custody_Decision {
+     color: $govuk-text-colour;
+     height: 10em;
 }
 
 a {
@@ -745,7 +767,7 @@ html {
                     }
                }
           }
-          .tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7 {
+          .tooltiptext-1, .tooltiptext-2, .tooltiptext-3, .tooltiptext-4, .tooltiptext-5, .tooltiptext-6, .tooltiptext-7, .tooltiptext-8, .tooltiptext-9, .tooltiptext-10 {
                &.active {
                     visibility: visible;
                }

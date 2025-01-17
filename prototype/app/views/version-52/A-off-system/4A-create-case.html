@@ -14,7 +14,11 @@
 
             <h1 class="govuk-heading-xl" style="">Create a case</h1>
 
-            <form method="get" action="4B-create-case" id="newCase_Form-A">  
+            {% if data['verion_MVP'] == 'true' %}
+                <form method="get" action="5-case-overview" id="newCase_Form-A">  
+            {% else %}
+                <form method="get" action="4B-create-case" id="newCase_Form-A">  
+            {% endif %}
 
                 <fieldset class="govuk-fieldset">
 
@@ -37,7 +41,11 @@
                             <input class="govuk-input govuk-input--width-20" id="newCase_DefendantName-Forename" name="newCase_DefendantName-Forename" type="text">
                         </div>  
                     {% else %}
-                        <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        {% if data['verion_MVP'] == 'true' %}
+                            <div class="govuk-form-group govuk-!-margin-bottom-6">
+                        {% else %}
+                            <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        {% endif %}
                             <fieldset class="govuk-fieldset">
                                 <legend class="govuk-fieldset__legend"><h1 class="govuk-fieldset__heading">Add a suspect/defendant</h1></legend>
                                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -71,13 +79,17 @@
                     {% endif %}
                     <!-- OPTION 2 - END -->
 
-                    <div class="govuk-warning-text govuk-!-margin-bottom-6 govuk-!-margin-top-0" style="margin-left: 0;">
-                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                        <strong class="govuk-warning-text__text">
-                            <span class="govuk-visually-hidden">Warning</span>
-                            More suspects can be added after case creation.
-                        </strong>
-                    </div>
+                    {% if data['verion_MVP'] == 'true' %}
+
+                    {% else %}
+                        <div class="govuk-warning-text govuk-!-margin-bottom-6 govuk-!-margin-top-0" style="margin-left: 0;">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                                <span class="govuk-visually-hidden">Warning</span>
+                                More suspects can be added after case creation.
+                            </strong>
+                        </div>
+                    {% endif %}
 
                     <!-- OPTION 3 - START -->
                     <div class="govuk-form-group" id="newCase_URN-Value">
@@ -188,20 +200,26 @@
                     </div>                                
                     <!-- OPTION 3 - END -->
 
-                    <!-- OPTION 4 - START -->
-                    <div class="govuk-inset-text">
-                        <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset">
-                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
-                                        <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Restrict access to this case</label>
-                                    </div>
-                                </div>
-                            </fieldset>
+                    {% if data['verion_MVP'] == 'true' %}
+                        <div class="govuk-inset-text">
+                            <strong>Shared drive</strong>, <strong>Egress</strong>, <strong>Outlook</strong> and <strong>REMs</strong> folders will be set up automatically for you
                         </div>
-                    </div>
-                    <!-- OPTION 4 - END -->
+                    {% else %}
+                        <!-- OPTION 4 - START -->
+                        <div class="govuk-inset-text">
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
+                                            <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Restrict access to this case</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <!-- OPTION 4 - END -->
+                    {% endif %}
 
                 </fieldset>
 

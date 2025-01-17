@@ -8,7 +8,8 @@
             <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Description & Linked</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['strategy_Add_New_Suspect-Surname'] %}
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant</a>
+<!--             {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['strategy_Add_New_Suspect-Surname'] %}
                 {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
 		            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant (<span class="suspects-number">2</span>)</a>
                 {% elseif data['addSuspectStarted'] == 'true' %}
@@ -33,12 +34,14 @@
             {% else %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant (<span class="suspects-number">0</span>)</a>
             {% endif %}
-        </li>
+ -->        </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-3">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab3();">Strategies (<span class="strategies-number">0</span>)</a>
+            <!-- <a class="moj-sub-navigation__link" onclick="return secondaryTab3();">Strategies (<span class="strategies-number">0</span>)</a> -->
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab3();">Strategies</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-4">
-			{% if data['strategy_7_Complete'] == 'true' and data['restrained_Add_New_Suspect-Surname'] and data['restrained_Edit_Suspect_1-Lawyer'] and data['restrained_Edit_Suspect_2-Lawyer'] %}
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery</a>
+<!-- 			{% if data['strategy_7_Complete'] == 'true' and data['restrained_Add_New_Suspect-Surname'] and data['restrained_Edit_Suspect_1-Lawyer'] and data['restrained_Edit_Suspect_2-Lawyer'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery (<span class="asset-number">4</span>)</a>
 			{% elseif data['strategy_7_Complete'] == 'true' and data['restrained_Edit_Suspect_1-Lawyer'] and data['restrained_Edit_Suspect_2-Lawyer'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery (<span class="asset-number">3</span>)</a>
@@ -55,9 +58,10 @@
             {% else %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery (<span class="asset-number">0</span>)</a>
             {% endif %}
-        </li>
+ -->        </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-5">
-			{% if data['charges_Add_New_Suspect-Original'] and data['charges_Edit_Suspect_1-Original'] %}
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab5_V2();">Charges</a>
+<!-- 			{% if data['charges_Add_New_Suspect-Original'] and data['charges_Edit_Suspect_1-Original'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab5_V2();">Charges (<span class="charges-number">2</span>)</a>
 			{% elseif data['charges_Add_New_Suspect-Original'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab5_V2();">Charges (<span class="charges-number">1</span>)</a>
@@ -66,9 +70,10 @@
             {% else %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab5_V2();">Charges (<span class="charges-number">0</span>)</a>
             {% endif %}
-        </li>
+ -->        </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-6">
-            {% if data['strategy_11_Complete'] and data['strategy_12_Complete'] %}
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab6_V2();">International</a>
+<!--             {% if data['strategy_11_Complete'] and data['strategy_12_Complete'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab6_V2();">International (<span class="international-number">2</span>)</a>
             {% elseif data['strategy_11_Complete'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab6_V2();">International (<span class="international-number">1</span>)</a>
@@ -77,6 +82,14 @@
             {% else %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab6_V2();">International (<span class="international-number">0</span>)</a>
             {% endif %}
+ -->        </li>
+        <li class="moj-sub-navigation__item" id="secondaryTab-7">
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab7_V2();">Risk, Actions & Decisions</a>
+            <!-- <a class="moj-sub-navigation__link" onclick="return secondaryTab7_V2();">Risk, Actions & Decisions (<span class="risks-number">0</span>)</a> -->
+        </li>
+        <li class="moj-sub-navigation__item" id="secondaryTab-8">
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab8_V2();">Financial Management</a>
+            <!-- <a class="moj-sub-navigation__link" onclick="return secondaryTab8_V2();">Financial Management (<span class="financial-number">0</span>)</a> -->
         </li>
     </ul>
 </nav>
@@ -1087,3 +1100,243 @@
 	</div>
 </div>
 <!-- TABS CONTENT - 6 - END -->
+
+<!-- TABS CONTENT - 7 - START -->
+<div class="secondaryTabContent tabsGroup-1" id="secondaryTabContent-7" style="display: none;">
+	<div class="strategyContent">
+
+		<!-- SECTION 13 - START -->
+		<div class="section-wrapper section-row">
+		    <section>
+		        <div class="title-wrapper">
+		           <h3 class="govuk-heading-s">Risk Register</h3>
+		           <div class="tooltip">
+		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance8()">Guidance notes</button>
+		                <div class="tooltiptext-8">
+		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance8()">×</button>
+		                    <p>Risk Register</p>
+		                    <p class="govuk-body-s">This section can be completed by any CPS staff member.</p>
+		                    <p class="govuk-body-s">This section should contain all the known case specific risks and what action is being taken to address them. This will include risks arising from the investigative, disclosure and prosecution strategies in the case.</p>
+		                    <p class="govuk-body-s">It should be reviewed monthly and updated by the lawyer.</p>
+		                </div>
+		            </div>
+		            <form method="get" action="18L-case-strategy" id="">  
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_13" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
+		        </div>
+		        <div class="section-content">
+
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header" width="10%">Date</th>
+								<th scope="col" class="govuk-table__header" width="25%">Risk</th>
+								<th scope="col" class="govuk-table__header" width="10%">Impact</th>
+								<th scope="col" class="govuk-table__header" width="25%">Action required</th>
+								<th scope="col" class="govuk-table__header" width="10%">Status</th>
+								<th scope="col" class="govuk-table__header" width="10%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%"></th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+		                    {% if data['strategy_13_Complete'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 12:07pm</td>
+									<td class="govuk-table__cell"><span id="risk_Register-Risk-Details"></span></td>
+									<td class="govuk-table__cell">
+										{% if data['risk_Register-Impact'] == 'High' %}
+											<strong class="govuk-tag govuk-tag--red">{{ data['risk_Register-Impact'] }}</strong>
+										{% elseif  data['risk_Register-Impact'] == 'Medium' %}
+											<strong class="govuk-tag govuk-tag--yellow">{{ data['risk_Register-Impact'] }}</strong>
+										{% elseif  data['risk_Register-Impact'] == 'Low' %}
+											<strong class="govuk-tag govuk-tag--light-blue">{{ data['risk_Register-Impact'] }}</strong>
+										{% endif %}
+									</td>
+									<td class="govuk-table__cell"><span id="risk_Register-Action-Details"></span></td>
+									<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['risk_Register-Status'] }}</strong></td>
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell"><a href="18L-case-strategy">Edit</a></td>
+								</tr>
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="4">There is no Risk Register at this time on this case</td>
+								</tr>
+		                    {% endif %}
+						</tbody>
+					</table>
+
+		        </div>
+		    </section>
+		</div>
+		<!-- SECTION 13 - END -->
+
+		<!-- SECTION 14 - START -->
+		<div class="section-wrapper section-row">
+		    <section>
+		        <div class="title-wrapper">
+		           <h3 class="govuk-heading-s">Outstanding actions log</h3>
+		           <div class="tooltip">
+		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance9()">Guidance notes</button>
+		                <div class="tooltiptext-9">
+		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance9()">×</button>
+		                    <p>Outstanding actions log</p>
+		                    <p class="govuk-body-s">
+		                    	This section should be used to record outstanding actions agreed both internally and with UKLE. Whilst all actions continue to be recorded within action plans issued through CMS, the log will assist the prosecutor in tracking outstanding actions. The status of outstanding actions should be reviewed monthly with UKLE.
+		                    </p>
+		                    <p class="govuk-body-s">When actions are completed they should be deleted from the log.</p>
+		                    <p class="govuk-body-s">If the lawyer chooses to maintain a separate action log, they must reference it’s location in this section.</p>
+		                </div>
+		            </div>
+		            <form method="get" action="18M-case-strategy" id="">  
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_14" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
+		        </div>
+		        <div class="section-content">
+
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header" width="15%">Date</th>
+								<th scope="col" class="govuk-table__header" width="40%">Action</th>
+								<th scope="col" class="govuk-table__header" width="17.5%">Status</th>
+								<th scope="col" class="govuk-table__header" width="17.5%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%"></th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+		                    {% if data['strategy_14_Complete'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 12:07pm</td>
+									<td class="govuk-table__cell"><span id="actions_Log-Action-Details"></span></td>
+									<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['risk_Register-Status'] }}</strong></td>
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell"><a href="18M-case-strategy">Edit</a></td>
+								</tr>
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="4">There are no Outstanding actions logs at this time on this case</td>
+								</tr>
+		                    {% endif %}
+						</tbody>
+					</table>
+
+		        </div>
+		    </section>
+		</div>
+		<!-- SECTION 14 - END -->
+
+		<!-- SECTION 15 - START -->
+		<div class="section-wrapper section-row">
+		    <section>
+		        <div class="title-wrapper">
+		           <h3 class="govuk-heading-s">Actions and Decisions record</h3>
+		            <form method="get" action="18N-case-strategy" id="">  
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_15" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
+		        </div>
+		        <div class="section-content">
+
+		        	<p>Record all activities using the below sections, including hearing notes, any JOs, directions, Bail calculations, witness warning requirements, and any out of court work & orders.</p>
+
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header" width="15%">Date</th>
+								<th scope="col" class="govuk-table__header" width="15%">Category</th>
+								<th scope="col" class="govuk-table__header" width="40%">Chronological Record of Decisions, Actions, Reviews & Events (including key meetings and conferences)</th>
+								<th scope="col" class="govuk-table__header" width="17.5%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%"></th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+		                    {% if data['strategy_15_Complete'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 12:07pm</td>
+									<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['decision_Category'] }}</strong></td>
+									<td class="govuk-table__cell"><span id="decision_Action-Details"></span></td>
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell"><a href="18N-case-strategy">Edit</a></td>
+								</tr>
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="4">There are no Actions and Decisions recorded at this time on this case</td>
+								</tr>
+		                    {% endif %}
+						</tbody>
+					</table>
+
+		        </div>
+		    </section>
+		</div>
+		<!-- SECTION 15 - END -->
+
+		<!-- SECTION 16 - START -->
+		<div class="section-wrapper section-row">
+		    <section>
+		        <div class="title-wrapper">
+		           <h3 class="govuk-heading-s">Bail and custody decisions</h3>
+		           <div class="tooltip">
+		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance10()">Guidance notes</button>
+		                <div class="tooltiptext-10">
+		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance10()">×</button>
+		                    <p>Bail and custody decisions</p>
+		                    <p class="govuk-body-s">The Lawyer should use this section for recording the bail status of suspects and defendants.</p>
+		                    <p class="govuk-body-s">
+		                    	This section does not replace the CTL Log which must be completed in all cases where a CTL applies and include a full rationale for decisions made and progression of the case.  If recording an action here, which will also be recorded on the CTL log, the author may record the action here and note the detail on the log.
+		                    </p>
+		                    <p class="govuk-body-s">The following are <strong>examples</strong> of the decisions that should recorded here</p>
+		                    <ul>
+		                    	<li>Bail conditions for each suspect/defendant (including changes to conditions) and a brief record of the reasons for imposing conditions</li>
+		                    	<li>Reasons for seeking a remand in custody</li>
+		                    	<li>Consideration of any application for bail or application to vary bail conditions</li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <form method="get" action="18O-case-strategy" id="">  
+		                <input id="strategy_Type" name="strategy_Type" type="text" value="strategy_16" style="display: none;">
+		                <button type="submit" class="govuk-button non-button" style="">Add</button>
+		            </form>
+		        </div>
+		        <div class="section-content">
+
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header" width="10%">Date</th>
+								<th scope="col" class="govuk-table__header" width="30%">Bail & Custody Decisions</th>
+								<th scope="col" class="govuk-table__header" width="30%">Custody Time Limit Information where applicable</th>
+								<th scope="col" class="govuk-table__header" width="10%">CTL Expiry Date</th>
+								<th scope="col" class="govuk-table__header" width="10%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%"></th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+		                    {% if data['strategy_16_Complete'] %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell">Today, 12:07pm</td>
+									<td class="govuk-table__cell"><span id="custody_Decision-Details"></span></td>
+									<td class="govuk-table__cell">{{ data['custody_CTL_Date-Day'] }}/{{ data['custody_CTL_Date-Month'] }}/{{ data['custody_CTL_Date-Year'] }}</td>
+									<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['risk_Register-Status'] }}</strong></td>
+									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
+									<td class="govuk-table__cell"><a href="18O-case-strategy">Edit</a></td>
+								</tr>
+		                    {% else %}
+								<tr class="govuk-table__row">
+									<td class="govuk-table__cell" colspan="6">There are no Bail and custody decisions at this time on this case</td>
+								</tr>
+		                    {% endif %}
+						</tbody>
+					</table>
+
+		        </div>
+		    </section>
+		</div>
+		<!-- SECTION 16 - END -->
+
+	</div>
+</div>
+<!-- TABS CONTENT - 7 - END -->
+
