@@ -17,7 +17,7 @@
             {% if data['verion_MVP'] == 'true' %}
                 <form method="get" action="5-case-overview" id="newCase_Form-A">  
             {% else %}
-                <form method="get" action="4B-create-case" id="newCase_Form-A">  
+                <form method="get" action="14-lock-down" id="newCase_Form-A">  
             {% endif %}
 
                 <fieldset class="govuk-fieldset">
@@ -82,13 +82,7 @@
                     {% if data['verion_MVP'] == 'true' %}
 
                     {% else %}
-                        <div class="govuk-warning-text govuk-!-margin-bottom-6 govuk-!-margin-top-0" style="margin-left: 0;">
-                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                            <strong class="govuk-warning-text__text">
-                                <span class="govuk-visually-hidden">Warning</span>
-                                More suspects can be added after case creation.
-                            </strong>
-                        </div>
+                        <div class="govuk-inset-text"> More suspects can be added after case creation.</div>
                     {% endif %}
 
                     <!-- OPTION 3 - START -->
@@ -201,9 +195,7 @@
                     <!-- OPTION 3 - END -->
 
                     {% if data['verion_MVP'] == 'true' %}
-                        <div class="govuk-inset-text">
-                            <strong>Shared drive</strong>, <strong>Egress</strong>, <strong>Outlook</strong> and <strong>REMs</strong> folders will be set up automatically for you
-                        </div>
+
                     {% else %}
                         <!-- OPTION 4 - START -->
                         <div class="govuk-inset-text">
@@ -220,6 +212,14 @@
                         </div>
                         <!-- OPTION 4 - END -->
                     {% endif %}
+
+                    <div class="govuk-warning-text govuk-!-margin-bottom-6 govuk-!-margin-top-0" style="margin-left: 0;">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-visually-hidden">Warning</span>
+                            <strong>Shared drive</strong>, <strong>Egress</strong>, <strong>Outlook</strong> and <strong>REMs</strong> folders will be set up automatically for you
+                        </strong>
+                    </div>
 
                 </fieldset>
 
