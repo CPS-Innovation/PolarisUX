@@ -5,10 +5,10 @@
 <nav class="secondaryTabs moj-sub-navigation tabsGroup-1" aria-label="Sub navigation" id="strategy_Nav">
     <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item secondaryTab-Selected" id="secondaryTab-1">
-            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Description & Linked</a>
+            <a class="moj-sub-navigation__link" aria-current="page" onclick="return secondaryTab1();">Description & Linked cases</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-2">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspects/Defendants</a>
 <!--             {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] or data['strategy_Add_New_Suspect-Surname'] %}
                 {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
 		            <a class="moj-sub-navigation__link" onclick="return secondaryTab2();">Suspect / Defendant (<span class="suspects-number">2</span>)</a>
@@ -40,7 +40,7 @@
             <a class="moj-sub-navigation__link" onclick="return secondaryTab3();">Strategies</a>
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-4">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset Recovery</a>
 <!-- 			{% if data['strategy_7_Complete'] == 'true' and data['restrained_Add_New_Suspect-Surname'] and data['restrained_Edit_Suspect_1-Lawyer'] and data['restrained_Edit_Suspect_2-Lawyer'] %}
 	            <a class="moj-sub-navigation__link" onclick="return secondaryTab4_V2();">Asset recovery (<span class="asset-number">4</span>)</a>
 			{% elseif data['strategy_7_Complete'] == 'true' and data['restrained_Edit_Suspect_1-Lawyer'] and data['restrained_Edit_Suspect_2-Lawyer'] %}
@@ -84,7 +84,7 @@
             {% endif %}
  -->        </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-7">
-            <a class="moj-sub-navigation__link" onclick="return secondaryTab7_V2();">Risk, Actions & Decisions</a>
+            <a class="moj-sub-navigation__link" onclick="return secondaryTab7_V2();">Risks, Actions & Decisions</a>
             <!-- <a class="moj-sub-navigation__link" onclick="return secondaryTab7_V2();">Risk, Actions & Decisions (<span class="risks-number">0</span>)</a> -->
         </li>
         <li class="moj-sub-navigation__item" id="secondaryTab-8">
@@ -108,7 +108,7 @@
 		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance1()">Guidance notes</button>
 		                <div class="tooltiptext-1">
 		                     <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance1()">×</button>
-		                    <p>Brief Description of the Case </p>
+		                    <p>Brief description of the case</p>
 		                    <p class="govuk-body-s">This box should be completed by the lawyer and briefly set out what the case is about and what the likely issues are.</p>
 		                </div>
 		            </div>
@@ -125,18 +125,18 @@
                     {% if data['strategy_1_Complete'] %}
 			            <p class="govuk-!-margin-bottom-0" id="strategy_Description-Text"></p>
                     {% else %}
-			            <p class="govuk-!-margin-bottom-0" id="">There is no description to this case</p>
+			            <p class="govuk-!-margin-bottom-0" id="">There is no description of this case</p>
                     {% endif %}
 		        </div>
 		    </section>
 		    <section>
 		        <div class="title-wrapper">
-		           <h3 class="govuk-heading-s">Linked Cases (list names or URN)</h3>
+		           <h3 class="govuk-heading-s">Linked cases (list names or URN)</h3>
 		           <a href="#">Edit</a>
 		        </div>
 		        <div class="section-content">
 
-		            <p class="govuk-!-margin-bottom-0" id="">There are no Linked Cases to this case - <span class="govuk-caption-m">* For completion by the Lawyer</span></p>
+		            <p class="govuk-!-margin-bottom-0" id="">There are no linked cases to this case <span class="govuk-caption-m">* For completion by the Lawyer</span></p>
 
 		        </div>
 		    </section>
@@ -155,7 +155,7 @@
 		<div class="section-wrapper section-row">
 		    <section>
 		        <div class="title-wrapper">
-	                <h3 class="govuk-heading-s">Suspect / Defendant</h3>
+	                <h3 class="govuk-heading-s">Suspects/Defendants</h3>
 		            <form method="get" action="18B-case-strategy" id="">  
 		                <input id="strategy_Edit_Suspect_1" name="strategy_Edit_Suspect_1" type="text" value="false" style="display: none;">
 		                <input id="strategy_Edit_Suspect_2" name="strategy_Edit_Suspect_2" type="text" value="false" style="display: none;">
@@ -397,8 +397,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -455,8 +455,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -513,8 +513,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -572,8 +572,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -610,12 +610,12 @@
 		<div class="section-wrapper section-row">
 		    <section>
 		        <div class="title-wrapper">
-		           <h3 class="govuk-heading-s">Asset recovery strategy</h3>
+		           <h3 class="govuk-heading-s">Asset Recovery Strategy</h3>
 		           <div class="tooltip">
 		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance7()">Guidance notes</button>
 		                <div class="tooltiptext-7">
 		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance7()">×</button>
-		                    <p>Disclosure Strategy</p>
+		                    <p>Asset Recovery Strategy</p>
 		                    <p class="govuk-body-s">This section should be completed by the lawyer and include the following. </p>
 		                    <ul>
 		                    	<li>Confirmation that consideration has been given to restraint/confiscation in appropriate cases and the reasons for purusing or not pursuing financial orders</li>
@@ -634,8 +634,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -683,7 +683,7 @@
 								<th scope="col" class="govuk-table__header">POC Lawyer</th>
 								<th scope="col" class="govuk-table__header">Date of Restraint</th>
 								<th scope="col" class="govuk-table__header">Date of Restraint Discharge</th>
-								<th scope="col" class="govuk-table__header">Initials</th>
+								<th scope="col" class="govuk-table__header">User</th>
 								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
@@ -838,7 +838,7 @@
 		<div class="section-wrapper section-row">
 		    <section>
 		        <div class="title-wrapper">
-					<h3 class="govuk-heading-s">Changes to charges</h3>
+					<h3 class="govuk-heading-s">Changes to Charges</h3>
 		            <form method="get" action="18I-case-strategy" id="">  
 		                <input id="charges_Edit_Suspect_1" name="charges_Edit_Suspect_1" type="text" value="false" style="display: none;">
 		                <input id="charges_Edit_Suspect_2" name="charges_Edit_Suspect_2" type="text" value="false" style="display: none;">
@@ -853,10 +853,10 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header">Defendant</th>
-								<th scope="col" class="govuk-table__header">Original charges</th>
+								<th scope="col" class="govuk-table__header">Original Charges</th>
 								<th scope="col" class="govuk-table__header">Change to Charge</th>
-								<th scope="col" class="govuk-table__header">Rational</th>
-								<th scope="col" class="govuk-table__header">Initial</th>
+								<th scope="col" class="govuk-table__header">Rationale</th>
+								<th scope="col" class="govuk-table__header">User</th>
 								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
@@ -1017,8 +1017,8 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
-								<th scope="col" class="govuk-table__header" width="60%">Current strategy</th>
-								<th scope="col" class="govuk-table__header" width="15%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="60%">Current Strategy</th>
+								<th scope="col" class="govuk-table__header" width="15%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -1064,7 +1064,7 @@
 								<th scope="col" class="govuk-table__header">Date Request Sent</th>
 								<th scope="col" class="govuk-table__header">Direct Transmission or via UKCA</th>
 								<th scope="col" class="govuk-table__header">Response Received</th>
-								<th scope="col" class="govuk-table__header">Initials</th>
+								<th scope="col" class="govuk-table__header">User</th>
 								<th scope="col" class="govuk-table__header"></th>
 							</tr>
 						</thead>
@@ -1135,7 +1135,7 @@
 								<th scope="col" class="govuk-table__header" width="10%">Impact</th>
 								<th scope="col" class="govuk-table__header" width="25%">Action required</th>
 								<th scope="col" class="govuk-table__header" width="10%">Status</th>
-								<th scope="col" class="govuk-table__header" width="10%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -1175,12 +1175,12 @@
 		<div class="section-wrapper section-row">
 		    <section>
 		        <div class="title-wrapper">
-		           <h3 class="govuk-heading-s">Outstanding actions log</h3>
+		           <h3 class="govuk-heading-s">Outstanding Actions log</h3>
 		           <div class="tooltip">
 		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance9()">Guidance notes</button>
 		                <div class="tooltiptext-9">
 		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance9()">×</button>
-		                    <p>Outstanding actions log</p>
+		                    <p>Outstanding Actions log</p>
 		                    <p class="govuk-body-s">
 		                    	This section should be used to record outstanding actions agreed both internally and with UKLE. Whilst all actions continue to be recorded within action plans issued through CMS, the log will assist the prosecutor in tracking outstanding actions. The status of outstanding actions should be reviewed monthly with UKLE.
 		                    </p>
@@ -1201,7 +1201,7 @@
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
 								<th scope="col" class="govuk-table__header" width="40%">Action</th>
 								<th scope="col" class="govuk-table__header" width="17.5%">Status</th>
-								<th scope="col" class="govuk-table__header" width="17.5%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="17.5%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -1216,7 +1216,7 @@
 								</tr>
 		                    {% else %}
 								<tr class="govuk-table__row">
-									<td class="govuk-table__cell" colspan="4">There are no Outstanding actions logs at this time on this case</td>
+									<td class="govuk-table__cell" colspan="4">There are no Outstanding Actions logs at this time on this case</td>
 								</tr>
 		                    {% endif %}
 						</tbody>
@@ -1239,15 +1239,15 @@
 		        </div>
 		        <div class="section-content">
 
-		        	<p>Record all activities using the below sections, including hearing notes, any JOs, directions, Bail calculations, witness warning requirements, and any out of court work & orders.</p>
+		        	<p>Record all activities using the below sections, including hearing notes, any JOs, directions, Bail calculations, witness warning requirements, and any out of court work and orders.</p>
 
 					<table class="govuk-table">
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="15%">Date</th>
 								<th scope="col" class="govuk-table__header" width="15%">Category</th>
-								<th scope="col" class="govuk-table__header" width="40%">Chronological Record of Decisions, Actions, Reviews & Events (including key meetings and conferences)</th>
-								<th scope="col" class="govuk-table__header" width="17.5%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="40%">Chronological Record of Decisions, Actions, Reviews and Events (including key meetings and conferences)</th>
+								<th scope="col" class="govuk-table__header" width="17.5%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -1277,15 +1277,15 @@
 		<div class="section-wrapper section-row">
 		    <section>
 		        <div class="title-wrapper">
-		           <h3 class="govuk-heading-s">Bail and custody decisions</h3>
+		           <h3 class="govuk-heading-s">Bail and Custody Decisions</h3>
 		           <div class="tooltip">
 		                <button class="govuk-button open-tooltip" data-module="govuk-button" type="button" onClick="toggleGuidance10()">Guidance notes</button>
 		                <div class="tooltiptext-10">
 		                    <button class="govuk-button govuk-modal-dialogue__close" data-module="govuk-button" type="button" onClick="closeToggleGuidance10()">×</button>
-		                    <p>Bail and custody decisions</p>
+		                    <p>Bail and Custody Decisions</p>
 		                    <p class="govuk-body-s">The Lawyer should use this section for recording the bail status of suspects and defendants.</p>
 		                    <p class="govuk-body-s">
-		                    	This section does not replace the CTL Log which must be completed in all cases where a CTL applies and include a full rationale for decisions made and progression of the case.  If recording an action here, which will also be recorded on the CTL log, the author may record the action here and note the detail on the log.
+		                    	This section does not replace the CTL Log which must be completed in all cases where a CTL applies and include a full rationale for decisions made and progression of the case. If recording an action here, which will also be recorded on the CTL log, the author may record the action here and note the detail on the log.
 		                    </p>
 		                    <p class="govuk-body-s">The following are <strong>examples</strong> of the decisions that should recorded here</p>
 		                    <ul>
@@ -1306,10 +1306,10 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="10%">Date</th>
-								<th scope="col" class="govuk-table__header" width="30%">Bail & Custody Decisions</th>
+								<th scope="col" class="govuk-table__header" width="30%">Bail and Custody Decisions</th>
 								<th scope="col" class="govuk-table__header" width="30%">Custody Time Limit Information where applicable</th>
 								<th scope="col" class="govuk-table__header" width="10%">CTL Expiry Date</th>
-								<th scope="col" class="govuk-table__header" width="10%">Initials</th>
+								<th scope="col" class="govuk-table__header" width="10%">User</th>
 								<th scope="col" class="govuk-table__header" width="10%"></th>
 							</tr>
 						</thead>
@@ -1325,7 +1325,7 @@
 								</tr>
 		                    {% else %}
 								<tr class="govuk-table__row">
-									<td class="govuk-table__cell" colspan="6">There are no Bail and custody decisions at this time on this case</td>
+									<td class="govuk-table__cell" colspan="6">There are no Bail and Custody Decisions at this time on this case</td>
 								</tr>
 		                    {% endif %}
 						</tbody>

@@ -18,11 +18,11 @@
         <div class="wrapper gov-pages">
 
             {% if data['charges_Add_New_Suspect'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add Changes to charges data</h1>
+                <h1 class="govuk-heading-xl" style="">Add Changes to Charges</h1>
             {% elseif data['charges_Edit_Suspect_1'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add Changes to charges to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+                <h1 class="govuk-heading-xl" style="">Add Changes to Charges to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
             {% elseif data['charges_Edit_Suspect_2'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add Changes to charges to {{ data['newCase_OperationName'] }}</h1>
+                <h1 class="govuk-heading-xl" style="">Add Changes to Charges to {{ data['newCase_OperationName'] }}</h1>
             {% endif %}
 
             <form method="get" action="5-case-overview#strategyTab_subTab_5" id="">  
@@ -54,7 +54,7 @@
 
                     <!-- OPTION 3 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="charges_Add_New_Suspect-Original">Original charges</label>
+                        <label class="govuk-label" for="charges_Add_New_Suspect-Original">Original Charges</label>
                         {% if data['charges_Add_New_Suspect-Original'] %}
                             <input class="govuk-input govuk-input--width-20" id="charges_Add_New_Suspect-Original" name="charges_Add_New_Suspect-Original" type="text" value="{{ data['charges_Add_New_Suspect-Original'] }}">
                         {% else %}
@@ -76,7 +76,7 @@
 
                     <!-- OPTION 5 - START -->
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="charges_Add_New_Suspect-Rational">Rational</label>
+                        <label class="govuk-label" for="charges_Add_New_Suspect-Rational">Rationale</label>
                         {% if data['charges_Add_New_Suspect-Rational'] %}
                             <input class="govuk-input govuk-input--width-20" id="charges_Add_New_Suspect-Rational" name="charges_Add_New_Suspect-Rational" type="text" value="{{ data['charges_Add_New_Suspect-Rational'] }}">
                         {% else %}

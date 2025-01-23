@@ -1532,7 +1532,7 @@ $(document).ready(function () {
                             <tr class="govuk-table__row">
                                 <th scope="row" class="govuk-table__header">
                                     <a onclick="return openEA();" id="">EIA-Template-V1-2024.docm</a><br>
-                                    <span class="added-by">created by ctd, Today at 12:05pm</span><br>
+                                    <span class="added-by">created by user.name@cps.gov.uk, today at 12:05pm</span><br>
                                     <strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">Document</strong>
                                     <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
                                 </th>
@@ -1683,10 +1683,10 @@ function ea2Part8() {
     if (ea2Part2.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Offences considered</strong><br>` + ea2Part2 + `<br><br>`); }
 
     var ea2Part3 = $('#ea2Part3-Editor').html();
-    if (ea2Part3.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Relevant Law/Legal Considerations</strong><br>` + ea2Part3 + `<br><br>`); }
+    if (ea2Part3.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Relevant law/legal lonsiderations</strong><br>` + ea2Part3 + `<br><br>`); }
 
     var ea2Part4 = $('#ea2Part4-Editor').html();
-    if (ea2Part4.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Summary of Evidence Considered</strong><br>` + ea2Part4 + `<br><br>`); }
+    if (ea2Part4.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Summary of evidence Considered</strong><br>` + ea2Part4 + `<br><br>`); }
 
     var ea2Part5 = $('#ea2Part5-Editor').html();
     if (ea2Part5.length >= 1 ) { $('#ea2Part8-Preview').append(`<strong>Disclosure considerations</strong><br>` + ea2Part5 + `<br><br>`); }
@@ -1801,7 +1801,7 @@ $(document).ready(function () {
         $('#ea2Part3-Content').hide();
     } else if ($.cookie("ea2Part3Content")) { 
         $('#ea2Part3-Content').show(); $('#ea2Part3-Content td').append($.cookie("ea2Part3Content")); 
-        $('.ea-description').append(`<li>Relevant Law/Legal Considerations</li>`);
+        $('.ea-description').append(`<li>relevant law/legal considerations</li>`);
     }
 
     // 4 - Summary of Evidence Considered

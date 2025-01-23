@@ -65,7 +65,7 @@
                     <button type="button" onClick="" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Early Advice (Upload)</button>
                 </li>
                 <li>
-                    <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Joint Investigitive Strategy</button>
+                    <button type="submit" class="moj-button-menu__item govuk-button govuk-button--secondary" data-module="govuk-button">Joint Investigative Strategy</button>
                 </li>
                 <li>
                     <form method="post" action="15-communcation">
@@ -140,7 +140,7 @@
                     <option value="Counsel Case Acknowledgement">Counsel Case Acknowledgement</option>
                     <option value="CPS WCU Communication">CPS WCU Communication</option>
                     <option value="Early Advice">Early Advice</option>
-                    <option value="Joint Investigitive Strategy">Joint Investigitive Strategy</option>
+                    <option value="Joint Investigative Strategy">Joint Investigative Strategy</option>
                     <option value="Meeting">Meeting</option>
                     <option value="Other Communication">Other Communication</option>
                     <option value="Physical Media">Physical Media</option>
@@ -161,7 +161,7 @@
                             <tr class="govuk-table__row" >
                                 <th scope="row" class="govuk-table__header">
                                     <a onclick="return openEA();" id="">Digital EIA Form - V1</a><br>
-                                    <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW"></span></span><br>
+                                    <span class="added-by">created by {{ data['offCMS_Username'] }}, <span id="EA-timestamp-NEW">today 12:04pm</span></span><br>
                                     <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Digital</strong>
                                     <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
                                 </th>
@@ -183,7 +183,7 @@
                                 <tr class="govuk-table__row" >
                                     <th scope="row" class="govuk-table__header">
                                         <a onclick="return openCR();" id="">Case Review - V1</a><br>
-                                        <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="CR-timestamp"></span></span><br>
+                                        <span class="added-by">created by {{ data['offCMS_Username'] }}, <span id="CR-timestamp">today 12:04pm</span></span><br>
                                         <strong class="govuk-tag govuk-tag--blue govuk-!-margin-top-2">Digital</strong>
                                         <strong class="govuk-tag govuk-tag--grey govuk-!-margin-top-2">Version 1</strong>
                                     </th>
@@ -232,7 +232,7 @@
                                         {% elseif data['comms_Type'] == 'comms_Type_12' %}
                                             <a onclick="return openComms();" id="">Service of ABE details added</a><br>
                                         {% endif %}
-                                        <span class="added-by">created by {{ data['offCMS_Username'] }} <span id="EA-timestamp-NEW3"></span></span><br>
+                                        <span class="added-by">created by {{ data['offCMS_Username'] }}, <span id="EA-timestamp-NEW3">Today 12:04pm</span></span><br>
                                         {% if data['comms_Form_commsTask'] %}
                                             <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2">Task created</strong>
                                         {% else %}
@@ -284,7 +284,7 @@
         <button type="submit" class="govuk-button govuk-button--secondary" style="" onclick="location.href='8-create-charging-decision';">Create a Review</button>
     </div>
  -->    <div class="govuk-form-group">
-        <label class="govuk-label" for="upload_EA">Upload an Early Advice or Joint Investigative strategy document</label>
+        <label class="govuk-label" for="upload_EA">Upload document</label>
         <input class="govuk-file-upload" id="upload_EA" name="upload_EA" type="file">
     </div> 
 </div>

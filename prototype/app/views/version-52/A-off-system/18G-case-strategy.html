@@ -19,12 +19,12 @@
 
             {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                 {% if data['newCase_OperationName'] %}
-                    <h1 class="govuk-heading-xl" style="">Add a Asset recovery Strategy to {{ data['newCase_OperationName'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add Asset Recovery Strategy to {{ data['newCase_OperationName'] }}</h1>
                 {% else %}
-                    <h1 class="govuk-heading-xl" style="">Add a Asset recovery Strategy to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add Asset Recovery Strategy to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
                 {% endif %}
             {% elseif data['existing_Case'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add a Asset recovery Strategy to Groundhog day</h1>
+                <h1 class="govuk-heading-xl" style="">Add Asset Recovery Strategy to Groundhog day</h1>
             {% endif %}
 
             <form method="get" action="5-case-overview#strategyTab_subTab_4" id="">  
@@ -32,7 +32,7 @@
                 <p> </p>
 
                 <!-- ////////////////////////////////// STRATEGY 7 -- START ////////////////////////////////// -->
-                <h2 class="govuk-heading-s govuk-!-margin-top-2">Provide a description of the Asset recovery Strategy.</h2>
+                <h2 class="govuk-heading-s govuk-!-margin-top-2">Provide a description of the Asset Recovery Strategy.</h2>
                 <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
                         <div class="editor-container">

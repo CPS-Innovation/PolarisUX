@@ -71,6 +71,10 @@ table {
      }
 }
 
+strong.govuk-tag, span.govuk-tag {
+     text-transform: inherit !important;
+}
+
 #risk_Register-Risk, #risk_Register-Action, #actions_Log-Action, #decision_Action, #custody_Decision {
      color: $govuk-text-colour;
      height: 10em;
@@ -709,9 +713,9 @@ html {
                     padding-left: 1.5em;
                     border-left: 1px solid $govuk-border-colour;
                     margin-bottom: 0;
-                    .govuk-label {
-                         font-weight: bold;
-                    }
+                    // .govuk-label {
+                    //      font-weight: bold;
+                    // }
                }
           }
      }
@@ -1409,6 +1413,9 @@ html {
                &:hover, &:active, &:focus {
                     cursor: pointer;
                }
+          }
+          strong {
+               text-transform: inherit !important;
           }
      }
 }

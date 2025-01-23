@@ -19,12 +19,12 @@
 
             {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                 {% if data['newCase_OperationName'] %}
-                    <h1 class="govuk-heading-xl" style="">Add a Description to {{ data['newCase_OperationName'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add a description to {{ data['newCase_OperationName'] }}</h1>
                 {% else %}
-                    <h1 class="govuk-heading-xl" style="">Add a Description to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add a description to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
                 {% endif %}
             {% elseif data['existing_Case'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add a Description to Groundhog day</h1>
+                <h1 class="govuk-heading-xl" style="">Add a description to Groundhog day</h1>
             {% endif %}
 
             <form method="get" action="5-case-overview#strategyTab_subTab_1" id="">  

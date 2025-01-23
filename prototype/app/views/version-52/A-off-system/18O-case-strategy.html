@@ -19,12 +19,12 @@
 
             {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                 {% if data['newCase_OperationName'] %}
-                    <h1 class="govuk-heading-xl" style="">Add a Bail and custody decision to {{ data['newCase_OperationName'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add Bail and Custody Decision to {{ data['newCase_OperationName'] }}</h1>
                 {% else %}
-                    <h1 class="govuk-heading-xl" style="">Add a Bail and custody decision to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
+                    <h1 class="govuk-heading-xl" style="">Add Bail and Custody Decision to {{ data['newCase_DefendantName-Surname'] }}, {{ data['newCase_DefendantName-Forename'] }}</h1>
                 {% endif %}
             {% elseif data['existing_Case'] == 'true' %}
-                <h1 class="govuk-heading-xl" style="">Add a Bail and custody decision to Groundhog day</h1>
+                <h1 class="govuk-heading-xl" style="">Add Bail and Custody Decision to Groundhog day</h1>
             {% endif %}
 
             <form method="get" action="5-case-overview#strategyTab_subTab_7" id="">  
@@ -33,7 +33,7 @@
 
                 <!-- OPTION 1 - START -->
                 <div class="govuk-form-group govuk-!-width-two-thirds">
-                    <label class="govuk-label govuk-label--s" for="custody_Decision">Bail and custody decision</label>
+                    <label class="govuk-label govuk-label--s" for="custody_Decision">Bail and Custody Decision</label>
                     <div id="custody_Decision" name="custody_Decision" rows="5" contenteditable="true" class="editor govuk-textarea"></div>
                 </div>
                 <!-- OPTION 1 - END -->

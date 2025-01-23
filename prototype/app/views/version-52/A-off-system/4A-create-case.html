@@ -82,7 +82,7 @@
                     {% if data['verion_MVP'] == 'true' %}
 
                     {% else %}
-                        <div class="govuk-inset-text"> More suspects can be added after case creation.</div>
+                        <div class="govuk-inset-text govuk-!-margin-top-4"> More suspects/defendants can be added after case creation.</div>
                     {% endif %}
 
                     <!-- OPTION 3 - START -->
@@ -99,13 +99,13 @@
                                 <p class="govuk-body">See below for the details of the URN:</p>
                                 <ul class="govuk-list govuk-list--bullet">
                                     <li>
-                                        The first two digits represents the location of the case<br>
+                                        The first two digits represent the location of the case<br>
                                         <img src="../../../public/images/hint-1.png" alt="URN data 1" class="govuk-!-margin-top-1">
                                     </li>
                                     <li>
-                                        The second set of digits represents the type case
+                                        The second set of digits represent the type of case
                                         {% if 'scd' in data['offCMS_Username'] or 'SCD' in data['offCMS_Username'] %}
-                                            for SCD these are as the following:
+                                            for SCD:
                                             <ul class="govuk-list">
                                                 <li>01 - IPCC ind assault</li>
                                                 <li>02 - IPCC sum assault</li>
@@ -129,7 +129,7 @@
                                                 <li>20 - Grossly offense communication</li>
                                             </ul>
                                         {% elseif 'ctd' in data['offCMS_Username'] or 'CTD' in data['offCMS_Username'] %}
-                                            for CTD these are as the following:
+                                            for CTD:
                                             <ul class="govuk-list">
                                                 <li>01 - Terrorism</li>
                                                 <li>02 - Inciting Hatred</li>
@@ -148,7 +148,7 @@
                                                 <li>15 - SOCPA</li>
                                             </ul>
                                         {% elseif 'seocid' in data['offCMS_Username'] or 'SEOCID' in data['offCMS_Username'] %}
-                                            for SEOCID these are as the following:
+                                            for SEOCID :
                                             <ul class="govuk-list">
                                                 <li>01 - Terrorism</li>
                                                 <li>02 - Inciting Hatred</li>
@@ -174,11 +174,11 @@
                                         <img src="../../../public/images/hint-2.png" alt="URN data 2" class="govuk-!-margin-top-1">
                                     </li>
                                     <li>
-                                        The third set of digits are next in sequential order to all other cases created within Complex case work app<br>
+                                        The third set of digits are next in sequential order to all other cases created within the Complex Case Divisions<br>
                                         <img src="../../../public/images/hint-3.png" alt="URN data 3" class="govuk-!-margin-top-1">
                                     </li>
                                     <li>
-                                        The last two digits represents the year the case was created<br>
+                                        The last two digits represent the year the case was created<br>
                                         <img src="../../../public/images/hint-4.png" alt="URN data 4" class="govuk-!-margin-top-1">
                                     </li>
                                 </ul>
@@ -198,17 +198,15 @@
 
                     {% else %}
                         <!-- OPTION 4 - START -->
-                        <div class="govuk-inset-text">
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
-                                            <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Restrict access to this case</label>
-                                        </div>
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="newCase_URN-Lockdown" name="newCase_URN-Lockdown" type="checkbox" value="Yes">
+                                        <label class="govuk-label govuk-checkboxes__label" for="newCase_URN-Lockdown">Restrict access to this case</label>
                                     </div>
-                                </fieldset>
-                            </div>
+                                </div>
+                            </fieldset>
                         </div>
                         <!-- OPTION 4 - END -->
                     {% endif %}

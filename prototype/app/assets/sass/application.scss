@@ -5128,7 +5128,7 @@ font-size: 19px;
 strong, span {
     &.govuk-tag {
         letter-spacing: 0 !important;
-        text-transform: capitalize !important;
+        text-transform: inherit !important;
         &.govuk-tag--turquoise {
             display: none !important;
         }

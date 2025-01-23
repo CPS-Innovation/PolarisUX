@@ -61,9 +61,9 @@
                     /
                     {{ data['newCase_URN-D'] }}
                     {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
-                        - Date of Registration: <strong id="date-created-timestamp"></strong>
+                        - Date of registration: <strong id="date-created-timestamp">today 12:04pm</strong>
                     {% elseif data['existing_Case'] == 'true' %}
-                        - Date of Registration: <strong id="">01/12/2024</strong>
+                        - Date of registration: <strong id="">01/12/2024</strong>
                     {% endif %}
                 </span>
             {% elseif data['existing_Case'] == 'true' %}
@@ -71,9 +71,9 @@
                 <span class="govuk-caption-m govuk-!-margin-bottom-4">
                     920620952/24
                     {% if data['newCase_OperationName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
-                        - Date of Registration: <strong id="date-created-timestamp"></strong>
+                        - Date of registration: <strong id="date-created-timestamp">today 12:04pm</strong>
                     {% elseif data['existing_Case'] == 'true' %}
-                        - Date of Registration: <strong id="">01/12/2024</strong>
+                        - Date of registration: <strong id="">01/12/2024</strong>
                     {% endif %}
                 </span>
             {% endif %}
@@ -121,20 +121,22 @@
                     <!-- ADD SUSPECT - Show on Add -->
                     {% if data['newCase_DefendantName-CompanyName'] or data['newCase_DefendantName-Surname'] or data['newCase_DefendantName-Forename'] %}
                         {% if data['chargeAddedComplete'] == 'true' and data['addSuspectStarted'] == 'true' %}
-                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Defendants & Charges (<span class="suspects-number">2</span>)</a></li>
+                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Defendants and Charges (<span class="suspects-number">2</span>)</a></li>
                         {% elseif data['newCase_DefendantName-CompanyName'] and data['newCase_DefendantName-Surname'] %}
-                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects & Charges (<span class="suspects-number">2</span>)</a></li>
+                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects and Charges (<span class="suspects-number">2</span>)</a></li>
+                        {% elseif data['chargeAddedComplete'] == 'true' %}
+                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Defendants and Charges (<span class="suspects-number">1</span>)</a></li>
                         {% elseif data['addSuspectStarted'] == 'true' %}
                             {% if data['addSuspectStarted'] == 'true' and data['newCase_DefendantName-CompanyName'] and data['newCase_DefendantName-Surname'] %}
-                                <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects & Charges (<span class="suspects-number">3</span>)</a></li>
+                                <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects and Charges (<span class="suspects-number">3</span>)</a></li>
                             {% else %}
-                                <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects & Charges (<span class="suspects-number">2</span>)</a></li>
+                                <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects and Charges (<span class="suspects-number">2</span>)</a></li>
                             {% endif %}
                         {% else %}
-                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects & Charges (<span class="suspects-number">1</span>)</a></li>
+                            <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects and Charges (<span class="suspects-number">1</span>)</a></li>
                         {% endif %}
                     {% else %}
-                        <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects & Charges (<span class="suspects-number">0</span>)</a></li>
+                        <li class="govuk-tabs__list-item" id="tab-4"><a class="tab-link tab-4-content">Suspects and Charges (<span class="suspects-number">0</span>)</a></li>
                     {% endif %}
 
                     {% if data['addWitnessStarted'] == 'true' %}
