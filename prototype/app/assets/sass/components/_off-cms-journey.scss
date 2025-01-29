@@ -41,6 +41,10 @@
      }
 }
 
+.govuk-input__prefix {
+     color: black;
+}
+
 .result-item {
      .heading {
           .govuk-heading-l {
@@ -58,6 +62,11 @@
      }
 }
 
+#hidden-row, #hidden-row_V2 {
+     background: govuk-colour("light-grey");
+     padding: 1em;
+}
+
 table {
      tr {
           td {
@@ -66,7 +75,12 @@ table {
                     a {
                          float: left !important;
                     }
-               }   
+               }  
+               &.double-button {
+                    .hide-table-link, .preview-table-link, .hide-table-link_V2, .preview-table-link_V2  {
+                         margin: 0 0.75em 0 0;
+                    }
+               }    
           }
      }
 }
@@ -2161,7 +2175,7 @@ nav.tube-map-ea {
      }
 }
 
-.preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link, .hide-materials-link, .preview-materials-link {
+.preview-link, .hide-link, .preview-witness-link, .hide-witness-link, .hide-all-link, .preview-all-link, .hide-all-witnesses-link, .preview-all-witnesses-link, .hide-materials-link, .preview-materials-link, .hide-table-link, .preview-table-link, .hide-table-link_V2, .preview-table-link_V2 {
      font-size: 1.1875rem;
      float: right;
      margin-top: 0.25em;

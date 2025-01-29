@@ -1499,6 +1499,42 @@ function closeCRModal() {
     $('#crModal').addClass('rj-dont-display');
 }
 
+$(document).ready(function () {
+    $("#hidden-row, #hidden-row_V2, .hide-table-link, .hide-table-link_V2").hide();
+
+    $(".preview-table-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent().find('.hide-table-link').show();
+        $(this).closest('.section-content').find('#hidden-row').show();
+        $(this).parent().parent().addClass('open');
+    });
+
+    $(".hide-table-link").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent().find('.preview-table-link').show();
+        $(this).closest('.section-content').find('#hidden-row').hide();
+        $(this).parent().parent().removeClass('open');
+    });
+
+    $(".preview-table-link_V2").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent().find('.hide-table-link_V2').show();
+        $(this).closest('.section-content').find('#hidden-row_V2').show();
+        $(this).parent().parent().addClass('open');
+    });
+
+    $(".hide-table-link_V2").on("click", function (e) { 
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent().find('.preview-table-link_V2').show();
+        $(this).closest('.section-content').find('#hidden-row_V2').hide();
+        $(this).parent().parent().removeClass('open');
+    });
+});
+
 // ========================= Create EA Report ========================= //
 $(document).ready(function () {
     // EA - V1
