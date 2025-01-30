@@ -361,10 +361,10 @@ $(document).ready(function () {
 
         var documentName = $('#MaterialsMove_Modal .document-name').text();
 
-        $('.number-2').text('10')
+        // $('.number-2').text('10')
 
         var number1 = parseInt($('.number-1').text());
-        // var number2 = parseInt($('.number-2').text());
+        var number2 = parseInt($('.number-2').text());
         var number3 = parseInt($('.number-3').text());
         var number4 = parseInt($('.number-4').text());
         var number5 = parseInt($('.number-5').text());
@@ -399,7 +399,9 @@ $(document).ready(function () {
 
         // Move to Folder 1
         if ($('input[id=move_Folder_Destination_1]').is(':checked')) {
-            $('.materials_section_1').addClass('documents');
+            $('.materials_section_1').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-1').text(number1 + 1);
             $('.materials_section_1 p.documents-holder').hide();
             $('.materials_section_1 .sort-documents').hide();
@@ -506,7 +508,9 @@ $(document).ready(function () {
 
         // Move to Folder 2
         if ($('input[id=move_Folder_Destination_2]').is(':checked')) {
-            $('.materials_section_2').addClass('documents');
+            $('.materials_section_2').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-2').text(number2 + 1);
             $('.materials_section_2 p.documents-holder').hide();
             $('.materials_section_2 .sort-documents').hide();
@@ -613,7 +617,9 @@ $(document).ready(function () {
 
         // Move to Folder 3
         if ($('input[id=move_Folder_Destination_3]').is(':checked')) {
-            $('.materials_section_3').addClass('documents');
+            $('.materials_section_3').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-3').text(number3 + 1);
             $('.materials_section_3 p.documents-holder').hide();
             $('.materials_section_3 .sort-documents').hide();
@@ -720,7 +726,9 @@ $(document).ready(function () {
 
         // Move to Folder 4
         if ($('input[id=move_Folder_Destination_4]').is(':checked')) {
-            $('.materials_section_4').addClass('documents');
+            $('.materials_section_4').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-4').text(number4 + 1);
             $('.materials_section_4 p.documents-holder').hide();
             $('.materials_section_4 .sort-documents').hide();
@@ -827,7 +835,9 @@ $(document).ready(function () {
 
         // Move to Folder 5
         if ($('input[id=move_Folder_Destination_5]').is(':checked')) {
-            $('.materials_section_5').addClass('documents');
+            $('.materials_section_5').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-5').text(number5 + 1);
             $('.materials_section_5 p.documents-holder').hide();
             $('.materials_section_5 .sort-documents').hide();
@@ -934,7 +944,9 @@ $(document).ready(function () {
 
         // Move to Folder 6
         if ($('input[id=move_Folder_Destination_6]').is(':checked')) {
-            $('.materials_section_6').addClass('documents');
+            $('.materials_section_6').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-6').text(number6 + 1);
             $('.materials_section_6 p.documents-holder').hide();
             $('.materials_section_6 .sort-documents').hide();
@@ -1041,7 +1053,9 @@ $(document).ready(function () {
 
         // Move to Folder 7
         if ($('input[id=move_Folder_Destination_7]').is(':checked')) {
-            $('.materials_section_7').addClass('documents');
+            $('.materials_section_7').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-7').text(number7 + 1);
             $('.materials_section_7 p.documents-holder').hide();
             $('.materials_section_7 .sort-documents').hide();
@@ -1148,7 +1162,9 @@ $(document).ready(function () {
 
         // Move to Folder 8
         if ($('input[id=move_Folder_Destination_8]').is(':checked')) {
-            $('.materials_section_8').addClass('documents');
+            $('.materials_section_8').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-8').text(number8 + 1);
             $('.materials_section_8 p.documents-holder').hide();
             $('.materials_section_8 .sort-documents').hide();
@@ -1255,7 +1271,9 @@ $(document).ready(function () {
 
         // Move to Folder 9
         if ($('input[id=move_Folder_Destination_9]').is(':checked')) {
-            $('.materials_section_9').addClass('documents');
+            $('.materials_section_9').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-9').text(number9 + 1);
             $('.materials_section_9 p.documents-holder').hide();
             $('.materials_section_9 .sort-documents').hide();
@@ -1362,7 +1380,9 @@ $(document).ready(function () {
 
         // Move to Folder 10
         if ($('input[id=move_Folder_Destination_10]').is(':checked')) {
-            $('.materials_section_10').addClass('documents');
+            $('.materials_section_10').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-10').text(number10 + 1);
             $('.materials_section_10 p.documents-holder').hide();
             $('.materials_section_10 .sort-documents').hide();
@@ -1469,7 +1489,9 @@ $(document).ready(function () {
 
         // Move to Folder 11
         if ($('input[id=move_Folder_Destination_11]').is(':checked')) {
-            $('.materials_section_11').addClass('documents');
+            $('.materials_section_11').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-11').text(number11 + 1);
             $('.materials_section_11 p.documents-holder').hide();
             $('.materials_section_11 .sort-documents').hide();
@@ -1576,7 +1598,9 @@ $(document).ready(function () {
 
         // Move to Folder 12
         if ($('input[id=move_Folder_Destination_12]').is(':checked')) {
-            $('.materials_section_12').addClass('documents');
+            $('.materials_section_12').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-12').text(number12 + 1);
             $('.materials_section_12 p.documents-holder').hide();
             $('.materials_section_12 .sort-documents').hide();
@@ -1683,7 +1707,9 @@ $(document).ready(function () {
 
         // Move to Folder 13
         if ($('input[id=move_Folder_Destination_13]').is(':checked')) {
-            $('.materials_section_13').addClass('documents');
+            $('.materials_section_13').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-13').text(number13 + 1);
             $('.materials_section_13 p.documents-holder').hide();
             $('.materials_section_13 .sort-documents').hide();
@@ -1790,7 +1816,9 @@ $(document).ready(function () {
 
         // Move to Folder 14
         if ($('input[id=move_Folder_Destination_14]').is(':checked')) {
-            $('.materials_section_14').addClass('documents');
+            $('.materials_section_14').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-14').text(number14 + 1);
             $('.materials_section_14 p.documents-holder').hide();
             $('.materials_section_14 .sort-documents').hide();
@@ -1897,7 +1925,9 @@ $(document).ready(function () {
 
         // Move to Folder 15
         if ($('input[id=move_Folder_Destination_15]').is(':checked')) {
-            $('.materials_section_15').addClass('documents');
+            $('.materials_section_15').addClass('documents documents_moved');
+            var number = parseInt($('.materials.documents h3 .name_Wrapper span').text());
+            $('.materials.documents h3 .name_Wrapper span').text('10');
             $('.number-15').text(number15 + 1);
             $('.materials_section_15 p.documents-holder').hide();
             $('.materials_section_15 .sort-documents').hide();
