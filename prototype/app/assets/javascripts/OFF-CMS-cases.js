@@ -747,6 +747,9 @@ $(document).ready(function () {
 })
 
 function addContact1() {
+
+    $('p#no_key_contacts').hide();
+
     var contactSurname_1 = $('#keyContact_Name_1A').val();
     var contactForname_1 = $('#keyContact_Name_1B').val();
     var contactRole_1 = $('#keyContact_Role_1').val();
@@ -931,38 +934,42 @@ function removeContact5() {
 }
 
 
-// ========================= REMOVE USERS =========================
+// ========================= REMOVE CONTACTS =========================
 $(document).ready(function () {
-    $(".removeContact").on("click", function (e) {
-        $('.contacts-table tr').removeClass('removeContact-Row');
+
+    $('tr#no_key_contacts').hide();
+
+    $(".removeKeyContact").on("click", function (e) {
+        $('.key_contacts-table tr').removeClass('removeContact-Row');
         $(this).parent().parent().addClass('removeContact-Row');
         var userName = $(this).parent().parent().find('.govuk-table__header').text();
-        $('#confirmRemoveUser').removeClass('rj-dont-display');
+        $('#confirmRemoveContact').removeClass('rj-dont-display');
         $('.usernameRemove').text(userName);
     });
 
-    $("input[id=offCMS_Username-Remove]").on("change", function (e) {
+    $("input[id=offCMS_Contact-Remove]").on("change", function (e) {
         if ($(this).is(':checked')) {
-            $('#confirm-RemoveUsers').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('onClick','return confirmRemoveUsers();');
+            $('#confirm-RemoveContact').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('onClick','return confirmRemoveContact();');
         } else {
-            $('#confirm-RemoveUsers').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
+            $('#confirm-RemoveContact').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
         }
     });
 
     
 })
 
-function closeConfirmRemoveUser() {
-    $('#confirmRemoveUser').addClass('rj-dont-display');
-    $('table.contacts-table tbody tr').removeClass('removeContact-Row');
+function closeConfirmRemoveContact() {
+    $('#confirmRemoveContact').addClass('rj-dont-display');
+    $('table.key_contacts-table tbody tr').removeClass('removeContact-Row');
 }
 
-function confirmRemoveUsers() {
-    $('#confirmRemoveUser').addClass('rj-dont-display');
-    $('table.contacts-table tbody tr.removeContact-Row').hide();
+function confirmRemoveContact() {
+    $('#confirmRemoveContact').addClass('rj-dont-display');
+    $('table.key_contacts-table tbody tr.removeContact-Row').hide();
     var userNumbers = parseInt($('.tab-8-content .contacts-number').text());
     $('.tab-8-content .contacts-number').text(userNumbers-1);
 
+    $('tr#no_key_contacts').show();
 }
 
 
@@ -2492,7 +2499,23 @@ $(document).ready(function () {
         }
     });
 
+    $("input[id=newCase_URN-RemoveLockdown]").on("change", function (e) {
+        if ($(this).is(':checked')) {
+            $('#confirm-RemoveLockDown').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false').attr('type','submit');
+        } else {
+            $('#confirm-RemoveLockDown').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
+        }
+    });
+
 })
+
+function removeLockDown() {
+    $('#removeLockDown').removeClass('rj-dont-display');
+}
+
+function closeRemoveLockdownCase() {
+    $('#removeLockDown').addClass('rj-dont-display');
+}
 
 // ========================= COMMUNCATIONS ========================= //
 
@@ -2556,7 +2579,8 @@ function saveActionsLog() {
 }
 
 function saveDecisionLog() {
-    $.cookie("decision_Action", $('#decision_Action').html(), {path:'/'});
+    // $.cookie("decision_Action", $('#decision_Action').html(), {path:'/'});
+    $.cookie("custody_Decision", $('#custody_Decision').html(), {path:'/'});
 }
 
 
@@ -2616,6 +2640,9 @@ $(document).ready(function () {
     }
     if ($.cookie("decision_Action")) {
         $('#decision_Action-Details').html($.cookie("decision_Action"));
+    }
+    if ($.cookie("custody_Decision")) {
+        $('#custody_Decision-Details').html($.cookie("custody_Decision"));
     }
 })
 

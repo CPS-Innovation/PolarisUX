@@ -19,7 +19,7 @@
 
             <div class="section-content">
 
-                <table class="govuk-table">
+                <table class="govuk-table key_contacts-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header">Name</th>
@@ -42,7 +42,7 @@
                                 <td class="govuk-table__cell text_left"><a href="mailto:{{ data['keyContact_Email_1'] }}" class="copy_Item">{{ data['keyContact_Email_1'] }}</a></td>
                                 <td class="govuk-table__cell text_left"><a href="tel:{{ data['keyContact_Phone_1'] }}" class="copy_Item">{{ data['keyContact_Phone_1'] }}</a></td>
                                 <td class="govuk-table__cell">{{ data['keyContact_Date_1-Day'] }}/{{ data['keyContact_Date_1-Month'] }}/{{ data['keyContact_Date_1-Month'] }}</td>
-                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeKeyContact">Remove</a></td>
                             </tr>
                         {% else %}
 
@@ -59,7 +59,7 @@
                                 <td class="govuk-table__cell text_left"><a href="mailto:{{ data['keyContact_Email_2'] }}" class="copy_Item">{{ data['keyContact_Email_2'] }}</a></td>
                                 <td class="govuk-table__cell text_left"><a href="tel:{{ data['keyContact_Phone_2'] }}" class="copy_Item">{{ data['keyContact_Phone_2'] }}</a></td>
                                 <td class="govuk-table__cell">{{ data['keyContact_Date_2-Day'] }}/{{ data['keyContact_Date_2-Month'] }}/{{ data['keyContact_Date_2-Month'] }}</td>
-                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeKeyContact">Remove</a></td>
                             </tr>
                         {% else %}
 
@@ -76,7 +76,7 @@
                                 <td class="govuk-table__cell text_left"><a href="mailto:{{ data['keyContact_Email_3'] }}" class="copy_Item">{{ data['keyContact_Email_3'] }}</a></td>
                                 <td class="govuk-table__cell text_left"><a href="tel:{{ data['keyContact_Phone_3'] }}" class="copy_Item">{{ data['keyContact_Phone_3'] }}</a></td>
                                 <td class="govuk-table__cell">{{ data['keyContact_Date_3-Day'] }}/{{ data['keyContact_Date_3-Month'] }}/{{ data['keyContact_Date_3-Month'] }}</td>
-                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeKeyContact">Remove</a></td>
                             </tr>
                         {% else %}
 
@@ -93,7 +93,7 @@
                                 <td class="govuk-table__cell text_left"><a href="mailto:{{ data['keyContact_Email_4'] }}" class="copy_Item">{{ data['keyContact_Email_4'] }}</a></td>
                                 <td class="govuk-table__cell text_left"><a href="tel:{{ data['keyContact_Phone_4'] }}" class="copy_Item">{{ data['keyContact_Phone_4'] }}</a></td>
                                 <td class="govuk-table__cell">{{ data['keyContact_Date_4-Day'] }}/{{ data['keyContact_Date_4-Month'] }}/{{ data['keyContact_Date_4-Month'] }}</td>
-                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeKeyContact">Remove</a></td>
                             </tr>
                         {% else %}
 
@@ -110,7 +110,7 @@
                                 <td class="govuk-table__cell text_left"><a href="mailto:{{ data['keyContact_Email_5'] }}" class="copy_Item">{{ data['keyContact_Email_5'] }}</a></td>
                                 <td class="govuk-table__cell text_left"><a href="tel:{{ data['keyContact_Phone_5'] }}" class="copy_Item">{{ data['keyContact_Phone_5'] }}</a></td>
                                 <td class="govuk-table__cell">{{ data['keyContact_Date_5-Day'] }}/{{ data['keyContact_Date_5-Month'] }}/{{ data['keyContact_Date_5-Month'] }}</td>
-                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeContact">Remove</a></td>
+                                <td class="govuk-table__cell"><a href="#">Edit</a><a class="removeKeyContact">Remove</a></td>
                             </tr>
                         {% else %}
 
@@ -122,6 +122,16 @@
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell" colspan="6">There are no key contacts on this case</td>
                             </tr>
+                        {% endif %} 
+
+                        {% if data['keyContact_Name_1A'] and data['keyContact_Name_2A'] %}
+
+                        {% elseif data['keyContact_Name_1A'] %}
+                            <tr class="govuk-table__row" id="no_key_contacts">
+                                <td class="govuk-table__cell" colspan="6">There are no key contacts on this case</td>
+                            </tr>
+                        {% else %}
+
                         {% endif %}    
 
                     </tbody>

@@ -37,6 +37,11 @@ $(document).ready(function () {
 
     $('.cta-wrapper.cta-materials').hide();
 
+    // $('input[name=transfer_Folder_Destination]').on("click", function (e) {
+    //     var checkedMaterialsValue = $(this).parent().find('label').text();
+    //     $('.folder-destination').text(checkedMaterialsValue);
+    // });
+
     $("input[name=transfer_Folder]").click(function() {
         $('.cta-wrapper.cta-materials').addClass('sticky').show();
         if (!$(this).prop("checked")) {
@@ -2153,7 +2158,7 @@ $(document).ready(function () {
         $('.materials_section_1 .documents-available').css('display','inline-block');
         $('.materials_section_1 .documents-holder').hide();
         $('.materials_section_1').addClass('documents');
-        // $('.folder-destination')
+        $('.folder-destination').html('');
     }
     if ($.cookie("transfer_Files_to_Shared_Drive") == 'Destination_2') {
         var materialsNumber2 = parseInt($('.number-2').text());
@@ -2276,6 +2281,8 @@ $(document).ready(function () {
         $.cookie("finish_Transfer", true, {path:'/'});
         // $.cookie("transfer_Materials", true, {path:'/'});
 
+        $.cookie("folder_Transfer_To", $('input[name=transfer_Folder_Destination]:checked').closest('.govuk-radios__item').find('label').text(), {path:'/'});
+
         window.location.replace('5-case-overview#materialsTab');
 
         // $.cookie("transferNumberSuspects", parseInt($('.suspects-number').text()), {path:'/'});
@@ -2308,6 +2315,10 @@ $(document).ready(function () {
             $.cookie("transfer_Folder_Witness_5", true, {path:'/'});
         }
     });
+
+    if ($.cookie("folder_Transfer_To")) {
+        $('.folder-destination').text($.cookie("folder_Transfer_To"));
+    }
 
     if ($.cookie("finish_Transfer") == 'true') {
         $('#transferred_Suspect_Details').show();

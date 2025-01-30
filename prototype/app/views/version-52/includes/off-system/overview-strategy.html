@@ -1306,11 +1306,11 @@
 						<thead class="govuk-table__head">
 							<tr class="govuk-table__row">
 								<th scope="col" class="govuk-table__header" width="10%">Date</th>
-								<th scope="col" class="govuk-table__header" width="30%">Bail and Custody Decisions</th>
-								<th scope="col" class="govuk-table__header" width="30%">Custody Time Limit Information where applicable</th>
-								<th scope="col" class="govuk-table__header" width="10%">CTL Expiry Date</th>
-								<th scope="col" class="govuk-table__header" width="10%">User</th>
-								<th scope="col" class="govuk-table__header" width="10%"></th>
+								<th scope="col" class="govuk-table__header" width="20%">Bail and Custody Decisions</th>
+								<th scope="col" class="govuk-table__header" width="25%">Custody Time Limit Information where applicable</th>
+								<th scope="col" class="govuk-table__header" width="30%">CTL Expiry Date</th>
+								<th scope="col" class="govuk-table__header" width="7.5%">User</th>
+								<th scope="col" class="govuk-table__header" width="7.5%"></th>
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
@@ -1319,7 +1319,37 @@
 									<td class="govuk-table__cell">Today, 12:07pm</td>
 									<td class="govuk-table__cell"><span id="custody_Decision-Details"></span></td>
 									<td class="govuk-table__cell">{{ data['custody_CTL_Date-Day'] }}/{{ data['custody_CTL_Date-Month'] }}/{{ data['custody_CTL_Date-Year'] }}</td>
-									<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">{{ data['risk_Register-Status'] }}</strong></td>
+									<td class="govuk-table__cell">
+										{% if data['ctl_dates_1-Day'] %}
+											CTL no longer applies: <strong>{{ data['ctl_dates_1-Day'] }}/{{ data['ctl_dates_1-Month'] }}/{{ data['ctl_dates_1-Year'] }}</strong><br>
+										{% else %}
+
+										{% endif %}
+										{% if data['ctl_dates_2-Day'] %}
+											First day in custody in court: <strong>{{ data['ctl_dates_2-Day'] }}/{{ data['ctl_dates_2-Month'] }}/{{ data['ctl_dates_2-Year'] }}</strong><br>
+										{% else %}
+										
+										{% endif %}
+										{% if data['ctl_Announced'] %}
+											Announced in court: <strong>Yes</strong><br>
+										{% else %}
+										
+										{% endif %}
+										{% if data['ctl_dates_4-Day'] %}
+											Date released on bail: <strong>{{ data['ctl_dates_4-Day'] }}/{{ data['ctl_dates_4-Month'] }}/{{ data['ctl_dates_4-Year'] }}</strong><br>
+										{% else %}
+
+										{% endif %}
+										{% if data['ctl_dates_5-Number_Days'] %}
+											Days served in custody: <strong>{{ data['ctl_dates_5-Number_Days'] }}</strong><br>
+										{% else %}
+
+										{% endif %}
+										{% if data['ctl_dates_6-Day'] %}
+											Date released on bail: <strong>{{ data['ctl_dates_6-Day'] }}/{{ data['ctl_dates_6-Month'] }}/{{ data['ctl_dates_6-Year'] }}</strong><br>
+										{% else %}
+
+										{% endif %}								
 									<td class="govuk-table__cell">{{ data['offCMS_Username'] }}</td>
 									<td class="govuk-table__cell"><a href="18-case-strategy">Edit</a></td>
 								</tr>

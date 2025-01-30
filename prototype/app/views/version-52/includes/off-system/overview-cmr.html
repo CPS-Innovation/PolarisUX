@@ -101,7 +101,7 @@
                     <h2 class="hods-timeline__title">Materials transferred from egress to the shared drive</h2>
                     <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
                     <p class="hods-timeline__date"><span id="">Today 10:04am</span></p>
-                    <p class="hods-timeline__description">11 files transferred to the <span class="folder-destination">Name of folder here</span></p>
+                    <p class="hods-timeline__description">11 files transferred to the <strong class="folder-destination">{{ data['transfer_Folder_Destination'] }}</strong></p>
                 </div>
 
                 <!-- CASE SETTINGS -->
@@ -268,6 +268,33 @@
                         <h2 class="hods-timeline__title">CPS team added to the case</h2>
                         <p class="hods-timeline__by">by {{ data['offCMS_Username'] }}</p>
                         <p class="hods-timeline__date"><span id="">Today 10:04am</span></p>
+                        <ul class="govuk-list govuk-list--bullet">
+                            {% if data['newCase_Access-Email'] %}
+                                <li>{{ data['newCase_Access-Email'] }}</li>
+                            {% else %}
+
+                            {% endif %}
+                            {% if data['newCase_Access-Email2'] %}
+                                <li>{{ data['newCase_Access-Email2'] }}</li>
+                            {% else %}
+
+                            {% endif %}
+                            {% if data['newCase_Access-Email3'] %}
+                                <li>{{ data['newCase_Access-Email3'] }}</li>
+                            {% else %}
+
+                            {% endif %}
+                            {% if data['newCase_Access-Email4'] %}
+                                <li>{{ data['newCase_Access-Email4'] }}</li>
+                            {% else %}
+
+                            {% endif %}
+                            {% if data['newCase_Access-Email5'] %}
+                                <li>{{ data['newCase_Access-Email5'] }}</li>
+                            {% else %}
+
+                            {% endif %}
+                        </ul>
                     </div>
                 {% else %}
 

@@ -648,6 +648,16 @@ html {
                          }
                     }
                }
+               ul.govuk-list {
+                    display: inline-block;
+                    float: left;
+                    clear: both;
+                    margin: 0;
+                    li {
+                         font-size: 1rem;
+                         padding: 0em 0.5em 0.5em 0.5em;
+                    }
+               }
           }
           .hods-timeline__title {
                width: auto;
@@ -1284,7 +1294,7 @@ html {
                               a {
                                    float: right;
                                    color: $govuk-link-colour !important;
-                                   &.removeContact {
+                                   &.removeContact, &.removeKeyContact {
                                         padding-right: 0.5em;
                                         margin-right: 0.5em;
                                         border-right: 1px solid $govuk-border-colour;
@@ -1539,6 +1549,9 @@ button {
                     padding: 1em 0;
                     border-bottom: 1px solid $govuk-border-colour;
                     margin: 0;
+                    &.contactDetails-1 {
+                         padding-top: 0;
+                    }
                     &:first-of-type {
                          padding-top: 0;
                     }
@@ -1618,6 +1631,10 @@ h2 {
                margin-left: 0.15em;
                margin-bottom: -0.25em;
           }
+     }
+     &.x-small {
+          width: 4.5em;
+          margin: 0 0 -0.25em 0;
      }
 }
 
