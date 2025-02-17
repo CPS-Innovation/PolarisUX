@@ -5,7 +5,7 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form method="get" action="02-search-results">
+                    <form method="get" id="searchOFF_SYSTEM" action="02-search-results">
                         <fieldset>
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="searchOFF_URN">Search by Operation name or Defendent name</label>
@@ -67,12 +67,23 @@
                     </div>
                     <p class="title">P Drive:</p>
                     <div class="description">
-                        {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
-                            <div id="" class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck</div>
+                        {% if data['edit_Thunderstruck'] == 'true' %}
+                            {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                <div id="" class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck</div>
+                            {% else %}
+                                <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}</div>
+                            {% endif %}
                         {% else %}
-                            <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}</div>
+                            <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > Dumper Truck</div>
                         {% endif %}
-                        <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                        <form method="post" action="05-p-drive-files" id="">  
+                            <input id="edit_Thunderstruck" name="edit_Thunderstruck" type="text" value="true" style="display: none;">
+                            <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="true" style="display: none;">
+                            <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="true" style="display: none;">
+                            <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                            <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                            <button type="submit" class="govuk-button edit-button">Edit link</button><br>
+                        </form>
                     </div>
                     <p class="title">Date created:</p> <div class="description"><p><strong>08/08/2021</strong></p></div>
                 </div>
@@ -294,6 +305,7 @@
             <p class="govuk-body"><strong>You can:</strong></p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>check cms to see if the case exists</li>
+                <li>check the spelling of your search</li>
                 <li>check with your unit manager to see if the case is restricted</li>
                 <li>contact the service desk</li>
             </ul>

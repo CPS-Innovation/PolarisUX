@@ -12,34 +12,39 @@
     <div class="govuk-grid-column-full main_Case_Title">
 
         <div class="title-wrapper"> 
-            {% if data['mvp_Case_1'] == 'true' %}
-                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck</h1>
-                {% else %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}</h1>
+            {% if data['searchOFF_URN'] == 'Dumper Truck' or data['searchOFF_URN'] == 'Dumper truck'  or data['searchOFF_URN'] == 'dumper truck'  or data['searchOFF_URN'] == 'Dumpertruck' %}
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}</h1>
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">8879454843/21</span>
+            {% else %}
+                {% if data['mvp_Case_1'] == 'true' %}
+                    {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck</h1>
+                    {% else %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}</h1>
+                    {% endif %}
+                    <span class="govuk-caption-m govuk-!-margin-bottom-4">45AA209820/21</span>
+                {% elseif data['mvp_Case_2'] == 'true' %}
+                    {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Traffic</h1>
+                    {% else %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Traffic</h1>
+                    {% endif %}
+                    <span class="govuk-caption-m govuk-!-margin-bottom-4">89AV678452/22</span>
+                {% elseif data['mvp_Case_3'] == 'true' %}
+                    {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Office</h1>
+                    {% else %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Office</h1>
+                    {% endif %}
+                    <span class="govuk-caption-m govuk-!-margin-bottom-4">64GB245761/24</span>
+                {% elseif data['mvp_Case_4'] == 'true' %}
+                    {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}struck</h1>
+                    {% else %}
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}</h1>
+                    {% endif %}
+                    <span class="govuk-caption-m govuk-!-margin-bottom-4">6897542684/24</span>
                 {% endif %}
-                <span class="govuk-caption-m govuk-!-margin-bottom-4">45AA209820/21</span>
-            {% elseif data['mvp_Case_2'] == 'true' %}
-                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Traffic</h1>
-                {% else %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Traffic</h1>
-                {% endif %}
-                <span class="govuk-caption-m govuk-!-margin-bottom-4">89AV678452/22</span>
-            {% elseif data['mvp_Case_3'] == 'true' %}
-                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Office</h1>
-                {% else %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Office</h1>
-                {% endif %}
-                <span class="govuk-caption-m govuk-!-margin-bottom-4">64GB245761/24</span>
-            {% elseif data['mvp_Case_4'] == 'true' %}
-                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}struck</h1>
-                {% else %}
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}</h1>
-                {% endif %}
-                <span class="govuk-caption-m govuk-!-margin-bottom-4">6897542684/24</span>
             {% endif %}
         </div>
 

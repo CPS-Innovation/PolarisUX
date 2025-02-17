@@ -100,7 +100,7 @@
                                    color: $govuk-secondary-text-colour;
                               }
                          }
-                         a.add-button, a.edit-button, .add-button-files {
+                         a.add-button, .edit-button, .add-button-files {
                               font-size: 1rem;
                               margin: -0.5em 0 0 0;
                          }
@@ -109,7 +109,8 @@
                               color: white;
                               box-shadow: 0 2px 0 #002d18;
                          }
-                         a.edit-button {
+                         .edit-button {
+                              text-decoration: underline;
                               border: none;
                               box-shadow: none;
                               color: $govuk-link-colour;

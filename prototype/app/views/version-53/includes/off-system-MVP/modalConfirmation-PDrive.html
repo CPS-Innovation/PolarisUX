@@ -18,7 +18,9 @@
 
                     <div class="redaction-wrapper">
 
-                        {% if data['mvp_Case_3'] == 'true' %}
+                        {% if data['mvp_Case_1'] == 'true' %}
+                            <form method="get" action="03-case-overview">
+                        {% elseif data['mvp_Case_3'] == 'true' %}
                             <form method="get" action="03-case-overview">
                         {% elseif data['mvp_Case_4'] == 'true' %}
                             <form method="get" action="02-search-results#caseFour">
@@ -36,7 +38,10 @@
                                         <fieldset class="govuk-fieldset">
                                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                                 <div class="govuk-checkboxes__item">
-                                                    {% if data['mvp_Case_3'] == 'true' %}
+                                                    {% if data['mvp_Case_1'] == 'true' %}
+                                                        <input class="govuk-checkboxes__input" id="offCMS_PDrive_files_V3" name="offCMS_PDrive_files_V3" type="checkbox" value="Confirm">
+                                                        <label class="govuk-label govuk-checkboxes__label" for="offCMS_PDrive_files_V3">I confirm I want to link <strong class="pdrive_folder_name">folder name</strong> to this case</label>
+                                                    {% elseif data['mvp_Case_3'] == 'true' %}
                                                         <input class="govuk-checkboxes__input" id="offCMS_PDrive_files" name="offCMS_PDrive_files" type="checkbox" value="Confirm">
                                                         <label class="govuk-label govuk-checkboxes__label" for="offCMS_PDrive_files">I confirm I want to link <strong class="pdrive_folder_name">folder name</strong> to this case</label>
                                                     {% elseif data['mvp_Case_4'] == 'true' %}

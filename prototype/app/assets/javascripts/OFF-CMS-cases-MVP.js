@@ -2,6 +2,14 @@
 
 $(document).ready(function () {
 
+    $("input[name=searchOFF_URN]").on("keyup", function (e) {
+        if ($(this).val() == 'Dumper Truck' || $(this).val() == 'Dumper truck' || $(this).val() == 'Dumper truck' || $(this).val() == 'Dumpertruck') {
+            $('#searchOFF_SYSTEM').attr('action','03-case-overview');
+        } else {
+            $('#searchOFF_SYSTEM').attr('action','02-search-results');
+        }
+    });
+
     $("input[name=egress_file_link]").on("change", function (e) {
         $('#egress-table tbody tr').removeClass('selected');
         $(this).closest('tr').addClass('selected');
@@ -51,6 +59,15 @@ $(document).ready(function () {
 
     // V2
     $("input[id=offCMS_PDrive_files_V2]").on("change", function (e) {
+        if ($(this).is(':checked')) {
+            $('#confirm-PDriveFiles').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false');
+        } else {
+            $('#confirm-PDriveFiles').addClass('govuk-button--disabled').removeAttr('onClick').attr('disabled','disabled').attr('aria-disabled','true');
+        }
+    });
+
+    // V3
+    $("input[id=offCMS_PDrive_files_V3]").on("change", function (e) {
         if ($(this).is(':checked')) {
             $('#confirm-PDriveFiles').removeClass('govuk-button--disabled').removeAttr('disabled').attr('aria-disabled','false');
         } else {
