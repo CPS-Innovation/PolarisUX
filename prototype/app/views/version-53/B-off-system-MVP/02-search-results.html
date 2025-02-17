@@ -1,0 +1,305 @@
+{% extends "layoutCPS-OFF.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V4.html" %}
+    <div class="search-bar-wrapper-MVP">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="get" action="02-search-results">
+                        <fieldset>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="searchOFF_URN">Search by Operation name or Defendent name</label>
+                                {% if data['searchOFF_URN'] %}
+                                    <input class="govuk-input govuk-!-width-one-half" id="searchOFF_URN" name="searchOFF_URN" type="text" value="{{ data['searchOFF_URN'] }}" />
+                                {% else %}
+                                    <input class="govuk-input govuk-!-width-one-half" id="searchOFF_URN" name="searchOFF_URN" type="text" value="45AA209820/1" />
+                                {% endif %}
+                                <button type="submit" class="govuk-button" style="">Search</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    {% if data['searchOFF_URN'] == 'Thunderstruck' or data['searchOFF_URN'] == 'thunderstruck' or data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                        <span span class="govuk-caption-m">We've found <strong>4</strong> case that matches <strong>{{ data['searchOFF_URN'] }}</strong>.</span>
+                    {% else %}
+                        <span span class="govuk-caption-m">There are no matching results for <strong>{{ data['searchOFF_URN'] }}</strong>.</span>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<div class="govuk-grid-row search-results MVP" id="search-journey" style="display: block !important;">
+    <div class="govuk-grid-column-full">
+
+        {% if data['searchOFF_URN'] == 'Thunderstruck' or data['searchOFF_URN'] == 'thunderstruck' or data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+            <!-- RESULT 1 - START -->
+            <div id="caseOne" class="result-item">
+                <div class="heading">
+                    <h2 class="govuk-heading-l">
+                        <form method="post" action="03-case-overview" id="">  
+                            <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="true" style="display: none;">
+                            <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                            <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                            <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                            {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                <button type="submit" class="">{{ data['searchOFF_URN'] }}struck</button><br>
+                            {% else %}
+                                <button type="submit" class="">{{ data['searchOFF_URN'] }}</button><br>
+                            {% endif %}
+                        </form>
+                        <span id="" class="govuk-hint">45AA209820/21</span>
+                    </h2>
+                </div>
+                <div class="contents">
+                    <p class="title">Defendants:</p> <div class="description"><p><strong>MCLOVE, Eoin</strong></p></div>
+                    <p class="title">Egress:</p> 
+                    <div class="description">
+                        <div class="url-text div-style">https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/</div>
+                        <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                    </div>
+                    <p class="title">P Drive:</p>
+                    <div class="description">
+                        {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                            <div id="" class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck</div>
+                        {% else %}
+                            <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}</div>
+                        {% endif %}
+                        <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                    </div>
+                    <p class="title">Date created:</p> <div class="description"><p><strong>08/08/2021</strong></p></div>
+                </div>
+            </div>
+            <!-- RESULT 1 - END -->
+
+            <!-- RESULT 2 - START -->
+            <div id="caseTwo" class="result-item">
+                <div class="heading">
+                    <h2 class="govuk-heading-l">
+                        {% if data['offCMS_Egress_files'] %}
+                            <form method="post" action="03-case-overview" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="true" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit" class="">{{ data['searchOFF_URN'] }}struck Traffic</button><br>
+                                {% else %}
+                                    <button type="submit" class="">{{ data['searchOFF_URN'] }} Traffic</button><br>
+                                {% endif %}
+                            </form>
+                        {% else %}
+                            <form method="post" action="#" id="">  
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit" class="disabled" disabled>{{ data['searchOFF_URN'] }}struck Traffic</button><br>
+                                {% else %}
+                                    <button type="submit" class="disabled" disabled>{{ data['searchOFF_URN'] }} Traffic</button><br>
+                                {% endif %}
+                            </form>
+                        {% endif %}
+                        <span id="" class="govuk-hint">89AV678452/22</span>
+                    </h2>
+                </div>
+                {% if data['offCMS_Egress_files'] %}
+
+                {% else %}
+                    <div class="govuk-inset-text">Link this case to Egress to view the files.</div>                
+                {% endif %}
+                <div class="contents">
+                    <p class="title">Defendants:</p> <div class="description"><p><strong>BLOGGS, Joe</strong></p></div>
+                    <p class="title">Egress:</p> 
+                    <div class="description">
+                        {% if data['offCMS_Egress_files'] %}
+                            <div class="url-text div-style">https://cps.egresscloud.com/w/edit/58y34nekrgeroignerggegjg654687/</div>
+                            <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                        {% else %}
+                            <div class="url-text broken">No file path</div>
+                            <form method="post" action="04-egress-files" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="true" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                                <button class="govuk-button add-button-files" type="submit">Add link</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    <p class="title">P Drive:</p>
+                    <div class="description">
+                        {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                            <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck Traffic</div>
+                        {% else %}
+                            <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }} Traffic</div>
+                        {% endif %}
+                        <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                    </div>
+                    <p class="title">Date created:</p> <div class="description"><p><strong>25/06/2022</strong></p></div>
+                </div>
+            </div>
+            <!-- RESULT 2 - END -->
+
+            <!-- RESULT 3 - START -->
+            <div id="caseThree" class="result-item">
+                <div class="heading">
+                    <h2 class="govuk-heading-l">
+                        {% if data['offCMS_PDrive_files'] %}
+                            <form method="post" action="03-case-overview" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="true" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit" class="">{{ data['searchOFF_URN'] }}struck Office</button><br>
+                                {% else %}
+                                    <button type="submit" class="">{{ data['searchOFF_URN'] }} Office</button><br>
+                                {% endif %}
+                            </form>
+                        {% else %}
+                            <form method="get" action="#" id="">  
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit" class="disabled" disabled>{{ data['searchOFF_URN'] }}struck Office</button><br>
+                                {% else %}
+                                    <button type="submit" class="disabled" disabled>{{ data['searchOFF_URN'] }} Office</button><br>
+                                {% endif %}
+                            </form>
+                        {% endif %}
+                        <span id="" class="govuk-hint">64GB245761/24</span>
+                    </h2>
+                </div>
+                {% if data['offCMS_PDrive_files'] %}
+
+                {% else %}
+                    <div class="govuk-inset-text">Link this case to P Drive to view the files.</div>                
+                {% endif %}
+                <div class="contents">
+                    <p class="title">Defendants:</p> <div class="description"><p><strong>SCHRUTTE, Dwight</strong></p></div>
+                    <p class="title">Egress:</p> 
+                    <div class="description">
+                        <div class="url-text div-style">https://cps.egresscloud.com/w/edit/er684dfvkiasc68wef2sdqsc5/</div>
+                        <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                    </div>
+                    <p class="title">P Drive:</p>
+                    <div class="description">
+                        {% if data['offCMS_PDrive_files'] %}
+                            {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck Office</div>
+                            {% else %}
+                                <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }} Office</div>
+                            {% endif %}
+                            <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                        {% else %}
+                            <div class="url-text broken div-style">No file path</div>
+                            <form method="post" action="05-p-drive-files" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="true" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="false" style="display: none;">
+                                <button class="govuk-button add-button-files" type="submit">Add link</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    <p class="title">Date created:</p> <div class="description"><p><strong>17/07/2024</strong></p></div>
+                </div>
+            </div>
+            <!-- RESULT 3 - END -->
+
+            <!-- RESULT 4 - START -->
+            <div id="caseFour" class="result-item">
+                <div class="heading">
+                    <h2 class="govuk-heading-l">
+                        {% if data['offCMS_Egress_files_V2'] and data['offCMS_PDrive_files_V2'] %}
+                            <form method="get" action="03-case-overview" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="true" style="display: none;">
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit">Captain {{ data['searchOFF_URN'] }}struck</button><br>
+                                {% else %}
+                                    <button type="submit">Captain {{ data['searchOFF_URN'] }}</button><br>
+                                {% endif %}
+                            </form>
+                        {% else %}
+                            <form method="get" action="#" id="">  
+                                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                    <button type="submit" class="disabled" disabled>Captain {{ data['searchOFF_URN'] }}struck</button><br>
+                                {% else %}
+                                    <button type="submit" class="disabled" disabled>Captain {{ data['searchOFF_URN'] }}</button><br>
+                                {% endif %}
+                            </form>
+                        {% endif %}
+                        <span id="" class="govuk-hint">6897542684/24</span>
+                    </h2>
+                </div>
+                {% if data['offCMS_Egress_files_V2'] and data['offCMS_PDrive_files_V2'] %}
+
+                {% elseif data['offCMS_Egress_files_V2'] %}
+                    <div class="govuk-inset-text">Link this case to the P Drive to view the files.</div>                
+                {% elseif data['offCMS_PDrive_files_V2'] %}
+                    <div class="govuk-inset-text">Link this case to Egress to view the files.</div>                
+                {% else %}
+                    <div class="govuk-inset-text">Link this case to P Drive and Egress to view the files.</div>                
+                {% endif %}
+                <div class="contents">
+                    <p class="title">Defendants:</p> <div class="description"><p><strong>HALPERT, Jim</strong></p></div>
+                    <p class="title">Egress:</p> 
+                    <div class="description">
+                        {% if data['offCMS_Egress_files_V2'] %}
+                            <div class="url-text div-style">https://cps.egresscloud.com/w/edit/t9865eer84we548tegdv6s/</div>
+                            <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                        {% else %}
+                            <div class="url-text broken">No file path</div>
+                            <form method="post" action="04-egress-files" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="true" style="display: none;">
+                                <button class="govuk-button add-button-files" type="submit">Add link</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    <p class="title">P Drive:</p>
+                    <div class="description">
+                        {% if data['offCMS_PDrive_files_V2'] %}
+                            {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                                <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > Captain {{ data['searchOFF_URN'] }}struck</div>
+                            {% else %}
+                                <div class="url-text div-style">\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > Captain {{ data['searchOFF_URN'] }}</div>
+                            {% endif %}
+                            <a class="govuk-button edit-button" id="" onclick="">Edit link</a>
+                        {% else %}
+                            <div class="url-text broken div-style">No file path</div>
+                            <form method="post" action="05-p-drive-files" id="">  
+                                <input id="mvp_Case_1" name="mvp_Case_1" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_2" name="mvp_Case_2" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_3" name="mvp_Case_3" type="text" value="false" style="display: none;">
+                                <input id="mvp_Case_4" name="mvp_Case_4" type="text" value="true" style="display: none;">
+                                <button class="govuk-button add-button-files" type="submit">Add link</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    <p class="title">Date created:</p> <div class="description"><p><strong>18/08/2024</strong></p></div>
+                </div>
+            </div>
+            <!-- RESULT 4 - END -->
+
+        {% else %}
+
+            <p class="govuk-body"><strong>You can:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>check cms to see if the case exists</li>
+                <li>check with your unit manager to see if the case is restricted</li>
+                <li>contact the service desk</li>
+            </ul>
+
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

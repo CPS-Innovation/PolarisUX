@@ -1,0 +1,73 @@
+<h2 class="govuk-heading-m">Materials</h2>
+<span class="govuk-caption-m">Last updated <span id="materials-timestamp"></span></span>
+
+<div class="section-wrapper materials_holder">
+    <section class="width_70">
+
+        <button onclick="windowSizeChange2(), windowSizeChangeText()" class="window-size" id="window-size"><span>View full screen</span></button>
+
+        <div class="title-wrapper">
+            <h3 class="govuk-heading-s">Case materials</h3>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="permissions">
+            {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}struck" id="filePath-Drive" class="url-text" disabled>
+            {% else %}
+                <input type="text" value="\\ Public (P:) > RCTCaseData > SCCTD > CTD > Live Op > {{ data['searchOFF_URN'] }}" id="filePath-Drive" class="url-text" disabled>
+            {% endif %}
+            <a class="govuk-button copy-button" id="copyDriveLink" onclick="copyDriveLink()">Copy path</a>
+        </div>
+
+        <div class="loading" id="loading_materials">
+            <div>
+                <div class="hods-loading-spinner">
+                    <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                </div>
+                <p>Transferring documents from <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo x-small"> to the Shared Drive...</p>
+            </div>
+        </div>
+
+        <!-- ////////////////////////////// ACCORDIONS - START ////////////////////////////// -->
+        {% include "../../includes/off-system-MVP/documents-Folder.html" %}
+        <!-- ////////////////////////////// ACCORDIONS - END ////////////////////////////// -->
+
+    </section>
+
+    <section class="width_30">
+
+        <div class="title-wrapper">
+
+            <h3 class="govuk-heading-s">
+                <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo small"> inbound documents
+            </h3>
+            <a href="#">Open</a>
+        </div>
+
+        <div class="permissions">
+            <input type="text" value="https://cps.egresscloud.com/w/edit/66fd8bd1158de0c2ca41b172/" id="filePath-Egress" class="url-text" disabled>
+            <a class="govuk-button copy-button" id="copyEgressLink" onclick="copyEgressLink()">Copy path</a>
+        </div>
+
+        <div class="loading" id="loading_transfer">
+            <div>
+                <div class="hods-loading-spinner">
+                    <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+                </div>
+                <p>Transferring documents from Shared Drive to <img src="../../../public/images/egress-logo.png" alt="Egress" class="egress-logo x-small">...</p>
+            </div>
+        </div>
+
+        <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
+        {% include "../../includes/off-system/egress-files.html" %}
+        <!-- ////////////////////////////// DOCUMENTS - START ////////////////////////////// -->
+
+        <div class="cta-wrapper cta-materials govuk-!-margin-top-2">
+            <p>There are <strong class="selected-number">11 files</strong> to transfer</p>
+            <a disabled class="govuk-button" id="transfer_Materials" data-module="govuk-button">Transfer materials</a>
+        </div>
+
+    </section>
+
+</div>

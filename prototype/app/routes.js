@@ -42,5 +42,7 @@ router.use('/version-48', require('./views/version-48/_routes'))
 router.use('/version-49', require('./views/version-49/_routes'))
 router.use('/version-50', require('./views/version-50/_routes'))
 router.use('/version-51', require('./views/version-51/_routes'))
+router.use('/version-52', require('./views/version-52/_routes'))
+router.use('/version-53', require('./views/version-53/_routes'))
 
 module.exports = router

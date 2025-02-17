@@ -386,7 +386,7 @@ main.search {
 }
 
 // Search results page
-.search-bar-wrapper, .hods-status-message, .cps-bar-wrapper {
+.search-bar-wrapper, .search-bar-wrapper-MVP, .hods-status-message, .cps-bar-wrapper {
     // position: fixed;
     // top: 0;
     // left: 0;
@@ -491,7 +491,7 @@ main.search {
     }
 }
 
-.search-bar-wrapper {
+.search-bar-wrapper, .search-bar-wrapper-MVP {
     margin-bottom: 2em;
 }
 

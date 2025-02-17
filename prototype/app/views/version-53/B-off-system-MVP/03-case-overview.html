@@ -1,0 +1,64 @@
+{% extends "layoutCPS-NEW-INDEX.html" %}
+{% block header %}
+    {% include "../includes/banner-OFF-V4.html" %}
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full main_Case_Title">
+
+        <div class="title-wrapper"> 
+            {% if data['mvp_Case_1'] == 'true' %}
+                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}</h1>
+                {% endif %}
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">45AA209820/21</span>
+            {% elseif data['mvp_Case_2'] == 'true' %}
+                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Traffic</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Traffic</h1>
+                {% endif %}
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">89AV678452/22</span>
+            {% elseif data['mvp_Case_3'] == 'true' %}
+                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }}struck Office</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">{{ data['searchOFF_URN'] }} Office</h1>
+                {% endif %}
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">64GB245761/24</span>
+            {% elseif data['mvp_Case_4'] == 'true' %}
+                {% if data['searchOFF_URN'] == 'Thunder' or data['searchOFF_URN'] == 'thunder' %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}struck</h1>
+                {% else %}
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-margin-top-4">Captain {{ data['searchOFF_URN'] }}</h1>
+                {% endif %}
+                <span class="govuk-caption-m govuk-!-margin-bottom-4">6897542684/24</span>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs off-cms-overview" id="new-tabs">
+
+            <!-- /////////////// TAB CONTENT 6 - START /////////////// -->
+            <div class="panel" id="tab-6-content">
+                {% include "../includes/off-system-MVP/overview-materials.html" %}
+            </div>
+            <!-- /////////////// TAB CONTENT 6 - END /////////////// -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
